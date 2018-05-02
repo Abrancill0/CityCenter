@@ -454,6 +454,7 @@
     <AndroidResource Include="Resources\drawable\informacion.png" />
     <AndroidResource Include="Resources\drawable\success.png" />
     <AndroidResource Include="Resources\drawable\warning.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\rowdown.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
