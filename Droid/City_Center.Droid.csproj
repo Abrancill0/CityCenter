@@ -463,13 +463,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\RESERVATUMESA.png" />
     <AndroidResource Include="Resources\drawable-hdpi\TICKETSHOWS.png" />
     <AndroidResource Include="Resources\drawable-hdpi\TIENDAONLINE.png" />
-<<<<<<< HEAD
     <AndroidResource Include="Resources\drawable\ArrowDown.png" />
     <AndroidResource Include="Resources\drawable\ArrowUp.png" />
-=======
     <AndroidResource Include="Resources\drawable-hdpi\logout.png" />
     <AndroidResource Include="Resources\drawable\logout.png" />
->>>>>>> 0144c9ce8b5e1b071c5d561b155e2d25d2cb258b
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
