@@ -171,6 +171,7 @@
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding poz_imagen}" />
                                                 <Label x:Name="Label"
+                                                       Margin="5"
                                                        HorizontalOptions="Fill"
                                                        HorizontalTextAlignment="Center"
                                                        VerticalOptions="Start"

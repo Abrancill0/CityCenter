@@ -63,7 +63,7 @@
                      <Button Text="COMPRA TELÉFONICA"
                              FontAttributes="Bold"
                              TextColor="White"
-                            Clicked="Handle_Clicked"
+                             Clicked="Handle_Clicked"
                              BackgroundColor="#250C4B"></Button>
                 </StackLayout>
             </StackLayout>
