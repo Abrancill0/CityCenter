@@ -18,11 +18,15 @@ namespace City_Center.Page
             {
                 SLR.IsVisible = true;
                 SLP.IsVisible = false;
+                FlechaAbajo.IsVisible = false;
+                FlechaArriba.IsVisible = true;
             }
             else
             {
                 SLR.IsVisible = false;
                 SLP.IsVisible = true;
+                FlechaAbajo.IsVisible = true;
+                FlechaArriba.IsVisible = false;
             }
         }
     }

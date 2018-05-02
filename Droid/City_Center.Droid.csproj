@@ -463,6 +463,8 @@
     <AndroidResource Include="Resources\drawable-hdpi\RESERVATUMESA.png" />
     <AndroidResource Include="Resources\drawable-hdpi\TICKETSHOWS.png" />
     <AndroidResource Include="Resources\drawable-hdpi\TIENDAONLINE.png" />
+    <AndroidResource Include="Resources\drawable\ArrowDown.png" />
+    <AndroidResource Include="Resources\drawable\ArrowUp.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
