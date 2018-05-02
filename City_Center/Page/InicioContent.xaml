@@ -99,9 +99,11 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout>
-                                 <Label Text="Huéspedes" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                            <Label Text="Huéspedes" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                            <Grid Padding="15, 0">    
+                            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
                             <Picker Margin="5" x:Name="NoPersona" Title="Huespedés"  ItemsSource="{Binding ListaOpciones}" ></Picker>
-                          
+                            </Grid>
                             </StackLayout>
                            
                         </Frame>
@@ -203,11 +205,14 @@
                                    <StackLayout>
 
                                       <Label Text="Huéspedes" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                                        <Grid Padding="15, 0">
+                                      <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>    
                                       <Picker x:Name="NoPersona1"
                                               Title="Huespedés"
                                               SelectedItem="{Binding NoPersonas, Mode=TwoWay}"
                                               ItemsSource="{Binding ListaOpciones}"
                                               ></Picker>
+                                            </Grid>
                                     </StackLayout>
 
 
@@ -224,11 +229,14 @@
                                     </Frame.Padding>
                                     <StackLayout>
                                         <Label Text="Restaurants" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                                        <Grid Padding="15, 0">
+                                            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
                                       <Picker Margin="5" 
                                               x:Name="CR"
                                               Title="Seleccionar..."
                                               SelectedItem="{Binding NombreRestaurante, Mode=TwoWay}"
                                               ItemsSource="{Binding ListaOpciones2}" ></Picker>
+                                            </Grid>
 
                                     </StackLayout>
 
@@ -244,11 +252,14 @@
                                     </Frame.Padding>
                                     <StackLayout>
                                        <Label Text="Silla para ninños" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                                        <Grid Padding="15, 0">
+                                            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
                                       <Picker Margin="5"
                                               x:Name="Combosillaniños"
                                                SelectedItem="{Binding SillaNiños, Mode=TwoWay}"
                                               ItemsSource="{Binding ListaOpciones3}"
                                               ></Picker>
+                                            </Grid>
                                      </StackLayout>
                              
                                 </Frame>   
