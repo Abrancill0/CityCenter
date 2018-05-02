@@ -13,9 +13,9 @@ namespace City_Center.Page.SlideMenu
         }
         void Tab1_Tapped(object sender, System.EventArgs e)
         {
-            LabelTab1.FontAttributes = FontAttributes.Bold;
-            LabelTab2.FontAttributes = FontAttributes.None;
-            LabelTab3.FontAttributes = FontAttributes.None;
+            LabelTab1.TextColor = Color.FromHex("#EAE8ED");
+            LabelTab2.TextColor = Color.FromHex("#71628A");
+            LabelTab3.TextColor = Color.FromHex("#71628A");
 
             BV1.IsVisible = true;
             BV2.IsVisible = false;
@@ -28,9 +28,9 @@ namespace City_Center.Page.SlideMenu
 
         void Tab2_Tapped(object sender, System.EventArgs e)
         {
-            LabelTab1.FontAttributes = FontAttributes.None;
-            LabelTab2.FontAttributes = FontAttributes.Bold;
-            LabelTab3.FontAttributes = FontAttributes.None;
+            LabelTab1.TextColor = Color.FromHex("#71628A");
+            LabelTab2.TextColor = Color.FromHex("#EAE8ED");
+            LabelTab3.TextColor = Color.FromHex("#71628A");
 
             BV1.IsVisible = false;
             BV2.IsVisible = true;
@@ -41,9 +41,9 @@ namespace City_Center.Page.SlideMenu
 
         void Tab3_Tapped(object sender, System.EventArgs e)
         {
-            LabelTab1.FontAttributes = FontAttributes.None;
-            LabelTab2.FontAttributes = FontAttributes.None;
-            LabelTab3.FontAttributes = FontAttributes.Bold;
+            LabelTab1.TextColor = Color.FromHex("#71628A");
+            LabelTab2.TextColor = Color.FromHex("#71628A");
+            LabelTab3.TextColor = Color.FromHex("#EAE8ED");
 
             BV1.IsVisible = false;
             BV2.IsVisible = false;

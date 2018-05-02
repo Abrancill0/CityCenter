@@ -465,6 +465,11 @@
     <AndroidResource Include="Resources\drawable-hdpi\TIENDAONLINE.png" />
     <AndroidResource Include="Resources\drawable\ArrowDown.png" />
     <AndroidResource Include="Resources\drawable\ArrowUp.png" />
+<<<<<<< HEAD
+=======
+    <AndroidResource Include="Resources\drawable-hdpi\logout.png" />
+    <AndroidResource Include="Resources\drawable\logout.png" />
+>>>>>>> f7c0a3275c0ad4d7ad73347a281313a825b9cbf7
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
