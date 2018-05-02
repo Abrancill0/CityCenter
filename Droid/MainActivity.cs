@@ -29,6 +29,7 @@ namespace City_Center.Droid
             base.OnCreate(bundle);
 
             Xfx.XfxControls.Init();
+            UserDialogs.Init(this);
          
             //CachedImageRenderer.Init(true);
 
