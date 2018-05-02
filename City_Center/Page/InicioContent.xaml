@@ -34,22 +34,22 @@
                 <ffimageloading:CachedImage Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="HOMEmin" HeightRequest="110" />
             </StackLayout>
             <StackLayout Padding="5,-30,0,0" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="10">
-                <Image Aspect="AspectFit" Source="ReservacionHotel" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80">
+                <Image x:Name = "reservarHotel" Aspect="AspectFit" Source="RESERVAHOTEL_S" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Btn1_Clicked" />
                     </Image.GestureRecognizers>
                 </Image>
-                <Image Aspect="AspectFit" Source="TicketsShows" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80">
+                <Image x:Name = "tickets" Aspect="AspectFit" Source="TICKETSHOWS" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Btn2_Clicked" />
                     </Image.GestureRecognizers>
                 </Image>
-                <Image Aspect="AspectFit" Source="Reserva" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80">
+                <Image x:Name = "reservarMesa" Aspect="AspectFit" Source="RESERVATUMESA" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Btn3_Clicked" />
                     </Image.GestureRecognizers>
                 </Image>
-                <Image Aspect="AspectFit" Source="Tienda" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80">
+                <Image x:Name = "tienda" Aspect="AspectFit" Source="TIENDAONLINE" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Btn4_Clicked" />
                     </Image.GestureRecognizers>

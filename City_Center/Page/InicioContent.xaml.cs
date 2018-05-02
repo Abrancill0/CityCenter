@@ -58,6 +58,11 @@ namespace City_Center.Page
             SL2.IsVisible = false;
             SL3.IsVisible = false;
             SL4.IsVisible = false;
+
+            reservarHotel.Source = "RESERVAHOTEL_S";
+            tickets.Source = "TICKETSHOWS";
+            reservarMesa.Source = "RESERVATUMESA";
+            tienda.Source = "TIENDAONLINE";
         }
 
         private void Btn2_Clicked(object sender, System.EventArgs e)
@@ -67,6 +72,11 @@ namespace City_Center.Page
             SL2.IsVisible = true;
             SL3.IsVisible = false;
             SL4.IsVisible = false;
+
+            reservarHotel.Source = "RESERVAHOTEL";
+            tickets.Source = "TICKETSHOWS_S";
+            reservarMesa.Source = "RESERVATUMESA";
+            tienda.Source = "TIENDAONLINE";
         }
 
         private void Btn3_Clicked(object sender, System.EventArgs e)
@@ -76,6 +86,11 @@ namespace City_Center.Page
             SL2.IsVisible = false;
             SL3.IsVisible = true;
             SL4.IsVisible = false;
+
+            reservarHotel.Source = "RESERVAHOTEL";
+            tickets.Source = "TICKETSHOWS";
+            reservarMesa.Source = "RESERVATUMESA_S";
+            tienda.Source = "TIENDAONLINE";
         }
 
         private void Btn4_Clicked(object sender, System.EventArgs e)
@@ -85,6 +100,11 @@ namespace City_Center.Page
             SL2.IsVisible = false;
             SL3.IsVisible = false;
             SL4.IsVisible = true;
+
+            reservarHotel.Source = "RESERVAHOTEL";
+            tickets.Source = "TICKETSHOWS";
+            reservarMesa.Source = "RESERVATUMESA";
+            tienda.Source = "TIENDAONLINE_S";
         }
 
 

@@ -455,6 +455,14 @@
     <AndroidResource Include="Resources\drawable\success.png" />
     <AndroidResource Include="Resources\drawable\warning.png" />
     <AndroidResource Include="Resources\drawable-hdpi\rowdown.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\RESERVAHOTEL_S.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\RESERVATUMESA_S.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TICKETSHOWS_S.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TIENDAONLINE_S.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\RESERVAHOTEL.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\RESERVATUMESA.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TICKETSHOWS.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TIENDAONLINE.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
