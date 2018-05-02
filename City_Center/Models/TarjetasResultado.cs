@@ -7,7 +7,7 @@ namespace City_Center.Models
     {
         public class TarjetasDetalle
         {
-            public int tar_id { get; set; }
+            public string tar_id { get; set; }
             public string tar_nombre { get; set; }
             public string tar_descripcion { get; set; }
             public string tar_imagen { get; set; }
