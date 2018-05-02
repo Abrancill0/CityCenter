@@ -135,6 +135,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\RestableceContraseña.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\CambiaContraseña.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\HttpClientPostMethod.cs" />
@@ -314,6 +322,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Clases\Mensajes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\TerminosCondiciones.xaml.cs">
       <DependentUpon>TerminosCondiciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\RestableceContraseña.xaml.cs">
+      <DependentUpon>RestableceContraseña.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\CambiaContraseña.xaml.cs">
+      <DependentUpon>CambiaContraseña.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -11,17 +11,45 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding Detallepromociones}">
-            <StackLayout Margin="20,15,20,15">
-                <StackLayout x:Name="SLP">
+            <StackLayout>
+                <StackLayout Orientation="Vertical" x:Name="SLP" Margin="20,15,20,15">
                     <ffimageloading:CachedImage
                     HeightRequest="180"
                     Aspect="AspectFill"
                     LoadingPlaceholder="image_loading.png"
                     ErrorPlaceholder="image_error.png"
                     Source="{Binding pd.pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" />
+                    
+                     <Grid HorizontalOptions="FillAndExpand" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*">
+                                        </ColumnDefinition>
+                                        <ColumnDefinition Width="1*">
+                                        </ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
                     <Label HorizontalOptions="Start"
                            HorizontalTextAlignment="Start"
+                           Grid.Row ="0"
+                           Grid.Column ="0"
                            Text="{Binding pd.pro_nombre}" />
+                      <ffimageloading:CachedImage 
+                                            HeightRequest="30"
+                                            WidthRequest="30"
+                                            Aspect="AspectFit"
+                                            LoadingPlaceholder="image_loading.png"
+                                            ErrorPlaceholder="image_error.png"
+                                            Source="Compartir"
+                                            Grid.Row ="0"
+                                            Grid.Column ="1">
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                      <!-- <TapGestureRecognizer Command="{Binding CompartirCommand}"  />-->
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>
+                        </Grid>
+
                     <Label HorizontalOptions="Start"
                            HorizontalTextAlignment="Start"
                            Text="{Binding pd.pro_descripcion}" />
@@ -33,7 +61,11 @@
                         Clicked="Handle_Clicked">
                 </Button>
                 <StackLayout x:Name="SLR" IsVisible="false">
-                    <Label Text="PROMOCIONES" TextColor="#3F51B5" FontSize="Medium">
+                    <Label Text="PROMOCIONES"
+                           TextColor="#3F51B5"
+                           FontSize="Medium"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center">
                     </Label>
                     <xfx:XfxEntry Placeholder="Nombre y apellido*" Style="{DynamicResource EntryStyle}" Text="{Binding Password, Mode=TwoWay}">
                         <Entry.HeightRequest>
