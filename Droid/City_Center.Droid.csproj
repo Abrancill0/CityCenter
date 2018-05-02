@@ -467,6 +467,15 @@
     <AndroidResource Include="Resources\drawable\ArrowUp.png" />
     <AndroidResource Include="Resources\drawable-hdpi\logout.png" />
     <AndroidResource Include="Resources\drawable\logout.png" />
+    <AndroidResource Include="Resources\drawable\svip1.jpg" />
+    <AndroidResource Include="Resources\drawable\svip2.jpg" />
+    <AndroidResource Include="Resources\drawable\vip1.jpg" />
+    <AndroidResource Include="Resources\drawable\vip2.jpg" />
+    <AndroidResource Include="Resources\drawable\Casino.png" />
+    <AndroidResource Include="Resources\drawable\Gastronomia.png" />
+    <AndroidResource Include="Resources\drawable\home.png" />
+    <AndroidResource Include="Resources\drawable\Hotel.png" />
+    <AndroidResource Include="Resources\drawable\info2.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
