@@ -42,10 +42,10 @@ namespace City_Center.Droid
 
             BottomTabbedRenderer.ItemAlign = ItemAlignFlags.Top;
             BottomTabbedRenderer.FontSize = 10;
-            BottomTabbedRenderer.IconSize = 20;
+            BottomTabbedRenderer.IconSize = 45;
             BottomTabbedRenderer.ItemSpacing = 8;
             BottomTabbedRenderer.ItemPadding = new Xamarin.Forms.Thickness(8);
-            BottomTabbedRenderer.BottomBarHeight = 40;
+            BottomTabbedRenderer.BottomBarHeight = 50;
 
             FacebookSdk.SdkInitialize(this);
 
