@@ -12,6 +12,7 @@ using CarouselView.FormsPlugin.Android;
 using FFImageLoading.Forms.Droid;
 using Naxam.Controls.Platform.Droid;
 using Xamarin;
+using Acr.UserDialogs;
 //using FFImageLoading.Forms.Droid;
 
 namespace City_Center.Droid
