@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:City_Center.Vista"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.Hotel">
+     <ContentPage.ToolbarItems>
+        <ToolbarItem  Icon="Chat"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Name="TabTopLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Hotel}">
+            <StackLayout>
+                <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="HOTELmin" />
+            </StackLayout>
+            <Grid BackgroundColor="#2D97A3" Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                <Label x:Name="LabelTab1" Text="PRINCIPAL" Style="{DynamicResource TabTopLabel}" FontSize="Small" Grid.Column="0" FontAttributes="Bold" Margin="5">
+                </Label>
+                <Label x:Name="LabelTab2" Text="SPA" Style="{DynamicResource TabTopLabel}" FontSize="Small" Grid.Column="1" Margin="5">
+                </Label>
+                <Label x:Name="LabelTab3" Text="SERVICIOS" Style="{DynamicResource TabTopLabel}" FontSize="Small" Grid.Column="2" Margin="5" />
+                <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
+                </BoxView>
+                <BoxView x:Name="BV2" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="1" VerticalOptions="End">
+                </BoxView>
+                <BoxView x:Name="BV3" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="2" VerticalOptions="End">
+                </BoxView>
+                <ContentView x:Name="CV1" BackgroundColor="Transparent" Grid.Column="0">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Tab1_Tapped">
+                        </TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+                <ContentView x:Name="CV2" BackgroundColor="Transparent" Grid.Column="1">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Tab2_Tapped" Command="{Binding MoaSpaCommand}">
+                        </TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+                <ContentView x:Name="CV3" BackgroundColor="Transparent" Grid.Column="2">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Tab3_Tapped">
+                        </TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+            </Grid>
+            <StackLayout x:Name="SL1" IsVisible="true">
+                <ScrollView>
+                    <StackLayout>
+                        <StackLayout>
+                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                <Frame.Margin>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                </Frame.Margin>
+                                <Frame.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                </Frame.Padding>
+                                <StackLayout Orientation="Horizontal" BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand">
+                                    <Grid HorizontalOptions="FillAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*">
+                                            </ColumnDefinition>
+                                            <ColumnDefinition Width="1*">
+                                            </ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                                            <Label Text="Llegada" Margin="-95,0,0,0" TextColor="Gray">
+                                            </Label>
+                                            <DatePicker>
+                                            </DatePicker>
+                                        </StackLayout>
+                                        <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                                            <Label Text="Salida" Margin="-95,0,0,0" TextColor="Gray">
+                                            </Label>
+                                            <DatePicker>
+                                            </DatePicker>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                <Frame.Margin>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                </Frame.Margin>
+                                <Frame.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                </Frame.Padding>
+                                <xfx:XfxEntry Placeholder="Huéspedes" Margin="5,0,5,0">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">60</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                </xfx:XfxEntry>
+                            </Frame>
+                            <Button Margin="30" TextColor="White" BackgroundColor="#2D97A3" Clicked="Handle_Clicked" Text="VER OPCIONES" />
+                        </StackLayout>
+                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                            </Frame.Padding>
+                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                                <Label Margin="-250,10,0,0" Text="HABITACIONES" TextColor="#250c4b" FontFamily="Oswald-Regular" />
+                                <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding HabitacionesDetalle}">
+                                    <flv:FlowListView.FlowColumnTemplate>
+                                        <DataTemplate>
+                                            <Grid Padding="3">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding hab_imagen}">
+                                                <ffimageloading:CachedImage.GestureRecognizers>
+
+                                                 <TapGestureRecognizer  Command="{Binding DetalleCommand}"  />
+                                                        
+                                                    </ffimageloading:CachedImage.GestureRecognizers>
+                                                </ffimageloading:CachedImage>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </flv:FlowListView.FlowColumnTemplate>
+                                </flv:FlowListView>
+                            </StackLayout>
+                        </Frame>
+
+
+                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                            </Frame.Padding>
+                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#6E5D87" FontFamily="Oswald-Regular" />   
+                        <RelativeLayout HeightRequest="200" VerticalOptions="Start">
+                            <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}"
+                                      RowHeight="150"  SeparatorVisibility="None"
+                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}"
+                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}"
+                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}"
+                                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                      CachingStrategy="RecycleElement">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ContentView Rotation="90" BackgroundColor="Transparent">
+                                                <StackLayout HeightRequest="190" WidthRequest="230" Margin="0,0,0,0">
+                                                    <ffimageloading:CachedImage HeightRequest="190" 
+                                                                                WidthRequest="100"
+                                                                                Aspect="AspectFill"
+                                                                                LoadingPlaceholder="image_loading.png"
+                                                                                ErrorPlaceholder="image_error.png"
+                                                                               Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}">
+                                                                <ffimageloading:CachedImage.GestureRecognizers>
+                                                                 <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
+
+                                                                </ffimageloading:CachedImage.GestureRecognizers>
+                                                     </ffimageloading:CachedImage>
+                                                </StackLayout>
+                                            </ContentView>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </RelativeLayout>
+                         </StackLayout>
+                        </Frame>
+
+
+                        
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            <StackLayout x:Name="SL2" IsVisible="false">
+                <ScrollView>
+                    <StackLayout Spacing="1" Margin="5">
+                         
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <ffimageloading:CachedImage x:Name="Img1provisional"
+                            HeightRequest="150"
+                            Aspect="AspectFill"
+                          
+                            LoadingPlaceholder="image_loading.png"
+                            ErrorPlaceholder="image_error.png"
+                            Source="{Binding Imagen_Selected}" />
+                        </StackLayout>
+                        <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
+                            <ListView Rotation="270" ItemsSource="{Binding MoaSpaDetalle}"
+                                      ItemSelected="Handle_ItemSelected"
+                                      RowHeight="100" SeparatorVisibility="None"
+                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
+                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
+                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}"
+                                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                      CachingStrategy="RecycleElement">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ContentView Rotation="90" BackgroundColor="Transparent">
+                                                <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
+                                                    <ffimageloading:CachedImage HeightRequest="100" 
+                                                                                WidthRequest="100"
+                                                                                Aspect="AspectFill"
+                                                                            
+                                                                                LoadingPlaceholder="image_loading.png"
+                                                                                ErrorPlaceholder="image_error.png"
+                                                                                Source="{Binding gal_imagen}">
+                                                        
+                                                     </ffimageloading:CachedImage>
+                                                   
+                                                </StackLayout>
+                                            </ContentView>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </RelativeLayout>
+                        <StackLayout Padding="10, 30" BackgroundColor="White" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                         <Label Margin="15,0,0,0" HorizontalOptions="Start"
+                                TextColor="Black"
+                                HorizontalTextAlignment="Start"
+                                Text="UN LUGAR EXCLUSIVO CREADO PARA EL"/>
+                        <Label Margin="15,-10,0,0"  HorizontalOptions="Start"
+                                TextColor="Black"
+                                HorizontalTextAlignment="Start" Text="BIENESTAR Y CUIDADO DEL CUERPO QUE SE" />
+                        <Label Margin="15,-10,0,0"  HorizontalOptions="Start"
+                                TextColor="Black"
+                                HorizontalTextAlignment="Start"
+                                Text="ENCUENTRA CON EL ESPIRITU A TRAVÉS DEL"/>
+                        <Label Margin="15,-10,0,0"  HorizontalOptions="Start"
+                                TextColor="Black"
+                                HorizontalTextAlignment="Start"
+                                Text="RELAX, MASAJES Y TÉCNICAS CORPORALES"/>
+
+                        <Label Margin="10,20,0,0"  TextColor="Black"
+                                HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                               Text="Cuenta con espacios como:"/>
+                       
+                        <Label Margin="20,20,0,0"  TextColor="Black"
+                                HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                               Text="* Hammam"/>
+
+                           <Label Margin="20,0,0,0" TextColor="Black"  
+                                HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                               Text="* Sauna seco"/>
+
+                           <Label Margin="20,0,0,0" TextColor="Black"  
+                                HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                               Text="* Duchas especiales"/>
+
+                           <Label Margin="20,0,0,0" TextColor="Black" 
+                                HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                               Text="* Salas relax"/>
+
+                           <Label Margin="20,0,0,0" TextColor="Black"
+                                 HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                               Text="* Poscinas ludica climatizada"/>
+                        
+                           <Label Margin="20,0,0,0" TextColor="Black" 
+                                HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                               Text="* Piscina exterior"/>
+
+                          <Label Margin="20,0,0,0" TextColor="Black" 
+                                HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                               Text="* Fitness center"/>
+
+                         <Label Margin="20,0,0,0" TextColor="Black"
+                                HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                               Text="* Canchas de tenis y de paddle"/>
+                    </StackLayout>
+
+                     <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                            </Frame.Padding>
+                            <StackLayout Padding="10, 10, 0, 0" HorizontalOptions="FillAndExpand" Spacing="0">
+                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#6E5D87" FontFamily="Oswald-Regular" />   
+                        <RelativeLayout HeightRequest="200" VerticalOptions="Start">
+                            <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}"
+                                      RowHeight="150"  SeparatorVisibility="None"
+                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}"
+                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}"
+                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}"
+                                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                      CachingStrategy="RecycleElement">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ContentView Rotation="90" BackgroundColor="Transparent">
+                                                <StackLayout HeightRequest="190" WidthRequest="230" Margin="0,0,0,0">
+                                                    <ffimageloading:CachedImage HeightRequest="190" 
+                                                                                WidthRequest="100"
+                                                                                Aspect="AspectFill"
+                                                                               
+                                                                                LoadingPlaceholder="image_loading.png"
+                                                                                ErrorPlaceholder="image_error.png"
+                                                                                Source="{Binding pro_imagen}">
+                                                     </ffimageloading:CachedImage>
+                                                </StackLayout>
+                                            </ContentView>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </RelativeLayout>
+                         </StackLayout>
+                        </Frame>
+
+                        
+                </StackLayout>
+                </ScrollView>
+                    
+            </StackLayout>
+            <StackLayout x:Name="SL3" IsVisible="false">
+                <ScrollView>
+                    <StackLayout Padding="10, 10" HorizontalOptions="StartAndExpand" Orientation="Vertical">
+                   
+                        <StackLayout Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="RoomServices" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="ROOM SERVICES 24 HRS" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="ValetParking" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="VALET PARKING" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Lavanderia" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="SERVICIO DE LAVANDERIA Y TINTORERIA" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Bussines" />
+                            <Label  HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="BUSINESS CENTER" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="WifiLibre" />
+                            <Label  HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="WIFI" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="BabySitter1" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="BABY SITTER" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Articulosbebe" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="ARTICULOS PARA LA ASISTENCIA DE SU BEBE" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Almohada" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="ALMOHADAS ESPECIALES PARA DESCANSO Y RELAJACIÓN" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

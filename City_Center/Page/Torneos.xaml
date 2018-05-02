@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="City_Center.Page.Torneos">
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding Torneo}">
+            <ListView ItemsSource="{Binding TorneoDetalle}" RowHeight="250"
+                      HasUnevenRows="false" HeightRequest="400">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                    <Frame.OutlineColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
+                                    </Frame.OutlineColor>
+                                    <Frame.Margin>
+                                        <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                    </Frame.Margin>
+                                    <Frame.Padding>
+                                        <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                    </Frame.Padding>
+                                    <StackLayout Orientation="Horizontal"> 
+                                        <Grid HorizontalOptions="FillAndExpand">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*" />
+                                                <ColumnDefinition Width="1*" />
+                                                <ColumnDefinition Width="0.5*" />
+                                                <ColumnDefinition Width="0.5*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*" />
+                                                <RowDefinition Height="0.5*" />
+                                                <RowDefinition Height="0.5*" />
+                                            </Grid.RowDefinitions>
+                                            <ffimageloading:CachedImage HeightRequest="100"
+                                                                        Aspect="AspectFill"
+                                                                        LoadingPlaceholder="image_loading.png"
+                                                                        ErrorPlaceholder="image_error.png"
+                                                                        Source="{Binding tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
+                                                                        Grid.Row="0" Grid.ColumnSpan="4">
+
+                                                <ffimageloading:CachedImage.GestureRecognizers>
+                                                    <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
+                                                </ffimageloading:CachedImage.GestureRecognizers>
+                                                </ffimageloading:CachedImage>
+
+                                            <Label TextColor="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" FontFamily="Oswald-Regular" />
+                                            <Label TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" FontSize="Small" FontFamily="Oswald-Regular" />
+                                           
+                                            <Image Margin="15" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding CompartirCommand}" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

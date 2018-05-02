@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="City_Center.Vista.VistaPrincipalHotel">
+    <ContentView.Content>
+        <StackLayout>
+            <Label Text="Llegada"></Label>
+             <Label Text="Salida"></Label>
+             <Label Text="Huespedes"></Label>
+            <Button Text="Ver Opciones"></Button>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

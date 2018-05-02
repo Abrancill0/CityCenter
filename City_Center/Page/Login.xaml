@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="City_Center.Page.Login"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls">
+     <ContentPage.Resources>
+        <ResourceDictionary>
+             <Style x:Name="StyleButton" TargetType="Button">
+             <Setter Property="TextColor" Value="White" />
+             <Setter Property="FontFamily" Value="Oswald-Bold" />
+             <Setter Property="FontAttributes" Value="Bold" />
+             <Setter Property="FontSize" Value="Default"></Setter>
+            </Style>
+            <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="10" Padding="0,20,0,0" BindingContext="{Binding Login}" >
+            <Label Text="ÍNGRESA" TextColor="#250c4b" FontFamily="Oswald-Regular" FontSize="24" HorizontalTextAlignment="Center" ></Label>
+            <Label Text="Si ya tenés una cuenta, Ingresá para obtener todos los beneficios" HorizontalTextAlignment="Center" TextColor="Silver" FontSize="Small"></Label>
+            <xfx:XfxEntry x:Name="TextCorreo"
+                   Placeholder="Correo electronico"
+                   Style="{DynamicResource EntryStyle}"
+                   Text="{Binding Email, Mode=TwoWay}">
+                 <Entry.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                           <On Platform="iOS">60</On>
+                            <On Platform="Android,Windows">50</On>
+                        </OnPlatform>
+                    </Entry.HeightRequest>
+                </xfx:XfxEntry>
+            <Grid>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
+                <xfx:XfxEntry x:Name="TextContraseña"
+                       Placeholder="Contraseña"
+                       Style="{DynamicResource EntryStyle}"
+                       IsPassword="true" 
+                       Text="{Binding Password, Mode=TwoWay}"
+                       Grid.Row = "0" Grid.Column = "0">
+                     <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                               <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                    </xfx:XfxEntry>
+                <Button Grid.Column = "1" Grid.Row = "0"
+                        HeightRequest = "20"
+                        BackgroundColor = "Transparent"
+                        VerticalOptions = "Center"
+                        Text=""
+                        Image ="ojo.png"
+                        ContentLayout = "Left,0"
+                        Pressed = "showPass"
+                        Released = "Pass" ></Button>
+                        
+            </Grid>
+            <Label Text="Olvidé mi contraseña" TextColor="#23144B" FontSize="Micro" FontFamily="Oswald-Bold" HorizontalTextAlignment="End"></Label>
+            <StackLayout Padding = "15,0">
+                <Button 
+                        Command="{Binding LoginCommand}"
+                        IsEnabled="{Binding IsEnabled,Mode=TwoWay}"
+                        Style="{DynamicResource StyleButton}" 
+                        HeightRequest = "55"
+                        Text=""  
+                        Image ="btn_ingresar.png"
+                        ContentLayout = "Left,0">
+                </Button>
+                <Label Text="Ó" HorizontalTextAlignment="Center"></Label>
+                <Button 
+                        Command="{Binding FacebookCommand}"
+                        IsEnabled="false"
+                        Style="{DynamicResource StyleButton}"
+                        HeightRequest = "55"
+                        Text=""
+                        Image ="btn_face.png"
+                        ContentLayout = "Left,0">
+                </Button>
+                <Button 
+                        Command="{Binding GoogleCommand}"
+                        IsEnabled="false"
+                        Style="{DynamicResource StyleButton}"
+                        HeightRequest = "55"
+                        Text=""
+                        Image ="btn_google.png"
+                        ContentLayout = "Left,0">
+                </Button>
+
+                 
+            </StackLayout>
+            <Button 
+                    Command="{Binding RegistroCommand}"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                    Style="{DynamicResource StyleButton}"
+                    Text=""
+                    WidthRequest = "200" 
+                    HeightRequest = "75"
+                    VerticalOptions="EndAndExpand"
+                    Image ="btn_registrar.png"
+                    ContentLayout = "Left,0"
+                    >
+            </Button>
+         </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+

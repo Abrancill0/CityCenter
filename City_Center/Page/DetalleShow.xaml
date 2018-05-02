@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="City_Center.Page.DetalleShow">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Icon="Chat"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+            <ScrollView BindingContext="{Binding DetalleShow}">
+             <StackLayout Spacing="0" BackgroundColor="White">
+              <StackLayout Spacing="0">
+                <ffimageloading:CachedImage HeightRequest="200" 
+                                            Aspect="AspectFill"
+                                            LoadingPlaceholder="image_loading.png"
+                                            ErrorPlaceholder="image_error.png"
+                                            Source="{Binding ds.eve_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="15">
+                  <ffimageloading:CachedImage  Aspect="AspectFit"
+                                               BackgroundColor="Gray"
+                                               HeightRequest="30"
+                                               WidthRequest="30"
+                                               LoadingPlaceholder="image_loading.png"
+                                               ErrorPlaceholder="image_error.png"
+                                            Source="Favorito" >
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                       <TapGestureRecognizer   />
+                       <!-- Command="{Binding GuardaFavoritoCommand}"-->
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>
+
+                 <ffimageloading:CachedImage BackgroundColor="Gray"
+                                            HeightRequest="30"
+                                            WidthRequest="30"
+                                            Aspect="AspectFit"
+                                            LoadingPlaceholder="image_loading.png"
+                                            ErrorPlaceholder="image_error.png"
+                                            Source="Compartir">
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                       <TapGestureRecognizer Command="{Binding CompartirCommand}"  />
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>
+                
+            </StackLayout>
+
+            <StackLayout Margin="5">
+                 <StackLayout Orientation="Vertical" Margin="5">
+                    <Label Text="{Binding ds.eve_nombre}" TextColor="#250C4B" FontFamily="Oswald-Regular" FontSize="Medium" ></Label>
+                    <Label Text="{Binding ds.eve_fecha_hora_inicio, StringFormat='{r}'}" FontSize="Small" ></Label>
+                </StackLayout>
+                
+                <Label Text="{Binding ds.eve_descripcion}" FontSize="Small" Margin="5"></Label>
+
+                <StackLayout Orientation="Vertical" Margin="25">
+                     <Button Text="COMPRA ONLINE"
+                             FontAttributes="Bold"
+                             TextColor="White"
+
+                             BackgroundColor="#250C4B"></Button>
+                     <Button Text="COMPRA TELÉFONICA"
+                             FontAttributes="Bold"
+                             TextColor="White"
+                            Clicked="Handle_Clicked"
+                             BackgroundColor="#250C4B"></Button>
+                </StackLayout>
+            </StackLayout>
+
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

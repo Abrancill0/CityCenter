@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" BindingContext="{Binding Main, Source={StaticResource Locator}}" x:Class="City_Center.Page.SlideMenu.Promociones">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="Chat" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Name="TabTopLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Promociones}">
+            <StackLayout HorizontalOptions="Start" Padding="30,20">
+                <Label Text="PROMOCIONES" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill" DownsampleHeight="100" DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="HOTELmin" />
+            </StackLayout>
+            <Grid BackgroundColor="#250C4B" Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                <Label x:Name="LabelTab1" Text="TODOS" Style="{DynamicResource TabTopLabel}" FontSize="Small" Grid.Column="0" FontAttributes="Bold" />
+                <Label x:Name="LabelTab2" Text="CASINO" Style="{DynamicResource TabTopLabel}" FontSize="Small" Grid.Column="1" />
+                <Label x:Name="LabelTab3" Text="HOTEL Y SPA" Style="{DynamicResource TabTopLabel}" FontSize="Small" Grid.Column="2" />
+                <Label x:Name="LabelTab4" Text="GASTRONOMIA" Style="{DynamicResource TabTopLabel}" FontSize="Small" Grid.Column="3" />
+                <Label x:Name="LabelTab5" Text="SHOWS" Style="{DynamicResource TabTopLabel}" FontSize="Small" Grid.Column="4" />
+                <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End" />
+                <BoxView x:Name="BV2" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="1" VerticalOptions="End" />
+                <BoxView x:Name="BV3" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="2" VerticalOptions="End" />
+                <BoxView x:Name="BV4" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="3" VerticalOptions="End" />
+                <BoxView x:Name="BV5" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="4" VerticalOptions="End" />
+                <ContentView x:Name="CV1" BackgroundColor="Transparent" Grid.Column="0">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Tab1_Tapped" Command="{Binding TodosCommand}">
+                        </TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+                <ContentView x:Name="CV2" BackgroundColor="Transparent" Grid.Column="1">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Tab2_Tapped" Command="{Binding CasinoCommand}">
+                        </TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+                <ContentView x:Name="CV3" BackgroundColor="Transparent" Grid.Column="2">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Tab3_Tapped" Command="{Binding HotelCommand}">
+                        </TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+                <ContentView x:Name="CV4" BackgroundColor="Transparent" Grid.Column="3">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Tab4_Tapped" Command="{Binding ShowCommand}">
+                        </TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+                <ContentView x:Name="CV5" BackgroundColor="Transparent" Grid.Column="4">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Tab5_Tapped" Command="{Binding GastronomiaCommand}">
+                        </TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+            </Grid>
+            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                <Frame.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                </Frame.Margin>
+                <Frame.Padding>
+                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                </Frame.Padding>
+                <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                    <flv:FlowListView FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding PromocionesDetalle}">
+                        <flv:FlowListView.FlowColumnTemplate>
+                            <DataTemplate>
+                                <Grid Padding="3">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <ffimageloading:CachedImage HeightRequest="190"
+                                                                Aspect="AspectFill"
+                                                                LoadingPlaceholder="image_loading.png"
+                                                                ErrorPlaceholder="image_error.png"
+                                                                Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}">
+                                        <ffimageloading:CachedImage.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
+                                        </ffimageloading:CachedImage.GestureRecognizers>
+                                    </ffimageloading:CachedImage>
+                                   <!-- <Label x:Name="Label" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" BackgroundColor="Silver" Opacity="0.5" Text="{Binding pro_descripcion}" />-->
+                                </Grid>
+                            </DataTemplate>
+                        </flv:FlowListView.FlowColumnTemplate>
+                    </flv:FlowListView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

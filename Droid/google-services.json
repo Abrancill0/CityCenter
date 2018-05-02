@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "545217291802",
+    "firebase_url": "https://citycenter8723.firebaseio.com",
+    "project_id": "citycenter8723",
+    "storage_bucket": "citycenter8723.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545217291802:android:b49827149dd258e8",
+        "android_client_info": {
+          "package_name": "com.CityCenter.Danthop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "545217291802-jal34qaskh5lo3s5k769clrkg7bns3rm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.CityCenter.Danthop",
+            "certificate_hash": "5d82645db7205ba7d7741c703e41e226861c74a8"
+          }
+        },
+        {
+          "client_id": "545217291802-3okas6r8v6kjubf2q6mhiahc4rqk1mdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnDMOA9RtiQw8o1PceCvFS9hqvCj-YiV8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "545217291802-p3vnre77gu0nrer2j3geekg5ttv5hqd8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.CityCenter.Danthop"
+              }
+            },
+            {
+              "client_id": "545217291802-3okas6r8v6kjubf2q6mhiahc4rqk1mdb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

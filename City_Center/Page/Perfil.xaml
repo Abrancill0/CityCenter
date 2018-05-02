@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:City_Center.Vista"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             x:Class="City_Center.Page.Perfil">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Name="TabTopLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+           <!-- <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
+            </Style>-->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding Perfil}">
+            <StackLayout>
+                <StackLayout>
+                    <!--HeaderContent-->
+                </StackLayout>
+                <Grid BackgroundColor="#250c4b" Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40">
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="LabelTab1" Text="PERFIL" Style="{DynamicResource TabTopLabel}" Grid.Column="0" FontAttributes="Bold">
+                    </Label>
+                    <Label x:Name="LabelTab2" Text="CONFIGURACÌON" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                    </Label>
+                    <Label x:Name="LabelTab3" Text="NOTIFICACIONES" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
+                    </Label>
+                    <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
+                    </BoxView>
+                    <BoxView x:Name="BV2" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="1" VerticalOptions="End">
+                    </BoxView>
+                    <BoxView x:Name="BV3" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="2" VerticalOptions="End">
+                    </BoxView>
+                    <ContentView x:Name="CV1" BackgroundColor="Transparent" Grid.Column="0">
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Tab1_Tapped">
+                            </TapGestureRecognizer>
+                        </ContentView.GestureRecognizers>
+                    </ContentView>
+                    <ContentView x:Name="CV2" BackgroundColor="Transparent" Grid.Column="1">
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Tab2_Tapped">
+                            </TapGestureRecognizer>
+                        </ContentView.GestureRecognizers>
+                    </ContentView>
+                    <ContentView x:Name="CV3" BackgroundColor="Transparent" Grid.Column="2">
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Tab3_Tapped">
+                            </TapGestureRecognizer>
+                        </ContentView.GestureRecognizers>
+                    </ContentView>
+                </Grid>
+                <StackLayout x:Name="SL1" IsVisible="true">
+                    <StackLayout Margin="10">
+
+                        <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Correo electrónico">
+                            <Entry.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">60</On>
+                                </OnPlatform>
+                            </Entry.HeightRequest>
+                        </xfx:XfxEntry>
+
+                         <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Contraseña" IsPassword="true">
+                            <Entry.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">60</On>
+                                </OnPlatform>
+                            </Entry.HeightRequest>
+                        </xfx:XfxEntry>
+
+                         <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Cambiar Contraseña" IsPassword="true">
+                            <Entry.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">60</On>
+                                </OnPlatform>
+                            </Entry.HeightRequest>
+                        </xfx:XfxEntry>
+
+                         <xfx:XfxEntry Text="{Binding Ciudad}" Style="{DynamicResource EntryStyle}" Placeholder="Ciudad" >
+                            <Entry.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">60</On>
+                                </OnPlatform>
+                            </Entry.HeightRequest>
+                        </xfx:XfxEntry>
+
+                         <xfx:XfxEntry Text="{Binding Fecha}" Placeholder="Fecha de Nacimiento" >
+                            <Entry.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">60</On>
+                                </OnPlatform>
+                            </Entry.HeightRequest>
+                        </xfx:XfxEntry>
+                       
+                        <Label Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Silver"/>
+
+                        <Entry Placeholder="Tipo de documento" />
+                        <Entry Placeholder="Numero de documento" />
+                        <Entry Placeholder="Numero de socio WIn" />
+                        <Button Text="GUARDAR" BackgroundColor="#250c4b" TextColor="White" FontAttributes="Bold">
+                        </Button>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout x:Name="SL2" IsVisible="false">
+                    <view:VistaPerfilConfiguracion>
+                    </view:VistaPerfilConfiguracion>
+                </StackLayout>
+                <StackLayout x:Name="SL3" IsVisible="false">
+                    <!--Content-->
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

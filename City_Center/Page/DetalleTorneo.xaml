@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             x:Class="City_Center.Page.DetalleTorneo">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+         <ScrollView BindingContext="{Binding TorneoDetalle}">
+            <StackLayout>
+                <StackLayout Margin="20" x:Name="SLT">
+                    <ffimageloading:CachedImage HeightRequest="180"
+                                                Aspect="AspectFill"
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png"
+                                                Source="{Binding td.tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" />
+                    <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="{Binding td.tor_nombre}">
+                    </Label>
+                    <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="{Binding td.tor_descripcion}">
+                    </Label>
+                   
+
+                </StackLayout>
+                <Button  Margin="30" Text="INSCRIBETE" TextColor="White" BackgroundColor="#E91E63" Clicked="Handle_Clicked">
+                    </Button>
+                <StackLayout x:Name="SLR" IsVisible="false" Margin="10">
+                  
+                    <xfx:XfxEntry Placeholder="Nombre y apellido*" Style="{DynamicResource EntryStyle}" Text="{Binding Password, Mode=TwoWay}">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry Placeholder="Tipo de documento*" Style="{DynamicResource EntryStyle}" Text="{Binding Password, Mode=TwoWay}">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry Placeholder="Numero de documento*" Style="{DynamicResource EntryStyle}" IsPassword="true" Text="{Binding Password, Mode=TwoWay}">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                    </xfx:XfxEntry>
+
+                    <xfx:XfxEntry Placeholder="Nacionalidad*" Style="{DynamicResource EntryStyle}" IsPassword="true" Text="{Binding Password, Mode=TwoWay}">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                    </xfx:XfxEntry>
+
+                    <xfx:XfxEntry Placeholder="Pais*" Style="{DynamicResource EntryStyle}" IsPassword="true" Text="{Binding Password, Mode=TwoWay}">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                    </xfx:XfxEntry>
+
+                    <xfx:XfxEntry Placeholder="Provincia*" Style="{DynamicResource EntryStyle}" IsPassword="true" Text="{Binding Password, Mode=TwoWay}">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                    </xfx:XfxEntry>
+
+                    <xfx:XfxEntry Placeholder="Ciudad*" Style="{DynamicResource EntryStyle}" IsPassword="true" Text="{Binding Password, Mode=TwoWay}">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                    </xfx:XfxEntry>
+                    <Button  Margin="30" Text="RESERVAR" TextColor="White" BackgroundColor="#E91E63">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

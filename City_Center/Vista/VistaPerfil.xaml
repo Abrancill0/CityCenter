@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            
+             x:Class="City_Center.Vista.VistaPerfil">
+    <ContentPage.Resources>
+<!--         xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"-->
+        <ResourceDictionary>
+           <!-- <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
+            </Style>-->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentView.Content>
+        <StackLayout Margin="5">
+            <Entry x:Name="TextCorreoProvisional"
+                          Style="{DynamicResource EntryStyle}"
+                          Placeholder="Correo electrónico"/>
+            <Entry x:Name="TextPassProvisional1"
+                          Style="{DynamicResource EntryStyle}"
+                          Placeholder="Contraseña" IsPassword="true"/>
+            <Entry x:Name="TextPassProvisional2"
+                          Style="{DynamicResource EntryStyle}"
+                          Placeholder="Cambiar Contraseña"
+                          IsPassword="true"/>
+            <Entry x:Name="TextCiudadProvisional1"
+                          Style="{DynamicResource EntryStyle}"
+                          Placeholder="Ciudad"/>
+            <Entry x:Name="TextFechaProvisional1"
+                          Placeholder="Fecha de Nacimiento"/>
+            <Label Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Silver"></Label>
+            <Entry Placeholder="Tipo de documento"/>
+            <Entry Placeholder="Numero de documento"/>
+            <Entry Placeholder="Numero de socio WIn"/>
+            <Button Text="GUARDAR" BackgroundColor="#250c4b" TextColor="White" FontAttributes="Bold"></Button>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:view="clr-namespace:City_Center.Vista"
+              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             x:Class="City_Center.Page.MasInfo">
+     <ContentPage.ToolbarItems>
+        <ToolbarItem  Icon="Chat"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+            <Style x:Name="TabTopLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+             <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+  <ContentPage.Content>
+        <StackLayout BindingContext="{Binding SalasEventos}">
+            <StackLayout>
+                <!--HeaderContent-->
+                <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="CONVENCIONESmin" />
+               
+            </StackLayout>
+          
+            <Grid BackgroundColor="#3F51B5" Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                <Label x:Name="LabelTab1" Text="PRINCIPAL" TextColor="White" Grid.Column="0" Style="{DynamicResource TabTopLabel}" FontAttributes="Bold">
+                </Label>
+                <Label x:Name="LabelTab2" Text="SERVICIOS" TextColor="White" Grid.Column="1" Style="{DynamicResource TabTopLabel}">
+                </Label>
+                <Label x:Name="LabelTab3" Text="EVENTOS" TextColor="White" Grid.Column="2"  Style="{DynamicResource TabTopLabel}">
+                </Label>
+
+                <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
+                </BoxView>
+                <BoxView x:Name="BV2" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="1" VerticalOptions="End">
+                </BoxView>
+                <BoxView x:Name="BV3" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="2" VerticalOptions="End">
+                </BoxView>
+
+                <ContentView x:Name="CV1" BackgroundColor="Transparent" Grid.Column="0" >
+                    <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tab1_Tapped"></TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+                <ContentView  x:Name="CV2" BackgroundColor="Transparent" Grid.Column="1">
+                    <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tab2_Tapped"></TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+                <ContentView x:Name="CV3" BackgroundColor="Transparent" Grid.Column="2" >
+                    <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tab3_Tapped"></TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+            </Grid>
+            <StackLayout x:Name="SL1" IsVisible="true">
+            <ScrollView>
+                    <StackLayout>
+                          <StackLayout x:Name="Stack1">
+                         <StackLayout HorizontalOptions="FillAndExpand">
+                            <ffimageloading:CachedImage x:Name="Img1provisional"
+                            HeightRequest="150"
+                            Aspect="AspectFill"
+                         
+                            LoadingPlaceholder="image_loading.png"
+                            ErrorPlaceholder="image_error.png"
+                            Source="{Binding Imagen_Selected}" />
+                        </StackLayout>
+                        <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
+                            <ListView Rotation="270" ItemsSource="{Binding SalasEventosDetalle}"
+                                      ItemSelected="Handle_ItemSelected"
+                                      RowHeight="100" SeparatorVisibility="None"
+                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
+                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
+                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}"
+                                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                      CachingStrategy="RecycleElement">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ContentView Rotation="90" BackgroundColor="Transparent">
+                                                <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
+                                                    <ffimageloading:CachedImage HeightRequest="100" 
+                                                                                WidthRequest="100"
+                                                                                Aspect="AspectFill"
+                                                                              
+                                                                                LoadingPlaceholder="image_loading.png"
+                                                                                ErrorPlaceholder="image_error.png"
+                                                                                Source="{Binding gal_imagen}">
+                                                        
+                                                     </ffimageloading:CachedImage>
+                                                   
+                                                </StackLayout>
+                                            </ContentView>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </RelativeLayout>
+                             <Label Text="Texto de prueba" TextColor="Black"></Label>
+                    </StackLayout>
+
+                   
+
+                    <Button Text="CONTACTO"  Clicked="Handle_Clicked" BackgroundColor="#3F51B5" TextColor="White"></Button>
+
+
+                           <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" x:Name="Frame1" IsVisible="false">
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                            </Frame.Padding>
+                        <StackLayout>
+                            <xfx:XfxEntry Placeholder="Nombre y apellido *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+                             <xfx:XfxEntry Placeholder="Correo Electronico *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+                            <xfx:XfxEntry Placeholder="Empresa" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+
+                             <xfx:XfxEntry Placeholder="Tipo de Evento *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+                            <xfx:XfxEntry Placeholder="Cantidad de asistentes *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+                            <xfx:XfxEntry Placeholder="Fechas Aproximadas *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+
+                            <xfx:XfxEntry Placeholder="Comentarios *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+
+                            <Button Text="ENVIAR" BackgroundColor="#3F51B5" TextColor="White" ></Button>
+                             </StackLayout>
+                        </Frame>
+                   
+                    </StackLayout>
+                  
+
+                </ScrollView>
+                
+            </StackLayout>
+            <StackLayout x:Name="SL2" IsVisible="false">
+                <ScrollView>
+
+                    <StackLayout Margin="10,10,0,0">
+
+                   
+                        
+                        <StackLayout Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"
+                                                      
+                                                        LoadingPlaceholder="image_loading.png" 
+                                                        ErrorPlaceholder="image_error.png"
+                                                        Source="EquipoTecnico" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="EQUIPO TECNICO DE VANGUARDIA" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50" 
+                                                        Aspect="AspectFit"
+                                                       
+                                                        LoadingPlaceholder="image_loading.png"
+                                                        ErrorPlaceholder="image_error.png"
+                                                        Source="CabinaTraduccion" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="CABINAS DE TRADUCCION SIMULTÁNEAS" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50"
+                                                        Aspect="AspectFit"
+                                                      
+                                                        LoadingPlaceholder="image_loading.png"
+                                                        ErrorPlaceholder="image_error.png"
+                                                        Source="Wifi" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="WIFI LIBRE" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand"
+                                     Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50"
+                                                        Aspect="AspectFit"
+                                                       
+                                                        LoadingPlaceholder="image_loading.png" 
+                                                        ErrorPlaceholder="image_error.png"
+                                                        Source="VideoConferencia" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="VIDEO CONFERENCIA" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50"
+                                                        Aspect="AspectFit"
+                                                       
+                                                        LoadingPlaceholder="image_loading.png" 
+                                                        ErrorPlaceholder="image_error.png"
+                                                        Source="AreaAcreditacion" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="ÁREA DE ACREDITACIONES" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50"
+                                                        Aspect="AspectFit"
+
+                                                        LoadingPlaceholder="image_loading.png"
+                                                        ErrorPlaceholder="image_error.png"
+                                                        Source="SistemaCerrado" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="SISTEMA CERRADO VIGILANCIA" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50"
+                                                        Aspect="AspectFit"
+
+                                                        LoadingPlaceholder="image_loading.png"
+                                                        ErrorPlaceholder="image_error.png"
+                                                        Source="Parking" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PARKING PARA 2600 AUTOS" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50"
+                                                        Aspect="AspectFit"
+                                                       
+                                                        LoadingPlaceholder="image_loading.png"
+                                                        ErrorPlaceholder="image_error.png"
+                                                        Source="AreaComercial" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="ÁREA COMERCIAL" TextColor="Black" FontSize="Micro">
+                            </Label>             
+                    </StackLayout>
+
+
+                             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <ffimageloading:CachedImage HeightRequest="50"
+                                                        Aspect="AspectFit"
+
+                                                        LoadingPlaceholder="image_loading.png"
+                                                        ErrorPlaceholder="image_error.png"
+                                                        Source="VariedadGastronomica" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="GRAN VARIEDAD GASTRONÓMICA" TextColor="Black" FontSize="Micro">
+                            </Label>
+                        </StackLayout>
+
+                    </StackLayout>
+                </ScrollView>
+               
+            </StackLayout>
+            <StackLayout x:Name="SL3" IsVisible="false">
+               <ScrollView>
+                    <StackLayout>
+                    <StackLayout x:Name="Stack2">
+                         <StackLayout HorizontalOptions="FillAndExpand">
+                            <ffimageloading:CachedImage x:Name="Img1provisional2"
+                            HeightRequest="150"
+                            Aspect="AspectFill"
+                            DownsampleHeight="100"
+                            DownsampleUseDipUnits="false"
+                            LoadingPlaceholder="image_loading.png"
+                            ErrorPlaceholder="image_error.png"
+                            Source="{Binding Imagen_Selected}" />
+                        </StackLayout>
+                        <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
+                            <ListView Rotation="270" ItemsSource="{Binding SalasEventosDetalle}"
+                                      ItemSelected="Handle_ItemSelected"
+                                      RowHeight="100" SeparatorVisibility="None"
+                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
+                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
+                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}"
+                                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                      CachingStrategy="RecycleElement">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ContentView Rotation="90" BackgroundColor="Transparent">
+                                                <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
+                                                    <ffimageloading:CachedImage HeightRequest="100" 
+                                                                                WidthRequest="100"
+                                                                                Aspect="AspectFill"
+                                                                                DownsampleHeight="100"
+                                                                                DownsampleUseDipUnits="false"
+                                                                                LoadingPlaceholder="image_loading.png"
+                                                                                ErrorPlaceholder="image_error.png"
+                                                                                Source="{Binding gal_imagen}">
+                                                        
+                                                     </ffimageloading:CachedImage>
+                                                   
+                                                </StackLayout>
+                                            </ContentView>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </RelativeLayout>
+                             <Label Text="Texto de prueba" TextColor="Black"></Label>
+                    </StackLayout>
+
+
+
+
+                    <Button Text="CONTACTO"  Clicked="Handle_Clicked2" BackgroundColor="#3F51B5" TextColor="White"></Button>
+
+
+                           <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" x:Name="Frame2" IsVisible="false">
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                            </Frame.Padding>
+                        <StackLayout>
+                            <xfx:XfxEntry Placeholder="Nombre y apellido *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+                             <xfx:XfxEntry Placeholder="Correo Electronico *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+                            <xfx:XfxEntry Placeholder="Empresa" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+
+                             <xfx:XfxEntry Placeholder="Tipo de Evento *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+                            <xfx:XfxEntry Placeholder="Cantidad de asistentes *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+                            <xfx:XfxEntry Placeholder="Fechas Aproximadas *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+
+                            <xfx:XfxEntry Placeholder="Comentarios *" Margin="5,0,5,0">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
+
+                            <Button Text="ENVIAR" BackgroundColor="#3F51B5" TextColor="White" ></Button>
+                             </StackLayout>
+                        </Frame>
+                   
+                    </StackLayout>
+
+
+
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

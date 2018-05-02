@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="City_Center.Page.DetalleRestaurante">
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding DetalleRestaurante}">
+            <StackLayout>
+                <Label Text="{Binding rd.reb_nombre}">
+                </Label>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <ffimageloading:CachedImage x:Name="Img1provisional" HeightRequest="150" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding rd.reb_imagen_1 ,StringFormat='http://cc.comprogapp.com/{0}'}" />
+                </StackLayout>
+                <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
+                    <ListView x:Name="listaDetalleRestaurante" Rotation="270" ItemsSource="{Binding ListaOpciones}" ItemSelected="Handle_ItemSelected" RowHeight="100" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                        CachingStrategy="RecycleElement">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ContentView Rotation="90" BackgroundColor="Transparent">
+                                        <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
+                                            <ffimageloading:CachedImage HeightRequest="100" WidthRequest="100" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding .}">
+                                            </ffimageloading:CachedImage>
+                                        </StackLayout>
+                                    </ContentView>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </RelativeLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Grid HorizontalOptions="FillAndExpand" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*">
+                                            </ColumnDefinition>
+                                            <ColumnDefinition Width="1*">
+                                            </ColumnDefinition>
+                                            <ColumnDefinition Width="1*">
+                                            </ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="2*" />
+                                            <RowDefinition Height="0.5*" />
+                                        </Grid.RowDefinitions>
+
+                                         <ffimageloading:CachedImage HeightRequest="50" Grid.Row="0" Grid.Column="0"
+                                               IsVisible="{Binding MM}"
+                                               WidthRequest="50"
+                                               Aspect="AspectFit"
+                                               LoadingPlaceholder="image_loading.png"
+                                               ErrorPlaceholder="image_error.png"
+                                               Source="MenuRestaurant">
+                                            <ffimageloading:CachedImage.GestureRecognizers>
+                                                <TapGestureRecognizer  Tapped="Handle_Tapped"/>
+                                            </ffimageloading:CachedImage.GestureRecognizers>
+                                       </ffimageloading:CachedImage>
+                                        <Label Text="Menu"  HorizontalTextAlignment="Center"
+                                               IsVisible="{Binding MM}"
+                                               Grid.Row="1" Grid.Column="0" ></Label>
+                                       <ffimageloading:CachedImage HeightRequest="50" Grid.Row="0" Grid.Column="1"
+                                               WidthRequest="50"
+                                               Aspect="AspectFit"
+                                               LoadingPlaceholder="image_loading.png"
+                                               ErrorPlaceholder="image_error.png"
+                                               Source="ReservarResaurant">
+                                       </ffimageloading:CachedImage>
+                                        <Label Text="Reservar"  HorizontalTextAlignment="Center"
+                                               Grid.Row="1" Grid.Column="1"></Label>
+                                       <ffimageloading:CachedImage HeightRequest="50" Grid.Row="0" Grid.Column="2"
+                                               WidthRequest="50"
+                                               Aspect="AspectFit"
+                                               LoadingPlaceholder="image_loading.png"
+                                               ErrorPlaceholder="image_error.png"
+                                               Source="ChekIn">
+                                       </ffimageloading:CachedImage>
+                                       <Label Text="Check-In" HorizontalTextAlignment="Center"
+                                              Grid.Row="1" Grid.Column="2"></Label>
+                                        </Grid>
+                    
+                  
+                </StackLayout>
+                <StackLayout x:Name="SLM" Margin="10" IsVisible="false">
+                    <ListView ItemsSource="{Binding RestaurantMenuDetalle}"
+                              RowHeight="100" SeparatorVisibility="None"
+                              BackgroundColor="Silver"
+                        CachingStrategy="RecycleElement">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ContentView>
+                                        <StackLayout HeightRequest="100" WidthRequest="100" BackgroundColor="Silver">
+                                           <Label Text="{Binding NombreMenu}"></Label>
+                                           <Label Text="{Binding mde_nombre}" TextColor="#3F51B5" FontSize="Default"></Label>
+                                           <Label Text="{Binding mde_descripcion}" TextColor="Black" FontSize="Small"></Label>
+                                        </StackLayout>
+                                    </ContentView>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout Margin="10">
+                    <Label Text="{Binding rd.reb_descripcion_horario}">
+                    </Label>
+                    <Label Text="{Binding rd.reb_descripcion}">
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

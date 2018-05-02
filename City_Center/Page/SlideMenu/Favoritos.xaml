@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="City_Center.Page.SlideMenu.Favoritos">
+    <ContentPage.Content>
+        <StackLayout Padding = "30,70,30,70" BindingContext="{Binding Favoritos}" BackgroundColor="#250C4B" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <cv:CarouselViewControl BackgroundColor="White" ItemsSource="{Binding FavoritoDetalle}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="400">
+                <cv:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*">
+                                </ColumnDefinition>
+                                <ColumnDefinition Width="0.5*">
+                                </ColumnDefinition>
+                                <ColumnDefinition Width="0.5*">
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1.5*" />
+                               
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding eve_imagen}" Grid.Row="0" Aspect="AspectFill" Grid.ColumnSpan="3" />
+                            <StackLayout Orientation="Vertical" Grid.Row="1" BackgroundColor="#FFFFFF" >
+                                <Label Text="{Binding eve_nombre}" FontSize="Small" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding eve_fecha_hora_inicio}" FontSize="Small" TextColor ="Black" HorizontalOptions="Center" VerticalOptions= "EndAndExpand" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="2" BackgroundColor="#FFFFFF">
+                                <Image Aspect="AspectFit" Source="Favorito">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Aspect="AspectFit" Source="Compartir">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding CompartirCommand}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Vertical" Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="#FFFFFF" Padding = "15,5">
+                                <Button Text="COMPRA ONLINE" HeightRequest = "35" TextColor="White" BackgroundColor="#250C4B"></Button>
+                                <Button Text="COMPRA TELEFÓNICA" HeightRequest = "35" TextColor="White" BackgroundColor="#250C4B"></Button>
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </cv:CarouselViewControl.ItemTemplate>
+            </cv:CarouselViewControl>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

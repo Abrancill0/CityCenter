@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{4B8531F7-5CE0-4C19-928D-A99001FF6FEE}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>City_Center</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MasterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\DetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\CarruselPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\TabPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\Casino.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\Hotel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\Gastronomia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MasInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\InicioContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Vista\VistaPrincipalHotel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Vista\VistaSpa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SlideMenu\Show.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SlideMenu\Promociones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SlideMenu\Favoritos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SlideMenu\MasInformacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SlideMenu\TerminosCondiciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\Perfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\Registro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\InfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopUp\LoadingPopupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopUp\WebViewHotel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\DetalleShow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\DetalleHotel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\DetalleRestaurante.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\DetallePromocion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\Torneos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\DetalleTorneo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\RecompensasWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\DetalleDestacados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\TerminosCondiciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Clases\HttpClientPostMethod.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Clases\HttpClientPostMethod2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Clases\LlamadaApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\InstanceLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\FacebookUser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LoginResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MasterPage.xaml.cs">
+      <DependentUpon>MasterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\DetailPage.xaml.cs">
+      <DependentUpon>DetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\CarruselPage.xaml.cs">
+      <DependentUpon>CarruselPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\TabPage.xaml.cs">
+      <DependentUpon>TabPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\Casino.xaml.cs">
+      <DependentUpon>Casino.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\Hotel.xaml.cs">
+      <DependentUpon>Hotel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\Gastronomia.xaml.cs">
+      <DependentUpon>Gastronomia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MasInfo.xaml.cs">
+      <DependentUpon>MasInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\InicioContent.xaml.cs">
+      <DependentUpon>InicioContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Contracts\IFacebookManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Vista\VistaPerfilNotificaciones.xaml.cs">
+      <DependentUpon>VistaPerfilNotificaciones.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Vista\VistaPerfilConfiguracion.xaml.cs">
+      <DependentUpon>VistaPerfilConfiguracion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Vista\VistaPerfil.xaml.cs">
+      <DependentUpon>VistaPerfil.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Vista\VistaPrincipalHotel.xaml.cs">
+      <DependentUpon>VistaPrincipalHotel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Vista\VistaSpa.xaml.cs">
+      <DependentUpon>VistaSpa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SlideMenu\Show.xaml.cs">
+      <DependentUpon>Show.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SlideMenu\Promociones.xaml.cs">
+      <DependentUpon>Promociones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SlideMenu\Favoritos.xaml.cs">
+      <DependentUpon>Favoritos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SlideMenu\MasInformacion.xaml.cs">
+      <DependentUpon>MasInformacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SlideMenu\TerminosCondiciones.xaml.cs">
+      <DependentUpon>TerminosCondiciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\Perfil.xaml.cs">
+      <DependentUpon>Perfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GoogleUser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Contracts\IGoogleManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Converters\InvertBooleanConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\Registro.xaml.cs">
+      <DependentUpon>Registro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MasterViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ApiService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Response.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TokenResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegistroViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\RegistroUsuario.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\InicioViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\EventosResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Clases\ValidaEmailMethod.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ShowsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PerfilViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DetaillItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EventosItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\InfoPage.xaml.cs">
+      <DependentUpon>InfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CasinoViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GuardadoGenerico.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FavoritosViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\FavoritosResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FavoritoItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PozosResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DestacadosResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HotelViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\HabitacionesResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SalaPoker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GanadoresResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PromocionesWinResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TarjetasResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\TLScrollView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SalasEventosResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MoaSpaResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PromocionesResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\RecompensasWinResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\RestaurantResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DetalleHotelViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GastronomiaViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HotelItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SalasEventosResultadoViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GastronomiaItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PromocionesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RecompesasWinViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SalaPokerItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Clases\VariablesGlobales.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PopUp\LoadingPopupPage.xaml.cs">
+      <DependentUpon>LoadingPopupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PopUp\WebViewHotel.xaml.cs">
+      <DependentUpon>WebViewHotel.xaml</DependentUpon>
+    </Compile>
+
+    <Compile Include="$(MSBuildThisFileDirectory)Page\DetalleShow.xaml.cs">
+      <DependentUpon>DetalleShow.xaml</DependentUpon>
+    </Compile>
+
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DetalleShowViewModel.cs" />
+
+    <Compile Include="$(MSBuildThisFileDirectory)Page\DetalleHotel.xaml.cs">
+      <DependentUpon>DetalleHotel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\DetalleRestaurante.xaml.cs">
+      <DependentUpon>DetalleRestaurante.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DetalleRestauranteViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\RestauranteMenuResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\DetallePromocion.xaml.cs">
+      <DependentUpon>DetallePromocion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DetallepromocionesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PromocionesItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TorneoResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\Torneos.xaml.cs">
+      <DependentUpon>Torneos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\DetalleTorneo.cs">
+      <DependentUpon>DetalleTorneo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TorneoViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TorneoDetalleViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TorneoItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\RecompensasWin.xaml.cs">
+      <DependentUpon>RecompensasWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\DetalleDestacados.xaml.cs">
+      <DependentUpon>DetalleDestacados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DetalleDestacadosViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DestacadosItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Clases\Mensajes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\TerminosCondiciones.xaml.cs">
+      <DependentUpon>TerminosCondiciones.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Page\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Page\SlideMenu\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
+    <Folder Include="$(MSBuildThisFileDirectory)PopUp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Vista\VistaPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Vista\VistaPerfilConfiguracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Vista\VistaPerfilNotificaciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+
+    <None Include="$(MSBuildThisFileDirectory)PopUp\LoadingPopupPage.xaml" />
+    <None Include="$(MSBuildThisFileDirectory)PopUp\WebViewHotel.xaml" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"             
+             x:Class="City_Center.Page.InfoPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Icon="Chat"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Name="TabTopLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+        <StackLayout>
+            <StackLayout HorizontalOptions="Start" Padding="30,20">
+                <Label Text="MÁS INFORMACIÓN" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
+                </Label>
+            </StackLayout>
+            <Grid BackgroundColor="#250c4b" Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                   
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                <Label x:Name="LabelTab1" Text="INSTITUCIONAL" Style="{DynamicResource TabTopLabel}" Grid.Column="0"  FontAttributes="Bold">
+                </Label>
+                <Label x:Name="LabelTab2" Text="CÓMO LLEGAR" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                </Label>
+               
+
+                <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
+                </BoxView>
+                <BoxView x:Name="BV2" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="1" VerticalOptions="End">
+                </BoxView>
+               
+
+                <ContentView x:Name="CV1" BackgroundColor="Transparent" Grid.Column="0" >
+                    <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tab1_Tapped"></TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+                <ContentView  x:Name="CV2" BackgroundColor="Transparent" Grid.Column="1">
+                    <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tab2_Tapped"></TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+               
+            </Grid>
+            <StackLayout x:Name="SL1" IsVisible="true">
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="8">
+                     <ffimageloading:CachedImage HeightRequest="240" Aspect="AspectFill" Source="institucional" />
+                     <Label TextColor="Black"
+                     Text="City Center Rosario es el centro de entretenimiento mas grande de Latinoamerica,pensado y diseñado para brindar todo lo que se desea en un solo lugar.Integrado por areas que combinan diversion, placer y negocios para todas las edades con los mas altos estandares de servicio y calidad"></Label>
+                </StackLayout>
+             
+            </StackLayout>
+            <StackLayout x:Name="SL2" Padding="10, 10" IsVisible="false">
+              <StackLayout HorizontalOptions="Center" Margin="8">
+                     <maps:Map x:Name="MyMap" MapType="Street" HeightRequest="240"/>
+                     <Label TextColor="#474747"
+                     Text="City Center se encuentra ubicado en Bv. Oroño y Av. Circunvalcion en la ciudad de Rossario (Santa Fe, Argentina). Su acceso se ubica justo sobre el ingreso sur de la ciudad llegando por Autopista desde Buenos Aires."></Label>
+                    <Label TextColor="#6C6C6C" Text="DISTANCIA DESDE LAS CIUDADES DE REFERENCIA:" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    Buenos Aires (por autopista): 306 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    Córdoba (por Ruta 9): 401 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    Corrientes: 719 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    La Plata: 401 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    Mar del Plata: 717 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    Mendoza: 855 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    Paraná: 190 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    Resistencia: 721 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    Río Tercero: 354 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    San Luis: 600 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    Santa Fe (por Autopista): 170 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    Santiago del Estero: 830 Km" HorizontalTextAlignment="Start"/>
+                    <Label TextColor="#6C6C6C" Text=" •    Victoria: 70 Km" HorizontalTextAlignment="Start"/>
+                </StackLayout>
+            </StackLayout>
+          
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

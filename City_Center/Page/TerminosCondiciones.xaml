@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="City_Center.Page.TerminosCondiciones">
+   <ContentPage.Content>
+        <ScrollView>
+           <StackLayout>
+            <Label FontSize="Micro" Text="TÉRMINOS Y CONDICIONES DE USO
+
+A continuación se detallan los Términos y Condiciones que regulan el uso que realicen las
+personas físicas mayores de edad ó jurídicas (mediante apoderado con poder suficiente) que
+ingresen al sitio de CASINO DE ROSARIO S.A. (CUIT 30-70979529- 1) “citycenter-rosario.com.ar”
+ó descarguen su “APP”. El ingreso del Usuario al sitio referido ó la descarga de la aplicación
+implican la aceptación por parte de los mismos de los Términos y Condiciones de Uso.-
+1.- Los contenidos, servicios y productos a los que refieren los presentes Términos son
+aquellos a los que se encuentran incluidos en el sitio ó App referidos, excluyéndose los que el
+Usuario pueda acceder mediante enlace, lo que se regirán por sus propios término.-
+2.- ADQUISICIÓN DE PRODUCTOS Ó SERVICIOS: CASINO DE ROSARIO S.A. informará a los
+Usuarios el precio y modalidad de contratación de cada producto ó servicio. Se reserva el
+derecho de modificar unilateralmente las tarifas ó términos de contratación. El Usuario deberá
+abonar el precio a través del medio de pago que elija entre las opciones existentes, no
+asumiendo CASINO DE ROSARIO S.A. ninguna responsabilidad por un eventual reclamo que el
+Usuario pueda presentar con motivo del medio de pago elegido. En caso de que CASINO DE
+ROSARIO S.A. no hubiere recibido el pago de la empresa prestadora elegida por el usuario, éste
+le reconoce el derecho a no brindar los servicios en cuestión, incluso en caso de haber
+realizado el pago a través de otra empresa.-
+3.- REGISTRO: En cualquier momento el Usuario podrá cancelar la registración debiendo
+solicitarlo a _________. Los importes que hubiere abonado como contraprestación para el
+acceso a contenidos ó servicios del sitio en ningún caso serán reembolsados.-
+4.- CARACTERÍSTICAS DE USO: La clave de acceso al sitio ó APP de cada Usuario es personal e
+intransferible. Los contenidos del sitio ó APP se encuentran protegidos por la legislación
+vigente en materia de propiedad intelectual. En consecuencia, su publicación, emisión,
+retransmisión, etc. se encuentran expresamente prohibidos, debiendo responder los Usuarios
+por los daños y perjuicios que su incumplimiento ocasione a CASINO DE ROSARIO S.A.
+CASINO DE ROSARIO S.A. se reserva el derecho de restringir ó prohibir el acceso al sitio ó APP
+si a su criterio el Usuario lo utiliza para violar laguna ley ó derechos de terceros ó en caso de
+incumplimiento de los presentes Términos y Condiciones de Uso.-
+5.- RESPONSABILIDADES:
+
+5.1. Del Usuario: El Usuario es responsable de todos los datos y manifestaciones que incluya en
+los formularios que envíe a CASINO DE ROSARIO S.A., así como del contenido de cualquier otra
+comunicación emitida. Responderá asimismo por la veracidad de los datos suministrados,
+reconociendo el derecho de CASINO DE ROSARIO S.A. de excluirlo en caso de detectarse la
+falsedad de la información.-
+El Usuario acepta y se compromete a respetar los presentes Términos y Condiciones de Uso.
+Asimismo, se obliga a abonar todo servicio y/o producto que haya adquirido y acepta que en
+caso de que los datos que haya suministrado no permita la facturación y/o cobro por parte de
+CASINO DE ROSARIO S.A., el producto adquirido no le fuera suministrado ó fuera cancelado.-
+Pueden registrarse como Usuarios las personas físicas mayores de edad en su propio nombre y
+derecho ó de personas jurídicas siempre que sean apoderadas con facultades suficientes.-
+5.2. De CASINO DE ROSARIO S.A.: CASINO DE ROSARIO S.A. informará a los Usuarios tanto en
+su sitio como en la APP las características de los productos, contenidos ó servicios que ofrece y
+las condiciones de contratación.-
+CASINO DE ROSARIO S.A. no será responsable por fallas técnicas de conexión que puedan
+ocasionar daños de cualquier tipo a los Usuarios.-
+6. CASINO DE ROSARIO S.A. se reserva el derecho a retirar de forma inmediata el acceso al
+servicio y a los contenidos pagos contratados a aquellos Usuarios que a su criterio
+contravengan lo dispuesto en los presentes términos, sin posibilidad de reembolso en caso de
+haberse efectuado el pago. A modo ejemplificativo, CASINO DE ROSARIO S.A. podrá cancelar la
+contratación en los siguientes casos:
+a.- Cuando el acceso se utilice con fines ilegítimos.
+b.- Cuando los datos personales y/o de cobro proporcionados por el Usuario en la contratación
+sean falsos o erróneos o imposibiliten la facturación y/o cobro del servicio contratado.
+c.- En caso de inutilización prolongada y continua o inadecuada de cualquiera de los
+contenidos o servicios que hubieran sido contratados, indicando en este caso al Usuario,
+claramente los términos en los que aplicará dicha cancelación.
+d.- En caso de usos fraudulentos del producto y/o servicio y/o contenido o contrarios a la
+buena fe.
+
+7. PROTECCIÓN DE DATOS PERSONALES: La información que los Usuarios proporcionen
+voluntariamente a través del sitio ó APP se incluirán en una base datos que quedará bajo la
+responsabilidad de la empresa, con el fin de suministrar un mejor servicio e información,
+optimizando así la comunicación con el Usuario, quién presta conformidad para que sus datos
+sean utilizados para la realización de estadísticas y autoriza a CASINO DE ROSARIO S.A. a
+comunicarle promociones mediante diferentes medios (correo electrónico, telefónicamente,
+SMS, etc.). La aceptación de presentes Términos autoriza a CASINO DE ROSARIO S.A. a usar y
+realizar el tratamiento de sus datos personales en un todo de acuerdo con las disposiciones de
+la Ley 25.326 sobre Protección de Datos Personales.
+Los datos suministrados por el Usuario en su registración son, entre otros, nombre, apellido,
+fecha de nacimiento, dirección, número de teléfono, correo electrónico, sexo, edad. Sin
+perjuicio de lo expuesto y en el entendimiento de que CASINO DE ROSARIO S.A. tiene el deber
+legal de verificar que efectivamente el Usuario sea mayor de edad y que éste no se encuentre
+en bases de datos oficiales relacionadas con el lavado de dinero o financiamiento del
+terrorismo, el Usuario autoriza expresamente a CASINO DE ROSARIO S.A. a verificar los datos
+personales informados. El Usuario podrá modificar o actualizar la información en cualquier
+momento.
+Se informa a los Usuarios que de conformidad a lo establecido por el art. 14, inciso 3 de la Ley
+25.326, tienen derecho a acceder a sus datos personales en forma gratuita a intervalos no
+inferiores a seis (6) meses, salvo que acredite interés legítimo al efecto, así como solicitar que
+sus datos sean rectificados, actualizados ó removidos de las bases de datos de CASINO DE
+ROSARIO S.A., debiendo solicitarlo a ____________ . Asimismo, se les hace saber que la
+Dirección Nacional de Protección de Datos Personales, órgano de control de la Ley 25.326,
+tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al
+incumplimiento de las normas sobre protección de datos personales.-
+8. INDEMNIDAD: Los Usuarios se comprometen a indemnizar y mantener indemne a CASINO
+DE ROSARIO S.A. por cualquier reclamo ó demanda judicial de otros Usuarios ó terceros
+originadas en sus actividades en el sitio.-
+9. Modificación: CASINO DE ROSARIO S.A. se reserva el derecho de modificar unilateralmente y
+sin previo aviso los presentes Términos y Condiciones, así como el diseño presentación ó
+configuración del sitio o de la APP sin que ello genera derecho a reclamo alguno por parte de
+los Usuarios.-"
+                >
+                
+            </Label>
+        </StackLayout> 
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

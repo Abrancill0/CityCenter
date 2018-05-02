@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="City_Center.Page.DetalleDestacados">
+ <ContentPage.ToolbarItems>
+        <ToolbarItem  Icon="Chat"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+         <StackLayout Spacing="0"
+                      BackgroundColor="White"
+                      BindingContext="{Binding DestacadosDetalle}">
+            <StackLayout>
+                <ffimageloading:CachedImage HeightRequest="200" 
+                                            Aspect="AspectFill"
+                                            LoadingPlaceholder="image_loading.png"
+                                            ErrorPlaceholder="image_error.png"
+                                            Source="{Binding dd.des_imagen}" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="End"  Orientation="Horizontal">
+                  <ffimageloading:CachedImage  Aspect="AspectFit"
+                                               HeightRequest="20"
+                                               WidthRequest="20"
+                                               LoadingPlaceholder="image_loading.png"
+                                               ErrorPlaceholder="image_error.png"
+                                            Source="Favorito" >
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                       <TapGestureRecognizer   />
+                       <!-- Command="{Binding GuardaFavoritoCommand}"-->
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>
+
+                 <ffimageloading:CachedImage 
+                                            HeightRequest="20"
+                                            WidthRequest="20"
+                                            Aspect="AspectFit"
+                                            LoadingPlaceholder="image_loading.png"
+                                            ErrorPlaceholder="image_error.png"
+                                            Source="Compartir">
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                       <TapGestureRecognizer Command="{Binding CompartirCommand}"  />
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>
+                
+            </StackLayout>
+
+            
+            <StackLayout Margin="5">
+                 <StackLayout Orientation="Vertical" Margin="5">
+                    <Label Text="{Binding dd.des_nombre}" TextColor="#3F51B5" ></Label>
+                    <Label Text="{Binding dd.des_fecha_hora_inicio}" ></Label>
+                </StackLayout>
+                
+                <Label Text="{Binding dd.des_descripcion}"></Label>
+
+                <StackLayout Orientation="Vertical" Margin="5">
+                     <Button Text="COMPRA ONLLINE" TextColor="White" BackgroundColor="#3F51B5"></Button>
+                <Button Text="COMPRA TELÉFONICA" TextColor="White" BackgroundColor="#3F51B5"></Button>
+                </StackLayout>
+            </StackLayout>
+               
+               
+
+                <!--</Grid>-->
+
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
