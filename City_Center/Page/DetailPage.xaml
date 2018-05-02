@@ -8,7 +8,7 @@
              BackgroundColor="Transparent">
         <ContentPage.Content>
           <StackLayout BindingContext="{Binding Detail}" Margin="0,0,0,0" 
-                       BackgroundColor="#250c4b">
+                       BackgroundColor="#260C4B">
                     <ListView x:Name="listviewMenu"
                               ItemsSource="{Binding ListaOpciones}"
                               ItemSelected="Handle_ItemSelected"
@@ -34,14 +34,14 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-            <StackLayout Padding = "10,0"
-                         VerticalOptions="EndAndExpand">
-                <Image  Source = "tarjeta.png" 
+            <StackLayout
+                        VerticalOptions="EndAndExpand">
+                <Image Margin="10, 0"  Source = "tarjeta.png" 
                         HeightRequest = "200"
                         WidthRequest = "200"
                         IsVisible="{Binding PerfilVisible}">
                 </Image>
-                <Grid ColumnSpacing = "5" IsVisible="{Binding PerfilVisible}" >
+                <Grid ColumnSpacing = "1" BackgroundColor="#1B0938" IsVisible="{Binding PerfilVisible}" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
@@ -60,8 +60,8 @@
                             ></Image>
                         <Image x:Name="Image1" 
                             Source="user.png" 
-                            HeightRequest="40" 
-                            WidthRequest="40" 
+                            HeightRequest="20" 
+                            WidthRequest="20" 
                             AbsoluteLayout.LayoutFlags="PositionProportional"
                             AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
                             </Image>
@@ -69,7 +69,7 @@
                     </AbsoluteLayout>
                     <Label Text="{Binding NombreUsuario}"
                            TextColor="White"
-                           Grid.Row="0" Grid.Column = "1" VerticalOptions = "Center">
+                           Grid.Row="0" Grid.Column = "1" VerticalOptions = "Center" FontSize="10">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding PerfilCommand}"/>
                         </Label.GestureRecognizers>
@@ -82,19 +82,20 @@
                     </Image>
                     <Button Command="{Binding CierraSesionCommand}"
                             Text="Cerrar sesión"
-                             TextColor="White"
+                            Image="logout.png"
+                            TextColor="White"
                             VerticalOptions = "Center"
-                            BackgroundColor="#250c4b"
-                            ContentLayout = "Left,0"
+                            BackgroundColor="#1B0938"
+                            ContentLayout = "Right,0"
                             Grid.Row="0" Grid.Column = "3"
-                            FontSize = "12"
-                            FontFamily="Oswald-Bold"
-                            ></Button>
+                            FontSize = "10"
+                            FontFamily="Oswald-Bold">
+                    </Button>
                </Grid>
             </StackLayout>
 
 
-             <StackLayout Padding = "10,10,10,10" Orientation="Horizontal"
+             <StackLayout Padding = "0,0,10,10" BackgroundColor="#1B0938" Orientation="Horizontal"
                          VerticalOptions="EndAndExpand" IsVisible="{Binding OpcionesVisible}">
                  <Label Text="REGISTRARME"
                         FontSize="Small"
