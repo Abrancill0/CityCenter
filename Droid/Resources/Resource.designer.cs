@@ -776,13 +776,7 @@ namespace City_Center.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_textfield_search_material = global::City_Center.Droid.Resource.Drawable.abc_textfield_search_material;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_vector_test = global::City_Center.Droid.Resource.Drawable.abc_vector_test;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password = global::City_Center.Droid.Resource.Drawable.avd_hide_password;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_1 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_1;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_2 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_2;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_3 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_3;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password = global::City_Center.Droid.Resource.Drawable.avd_show_password;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_1 = global::City_Center.Droid.Resource.Drawable.avd_show_password_1;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_2 = global::City_Center.Droid.Resource.Drawable.avd_show_password_2;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_3 = global::City_Center.Droid.Resource.Drawable.avd_show_password_3;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_bottom_navigation_item_background = global::City_Center.Droid.Resource.Drawable.design_bottom_navigation_item_background;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_fab_background = global::City_Center.Droid.Resource.Drawable.design_fab_background;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_ic_visibility = global::City_Center.Droid.Resource.Drawable.design_ic_visibility;
@@ -5102,26 +5096,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f020057
 			public const int avd_hide_password = 2130837591;
 			
-			// aapt resource value: 0x7f0201be
-			public const int avd_hide_password_1 = 2130837950;
-			
-			// aapt resource value: 0x7f0201bf
-			public const int avd_hide_password_2 = 2130837951;
-			
-			// aapt resource value: 0x7f0201c0
-			public const int avd_hide_password_3 = 2130837952;
-			
 			// aapt resource value: 0x7f020058
 			public const int avd_show_password = 2130837592;
-			
-			// aapt resource value: 0x7f0201c1
-			public const int avd_show_password_1 = 2130837953;
-			
-			// aapt resource value: 0x7f0201c2
-			public const int avd_show_password_2 = 2130837954;
-			
-			// aapt resource value: 0x7f0201c3
-			public const int avd_show_password_3 = 2130837955;
 			
 			// aapt resource value: 0x7f020059
 			public const int B = 2130837593;
@@ -6095,11 +6071,11 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f02019c
 			public const int notification_icon_background = 2130837916;
 			
-			// aapt resource value: 0x7f0201bc
-			public const int notification_template_icon_bg = 2130837948;
-			
 			// aapt resource value: 0x7f0201bd
-			public const int notification_template_icon_low_bg = 2130837949;
+			public const int notification_template_icon_bg = 2130837949;
+			
+			// aapt resource value: 0x7f0201be
+			public const int notification_template_icon_low_bg = 2130837950;
 			
 			// aapt resource value: 0x7f02019d
 			public const int notification_tile_bg = 2130837917;
@@ -6138,61 +6114,64 @@ namespace City_Center.Droid
 			public const int roundedbgdark = 2130837928;
 			
 			// aapt resource value: 0x7f0201a9
-			public const int showPass = 2130837929;
+			public const int rowdown = 2130837929;
 			
 			// aapt resource value: 0x7f0201aa
-			public const int SistemaCerrado = 2130837930;
+			public const int showPass = 2130837930;
 			
 			// aapt resource value: 0x7f0201ab
-			public const int SPAmin = 2130837931;
+			public const int SistemaCerrado = 2130837931;
 			
 			// aapt resource value: 0x7f0201ac
-			public const int splashfinal = 2130837932;
+			public const int SPAmin = 2130837932;
 			
 			// aapt resource value: 0x7f0201ad
-			public const int splashscreen = 2130837933;
+			public const int splashfinal = 2130837933;
 			
 			// aapt resource value: 0x7f0201ae
-			public const int success = 2130837934;
+			public const int splashscreen = 2130837934;
 			
 			// aapt resource value: 0x7f0201af
-			public const int tarjeta = 2130837935;
+			public const int success = 2130837935;
 			
 			// aapt resource value: 0x7f0201b0
-			public const int TicketsShows = 2130837936;
+			public const int tarjeta = 2130837936;
 			
 			// aapt resource value: 0x7f0201b1
-			public const int Tienda = 2130837937;
+			public const int TicketsShows = 2130837937;
 			
 			// aapt resource value: 0x7f0201b2
-			public const int tooltip_frame_dark = 2130837938;
+			public const int Tienda = 2130837938;
 			
 			// aapt resource value: 0x7f0201b3
-			public const int tooltip_frame_light = 2130837939;
+			public const int tooltip_frame_dark = 2130837939;
 			
 			// aapt resource value: 0x7f0201b4
-			public const int Up = 2130837940;
+			public const int tooltip_frame_light = 2130837940;
 			
 			// aapt resource value: 0x7f0201b5
-			public const int user = 2130837941;
+			public const int Up = 2130837941;
 			
 			// aapt resource value: 0x7f0201b6
-			public const int ValetParking = 2130837942;
+			public const int user = 2130837942;
 			
 			// aapt resource value: 0x7f0201b7
-			public const int VariedadGastronomica = 2130837943;
+			public const int ValetParking = 2130837943;
 			
 			// aapt resource value: 0x7f0201b8
-			public const int VideoConferencia = 2130837944;
+			public const int VariedadGastronomica = 2130837944;
 			
 			// aapt resource value: 0x7f0201b9
-			public const int warning = 2130837945;
+			public const int VideoConferencia = 2130837945;
 			
 			// aapt resource value: 0x7f0201ba
-			public const int Wifi = 2130837946;
+			public const int warning = 2130837946;
 			
 			// aapt resource value: 0x7f0201bb
-			public const int WifiLibre = 2130837947;
+			public const int Wifi = 2130837947;
+			
+			// aapt resource value: 0x7f0201bc
+			public const int WifiLibre = 2130837948;
 			
 			static Drawable()
 			{
