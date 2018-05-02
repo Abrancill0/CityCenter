@@ -366,10 +366,7 @@
     <BundleResource Include="Resources\rowdown.png" />
     <BundleResource Include="Resources\ArrowDown.png" />
     <BundleResource Include="Resources\ArrowUp.png" />
-<<<<<<< HEAD
-=======
     <BundleResource Include="Resources\logout.png" />
->>>>>>> f7c0a3275c0ad4d7ad73347a281313a825b9cbf7
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />
