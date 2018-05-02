@@ -126,6 +126,7 @@ namespace City_Center.ViewModels
                 eve_nombre = l.eve_nombre,
                 eve_fecha_hora_inicio = l.eve_fecha_hora_inicio,
                 eve_link = l.eve_link,
+                eve_id_locacion = l.eve_id_locacion,
                 loc_nombre =l.loc_nombre,
                 eve_id = l.eve_id
             });

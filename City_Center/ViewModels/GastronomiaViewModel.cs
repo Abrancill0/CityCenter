@@ -177,7 +177,7 @@ namespace City_Center.ViewModels
 
             this.listPromociones = (PromocionesReturn)response.Result;
 
-            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "gas"));
 
         }
 
