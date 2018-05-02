@@ -20,7 +20,7 @@
 
             <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="15">
                   <ffimageloading:CachedImage  Aspect="AspectFit"
-                                               BackgroundColor="Gray"
+                                               
                                                HeightRequest="30"
                                                WidthRequest="30"
                                                LoadingPlaceholder="image_loading.png"
@@ -49,7 +49,7 @@
             <StackLayout Margin="5">
                  <StackLayout Orientation="Vertical" Margin="5">
                     <Label Text="{Binding ds.eve_nombre}" TextColor="#250C4B" FontFamily="Oswald-Regular" FontSize="Medium" ></Label>
-                    <Label Text="{Binding ds.eve_fecha_hora_inicio, StringFormat='{r}'}" FontSize="Small" ></Label>
+                    <Label Text="{Binding ds.eve_fecha_hora_inicio, StringFormat='{f}'}" FontSize="Small" ></Label>
                 </StackLayout>
                 
                 <Label Text="{Binding ds.eve_descripcion}" FontSize="Small" Margin="5"></Label>

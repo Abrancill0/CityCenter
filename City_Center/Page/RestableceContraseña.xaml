@@ -1,5 +1,24 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="City_Center.Page.RestableceContraseña">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             x:Class="City_Center.Page.RestableceContraseña">
     <ContentPage.Content>
+        <StackLayout>
+            <Label Text="ÍNGRESA" TextColor="#250c4b" FontFamily="Oswald-Regular" FontSize="24" HorizontalTextAlignment="Center" ></Label>
+            <Label Text="Si ya tenés una cuenta, Ingresá para obtener todos los beneficios" HorizontalTextAlignment="Center" TextColor="Silver" FontSize="Small"></Label>
+            <xfx:XfxEntry x:Name="TextCorreo"
+                   Placeholder="Correo electronico"
+                   Style="{DynamicResource EntryStyle}"
+                   Text="{Binding Email, Mode=TwoWay}">
+                 <Entry.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                           <On Platform="iOS">60</On>
+                            <On Platform="Android,Windows">50</On>
+                        </OnPlatform>
+                    </Entry.HeightRequest>
+                </xfx:XfxEntry>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

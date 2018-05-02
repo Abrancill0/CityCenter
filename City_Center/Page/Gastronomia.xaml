@@ -20,7 +20,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Gastronomia}">
-            <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Casino}">
+            <StackLayout Spacing="0" BackgroundColor="#EFEFEF">
             <StackLayout>
                 <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="GASTRONOMIAmin" />
             </StackLayout>

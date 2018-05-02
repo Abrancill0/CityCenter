@@ -12,20 +12,22 @@
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding Detallepromociones}">
             <StackLayout>
-                <StackLayout Orientation="Vertical" x:Name="SLP" Margin="20,15,20,15">
-                    <ffimageloading:CachedImage
-                    HeightRequest="180"
-                    Aspect="AspectFill"
-                    LoadingPlaceholder="image_loading.png"
-                    ErrorPlaceholder="image_error.png"
-                    Source="{Binding pd.pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" />
-                    
-                     <Grid HorizontalOptions="FillAndExpand" >
+                <StackLayout Margin="20,0,20,0" x:Name="SLP"
+                             Orientation="Vertical" >
+                    <StackLayout Margin="0,15,0,10">
+                      <ffimageloading:CachedImage
+                            HeightRequest="180"
+                            Aspect="AspectFill"
+                            LoadingPlaceholder="image_loading.png"
+                            ErrorPlaceholder="image_error.png"
+
+                            Source="{Binding pd.pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" />
+                    </StackLayout>
+                   
+                    <Grid HorizontalOptions="FillAndExpand" >
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2*">
-                                        </ColumnDefinition>
-                                        <ColumnDefinition Width="1*">
-                                        </ColumnDefinition>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="1*"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
@@ -34,6 +36,10 @@
                            HorizontalTextAlignment="Start"
                            Grid.Row ="0"
                            Grid.Column ="0"
+                           Margin="10,0,0,0"
+                           FontFamily="Oswald-regular"
+                           TextColor="Silver"
+                           FontAttributes="Bold"
                            Text="{Binding pd.pro_nombre}" />
                       <ffimageloading:CachedImage 
                                             HeightRequest="30"
@@ -42,6 +48,7 @@
                                             LoadingPlaceholder="image_loading.png"
                                             ErrorPlaceholder="image_error.png"
                                             Source="Compartir"
+                                            HorizontalOptions="End"
                                             Grid.Row ="0"
                                             Grid.Column ="1">
                     <ffimageloading:CachedImage.GestureRecognizers>
@@ -60,9 +67,9 @@
                         BackgroundColor="#250C4B"
                         Clicked="Handle_Clicked">
                 </Button>
-                <StackLayout x:Name="SLR" IsVisible="false">
+                <StackLayout x:Name="SLR" IsVisible="false" Margin="10">
                     <Label Text="PROMOCIONES"
-                           TextColor="#3F51B5"
+                           TextColor="#250C4B"
                            FontSize="Medium"
                            HorizontalOptions="Center"
                            HorizontalTextAlignment="Center">
