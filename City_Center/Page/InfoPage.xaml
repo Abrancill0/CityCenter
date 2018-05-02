@@ -62,7 +62,7 @@
                
             </Grid>
             <StackLayout x:Name="SL1" IsVisible="true">
-                <StackLayout HorizontalOptions="CenterAndExpand" Margin="8">
+                <StackLayout Margin="8">
                      <ffimageloading:CachedImage HeightRequest="240" Aspect="AspectFill" Source="svip2" />
                      <Label TextColor="Black" HorizontalOptions="Start"
                      Text="City Center Rosario es el centro de entretenimiento mas grande de Latinoamerica,pensado y diseñado para brindar todo lo que se desea en un solo lugar.Integrado por areas que combinan diversion, placer y negocios para todas las edades con los mas altos estandares de servicio y calidad"></Label>
@@ -70,9 +70,9 @@
              
             </StackLayout>
             <StackLayout x:Name="SL2" Padding="10, 10" IsVisible="false">
-              <StackLayout HorizontalOptions="Center" Margin="8">
+              <StackLayout Margin="8">
                      <maps:Map x:Name="MyMap" MapType="Street" HeightRequest="240"/>
-                     <Label TextColor="#474747"
+                     <Label TextColor="#474747" HorizontalOptions="Start"
                      Text="City Center se encuentra ubicado en Bv. Oroño y Av. Circunvalcion en la ciudad de Rossario (Santa Fe, Argentina). Su acceso se ubica justo sobre el ingreso sur de la ciudad llegando por Autopista desde Buenos Aires."></Label>
                     <Label TextColor="#6C6C6C" Text="DISTANCIA DESDE LAS CIUDADES DE REFERENCIA:" HorizontalOptions="Start"/>
                     <Label TextColor="#6C6C6C" Text=" •    Buenos Aires (por autopista): 306 Km" HorizontalOptions="Start"/>

@@ -34,14 +34,15 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-            <StackLayout Padding = "10,0"
+            <StackLayout
                          VerticalOptions="EndAndExpand">
-                <Image  Source = "tarjeta.png" 
+                <Image  Margin="20, 0"
+                    Source = "tarjeta.png" 
                         HeightRequest = "200"
                         WidthRequest = "200"
                         IsVisible="{Binding PerfilVisible}">
                 </Image>
-                <Grid ColumnSpacing = "5" IsVisible="{Binding PerfilVisible}" >
+                <Grid ColumnSpacing = "5" BackgroundColor="#1B0938" IsVisible="{Binding PerfilVisible}" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
@@ -82,10 +83,11 @@
                     </Image>
                     <Button Command="{Binding CierraSesionCommand}"
                             Text="Cerrar sesión"
+                            Image="logout"
                              TextColor="White"
                             VerticalOptions = "Center"
-                            BackgroundColor="#250c4b"
-                            ContentLayout = "Left,0"
+                            BackgroundColor="#1B0938"
+                            ContentLayout = "Right,0"
                             Grid.Row="0" Grid.Column = "3"
                             FontSize = "12"
                             FontFamily="Oswald-Bold"
@@ -94,7 +96,7 @@
             </StackLayout>
 
 
-             <StackLayout Padding = "10,10,10,10" Orientation="Horizontal"
+             <StackLayout Padding = "0,10,10,10" BackgroundColor="#1B0938" Orientation="Horizontal"
                          VerticalOptions="EndAndExpand" IsVisible="{Binding OpcionesVisible}">
                  <Label Text="REGISTRARME"
                         FontSize="Small"
