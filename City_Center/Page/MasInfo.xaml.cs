@@ -15,9 +15,9 @@ namespace City_Center.Page
 
         void Tab1_Tapped(object sender, System.EventArgs e)
         {
-            LabelTab1.FontAttributes = FontAttributes.Bold;
-            LabelTab2.FontAttributes = FontAttributes.None;
-            LabelTab3.FontAttributes = FontAttributes.None;
+            LabelTab1.TextColor = Color.FromHex("#E7E9F6");
+            LabelTab2.TextColor = Color.FromHex("#8E99D3");
+            LabelTab3.TextColor = Color.FromHex("#8E99D3");
 
             BV1.IsVisible = true;
             BV2.IsVisible = false;
@@ -30,9 +30,9 @@ namespace City_Center.Page
 
         void Tab2_Tapped(object sender, System.EventArgs e)
         {
-            LabelTab1.FontAttributes = FontAttributes.None;
-            LabelTab2.FontAttributes = FontAttributes.Bold;
-            LabelTab3.FontAttributes = FontAttributes.None;
+            LabelTab1.TextColor = Color.FromHex("#8E99D3");
+            LabelTab2.TextColor = Color.FromHex("#E7E9F6");
+            LabelTab3.TextColor = Color.FromHex("#8E99D3");
 
             BV1.IsVisible = false;
             BV2.IsVisible = true;
@@ -45,9 +45,9 @@ namespace City_Center.Page
 
         void Tab3_Tapped(object sender, System.EventArgs e)
         {
-            LabelTab1.FontAttributes = FontAttributes.None;
-            LabelTab2.FontAttributes = FontAttributes.None;
-            LabelTab3.FontAttributes = FontAttributes.Bold;
+            LabelTab1.TextColor = Color.FromHex("#8E99D3");
+            LabelTab2.TextColor = Color.FromHex("#8E99D3");
+            LabelTab3.TextColor = Color.FromHex("#E7E9F6");
 
             BV1.IsVisible = false;
             BV2.IsVisible = false;

@@ -344,6 +344,9 @@
     <None Include="packages.config" />
     <None Include="Resources\Menu.png" />
     <None Include="Resources\Reservar.png" />
+    <None Include="Resources\CASINOmin.png" />
+    <None Include="Resources\CONVENCIONESmin.png" />
+    <None Include="Resources\GASTRONOMIAmin.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -361,10 +364,7 @@
     <AndroidResource Include="Resources\xml\file_paths.xml" />
     <AndroidResource Include="Resources\drawable\Favorito.png" />
     <AndroidResource Include="Resources\drawable\Info.png" />
-    <AndroidResource Include="Resources\drawable\CASINOmin.jpg" />
-    <AndroidResource Include="Resources\drawable\CONVENCIONESmin.jpg" />
     <AndroidResource Include="Resources\drawable\HOMEmin.jpg" />
-    <AndroidResource Include="Resources\drawable\HOTELmin.jpg" />
     <AndroidResource Include="Resources\drawable\SPAmin.jpg" />
     <AndroidResource Include="Resources\drawable\Hab_1.jpg" />
     <AndroidResource Include="Resources\drawable\Hab_2.jpg" />
@@ -446,7 +446,6 @@
     <AndroidResource Include="Resources\drawable\ChekIn.png" />
     <AndroidResource Include="Resources\drawable\MenuRestaurant.png" />
     <AndroidResource Include="Resources\drawable\ReservarResaurant.png" />
-    <AndroidResource Include="Resources\drawable\GASTRONOMIAmin.jpg" />
     <AndroidResource Include="Resources\drawable-hdpi\Compartir.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Favorito.png" />
     <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
@@ -480,6 +479,10 @@
     <AndroidResource Include="Resources\drawable\info2.png" />
     <AndroidResource Include="Resources\drawable-hdpi\arrow_left_thin.png" />
     <AndroidResource Include="Resources\drawable-hdpi\arrow_right_thin.png" />
+    <AndroidResource Include="Resources\drawable\CASINOmin.png" />
+    <AndroidResource Include="Resources\drawable\HOTELmin.png" />
+    <AndroidResource Include="Resources\drawable\GASTRONOMIAmin.png" />
+    <AndroidResource Include="Resources\drawable\CONVENCIONESmin.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
