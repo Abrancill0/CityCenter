@@ -71,6 +71,10 @@ namespace City_Center.ViewModels
           
         }
 
+        private async void CargaOtrasHabitaciones()
+        {
+            
+        }
         #endregion
 
         #region Contructors

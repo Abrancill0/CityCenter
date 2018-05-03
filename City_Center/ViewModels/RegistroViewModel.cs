@@ -244,15 +244,6 @@ namespace City_Center.ViewModels
             }
         }
 
-       
-        public ICommand GoogleCommand
-        {
-            get
-            {
-                return new RelayCommand(GoogleLogin);
-            }
-        }
-
         private void GoogleLogin()
         {
             _googleManager = DependencyService.Get<IGoogleManager>();
