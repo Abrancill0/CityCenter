@@ -128,7 +128,7 @@ namespace City_Center.ViewModels
                     Application.Current.Properties["Ciudad"] = list.resultado.usu_ciudad;
                     Application.Current.Properties["Pass"] = this.Password;
                     Application.Current.Properties["FechaNacimiento"] = list.resultado.usu_fecha_nacimiento;
-                    Application.Current.Properties["FotoPerfil"] = "";
+                    Application.Current.Properties["FotoPerfil"] = VariablesGlobales.RutaServidor + list.resultado.usu_imagen;
 
                     await Application.Current.SavePropertiesAsync();
 
@@ -143,11 +143,17 @@ namespace City_Center.ViewModels
                     //MainViewModel.GetInstance().SalasEventos = new SalasEventosViewModel();
                     //MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
-                    App.Current.MainPage = new MasterPage();
+               
+                    MasterPage fpm = new MasterPage();
+                    fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
+                    fpm.Detail = new NavigationPage(new TabPage()); // You have to create a Detail ContenPage()
+                    Application.Current.MainPage = fpm;
+
+                    await Mensajes.success("Bienvenido " + list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos);
 
                     UserDialogs.Instance.HideLoading();
 
-                    await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+                   
                 }
                 else
                 {
