@@ -243,10 +243,7 @@ namespace City_Center.ViewModels
 
             await Application.Current.SavePropertiesAsync();
 
-            UserDialogs.Instance.HideLoading();
-
-            await Mensajes.success("Bienvenido " + this.Nombre);
-
+           
             this.Email = string.Empty;
             this.Nombre = string.Empty;
             this.Ciudad = string.Empty;
@@ -271,8 +268,6 @@ namespace City_Center.ViewModels
             await Mensajes.success("Bienvenido " + this.Nombre);
 
             UserDialogs.Instance.HideLoading();
-
-          
 
         }
 
