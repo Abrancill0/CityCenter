@@ -69,8 +69,8 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <ListView ItemsSource="{Binding EventosDetalle}"
-                      HasUnevenRows="true" HeightRequest="400">
+            <ListView ItemsSource="{Binding EventosDetalle}" RowHeight="250"
+                      HasUnevenRows="false" HeightRequest="600">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

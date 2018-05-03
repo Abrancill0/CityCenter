@@ -115,6 +115,11 @@ namespace City_Center.ViewModels
 
             EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel());
 
+            if (EventosDetalle.Count == 0)
+            {
+                await Mensajes.Info("No se encontro ningun evento");
+            }
+
         }
 
         private IEnumerable<EventosItemViewModel> ToEventosItemViewModel()

@@ -32,7 +32,7 @@
                     </ffimageloading:CachedImage.GestureRecognizers>
                     </ffimageloading:CachedImage>
 
-                 <ffimageloading:CachedImage BackgroundColor="Gray"
+                 <ffimageloading:CachedImage
                                             HeightRequest="30"
                                             WidthRequest="30"
                                             Aspect="AspectFit"
@@ -49,7 +49,7 @@
             <StackLayout Margin="5">
                  <StackLayout Orientation="Vertical" Margin="5">
                     <Label Text="{Binding ds.eve_nombre}" TextColor="#250C4B" FontFamily="Oswald-Regular" FontSize="Medium" ></Label>
-                    <Label Text="{Binding ds.eve_fecha_hora_inicio, StringFormat='{f}'}" FontSize="Small" ></Label>
+                    <Label Text="{Binding ds.eve_fecha_hora_inicio}" FontSize="Small" ></Label>
                 </StackLayout>
                 
                 <Label Text="{Binding ds.eve_descripcion}" FontSize="Small" Margin="5"></Label>

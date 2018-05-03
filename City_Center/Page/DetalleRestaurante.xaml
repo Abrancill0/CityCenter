@@ -2,110 +2,336 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              x:Class="City_Center.Page.DetalleRestaurante">
     <ContentPage.Content>
-        <ScrollView BindingContext="{Binding DetalleRestaurante}">
+        <ScrollView BindingContext="{Binding DetalleRestaurante}" BackgroundColor="White">
             <StackLayout>
-                <Label Text="{Binding rd.reb_nombre}">
+                <Label Text="{Binding rd.reb_nombre}"
+                       FontSize="Large"
+                       Margin="10"
+                       FontFamily="Oswald-Regular"
+                       TextColor="#250C4B">
                 </Label>
                 <StackLayout HorizontalOptions="FillAndExpand">
                     <ffimageloading:CachedImage x:Name="Img1provisional" HeightRequest="150" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding rd.reb_imagen_1 ,StringFormat='http://cc.comprogapp.com/{0}'}" />
                 </StackLayout>
-                <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
-                    <ListView x:Name="listaDetalleRestaurante" Rotation="270" ItemsSource="{Binding ListaOpciones}" ItemSelected="Handle_ItemSelected" RowHeight="100" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                        CachingStrategy="RecycleElement">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <ContentView Rotation="90" BackgroundColor="Transparent">
-                                        <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
-                                            <ffimageloading:CachedImage HeightRequest="100" WidthRequest="100" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding .}">
-                                            </ffimageloading:CachedImage>
-                                        </StackLayout>
-                                    </ContentView>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </RelativeLayout>
-                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                <Grid HorizontalOptions="FillAndExpand" >
+                    <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
+                        <ListView x:Name="listaDetalleRestaurante" Rotation="270" ItemsSource="{Binding ListaOpciones}" ItemSelected="Handle_ItemSelected" RowHeight="100" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                            CachingStrategy="RecycleElement">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ContentView Rotation="90" BackgroundColor="Transparent">
+                                            <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
+                                                <ffimageloading:CachedImage HeightRequest="100" WidthRequest="100" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding .}">
+                                                </ffimageloading:CachedImage>
+                                            </StackLayout>
+                                        </ContentView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </RelativeLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Grid HorizontalOptions="FillAndExpand" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*">
+                                                </ColumnDefinition>
+                                                <ColumnDefinition Width="1*">
+                                                </ColumnDefinition>
+                                                <ColumnDefinition Width="1*">
+                                                </ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="2*" />
+                                                <RowDefinition Height="0.5*" />
+                                            </Grid.RowDefinitions>
+                                             <ffimageloading:CachedImage Margin="5"
+                                                   HeightRequest="50"
+                                                   Grid.Row="0"
+                                                   Grid.Column="0"
+                                                   IsVisible="{Binding MM}"
+                                                   WidthRequest="50"
+                                                   Aspect="AspectFit"
+                                                   LoadingPlaceholder="image_loading.png"
+                                                   ErrorPlaceholder="image_error.png"
+                                                   Source="MenuRestaurant"
+                                                   HorizontalOptions="End">
+                                                <ffimageloading:CachedImage.GestureRecognizers>
+                                                    <TapGestureRecognizer  Tapped="Handle_Tapped"/>
+                                                </ffimageloading:CachedImage.GestureRecognizers>
+                                           </ffimageloading:CachedImage>
+                                            <Label Text="Menu"
+                                                   HorizontalTextAlignment="Center"
+                                                   IsVisible="{Binding MM}"
+                                                   Grid.Row="1"
+                                                   Grid.Column="0"
+                                                   FontFamily="Oswald-Regular"
+                                                   TextColor="#250C4B"
+                                                   Margin="0,0,10,0"
+                                                   HorizontalOptions="End"></Label>
+                                           <ffimageloading:CachedImage Margin="5"
+                                                   HeightRequest="50"
+                                                   Grid.Row="0" Grid.Column="1"
+                                                   WidthRequest="50"
+                                                   Aspect="AspectFit"
+                                                   LoadingPlaceholder="image_loading.png"
+                                                   ErrorPlaceholder="image_error.png"
+                                                   Source="ReservarResaurant"
+                                                  HorizontalOptions="Center">
+                                                <ffimageloading:CachedImage.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="Handle_Tapped_1"/>
+                                                </ffimageloading:CachedImage.GestureRecognizers>
+                                           </ffimageloading:CachedImage>
+                                            <Label Text="Reservar"
+                                                   HorizontalTextAlignment="Center"
+                                                   Grid.Row="1"
+                                                   Grid.Column="1"
+                                                   FontFamily="Oswald-Regular"
+                                                   TextColor="#250C4B"
+                                                   HorizontalOptions="Center"></Label>
+                                           <ffimageloading:CachedImage Margin="5"
+                                                   HeightRequest="50"
+                                                   Grid.Row="0"
+                                                   Grid.Column="2"
+                                                   WidthRequest="50"
+                                                   Aspect="AspectFit"
+                                                   LoadingPlaceholder="image_loading.png"
+                                                   ErrorPlaceholder="image_error.png"
+                                                   Source="ChekIn"
+                                                   HorizontalOptions="Start">
+                                           </ffimageloading:CachedImage>
+                                           <Label Text="Check-In"
+                                                  HorizontalTextAlignment="Center"
+                                                  Grid.Row="1"
+                                                  Grid.Column="2"
+                                                  FontFamily="Oswald-Regular"
+                                                  TextColor="#250C4B"
+                                                  HorizontalOptions="Start"></Label>
+                                            </Grid>
+                    </StackLayout>
+                    <StackLayout x:Name="SLM" BackgroundColor="#E5E5E5" IsVisible="false" HorizontalOptions="FillAndExpand">
+                        <ListView ItemsSource="{Binding RestaurantMenuDetalle}"
+                                  RowHeight="100" SeparatorVisibility="None"
+                                  BackgroundColor="#E5E5E5"
+                            CachingStrategy="RecycleElement">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ContentView>
+                                                <StackLayout HeightRequest="100" Margin="10">
+                                               <Label Text="{Binding NombreMenu}"
+                                                      FontFamily="Oswald-Regular"
+                                                      FontSize="Medium"
+                                                      TextColor="#250C4B"
+                                                      HorizontalTextAlignment="Center"
+                                                      FontAttributes="Bold"/>
+                                               <Label Text="{Binding mde_nombre}"
+                                                      TextColor="#250C4B"
+                                                      FontFamily="Oswald-Regular"
+                                                      FontSize="Default"/>
+                                                <Label Text="{Binding mde_descripcion}"
+                                                      TextColor="Silver"
+                                                      FontSize="Small"></Label>
+                                            </StackLayout> 
+                                           
+                                        </ContentView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                    <StackLayout x:Name="SLR" BackgroundColor="#E5E5E5" IsVisible="false" HorizontalOptions="FillAndExpand">
+                      <Grid HorizontalOptions="FillAndExpand" Margin="15">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*">
+                                    </ColumnDefinition>
+                                    <ColumnDefinition Width="1*">
+                                    </ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0" Grid.ColumnSpan="2"
+                                                 Orientation="Horizontal"
+                                                 BackgroundColor="#FFFFFF" 
+                                                 HorizontalOptions="FillAndExpand">
+                                    <Grid HorizontalOptions="FillAndExpand">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="1*">
-                                            </ColumnDefinition>
                                             <ColumnDefinition Width="1*">
                                             </ColumnDefinition>
                                             <ColumnDefinition Width="1*">
                                             </ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="2*" />
-                                            <RowDefinition Height="0.5*" />
+                                            <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
-
-                                         <ffimageloading:CachedImage HeightRequest="50" Grid.Row="0" Grid.Column="0"
-                                               IsVisible="{Binding MM}"
-                                               WidthRequest="50"
-                                               Aspect="AspectFit"
-                                               LoadingPlaceholder="image_loading.png"
-                                               ErrorPlaceholder="image_error.png"
-                                               Source="MenuRestaurant">
-                                            <ffimageloading:CachedImage.GestureRecognizers>
-                                                <TapGestureRecognizer  Tapped="Handle_Tapped"/>
-                                            </ffimageloading:CachedImage.GestureRecognizers>
-                                       </ffimageloading:CachedImage>
-                                        <Label Text="Menu"  HorizontalTextAlignment="Center"
-                                               IsVisible="{Binding MM}"
-                                               Grid.Row="1" Grid.Column="0" ></Label>
-                                       <ffimageloading:CachedImage HeightRequest="50" Grid.Row="0" Grid.Column="1"
-                                               WidthRequest="50"
-                                               Aspect="AspectFit"
-                                               LoadingPlaceholder="image_loading.png"
-                                               ErrorPlaceholder="image_error.png"
-                                               Source="ReservarResaurant">
-                                       </ffimageloading:CachedImage>
-                                        <Label Text="Reservar"  HorizontalTextAlignment="Center"
-                                               Grid.Row="1" Grid.Column="1"></Label>
-                                       <ffimageloading:CachedImage HeightRequest="50" Grid.Row="0" Grid.Column="2"
-                                               WidthRequest="50"
-                                               Aspect="AspectFit"
-                                               LoadingPlaceholder="image_loading.png"
-                                               ErrorPlaceholder="image_error.png"
-                                               Source="ChekIn">
-                                       </ffimageloading:CachedImage>
-                                       <Label Text="Check-In" HorizontalTextAlignment="Center"
-                                              Grid.Row="1" Grid.Column="2"></Label>
-                                        </Grid>
-                    
-                  
-                </StackLayout>
-                <StackLayout x:Name="SLM" Margin="10" IsVisible="false">
-                    <ListView ItemsSource="{Binding RestaurantMenuDetalle}"
-                              RowHeight="100" SeparatorVisibility="None"
-                              BackgroundColor="Silver"
-                        CachingStrategy="RecycleElement">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <ContentView>
-                                        <StackLayout HeightRequest="100" WidthRequest="100" BackgroundColor="Silver">
-                                           <Label Text="{Binding NombreMenu}"></Label>
-                                           <Label Text="{Binding mde_nombre}" TextColor="#3F51B5" FontSize="Default"></Label>
-                                           <Label Text="{Binding mde_descripcion}" TextColor="Black" FontSize="Small"></Label>
+                                        <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                                            <Label Text="Fecha">
+                                            </Label>
+                                            <DatePicker Date="{Binding FechaInicio, Mode=TwoWay}">
+                                            </DatePicker>
                                         </StackLayout>
-                                    </ContentView>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </StackLayout>
-                <StackLayout Margin="10">
-                    <Label Text="{Binding rd.reb_descripcion_horario}">
-                    </Label>
-                    <Label Text="{Binding rd.reb_descripcion}">
-                    </Label>
-                </StackLayout>
+                                        <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                                            <Label Text="Hora">
+                                            </Label>
+                                            <TimePicker Time="{Binding HoraInicio, Mode=TwoWay}">
+                                            </TimePicker>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+                                    <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                        <Frame.Margin>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                        </Frame.Margin>
+                                        <Frame.Padding>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                        </Frame.Padding>
+                                       <StackLayout>
+
+                                          <Label Text="Huéspedes" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                                            <Grid Padding="15, 0">
+                                          <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>    
+                                          <Picker x:Name="NoPersona"
+                                                  Title="Huespedés"
+                                                  SelectedItem="{Binding NoPersonas, Mode=TwoWay}"
+                                                  ItemsSource="{Binding ListaOpciones1}"
+                                                  ></Picker>
+                                                </Grid>
+                                        </StackLayout>
+
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+                                    <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                        <Frame.Margin>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                        </Frame.Margin>
+                                        <Frame.Padding>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                        </Frame.Padding>
+                                        <StackLayout>
+                                            <Label Text="Restaurants" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                                            <Grid Padding="15, 0">
+                                                <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
+                                          <Picker Margin="5" 
+                                                  x:Name="CR"
+                                                  Title="Seleccionar..."
+                                                  SelectedItem="{Binding NombreRestaurante, Mode=TwoWay}"
+                                                  ItemsSource="{Binding ListaOpciones2}" ></Picker>
+                                                </Grid>
+
+                                        </StackLayout>
+
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
+                                    <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                        <Frame.Margin>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                        </Frame.Margin>
+                                        <Frame.Padding>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                        </Frame.Padding>
+                                        <StackLayout>
+                                           <Label Text="Silla para ninños" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                                            <Grid Padding="15, 0">
+                                                <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
+                                          <Picker Margin="5"
+                                                  x:Name="Combosillaniños"
+                                                   SelectedItem="{Binding SillaNiños, Mode=TwoWay}"
+                                                  ItemsSource="{Binding ListaOpciones3}"
+                                                  ></Picker>
+                                                </Grid>
+                                         </StackLayout>
+                                 
+                                    </Frame>   
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">
+                                    <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                        <Frame.Margin>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                        </Frame.Margin>
+                                        <Frame.Padding>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                        </Frame.Padding>
+                                        <xfx:XfxEntry Placeholder="Nombre y Apellido*"
+                                                      Text ="{Binding Nombre, Mode=TwoWay}"
+                                                      Margin="5,0,5,0">
+                                            <Entry.HeightRequest>
+                                                <OnPlatform x:TypeArguments="x:Double">
+                                                    <On Platform="iOS">60</On>
+                                                    <On Platform="Android,Windows">60</On>
+                                                </OnPlatform>
+                                            </Entry.HeightRequest>
+                                        </xfx:XfxEntry>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
+                                    <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                        <Frame.Margin>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                        </Frame.Margin>
+                                        <Frame.Padding>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                        </Frame.Padding>
+                                        <xfx:XfxEntry Placeholder="Correo Electrònico*"
+                                                      Text ="{Binding Correo, Mode=TwoWay}"
+                                                      Margin="5,0,5,0">
+                                            <Entry.HeightRequest>
+                                                <OnPlatform x:TypeArguments="x:Double">
+                                                    <On Platform="iOS">60</On>
+                                                    <On Platform="Android,Windows">60</On>
+                                                </OnPlatform>
+                                            </Entry.HeightRequest>
+                                        </xfx:XfxEntry>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
+                                    <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                        <Frame.Margin>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                        </Frame.Margin>
+                                        <Frame.Padding>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                        </Frame.Padding>
+                                        <xfx:XfxEntry Placeholder="Telèfono*"
+                                                      Text ="{Binding Telefono, Mode=TwoWay}"
+                                                      Margin="5,0,5,0" >
+                                            <Entry.HeightRequest>
+                                                <OnPlatform x:TypeArguments="x:Double">
+                                                    <On Platform="iOS">60</On>
+                                                    <On Platform="Android,Windows">60</On>
+                                                </OnPlatform>
+                                            </Entry.HeightRequest>
+                                        </xfx:XfxEntry>
+                                    </Frame>
+                                </StackLayout>
+                            </Grid>
+
+                            <Button Margin="30, 20"
+                                    FontSize="Small"
+                                    TextColor="White"
+                                    BackgroundColor="#FF5722"
+                                    Text="RESERVAR"
+                                    Command="{Binding ReservarCommand}"/>
+
+                    </StackLayout>
+                    <StackLayout Margin="10">
+                        <Label Text="{Binding rd.reb_descripcion_horario}">
+                        </Label>
+                        <Label Text="{Binding rd.reb_descripcion}">
+                        </Label>
+                    </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

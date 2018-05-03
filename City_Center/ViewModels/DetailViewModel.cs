@@ -17,6 +17,7 @@ namespace City_Center.ViewModels
         private string[] listaOpciones;
         private bool perfilVisible;
         private bool opcionesVisible;
+        private string imagen;
         #endregion
 
         #region Properties
@@ -42,6 +43,12 @@ namespace City_Center.ViewModels
         {
             get { return this.opcionesVisible; }
             set { SetValue(ref this.opcionesVisible, value); }
+        }
+
+        public string Imagen
+        {
+            get { return this.imagen; }
+            set { SetValue(ref this.imagen, value); }
         }
 
         #endregion
@@ -162,6 +169,7 @@ namespace City_Center.ViewModels
                     PerfilVisible = true;
                     OpcionesVisible = false;
                     NombreUsuario = Application.Current.Properties["NombreCompleto"].ToString();
+                    Imagen = Application.Current.Properties["FotoPerfil"].ToString();
                 }
                 else
                 {

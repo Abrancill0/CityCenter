@@ -71,7 +71,12 @@
             <StackLayout x:Name="SL1" IsVisible="true">
                 <ScrollView>
                     <StackLayout>
-                        <ListView ItemsSource="{Binding RestaurantDetalle}" HasUnevenRows="false" RowHeight="230" SeparatorVisibility="None">
+                        <ListView ItemsSource="{Binding RestaurantDetalle}"
+                                  HasUnevenRows="false"
+                                  RowHeight="230"
+                                  Margin="7,10,7,10"
+                                  SeparatorVisibility="None"
+                                  BackgroundColor="White">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -86,6 +91,9 @@
                                                 <Frame.Padding>
                                                     <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                                 </Frame.Padding>
+                                                    <Frame.GestureRecognizers>
+                                                          <TapGestureRecognizer Command="{Binding DetalleCommand}" />
+                                                    </Frame.GestureRecognizers>
                                                 <StackLayout Orientation="Vertical">
                                                     <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding reb_imagen_1,StringFormat='http://cc.comprogapp.com/{0}'}">
                                                         <ffimageloading:CachedImage.GestureRecognizers>
@@ -96,7 +104,12 @@
                                                         <ffimageloading:CachedImage HeightRequest="55" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding reb_tipo}" />
                                                     </StackLayout>
                                                     <StackLayout Padding="5,-20,0,0">
-                                                        <Label TextColor="#7A5BA5" Text="{Binding reb_nombre}" HorizontalOptions="Start" HorizontalTextAlignment="Start" FontSize="Medium" FontFamily="Oswald-Regular" />
+                                                        <Label TextColor="#7A5BA5" Text="{Binding reb_nombre}"
+                                                               HorizontalOptions="Start"
+                                                               HorizontalTextAlignment="Start"
+                                                               FontSize="Medium"
+                                                               FontFamily="Oswald-Regular"
+                                                               FontAttributes="Bold"/>
                                                     </StackLayout>
                                                 </StackLayout>
                                             </Frame>

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:view="clr-namespace:City_Center.Vista"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
+              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
               xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              x:Class="City_Center.Page.Perfil">
     <ContentPage.Resources>
@@ -14,19 +15,60 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
-           <!-- <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontFamily" Value="Roboto-Regular" />
-                <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
-            </Style>-->
+         
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding Perfil}">
             <StackLayout>
-                <StackLayout>
-                    <!--HeaderContent-->
-                </StackLayout>
+              
+                <Grid BackgroundColor="#7A5BAS" HeightRequest="150" Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="1*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="1*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="1*">
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                        <ffimageloading:CachedImage
+                        HeightRequest="150"
+                        WidthRequest="150"
+                        Margin="20"
+                            Aspect="AspectFill"
+                        DownsampleUseDipUnits="false" 
+                        LoadingPlaceholder="image_loading.png"
+                        ErrorPlaceholder="image_error.png"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                        Grid.ColumnSpan="2"
+                        Grid.RowSpan="3"
+                        Source="{Binding Imagen, Mode=TwoWay}" />
+
+                        <Label  TextColor="White"
+                                FontFamily="Oswald-Regular"
+                                Grid.Column="2"
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                Text="HOLA"/>
+                        <Label  TextColor="White"
+                                FontFamily="Oswald-Regular"
+                                FontAttributes="Bold"
+                                Grid.Column="2"
+                                Grid.Row="2"
+                                Grid.ColumnSpan="2"
+                                Text="{Binding Nombre, Mode=TwoWay}"/>
+        
+                    </Grid>
+               
                 <Grid BackgroundColor="#250c4b" Padding="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*">
