@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
@@ -365,6 +365,14 @@
     <BundleResource Include="Resources\warning.png" />
     <BundleResource Include="Resources\rowdown.png" />
     <BundleResource Include="Resources\logout.png" />
+    <BundleResource Include="Resources\RESERVAHOTEL_S.png" />
+    <BundleResource Include="Resources\RESERVATUMESA_S.png" />
+    <BundleResource Include="Resources\TICKETSHOWS_S.png" />
+    <BundleResource Include="Resources\TIENDAONLINE_S.png" />
+    <BundleResource Include="Resources\RESERVAHOTEL.png" />
+    <BundleResource Include="Resources\RESERVATUMESA.png" />
+    <BundleResource Include="Resources\TICKETSHOWS.png" />
+    <BundleResource Include="Resources\TIENDAONLINE.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

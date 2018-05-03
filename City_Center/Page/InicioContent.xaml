@@ -34,7 +34,7 @@
                 <ffimageloading:CachedImage Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="HOMEmin" HeightRequest="110" />
             </StackLayout>
             <StackLayout Padding="5,-30,0,0" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="10">
-                <Grid> 
+                <Grid > 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto">
                     </ColumnDefinition>
@@ -405,7 +405,7 @@
                                     </Label.GestureRecognizers>
                                 </Label>
                             </Grid>
-                            <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}" HorizontalOptions="FillAndExpand" HeightRequest="300">
+                            <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" HeightRequest="300">
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
@@ -430,14 +430,14 @@
                                                     <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                                 </ffimageloading:CachedImage>
-                                            <Label Margin="7,4,0,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" FontFamily="Oswald-Regular" />
-                                            <Label Margin="6,0,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" FontSize="Small" FontFamily="Oswald-Regular" />
-                                            <Image Margin="15" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito">
+                                            <Label Margin="7,4,0,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}" HorizontalTextAlignment="Start" FontSize="15" FontFamily="Oswald-Regular" />
+                                            <Label Margin="6,0,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" FontSize="10" FontFamily="Oswald-Regular" />
+                                            <Image Margin="15" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" VerticalOptions = "Start" HorizontalOptions = "Center">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
                                                 </Image.GestureRecognizers>
                                             </Image>
-                                            <Image Margin="15" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir">
+                                            <Image Margin="15" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions = "Start" HorizontalOptions = "Center">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                 </Image.GestureRecognizers>
