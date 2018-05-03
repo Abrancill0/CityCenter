@@ -302,10 +302,7 @@
     <BundleResource Include="Resources\Fonts\materialicons.ttf" />
     <BundleResource Include="Resources\Compartir.png" />
     <BundleResource Include="Resources\Favorito.png" />
-    <BundleResource Include="Resources\CASINOmin.jpg" />
-    <BundleResource Include="Resources\CONVENCIONESmin.jpg" />
     <BundleResource Include="Resources\HOMEmin.jpg" />
-    <BundleResource Include="Resources\HOTELmin.jpg" />
     <BundleResource Include="Resources\SPAmin.jpg" />
     <BundleResource Include="Resources\image_error.png" />
     <BundleResource Include="Resources\image_loading.png" />
@@ -357,7 +354,6 @@
     <BundleResource Include="Resources\ChekIn.png" />
     <BundleResource Include="Resources\MenuRestaurant.png" />
     <BundleResource Include="Resources\ReservarResaurant.png" />
-    <BundleResource Include="Resources\GASTRONOMIAmin.jpg" />
     <BundleResource Include="Resources\error.png" />
     <BundleResource Include="Resources\informacion.png" />
     <BundleResource Include="Resources\success.png" />
@@ -377,6 +373,10 @@
     <BundleResource Include="Resources\TIENDAONLINE.png" />
     <BundleResource Include="Resources\arrow_left_thin.png" />
     <BundleResource Include="Resources\arrow_right_thin.png" />
+    <BundleResource Include="Resources\HOTELmin.png" />
+    <BundleResource Include="Resources\GASTRONOMIAmin.png" />
+    <BundleResource Include="Resources\CONVENCIONESmin.png" />
+    <BundleResource Include="Resources\CASINOmin.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

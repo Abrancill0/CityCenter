@@ -19,8 +19,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding Gastronomia}">
-            <StackLayout Spacing="0" BackgroundColor="#EFEFEF">
+        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Gastronomia}">
             <StackLayout>
                 <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="GASTRONOMIAmin" />
             </StackLayout>
@@ -37,11 +36,11 @@
                     <RowDefinition Height="40">
                     </RowDefinition>
                 </Grid.RowDefinitions>
-                <Label x:Name="LabelTab1" Text="TODOS" Grid.Column="0" Style="{DynamicResource TabTopLabel}" FontAttributes="Bold">
+                <Label x:Name="LabelTab1" TextColor="#FFE8E1" Text="TODOS" Grid.Column="0" Style="{DynamicResource TabTopLabel}">
                 </Label>
-                <Label x:Name="LabelTab2" Text="RESTAURANTES" Grid.Column="1" Style="{DynamicResource TabTopLabel}">
+                <Label x:Name="LabelTab2" TextColor="#FFA081" Text="RESTAURANTES" Grid.Column="1" Style="{DynamicResource TabTopLabel}">
                 </Label>
-                <Label x:Name="LabelTab3" Text="BARES" Grid.Column="2" VerticalOptions="Center" Style="{DynamicResource TabTopLabel}">
+                <Label x:Name="LabelTab3" TextColor="#FFA081" Text="BARES" Grid.Column="2" VerticalOptions="Center" Style="{DynamicResource TabTopLabel}">
                 </Label>
                 <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
                 </BoxView>
@@ -158,6 +157,5 @@
                 </ScrollView>
             </StackLayout>
         </StackLayout>
-            </StackLayout>
     </ContentPage.Content>
 </ContentPage>

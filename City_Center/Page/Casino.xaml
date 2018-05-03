@@ -24,7 +24,6 @@
         <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Casino}">
             <StackLayout>
                 <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="CASINOmin" />
-                <!-- <Image Source="CASINOmin" Aspect="AspectFill" HeightRequest="100" />-->
             </StackLayout>
             <Grid BackgroundColor="#E91E63" Padding="0">
                 <Grid.ColumnDefinitions>
@@ -39,13 +38,13 @@
                     <RowDefinition Height="40">
                     </RowDefinition>
                 </Grid.RowDefinitions>
-                <Label x:Name="LabelTab1" Text="PRINCIPAL" Style="{DynamicResource TabTopLabel}" Grid.Column="0" FontAttributes="Bold">
+                <Label x:Name="LabelTab1" FontSize="12" HorizontalOptions="Center" TextColor="#FDE7EE" Text="PRINCIPAL" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
                 </Label>
-                <Label x:Name="LabelTab2" Text="POKER" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                <Label x:Name="LabelTab2" FontSize="12" HorizontalOptions="Center" TextColor="#F282A9" Text="POKER" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
                 </Label>
-                <Label x:Name="LabelTab3" Text="WIN" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
+                <Label x:Name="LabelTab3" FontSize="12" HorizontalOptions="Center" TextColor="#F282A9" Text="WIN" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
                 </Label>
-                <Label x:Name="LabelTab4" Text="SITES VIP" Style="{DynamicResource TabTopLabel}" Grid.Column="3">
+                <Label x:Name="LabelTab4" FontSize="12" HorizontalOptions="Center" TextColor="#F282A9" Text="SITES VIP" Style="{DynamicResource TabTopLabel}" Grid.Column="3">
                 </Label>
                 <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
                 </BoxView>
