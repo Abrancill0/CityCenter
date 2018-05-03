@@ -9,7 +9,7 @@ namespace City_Center.Page
 {
     public partial class InicioContent : ContentPage
     {
-      //  public WebViewHotel _webHotel;
+        public WebViewHotel _webHotel;
 
         private string[] ListaOpciones;
         private string[] ListaOpciones2;
@@ -18,8 +18,7 @@ namespace City_Center.Page
         public InicioContent()
         {
             InitializeComponent();
-
-            //_webHotel = new WebViewHotel();  
+            _webHotel = new WebViewHotel();  
             NavigationPage.SetTitleIcon(this, "logo.png");
         }
 
@@ -50,7 +49,7 @@ namespace City_Center.Page
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
-         //  await Navigation.PushPopupAsync(_webHotel);
+           await Navigation.PushPopupAsync(_webHotel);
         }
 
         private void Btn1_Clicked(object sender, EventArgs e)

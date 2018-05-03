@@ -31,7 +31,7 @@ namespace City_Center.Droid
 
             Xfx.XfxControls.Init();
             UserDialogs.Init(this);
-         
+
             //CachedImageRenderer.Init(true);
 
             /*BottomTabbedRenderer.IconSize = 30;
