@@ -478,6 +478,8 @@
     <AndroidResource Include="Resources\drawable\home.png" />
     <AndroidResource Include="Resources\drawable\Hotel.png" />
     <AndroidResource Include="Resources\drawable\info2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\arrow_left_thin.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\arrow_right_thin.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />

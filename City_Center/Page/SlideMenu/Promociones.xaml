@@ -7,7 +7,7 @@
         <ResourceDictionary>
             <Style x:Name="TabTopLabel" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
-                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="FontFamily" Value="Oswald-Regular" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
@@ -32,11 +32,11 @@
                     <RowDefinition Height="40">
                     </RowDefinition>
                 </Grid.RowDefinitions>
-                <Label x:Name="LabelTab1" Text="TODOS" Style="{DynamicResource TabTopLabel}" FontSize="10" Grid.Column="0" />
-                <Label x:Name="LabelTab2" Text="CASINO" Style="{DynamicResource TabTopLabel}" FontSize="10" Grid.Column="1" />
-                <Label x:Name="LabelTab3" Text="HOTEL Y SPA" Style="{DynamicResource TabTopLabel}" FontSize="10" Grid.Column="2" />
-                <Label x:Name="LabelTab4" Text="GASTRONOMIA" Style="{DynamicResource TabTopLabel}" FontSize="10" Grid.Column="3" />
-                <Label x:Name="LabelTab5" Text="SHOWS" Style="{DynamicResource TabTopLabel}" FontSize="10" Grid.Column="4" />
+                <Label x:Name="LabelTab1" Text="TODOS" Style="{DynamicResource TabTopLabel}" FontSize="8" TextColor="#EAE8ED" Grid.Column="0" />
+                <Label x:Name="LabelTab2" Text="CASINO" Style="{DynamicResource TabTopLabel}" FontSize="8" TextColor="#71628A" Grid.Column="1" />
+                <Label x:Name="LabelTab3" Text="HOTEL Y SPA" Style="{DynamicResource TabTopLabel}" FontSize="8" TextColor="#71628A" Grid.Column="2" />
+                <Label x:Name="LabelTab4" Text="GASTRONOMIA" Style="{DynamicResource TabTopLabel}" FontSize="8" TextColor="#71628A" Grid.Column="3" />
+                <Label x:Name="LabelTab5" Text="SHOWS" Style="{DynamicResource TabTopLabel}" FontSize="8" TextColor="#71628A" Grid.Column="4" />
                 <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End" />
                 <BoxView x:Name="BV2" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="1" VerticalOptions="End" />
                 <BoxView x:Name="BV3" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="2" VerticalOptions="End" />
