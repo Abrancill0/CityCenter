@@ -428,8 +428,8 @@
                                                     <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                                 </ffimageloading:CachedImage>
-                                            <Label Margin="7,4,0,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}" HorizontalTextAlignment="Start" FontSize="15" FontFamily="Oswald-Regular" />
-                                            <Label Margin="6,0,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" FontSize="10" FontFamily="Oswald-Regular" />
+                                            <Label Margin="7,4,0,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}"  HorizontalTextAlignment="Start" FontSize="15" VerticalOptions = "Start" FontFamily="Oswald-Regular" />
+                                            <Label Margin="6,0,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" VerticalOptions = "Start" FontSize="10" FontFamily="Oswald-Regular" />
                                             <Image Margin="15" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" VerticalOptions = "Start" HorizontalOptions = "Center">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
