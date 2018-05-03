@@ -15,7 +15,8 @@ namespace City_Center.ViewModels
         private string contraseña2;
         private string ciudad;
         private string fecha;
-
+        private string imagen;
+        private string nombre;
         #endregion
 
         #region Properties
@@ -50,6 +51,17 @@ namespace City_Center.ViewModels
         }
 
 
+        public string Imagen
+        {
+            get { return this.imagen; }
+            set { SetValue(ref this.imagen, value); }
+        }
+
+        public string Nombre
+        {
+            get { return this.nombre; }
+            set { SetValue(ref this.nombre, value); }
+        }
 
         #endregion
 
@@ -61,11 +73,12 @@ namespace City_Center.ViewModels
         private void LoadEventos()
         {
             Email = Application.Current.Properties["Email"].ToString();
-            //Application.Current.Properties["NombreCompleto"]
+            Nombre = Application.Current.Properties["NombreCompleto"].ToString();
             Ciudad = Application.Current.Properties["Ciudad"].ToString();
             Contraseña = Application.Current.Properties["Pass"].ToString();
             Contraseña2 = Application.Current.Properties["Pass"].ToString();
             Fecha = Application.Current.Properties["FechaNacimiento"].ToString();
+            Imagen = Application.Current.Properties["FotoPerfil"].ToString();
 
         }
         #endregion

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             x:Class="City_Center.Page.RecompensasWin">
-   <ContentPage.Content>
-         <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="Chat"/>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BindingContext="{Binding Main, Source={StaticResource Locator}}" x:Class="City_Center.Page.RecompensasWin">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="Chat" />
     </ContentPage.ToolbarItems>
+    <ContentPage.Content>
         <StackLayout BindingContext="{Binding RecompesasWin}" Margin="5">
-            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" TextColor="#250c4b" FontFamily="Oswald-Regular" Text="RECOMPESAS WIN" FontSize="Medium" />
+            <Label HorizontalOptions="Start"
+                   HorizontalTextAlignment="Start"
+                   TextColor="#250c4b"
+                   FontFamily="Oswald-Regular"
+                   Text="RECOMPESAS WIN"
+                   FontSize="Large"
+                   Margin="5"/>
             <ListView ItemsSource="{Binding RecompensasWinDetalle}" HasUnevenRows="true" HeightRequest="100">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal">
-                                    <Grid HorizontalOptions="FillAndExpand">
+                                    <Grid HorizontalOptions="FillAndExpand" Margin="5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1.5*" />
                                             <ColumnDefinition Width="1*" />

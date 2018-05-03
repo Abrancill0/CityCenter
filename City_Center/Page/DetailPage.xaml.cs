@@ -27,6 +27,7 @@ namespace City_Center.Page
                 {
                     case "INICIO":
                         //Application.Current.MainPage = new MasterPage();
+                        listviewMenu.SelectedItem = null;
 
                         ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
@@ -34,6 +35,7 @@ namespace City_Center.Page
                     case "SHOWS":
                       
                         //Application.Current.MainPage = new MasterPage();
+                        listviewMenu.SelectedItem = null;
 
                         ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
@@ -93,6 +95,7 @@ namespace City_Center.Page
                         }
                         else
                         {
+                            listviewMenu.SelectedItem = null;
                             await Mensajes.Error("Debes de estar logeado para acceder a esta opcion");
                         }
 

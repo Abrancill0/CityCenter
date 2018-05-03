@@ -8,6 +8,9 @@ using Xamarin.Forms;
 using static City_Center.Models.RestauranteMenuResultado;
 using static City_Center.Models.RestaurantResultado;
 using System.Linq;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
+using City_Center.Models;
 
 namespace City_Center.ViewModels
 {
@@ -28,6 +31,16 @@ namespace City_Center.ViewModels
         private string Nombrenuevo;
         private string NombreMenu;
         private bool mM;
+
+
+        DateTime fechaInicio;
+        DateTime horaInicio;
+        string noPersonas;
+        string nombreRestaurante;
+        string sillaNiños;
+        string nombre;
+        string correo;
+        string telefono;
         #endregion
 
         #region Properties
@@ -55,7 +68,127 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.mM, value); }
         }
 
+        public DateTime FechaInicio
+        {
+            get { return this.fechaInicio; }
+            set { SetValue(ref this.fechaInicio, value); }
+        }
+
+        public DateTime HoraInicio
+        {
+            get { return this.horaInicio; }
+            set { SetValue(ref this.horaInicio, value); }
+        }
+
+        public string NoPersonas
+        {
+            get { return this.noPersonas; }
+            set { SetValue(ref this.noPersonas, value); }
+        }
+
+        public string NombreRestaurante
+        {
+            get { return this.nombreRestaurante; }
+            set { SetValue(ref this.nombreRestaurante, value); }
+        }
+
+        public string SillaNiños
+        {
+            get { return this.sillaNiños; }
+            set { SetValue(ref this.sillaNiños, value); }
+        }
+
+        public string Nombre
+        {
+            get { return this.nombre; }
+            set { SetValue(ref this.nombre, value); }
+        }
+
+        public string Correo
+        {
+            get { return this.correo; }
+            set { SetValue(ref this.correo, value); }
+        }
+
+        public string Telefono
+        {
+            get { return this.telefono; }
+            set { SetValue(ref this.telefono, value); }
+        }
+
         #endregion
+        public ICommand ReservarCommand
+        {
+            get
+            {
+                return new RelayCommand(Reservar);
+            }
+        }
+
+        private async void Reservar()
+        {
+            if (string.IsNullOrEmpty(this.Nombre))
+            {
+                await Mensajes.Error("Nombre requerido");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Correo))
+            {
+                await Mensajes.Error("Correo requerido");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Telefono))
+            {
+                await Mensajes.Error("Telefono requerido");
+
+                return;
+            }
+
+
+            string CuerpoMensaje = "Fecha:" + this.FechaInicio.ToString("dd/MM/yyyy") + "\n" +
+                                   "Hora: " + this.HoraInicio + "\n" +
+                                   "Personas: " + this.NoPersonas + "\n" +
+                                   "Restaurant: " + this.NombreRestaurante + "\n" +
+                                   "Silla para niños: " + this.SillaNiños + "\n" +
+                                   "Nombre y apellido: " + this.Nombre + "\n" +
+                                   "Correo electrónico: " + this.Correo + "\n" +
+                                   "Teléfono: " + this.Telefono;
+
+
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("nombre", "Reservacion de Mesa"),
+                new KeyValuePair<string, string>("email", "abrx23@gmail.com"),
+                new KeyValuePair<string, string>("mensaje", CuerpoMensaje),
+            });
+
+
+            var response = await this.apiService.Get<GuardadoGenerico>("/correo", "/envioemail", content);
+
+            if (!response.IsSuccess)
+            {
+                await Mensajes.Error(response.Message);
+            }
+
+            await Mensajes.success("Correo enviado exitosamente");
+
+            //this.FechaInicio
+            //this.HoraInicio 
+            this.NoPersonas = string.Empty;
+            this.NombreRestaurante = string.Empty;
+            this.SillaNiños = string.Empty;
+            this.Correo = string.Empty;
+            this.Telefono = string.Empty;
+
+        }
+        #region Command
+
+        #endregion
+
 
         #region Method
         private async void LoadDetalleRestaurante()

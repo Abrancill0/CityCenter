@@ -27,6 +27,7 @@ namespace City_Center.Models
             public string pro_fecha_hora_modifico { get; set; }
             public string pro_tipo { get; set; }
             public string pro_estatus { get; set; }
+            public string loc_nombre { get; set; }
         }
 
         public class PromocionesReturn

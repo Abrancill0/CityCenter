@@ -14,14 +14,13 @@ namespace City_Center.Page
         public Casino()
         {
             InitializeComponent();
-            ListaOpciones = new string[] { "http://lorempixel.com/400/200/sports/", "http://lorempixel.com/400/200/sports/1", "https://picsum.photos/400/200"};
+            ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2"};
             listaCasino.ItemsSource = ListaOpciones;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
         }
 
         void Tab1_Tapped(object sender, System.EventArgs e)

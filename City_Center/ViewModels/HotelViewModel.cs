@@ -230,7 +230,7 @@ namespace City_Center.ViewModels
 
             this.listPromociones = (PromocionesReturn)response.Result;
 
-            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "hopa"));
 
         }
 
@@ -257,7 +257,8 @@ namespace City_Center.ViewModels
                 pro_id_usuario_modifico = l.pro_id_usuario_modifico,
                 pro_fecha_hora_modifico = l.pro_fecha_hora_modifico,
                 pro_tipo = l.pro_tipo,
-                pro_estatus = l.pro_estatus
+                pro_estatus = l.pro_estatus,
+                loc_nombre = l.loc_nombre
             });
         }
 

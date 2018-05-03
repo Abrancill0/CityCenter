@@ -179,7 +179,7 @@ namespace City_Center.ViewModels
                 await Mensajes.Error(response.Message);
             }
 
-            await Mensajes.Error("Correo enviado exitosamente");
+            await Mensajes.success("Correo enviado exitosamente");
 
             //this.FechaInicio
             //this.HoraInicio 

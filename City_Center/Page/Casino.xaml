@@ -172,7 +172,7 @@
                                                                             Source="{Binding poz_imagen}" />
                                                 <Label x:Name="Label"
                                                        Margin="5"
-                                                       HorizontalOptions="Fill"
+                                                       HorizontalOptions="Center"
                                                        HorizontalTextAlignment="Center"
                                                        VerticalOptions="Start"
                                                        TextColor="White"
@@ -361,7 +361,17 @@
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
                                                 <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding gan_imagen}" />
-                                                <Label x:Name="Label" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" BackgroundColor="Silver" Opacity="0.5" Text="{Binding gan_nombre}" />
+
+                                                <Label x:Name="Label"
+                                                       Margin="5"
+                                                       HorizontalOptions="Center"
+                                                       HorizontalTextAlignment="Center"
+                                                       VerticalOptions="Start"
+                                                       TextColor="White"
+                                                       FontFamily="Oswald-regular"
+                                                      FontSize="Small"
+                                                       Text="{Binding gan_nombre}" />
+
                                             </Grid>
                                         </DataTemplate>
                                     </flv:FlowListView.FlowColumnTemplate>
@@ -480,16 +490,16 @@
                         </RelativeLayout>
                         </StackLayout>
                 <StackLayout HorizontalOptions="FillAndExpand" Margin="5">
-                     <Label HorizontalTextAlignment="Start" Text="Horarios: Lunes a domingo de 02 pm a 05 am" HorizontalOptions="Center" TextColor="Black"></Label>
+                                <Label HorizontalTextAlignment="Start" Text="Horarios: Lunes a domingo de 02 pm a 05 am" HorizontalOptions="Center" TextColor="Black"></Label>
                                 <Label Text="" HorizontalOptions="Start" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="Accede a dos exclusivos sectores para aquellos" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="clientes que deseen privacidad y atencion" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="personalizada: Site VIP y Site VIP Slots. Ingreso" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="independiente, sector exclusivo de" TextColor="Black" FontSize="Small"></Label>
-                                <Label HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="estacionamiento, acceso sin esperas, sala de juegos" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="privada y servicio gastronómico forman parte de" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="los exclusivos beneficios que un cliente VIP puede" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="disfurtar en nuestro complejo" FontSize="Small" TextColor="Black"></Label> 
+                                <Label HorizontalTextAlignment="Start" Margin="0,-1" HorizontalOptions="Start" Text="Accede a dos exclusivos sectores para aquellos" FontSize="Small" TextColor="Black"></Label>
+                                <Label HorizontalTextAlignment="Start" Margin="0,-1" HorizontalOptions="Start" Text="clientes que deseen privacidad y atencion" FontSize="Small" TextColor="Black"></Label>
+                                <Label HorizontalTextAlignment="Start" Margin="0,-1" HorizontalOptions="Start" Text="personalizada: Site VIP y Site VIP Slots. Ingreso" FontSize="Small" TextColor="Black"></Label>
+                                <Label HorizontalTextAlignment="Start" Margin="0,-1" HorizontalOptions="Start" Text="independiente, sector exclusivo de" TextColor="Black" FontSize="Small"></Label>
+                                <Label HorizontalTextAlignment="Start" Margin="0,-1" HorizontalOptions="Start" Text="estacionamiento, acceso sin esperas, sala de juegos" FontSize="Small" TextColor="Black"></Label>
+                                <Label HorizontalTextAlignment="Start" Margin="0,-1" HorizontalOptions="Start" Text="privada y servicio gastronómico forman parte de" FontSize="Small" TextColor="Black"></Label>
+                                <Label HorizontalTextAlignment="Start" Margin="0,-1" HorizontalOptions="Start" Text="los exclusivos beneficios que un cliente VIP puede" FontSize="Small" TextColor="Black"></Label>
+                                <Label HorizontalTextAlignment="Start" Margin="0,-1" HorizontalOptions="Start" Text="disfurtar en nuestro complejo" FontSize="Small" TextColor="Black"></Label> 
                 </StackLayout>
                         </StackLayout>
                 </ScrollView>

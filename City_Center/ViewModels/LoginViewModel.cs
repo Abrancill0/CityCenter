@@ -128,6 +128,7 @@ namespace City_Center.ViewModels
                     Application.Current.Properties["Ciudad"] = list.resultado.usu_ciudad;
                     Application.Current.Properties["Pass"] = this.Password;
                     Application.Current.Properties["FechaNacimiento"] = list.resultado.usu_fecha_nacimiento;
+                    Application.Current.Properties["FotoPerfil"] = "";
 
                     await Application.Current.SavePropertiesAsync();
 
@@ -212,11 +213,13 @@ namespace City_Center.ViewModels
             if (googleUser != null)
             {
                 Application.Current.Properties["IsLoggedIn"] = true;
+                Application.Current.Properties["IdUsuario"] = 0;
                 Application.Current.Properties["Email"] = googleUser.Email;
                 Application.Current.Properties["NombreCompleto"] = googleUser.Name;
                 Application.Current.Properties["Ciudad"] = "";
                 Application.Current.Properties["Pass"] = "";
                 Application.Current.Properties["FechaNacimiento"] = "";
+                Application.Current.Properties["FotoPerfil"] = googleUser.Picture;
                 await Application.Current.SavePropertiesAsync();
 
                 MainViewModel.GetInstance().Master = new MasterViewModel();
@@ -224,6 +227,7 @@ namespace City_Center.ViewModels
                 MainViewModel.GetInstance().Detail = new DetailViewModel();
                 MainViewModel.GetInstance().Casino = new CasinoViewModel();
                 MainViewModel.GetInstance().Hotel = new HotelViewModel();
+                MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
                 await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
 
@@ -256,12 +260,13 @@ namespace City_Center.ViewModels
             if (facebookUser != null)
             {
                 Application.Current.Properties["IsLoggedIn"] = true;
+                Application.Current.Properties["IdUsuario"] = 0;
                 Application.Current.Properties["Email"] = facebookUser.Email;
                 Application.Current.Properties["NombreCompleto"] = facebookUser.FirstName + ' ' + facebookUser.LastName;
-               
                 Application.Current.Properties["Ciudad"] = "";
                 Application.Current.Properties["Pass"] = "";
                 Application.Current.Properties["FechaNacimiento"] = "";
+                Application.Current.Properties["FotoPerfil"] = "";
 
                 await Application.Current.SavePropertiesAsync();
 

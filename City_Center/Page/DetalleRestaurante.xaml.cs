@@ -9,6 +9,10 @@ namespace City_Center.Page
     {
         string[] ListaOpciones;
 
+        private string[] ListaOpciones1;
+        private string[] ListaOpciones2;
+        private string[] ListaOpciones3;
+
         public DetalleRestaurante()
         {
             InitializeComponent();
@@ -18,9 +22,23 @@ namespace City_Center.Page
         {
             base.OnAppearing();
 
-            ListaOpciones = new string[] { VariablesGlobales.Img1, VariablesGlobales.Img2, VariablesGlobales.Img3 ,VariablesGlobales.Img4};
+            ListaOpciones = new string[] { VariablesGlobales.Img1, VariablesGlobales.Img2, VariablesGlobales.Img3, VariablesGlobales.Img4 };
 
             listaDetalleRestaurante.ItemsSource = ListaOpciones;
+
+            ListaOpciones1 = new string[] { "1", "2", "3", "4" };
+
+            ListaOpciones2 = new string[] { "Restaurant 1", "Restaurant 2", "Restaurant 3", "Restaurant 4" };
+
+            ListaOpciones3 = new string[] { "No", "Si" };
+
+            NoPersona.ItemsSource = ListaOpciones1;
+            CR.ItemsSource = ListaOpciones2;
+            Combosillaniños.ItemsSource = ListaOpciones3;
+
+            NoPersona.SelectedIndex = 0;
+            CR.SelectedIndex = 0;
+            Combosillaniños.SelectedIndex = 0;
 
         }
 
@@ -39,7 +57,7 @@ namespace City_Center.Page
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -50,9 +68,10 @@ namespace City_Center.Page
         void Handle_Tapped(object sender, System.EventArgs e)
         {
 
-            if (SLM.IsVisible==false)
+            if (SLM.IsVisible == false)
             {
                 SLM.IsVisible = true;
+                SLR.IsVisible = false;
             }
             else
             {
@@ -60,6 +79,19 @@ namespace City_Center.Page
             }
 
 
+        }
+
+        void Handle_Tapped_1(object sender, System.EventArgs e)
+        {
+            if (SLR.IsVisible == false)
+            {
+                SLR.IsVisible = true;
+                SLM.IsVisible = false;
+            }
+            else
+            {
+                SLR.IsVisible = false;
+            }
         }
     }
 }

@@ -137,47 +137,37 @@ namespace City_Center.ViewModels
         {
             if (string.IsNullOrEmpty(this.Ciudad))
             {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Erorr",
-                    "You Must an City",
-                    "Accept");
+               await Mensajes.Error("Ciudad es requerida.");
+
                 return;
             }
 
          
             if (string.IsNullOrEmpty(this.Email))
             {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Erorr",
-                    "You Must an email",
-                    "Accept");
+                await Mensajes.Error("Correo es requerida.");
+
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Password))
             {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Erorr",
-                    "You Must an password",
-                    "Accept");
+                await Mensajes.Error("Contresaña es requerida.");
+
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Password2))
             {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Erorr",
-                    "You Must an password2",
-                    "Accept");
+                await Mensajes.Error("Contraseña es requerida.");
+
                 return;
             }
 
             if (this.Password != this.Password2)
             {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Erorr",
-                    "Pass1 different Pass2",
-                    "Accept");
+                await Mensajes.Error("Las contraseñas no coicien.");
+
                 return;
             }
 
@@ -206,29 +196,27 @@ namespace City_Center.ViewModels
 
            if (!response.IsSuccess)
             {
-                await Application.Current.MainPage.DisplayAlert(
-                      "Error",
-                      response.Message,
-                      "Ok");
+               await Mensajes.Error("Error al registra usuario");
+
                 return;
             }
 
             //LoginReturn list = (LoginReturn)response.Result;
 
             Application.Current.Properties["IsLoggedIn"] = true;
+            Application.Current.Properties["IdUsuario"] = 0;
             Application.Current.Properties["Email"] = this.Email;
             Application.Current.Properties["NombreCompleto"] = this.Nombre;
             Application.Current.Properties["Ciudad"] = this.Ciudad;
             Application.Current.Properties["Pass"] = this.Password;
             Application.Current.Properties["FechaNacimiento"] = this.Fecha;
+            Application.Current.Properties["FotoPerfil"] = "";
 
             await Application.Current.SavePropertiesAsync();
 
-            await Application.Current.MainPage.DisplayAlert(
-                      "Login",
-                      "Welcome " + this.Nombre,
-                      "Ok");
+            await Mensajes.success("Bienvenido " + this.Nombre);
 
+         
 
             this.Email = string.Empty;
             this.Nombre = string.Empty;
@@ -256,12 +244,13 @@ namespace City_Center.ViewModels
             }
         }
 
-       
         private void GoogleLogin()
         {
             _googleManager = DependencyService.Get<IGoogleManager>();
 
             _googleManager.Login(OnLoginComplete);
+
+            _googleManager.Logout();
         }
 
         private async void OnLoginComplete(GoogleUser googleUser, string message)
@@ -269,21 +258,30 @@ namespace City_Center.ViewModels
             if (googleUser != null)
             {
                 Application.Current.Properties["IsLoggedIn"] = true;
+                Application.Current.Properties["IdUsuario"] = 0;
                 Application.Current.Properties["Email"] = googleUser.Email;
                 Application.Current.Properties["NombreCompleto"] = googleUser.Name;
+                Application.Current.Properties["Ciudad"] = "";
+                Application.Current.Properties["Pass"] = "";
+                Application.Current.Properties["FechaNacimiento"] = "";
+                Application.Current.Properties["FotoPerfil"] = googleUser.Picture;
                 await Application.Current.SavePropertiesAsync();
 
                 MainViewModel.GetInstance().Master = new MasterViewModel();
+                MainViewModel.GetInstance().Inicio = new InicioViewModel();
+                MainViewModel.GetInstance().Detail = new DetailViewModel();
+                MainViewModel.GetInstance().Casino = new CasinoViewModel();
+                MainViewModel.GetInstance().Hotel = new HotelViewModel();
+                MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
                 await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
 
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(
-                      "Error",
-                      "You can not access Google services",
-                      "Ok");
+                await Mensajes.Error(message);
+
+                return;
             }
         }
 
@@ -307,22 +305,35 @@ namespace City_Center.ViewModels
             if (facebookUser != null)
             {
                 Application.Current.Properties["IsLoggedIn"] = true;
+                Application.Current.Properties["IdUsuario"] = 0;
                 Application.Current.Properties["Email"] = facebookUser.Email;
                 Application.Current.Properties["NombreCompleto"] = facebookUser.FirstName + ' ' + facebookUser.LastName;
+                Application.Current.Properties["Ciudad"] = "";
+                Application.Current.Properties["Pass"] = "";
+                Application.Current.Properties["FechaNacimiento"] = "";
+                Application.Current.Properties["FotoPerfil"] = "";
+
                 await Application.Current.SavePropertiesAsync();
 
+
                 MainViewModel.GetInstance().Master = new MasterViewModel();
+                MainViewModel.GetInstance().Inicio = new InicioViewModel();
+                MainViewModel.GetInstance().Detail = new DetailViewModel();
+                MainViewModel.GetInstance().Casino = new CasinoViewModel();
+                MainViewModel.GetInstance().Hotel = new HotelViewModel();
 
                 await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(
-                      "Error",
-                      "You can not access Facebook services",
-                      "Ok");
+
+                await Mensajes.Error("Error al acceder a los servicios de Facebook");
+
+                return;
+
             }
         }
+
 
         #endregion
 

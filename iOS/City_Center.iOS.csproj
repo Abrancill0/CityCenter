@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Xamarin.Forms.2.5.1.444934\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.2.5.1.444934\build\netstandard1.0\Xamarin.Forms.props')" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.props')" />
@@ -364,6 +364,9 @@
     <BundleResource Include="Resources\success.png" />
     <BundleResource Include="Resources\warning.png" />
     <BundleResource Include="Resources\rowdown.png" />
+    <BundleResource Include="Resources\ArrowDown.png" />
+    <BundleResource Include="Resources\ArrowUp.png" />
+    <BundleResource Include="Resources\logout.png" />
     <BundleResource Include="Resources\logout.png" />
     <BundleResource Include="Resources\RESERVAHOTEL_S.png" />
     <BundleResource Include="Resources\RESERVATUMESA_S.png" />

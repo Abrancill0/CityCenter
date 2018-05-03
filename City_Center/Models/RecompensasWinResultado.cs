@@ -17,7 +17,10 @@ namespace City_Center.Models
             public string wre_fecha_hora_modifico { get; set; }
             public string wre_estatus { get; set; }
             public string wre_eliminado { get; set; }
+            public string Color { get; set; }
         }
+
+
 
         public class RecompesasWinReturn
         {

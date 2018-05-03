@@ -11,7 +11,6 @@
                             <ffimageloading:CachedImage x:Name="Img1provisional"
                             HeightRequest="150"
                             Aspect="AspectFill"
-                           
                             LoadingPlaceholder="image_loading.png"
                             ErrorPlaceholder="image_error.png"
                             Source="{Binding hd.hab_imagen}"/>
@@ -45,14 +44,41 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-
                  <StackLayout Margin="10">
                 <Label Text="{Binding hd.hab_descripcion}"></Label>
                 </StackLayout>
               <Button Margin="15,8,15,8" TextColor="White" BackgroundColor="#2D97A3" Text="RESERVA ONLINE" />
             </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand">
+                 <RelativeLayout HeightRequest="100" VerticalOptions="Start">
+                            <ListView Rotation="270" ItemsSource="{Binding ListaOpciones}"
+                                      RowHeight="100" SeparatorVisibility="None"
+                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
+                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
+                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}"
+                                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                      CachingStrategy="RecycleElement">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ContentView Rotation="90" BackgroundColor="Transparent">
+                                                <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
+                                                    <ffimageloading:CachedImage HeightRequest="100" 
+                                                                                WidthRequest="100"
+                                                                                Aspect="AspectFill"
+                                                                                LoadingPlaceholder="image_loading.png"
+                                                                                ErrorPlaceholder="image_error.png"
+                                                                                Source="{Binding .}">
+                                                     </ffimageloading:CachedImage>
+                                           
+                                                </StackLayout>
+                                            </ContentView>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </RelativeLayout>
+            </StackLayout>
             </ScrollView>
-        
-
     </ContentPage.Content>
 </ContentPage>
