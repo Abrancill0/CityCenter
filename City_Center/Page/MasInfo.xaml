@@ -119,7 +119,16 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-                             <Label Text="Texto de prueba" TextColor="Black"></Label>
+                            <Label Text="La multiplicidad de espacios reflejada en los " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="salones, las terrazas al aire libre, las 14 ofertas " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="gastronómicas así como la sala de usos múltiples " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="permite la realización de actividades en simultáneo " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="y conveniente al complejo en un lugar ideal para el " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="desarrollo de congresos, convenciones, ferias, " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="exposiciones, shows, premiaciones, seminarios " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="viajes de incentivo, banquetes, lanzamientos de " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="productos, desfiles, de los cuales ya hemos sido " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="anfitriones." HorizontalOptions="Start" TextColor="Black" Margin="10, 0"></Label>
                     </StackLayout>
 
                    
@@ -224,7 +233,7 @@
                                                         LoadingPlaceholder="image_loading.png" 
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="EquipoTecnico" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="EQUIPO TECNICO DE VANGUARDIA" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text=" EQUIPO TECNICO DE VANGUARDIA" TextColor="Black" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
@@ -234,7 +243,7 @@
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="CabinaTraduccion" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="CABINAS DE TRADUCCION SIMULTÁNEAS" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text=" CABINAS DE TRADUCCION SIMULTÁNEAS" TextColor="Black" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
@@ -244,7 +253,7 @@
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="Wifi" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="WIFI LIBRE" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text=" WIFI LIBRE" TextColor="Black" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand"
@@ -255,7 +264,7 @@
                                                         LoadingPlaceholder="image_loading.png" 
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="VideoConferencia" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="VIDEO CONFERENCIA" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text=" VIDEO CONFERENCIA" TextColor="Black" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
@@ -265,7 +274,7 @@
                                                         LoadingPlaceholder="image_loading.png" 
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="AreaAcreditacion" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="ÁREA DE ACREDITACIONES" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text=" ÁREA DE ACREDITACIONES" TextColor="Black" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
@@ -275,7 +284,7 @@
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="SistemaCerrado" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="SISTEMA CERRADO VIGILANCIA" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text=" SISTEMA CERRADO VIGILANCIA" TextColor="Black" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
@@ -285,7 +294,7 @@
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="Parking" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PARKING PARA 2600 AUTOS" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text=" PARKING PARA 2600 AUTOS" TextColor="Black" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
@@ -295,7 +304,7 @@
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="AreaComercial" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="ÁREA COMERCIAL" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text=" ÁREA COMERCIAL" TextColor="Black" FontSize="Micro">
                             </Label>             
                     </StackLayout>
 
@@ -307,7 +316,7 @@
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="VariedadGastronomica" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="GRAN VARIEDAD GASTRONÓMICA" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text=" GRAN VARIEDAD GASTRONÓMICA" TextColor="Black" FontSize="Micro">
                             </Label>
                         </StackLayout>
 
@@ -361,7 +370,12 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-                             <Label Text="Texto de prueba" TextColor="Black"></Label>
+                            <Label Text="El respaldo del equipamiento técnico más avanzado " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="y el servicio de excelencia se combinan con una " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="cocina contemporánea e innovadora. Cuenta " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="tmbién con áreas ideales para bienvenida y " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="registro. Todo lo necesario para que sus reuniones y " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="eventos sean únicos y exitosos. " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
                     </StackLayout>
 
 
@@ -447,11 +461,7 @@
                             <Button Text="ENVIAR" BackgroundColor="#3F51B5" TextColor="White" ></Button>
                              </StackLayout>
                         </Frame>
-                   
                     </StackLayout>
-
-
-
                 </ScrollView>
             </StackLayout>
         </StackLayout>

@@ -102,10 +102,23 @@
                                     </Grid.RowDefinitions>
                                     <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="DESTACADOS" TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0" />
                                 </Grid>
-                                <cv:CarouselViewControl ItemsSource="{Binding DestacadosDetalle}" HorizontalOptions="FillAndExpand" HeightRequest="300">
-                                    <cv:CarouselViewControl.ItemTemplate>
+                               <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="15" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Image  BackgroundColor="Transparent" Source = "arrow_left_thin"  Grid.Row="0" Grid.Column="2"/>
+                                <Image  BackgroundColor="Transparent" Source = "arrow_right_thin"  Grid.Row="0" Grid.Column= "0"/>
+
+                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
+                                <cv:CarouselViewControl ItemsSource="{Binding DestacadosDetalle}"  HorizontalOptions="FillAndExpand" HeightRequest="300">
+                                    <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
-                                            <Grid>
+                                            <Grid BackgroundColor = "White">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="1*" />
                                                     <ColumnDefinition Width="1*" />
@@ -114,36 +127,39 @@
                                                 </Grid.ColumnDefinitions>
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="3*" />
-                                                    <RowDefinition Height="0.5*" />
+                                                    <RowDefinition Height="Auto" />
                                                     <RowDefinition Height="0.5*" />
                                                 </Grid.RowDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="100"
+                                                <ffimageloading:CachedImage HeightRequest="150"
                                                                             Aspect="AspectFill"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding des_imagen}"
-                                                                            Grid.Row="0" Grid.ColumnSpan="4">
-                                                    <ffimageloading:CachedImage.GestureRecognizers>
-                                                          <TapGestureRecognizer Command="{Binding VerDetalleCommand}"/>
+                                                                            Grid.Row="0" Grid.ColumnSpan="4" >
+                                                  <ffimageloading:CachedImage.GestureRecognizers>
+                                                        <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
                                                     </ffimageloading:CachedImage>
-                                                <Label Margin="2,4,0,0" TextColor="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding des_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" FontFamily="Oswald-Regular" />
-                                                <Label Margin="2,0,0,0" TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding des_fecha_hora_inicio}" FontSize="Small" FontFamily="Oswald-Regular" />
-                                                <Image Margin="15" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito">
-                                                    <Image.GestureRecognizers>
-                                                        <!--  <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />-->
-                                                    </Image.GestureRecognizers>
-                                                </Image>
-                                                <Image Margin="15" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir">
-                                                    <Image.GestureRecognizers>
-                                                        <!--                                                    <TapGestureRecognizer Command="{Binding CompartirCommand}" />-->
-                                                    </Image.GestureRecognizers>
-                                                </Image>
+                                                    <Label Margin="2,2,0,0" TextColor="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding des_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" FontFamily="Oswald-Regular" />
+                                                    <Label Margin="2,0,0,0" TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding des_fecha_hora_inicio}" FontSize="Small" />
+                                                    <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" VerticalOptions = "Start" HorizontalOptions = "Center" >
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                    <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions = "Start" HorizontalOptions = "Center" >
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding CompartirCommand}" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                               
                                             </Grid>
                                         </DataTemplate>
                                     </cv:CarouselViewControl.ItemTemplate>
                                 </cv:CarouselViewControl>
                             </StackLayout>
+                                </Grid>
+                    </StackLayout>
                         </Frame>
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
