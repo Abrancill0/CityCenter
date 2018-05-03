@@ -13,6 +13,7 @@ using Xamarin.Forms;
 using static City_Center.Models.EventosResultado;
 using static City_Center.Models.TorneoResultado;
 using City_Center.Clases;
+using static City_Center.Models.TarjetaUsuarioResultado;
 
 namespace City_Center.ViewModels
 {
@@ -28,6 +29,9 @@ namespace City_Center.ViewModels
 
         private TorneoReturn listTorneo;
         private ObservableCollection<TorneoItemViewModel> torneoDetalle;
+
+        private TarjetaUsuarioReturn listaTarjetausuario;
+        private ObservableCollection<TarjetaUsuarioDetalle> tarjetaUsuarioDetalle;
 
         DateTime fechaInicio;
         DateTime horaInicio;
@@ -51,6 +55,12 @@ namespace City_Center.ViewModels
         {
             get { return this.torneoDetalle; }
             set { SetValue(ref this.torneoDetalle, value); }
+        }
+
+        public ObservableCollection<TarjetaUsuarioDetalle> TarjetaUsuarioDetalle
+        {
+            get { return this.tarjetaUsuarioDetalle; }
+            set { SetValue(ref this.tarjetaUsuarioDetalle, value); }
         }
 
         public DateTime FechaInicio
@@ -251,7 +261,6 @@ namespace City_Center.ViewModels
                 return;
             }
 
-
             var content = new FormUrlEncodedContent(new[]
             {
                 new KeyValuePair<string, string>("", ""),
@@ -289,6 +298,52 @@ namespace City_Center.ViewModels
                 tor_id_usuario_modifico = l.tor_id_usuario_modifico,
                 tor_fecha_hora_modifico = l.tor_fecha_hora_modifico,
                 tor_estatus = l.tor_estatus,
+            });
+        }
+       
+        private async void LoadTarjetaUsuario()
+        {
+            var connection = await this.apiService.CheckConnection();
+
+            if (!connection.IsSuccess)
+            {
+                await Mensajes.Error(connection.Message);
+
+                return;
+            }
+
+
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("usu_id", Application.Current.Properties["IdUsuario"].ToString()),
+            });
+
+
+            var response = await this.apiService.Get<TarjetaUsuarioReturn>("/tarjetas", "/tarjetaUsuario", content);
+
+            if (!response.IsSuccess)
+            {
+                await Mensajes.Error("Error al cargar Torneos");
+
+                return;
+            }
+
+            this.listaTarjetausuario = (TarjetaUsuarioReturn)response.Result;
+
+            TarjetaUsuarioDetalle = new ObservableCollection<TarjetaUsuarioDetalle>(this.ToTarjetaUsuarioViewModel());
+
+        }
+
+        private IEnumerable<TarjetaUsuarioDetalle> ToTarjetaUsuarioViewModel()
+        {
+            return this.listaTarjetausuario.resultado.Select(l => new TarjetaUsuarioDetalle
+            {
+                tar_id =l.tar_id,
+                tar_id_tipo = l.tar_id_tipo,
+                tar_puntos = l.tar_puntos,
+                tar_fecha_hora_creo = l.tar_fecha_hora_creo,
+                tar_fecha_hora_modifico = l.tar_fecha_hora_modifico,
+                tar_imagen = l.tar_imagen,
             });
         }
 
