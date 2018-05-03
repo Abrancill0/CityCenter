@@ -403,47 +403,64 @@
                                     </Label.GestureRecognizers>
                                 </Label>
                             </Grid>
-                            <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" HeightRequest="300">
-                                <cv:CarouselViewControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="1*" />
-                                                <ColumnDefinition Width="1*" />
-                                                <ColumnDefinition Width="0.5*" />
-                                                <ColumnDefinition Width="0.5*" />
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="3*" />
-                                                <RowDefinition Height="0.5*" />
-                                                <RowDefinition Height="0.5*" />
-                                            </Grid.RowDefinitions>
-                                            <ffimageloading:CachedImage HeightRequest="150"
-                                                                        Aspect="AspectFill"
-                                                                        LoadingPlaceholder="image_loading.png"
-                                                                        ErrorPlaceholder="image_error.png"
-                                                                        Source="{Binding tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
-                                                                        Grid.Row="0" Grid.ColumnSpan="4" >
-                                              <ffimageloading:CachedImage.GestureRecognizers>
-                                                    <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
-                                                </ffimageloading:CachedImage.GestureRecognizers>
-                                                </ffimageloading:CachedImage>
-                                            <Label Margin="7,4,0,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}"  HorizontalTextAlignment="Start" FontSize="15" VerticalOptions = "Start" FontFamily="Oswald-Regular" />
-                                            <Label Margin="6,0,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" VerticalOptions = "Start" FontSize="10" FontFamily="Oswald-Regular" />
-                                            <Image Margin="15" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" VerticalOptions = "Start" HorizontalOptions = "Center">
-                                                <Image.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
-                                                </Image.GestureRecognizers>
-                                            </Image>
-                                            <Image Margin="15" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions = "Start" HorizontalOptions = "Center">
-                                                <Image.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding CompartirCommand}" />
-                                                </Image.GestureRecognizers>
-                                            </Image>
-                                        </Grid>
-                                    </DataTemplate>
-                                </cv:CarouselViewControl.ItemTemplate>
-                            </cv:CarouselViewControl>
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="15" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Image  BackgroundColor="Transparent" Source = "arrow_left_thin"  Grid.Row="0" Grid.Column="2"/>
+                                <Image  BackgroundColor="Transparent" Source = "arrow_right_thin"  Grid.Row="0" Grid.Column= "0"/>
+
+                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
+                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" HeightRequest="300">
+                                    <cv:CarouselViewControl.ItemTemplate >
+                                        <DataTemplate>
+                                            <Grid BackgroundColor = "White">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="1*" />
+                                                    <ColumnDefinition Width="1*" />
+                                                    <ColumnDefinition Width="0.5*" />
+                                                    <ColumnDefinition Width="0.5*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="3*" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="0.5*" />
+                                                </Grid.RowDefinitions>
+                                                <ffimageloading:CachedImage HeightRequest="150"
+                                                                            
+                                                                            Aspect="AspectFill"
+                                                                            LoadingPlaceholder="image_loading.png"
+                                                                            ErrorPlaceholder="image_error.png"
+                                                                            Source="{Binding tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
+                                                                            Grid.Row="0" Grid.ColumnSpan="4" >
+                                                  <ffimageloading:CachedImage.GestureRecognizers>
+                                                        <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
+                                                    </ffimageloading:CachedImage.GestureRecognizers>
+                                                    </ffimageloading:CachedImage>
+                                                    <Label Margin="7,4,0,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}"  HorizontalTextAlignment="Start" FontSize="15" VerticalOptions = "End" FontFamily="Oswald-Regular" />
+                                                    <Label Margin="6,0,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" VerticalOptions = "Start" FontSize="12" FontFamily="Oswald-Regular" />
+                                                    <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" VerticalOptions = "Start" HorizontalOptions = "Center" >
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                    <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions = "Start" HorizontalOptions = "Center" >
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding CompartirCommand}" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                               
+                                            </Grid>
+                                        </DataTemplate>
+                                    </cv:CarouselViewControl.ItemTemplate>
+                                </cv:CarouselViewControl>
+                            </StackLayout>
+                                </Grid>
                             <Image  Source = "tarjeta.png" 
                         HeightRequest = "200"
                         WidthRequest = "200">

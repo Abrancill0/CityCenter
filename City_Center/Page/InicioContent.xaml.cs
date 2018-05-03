@@ -18,6 +18,7 @@ namespace City_Center.Page
         public InicioContent()
         {
             InitializeComponent();
+
             //_webHotel = new WebViewHotel();  
             //NavigationPage.SetTitleIcon(this, "logo.png");
         }
