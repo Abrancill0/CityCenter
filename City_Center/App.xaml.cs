@@ -23,7 +23,7 @@ namespace City_Center
 
             //if (isLoggedIn)
             //{
-                MainPage = new MasterPage();
+            MainPage = new MasterPage();
             //}
             //else
             //{

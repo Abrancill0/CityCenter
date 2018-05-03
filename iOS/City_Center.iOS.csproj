@@ -377,6 +377,15 @@
     <BundleResource Include="Resources\GASTRONOMIAmin.png" />
     <BundleResource Include="Resources\CONVENCIONESmin.png" />
     <BundleResource Include="Resources\CASINOmin.png" />
+    <BundleResource Include="Resources\CASINOmin.jpg" />
+    <BundleResource Include="Resources\Hab_1.jpg" />
+    <BundleResource Include="Resources\Hab_2.jpg" />
+    <BundleResource Include="Resources\Hab_3.jpg" />
+    <BundleResource Include="Resources\Hab_4.jpg" />
+    <BundleResource Include="Resources\Hab_5.jpg" />
+    <BundleResource Include="Resources\Hab_6.jpg" />
+    <BundleResource Include="Resources\splashfinal.PNG" />
+    <BundleResource Include="Resources\food.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />
