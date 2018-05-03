@@ -253,7 +253,7 @@
                                         <Grid Padding="15, 0">
                                       <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>    
                                       <Picker x:Name="NoPersona1"
-                                              Title="Huespedés"
+                                              Title="Personas"
                                               SelectedItem="{Binding NoPersonas, Mode=TwoWay}"
                                               ItemsSource="{Binding ListaOpciones}"
                                               ></Picker>

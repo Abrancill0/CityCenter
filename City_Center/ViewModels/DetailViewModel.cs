@@ -1,15 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Net.Http;
 using System.Windows.Input;
+using City_Center.Clases;
 using City_Center.Page;
+using City_Center.Services;
 using GalaSoft.MvvmLight.Command;
 using Xamarin.Forms;
+using static City_Center.Models.TarjetaUsuarioResultado;
 
 namespace City_Center.ViewModels
 {
     public class DetailViewModel : BaseViewModel
     {
         #region Services
-
+        private ApiService apiService;
         #endregion
 
         #region Attributes
@@ -18,9 +25,14 @@ namespace City_Center.ViewModels
         private bool perfilVisible;
         private bool opcionesVisible;
         private string imagen;
+
+
+        private TarjetaUsuarioReturn listaTarjetausuario;
+        private ObservableCollection<TarjetaUsuarioDetalle> tarjetaUsuarioDetalle;
         #endregion
 
         #region Properties
+
         public string NombreUsuario
         {
             get { return this.nombreUsuario; }
@@ -50,6 +62,13 @@ namespace City_Center.ViewModels
             get { return this.imagen; }
             set { SetValue(ref this.imagen, value); }
         }
+
+        public ObservableCollection<TarjetaUsuarioDetalle> TarjetaUsuarioDetalle
+        {
+            get { return this.tarjetaUsuarioDetalle; }
+            set { SetValue(ref this.tarjetaUsuarioDetalle, value); }
+        }
+
 
         #endregion
 
@@ -184,6 +203,53 @@ namespace City_Center.ViewModels
                 OpcionesVisible = true;
             }
         }
+
+        private async void LoadTarjetaUsuario()
+        {
+            var connection = await this.apiService.CheckConnection();
+
+            if (!connection.IsSuccess)
+            {
+                await Mensajes.Error(connection.Message);
+
+                return;
+            }
+
+
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("usu_id", Application.Current.Properties["IdUsuario"].ToString()),
+            });
+
+
+            var response = await this.apiService.Get<TarjetaUsuarioReturn>("/tarjetas", "/tarjetaUsuario", content);
+
+            if (!response.IsSuccess)
+            {
+                await Mensajes.Error("Error al cargar Torneos");
+
+                return;
+            }
+
+            this.listaTarjetausuario = (TarjetaUsuarioReturn)response.Result;
+
+            TarjetaUsuarioDetalle = new ObservableCollection<TarjetaUsuarioDetalle>(this.ToTarjetaUsuarioViewModel());
+
+        }
+
+        private IEnumerable<TarjetaUsuarioDetalle> ToTarjetaUsuarioViewModel()
+        {
+            return this.listaTarjetausuario.resultado.Select(l => new TarjetaUsuarioDetalle
+            {
+                tar_id = l.tar_id,
+                tar_id_tipo = l.tar_id_tipo,
+                tar_puntos = l.tar_puntos,
+                tar_fecha_hora_creo = l.tar_fecha_hora_creo,
+                tar_fecha_hora_modifico = l.tar_fecha_hora_modifico,
+                tar_imagen = l.tar_imagen,
+            });
+        }
+
         #endregion
 
         #region Contructors

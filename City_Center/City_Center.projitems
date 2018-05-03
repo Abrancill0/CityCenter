@@ -329,6 +329,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Page\CambiaContraseña.xaml.cs">
       <DependentUpon>CambiaContraseña.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TarjetaUsuarioResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ImagenResultado.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

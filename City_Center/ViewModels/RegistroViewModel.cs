@@ -12,6 +12,9 @@ using Xamarin.Forms;
 using System.IO;
 using static City_Center.Models.RegistroUsuario;
 using City_Center.Clases;
+using System.Threading.Tasks;
+using Acr.UserDialogs;
+using static City_Center.Models.ImagenResultado;
 
 namespace City_Center.ViewModels
 {
@@ -29,7 +32,12 @@ namespace City_Center.ViewModels
         private string password2;
         private bool isEnabled;
         private string nombre;
-        private ObservableCollection<RegistroResult> registroReturn;
+
+        private RegistroReturn listRegistro;
+        private ObservableCollection<RegistroDetalle> registroDetalle;
+
+        private ImagenReturn ListImagen;
+
         #endregion
 
         private IGoogleManager _googleManager;
@@ -78,26 +86,17 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.password2, value); }
         }
 
-        public ObservableCollection<RegistroResult> RegistroReturn
+        public ObservableCollection<RegistroDetalle> RegistroDetalle
         {
-            get { return this.registroReturn; }
-            set { SetValue(ref this.registroReturn, value); }
+            get { return this.registroDetalle; }
+            set { SetValue(ref this.registroDetalle, value); }
         }
-
 
         #endregion
 
         #region Commands
 
-        public ICommand PruebaImagenCommand
-        {
-            get
-            {
-                return new RelayCommand(PruebaImagen);
-            }
-        }
-
-        private async void PruebaImagen()
+        private async Task<string> GuardaImagen(int UsuarioID)
         {
 
             var dirotro = "";
@@ -105,6 +104,8 @@ namespace City_Center.ViewModels
             if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
             {
                await Mensajes.Error("No se subio ninguna foto");
+
+               return "Error";
             }
             else
             {
@@ -115,13 +116,28 @@ namespace City_Center.ViewModels
                 
             var content = new FormUrlEncodedContent(new[]
            {
-                new KeyValuePair<string, string>("usu_id", "1"),
+                new KeyValuePair<string, string>("usu_id", Convert.ToString(UsuarioID)),
                 new KeyValuePair<string, string>("usu_imagenstr", dirotro)
 
             });
 
 
-            var response = await this.apiService.Get<RegistroResult>("/usuarios", "/carga_foto", content);
+            var response = await this.apiService.Get<ImagenReturn>("/usuarios", "/carga_foto", content);
+
+
+            if (!response.IsSuccess)
+            {
+                await Mensajes.Error("Error al cargar la foto");
+
+                UserDialogs.Instance.HideLoading();
+
+                return "Error";
+            }
+
+            ListImagen = (ImagenReturn)response.Result;
+
+
+            return VariablesGlobales.RutaServidor + ListImagen.resultado;
 
         }
 
@@ -135,6 +151,9 @@ namespace City_Center.ViewModels
 
         private async void Registro()
         {
+
+            UserDialogs.Instance.ShowLoading("Procesando...", MaskType.Black);
+
             if (string.IsNullOrEmpty(this.Ciudad))
             {
                await Mensajes.Error("Ciudad es requerida.");
@@ -147,12 +166,16 @@ namespace City_Center.ViewModels
             {
                 await Mensajes.Error("Correo es requerida.");
 
+                UserDialogs.Instance.HideLoading();
+
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Password))
             {
                 await Mensajes.Error("Contresaña es requerida.");
+
+                UserDialogs.Instance.HideLoading();
 
                 return;
             }
@@ -167,6 +190,8 @@ namespace City_Center.ViewModels
             if (this.Password != this.Password2)
             {
                 await Mensajes.Error("Las contraseñas no coicien.");
+
+                UserDialogs.Instance.HideLoading();
 
                 return;
             }
@@ -192,31 +217,35 @@ namespace City_Center.ViewModels
             });
 
 
-            var response = await this.apiService.Get<RegistroResult>("/usuarios", "/store", content);
+            var response = await this.apiService.Get<RegistroReturn>("/usuarios", "/store", content);
 
            if (!response.IsSuccess)
             {
                await Mensajes.Error("Error al registra usuario");
 
+                UserDialogs.Instance.HideLoading();
+
                 return;
             }
 
-            //LoginReturn list = (LoginReturn)response.Result;
+            listRegistro = (RegistroReturn)response.Result;
+
+            string RutaImagen = await GuardaImagen(listRegistro.resultado.usu_id);
 
             Application.Current.Properties["IsLoggedIn"] = true;
-            Application.Current.Properties["IdUsuario"] = 0;
+            Application.Current.Properties["IdUsuario"] = listRegistro.resultado.usu_id;
             Application.Current.Properties["Email"] = this.Email;
             Application.Current.Properties["NombreCompleto"] = this.Nombre;
             Application.Current.Properties["Ciudad"] = this.Ciudad;
             Application.Current.Properties["Pass"] = this.Password;
             Application.Current.Properties["FechaNacimiento"] = this.Fecha;
-            Application.Current.Properties["FotoPerfil"] = "";
+            Application.Current.Properties["FotoPerfil"] = RutaImagen;
 
             await Application.Current.SavePropertiesAsync();
 
-            await Mensajes.success("Bienvenido " + this.Nombre);
+            UserDialogs.Instance.HideLoading();
 
-         
+            await Mensajes.success("Bienvenido " + this.Nombre);
 
             this.Email = string.Empty;
             this.Nombre = string.Empty;
@@ -231,6 +260,12 @@ namespace City_Center.ViewModels
             //MainViewModel.GetInstance().Hotel = new HotelViewModel();
             //MainViewModel.GetInstance().SalasEventos = new SalasEventosViewModel();
             //MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
+
+            //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+
+            App.Current.MainPage = new MasterPage();
+
+            UserDialogs.Instance.HideLoading();
 
             await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
 

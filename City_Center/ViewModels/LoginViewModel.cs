@@ -316,7 +316,7 @@ namespace City_Center.ViewModels
             });
 
 
-            var response = await this.apiService.Get<RegistroResult>("/usuarios", "/store", content);
+            var response = await this.apiService.Get<RegistroReturn>("/usuarios", "/store", content);
 
             if (!response.IsSuccess)
             {
