@@ -6,6 +6,7 @@
              x:Class="City_Center.Page.DetalleHotel">
     <ContentPage.Content>
     <ScrollView BindingContext="{Binding DetalleHotel}">
+         <StackLayout Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout>
                  <StackLayout HorizontalOptions="FillAndExpand">
                             <ffimageloading:CachedImage x:Name="Img1provisional"
@@ -47,11 +48,18 @@
                  <StackLayout Margin="10">
                 <Label Text="{Binding hd.hab_descripcion}"></Label>
                 </StackLayout>
-              <Button Margin="15,8,15,8" TextColor="White" BackgroundColor="#2D97A3" Text="RESERVA ONLINE" />
+              <Button Margin="20,10,20,10" TextColor="White" BackgroundColor="#2D97A3" Text="RESERVA ONLINE" />
             </StackLayout>
-            <StackLayout HorizontalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand" Margin="3">
+                <Label FontFamily="Oswald-Regular"
+                       FontSize="Default"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start"
+                       Text="OTRAS HABITACIONES"
+                       TextColor="#250C4B"></Label>
                  <RelativeLayout HeightRequest="100" VerticalOptions="Start">
-                            <ListView Rotation="270" ItemsSource="{Binding ListaOpciones}"
+                            <ListView Rotation="270" ItemsSource="{Binding HabitacionesDetalle}"
                                       RowHeight="100" SeparatorVisibility="None"
                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
@@ -62,23 +70,43 @@
                                     <DataTemplate>
                                         <ViewCell>
                                             <ContentView Rotation="90" BackgroundColor="Transparent">
-                                                <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
+                                             <Grid Padding="3">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                               <!-- <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">-->
                                                     <ffimageloading:CachedImage HeightRequest="100" 
                                                                                 WidthRequest="100"
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
-                                                                                Source="{Binding .}">
+                                                                                Source="{Binding hab_imagen}">
+                                                   <!-- <ffimageloading:CachedImage.GestureRecognizers>
+                                                        <TapGestureRecognizer  Command="{Binding CambiaHabitacionCommand}"  />
+                                                    </ffimageloading:CachedImage.GestureRecognizers>-->
                                                      </ffimageloading:CachedImage>
-                                           
-                                                </StackLayout>
+                                                      <Label x:Name="Label"
+                                                       Margin="5"
+                                                       HorizontalOptions="Start"
+                                                       HorizontalTextAlignment="Start"
+                                                       VerticalOptions="End"
+                                                       TextColor="White"
+                                                       FontFamily="Oswald-regular"
+                                                       FontSize="Small"
+                                                       Text="{Binding hab_nombre}" />
+                                              <!--  </StackLayout>-->
+                                                </Grid>
                                             </ContentView>
                                         </ViewCell>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-            </StackLayout>
-            </ScrollView>
+            </StackLayout> 
+         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

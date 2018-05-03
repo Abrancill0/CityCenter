@@ -266,16 +266,16 @@ namespace City_Center.ViewModels
                 Application.Current.Properties["Ciudad"] = "";
                 Application.Current.Properties["Pass"] = "";
                 Application.Current.Properties["FechaNacimiento"] = "";
-                Application.Current.Properties["FotoPerfil"] = "";
+                Application.Current.Properties["FotoPerfil"] =facebookUser.Picture;
 
                 await Application.Current.SavePropertiesAsync();
-
 
                 MainViewModel.GetInstance().Master = new MasterViewModel();
                 MainViewModel.GetInstance().Inicio = new InicioViewModel();
                 MainViewModel.GetInstance().Detail = new DetailViewModel();
                 MainViewModel.GetInstance().Casino = new CasinoViewModel();
                 MainViewModel.GetInstance().Hotel = new HotelViewModel();
+                MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
                 await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
             }

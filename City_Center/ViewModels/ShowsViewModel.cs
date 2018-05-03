@@ -45,8 +45,15 @@ namespace City_Center.ViewModels
 
         private void Jarana()
         {
-
-            EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 2));
+            try
+            {
+                EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 2));
+           
+            }
+            catch (System.Exception ex)
+            {
+                Mensajes.Info("No existen eventos en Jaraná");
+            }
             //l.loc_nombre =="Jaraná"
         }
 
@@ -61,8 +68,15 @@ namespace City_Center.ViewModels
 
         private void Centro()
         {
+            try
+            {
+                EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 1));
 
-            EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 1));
+            }
+            catch (System.Exception ex)
+            {
+                Mensajes.Info("No existen eventos en Centro de Convenciones");
+            }
 
         }
 
