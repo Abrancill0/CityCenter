@@ -375,6 +375,8 @@
     <BundleResource Include="Resources\RESERVATUMESA.png" />
     <BundleResource Include="Resources\TICKETSHOWS.png" />
     <BundleResource Include="Resources\TIENDAONLINE.png" />
+    <BundleResource Include="Resources\arrow_left_thin.png" />
+    <BundleResource Include="Resources\arrow_right_thin.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

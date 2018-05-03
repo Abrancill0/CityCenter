@@ -403,6 +403,7 @@
                                     </Label.GestureRecognizers>
                                 </Label>
                             </Grid>
+                            <!--Carousel-->
                             <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="15" />
@@ -461,6 +462,7 @@
                                 </cv:CarouselViewControl>
                             </StackLayout>
                                 </Grid>
+                            <!--Carousel-->
                             <Image  Source = "tarjeta.png" 
                         HeightRequest = "200"
                         WidthRequest = "200">
