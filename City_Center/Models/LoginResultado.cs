@@ -62,6 +62,7 @@ namespace City_Center.Models
             public string usu_fecha_registro { get; set; }
             public string usu_fecha_nacimiento { get; set; }
             public int usu_id_tarjeta_socio { get; set; }
+            public string usu_imagen { get; set; }
             public string usu_ciudad { get; set; }
             public int usu_id_rol { get; set; }
             public int usu_estatus { get; set; }
