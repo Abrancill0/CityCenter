@@ -119,16 +119,16 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-                            <Label Text="La multiplicidad de espacios reflejada en los " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="salones, las terrazas al aire libre, las 14 ofertas " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="gastronómicas así como la sala de usos múltiples " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="permite la realización de actividades en simultáneo " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="y conveniente al complejo en un lugar ideal para el " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="desarrollo de congresos, convenciones, ferias, " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="exposiciones, shows, premiaciones, seminarios " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="viajes de incentivo, banquetes, lanzamientos de " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="productos, desfiles, de los cuales ya hemos sido " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="anfitriones." TextColor="Black"></Label>
+                            <Label Text="La multiplicidad de espacios reflejada en los " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="salones, las terrazas al aire libre, las 14 ofertas " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="gastronómicas así como la sala de usos múltiples " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="permite la realización de actividades en simultáneo " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="y conveniente al complejo en un lugar ideal para el " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="desarrollo de congresos, convenciones, ferias, " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="exposiciones, shows, premiaciones, seminarios " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="viajes de incentivo, banquetes, lanzamientos de " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="productos, desfiles, de los cuales ya hemos sido " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="anfitriones." HorizontalOptions="Start" TextColor="Black" Margin="10, 0"></Label>
                     </StackLayout>
 
                    
@@ -370,12 +370,12 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-                            <Label Text="El respaldo del equipamiento técnico más avanzado " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="y el servicio de excelencia se combinan con una " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="cocina contemporánea e innovadora. Cuenta " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="tmbién con áreas ideales para bienvenida y " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="registro. Todo lo necesario para que sus reuniones y " TextColor="Black" HorizontalOptions="Start"></Label>
-                            <Label Text="eventos sean únicos y exitosos. " TextColor="Black" HorizontalOptions="Start"></Label>
+                            <Label Text="El respaldo del equipamiento técnico más avanzado " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="y el servicio de excelencia se combinan con una " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="cocina contemporánea e innovadora. Cuenta " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="tmbién con áreas ideales para bienvenida y " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="registro. Todo lo necesario para que sus reuniones y " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
+                            <Label Text="eventos sean únicos y exitosos. " TextColor="Black" HorizontalOptions="Start" Margin="10, 0"></Label>
                     </StackLayout>
 
 
@@ -461,11 +461,7 @@
                             <Button Text="ENVIAR" BackgroundColor="#3F51B5" TextColor="White" ></Button>
                              </StackLayout>
                         </Frame>
-                   
                     </StackLayout>
-
-
-
                 </ScrollView>
             </StackLayout>
         </StackLayout>
