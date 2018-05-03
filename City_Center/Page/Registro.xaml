@@ -119,8 +119,6 @@
                 <Button BackgroundColor="Transparent" Command="{Binding GoogleCommand}" IsEnabled="{Binding IsEnabled, Mode=TwoWay}" Style="{DynamicResource StyleButton}" HeightRequest="55" Text="" Image="btn_google.png" ContentLayout="Left,0">
                 </Button>
 
-                <Button Text ="Hola" Command="{Binding PruebaImagenCommand}"/>
-                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
