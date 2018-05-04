@@ -12,6 +12,16 @@ namespace City_Center.Page
             InitializeComponent();
         }
 
+
+        protected override void OnDisappearing()
+        {
+
+            base.OnDisappearing();
+
+            this.Content = null;
+
+        }
+
         void Tab1_Tapped(object sender, System.EventArgs e)
         {
             LabelTab1.TextColor = Color.FromHex("#FFE8E1");

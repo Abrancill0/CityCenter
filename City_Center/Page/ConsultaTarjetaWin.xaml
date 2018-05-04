@@ -16,8 +16,80 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
     <ContentPage.Content>
-        
+        <StackLayout BindingContext="{Binding ConsultaTarjeta}">
+            <StackLayout>
+            <Label Text="Tipo documento" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"/>
+            <Grid Padding="15, 0">
+            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End" />
+                <Picker Margin="5" x:Name="TipoDocumento"
+                        ItemsSource="{Binding ListaOpciones}" 
+                        Title="Tipo Documento" >
+                </Picker>
+                </Grid>
+                </StackLayout>
+
+          <xfx:XfxEntry Style="{DynamicResource EntryStyle}" Placeholder="Numero de Documento">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                       <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">50</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+            </xfx:XfxEntry>
+ 
+            <xfx:XfxEntry Style="{DynamicResource EntryStyle}" Placeholder="No Socio">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                       <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">50</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+            </xfx:XfxEntry>
+            <AbsoluteLayout IsVisible="{Binding VerTarjeta,Mode=TwoWay}"  Padding = "5,30" HeightRequest="200" WidthRequest="300" 
+                HorizontalOptions="Center">
+
+                <Image Source="{Binding ImagenTarjeta}" Aspect="Fill" 
+                                       HeightRequest="200" 
+                                       WidthRequest="300"
+                                       IsVisible="{Binding PerfilVisible}"/>
+
+                <Label Text="PUNTOS WIN" FontSize = "15"
+                                       TextColor="White" 
+                                       HorizontalOptions="Center"                         
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds="0.9,0.1,-1,-1"
+                                       IsVisible="{Binding PerfilVisible}">
+                                </Label>
+
+                                <Label Text="{Binding PuntosWin}" FontSize = "15"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"                         
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1"
+                                      IsVisible="{Binding PerfilVisible}">
+                                </Label>
+
+                <Label Text="Socio N." FontSize = "Micro"
+                                       TextColor="White" 
+                                       HorizontalOptions="Center"                         
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1"
+                                       IsVisible="{Binding PerfilVisible}">
+                                </Label>
+
+                 <Label    Text="{Binding NoSocio}" TextColor="White"
+                                       FontSize="Medium"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"                
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1"
+                                    IsVisible="{Binding PerfilVisible}">
+                                </Label>
+                            </AbsoluteLayout> 
+                
+          </StackLayout>
+
+
     </ContentPage.Content>
 </ContentPage>

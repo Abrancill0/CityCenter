@@ -21,7 +21,20 @@ namespace City_Center.Page
         protected override void OnAppearing()
         {
             base.OnAppearing();
+           
+
         }
+
+
+        protected override void OnDisappearing()
+        {
+            
+                base.OnDisappearing();
+
+            this.Content = null;
+
+        }
+
 
         void Tab1_Tapped(object sender, System.EventArgs e)
         {
