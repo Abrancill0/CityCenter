@@ -56,7 +56,7 @@ namespace City_Center.ViewModels
                 instance = this;
                 this.Master = new MasterViewModel();
                 this.Inicio = new InicioViewModel();
-               // this.Casino = new CasinoViewModel();
+                this.Casino = new CasinoViewModel();
                 this.Hotel = new HotelViewModel();
                 this.Detail = new DetailViewModel();
                 this.Gastronomia = new GastronomiaViewModel();

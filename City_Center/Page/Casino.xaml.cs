@@ -28,8 +28,8 @@ namespace City_Center.Page
         protected override void OnAppearing()
         {
             base.OnAppearing();
+           
 
-            MainViewModel.GetInstance().Casino = new CasinoViewModel();
         }
 
 

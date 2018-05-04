@@ -147,8 +147,7 @@
                             <Label Text="Huéspedes" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
                             <Grid Padding="15, 0">    
                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
-                            <Picker Margin="5" x:Name="NoPersona" Title="Huespedés"></Picker>
-                                     <!--ItemsSource="{Binding ListaOpciones}" -->
+                            <Picker Margin="5" x:Name="NoPersona" Title="Huespedés"  ItemsSource="{Binding ListaOpciones}" ></Picker>
                             </Grid>
                             </StackLayout>
                            
@@ -229,17 +228,14 @@
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
                                         <Label Text="Fecha">
                                         </Label>
-                                        <DatePicker >
-                                            
+                                        <DatePicker Date="{Binding FechaInicio, Mode=TwoWay}">
                                         </DatePicker>
-                                     <!--   Date="{Binding FechaInicio, Mode=TwoWay}"-->
                                     </StackLayout>
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                                         <Label Text="Hora">
                                         </Label>
-                                        <TimePicker >
+                                        <TimePicker Time="{Binding HoraInicio, Mode=TwoWay}">
                                         </TimePicker>
-                                        <!--Time="{Binding HoraInicio, Mode=TwoWay}"-->
                                     </StackLayout>
                                 </Grid>
                             </StackLayout>
@@ -259,9 +255,8 @@
                                       <Picker x:Name="NoPersona1"
                                               Title="Personas"
                                               SelectedItem="{Binding NoPersonas, Mode=TwoWay}"
-
+                                              ItemsSource="{Binding ListaOpciones}"
                                               ></Picker>
-                                            <!--ItemsSource="{Binding ListaOpciones}"-->
                                             </Grid>
                                     </StackLayout>
 
@@ -283,9 +278,8 @@
                                               x:Name="CR"
                                               Title="Seleccionar..."
                                               SelectedItem="{Binding NombreRestaurante, Mode=TwoWay}"
-                                               ></Picker>
+                                              ItemsSource="{Binding ListaOpciones2}" ></Picker>
                                             </Grid>
-                                        <!--ItemsSource="{Binding ListaOpciones2}"-->
 
                                     </StackLayout>
 
@@ -306,9 +300,8 @@
                                       <Picker Margin="5"
                                               x:Name="Combosillaniños"
                                                SelectedItem="{Binding SillaNiños, Mode=TwoWay}"
-                                             
+                                              ItemsSource="{Binding ListaOpciones3}"
                                               ></Picker>
-<!--                                             ItemsSource="{Binding ListaOpciones3}"-->
                                             </Grid>
                                      </StackLayout>
                              
@@ -490,8 +483,7 @@
                                        Aspect="Fill" 
                                        HeightRequest="200" 
                                        WidthRequest="300"
-                                       />
-                                <!--IsVisible="{Binding PerfilVisible}"-->
+                                       IsVisible="{Binding PerfilVisible}"/>
                                 
                                 <Label Text="PUNTOS WIN"
                                        FontSize = "12"
@@ -499,7 +491,7 @@
                                        HorizontalOptions="Center"                         
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
                                        AbsoluteLayout.LayoutBounds="0.9,0.1,-1,-1"
-                                       >
+                                       IsVisible="{Binding PerfilVisible}">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -513,7 +505,7 @@
                                        HorizontalOptions="Center"                         
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
                                        AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1"
-                                      >
+                                      IsVisible="{Binding PerfilVisible}">
                                         <Label.FontFamily>
                                             <OnPlatform x:TypeArguments="x:String">
                                                 <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -527,7 +519,7 @@
                                        HorizontalOptions="Center"                         
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
                                        AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1"
-                                       >
+                                       IsVisible="{Binding PerfilVisible}">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -543,7 +535,7 @@
                                        VerticalOptions="Center"                
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
                                        AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1"
-                                    >
+                                    IsVisible="{Binding PerfilVisible}">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
