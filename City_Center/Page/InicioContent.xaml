@@ -443,8 +443,23 @@
                                                         <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
                                                     </ffimageloading:CachedImage>
-                                                    <Label Margin="7,4,0,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}"  HorizontalTextAlignment="Start" FontSize="15" VerticalOptions = "End" FontFamily="Oswald-Regular" />
-                                                    <Label Margin="6,0,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" VerticalOptions = "Start" FontSize="12" FontFamily="Oswald-Regular" />
+                                                    <Label Margin="7,4,0,0" TextColor = "#5D5D5D" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}"  HorizontalTextAlignment="Start" FontSize="15" VerticalOptions = "End" FontFamily="Oswald-Regular" >
+                                                         <Label.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                            </OnPlatform>
+                                                        </Label.FontFamily>
+                                                    </Label>
+                                                    
+                                                    <Label Margin="6,0,0,0" TextColor = "#5D5D5D" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" VerticalOptions = "Start" FontSize="12" FontFamily="Oswald-Regular" >
+                                                         <Label.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                            </OnPlatform>
+                                                        </Label.FontFamily>
+                                                    </Label>
                                                     <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" VerticalOptions = "Start" HorizontalOptions = "Center" >
                                                         <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
@@ -463,7 +478,7 @@
                             </StackLayout>
                                 </Grid>
                             <!--Carousel-->
-                            <AbsoluteLayout IsVisible="{Binding VerTarjeta,Mode=TwoWay}"  Padding = "5,30" HeightRequest="200" WidthRequest="300" HorizontalOptions="Center">
+                            <AbsoluteLayout Padding = "5,30" HeightRequest="200" WidthRequest="300" HorizontalOptions="Center">
                                 <Image Source="{Binding ImagenTarjeta}"
                                        Aspect="Fill" 
                                        HeightRequest="200" 
@@ -471,12 +486,18 @@
                                        IsVisible="{Binding PerfilVisible}"/>
                                 
                                 <Label Text="PUNTOS WIN"
-                                       FontSize = "15"
+                                       FontSize = "12"
                                        TextColor="White" 
                                        HorizontalOptions="Center"                         
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
                                        AbsoluteLayout.LayoutBounds="0.9,0.1,-1,-1"
                                        IsVisible="{Binding PerfilVisible}">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
                                 </Label>
                                <Label Text="{Binding PuntosWin}"
                                        FontSize = "15"
@@ -485,6 +506,12 @@
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
                                        AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1"
                                       IsVisible="{Binding PerfilVisible}">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                            </OnPlatform>
+                                        </Label.FontFamily>
                                 </Label>
                                 <Label Text="Socio N. "
                                        FontSize = "Micro"
@@ -493,6 +520,12 @@
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
                                        AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1"
                                        IsVisible="{Binding PerfilVisible}">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
                                 </Label>
                                 <Label 
                                        Text="{Binding NoSocio}"
@@ -503,6 +536,12 @@
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
                                        AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1"
                                     IsVisible="{Binding PerfilVisible}">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
                                 </Label>
                             </AbsoluteLayout>
                         </StackLayout>

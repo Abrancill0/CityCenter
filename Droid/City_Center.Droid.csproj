@@ -342,11 +342,6 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="packages.config" />
-    <None Include="Resources\Menu.png" />
-    <None Include="Resources\Reservar.png" />
-    <None Include="Resources\CASINOmin.png" />
-    <None Include="Resources\CONVENCIONESmin.png" />
-    <None Include="Resources\GASTRONOMIAmin.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
