@@ -311,6 +311,10 @@ namespace City_Center.ViewModels
                 Application.Current.Properties["FechaNacimiento"] = "";
                 Application.Current.Properties["FotoPerfil"] =facebookUser.Picture;
                 Application.Current.Properties["TipoCuenta"] = "Facebook";
+                Application.Current.Properties["TipoDocumento"] = "";
+
+                Application.Current.Properties["NumeroDocumento"] = "";
+                Application.Current.Properties["NumeroSocio"] = "";
 
                 await Application.Current.SavePropertiesAsync();
 
