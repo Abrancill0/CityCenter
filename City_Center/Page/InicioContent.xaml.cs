@@ -44,6 +44,7 @@ namespace City_Center.Page
             NoPersona1.SelectedIndex = 0;
             CR.SelectedIndex = 0;
             Combosillaniños.SelectedIndex = 0;
+           
         }
 
 
