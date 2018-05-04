@@ -181,6 +181,25 @@ namespace City_Center.ViewModels
 
         }
 
+
+        public ICommand ConsultaPuntosCommand
+        {
+            get
+            {
+                return new RelayCommand(ConsultaPuntos);
+            }
+        }
+
+        public async void ConsultaPuntos()
+        {
+            MainViewModel.GetInstance().ConsultaTarjetaWin = new ConsultaTarjetaWinViewModel();
+
+          
+            await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ConsultaTarjetaWin());
+
+        }
+
+
         #endregion
 
         #region Methods

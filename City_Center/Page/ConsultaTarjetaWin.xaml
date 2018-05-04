@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" 
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="City_Center.Page.ConsultaTarjetaWin">
+    <ResourceDictionary>
+        <Style x:Name="StyleButton" TargetType="Button">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontFamily" Value="Oswald-Bold" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="Default">
+            </Setter>
+        </Style>
+        <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontFamily" Value="Roboto-Regular" />
+            <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
+        </Style>
+    </ResourceDictionary>
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding ConsultaTarjetaWin}">
+            <Label>
+            </Label>
+            <StackLayout>
+                <Label Text="Tipo documento" TextColor="Gray" Margin="5,2,0,0" FontSize="Small">
+                </Label>
+                <Grid Padding="15, 0">
+                    <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End" />
+                    <Picker Margin="5" x:Name="TipoDocumento" ItemsSource="{Binding ListaOpciones}" Title="Tipo Documento" SelectedItem="{Binding TipoDocumento, Mode=TwoWay}">
+                    </Picker>
+                </Grid>
+            </StackLayout>
+            <xfx:XfxEntry Style="{DynamicResource EntryStyle}" Placeholder="Número de Documento" Text="{Binding Email, Mode=TwoWay}">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">50</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+            </xfx:XfxEntry>
+            <xfx:XfxEntry Style="{DynamicResource EntryStyle}" Placeholder="Socío N." Text="{Binding Email, Mode=TwoWay}">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">50</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+            </xfx:XfxEntry>
+
+            <AbsoluteLayout IsVisible="{Binding VerTarjeta,Mode=TwoWay}"  Padding = "5,30" HeightRequest="200" WidthRequest="300" HorizontalOptions="Center">
+                                <Image Source="{Binding ImagenTarjeta}"
+                                       Aspect="Fill" 
+                                       HeightRequest="200" 
+                                       WidthRequest="300"
+                                       IsVisible="{Binding PerfilVisible}"/>
+                                
+                                <Label Text="PUNTOS WIN"
+                                       FontSize = "15"
+                                       TextColor="White" 
+                                       HorizontalOptions="Center"                         
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds="0.9,0.1,-1,-1"
+                                       IsVisible="{Binding PerfilVisible}">
+                                </Label>
+                               <Label Text="{Binding PuntosWin}"
+                                       FontSize = "15"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"                         
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1"
+                                      IsVisible="{Binding PerfilVisible}">
+                                </Label>
+                                <Label Text="Socio N. "
+                                       FontSize = "Micro"
+                                       TextColor="White" 
+                                       HorizontalOptions="Center"                         
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1"
+                                       IsVisible="{Binding PerfilVisible}">
+                                </Label>
+                                <Label 
+                                       Text="{Binding NoSocio}"
+                                       TextColor="White"
+                                       FontSize="Medium"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"                
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1"
+                                    IsVisible="{Binding PerfilVisible}">
+                                </Label>
+                            </AbsoluteLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
