@@ -114,7 +114,7 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+            <Frame HeightRequest = "450" IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                 <Frame.Margin>
                     <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
                 </Frame.Margin>
@@ -122,7 +122,7 @@
                     <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                 </Frame.Padding>
                 <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                    <flv:FlowListView FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding PromocionesDetalle}">
+                    <flv:FlowListView FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="170" FlowItemsSource="{Binding PromocionesDetalle}">
                         <flv:FlowListView.FlowColumnTemplate>
                             <DataTemplate>
                                 <Grid Padding="3">
@@ -132,7 +132,7 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <ffimageloading:CachedImage HeightRequest="190"
+                                    <ffimageloading:CachedImage HeightRequest="230"
                                                                 Aspect="AspectFill"
                                                                 LoadingPlaceholder="image_loading.png"
                                                                 ErrorPlaceholder="image_error.png"
