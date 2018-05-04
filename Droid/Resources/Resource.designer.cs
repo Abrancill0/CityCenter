@@ -6113,11 +6113,11 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0201a2
 			public const int notification_icon_background = 2130837922;
 			
-			// aapt resource value: 0x7f0201cf
-			public const int notification_template_icon_bg = 2130837967;
-			
 			// aapt resource value: 0x7f0201d0
-			public const int notification_template_icon_low_bg = 2130837968;
+			public const int notification_template_icon_bg = 2130837968;
+			
+			// aapt resource value: 0x7f0201d1
+			public const int notification_template_icon_low_bg = 2130837969;
 			
 			// aapt resource value: 0x7f0201a3
 			public const int notification_tile_bg = 2130837923;
@@ -6195,61 +6195,64 @@ namespace City_Center.Droid
 			public const int svip2 = 2130837947;
 			
 			// aapt resource value: 0x7f0201bc
-			public const int tarjeta = 2130837948;
+			public const int Tabbar = 2130837948;
 			
 			// aapt resource value: 0x7f0201bd
-			public const int TICKETSHOWS = 2130837949;
+			public const int tarjeta = 2130837949;
 			
 			// aapt resource value: 0x7f0201be
-			public const int TICKETSHOWS_S = 2130837950;
+			public const int TICKETSHOWS = 2130837950;
 			
 			// aapt resource value: 0x7f0201bf
-			public const int TicketsShows = 2130837951;
+			public const int TICKETSHOWS_S = 2130837951;
 			
 			// aapt resource value: 0x7f0201c0
-			public const int Tienda = 2130837952;
+			public const int TicketsShows = 2130837952;
 			
 			// aapt resource value: 0x7f0201c1
-			public const int TIENDAONLINE = 2130837953;
+			public const int Tienda = 2130837953;
 			
 			// aapt resource value: 0x7f0201c2
-			public const int TIENDAONLINE_S = 2130837954;
+			public const int TIENDAONLINE = 2130837954;
 			
 			// aapt resource value: 0x7f0201c3
-			public const int tooltip_frame_dark = 2130837955;
+			public const int TIENDAONLINE_S = 2130837955;
 			
 			// aapt resource value: 0x7f0201c4
-			public const int tooltip_frame_light = 2130837956;
+			public const int tooltip_frame_dark = 2130837956;
 			
 			// aapt resource value: 0x7f0201c5
-			public const int Up = 2130837957;
+			public const int tooltip_frame_light = 2130837957;
 			
 			// aapt resource value: 0x7f0201c6
-			public const int user = 2130837958;
+			public const int Up = 2130837958;
 			
 			// aapt resource value: 0x7f0201c7
-			public const int ValetParking = 2130837959;
+			public const int user = 2130837959;
 			
 			// aapt resource value: 0x7f0201c8
-			public const int VariedadGastronomica = 2130837960;
+			public const int ValetParking = 2130837960;
 			
 			// aapt resource value: 0x7f0201c9
-			public const int VideoConferencia = 2130837961;
+			public const int VariedadGastronomica = 2130837961;
 			
 			// aapt resource value: 0x7f0201ca
-			public const int vip1 = 2130837962;
+			public const int VideoConferencia = 2130837962;
 			
 			// aapt resource value: 0x7f0201cb
-			public const int vip2 = 2130837963;
+			public const int vip1 = 2130837963;
 			
 			// aapt resource value: 0x7f0201cc
-			public const int warning = 2130837964;
+			public const int vip2 = 2130837964;
 			
 			// aapt resource value: 0x7f0201cd
-			public const int Wifi = 2130837965;
+			public const int warning = 2130837965;
 			
 			// aapt resource value: 0x7f0201ce
-			public const int WifiLibre = 2130837966;
+			public const int Wifi = 2130837966;
+			
+			// aapt resource value: 0x7f0201cf
+			public const int WifiLibre = 2130837967;
 			
 			static Drawable()
 			{
@@ -6564,6 +6567,9 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0076
 			public const int image = 2131558518;
 			
+			// aapt resource value: 0x7f0d00fb
+			public const int imageView1 = 2131558651;
+			
 			// aapt resource value: 0x7f0d00c3
 			public const int indicator = 2131558595;
 			
@@ -6612,14 +6618,14 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d00c7
 			public const int loadingProgressWheel = 2131558599;
 			
-			// aapt resource value: 0x7f0d00fa
-			public const int masked = 2131558650;
+			// aapt resource value: 0x7f0d00f9
+			public const int masked = 2131558649;
 			
 			// aapt resource value: 0x7f0d00e9
 			public const int media_actions = 2131558633;
 			
-			// aapt resource value: 0x7f0d00f8
-			public const int message = 2131558648;
+			// aapt resource value: 0x7f0d00f7
+			public const int message = 2131558647;
 			
 			// aapt resource value: 0x7f0d00c8
 			public const int messenger_send_button = 2131558600;
@@ -6861,8 +6867,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0040
 			public const int showTitle = 2131558464;
 			
-			// aapt resource value: 0x7f0d00f6
-			public const int sliding_tabs = 2131558646;
+			// aapt resource value: 0x7f0d00fa
+			public const int sliding_tabs = 2131558650;
 			
 			// aapt resource value: 0x7f0d0039
 			public const int small = 2131558457;
@@ -6954,8 +6960,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0086
 			public const int title_template = 2131558534;
 			
-			// aapt resource value: 0x7f0d00f7
-			public const int toolbar = 2131558647;
+			// aapt resource value: 0x7f0d00f6
+			public const int toolbar = 2131558646;
 			
 			// aapt resource value: 0x7f0d0031
 			public const int top = 2131558449;
@@ -6999,8 +7005,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0016
 			public const int view_offset_helper = 2131558422;
 			
-			// aapt resource value: 0x7f0d00f9
-			public const int visible = 2131558649;
+			// aapt resource value: 0x7f0d00f8
+			public const int visible = 2131558648;
 			
 			// aapt resource value: 0x7f0d00db
 			public const int volume_item_container = 2131558619;
@@ -7351,16 +7357,13 @@ namespace City_Center.Droid
 			public const int support_simple_spinner_dropdown_item = 2130903120;
 			
 			// aapt resource value: 0x7f030051
-			public const int Tabbar = 2130903121;
+			public const int Toolbar = 2130903121;
 			
 			// aapt resource value: 0x7f030052
-			public const int Toolbar = 2130903122;
+			public const int tooltip = 2130903122;
 			
 			// aapt resource value: 0x7f030053
-			public const int tooltip = 2130903123;
-			
-			// aapt resource value: 0x7f030054
-			public const int vertical_viewpager = 2130903124;
+			public const int vertical_viewpager = 2130903123;
 			
 			static Layout()
 			{
