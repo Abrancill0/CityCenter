@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Windows.Input;
+using City_Center.Clases;
 using City_Center.Services;
 using GalaSoft.MvvmLight.Command;
 using Xamarin.Forms;
+using static City_Center.Models.ActualizaUsuarioResultado;
+using static City_Center.Models.RegistroUsuario;
+using static City_Center.Models.TarjetaUsuarioResultado;
+using System.Threading.Tasks;
 
 namespace City_Center.ViewModels
 {
@@ -26,6 +31,13 @@ namespace City_Center.ViewModels
         private string tipoDocumento;
         private string numeroDocumento;
         private string numeroSocio;
+
+        private string NoSocio;
+
+        private TarjetaUsuarioReturn listaTarjetausuario;
+
+        private ActualizaUsuarioReturn list;
+
         #endregion
 
         #region Properties
@@ -104,6 +116,27 @@ namespace City_Center.ViewModels
 
         private async void ActualizaPerfil()
         {
+            if (string.IsNullOrEmpty(NumeroSocio))
+            {
+                await Mensajes.Info("Usuario actual no cuenta con tarjeta Win");
+            }
+            else
+            {
+                var MensajeTarjeta = await ValidaTarjetaUsuario(NumeroSocio);
+
+
+                if (MensajeTarjeta == "OK")
+                {
+                    await Mensajes.success("Tarjeta vinculada correctamente");  
+                }
+                else
+                {
+                  await Mensajes.Info(MensajeTarjeta);
+
+                    NumeroSocio = "";
+                }
+            }
+          
             var content = new FormUrlEncodedContent(new[]
            {
                 new KeyValuePair<string, string>("usu_fecha_nacimiento", Fecha),
@@ -127,21 +160,26 @@ namespace City_Center.ViewModels
             });
 
 
-            //var response = await this.apiService.Get<RegistroReturn>("/usuarios", "/update", content);
+            var response = await this.apiService.Get<ActualizaUsuarioReturn>("/usuarios", "/update", content);
 
-            //if (!response.IsSuccess)
-            //{
-            //    await Mensajes.Error(response.Message);
+            if (!response.IsSuccess)
+            {
+                await Mensajes.Error(response.Message);
 
-            //    return "Error";
-            //}
+                return;
+            }
 
-            //listRegistro = (RegistroReturn)response.Result;
-
-            //return Convert.ToString(listRegistro.resultado.usu_id);
+            list = (ActualizaUsuarioReturn)response.Result;
 
 
+            //Application.Current.Properties["NombreCompleto"] = Nombre;
+            //Ciudad = Application.Current.Properties["Ciudad"].ToString();
+            //Contraseña = Application.Current.Properties["Pass"].ToString();
+            //Contraseña2 = Application.Current.Properties["Pass"].ToString();
+            //Fecha = Application.Current.Properties["FechaNacimiento"].ToString();
 
+
+            await Mensajes.success("Usuario Actualizado correctamente");
         }
 
         #endregion
@@ -158,6 +196,59 @@ namespace City_Center.ViewModels
             Imagen = Application.Current.Properties["FotoPerfil"].ToString();
 
         }
+
+        private async Task<string> ValidaTarjetaUsuario(string NoTarjeta)
+        {
+            try
+            {
+
+                var connection = await this.apiService.CheckConnection();
+
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
+
+                    return "No se tiene conexion a internet";
+                }
+
+                //string idusuario = Application.Current.Properties["IdUsuario"].ToString();
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("usu_id_tarjeta ",NoTarjeta )
+                });
+
+
+                var response = await this.apiService.Get<TarjetaUsuarioReturn>("/tarjetas", "/tarjetaUsuario", content);
+
+                if (!response.IsSuccess)
+                {
+                    //await Mensajes.Error("Error al cargar Torneos");
+
+                    return "No Existe tarjeta Ingresada";
+                }
+
+                //this.listaTarjetausuario = (TarjetaUsuarioReturn)response.Result;
+
+
+                //NoSocio = listaTarjetausuario.resultado.tar_id;
+
+                //if (NoTarjeta != NoSocio)
+                //{
+                //await  Mensajes.Info("La tarjeta ingresada es diferente a la que tiene asiganda el usuario");
+                //}
+
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+                await Mensajes.Error(ex.ToString());
+                return "Error";
+            }
+
+        }
+
+
         #endregion
 
         #region Contructors

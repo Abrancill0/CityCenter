@@ -143,6 +143,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ConsultaTarjetaWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\HttpClientPostMethod.cs" />
@@ -334,6 +338,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ReiniciaPassResultado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ReiniciaPassViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ValidaUsuarioResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ActualizaUsuarioResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ConsultaTarjetaWinViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\ConsultaTarjetaWin.xaml.cs">
+      <DependentUpon>ConsultaTarjetaWin.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />
