@@ -349,7 +349,6 @@
     <None Include="Resources\GASTRONOMIAmin.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -448,7 +447,7 @@
     <AndroidResource Include="Resources\drawable\ReservarResaurant.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Compartir.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Favorito.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo_hdpi.png" />
     <AndroidResource Include="Resources\drawable\error.png" />
     <AndroidResource Include="Resources\drawable\informacion.png" />
     <AndroidResource Include="Resources\drawable\success.png" />
@@ -483,6 +482,7 @@
     <AndroidResource Include="Resources\drawable\HOTELmin.png" />
     <AndroidResource Include="Resources\drawable\GASTRONOMIAmin.png" />
     <AndroidResource Include="Resources\drawable\CONVENCIONESmin.png" />
+    <AndroidResource Include="Resources\drawable\Tabbar.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
