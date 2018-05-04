@@ -114,7 +114,9 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error(response.Message);
+                    await Mensajes.Error("Usuario o contraseña incorrecto.");
+
+                    UserDialogs.Instance.HideLoading();
 
                     return;
                 }

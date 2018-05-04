@@ -513,7 +513,11 @@
                                     </OnPlatform>
                                 </Button.FontFamily>
                             </Button>
-                            <Button HeightRequest = "35" Text="CONSULTAR PUNTOS" TextColor="White" BackgroundColor="#E91E63">
+                            <Button HeightRequest = "35"
+                                    Text="CONSULTAR PUNTOS"
+                                    TextColor="White"
+                                    BackgroundColor="#E91E63"
+                                    Command="{Binding ConsultaPuntosCommand}">
                              <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Fonts/Oswald-Regular"/>

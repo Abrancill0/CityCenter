@@ -28,7 +28,6 @@ namespace City_Center.ViewModels
 
         #region Properties
 
-
         public string ImagenTarjeta
         {
             get { return this.imagenTarjeta; }
