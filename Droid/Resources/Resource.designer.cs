@@ -5114,7 +5114,6 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f02005b
 			public const int avd_hide_password = 2130837595;
 			
-<<<<<<< HEAD
 			// aapt resource value: 0x7f0201d3
 			public const int avd_hide_password_1 = 2130837971;
 			
@@ -5123,21 +5122,10 @@ namespace City_Center.Droid
 			
 			// aapt resource value: 0x7f0201d5
 			public const int avd_hide_password_3 = 2130837973;
-=======
-			// aapt resource value: 0x7f0201d1
-			public const int avd_hide_password_1 = 2130837969;
-			
-			// aapt resource value: 0x7f0201d2
-			public const int avd_hide_password_2 = 2130837970;
-			
-			// aapt resource value: 0x7f0201d3
-			public const int avd_hide_password_3 = 2130837971;
->>>>>>> 08cd91ed25f9fb944faf6be2cdda4e5f36d5c05d
 			
 			// aapt resource value: 0x7f02005c
 			public const int avd_show_password = 2130837596;
 			
-<<<<<<< HEAD
 			// aapt resource value: 0x7f0201d6
 			public const int avd_show_password_1 = 2130837974;
 			
@@ -5146,16 +5134,6 @@ namespace City_Center.Droid
 			
 			// aapt resource value: 0x7f0201d8
 			public const int avd_show_password_3 = 2130837976;
-=======
-			// aapt resource value: 0x7f0201d4
-			public const int avd_show_password_1 = 2130837972;
-			
-			// aapt resource value: 0x7f0201d5
-			public const int avd_show_password_2 = 2130837973;
-			
-			// aapt resource value: 0x7f0201d6
-			public const int avd_show_password_3 = 2130837974;
->>>>>>> 08cd91ed25f9fb944faf6be2cdda4e5f36d5c05d
 			
 			// aapt resource value: 0x7f02005d
 			public const int B = 2130837597;
@@ -6643,14 +6621,14 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d00c7
 			public const int loadingProgressWheel = 2131558599;
 			
-			// aapt resource value: 0x7f0d00f9
-			public const int masked = 2131558649;
+			// aapt resource value: 0x7f0d00fa
+			public const int masked = 2131558650;
 			
 			// aapt resource value: 0x7f0d00e9
 			public const int media_actions = 2131558633;
 			
-			// aapt resource value: 0x7f0d00f7
-			public const int message = 2131558647;
+			// aapt resource value: 0x7f0d00f8
+			public const int message = 2131558648;
 			
 			// aapt resource value: 0x7f0d00c8
 			public const int messenger_send_button = 2131558600;
@@ -6892,8 +6870,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0040
 			public const int showTitle = 2131558464;
 			
-			// aapt resource value: 0x7f0d00fa
-			public const int sliding_tabs = 2131558650;
+			// aapt resource value: 0x7f0d00f6
+			public const int sliding_tabs = 2131558646;
 			
 			// aapt resource value: 0x7f0d0039
 			public const int small = 2131558457;
@@ -6985,8 +6963,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0086
 			public const int title_template = 2131558534;
 			
-			// aapt resource value: 0x7f0d00f6
-			public const int toolbar = 2131558646;
+			// aapt resource value: 0x7f0d00f7
+			public const int toolbar = 2131558647;
 			
 			// aapt resource value: 0x7f0d0031
 			public const int top = 2131558449;
@@ -7030,8 +7008,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0016
 			public const int view_offset_helper = 2131558422;
 			
-			// aapt resource value: 0x7f0d00f8
-			public const int visible = 2131558648;
+			// aapt resource value: 0x7f0d00f9
+			public const int visible = 2131558649;
 			
 			// aapt resource value: 0x7f0d00db
 			public const int volume_item_container = 2131558619;
@@ -7382,13 +7360,16 @@ namespace City_Center.Droid
 			public const int support_simple_spinner_dropdown_item = 2130903120;
 			
 			// aapt resource value: 0x7f030051
-			public const int Toolbar = 2130903121;
+			public const int Tabbar = 2130903121;
 			
 			// aapt resource value: 0x7f030052
-			public const int tooltip = 2130903122;
+			public const int Toolbar = 2130903122;
 			
 			// aapt resource value: 0x7f030053
-			public const int vertical_viewpager = 2130903123;
+			public const int tooltip = 2130903123;
+			
+			// aapt resource value: 0x7f030054
+			public const int vertical_viewpager = 2130903124;
 			
 			static Layout()
 			{
