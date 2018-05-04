@@ -25,7 +25,10 @@ namespace City_Center.ViewModels
         private bool perfilVisible;
         private bool opcionesVisible;
         private string imagen;
+        private string imagenTarjeta;
 
+        private int puntosWin;
+        private string noSocio;
 
         private TarjetaUsuarioReturn listaTarjetausuario;
         private ObservableCollection<TarjetaUsuarioDetalle> tarjetaUsuarioDetalle;
@@ -69,6 +72,23 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.tarjetaUsuarioDetalle, value); }
         }
 
+        public string ImagenTarjeta
+        {
+            get { return this.imagenTarjeta; }
+            set { SetValue(ref this.imagenTarjeta, value); }
+        }
+
+        public int PuntosWin
+        {
+            get { return this.puntosWin; }
+            set { SetValue(ref this.puntosWin, value); }
+        }
+
+        public string NoSocio
+        {
+            get { return this.noSocio; }
+            set { SetValue(ref this.noSocio, value); }
+        }
 
         #endregion
 
@@ -206,6 +226,9 @@ namespace City_Center.ViewModels
 
         private async void LoadTarjetaUsuario()
         {
+            try
+            {
+                
             var connection = await this.apiService.CheckConnection();
 
             if (!connection.IsSuccess)
@@ -215,10 +238,11 @@ namespace City_Center.ViewModels
                 return;
             }
 
+                string idusuario = Application.Current.Properties["IdUsuario"].ToString();
 
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("usu_id", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("usu_id",idusuario )
             });
 
 
@@ -233,29 +257,29 @@ namespace City_Center.ViewModels
 
             this.listaTarjetausuario = (TarjetaUsuarioReturn)response.Result;
 
-            TarjetaUsuarioDetalle = new ObservableCollection<TarjetaUsuarioDetalle>(this.ToTarjetaUsuarioViewModel());
+            ImagenTarjeta = VariablesGlobales.RutaServidor + listaTarjetausuario.resultado.tar_imagen;
 
-        }
+                PuntosWin = listaTarjetausuario.resultado.tar_puntos;
+                NoSocio = listaTarjetausuario.resultado.tar_id;
 
-        private IEnumerable<TarjetaUsuarioDetalle> ToTarjetaUsuarioViewModel()
-        {
-            return this.listaTarjetausuario.resultado.Select(l => new TarjetaUsuarioDetalle
+
+            }
+            catch (Exception ex)
             {
-                tar_id = l.tar_id,
-                tar_id_tipo = l.tar_id_tipo,
-                tar_puntos = l.tar_puntos,
-                tar_fecha_hora_creo = l.tar_fecha_hora_creo,
-                tar_fecha_hora_modifico = l.tar_fecha_hora_modifico,
-                tar_imagen = l.tar_imagen,
-            });
+                await Mensajes.Error(ex.ToString());
+            }
+
         }
+
 
         #endregion
 
         #region Contructors
         public DetailViewModel()
         {
+            this.apiService = new ApiService();
             LoadEventos();
+            LoadTarjetaUsuario();
         }
         #endregion
     }

@@ -190,18 +190,37 @@
                                     <DataTemplate>
                                         <ViewCell>
                                             <ContentView Rotation="90" BackgroundColor="Transparent">
-                                                <StackLayout HeightRequest="190" WidthRequest="230" Margin="0,0,0,0">
-                                                    <ffimageloading:CachedImage HeightRequest="190" 
-                                                                                WidthRequest="100"
+                                                 <StackLayout HeightRequest="250" WidthRequest="230" Margin="0,5,0,0">
+                                                            <Grid Padding="3">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                     <ffimageloading:CachedImage HeightRequest="250" 
+                                                                                WidthRequest="130"
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
-                                                                               Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}">
+                                                                                Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}">
                                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                                  <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
 
                                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                                      </ffimageloading:CachedImage>
+
+                                                     <Label x:Name="Label"
+                                                       Margin="5"
+                                                       HorizontalOptions="Start"
+                                                       HorizontalTextAlignment="Start"
+                                                       VerticalOptions="End"
+                                                       TextColor="White"
+                                                       FontFamily="Oswald-regular"
+                                                       FontSize="Small"
+                                                       Text="{Binding pro_nombre}" />
+                                                                
+                                                                </Grid>
                                                 </StackLayout>
                                             </ContentView>
                                         </ViewCell>

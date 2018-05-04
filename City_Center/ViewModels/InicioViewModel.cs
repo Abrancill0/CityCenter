@@ -33,6 +33,10 @@ namespace City_Center.ViewModels
         private TarjetaUsuarioReturn listaTarjetausuario;
         private ObservableCollection<TarjetaUsuarioDetalle> tarjetaUsuarioDetalle;
 
+        private string imagenTarjeta;
+        private int puntosWin;
+        private string noSocio;
+
         DateTime fechaInicio;
         DateTime horaInicio;
         string noPersonas;
@@ -109,6 +113,24 @@ namespace City_Center.ViewModels
         {
             get { return this.telefono; }
             set { SetValue(ref this.telefono, value); }
+        }
+
+        public string ImagenTarjeta
+        {
+            get { return this.imagenTarjeta; }
+            set { SetValue(ref this.imagenTarjeta, value); }
+        }
+
+        public int PuntosWin
+        {
+            get { return this.puntosWin; }
+            set { SetValue(ref this.puntosWin, value); }
+        }
+
+        public string NoSocio
+        {
+            get { return this.noSocio; }
+            set { SetValue(ref this.noSocio, value); }
         }
 
         #endregion
@@ -303,48 +325,49 @@ namespace City_Center.ViewModels
        
         private async void LoadTarjetaUsuario()
         {
-            var connection = await this.apiService.CheckConnection();
-
-            if (!connection.IsSuccess)
+            try
             {
-                await Mensajes.Error(connection.Message);
 
-                return;
-            }
+                var connection = await this.apiService.CheckConnection();
 
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
 
-            var content = new FormUrlEncodedContent(new[]
-            {
-                new KeyValuePair<string, string>("usu_id", Application.Current.Properties["IdUsuario"].ToString()),
+                    return;
+                }
+
+                string idusuario = Application.Current.Properties["IdUsuario"].ToString();
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("usu_id",idusuario )
             });
 
 
-            var response = await this.apiService.Get<TarjetaUsuarioReturn>("/tarjetas", "/tarjetaUsuario", content);
+                var response = await this.apiService.Get<TarjetaUsuarioReturn>("/tarjetas", "/tarjetaUsuario", content);
 
-            if (!response.IsSuccess)
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Torneos");
+
+                    return;
+                }
+
+                this.listaTarjetausuario = (TarjetaUsuarioReturn)response.Result;
+
+                ImagenTarjeta = VariablesGlobales.RutaServidor + listaTarjetausuario.resultado.tar_imagen;
+
+                PuntosWin = listaTarjetausuario.resultado.tar_puntos;
+                NoSocio = listaTarjetausuario.resultado.tar_id;
+
+
+            }
+            catch (Exception ex)
             {
-                await Mensajes.Error("Error al cargar Torneos");
-
-                return;
+                await Mensajes.Error(ex.ToString());
             }
 
-            this.listaTarjetausuario = (TarjetaUsuarioReturn)response.Result;
-
-            TarjetaUsuarioDetalle = new ObservableCollection<TarjetaUsuarioDetalle>(this.ToTarjetaUsuarioViewModel());
-
-        }
-
-        private IEnumerable<TarjetaUsuarioDetalle> ToTarjetaUsuarioViewModel()
-        {
-            return this.listaTarjetausuario.resultado.Select(l => new TarjetaUsuarioDetalle
-            {
-                tar_id =l.tar_id,
-                tar_id_tipo = l.tar_id_tipo,
-                tar_puntos = l.tar_puntos,
-                tar_fecha_hora_creo = l.tar_fecha_hora_creo,
-                tar_fecha_hora_modifico = l.tar_fecha_hora_modifico,
-                tar_imagen = l.tar_imagen,
-            });
         }
 
         #endregion
@@ -353,7 +376,7 @@ namespace City_Center.ViewModels
         public InicioViewModel()
         {
             this.apiService = new ApiService();
-
+            this.LoadTarjetaUsuario();
             this.LoadTorneo();
 
         }

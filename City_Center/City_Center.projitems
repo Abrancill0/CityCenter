@@ -331,6 +331,8 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\TarjetaUsuarioResultado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ImagenResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ReiniciaPassResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ReiniciaPassViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

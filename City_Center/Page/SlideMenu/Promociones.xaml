@@ -100,8 +100,17 @@
                                             <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                         </ffimageloading:CachedImage.GestureRecognizers>
                                     </ffimageloading:CachedImage>
-                                   <!-- <Label x:Name="Label" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" BackgroundColor="Silver" Opacity="0.5" Text="{Binding pro_descripcion}" />-->
-                                </Grid>
+
+                                                     <Label x:Name="Label"
+                                                       Margin="5"
+                                                       HorizontalOptions="Start"
+                                                       HorizontalTextAlignment="Start"
+                                                       VerticalOptions="End"
+                                                       TextColor="White"
+                                                       FontFamily="Oswald-regular"
+                                                       FontSize="Small"
+                                                       Text="{Binding pro_nombre}" />
+                                 </Grid>
                             </DataTemplate>
                         </flv:FlowListView.FlowColumnTemplate>
                     </flv:FlowListView>

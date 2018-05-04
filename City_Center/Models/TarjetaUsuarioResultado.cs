@@ -19,7 +19,9 @@ namespace City_Center.Models
         {
             public int estatus { get; set; }
             public string mensaje { get; set; }
-            public List<TarjetaUsuarioDetalle> resultado { get; set; }
+            public TarjetaUsuarioDetalle resultado { get; set; }
         }
+
+
     }
 }

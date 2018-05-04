@@ -463,10 +463,22 @@
                             </StackLayout>
                                 </Grid>
                             <!--Carousel-->
-                            <Image  Source = "tarjeta.png" 
-                        HeightRequest = "200"
-                        WidthRequest = "200">
-                </Image>
+                        <Image Source="{Binding ImagenTarjeta}"
+                       HeightRequest="250"
+                       WidthRequest="250"
+                       IsVisible="{Binding PerfilVisible}" />
+                <Label Text="{Binding PuntosWin}"
+                      
+                       TextColor="White"
+                       FontSize="Micro"
+                       HorizontalOptions="End"
+                       VerticalOptions="Start" />
+                <Label Text="{Binding NoSocio}"
+                      
+                       TextColor="White"
+                       FontSize="Micro"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />   
                         </StackLayout>
                     </Frame>
                 </StackLayout>

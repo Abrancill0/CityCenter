@@ -295,6 +295,26 @@ namespace City_Center.ViewModels
             }
         }
 
+
+        public ICommand RestablecePassCommand
+        {
+            get
+            {
+                return new RelayCommand(Restablece);
+            }
+        }
+
+        private async void Restablece()
+        {
+            MainViewModel.GetInstance().ReiniciaPass = new ReiniciaPassViewModel();
+
+            ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new RestableceContraseña());  
+        }
+
+
+
         #endregion
 
 
@@ -344,15 +364,7 @@ namespace City_Center.ViewModels
             return "Ok";
         }
 
-        //private async Task<String> ObtieneUsuarioGF()
-        //{
-
-
-        //    return "OK";
-        //}
-
-
-
+      
         #endregion
 
 

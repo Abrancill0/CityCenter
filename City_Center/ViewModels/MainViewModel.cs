@@ -41,6 +41,7 @@ namespace City_Center.ViewModels
         public TorneoItemViewModel TorneoItem { get; set; }
         public DetalleDestacadosViewModel DestacadosDetalle { get; set; }
         public DestacadosItemViewModel DestacadosItem { get; set; }
+        public ReiniciaPassViewModel ReiniciaPass { get; set; }
         #endregion
 
         #region Contructors
