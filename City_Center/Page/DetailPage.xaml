@@ -25,24 +25,48 @@
             <StackLayout VerticalOptions="EndAndExpand">
                
            
-                <Image 
-                       
-                       Source="{Binding ImagenTarjeta}"
-                       HeightRequest="250"
-                       WidthRequest="250"
-                       IsVisible="{Binding PerfilVisible}" />
-                <Label Text="{Binding PuntosWin}"
-                      
-                       TextColor="White"
-                       FontSize="Micro"
-                       HorizontalOptions="End"
-                       VerticalOptions="Start" />
-                <Label Text="{Binding NoSocio}"
-                      
-                       TextColor="White"
-                       FontSize="Micro"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center" />   
+                <AbsoluteLayout  Padding = "5,30" HeightRequest="150" WidthRequest="250" HorizontalOptions="Center">
+                    <Image Source="{Binding ImagenTarjeta}"
+                           Aspect="Fill" 
+                           HeightRequest="150" 
+                           WidthRequest="250"
+                           IsVisible="{Binding PerfilVisible}"/>
+                    
+                    <Label Text="PUNTOS WIN"
+                           FontSize = "12"
+                           TextColor="White" 
+                           HorizontalOptions="Center"                         
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.9,0.1,-1,-1"
+                           IsVisible="{Binding PerfilVisible}">
+                    </Label>
+                   <Label Text="{Binding PuntosWin}"
+                           FontSize = "12"
+                           TextColor="White"
+                           HorizontalOptions="Center"                         
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1"
+                          IsVisible="{Binding PerfilVisible}">
+                    </Label>
+                    <Label Text="Socio N. "
+                           FontSize = "Micro"
+                           TextColor="White" 
+                           HorizontalOptions="Center"                         
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1"
+                           IsVisible="{Binding PerfilVisible}">
+                    </Label>
+                    <Label 
+                           Text="{Binding NoSocio}"
+                           TextColor="White"
+                           FontSize="Small"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"                
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1"
+                        IsVisible="{Binding PerfilVisible}">
+                    </Label>
+                </AbsoluteLayout>
 
               
                
