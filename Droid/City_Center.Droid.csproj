@@ -33,7 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <JavaMaximumHeapSize>2G</JavaMaximumHeapSize>
 <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
 <AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
   </PropertyGroup>
@@ -259,11 +259,8 @@
       <HintPath>..\packages\Acr.UserDialogs.7.0.1\lib\monoandroid80\Acr.UserDialogs.dll</HintPath>
     </Reference>
     <Reference Include="Java.Interop" />
-    <Reference Include="System.Collections" />
     <Reference Include="System.IdentityModel" />
-    <Reference Include="System.Runtime" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Xamarin.Android.Support.Annotations">
       <HintPath>..\packages\Xamarin.Android.Support.Annotations.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Annotations.dll</HintPath>
@@ -329,12 +326,12 @@
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="MainApplication .cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GoogleManager.cs" />
     <Compile Include="Controls\TLScrollViewRenderer.cs" />
     <Compile Include="SplashActivity.cs" />
+    <Compile Include="MainApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -459,9 +456,7 @@
     <AndroidResource Include="Resources\drawable\ArrowDown.png" />
     <AndroidResource Include="Resources\drawable\ArrowUp.png" />
     <AndroidResource Include="Resources\drawable-hdpi\logout.png" />
-    <AndroidResource Include="Resources\drawable\logout.png" />
     <AndroidResource Include="Resources\drawable-hdpi\logout.png" />
-    <AndroidResource Include="Resources\drawable\logout.png" />
     <AndroidResource Include="Resources\drawable\svip1.jpg" />
     <AndroidResource Include="Resources\drawable\svip2.jpg" />
     <AndroidResource Include="Resources\drawable\vip1.jpg" />
@@ -480,6 +475,7 @@
     <AndroidResource Include="Resources\drawable\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable\logout.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
