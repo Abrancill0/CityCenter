@@ -33,7 +33,7 @@
             <StackLayout>
                 <ffimageloading:CachedImage Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="HOMEmin" HeightRequest="110" />
             </StackLayout>
-            <StackLayout Padding="5,-30,0,0" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="10">
+            <StackLayout Padding="0,-30,0,0" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Margin="10">
                 <Grid > 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto">
