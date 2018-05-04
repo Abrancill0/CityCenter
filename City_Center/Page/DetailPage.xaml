@@ -33,7 +33,7 @@
                            IsVisible="{Binding PerfilVisible}"/>
                     
                     <Label Text="PUNTOS WIN"
-                           FontSize = "12"
+                           FontSize = "8"
                            TextColor="White" 
                            HorizontalOptions="Center"                         
                            AbsoluteLayout.LayoutFlags="PositionProportional"
