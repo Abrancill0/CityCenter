@@ -22,7 +22,13 @@
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Shows}">
             <StackLayout HorizontalOptions="Start" Padding="30,30">
-                <Label Text="SHOWS" FontSize="20" FontFamily="Oswald-Regular" HorizontalTextAlignment="Start" TextColor="#23144B">
+                <Label Text="SHOWS" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
             </StackLayout>
             <Grid BackgroundColor="#1B0938" HorizontalOptions="Center" Padding="0">
@@ -38,11 +44,29 @@
                     <RowDefinition Height="40">
                     </RowDefinition>
                 </Grid.RowDefinitions>
-                <Label x:Name="LabelTab1" Text="TODOS" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="8" TextColor="#EAE8ED" Grid.Column="0" Style="{DynamicResource TabTopLabel}">
+                <Label x:Name="LabelTab1" Text="TODOS" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="9" TextColor="#EAE8ED" Grid.Column="0" Style="{DynamicResource TabTopLabel}">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
-                <Label x:Name="LabelTab2" Text="JARANA" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="8" TextColor="#71628A" Grid.Column="1" Style="{DynamicResource TabTopLabel}">
+                <Label x:Name="LabelTab2" Text="JARANA" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="9" TextColor="#71628A" Grid.Column="1" Style="{DynamicResource TabTopLabel}">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
-                <Label x:Name="LabelTab3" Text="CENTRO DE CONVENCIONES" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="8" TextColor="#71628A" Grid.Column="2" Style="{DynamicResource TabTopLabel}">
+                <Label x:Name="LabelTab3" Text="CENTRO DE CONVENCIONES" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="9" TextColor="#71628A" Grid.Column="2" Style="{DynamicResource TabTopLabel}">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
                 <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
                 </BoxView>

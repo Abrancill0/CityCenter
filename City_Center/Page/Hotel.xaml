@@ -230,9 +230,6 @@
                         </RelativeLayout>
                          </StackLayout>
                         </Frame>
-
-
-                        
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
@@ -340,7 +337,7 @@
                          <Label Margin="20,0,0,0" TextColor="Black"
                                 HorizontalOptions="Start"
                                 HorizontalTextAlignment="Start"
-                               Text="* Canchas de tenis y de paddle"/>
+                               Text="• Canchas de tenis y de paddle"/>
                     </StackLayout>
 
                      <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">

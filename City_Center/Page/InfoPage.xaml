@@ -11,7 +11,7 @@
         <ResourceDictionary>
             <Style x:Name="TabTopLabel" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
-                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="FontFamily" Value="Oswald-Regular" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
@@ -21,33 +21,52 @@
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
         <StackLayout>
+                
             <StackLayout HorizontalOptions="Start" Padding="30,30">
                 <Label Text="MÁS INFORMACIÓN" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
+                       <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
             </StackLayout>
+                
             <Grid BackgroundColor="#250c4b" Padding="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*">
                     </ColumnDefinition>
                     <ColumnDefinition Width="*">
                     </ColumnDefinition>
-                   
                 </Grid.ColumnDefinitions>
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40">
                     </RowDefinition>
                 </Grid.RowDefinitions>
-                <Label x:Name="LabelTab1" FontSize="8" TextColor="#EAE8ED" Text="INSTITUCIONAL" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
+                    
+                <Label x:Name="LabelTab1" FontSize="9" TextColor="#EAE8ED" Text="INSTITUCIONAL" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
+                        <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
-                <Label x:Name="LabelTab2" FontSize="8" TextColor="#71628A" Text="CÓMO LLEGAR" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                <Label x:Name="LabelTab2" FontSize="9" TextColor="#71628A" Text="CÓMO LLEGAR" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                        <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
                
-
                 <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
                 </BoxView>
                 <BoxView x:Name="BV2" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="1" VerticalOptions="End">
                 </BoxView>
-               
 
                 <ContentView x:Name="CV1" BackgroundColor="Transparent" Grid.Column="0" >
                     <ContentView.GestureRecognizers>
@@ -62,36 +81,43 @@
                
             </Grid>
             <StackLayout x:Name="SL1" HorizontalOptions="FillAndExpand" IsVisible="true">
-                <StackLayout Margin="8">
-                     <ffimageloading:CachedImage HeightRequest="240" Aspect="AspectFill" Source="svip2" />
-                     <Label TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start"
-                     Text="City Center Rosario es el centro de entretenimiento mas grande de Latinoamerica,pensado y diseñado para brindar todo lo que se desea en un solo lugar.Integrado por areas que combinan diversion, placer y negocios para todas las edades con los mas altos estandares de servicio y calidad"></Label>
-                </StackLayout>
-             
+                <StackLayout>
+                     <ffimageloading:CachedImage HeightRequest="240" Aspect="Fill" Source="svip2" />
+                     <Label TextColor="Black" Margin="10, 20" HorizontalOptions="Start" HorizontalTextAlignment="Start"
+                     Text="City Center Rosario es el centro de entretenimiento mas grande de Latinoamerica,pensado y diseñado para brindar todo lo que se desea en un solo lugar. Integrado por areas que combinan diversion, placer y negocios para todas las edades con los mas altos estandares de servicio y calidad, City Center Rosario cuenta con casino, centro de convenciones, hotel, espacios gastronómicos, bowling, locales comerciales y mucho más. Es un complejo creado para dejarse atrapar en un mundo mágico de esparcimiento, confor, relax y negocios, donde dejar fluir las emociones y divertirse es una propuesta obligada a la hora de visitar la ciudad"></Label>
+
+                    <Label TextColor="Black" Margin="10, 5" HorizontalOptions="Start" HorizontalTextAlignment="Start"
+                     Text="City Center Rosario surgío de la sociedad comercial de dos empresas líderes en el sector:"></Label>   
+                     <Label TextColor="Black" Margin="10, -3" HorizontalOptions="Start" HorizontalTextAlignment="Start"
+                     Text="Inverclub y Cirsa."></Label>  
+                     <Label TextColor="Black" Margin="10, -3" HorizontalOptions="Start" HorizontalTextAlignment="Start"
+                     Text="Inverclub es una empresa de capitales argentinos nacidos en Comodoro Rivadavia en el año 1991 que inauguró su primer casino el año siguiente de su fundacion. Desde entonces ha sido Cirsa Gaming Corporation fue fundada en 1.978 en España por Manuel Lao Hernandez. Es uno de los líderes mundiales en la actividad en la actividad del juego, ocio y entretenimiento. Tiene implantación a nivel internacional con una amplia oferta que comprende casinos tradicionales, electrónicos, bingos, salones de juego, máquinas recreativas para hostelería y casinos y apuestas deportivas. Es una empresa pionera en la aplicación de sistemas innovadores a nivel mundial y se encuentra presente en 70 países."></Label>  
+                     <Label Margin="0, 20"/>
+                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="SL2" HorizontalOptions="FillAndExpand" Padding="10, 10" IsVisible="false">
-              <StackLayout Margin="8">
+              <StackLayout>
                      <maps:Map x:Name="MyMap" MapType="Street" HeightRequest="240"/>
-                     <Label TextColor="#474747" HorizontalOptions="Start" HorizontalTextAlignment="Start"
+                     <Label TextColor="#474747" Font="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Start"
                      Text="City Center se encuentra ubicado en Bv. Oroño y Av. Circunvalcion en la ciudad de Rossario (Santa Fe, Argentina). Su acceso se ubica justo sobre el ingreso sur de la ciudad llegando por Autopista desde Buenos Aires."></Label>
+
                     <Label TextColor="#6C6C6C" Text="DISTANCIA DESDE LAS CIUDADES DE REFERENCIA:" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    Buenos Aires (por autopista): 306 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    Córdoba (por Ruta 9): 401 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    Corrientes: 719 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    La Plata: 401 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    Mar del Plata: 717 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    Mendoza: 855 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    Paraná: 190 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    Resistencia: 721 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    Río Tercero: 354 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    San Luis: 600 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    Santa Fe (por Autopista): 170 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    Santiago del Estero: 830 Km" HorizontalOptions="Start"/>
-                    <Label TextColor="#6C6C6C" Text=" •    Victoria: 70 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    Buenos Aires (por autopista): 306 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    Córdoba (por Ruta 9): 401 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    Corrientes: 719 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    La Plata: 401 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    Mar del Plata: 717 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    Mendoza: 855 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    Paraná: 190 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    Resistencia: 721 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    Río Tercero: 354 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    San Luis: 600 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    Santa Fe (por Autopista): 170 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    Santiago del Estero: 830 Km" HorizontalOptions="Start"/>
+                    <Label TextColor="#6C6C6C" Text="  •    Victoria: 70 Km" HorizontalOptions="Start"/>
                 </StackLayout>
             </StackLayout>
-          
-        </StackLayout>
-            </ScrollView>
+         </StackLayout>
+       </ScrollView>
     </ContentPage.Content>
 </ContentPage>

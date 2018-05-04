@@ -39,12 +39,36 @@
                     </RowDefinition>
                 </Grid.RowDefinitions>
                 <Label x:Name="LabelTab1" FontSize="12" HorizontalOptions="Center" TextColor="#FDE7EE" Text="PRINCIPAL" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
                 <Label x:Name="LabelTab2" FontSize="12" HorizontalOptions="Center" TextColor="#F282A9" Text="POKER" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
                 <Label x:Name="LabelTab3" FontSize="12" HorizontalOptions="Center" TextColor="#F282A9" Text="WIN" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
                 <Label x:Name="LabelTab4" FontSize="12" HorizontalOptions="Center" TextColor="#F282A9" Text="SITES VIP" Style="{DynamicResource TabTopLabel}" Grid.Column="3">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
                 <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
                 </BoxView>
@@ -418,15 +442,19 @@
             <StackLayout x:Name="SL3" IsVisible="false" BackgroundColor="White">
                 <ScrollView>
                     <StackLayout Spacing="1" Margin="5">
-                        <Label TextColor="#250c4b" 
-                               FontFamily="Oswald-Regular"
-                               Text="¿QUERÉS TENER LA TARJETA WIN?">
+                        <Label HorizontalOptions="Start" Margin="10, 20" TextColor="#250c4b" Text="¿QUERÉS TENER LA TARJETA WIN?">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
                         </Label>
-                            <Label HorizontalTextAlignment="Start" Text="Ser Socio Win es muy facil! Tan solo completando" TextColor="Black" FontSize="Small" ></Label>
-                            <Label HorizontalTextAlignment="Start" Text="un formulario y presentandote en el Centro de" TextColor="Black" FontSize="Small" ></Label>
-                            <Label HorizontalTextAlignment="Start" Text="Atencion a Clientes, se obtiene sin cargo la tarjeta" TextColor="Black" FontSize="Small" ></Label>
-                            <Label HorizontalTextAlignment="Start" Text="que te permitirá obtener promociones fabulosas." TextColor="Black" FontSize="Small"></Label>
-
+                            <Label HorizontalOptions="Start" Margin="10, 0" Text="Ser Socio Win es muy facil! Tan solo completando" TextColor="Black" FontSize="Small" ></Label>
+                            <Label HorizontalOptions="Start" Margin="10, 0" Text="un formulario y presentandote en el Centro de" TextColor="Black" FontSize="Small" ></Label>
+                            <Label HorizontalOptions="Start" Margin="10, 0" Text="Atencion a Clientes, se obtiene sin cargo la tarjeta" TextColor="Black" FontSize="Small" ></Label>
+                            <Label HorizontalOptions="Start" Margin="10, 0" Text="que te permitirá obtener promociones fabulosas." TextColor="Black" FontSize="Small"></Label>
+                            <Label HorizontalOptions="Start" Margin="0, 5" TextColor="Black" FontSize="Small"></Label>
                         <Button Text="RECOMPENSAS" Command="{Binding VerRecompensasCommand}" Margin="15,8,15,8" TextColor="White" BackgroundColor="#E91E63">
                         </Button>
                         <Button Text="CONSULTAR PUNTOS" Margin="15,8,15,8" TextColor="White" BackgroundColor="#E91E63">
@@ -524,7 +552,7 @@
                         </RelativeLayout>
                         </StackLayout>
                 <StackLayout HorizontalOptions="FillAndExpand" Margin="5">
-                                <Label HorizontalTextAlignment="Start" Text="Horarios: Lunes a domingo de 02 pm a 05 am" HorizontalOptions="Center" TextColor="Black"></Label>
+                                <Label HorizontalTextAlignment="Start" Text="Horarios: Lunes a domingo de 02 pm a 05 am" Margin="10, 10" HorizontalOptions="Center" TextColor="Black"></Label>
                                 <Label Text="" HorizontalOptions="Start" TextColor="Black"></Label>
                                 <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="Accede a dos exclusivos sectores para aquellos" FontSize="Small" TextColor="Black"></Label>
                                 <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="clientes que deseen privacidad y atencion" FontSize="Small" TextColor="Black"></Label>
@@ -534,7 +562,8 @@
                                 <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="privada y servicio gastronómico forman parte de" FontSize="Small" TextColor="Black"></Label>
                                 <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="los exclusivos beneficios que un cliente VIP puede" FontSize="Small" TextColor="Black"></Label>
                                 <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="disfurtar en nuestro complejo" FontSize="Small" TextColor="Black"></Label> 
-                </StackLayout>
+                                <Label></Label> 
+                        </StackLayout>
                         </StackLayout>
                 </ScrollView>
             </StackLayout>
