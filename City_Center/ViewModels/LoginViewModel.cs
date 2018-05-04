@@ -16,6 +16,7 @@ using static City_Center.Models.LoginResultado;
 using static City_Center.Models.RegistroUsuario;
 using City_Center.Clases;
 using Acr.UserDialogs;
+using static City_Center.Models.ValidaUsuarioResultado;
 
 namespace City_Center.ViewModels
 {
@@ -30,6 +31,9 @@ namespace City_Center.ViewModels
         private string password;
         private bool isEnabled;
         private ObservableCollection<LoginReturn> loginReturn;
+        private RegistroReturn listRegistro;
+        private ValidaUsuarioReturn listValidaUsuario;
+
         #endregion
 
         private IGoogleManager _googleManager;
@@ -129,6 +133,7 @@ namespace City_Center.ViewModels
                     Application.Current.Properties["Pass"] = this.Password;
                     Application.Current.Properties["FechaNacimiento"] = list.resultado.usu_fecha_nacimiento;
                     Application.Current.Properties["FotoPerfil"] = VariablesGlobales.RutaServidor + list.resultado.usu_imagen;
+                    Application.Current.Properties["TipoCuenta"] = "CityCenter";
 
                     await Application.Current.SavePropertiesAsync();
 
@@ -218,15 +223,31 @@ namespace City_Center.ViewModels
         {
             if (googleUser != null)
             {
+
+                int ValUsu = await ValidaUsuario(googleUser.Email);
+
+                string IDUsuario;
+
+                if (ValUsu == 0)
+                {
+                    IDUsuario = await GuardaUsuarioGF(googleUser.Name, googleUser.Email); 
+                }
+                else
+                {
+                    IDUsuario = Convert.ToString(ValUsu);
+                }
+
                 Application.Current.Properties["IsLoggedIn"] = true;
-                Application.Current.Properties["IdUsuario"] = 0;
+                Application.Current.Properties["IdUsuario"] = IDUsuario;
                 Application.Current.Properties["Email"] = googleUser.Email;
                 Application.Current.Properties["NombreCompleto"] = googleUser.Name;
                 Application.Current.Properties["Ciudad"] = "";
                 Application.Current.Properties["Pass"] = "";
                 Application.Current.Properties["FechaNacimiento"] = "";
                 Application.Current.Properties["FotoPerfil"] = googleUser.Picture;
+                Application.Current.Properties["TipoCuenta"] = "Google";
                 await Application.Current.SavePropertiesAsync();
+
 
                 MainViewModel.GetInstance().Master = new MasterViewModel();
                 MainViewModel.GetInstance().Inicio = new InicioViewModel();
@@ -265,14 +286,31 @@ namespace City_Center.ViewModels
         {
             if (facebookUser != null)
             {
+                
+                int ValUsu = await ValidaUsuario(facebookUser.Email);
+
+                string IDUsuario;
+
+                if (ValUsu == 0)
+                {
+                    IDUsuario = await GuardaUsuarioGF(facebookUser.FirstName + ' ' + facebookUser.LastName, facebookUser.Email);
+
+                }
+                else
+                {
+                    IDUsuario = Convert.ToString(ValUsu);
+                }
+
+
                 Application.Current.Properties["IsLoggedIn"] = true;
-                Application.Current.Properties["IdUsuario"] = 0;
+                Application.Current.Properties["IdUsuario"] = IDUsuario;
                 Application.Current.Properties["Email"] = facebookUser.Email;
                 Application.Current.Properties["NombreCompleto"] = facebookUser.FirstName + ' ' + facebookUser.LastName;
                 Application.Current.Properties["Ciudad"] = "";
                 Application.Current.Properties["Pass"] = "";
                 Application.Current.Properties["FechaNacimiento"] = "";
                 Application.Current.Properties["FotoPerfil"] =facebookUser.Picture;
+                Application.Current.Properties["TipoCuenta"] = "Facebook";
 
                 await Application.Current.SavePropertiesAsync();
 
@@ -313,14 +351,7 @@ namespace City_Center.ViewModels
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new RestableceContraseña());  
         }
 
-
-
-        #endregion
-
-
-        #region Methods
-
-        private async Task<string> GuardaUsuarioGF(string UserNameGF,string EmailGF)
+        private async Task<string> GuardaUsuarioGF(string UserNameGF, string EmailGF)
         {
             var content = new FormUrlEncodedContent(new[]
            {
@@ -351,20 +382,51 @@ namespace City_Center.ViewModels
                 return "Error";
             }
 
-            //LoginReturn list = (LoginReturn)response.Result;
-            Application.Current.Properties["IsLoggedIn"] = true;
-            Application.Current.Properties["Email"] = EmailGF;
-            Application.Current.Properties["NombreCompleto"] = UserNameGF;
-            Application.Current.Properties["Ciudad"] = "";
-            Application.Current.Properties["Pass"] = "";
-            Application.Current.Properties["FechaNacimiento"] = "";
+            listRegistro = (RegistroReturn)response.Result;
 
-            await Application.Current.SavePropertiesAsync();
-
-            return "Ok";
+            return Convert.ToString(listRegistro.resultado.usu_id);
         }
 
-      
+        private async Task<int> ValidaUsuario(string CorreoElectronico)
+        {
+            var content = new FormUrlEncodedContent(new[]
+           {
+                new KeyValuePair<string, string>("usu_usuario", CorreoElectronico)
+            });
+
+            ///usuario_valido
+            var response = await this.apiService.Get<ValidaUsuarioReturn>("/usuarios", "/usuario_valido", content);
+
+            if (!response.IsSuccess)
+            {
+                await Mensajes.Error(response.Message);
+
+                return 0;
+            }
+
+
+            listValidaUsuario = (ValidaUsuarioReturn)response.Result;
+
+
+            if (listValidaUsuario.resultado == "Usuario disponible.")
+            {
+                return 0;
+            }
+            else
+            {
+                return listValidaUsuario.usu_id;
+            }
+
+
+        }
+
+
+        #endregion
+
+
+        #region Methods
+
+       
         #endregion
 
 

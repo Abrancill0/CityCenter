@@ -113,10 +113,20 @@ namespace City_Center.ViewModels
                 {
 
                     Application.Current.Properties["IsLoggedIn"] = false;
+                    Application.Current.Properties["IdUsuario"] = 0;
+                    Application.Current.Properties["Email"] = "";
+                    Application.Current.Properties["NombreCompleto"] = "";
+                    Application.Current.Properties["Ciudad"] = "";
+                    Application.Current.Properties["Pass"] = "";
+                    Application.Current.Properties["FechaNacimiento"] = "";
+                    Application.Current.Properties["FotoPerfil"] = "";
+                    Application.Current.Properties["TipoCuenta"] = "";
 
                     await Application.Current.SavePropertiesAsync();
 
                     ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+                    MainViewModel.GetInstance().Inicio = new InicioViewModel();
 
                     PerfilVisible = false;
                     OpcionesVisible = true;
@@ -209,6 +219,7 @@ namespace City_Center.ViewModels
                     OpcionesVisible = false;
                     NombreUsuario = Application.Current.Properties["NombreCompleto"].ToString();
                     Imagen = Application.Current.Properties["FotoPerfil"].ToString();
+                   
                 }
                 else
                 {

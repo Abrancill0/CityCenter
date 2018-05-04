@@ -45,6 +45,7 @@ namespace City_Center.ViewModels
         string nombre;
         string correo;
         string telefono;
+        bool verTarjeta;
         #endregion
 
         #region Properties
@@ -131,6 +132,13 @@ namespace City_Center.ViewModels
         {
             get { return this.noSocio; }
             set { SetValue(ref this.noSocio, value); }
+        }
+
+
+        public bool VerTarjeta
+        {
+            get { return this.verTarjeta; }
+            set { SetValue(ref this.verTarjeta, value); }
         }
 
         #endregion
@@ -349,7 +357,14 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Error al cargar Torneos");
+                    await Mensajes.Error("Error al cargar Tarjeta");
+
+                    ImagenTarjeta = "";
+
+                    PuntosWin = 0;
+                    NoSocio = "";
+
+                    VerTarjeta = false;
 
                     return;
                 }
@@ -361,11 +376,17 @@ namespace City_Center.ViewModels
                 PuntosWin = listaTarjetausuario.resultado.tar_puntos;
                 NoSocio = listaTarjetausuario.resultado.tar_id;
 
+                VerTarjeta = true;
 
             }
             catch (Exception ex)
             {
                 await Mensajes.Error(ex.ToString());
+
+                ImagenTarjeta = "";
+                VerTarjeta = false;
+                PuntosWin = 0;
+                NoSocio = "";
             }
 
         }

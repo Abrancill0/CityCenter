@@ -7,10 +7,26 @@ namespace City_Center.Page
 {
     public partial class Perfil : ContentPage
     {
+        private string[] ListaOpciones;
+
         public Perfil()
         {
             InitializeComponent();
         }
+
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            ListaOpciones = new string[] { "DNI", "LE", "LC", "CI" };
+
+            TipoDocumento.ItemsSource = ListaOpciones;
+
+            TipoDocumento.SelectedIndex = 0;
+         
+        }
+
 
         void Tab1_Tapped(object sender, System.EventArgs e)
         {

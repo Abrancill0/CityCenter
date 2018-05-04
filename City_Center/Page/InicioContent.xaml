@@ -463,7 +463,7 @@
                             </StackLayout>
                                 </Grid>
                             <!--Carousel-->
-                            <AbsoluteLayout  Padding = "5,30" HeightRequest="200" WidthRequest="300" HorizontalOptions="Center">
+                            <AbsoluteLayout IsVisible="{Binding VerTarjeta,Mode=TwoWay}"  Padding = "5,30" HeightRequest="200" WidthRequest="300" HorizontalOptions="Center">
                                 <Image Source="{Binding ImagenTarjeta}"
                                        Aspect="Fill" 
                                        HeightRequest="200" 

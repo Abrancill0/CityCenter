@@ -163,10 +163,26 @@
                        
                         <Label Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Silver"/>
 
-                        <Entry Placeholder="Tipo de documento" />
-                        <Entry Placeholder="Numero de documento" />
-                        <Entry Placeholder="Numero de socio WIn" />
-                        <Button Text="GUARDAR" BackgroundColor="#250c4b" TextColor="White" FontAttributes="Bold">
+                         <StackLayout>
+                            <Label Text="Tipo documento" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                            <Grid Padding="15, 0">    
+                            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
+                            <Picker Margin="5"
+                                    x:Name="TipoDocumento"
+                                    ItemsSource="{Binding ListaOpciones}"
+                                    Title="Tipo Documento"
+                                    SelectedItem="{Binding TipoDocumento, Mode=TwoWay}"></Picker>
+                            </Grid>
+                            </StackLayout>
+                        <Entry Placeholder="Numero de documento"
+                               Text="{Binding NumeroDocumento, Mode=TwoWay}"/>
+                        <Entry Placeholder="Numero de socio Win"
+                               Text="{Binding NumeroSocio, Mode=TwoWay}"/>
+                        <Button Text="GUARDAR"
+                                BackgroundColor="#250c4b"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                Command="{Binding ActualizaPerfilCommand}">
                         </Button>
                     </StackLayout>
                 </StackLayout>

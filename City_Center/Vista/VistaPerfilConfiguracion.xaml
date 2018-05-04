@@ -4,16 +4,48 @@
              x:Class="City_Center.Vista.VistaPerfilConfiguracion">
     <ContentView.Content>
         <StackLayout>
-            <Label Text="ENVÍO DE NOTIFICACIONES"></Label>
-            <Switch>promociones</Switch>
-            <Switch>Shows</Switch>
-            <Switch>Reservaciones</Switch>
-            <Switch>Chat</Switch>
-            <Switch>Eventos</Switch>
-            <Switch>Avisos</Switch>
+            <Label Text="ENVÍO DE NOTIFICACIONES" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#250C4B" FontSize="Medium" ></Label>
 
-            <Label Text="ACTIVAR GEOLOCALIZACIÓN"></Label>
+            <StackLayout Margin="10" Orientation="Horizontal">
+                <Switch/>
+            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Promociones" TextColor="#250C4B" FontSize="Small" FontFamily="Oswald-Regular"></Label>
+            </StackLayout>
+
+            <StackLayout Margin="10" Orientation="Horizontal">
+                <Switch/>
+            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Shows" TextColor="#250C4B" FontSize="Small" FontFamily="Oswald-Regular"></Label>
+            </StackLayout>
+
+            <StackLayout Margin="10" Orientation="Horizontal">
+                <Switch/>
+          <!--  <Labe HorizontalOptions="Start"
+                  HorizontalTextAlignment="Start"
+                  Text="Reservaciones"
+                  TextColor="#250C4B"
+                  FontSize="Small"
+                  FontFamily="Oswald-Regular"/>-->
+            </StackLayout>
+
+            <StackLayout Margin="10" Orientation="Horizontal">
+                  <Switch/>
+            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Chat" TextColor="#250C4B" FontSize="Small" FontFamily="Oswald-Regular"></Label>
+            </StackLayout>
+
+          <StackLayout Margin="10" Orientation="Horizontal">
+                 <Switch/>
+            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Eventos" TextColor="#250C4B" FontSize="Small" FontFamily="Oswald-Regular"></Label>
+            </StackLayout>
+
+            <StackLayout Margin="10" Orientation="Horizontal">
+                 <Switch/>
+            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Avisos" TextColor="#250C4B" FontSize="Small" FontFamily="Oswald-Regular"></Label>
+            </StackLayout>
+           
+           <StackLayout Margin="10" Orientation="Horizontal">
+                 <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="ACTIVAR GEOLOCALIZACIÓN" TextColor="#250C4B" FontFamily="Oswald-Regular"></Label>
             <Switch></Switch>
+            </StackLayout>
+           
 
             <Button Text="GUARDAR"></Button>
         </StackLayout>
