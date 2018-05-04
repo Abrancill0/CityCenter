@@ -776,13 +776,7 @@ namespace City_Center.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_textfield_search_material = global::City_Center.Droid.Resource.Drawable.abc_textfield_search_material;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_vector_test = global::City_Center.Droid.Resource.Drawable.abc_vector_test;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password = global::City_Center.Droid.Resource.Drawable.avd_hide_password;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_1 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_1;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_2 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_2;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_3 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_3;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password = global::City_Center.Droid.Resource.Drawable.avd_show_password;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_1 = global::City_Center.Droid.Resource.Drawable.avd_show_password_1;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_2 = global::City_Center.Droid.Resource.Drawable.avd_show_password_2;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_3 = global::City_Center.Droid.Resource.Drawable.avd_show_password_3;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_bottom_navigation_item_background = global::City_Center.Droid.Resource.Drawable.design_bottom_navigation_item_background;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_fab_background = global::City_Center.Droid.Resource.Drawable.design_fab_background;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_ic_visibility = global::City_Center.Droid.Resource.Drawable.design_ic_visibility;
@@ -5114,26 +5108,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f02005b
 			public const int avd_hide_password = 2130837595;
 			
-			// aapt resource value: 0x7f0201d3
-			public const int avd_hide_password_1 = 2130837971;
-			
-			// aapt resource value: 0x7f0201d4
-			public const int avd_hide_password_2 = 2130837972;
-			
-			// aapt resource value: 0x7f0201d5
-			public const int avd_hide_password_3 = 2130837973;
-			
 			// aapt resource value: 0x7f02005c
 			public const int avd_show_password = 2130837596;
-			
-			// aapt resource value: 0x7f0201d6
-			public const int avd_show_password_1 = 2130837974;
-			
-			// aapt resource value: 0x7f0201d7
-			public const int avd_show_password_2 = 2130837975;
-			
-			// aapt resource value: 0x7f0201d8
-			public const int avd_show_password_3 = 2130837976;
 			
 			// aapt resource value: 0x7f02005d
 			public const int B = 2130837597;
@@ -6570,8 +6546,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0076
 			public const int image = 2131558518;
 			
-			// aapt resource value: 0x7f0d00fb
-			public const int imageView1 = 2131558651;
+			// aapt resource value: 0x7f0d00f7
+			public const int imageView1 = 2131558647;
 			
 			// aapt resource value: 0x7f0d00c3
 			public const int indicator = 2131558595;
@@ -6621,14 +6597,14 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d00c7
 			public const int loadingProgressWheel = 2131558599;
 			
-			// aapt resource value: 0x7f0d00fa
-			public const int masked = 2131558650;
+			// aapt resource value: 0x7f0d00fb
+			public const int masked = 2131558651;
 			
 			// aapt resource value: 0x7f0d00e9
 			public const int media_actions = 2131558633;
 			
-			// aapt resource value: 0x7f0d00f8
-			public const int message = 2131558648;
+			// aapt resource value: 0x7f0d00f9
+			public const int message = 2131558649;
 			
 			// aapt resource value: 0x7f0d00c8
 			public const int messenger_send_button = 2131558600;
@@ -6963,8 +6939,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0086
 			public const int title_template = 2131558534;
 			
-			// aapt resource value: 0x7f0d00f7
-			public const int toolbar = 2131558647;
+			// aapt resource value: 0x7f0d00f8
+			public const int toolbar = 2131558648;
 			
 			// aapt resource value: 0x7f0d0031
 			public const int top = 2131558449;
@@ -7008,8 +6984,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0016
 			public const int view_offset_helper = 2131558422;
 			
-			// aapt resource value: 0x7f0d00f9
-			public const int visible = 2131558649;
+			// aapt resource value: 0x7f0d00fa
+			public const int visible = 2131558650;
 			
 			// aapt resource value: 0x7f0d00db
 			public const int volume_item_container = 2131558619;
