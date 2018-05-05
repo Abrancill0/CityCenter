@@ -7,7 +7,7 @@
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              x:Class="City_Center.Page.Casino">
       <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="Chat"/>
+        <ToolbarItem Icon="Chat"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -139,7 +139,9 @@
                                 <Image  BackgroundColor="Transparent" Source = "arrow_right_thin"  Grid.Row="0" Grid.Column= "0"/>
 
                            <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
-                                <cv:CarouselViewControl ItemsSource="{Binding DestacadosDetalle}"  HorizontalOptions="FillAndExpand" HeightRequest="300">
+                                <cv:CarouselViewControl 
+                                            ItemsSource="{Binding DestacadosDetalle}"
+                                            HorizontalOptions="FillAndExpand" HeightRequest="300">
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
                                             <Grid BackgroundColor = "White">
@@ -159,7 +161,8 @@
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding des_imagen}"
-                                                                            Grid.Row="0" Grid.ColumnSpan="4" >
+                                                                            Grid.Row="0" Grid.ColumnSpan="4"
+                                                                            >
                                                   <ffimageloading:CachedImage.GestureRecognizers>
                                                         <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
                                                     </ffimageloading:CachedImage.GestureRecognizers>

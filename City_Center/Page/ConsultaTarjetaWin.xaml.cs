@@ -20,9 +20,9 @@ namespace City_Center.Page
 
             ListaOpciones = new string[] { "DNI", "LE", "LC", "CI" };
 
-            //TipoDocumento.ItemsSource = ListaOpciones;
+            TipoDocumento.ItemsSource = ListaOpciones;
 
-            //TipoDocumento.SelectedIndex = 0;
+            TipoDocumento.SelectedIndex = 0;
 
         }
 

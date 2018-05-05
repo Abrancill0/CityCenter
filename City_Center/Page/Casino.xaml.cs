@@ -16,12 +16,24 @@ namespace City_Center.Page
             InitializeComponent();
             ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2"};
             listaCasino.ItemsSource = ListaOpciones;
+
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
         }
+
+        protected override void OnDisappearing()
+        {
+            
+                base.OnDisappearing();
+
+            this.Content = null;
+
+        }
+
 
         void Tab1_Tapped(object sender, System.EventArgs e)
         {

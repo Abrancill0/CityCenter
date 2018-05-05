@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="City_Center.Page.DetailPage" BindingContext="{Binding Main, Source={StaticResource Locator}}" Title="City Center" Icon="Menu.png" BackgroundColor="Transparent">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="City_Center.Page.DetailPage" BindingContext="{Binding Main, Source={StaticResource Locator}}" Title="City Center" Icon="Menu.png" Padding="0, 40" BackgroundColor="Transparent">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Detail}" Margin="0,0,0,0" BackgroundColor="#250c4b">
             <ListView x:Name="listviewMenu" ItemsSource="{Binding ListaOpciones}" ItemSelected="Handle_ItemSelected" BackgroundColor="#250c4b" SeparatorVisibility="Default" HasUnevenRows="True" RowHeight="50">
