@@ -19,7 +19,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#7A5BAS">
+        <StackLayout BackgroundColor="#7A5BAS" BindingContext="{Binding Perfil}" >
         <Grid BackgroundColor="#7A5BAS" VerticalOptions = "Center" >
                     <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60">
@@ -38,8 +38,7 @@
                        HorizontalOptions="Center"
                        Grid.Column="1"
                        Grid.Row="0"
-                        Grid.RowSpan = "2"
-                        >
+                        Grid.RowSpan = "2">
                                 <Image x:Name="ImageCircle" 
                                        Source="circulo_blanco.png" 
                                        VerticalOptions="Center" 
@@ -82,7 +81,7 @@
                             </Label>
                     </Grid>
         
-        <ScrollView BackgroundColor = "White" BindingContext="{Binding Perfil}">
+        <ScrollView BackgroundColor = "White">
              
             <StackLayout>
                 <Grid BackgroundColor="#250c4b" >
@@ -132,7 +131,9 @@
                 <StackLayout x:Name="SL1" IsVisible="true">
                     <StackLayout Margin="10">
 
-                        <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Correo electrónico">
+                        <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Placeholder="Correo electrónico">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -141,7 +142,9 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
 
-                         <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Contraseña" IsPassword="true">
+                         <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}"
+                                       Style="{DynamicResource EntryStyle}"
+                                       Placeholder="Contraseña" IsPassword="true">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -150,7 +153,9 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
 
-                         <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Cambiar Contraseña" IsPassword="true">
+                         <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}"
+                                       Style="{DynamicResource EntryStyle}"
+                                       Placeholder="Cambiar Contraseña" IsPassword="true">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -159,7 +164,9 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
 
-                         <xfx:XfxEntry Text="{Binding Ciudad}" Style="{DynamicResource EntryStyle}" Placeholder="Ciudad" >
+                         <xfx:XfxEntry Text="{Binding Ciudad}"
+                                       Style="{DynamicResource EntryStyle}"
+                                       Placeholder="Ciudad" >
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
