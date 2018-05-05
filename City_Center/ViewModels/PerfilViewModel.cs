@@ -187,6 +187,8 @@ namespace City_Center.ViewModels
         #region Methods
         private void LoadCampos()
         {
+            try
+            {
             Email = Application.Current.Properties["Email"].ToString();
             Nombre = Application.Current.Properties["NombreCompleto"].ToString();
             Ciudad = Application.Current.Properties["Ciudad"].ToString();
@@ -198,7 +200,11 @@ namespace City_Center.ViewModels
             TipoDocumento  = Application.Current.Properties["TipoDocumento"].ToString();
             NumeroDocumento  = Application.Current.Properties["NumeroDocumento"].ToString();
             NumeroSocio   = Application.Current.Properties["NumeroSocio"].ToString();
+            }
+            catch (Exception ex)
+            {
 
+            }
         }
 
         private async Task<string> ValidaTarjetaUsuario(string NoTarjeta)
