@@ -11,5 +11,14 @@ namespace City_Center.Page.SlideMenu
         {
             InitializeComponent();
         }
+
+        protected override void OnDisappearing()
+        {
+
+            base.OnDisappearing();
+
+            GC.Collect();
+
+        }
     }
 }

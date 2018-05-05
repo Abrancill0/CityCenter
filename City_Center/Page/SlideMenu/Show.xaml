@@ -127,7 +127,8 @@
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
                                                                         Source="{Binding eve_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
-                                                                        Grid.Row="0" Grid.ColumnSpan="4">
+                                                                        Grid.Row="0" Grid.ColumnSpan="4"
+                                                                        DownsampleToViewSize="true">
 
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer  Command="{Binding VerDetalleShowCommand}"  />

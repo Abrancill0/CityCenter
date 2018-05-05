@@ -12,6 +12,15 @@ namespace City_Center.Page.SlideMenu
             InitializeComponent();
         }
 
+        protected override void OnDisappearing()
+        {
+
+            base.OnDisappearing();
+
+            GC.Collect();
+
+        }
+
         void Tab1_Tapped(object sender, System.EventArgs e)
         {
             LabelTab1.TextColor = Color.FromHex("#EAE8ED");

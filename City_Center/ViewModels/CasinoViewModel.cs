@@ -174,10 +174,10 @@ namespace City_Center.ViewModels
 
         private void Win()
         {
-            if (this.listTarjetas == null)
-            {
-                this.LoadTarjetas();
-            }
+            //if (this.listTarjetas == null)
+            //{
+            //    this.LoadTarjetas();
+            //}
 
         }
 
@@ -194,8 +194,8 @@ namespace City_Center.ViewModels
         {
             MainViewModel.GetInstance().ConsultaTarjetaWin = new ConsultaTarjetaWinViewModel();
 
-          
-            await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ConsultaTarjetaWin());
+
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ConsultaTarjetaWin());
 
         }
 
@@ -205,33 +205,42 @@ namespace City_Center.ViewModels
         #region Methods
         private async void LoadDestacados()
         {
-            var connection = await this.apiService.CheckConnection();
-
-            if (!connection.IsSuccess)
+            try
             {
-                await Mensajes.Error(connection.Message);
+                var connection = await this.apiService.CheckConnection();
 
-            }
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
+
+                }
 
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
             });
 
 
-            var response = await this.apiService.Get<DestacadosReturn>("/casino/destacados", "/indexApp", content);
+                var response = await this.apiService.Get<DestacadosReturn>("/casino/destacados", "/indexApp", content);
 
-            if (!response.IsSuccess)
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Destacados");
+
+                    return;
+                }
+
+                this.listDestacados = (DestacadosReturn)response.Result;
+
+                DestacadosDetalle = new ObservableCollection<DestacadosItemViewModel>(this.ToDestacadosItemViewModel());
+
+            }
+            catch (Exception ex)
             {
-                await Mensajes.Error("Error al cargar Destacados");
-
-                return;
+                await Mensajes.Error(ex.ToString());
             }
 
-            this.listDestacados = (DestacadosReturn)response.Result;
-
-            DestacadosDetalle = new ObservableCollection<DestacadosItemViewModel>(this.ToDestacadosItemViewModel());
 
         }
 
@@ -249,34 +258,42 @@ namespace City_Center.ViewModels
 
         private async void LoadPozos()
         {
-            var connection = await this.apiService.CheckConnection();
-
-            if (!connection.IsSuccess)
+            try
             {
-               await Mensajes.Error(connection.Message);
+                var connection = await this.apiService.CheckConnection();
 
-                return;
-            }
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
+
+                    return;
+                }
 
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
             });
 
 
-            var response = await this.apiService.Get<PozosReturn>("/casino/pozos", "/indexApp", content);
+                var response = await this.apiService.Get<PozosReturn>("/casino/pozos", "/indexApp", content);
 
-            if (!response.IsSuccess)
-            {
-                await Mensajes.Error("Error al cargar Pozos");
-                      
-                return;
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Pozos");
+
+                    return;
+                }
+
+                this.listPozos = (PozosReturn)response.Result;
+
+                PozosDetalle = new ObservableCollection<pozosDetalle>(this.ToPozosItemViewModel());
+
             }
-
-            this.listPozos = (PozosReturn)response.Result;
-
-            PozosDetalle = new ObservableCollection<pozosDetalle>(this.ToPozosItemViewModel());
+            catch (Exception ex)
+            {
+                await Mensajes.Error(ex.ToString());
+            }
 
         }
 
@@ -294,39 +311,49 @@ namespace City_Center.ViewModels
 
         private async void LoadSalaPoker()
         {
-            var connection = await this.apiService.CheckConnection();
-
-            if (!connection.IsSuccess)
+            try
             {
+                var connection = await this.apiService.CheckConnection();
 
-                await Mensajes.Error(connection.Message);
+                if (!connection.IsSuccess)
+                {
 
-                return;
-            }
+                    await Mensajes.Error(connection.Message);
+
+                    return;
+                }
 
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
             });
 
 
-            var response = await this.apiService.Get<SalaPokerReturn>("/casino/sala_poker", "/indexApp", content);
+                var response = await this.apiService.Get<SalaPokerReturn>("/casino/sala_poker", "/indexApp", content);
 
-            if (!response.IsSuccess)
+                if (!response.IsSuccess)
+                {
+
+                    await Mensajes.Error("Error al cargar Sala de Poker");
+                    return;
+                }
+
+                this.listSalasPoker = (SalaPokerReturn)response.Result;
+
+
+                Imagen_Selected = VariablesGlobales.RutaServidor + this.listSalasPoker.resultado[0].spo_imagen;
+
+
+                SalaPokerDetalle = new ObservableCollection<SalaPokerDetalle>(this.ToSalaPokerItemViewModel());
+
+            }
+            catch (Exception ex)
             {
-
-                await Mensajes.Error("Error al cargar Sala de Poker");
-                return;
+                await Mensajes.Error(ex.ToString());
             }
 
-            this.listSalasPoker = (SalaPokerReturn)response.Result;
 
-
-            Imagen_Selected = VariablesGlobales.RutaServidor + this.listSalasPoker.resultado[0].spo_imagen;
-
-
-            SalaPokerDetalle = new ObservableCollection<SalaPokerDetalle>(this.ToSalaPokerItemViewModel());
 
         }
 
@@ -348,33 +375,42 @@ namespace City_Center.ViewModels
 
         private async void LoadGanadores()
         {
-            var connection = await this.apiService.CheckConnection();
 
-            if (!connection.IsSuccess)
+            try
             {
-               await Mensajes.Error(connection.Message);
+                var connection = await this.apiService.CheckConnection();
 
-                return;
-            }
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                    return;
+                }
+
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
             });
 
 
-            var response = await this.apiService.Get<GanadoresReturn>("/casino/ganadores", "/indexApp", content);
+                var response = await this.apiService.Get<GanadoresReturn>("/casino/ganadores", "/indexApp", content);
 
-            if (!response.IsSuccess)
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Ganadores");
+
+                    return;
+                }
+
+                this.listGanadores = (GanadoresReturn)response.Result;
+
+                GanadoresDetalle = new ObservableCollection<GanadoresDetalle>(this.ToGanadoresViewModel());
+            }
+            catch (Exception ex)
             {
-                await Mensajes.Error("Error al cargar Ganadores");
-
-                return;
+                await Mensajes.Error(ex.ToString());
             }
 
-            this.listGanadores = (GanadoresReturn)response.Result;
-
-            GanadoresDetalle = new ObservableCollection<GanadoresDetalle>(this.ToGanadoresViewModel());
 
         }
 
@@ -398,35 +434,44 @@ namespace City_Center.ViewModels
 
         private async void LoadTarjetas()
         {
-            var connection = await this.apiService.CheckConnection();
 
-            if (!connection.IsSuccess)
+            try
             {
-             await  Mensajes.Error(connection.Message);
+                var connection = await this.apiService.CheckConnection();
 
-                return;
-            }
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
+
+                    return;
+                }
 
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
             });
 
 
-            var response = await this.apiService.Get<TarjetasReturn>("/tarjetas", "/indexApp", content);
+                var response = await this.apiService.Get<TarjetasReturn>("/tarjetas", "/indexApp", content);
 
-            if (!response.IsSuccess)
-            {
+                if (!response.IsSuccess)
+                {
 
-                await Mensajes.Error("Error al cargar Tarjetas");
-               
-                return;
+                    await Mensajes.Error("Error al cargar Tarjetas");
+
+                    return;
+                }
+
+                this.listTarjetas = (TarjetasReturn)response.Result;
+
+                TarjetasDetalle = new ObservableCollection<TarjetasDetalle>(this.ToTarjetasViewModel());
+
             }
-
-            this.listTarjetas = (TarjetasReturn)response.Result;
-
-            TarjetasDetalle = new ObservableCollection<TarjetasDetalle>(this.ToTarjetasViewModel());
+            catch (Exception ex)
+            {
+                await Mensajes.Error(ex.ToString());
+            }
 
         }
 
@@ -448,34 +493,43 @@ namespace City_Center.ViewModels
 
         private async void LoadTorneo()
         {
-            var connection = await this.apiService.CheckConnection();
 
-            if (!connection.IsSuccess)
+            try
             {
-                await Mensajes.Error(connection.Message);
+                var connection = await this.apiService.CheckConnection();
 
-                return;
-            }
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
+
+                    return;
+                }
 
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
             });
 
 
-            var response = await this.apiService.Get<TorneoReturn>("/casino/torneos", "/indexApp", content);
+                var response = await this.apiService.Get<TorneoReturn>("/casino/torneos", "/indexApp", content);
 
-            if (!response.IsSuccess)
-            {
-                await Mensajes.Error("Error al cargar Torneos");
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Torneos");
 
-                return;
+                    return;
+                }
+
+                this.listTorneo = (TorneoReturn)response.Result;
+
+                TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+
             }
-
-            this.listTorneo = (TorneoReturn)response.Result;
-
-            TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+            catch (Exception ex)
+            {
+                await Mensajes.Error(ex.ToString());
+            }
 
         }
 
@@ -498,38 +552,46 @@ namespace City_Center.ViewModels
             });
         }
 
-
         private async void LoadPromociones()
         {
-            var connection = await this.apiService.CheckConnection();
 
-            if (!connection.IsSuccess)
+            try
             {
-                await Mensajes.Error(connection.Message);
+                var connection = await this.apiService.CheckConnection();
 
-                return;
-            }
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                    return;
+                }
+
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
             });
 
 
-            var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
+                var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
 
-            if (!response.IsSuccess)
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Promociones");
+
+                    return;
+                }
+
+                this.listPromociones = (PromocionesReturn)response.Result;
+
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "cas"));
+
+            }
+            catch (Exception ex)
             {
-                await Mensajes.Error("Error al cargar Promociones");
-
-                return;
+                await Mensajes.Error(ex.ToString());
             }
 
-            this.listPromociones = (PromocionesReturn)response.Result;
-
-            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "cas"));
-
-          }
+        }
 
         private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()
         {
@@ -568,7 +630,7 @@ namespace City_Center.ViewModels
 
             this.LoadDestacados();
             this.LoadPromociones();
-            this.LoadPozos();
+
         }
 
 

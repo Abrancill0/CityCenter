@@ -14,9 +14,13 @@ namespace City_Center.Page
         public Casino()
         {
             InitializeComponent();
-            ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2"};
+            //MainViewModel.GetInstance().Casino = new CasinoViewModel();
+
+            ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2" };
             listaCasino.ItemsSource = ListaOpciones;
 
+            MainViewModel.GetInstance().Casino = new CasinoViewModel();
+             
         }
 
         protected override void OnAppearing()
@@ -27,10 +31,10 @@ namespace City_Center.Page
 
         protected override void OnDisappearing()
         {
-            
-                base.OnDisappearing();
 
-            this.Content = null;
+            base.OnDisappearing();
+
+            GC.Collect();
 
         }
 
@@ -127,7 +131,7 @@ namespace City_Center.Page
             {
 
             }
-           
+
 
         }
 

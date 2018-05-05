@@ -166,7 +166,12 @@
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding hab_imagen}">
+                                                <ffimageloading:CachedImage HeightRequest="100"
+                                                                            Aspect="AspectFill"
+                                                                            LoadingPlaceholder="image_loading.png"
+                                                                            ErrorPlaceholder="image_error.png"
+                                                                            Source="{Binding hab_imagen}"
+                                                                            DownsampleToViewSize="true">
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                 <TapGestureRecognizer  Command="{Binding DetalleCommand}"  />
                                                 </ffimageloading:CachedImage.GestureRecognizers>
@@ -222,6 +227,7 @@
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
+                                                                                DownsampleToViewSize="true"
                                                                                 Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}">
                                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                                  <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
@@ -282,7 +288,7 @@
                                                     <ffimageloading:CachedImage HeightRequest="100" 
                                                                                 WidthRequest="100"
                                                                                 Aspect="AspectFill"
-                                                                            
+                                                                                DownsampleToViewSize="true"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
                                                                                 Source="{Binding gal_imagen}">
