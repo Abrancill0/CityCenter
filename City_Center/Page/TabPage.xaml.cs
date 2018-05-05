@@ -13,7 +13,6 @@ namespace City_Center.Page
             InitializeComponent();
 
             NavigationPage.SetTitleIcon(this, "logo.png");
-            BarBackgroundColor = Color.FromHex("");
         }
     }
 }
