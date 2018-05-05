@@ -18,13 +18,9 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-<<<<<<< HEAD
         <StackLayout BackgroundColor="#7A5BAS"  BindingContext="{Binding Perfil}">
         <Grid BackgroundColor="#7A5BAS" VerticalOptions = "Center" >
-=======
-        <StackLayout BackgroundColor="#8A7C9E">
-        <Grid BackgroundColor="#8A7C9E" VerticalOptions = "Center" >
->>>>>>> f17b0855a70f7d1857a96d4c5d37afe108c10b9d
+
                     <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60">
                         </ColumnDefinition>
