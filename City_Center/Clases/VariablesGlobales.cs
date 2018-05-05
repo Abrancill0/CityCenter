@@ -11,5 +11,9 @@ namespace City_Center.Clases
         public static string Img3;
         public static string Img4;
 
+        public static DateTime FechaInicio;
+        public static DateTime FechaFin;
+        public static int NumeroHuespedes;
+
     }
 }

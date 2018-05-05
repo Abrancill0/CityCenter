@@ -15,11 +15,10 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
-         
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#7A5BAS" BindingContext="{Binding Perfil}" >
+        <StackLayout BackgroundColor="#7A5BAS"  BindingContext="{Binding Perfil}">
         <Grid BackgroundColor="#7A5BAS" VerticalOptions = "Center" >
                     <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60">
