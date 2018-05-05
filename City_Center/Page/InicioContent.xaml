@@ -156,8 +156,9 @@
                                 FontSize="Small"
                                 TextColor="White"
                                 BackgroundColor="#250c4b"
-                                Clicked="Handle_Clicked"
+                               
                                 Text="VER OPCIONES" />
+                         <!--Clicked="Handle_Clicked"-->
                     </StackLayout>
                     <StackLayout x:Name="SL2" IsVisible="false" HorizontalOptions="FillAndExpand" Margin="5">
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
