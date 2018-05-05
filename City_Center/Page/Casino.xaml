@@ -92,7 +92,7 @@
                 </ContentView>
                 <ContentView x:Name="CV3" BackgroundColor="Transparent" Grid.Column="2">
                     <ContentView.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Tab3_Tapped" Command="{Binding WinCommand}">
+                        <TapGestureRecognizer Tapped="Tab3_Tapped" >
                         </TapGestureRecognizer>
                     </ContentView.GestureRecognizers>
                 </ContentView>
@@ -415,7 +415,7 @@
                             <ffimageloading:CachedImage x:Name="Img1provisional"
                             HeightRequest="150"
                             Aspect="AspectFill"
-                           
+                           DownsampleToViewSize="true"
                             LoadingPlaceholder="image_loading.png"
                             ErrorPlaceholder="image_error.png"
                             Source="{Binding Imagen_Selected}" />

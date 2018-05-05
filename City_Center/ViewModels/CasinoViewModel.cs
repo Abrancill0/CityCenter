@@ -174,10 +174,10 @@ namespace City_Center.ViewModels
 
         private void Win()
         {
-            //if (this.listTarjetas == null)
-            //{
-            //    this.LoadTarjetas();
-            //}
+            if (this.listTarjetas == null)
+            {
+                this.LoadTarjetas();
+            }
 
         }
 
@@ -630,6 +630,8 @@ namespace City_Center.ViewModels
 
             this.LoadDestacados();
             this.LoadPromociones();
+            this.LoadPozos();
+            this.LoadTarjetas();
 
         }
 
