@@ -633,7 +633,7 @@
                                                                                 Aspect="AspectFill"
                                                                                 DownsampleToViewSize="true"
                                                                                 LoadingPlaceholder="image_loading.png"
-                                                                                ErrorPlaceholder="image_error.png"
+                                                                                ErrorPlaceholder="vip1"
                                                                                 Source="{Binding .}">
                                                      </ffimageloading:CachedImage>
                                                 </StackLayout>
