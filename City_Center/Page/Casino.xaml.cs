@@ -16,15 +16,10 @@ namespace City_Center.Page
             InitializeComponent();
             //MainViewModel.GetInstance().Casino = new CasinoViewModel();
 
-            ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2"};
+            ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2" };
             listaCasino.ItemsSource = ListaOpciones;
 
-<<<<<<< HEAD
             MainViewModel.GetInstance().Casino = new CasinoViewModel();
-        }
-
-       
-=======
         }
 
         protected override void OnAppearing()
@@ -33,7 +28,6 @@ namespace City_Center.Page
 
         }
 
->>>>>>> c1a7b230958f575fc54291b77d878b109afce7d6
         protected override void OnDisappearing()
         {
 
@@ -136,7 +130,7 @@ namespace City_Center.Page
             {
 
             }
-           
+
 
         }
 
