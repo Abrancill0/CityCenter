@@ -122,7 +122,13 @@
                                                         </ffimageloading:CachedImage.GestureRecognizers>
                                                     </ffimageloading:CachedImage>
                                                     <StackLayout Padding="0,45,20,0" HorizontalOptions="End" HeightRequest="55" WidthRequest="55">
-                                                        <ffimageloading:CachedImage HeightRequest="55" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding reb_tipo}" />
+                                                        <ffimageloading:CachedImage 
+                                                        HeightRequest="55" 
+                                                            Aspect="AspectFit"
+                                                        LoadingPlaceholder="image_loading.png"
+                                                        ErrorPlaceholder="image_error.png" 
+                                                        Source="{Binding reb_tipo}" 
+                                                        DownsampleToViewSize="true"/>
                                                     </StackLayout>
                                                     <StackLayout Padding="5,-20,0,0">
                                                         <Label TextColor="#7A5BA5" Text="{Binding reb_nombre}"

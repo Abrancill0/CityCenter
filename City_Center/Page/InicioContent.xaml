@@ -229,15 +229,15 @@
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
                                         <Label Text="Fecha">
                                         </Label>
-                                        <DatePicker >
+                                        <DatePicker Date="{Binding FechaInicio, Mode=TwoWay}" >
                                             
                                         </DatePicker>
-                                     <!--   Date="{Binding FechaInicio, Mode=TwoWay}"-->
+                                     <!--   -->
                                     </StackLayout>
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                                         <Label Text="Hora">
                                         </Label>
-                                        <TimePicker >
+                                        <TimePicker Time="{Binding HoraInicio, Mode=TwoWay}">
                                         </TimePicker>
                                         <!--Time="{Binding HoraInicio, Mode=TwoWay}"-->
                                     </StackLayout>

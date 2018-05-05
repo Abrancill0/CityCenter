@@ -142,6 +142,7 @@
                                 <cv:CarouselViewControl 
                                             ItemsSource="{Binding DestacadosDetalle}"
                                             HorizontalOptions="FillAndExpand" HeightRequest="300">
+                                             
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
                                             <Grid BackgroundColor = "White">
@@ -162,7 +163,7 @@
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding des_imagen}"
                                                                             Grid.Row="0" Grid.ColumnSpan="4"
-                                                                            >
+                                                                            DownsampleToViewSize="true">
                                                   <ffimageloading:CachedImage.GestureRecognizers>
                                                         <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
@@ -193,7 +194,6 @@
                                                             <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                         </Image.GestureRecognizers>
                                                     </Image>
-                                               
                                             </Grid>
                                         </DataTemplate>
                                     </cv:CarouselViewControl.ItemTemplate>
@@ -225,7 +225,8 @@
                                                                             Aspect="AspectFill"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
-                                                                            Source="{Binding poz_imagen}" />
+                                                                            Source="{Binding poz_imagen}"
+                                                                            DownsampleToViewSize="true"/>
                                                 <Label x:Name="Label"
                                                        Margin="5"
                                                        HorizontalOptions="Center"
@@ -276,7 +277,8 @@
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
-                                                                                Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}">
+                                                                                Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
+                                                                                DownsampleToViewSize="true">
                                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                                  <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
 
@@ -359,12 +361,12 @@
                                                     <RowDefinition Height="0.5*" />
                                                 </Grid.RowDefinitions>
                                                 <ffimageloading:CachedImage HeightRequest="150"
-                                                                            
                                                                             Aspect="AspectFill"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
-                                                                            Grid.Row="0" Grid.ColumnSpan="4" >
+                                                                            Grid.Row="0" Grid.ColumnSpan="4"
+                                                                            DownsampleToViewSize="true">
                                                   <ffimageloading:CachedImage.GestureRecognizers>
                                                         <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
@@ -435,7 +437,7 @@
                                                     <ffimageloading:CachedImage HeightRequest="100" 
                                                                                 WidthRequest="100"
                                                                                 Aspect="AspectFill"
-                                                                               
+                                                                                DownsampleToViewSize="true"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
                                                                                 Source="{Binding spo_imagen}">
@@ -469,7 +471,13 @@
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding gan_imagen}" />
+                                                <ffimageloading:CachedImage
+                                                HeightRequest="100"
+                                                Aspect="AspectFill" 
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png"
+                                                Source="{Binding gan_imagen}"
+                                                DownsampleToViewSize="true"/>
 
                                                 <Label x:Name="Label"
                                                        Margin="5"
@@ -559,7 +567,7 @@
                                                             HeightRequest="90"
                                                             WidthRequest="100"
                                                             Aspect="AspectFit"
-                                                           
+                                                            DownsampleToViewSize="true"
                                                             LoadingPlaceholder="image_loading.png"
                                                             ErrorPlaceholder="image_error.png"
                                                             Source="{Binding tar_imagen}"
@@ -623,7 +631,7 @@
                                                     <ffimageloading:CachedImage HeightRequest="100" 
                                                                                 WidthRequest="100"
                                                                                 Aspect="AspectFill"
-                                                                              
+                                                                                DownsampleToViewSize="true"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
                                                                                 Source="{Binding .}">

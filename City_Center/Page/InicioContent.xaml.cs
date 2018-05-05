@@ -21,6 +21,15 @@ namespace City_Center.Page
             _webHotel = new WebViewHotel();  
         }
 
+        protected override void OnDisappearing()
+        {
+
+            base.OnDisappearing();
+
+            GC.Collect();
+
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -45,7 +54,6 @@ namespace City_Center.Page
             Combosillaniños.SelectedIndex = 0;
            
         }
-
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {

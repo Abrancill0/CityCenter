@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using static City_Center.Models.MoaSpaResultado;
 using City_Center.PopUp;
 using Rg.Plugins.Popup.Extensions;
+using City_Center.ViewModels;
 
 namespace City_Center.Page
 {
@@ -28,12 +29,17 @@ namespace City_Center.Page
             //};
 
             NavigationPage.SetTitleIcon(this, "logo.png");
+
         }
 
-        protected override void OnAppearing()
+     
+        protected override void OnDisappearing()
         {
-            base.OnAppearing();
+            base.OnDisappearing();
+
+            GC.Collect();
         }
+
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {

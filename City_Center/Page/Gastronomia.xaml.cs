@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using City_Center.ViewModels;
 using Xamarin.Forms;
 
 namespace City_Center.Page
@@ -10,15 +10,15 @@ namespace City_Center.Page
         public Gastronomia()
         {
             InitializeComponent();
-        }
 
+            MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
+        }
 
         protected override void OnDisappearing()
         {
-
             base.OnDisappearing();
 
-            this.Content = null;
+            GC.Collect();
 
         }
 
