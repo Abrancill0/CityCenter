@@ -472,12 +472,9 @@
     <AndroidResource Include="Resources\drawable\CONVENCIONESmin.png" />
     <AndroidResource Include="Resources\drawable\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
-<<<<<<< HEAD
     <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
     <AndroidResource Include="Resources\drawable-hdpi\circulo_blanco.png" />
-=======
     <AndroidResource Include="Resources\drawable\logout.png" />
->>>>>>> 632d2aad404195dbbbe97cc14c6914e8e83abf2f
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
