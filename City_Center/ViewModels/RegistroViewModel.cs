@@ -241,6 +241,11 @@ namespace City_Center.ViewModels
             Application.Current.Properties["FechaNacimiento"] = this.Fecha;
             Application.Current.Properties["FotoPerfil"] = RutaImagen;
 
+            Application.Current.Properties["TipoDocumento"] = "";
+            Application.Current.Properties["NumeroDocumento"] = "";
+            Application.Current.Properties["NumeroSocio"] = "";
+
+
             await Application.Current.SavePropertiesAsync();
 
            
@@ -300,6 +305,8 @@ namespace City_Center.ViewModels
                 Application.Current.Properties["Pass"] = "";
                 Application.Current.Properties["FechaNacimiento"] = "";
                 Application.Current.Properties["FotoPerfil"] = googleUser.Picture;
+
+
                 await Application.Current.SavePropertiesAsync();
 
                 MainViewModel.GetInstance().Master = new MasterViewModel();

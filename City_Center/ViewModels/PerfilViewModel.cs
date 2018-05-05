@@ -195,6 +195,10 @@ namespace City_Center.ViewModels
             Fecha = Application.Current.Properties["FechaNacimiento"].ToString();
             Imagen = Application.Current.Properties["FotoPerfil"].ToString();
 
+            TipoDocumento  = Application.Current.Properties["TipoDocumento"].ToString();
+            NumeroDocumento  = Application.Current.Properties["NumeroDocumento"].ToString();
+            NumeroSocio   = Application.Current.Properties["NumeroSocio"].ToString();
+
         }
 
         private async Task<string> ValidaTarjetaUsuario(string NoTarjeta)
