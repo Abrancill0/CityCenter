@@ -211,7 +211,10 @@
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
                                 <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="POZOS" TextColor="#250c4b" FontFamily="Oswald-Regular" />
-                                <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding PozosDetalle}">
+                                <flv:FlowListView SeparatorVisibility="None"
+                                                  HasUnevenRows="true"
+                                                  FlowColumnMinWidth="110"
+                                                  FlowItemsSource="{Binding PozosDetalle}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
                                             <Grid Padding="3">
@@ -226,7 +229,8 @@
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding poz_imagen}"
-                                                                            DownsampleToViewSize="true"/>
+                                                                            DownsampleToViewSize="true"
+                                                                            />
                                                 <Label x:Name="Label"
                                                        Margin="5"
                                                        HorizontalOptions="Center"
