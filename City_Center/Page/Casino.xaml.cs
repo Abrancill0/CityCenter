@@ -20,6 +20,7 @@ namespace City_Center.Page
             listaCasino.ItemsSource = ListaOpciones;
 
             MainViewModel.GetInstance().Casino = new CasinoViewModel();
+             
         }
 
         protected override void OnAppearing()
