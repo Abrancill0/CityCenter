@@ -137,6 +137,10 @@ namespace City_Center.ViewModels
                     Application.Current.Properties["FotoPerfil"] = VariablesGlobales.RutaServidor + list.resultado.usu_imagen;
                     Application.Current.Properties["TipoCuenta"] = "CityCenter";
 
+                    Application.Current.Properties["TipoDocumento"] = list.resultado.usu_tipo_documento;
+                    Application.Current.Properties["NumeroDocumento"] = list.resultado.usu_no_documento;
+                    Application.Current.Properties["NumeroSocio"] = list.resultado.usu_id_tarjeta_socio;
+
                     await Application.Current.SavePropertiesAsync();
 
                     this.Email = string.Empty;
@@ -248,6 +252,12 @@ namespace City_Center.ViewModels
                 Application.Current.Properties["FechaNacimiento"] = "";
                 Application.Current.Properties["FotoPerfil"] = googleUser.Picture;
                 Application.Current.Properties["TipoCuenta"] = "Google";
+
+
+                Application.Current.Properties["TipoDocumento"] = "";
+                Application.Current.Properties["NumeroDocumento"] = "";
+                Application.Current.Properties["NumeroSocio"] = "";
+
                 await Application.Current.SavePropertiesAsync();
 
 
@@ -313,6 +323,7 @@ namespace City_Center.ViewModels
                 Application.Current.Properties["FechaNacimiento"] = "";
                 Application.Current.Properties["FotoPerfil"] =facebookUser.Picture;
                 Application.Current.Properties["TipoCuenta"] = "Facebook";
+
                 Application.Current.Properties["TipoDocumento"] = "";
 
                 Application.Current.Properties["NumeroDocumento"] = "";
@@ -417,10 +428,12 @@ namespace City_Center.ViewModels
             if (listValidaUsuario.resultado == "Usuario disponible.")
             {
                 return 0;
+
             }
             else
             {
                 return listValidaUsuario.usu_id;
+
             }
 
 

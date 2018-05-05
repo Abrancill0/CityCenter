@@ -68,6 +68,9 @@ namespace City_Center.Models
             public int usu_estatus { get; set; }
             public string created_at { get; set; }
             public string updated_at { get; set; }
+            public string usu_tipo_documento { get; set; }
+         
+            public string usu_no_documento { get; set; }
         }
 
         public class LoginReturn
