@@ -350,7 +350,7 @@ namespace City_Center.ViewModels
                 var content = new FormUrlEncodedContent(new[]
                 {
                     new KeyValuePair<string, string>("usu_id",idusuario )
-            });
+                });
 
 
                 var response = await this.apiService.Get<TarjetaUsuarioReturn>("/tarjetas", "/tarjetaUsuario", content);
