@@ -341,7 +341,6 @@
     <BundleResource Include="Resources\EquipoTecnico.png" />
     <BundleResource Include="Resources\error.png" />
     <BundleResource Include="Resources\Facebook.png" />
-    <BundleResource Include="Resources\Gastronomia.png" />
     <BundleResource Include="Resources\GASTRONOMIAmin.png" />
     <BundleResource Include="Resources\Hab_1.jpg" />
     <BundleResource Include="Resources\Hab_2.jpg" />

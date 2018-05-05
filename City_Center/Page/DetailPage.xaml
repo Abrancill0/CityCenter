@@ -25,7 +25,7 @@
             <StackLayout VerticalOptions="EndAndExpand">
                
            
-                <AbsoluteLayout  Padding = "5,30" HeightRequest="150" WidthRequest="250" HorizontalOptions="Center">
+                <AbsoluteLayout  Padding = "5,45" HeightRequest="150" WidthRequest="250" HorizontalOptions="Center">
                     <Image Source="{Binding ImagenTarjeta}"
                            Aspect="Fill" 
                            HeightRequest="150" 
