@@ -18,9 +18,9 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout >
-            <Label Margin="6,0,0,0" TextColor = "White" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" 
-                   Text="Consultá los puntos que tenés en tu tarjeta WIN" VerticalOptions = "Start" FontSize="12" FontFamily="Oswald-Regular" >
+        <StackLayout Padding = "10,30" HorizontalOptions = "Center" >
+            <Label  TextColor = "White"  HorizontalTextAlignment="Center" 
+                   Text="Consultá los puntos que tenés en tu tarjeta WIN" VerticalOptions = "Start" FontSize="Medium" FontFamily="Oswald-Regular" >
                  <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
                         <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -28,14 +28,58 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <StackLayout>
+            <StackLayout Padding = "50,5" HorizontalOptions = "Center">
                 <Label Text="Tipo documento" TextColor="Gray" Margin="5,2,0,0" FontSize="Small" />
                 <Grid Padding="15, 0">
                     <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End" />
-                    <Picker Margin="5" x:Name="TipoDocumento" ItemsSource="{Binding ListaOpciones}" Title="Tipo Documento">
+                    <Picker Margin="5" x:Name="TipoDocumento" TextColor = "White" ItemsSource="{Binding ListaOpciones}" Title="Tipo Documento">
                     </Picker>
                 </Grid>
+            
+                <xfx:XfxEntry TextColor = "White" Style="{DynamicResource EntryStyle}" Placeholder="Numero de Documento">
+                    <Entry.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="iOS">60</On>
+                            <On Platform="Android,Windows">50</On>
+                        </OnPlatform>
+                    </Entry.HeightRequest>
+                </xfx:XfxEntry>
+
             </StackLayout>
+            <AbsoluteLayout HeightRequest="200" WidthRequest="300" HorizontalOptions="Center">
+                    <Image Source="tarjeta"
+                           Aspect="Fill" 
+                           HeightRequest="200" 
+                           WidthRequest="300"
+                   ></Image>
+                <StackLayout  WidthRequest = "250" AbsoluteLayout.LayoutFlags="PositionProportional"
+                               AbsoluteLayout.LayoutBounds="0.5,0.9,-1,-1">
+               <xfx:XfxEntry TextColor = "White"  Style="{DynamicResource EntryStyle}" Placeholder="No Socio"
+                               >
+                    <Entry.HeightRequest >
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="iOS">60</On>
+                            <On Platform="Android,Windows">50</On>
+                        </OnPlatform>
+                    </Entry.HeightRequest>
+                
+                </xfx:XfxEntry>
+                    </StackLayout>
+            </AbsoluteLayout>
+                  
+            <Button Margin="30"
+                    FontSize="Small"
+                    TextColor="White"
+                    BackgroundColor="#270459"
+                    BorderColor = "White"
+                    BorderWidth = ".3"
+                    Text="CONSULTAR PUNTOS"
+                    > <Button.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                    </OnPlatform>
+                </Button.FontFamily></Button>
        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

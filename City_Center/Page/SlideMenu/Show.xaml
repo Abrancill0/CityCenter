@@ -25,7 +25,7 @@
                 <Label Text="SHOWS" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Fonts/Oswald-Regular.ttf"/>
+                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                         </OnPlatform>
                     </Label.FontFamily>

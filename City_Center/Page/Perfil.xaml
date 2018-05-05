@@ -18,8 +18,13 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
+<<<<<<< HEAD
         <StackLayout BackgroundColor="#7A5BAS"  BindingContext="{Binding Perfil}">
         <Grid BackgroundColor="#7A5BAS" VerticalOptions = "Center" >
+=======
+        <StackLayout BackgroundColor="#8A7C9E">
+        <Grid BackgroundColor="#8A7C9E" VerticalOptions = "Center" >
+>>>>>>> f17b0855a70f7d1857a96d4c5d37afe108c10b9d
                     <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60">
                         </ColumnDefinition>
@@ -37,7 +42,8 @@
                        HorizontalOptions="Center"
                        Grid.Column="1"
                        Grid.Row="0"
-                        Grid.RowSpan = "2">
+                        Grid.RowSpan = "2"
+                        >
                                 <Image x:Name="ImageCircle" 
                                        Source="circulo_blanco.png" 
                                        VerticalOptions="Center" 
@@ -80,7 +86,7 @@
                             </Label>
                     </Grid>
         
-        <ScrollView BackgroundColor = "White">
+        <ScrollView BackgroundColor = "White" BindingContext="{Binding Perfil}">
              
             <StackLayout>
                 <Grid BackgroundColor="#250c4b" >
@@ -96,11 +102,29 @@
                         <RowDefinition Height="40">
                         </RowDefinition>
                     </Grid.RowDefinitions>
-                    <Label x:Name="LabelTab1" Text="PERFIL" Style="{DynamicResource TabTopLabel}" Grid.Column="0" FontAttributes="Bold">
+                    <Label x:Name="LabelTab1" Text="PERFIL" TextColor="#FDFDFD" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
+                             <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
                     </Label>
-                    <Label x:Name="LabelTab2" Text="CONFIGURACÌON" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                    <Label x:Name="LabelTab2" Text="CONFIGURACÌON" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                             <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
                     </Label>
-                    <Label x:Name="LabelTab3" Text="NOTIFICACIONES" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
+                    <Label x:Name="LabelTab3" Text="NOTIFICACIONES" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
+                             <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
                     </Label>
                     <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
                     </BoxView>
@@ -130,9 +154,7 @@
                 <StackLayout x:Name="SL1" IsVisible="true">
                     <StackLayout Margin="10">
 
-                        <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}"
-                                      Style="{DynamicResource EntryStyle}"
-                                      Placeholder="Correo electrónico">
+                        <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Correo electrónico">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -141,9 +163,7 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
 
-                         <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}"
-                                       Style="{DynamicResource EntryStyle}"
-                                       Placeholder="Contraseña" IsPassword="true">
+                         <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Contraseña" IsPassword="true">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -152,9 +172,7 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
 
-                         <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}"
-                                       Style="{DynamicResource EntryStyle}"
-                                       Placeholder="Cambiar Contraseña" IsPassword="true">
+                         <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Cambiar Contraseña" IsPassword="true">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -163,9 +181,7 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
 
-                         <xfx:XfxEntry Text="{Binding Ciudad}"
-                                       Style="{DynamicResource EntryStyle}"
-                                       Placeholder="Ciudad" >
+                         <xfx:XfxEntry Text="{Binding Ciudad}" Style="{DynamicResource EntryStyle}" Placeholder="Ciudad" >
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
