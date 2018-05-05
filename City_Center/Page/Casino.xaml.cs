@@ -10,7 +10,6 @@ namespace City_Center.Page
     public partial class Casino : ContentPage
     {
         string[] ListaOpciones;
-        //TabPage tabPage;
 
         public Casino()
         {
@@ -18,20 +17,13 @@ namespace City_Center.Page
             ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2"};
             listaCasino.ItemsSource = ListaOpciones;
 
-            //tabPage = new TabPage();
-
-            //Background color
-            //tabPage.SetValue(NavigationPage.BarBackgroundColorProperty, Color.FromHex("#EFEFEF"));
-
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            MainViewModel.GetInstance().Casino = new CasinoViewModel();
         }
-
 
         protected override void OnDisappearing()
         {
