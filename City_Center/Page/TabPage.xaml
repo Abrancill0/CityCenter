@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:City_Center.Page"
             
              Icon="Menu.png" > 
-             <local:InicioContent Icon="home" />
-             <local:Casino Icon="casino"/>
-             <local:Hotel Icon="hotel"/>
-             <local:Gastronomia Icon="food" />
-             <local:MasInfo Icon="info2" />
+             <local:InicioContent x:Name="Inicio" Icon="home"/>
+             <local:Casino x:Name="Casino" Icon="casino"/>
+             <local:Hotel x:Name="Hotel" Icon="hotel"/>
+             <local:Gastronomia x:Name="Comida" Icon="food"/>
+             <local:MasInfo x:Name="Info" Icon="info2"/>
 </naxam:BottomTabbedPage>
 

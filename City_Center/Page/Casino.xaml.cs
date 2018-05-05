@@ -17,10 +17,11 @@ namespace City_Center.Page
             //MainViewModel.GetInstance().Casino = new CasinoViewModel();
 
             ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2" };
+
+            Img2provisional.Source = "vip1";
             listaCasino.ItemsSource = ListaOpciones;
 
             MainViewModel.GetInstance().Casino = new CasinoViewModel();
-             
         }
 
         protected override void OnAppearing()

@@ -18,7 +18,9 @@ namespace City_Center.Page
         public InicioContent()
         {
             InitializeComponent();
-            _webHotel = new WebViewHotel();  
+            _webHotel = new WebViewHotel();
+            NavigationPage.SetTitleIcon(this, "logo");
+
         }
 
         protected override void OnDisappearing()
