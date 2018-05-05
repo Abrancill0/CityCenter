@@ -10,7 +10,6 @@ namespace City_Center.Page
     public partial class Casino : ContentPage
     {
         string[] ListaOpciones;
-        //TabPage tabPage;
 
         public Casino()
         {
@@ -20,10 +19,21 @@ namespace City_Center.Page
             ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2"};
             listaCasino.ItemsSource = ListaOpciones;
 
+<<<<<<< HEAD
             MainViewModel.GetInstance().Casino = new CasinoViewModel();
         }
 
        
+=======
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+        }
+
+>>>>>>> c1a7b230958f575fc54291b77d878b109afce7d6
         protected override void OnDisappearing()
         {
 

@@ -382,7 +382,6 @@
     <AndroidResource Include="Resources\drawable-hdpi\btn_registrarme.png" />
     <AndroidResource Include="Resources\drawable-hdpi\campana.png" />
     <AndroidResource Include="Resources\drawable-hdpi\circle.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\circulo_blanco.png" />
     <AndroidResource Include="Resources\drawable-hdpi\tarjeta.png" />
     <AndroidResource Include="Resources\drawable-hdpi\user.png" />
     <AndroidResource Include="Resources\drawable\close_circle_button.png" />
@@ -423,7 +422,6 @@
     <AndroidResource Include="Resources\drawable-hdpi\btn_google.png" />
     <AndroidResource Include="Resources\drawable-hdpi\btn_ingresar.png" />
     <AndroidResource Include="Resources\drawable-hdpi\btn_face.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\circulo_blanco.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\home.png" />
     <AndroidResource Include="Resources\drawable-hdpi\casino.png" />
@@ -474,6 +472,7 @@
     <AndroidResource Include="Resources\drawable\CONVENCIONESmin.png" />
     <AndroidResource Include="Resources\drawable\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\circulo_blanco.png" />
     <AndroidResource Include="Resources\drawable\logout.png" />
   </ItemGroup>
   <ItemGroup>

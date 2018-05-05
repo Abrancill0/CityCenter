@@ -67,9 +67,6 @@
                         IsVisible="{Binding PerfilVisible}">
                     </Label>
                 </AbsoluteLayout>
-
-              
-               
                 <Grid ColumnSpacing="5" BackgroundColor="#1B0938" IsVisible="{Binding PerfilVisible}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />

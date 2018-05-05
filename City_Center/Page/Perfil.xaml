@@ -19,57 +19,73 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView BindingContext="{Binding Perfil}">
-            <StackLayout>
-              
-                <Grid BackgroundColor="#7A5BAS" HeightRequest="150" Padding="0">
+        <StackLayout BackgroundColor="#7A5BAS">
+        <Grid BackgroundColor="#7A5BAS" VerticalOptions = "Center" >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*">
+                    <ColumnDefinition Width="60">
                         </ColumnDefinition>
-                        <ColumnDefinition Width="1*">
+                        <ColumnDefinition Width="Auto">
                         </ColumnDefinition>
-                        <ColumnDefinition Width="1*">
-                        </ColumnDefinition>
-                        <ColumnDefinition Width="1*">
+                        <ColumnDefinition Width="Auto">
                         </ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
+                        
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                        <ffimageloading:CachedImage
-                        HeightRequest="150"
-                        WidthRequest="150"
-                        Margin="20"
-                            Aspect="AspectFill"
-                        DownsampleUseDipUnits="false" 
-                        LoadingPlaceholder="image_loading.png"
-                        ErrorPlaceholder="image_error.png"
-                            Grid.Column="0"
-                            Grid.Row="0"
-                        Grid.ColumnSpan="2"
-                        Grid.RowSpan="3"
-                        Source="{Binding Imagen, Mode=TwoWay}" />
-
-                        <Label  TextColor="White"
-                                FontFamily="Oswald-Regular"
-                                Grid.Column="2"
-                                Grid.Row="1"
-                                Grid.ColumnSpan="2"
-                                Text="HOLA"/>
-                        <Label  TextColor="White"
-                                FontFamily="Oswald-Regular"
-                                FontAttributes="Bold"
-                                Grid.Column="2"
-                                Grid.Row="2"
-                                Grid.ColumnSpan="2"
-                                Text="{Binding Nombre, Mode=TwoWay}"/>
-        
+                         <AbsoluteLayout 
+                       HorizontalOptions="Center"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                        Grid.RowSpan = "2"
+                        >
+                                <Image x:Name="ImageCircle" 
+                                       Source="circulo_blanco.png" 
+                                       VerticalOptions="Center" 
+                                       Aspect = "Fill"
+                                       HeightRequest = "120"
+                                       WidthRequest = "120"/>
+                                <ffimageloading:CachedImage
+                                    HeightRequest="50"
+                                    WidthRequest="50"
+                                    Aspect="AspectFill"
+                                    DownsampleUseDipUnits="false" 
+                                    LoadingPlaceholder="image_loading.png"
+                                    ErrorPlaceholder = "image_error.png"
+                                    AbsoluteLayout.LayoutFlags="PositionProportional" 
+                                    AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"
+                                    Source="{Binding Imagen, Mode=TwoWay}" />
+                        </AbsoluteLayout>
+                            <Label  TextColor="White"
+                                    FontFamily="Oswald-Regular"
+                                    Grid.Column="2"
+                                    Grid.Row="0"
+                                    FontSize = "Small"
+                                    VerticalOptions = "EndAndExpand"
+                                    Text="HOLA"
+                                    Margin = "0,50,0,0"/>
+                            <Label  TextColor="White"
+                                    FontSize = "20"
+                                    FontFamily="Oswald-Regular"
+                                    FontAttributes="Bold"
+                                    Grid.Column="2"
+                                    Grid.Row="1"
+                                    VerticalOptions = "StartAndExpand"
+                                    Text="{Binding Nombre, Mode=TwoWay}">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                            </Label>
                     </Grid>
-               
-                <Grid BackgroundColor="#250c4b" Padding="0">
+        
+        <ScrollView BackgroundColor = "White" BindingContext="{Binding Perfil}">
+             
+            <StackLayout>
+                <Grid BackgroundColor="#250c4b" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*">
                         </ColumnDefinition>
@@ -161,7 +177,7 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
                        
-                        <Label Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Silver"/>
+                        <Label Margin = "50,0" Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Silver"/>
 
                          <StackLayout>
                             <Label Text="Tipo documento" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
@@ -182,7 +198,15 @@
                                 BackgroundColor="#250c4b"
                                 TextColor="White"
                                 FontAttributes="Bold"
-                                Command="{Binding ActualizaPerfilCommand}">
+                                Command="{Binding ActualizaPerfilCommand}"
+                                Margin = "30,30,30,30"
+                                HeightRequest = "40">
+                                <Button.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                    </OnPlatform>
+                                </Button.FontFamily>
                         </Button>
                     </StackLayout>
                 </StackLayout>
@@ -195,5 +219,6 @@
                 </StackLayout>
             </StackLayout>
         </ScrollView>
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>
