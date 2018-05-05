@@ -472,7 +472,6 @@
     <AndroidResource Include="Resources\drawable\CONVENCIONESmin.png" />
     <AndroidResource Include="Resources\drawable\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
-    <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
     <AndroidResource Include="Resources\drawable-hdpi\circulo_blanco.png" />
     <AndroidResource Include="Resources\drawable\logout.png" />
   </ItemGroup>
