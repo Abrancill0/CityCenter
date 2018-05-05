@@ -28,7 +28,7 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <StackLayout Padding = "50,30" HorizontalOptions = "Center">
+            <StackLayout Padding = "50,5" HorizontalOptions = "Center">
                 <Label Text="Tipo documento" TextColor="Gray" Margin="5,2,0,0" FontSize="Small" />
                 <Grid Padding="15, 0">
                     <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End" />
