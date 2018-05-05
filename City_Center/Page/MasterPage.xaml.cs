@@ -10,7 +10,9 @@ namespace City_Center.Page
         public MasterPage()
         {
             InitializeComponent();
+            BackgroundColor = Color.FromHex("#23144B");
 
+            NavigationPage.SetTitleIcon(this, "logo.png");
             Detail = new NavigationPage (new TabPage());
         }
     }

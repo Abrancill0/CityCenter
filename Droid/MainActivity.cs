@@ -32,6 +32,8 @@ namespace City_Center.Droid
             Xfx.XfxControls.Init();
             UserDialogs.Init(this);
 
+            Forms.SetFlags("FastRenderers_Experimental");
+
             //CachedImageRenderer.Init(true);
 
             /*BottomTabbedRenderer.IconSize = 30;

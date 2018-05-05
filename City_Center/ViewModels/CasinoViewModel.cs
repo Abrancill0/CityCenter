@@ -631,6 +631,7 @@ namespace City_Center.ViewModels
             this.LoadDestacados();
             this.LoadPromociones();
             this.LoadPozos();
+            this.LoadSalaPoker();
             this.LoadTarjetas();
 
         }

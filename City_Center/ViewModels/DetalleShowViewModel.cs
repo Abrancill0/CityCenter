@@ -46,7 +46,7 @@ namespace City_Center.ViewModels
 
             Compartir.Text = this.ds.eve_nombre;
             Compartir.Title = this.ds.eve_nombre;
-            Compartir.Url = this.ds.eve_link;
+            Compartir.Url = "http://cc.comprogapp.com/es/show-detail/" + this.ds.eve_id + "/" + this.ds.eve_nombre;
 
             await CrossShare.Current.Share(Compartir);
 
@@ -62,7 +62,9 @@ namespace City_Center.ViewModels
 
         private async void GuardaFavorito()
         {
-            var content = new FormUrlEncodedContent(new[]
+            try
+            {
+                var content = new FormUrlEncodedContent(new[]
              {
                 new KeyValuePair<string, string>("gua_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
                 new KeyValuePair<string, string>("gua_id_evento", Convert.ToString(this.ds.eve_id)),
@@ -70,18 +72,25 @@ namespace City_Center.ViewModels
 
              });
 
-            var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/store", content);
+                var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/store", content);
 
-            if (!response.IsSuccess)
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error(response.Message);
+
+                    return;
+                }
+
+                var list = (GuardadoGenerico)response.Result;
+
+                await Mensajes.success(list.mensaje);
+
+            }
+            catch (Exception)
             {
-                await Mensajes.Error(response.Message);
 
-                return;
             }
 
-            var list = (GuardadoGenerico)response.Result;
-
-            await Mensajes.success(list.mensaje);
 
         }
 

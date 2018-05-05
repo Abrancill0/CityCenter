@@ -217,7 +217,7 @@
                                                   FlowItemsSource="{Binding PozosDetalle}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
-                                            <Grid Padding="3">
+                                            <Grid Padding="3" CompressedLayout.IsHeadless="true" >
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
@@ -269,7 +269,7 @@
                                         <ViewCell>
                                             <ContentView Rotation="90" BackgroundColor="Transparent">
                                                 <StackLayout HeightRequest="250" WidthRequest="230" Margin="0,5,0,0">
-                                                            <Grid Padding="3">
+                                                            <Grid Padding="3" CompressedLayout.IsHeadless="true">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
@@ -323,7 +323,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF" Margin="8">
-                                <Grid HorizontalOptions="FillAndExpand">
+                                <Grid HorizontalOptions="FillAndExpand" CompressedLayout.IsHeadless="true">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*">
                                         </ColumnDefinition>
@@ -352,7 +352,7 @@
                                 <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" HeightRequest="300">
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
-                                            <Grid BackgroundColor = "White">
+                                            <Grid BackgroundColor = "White" CompressedLayout.IsHeadless="true">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="1*" />
                                                     <ColumnDefinition Width="1*" />
@@ -419,7 +419,7 @@
                             <ffimageloading:CachedImage x:Name="Img1provisional"
                             HeightRequest="150"
                             Aspect="AspectFill"
-                           DownsampleToViewSize="true"
+                            DownsampleToViewSize="true"
                             LoadingPlaceholder="image_loading.png"
                             ErrorPlaceholder="image_error.png"
                             Source="{Binding Imagen_Selected}" />

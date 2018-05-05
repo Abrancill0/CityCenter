@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="City_Center.Page.SlideMenu.Favoritos">
     <ContentPage.Content>
         <StackLayout Padding = "10,60" BindingContext="{Binding Favoritos}" BackgroundColor="#250C4B" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -37,7 +38,13 @@
                                     <RowDefinition Height="1.3*" />
                                    
                                 </Grid.RowDefinitions>
-                                <Image Source="{Binding eve_imagen}" Grid.Row="0" Aspect="AspectFill" Grid.ColumnSpan="3" />
+
+                                <ffimageloading:CachedImage Grid.Row="0" Aspect="AspectFill" Grid.ColumnSpan="3"
+                                                                            LoadingPlaceholder="image_loading.png"
+                                                                            ErrorPlaceholder="image_error.png"
+                                                                            Source="{Binding eve_imagen}"
+                                                                            DownsampleToViewSize="true"/>
+                                    
                                 <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column = "0" BackgroundColor="#FFFFFF" >
                                     <Label Text="{Binding eve_nombre}" FontSize= "14" HorizontalOptions="Center" VerticalOptions="StartAndExpand" />
                                     <Label Text="{Binding eve_fecha_hora_inicio}" TextColor ="Black" HorizontalOptions="Center" VerticalOptions= "CenterAndExpand" />
