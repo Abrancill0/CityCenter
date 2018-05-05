@@ -12,7 +12,6 @@
         <ToolbarItem  Icon="Chat"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
-
         <ResourceDictionary>
             <Style x:Name="StyleButton" TargetType="Button">
                 <Setter Property="TextColor" Value="White" />
@@ -34,7 +33,7 @@
                 <ffimageloading:CachedImage Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="HOMEmin" HeightRequest="110" />
             </StackLayout>
             <StackLayout Padding="0,-30,0,0" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Margin="10">
-                <Grid > 
+                <Grid CompressedLayout.IsHeadless="true">  
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto">
                     </ColumnDefinition>
@@ -51,7 +50,7 @@
                     </Image>
 
                 </Grid>
-                <Grid> 
+                <Grid CompressedLayout.IsHeadless="true"> 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto">
                     </ColumnDefinition>
@@ -67,7 +66,7 @@
                             </Image.GestureRecognizers>
                         </Image>
                 </Grid>
-                <Grid>
+                <Grid CompressedLayout.IsHeadless="true">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto">
                     </ColumnDefinition>
@@ -83,7 +82,7 @@
                         </Image.GestureRecognizers>
                     </Image>
                 </Grid>
-                <Grid>
+                <Grid CompressedLayout.IsHeadless="true">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto">
                     </ColumnDefinition>
@@ -111,7 +110,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout Orientation="Horizontal" BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand">
-                                <Grid HorizontalOptions="FillAndExpand">
+                                <Grid HorizontalOptions="FillAndExpand" CompressedLayout.IsHeadless="true">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*">
                                         </ColumnDefinition>
@@ -153,7 +152,12 @@
                             </StackLayout>
                            
                         </Frame>
-                        <Button Margin="30" FontSize="Small" TextColor="White" BackgroundColor="#250c4b" Clicked="Handle_Clicked" Text="VER OPCIONES" />
+                        <Button Margin="30"
+                                FontSize="Small"
+                                TextColor="White"
+                                BackgroundColor="#250c4b"
+                                Clicked="Handle_Clicked"
+                                Text="VER OPCIONES" />
                     </StackLayout>
                     <StackLayout x:Name="SL2" IsVisible="false" HorizontalOptions="FillAndExpand" Margin="5">
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
@@ -498,8 +502,8 @@
                                        TextColor="White" 
                                        HorizontalOptions="Center"                         
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
-                                       AbsoluteLayout.LayoutBounds="0.9,0.1,-1,-1"
-                                       >
+                                       AbsoluteLayout.LayoutBounds="0.9,0.1,-1,-1">
+
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -512,8 +516,8 @@
                                        TextColor="White"
                                        HorizontalOptions="Center"                         
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
-                                       AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1"
-                                      >
+                                       AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1">
+                                      
                                         <Label.FontFamily>
                                             <OnPlatform x:TypeArguments="x:String">
                                                 <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -526,8 +530,8 @@
                                        TextColor="White" 
                                        HorizontalOptions="Center"                         
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
-                                       AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1"
-                                       >
+                                       AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1">
+
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -542,8 +546,8 @@
                                        HorizontalOptions="Center"
                                        VerticalOptions="Center"                
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
-                                       AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1"
-                                    >
+                                       AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1">
+                                    
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>

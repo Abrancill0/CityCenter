@@ -23,7 +23,7 @@
             <StackLayout>
                 <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="GASTRONOMIAmin" />
             </StackLayout>
-            <Grid BackgroundColor="#FF5722" Padding="0">
+            <Grid BackgroundColor="#FF5722" Padding="0" CompressedLayout.IsHeadless="true">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*">
                     </ColumnDefinition>
@@ -161,7 +161,7 @@
                                                 <ViewCell>
                                                     <ContentView Rotation="90" BackgroundColor="Transparent">
                                                          <StackLayout HeightRequest="250" WidthRequest="230" Margin="0,5,0,0">
-                                                            <Grid Padding="3">
+                                                            <Grid Padding="3" CompressedLayout.IsHeadless="true">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>

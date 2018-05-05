@@ -27,8 +27,8 @@
                                                ErrorPlaceholder="image_error.png"
                                             Source="Favorito" >
                     <ffimageloading:CachedImage.GestureRecognizers>
-                       <TapGestureRecognizer   />
-                       <!-- Command="{Binding GuardaFavoritoCommand}"-->
+                       <TapGestureRecognizer  />
+                         <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
                     </ffimageloading:CachedImage.GestureRecognizers>
                     </ffimageloading:CachedImage>
 
