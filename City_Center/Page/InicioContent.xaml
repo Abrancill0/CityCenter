@@ -122,13 +122,13 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                                        <Label Text="Llegada">
+                                        <Label Text="Llegada" FontSize = "20">
                                         </Label>
                                         <DatePicker>
                                         </DatePicker>
                                     </StackLayout>
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
-                                        <Label Text="Salida">
+                                        <Label Text="Salida" FontSize = "20">
                                         </Label>
                                         <DatePicker>
                                         </DatePicker>
