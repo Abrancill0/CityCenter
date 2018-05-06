@@ -34,7 +34,7 @@ namespace City_Center.iOS
             DependencyService.Register<IFacebookManager, FacebookManager>();
 
             var googleServiceDictionary = NSDictionary.FromFile("GoogleService-Info.plist");
-           
+
             SignIn.SharedInstance.ClientID = googleServiceDictionary["CLIENT_ID"].ToString();
             FormsMaps.Init();
             Rg.Plugins.Popup.Popup.Init();

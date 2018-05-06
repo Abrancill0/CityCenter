@@ -4,7 +4,6 @@
              xmlns:naxam="clr-namespace:Naxam.Controls.Forms;assembly=Naxam.BottomTabbedPage.Forms"
              x:Class="City_Center.Page.TabPage"
              xmlns:local="clr-namespace:City_Center.Page"
-            
              Icon="Menu.png" > 
              <local:InicioContent x:Name="Inicio" Icon="home"/>
              <local:Casino x:Name="Casino" Icon="casino"/>
