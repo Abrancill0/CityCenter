@@ -20,7 +20,7 @@ namespace City_Center.Page
         {
             InitializeComponent();
             _webHotel = new WebViewHotel();
-            NavigationPage.SetTitleIcon(this, "logo");
+            NavigationPage.SetTitleIcon(this, "logo.png");
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#23144B");
         }
 
