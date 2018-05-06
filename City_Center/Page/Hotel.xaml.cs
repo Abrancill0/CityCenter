@@ -6,12 +6,13 @@ using static City_Center.Models.MoaSpaResultado;
 using City_Center.PopUp;
 using Rg.Plugins.Popup.Extensions;
 using City_Center.ViewModels;
+using City_Center.Clases;
 
 namespace City_Center.Page
 {
     public partial class Hotel : ContentPage
     {
-        //public WebViewHotel _webHotel;
+        public WebViewHotel _webHotel;
 
         public Hotel()
         {
@@ -27,7 +28,7 @@ namespace City_Center.Page
             //    "Hab_5",
             //    "Hab_6"
             //};
-
+            _webHotel = new WebViewHotel();
             NavigationPage.SetTitleIcon(this, "logo.png");
 
         }
@@ -45,11 +46,14 @@ namespace City_Center.Page
         {
             try
             {
-             //   await Navigation.PushPopupAsync(_webHotel);
+                VariablesGlobales.FechaInicio = FechaInicio.Date;
+                VariablesGlobales.FechaFin = FechaFinal.Date;
+                VariablesGlobales.NumeroHuespedes = Convert.ToInt32(Personas.Text);
+               await Navigation.PushPopupAsync(_webHotel);
             }
             catch (Exception ex)
             {
-
+                await DisplayAlert("Error", "E: "+ex.ToString(), "ok");
             }
            
         }

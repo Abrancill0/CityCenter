@@ -123,13 +123,13 @@
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
                                         <Label Text="Llegada" FontSize = "20">
                                         </Label>
-                                        <DatePicker>
+                                        <DatePicker Format="dd/MM/yyyy" x:Name="FechaInicio">
                                         </DatePicker>
                                     </StackLayout>
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                                         <Label Text="Salida" FontSize = "20">
                                         </Label>
-                                        <DatePicker>
+                                        <DatePicker Format="dd/MM/yyyy" x:Name="FechaFinal">
                                         </DatePicker>
                                     </StackLayout>
                                 </Grid>
@@ -156,9 +156,9 @@
                                 FontSize="Small"
                                 TextColor="White"
                                 BackgroundColor="#250c4b"
-                               
+
+                         Clicked="Handle_Clicked"
                                 Text="VER OPCIONES" />
-                         <!--Clicked="Handle_Clicked"-->
                     </StackLayout>
                     <StackLayout x:Name="SL2" IsVisible="false" HorizontalOptions="FillAndExpand" Margin="5">
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">

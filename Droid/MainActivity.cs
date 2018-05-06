@@ -50,7 +50,7 @@ namespace City_Center.Droid
             BottomTabbedRenderer.BottomBarHeight = 50;
 
             FacebookSdk.SdkInitialize(this);
-
+            Rg.Plugins.Popup.Popup.Init(this, bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
             CachedImageRenderer.Init(enableFastRenderer:true);

@@ -37,6 +37,7 @@ namespace City_Center.iOS
            
             SignIn.SharedInstance.ClientID = googleServiceDictionary["CLIENT_ID"].ToString();
             FormsMaps.Init();
+            Rg.Plugins.Popup.Popup.Init();
             LoadApplication(new App());
 
             FirebasePushNotificationManager.Initialize(options, new NotificationUserCategory[]

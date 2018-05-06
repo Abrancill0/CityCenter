@@ -4,6 +4,7 @@ using Xamarin.Forms.Platform;
 using Xamarin.Forms;
 using City_Center.PopUp;
 using Rg.Plugins.Popup.Extensions;
+using City_Center.Clases;
 
 namespace City_Center.Page
 {
@@ -59,6 +60,10 @@ namespace City_Center.Page
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
+            VariablesGlobales.FechaInicio = FechaInicio.Date;
+            VariablesGlobales.FechaFin = FechaFinal.Date;
+            VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.SelectedItem);
+
            await Navigation.PushPopupAsync(_webHotel);
         }
 

@@ -90,14 +90,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopUp\LoadingPopupPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopUp\WebViewHotel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\DetalleShow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -144,6 +136,14 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ConsultaTarjetaWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopUp\WebViewHotel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopUp\LoadingPopupPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -279,13 +279,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RecompesasWinViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SalaPokerItemViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Clases\VariablesGlobales.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)PopUp\LoadingPopupPage.xaml.cs">
-      <DependentUpon>LoadingPopupPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)PopUp\WebViewHotel.xaml.cs">
-      <DependentUpon>WebViewHotel.xaml</DependentUpon>
-    </Compile>
-
     <Compile Include="$(MSBuildThisFileDirectory)Page\DetalleShow.xaml.cs">
       <DependentUpon>DetalleShow.xaml</DependentUpon>
     </Compile>
@@ -343,6 +336,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Page\ConsultaTarjetaWin.xaml.cs">
       <DependentUpon>ConsultaTarjetaWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PopUp\WebViewHotel.xaml.cs">
+      <DependentUpon>WebViewHotel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PopUp\LoadingPopupPage.xaml.cs">
+      <DependentUpon>LoadingPopupPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />
@@ -367,10 +366,5 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-
-    <None Include="$(MSBuildThisFileDirectory)PopUp\LoadingPopupPage.xaml" />
-    <None Include="$(MSBuildThisFileDirectory)PopUp\WebViewHotel.xaml" />
   </ItemGroup>
 </Project>

@@ -117,13 +117,13 @@
                                         <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
                                             <Label Text="Llegada" Margin="-95,0,0,0" TextColor="Gray">
                                             </Label>
-                                            <DatePicker>
+                                            <DatePicker Format="dd/MM/yyyy" x:Name="FechaInicio">
                                             </DatePicker>
                                         </StackLayout>
                                         <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                                             <Label Text="Salida" Margin="-95,0,0,0" TextColor="Gray">
                                             </Label>
-                                            <DatePicker>
+                                            <DatePicker Format="dd/MM/yyyy" x:Name="FechaFinal">
                                             </DatePicker>
                                         </StackLayout>
                                     </Grid>
@@ -136,7 +136,7 @@
                                 <Frame.Padding>
                                     <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                 </Frame.Padding>
-                                <xfx:XfxEntry Placeholder="Huéspedes" Margin="5,0,5,0">
+                                <xfx:XfxEntry Placeholder="Huéspedes" x:Name="Personas" Margin="5,0,5,0">
                                     <Entry.HeightRequest>
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On Platform="iOS">60</On>
