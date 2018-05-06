@@ -10,6 +10,7 @@ using Xamarin.Forms;
 using static City_Center.Models.EventosResultado;
 using System.Text.RegularExpressions;
 using City_Center.Clases;
+using System;
 
 namespace City_Center.ViewModels
 {
@@ -50,7 +51,7 @@ namespace City_Center.ViewModels
                 EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 2));
            
             }
-            catch (System.Exception ex)
+            catch (Exception)
             {
                 Mensajes.Info("No existen eventos en Jaraná");
             }
@@ -73,7 +74,7 @@ namespace City_Center.ViewModels
                 EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 1));
 
             }
-            catch (System.Exception ex)
+            catch (Exception)
             {
                 Mensajes.Info("No existen eventos en Centro de Convenciones");
             }
@@ -109,10 +110,21 @@ namespace City_Center.ViewModels
                 return;
             }
 
+             string IDUsuario;
+
+            try
+            {
+                IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
+            }
+            catch (Exception)
+            {
+                IDUsuario = "";
+            }
+             
 
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("", ""),
+                new KeyValuePair<string, string>("usu_id", IDUsuario),
             });
 
 
@@ -147,7 +159,10 @@ namespace City_Center.ViewModels
                 eve_link = l.eve_link,
                 eve_id_locacion = l.eve_id_locacion,
                 loc_nombre =l.loc_nombre,
-                eve_id = l.eve_id
+                eve_id = l.eve_id,
+                eve_guardado = l.eve_guardado,
+                eve_id_guardado = l.eve_id_guardado,
+                oculta = !(bool)l.eve_guardado
             });
         }
 

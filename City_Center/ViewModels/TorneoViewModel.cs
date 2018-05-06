@@ -80,6 +80,9 @@ namespace City_Center.ViewModels
                 tor_id_usuario_modifico = l.tor_id_usuario_modifico,
                 tor_fecha_hora_modifico = l.tor_fecha_hora_modifico,
                 tor_estatus = l.tor_estatus,
+                tor_guardado=l.tor_guardado,
+                tor_id_guardado= l.tor_id_guardado,
+                oculta =  !(bool)l.tor_guardado
             });
         }
 

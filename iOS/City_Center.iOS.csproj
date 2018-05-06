@@ -383,6 +383,7 @@
     <BundleResource Include="Resources\warning.png" />
     <BundleResource Include="Resources\Wifi.png" />
     <BundleResource Include="Resources\WifiLibre.png" />
+    <BundleResource Include="Resources\FavoritoOK.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

@@ -444,9 +444,7 @@
                                                     <RowDefinition Height="Auto" />
                                                     <RowDefinition Height="0.5*" />
                                                 </Grid.RowDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="150"
-                                                                            
-                                                                            Aspect="AspectFill"
+                                                <ffimageloading:CachedImage HeightRequest="150" Aspect="AspectFill"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
@@ -472,11 +470,34 @@
                                                             </OnPlatform>
                                                         </Label.FontFamily>
                                                     </Label>
-                                                    <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" VerticalOptions = "Start" HorizontalOptions = "Center" >
+                                                    <Image Margin="12"
+                                                           Grid.Row="1"
+                                                           Grid.Column="2"
+                                                           Grid.RowSpan="2"
+                                                           Aspect="AspectFit"
+                                                           Source="Favorito"
+                                                           VerticalOptions = "Start"
+                                                           HorizontalOptions = "Center"
+                                                           IsVisible="{Binding oculta}">
                                                         <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
                                                         </Image.GestureRecognizers>
                                                     </Image>
+
+                                                     <Image Margin="12"
+                                                            Grid.Row="1"
+                                                            Grid.Column="2"
+                                                            Grid.RowSpan="2"
+                                                            Aspect="AspectFit"
+                                                            Source="FavoritoOK"
+                                                            IsVisible="{Binding tor_guardado}"
+                                                            VerticalOptions="Start"
+                                                            HorizontalOptions="Center" >
+                                                    </Image>
+                                                    <!-- <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
+                                                        </Image.GestureRecognizers>-->
+                                                    
                                                     <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions = "Start" HorizontalOptions = "Center" >
                                                         <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding CompartirCommand}" />

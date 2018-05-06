@@ -245,7 +245,6 @@ namespace City_Center.ViewModels
                 return;
             }
 
-
             var content = new FormUrlEncodedContent(new[]
             {
                 new KeyValuePair<string, string>("", ""),
@@ -291,9 +290,21 @@ namespace City_Center.ViewModels
                 return;
             }
 
+            string IDUsuario;
+
+            try
+            {
+                IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
+            }
+            catch (Exception)
+            {
+                IDUsuario = "";
+            }
+
+
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("", ""),
+                new KeyValuePair<string, string>("usu_id", IDUsuario),
             });
 
 
@@ -328,6 +339,9 @@ namespace City_Center.ViewModels
                 tor_id_usuario_modifico = l.tor_id_usuario_modifico,
                 tor_fecha_hora_modifico = l.tor_fecha_hora_modifico,
                 tor_estatus = l.tor_estatus,
+                tor_guardado = l.tor_guardado,
+                tor_id_guardado = l.tor_id_guardado,
+                oculta = !(bool)l.tor_guardado
             });
         }
        

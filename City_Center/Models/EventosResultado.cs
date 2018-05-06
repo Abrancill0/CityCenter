@@ -32,6 +32,10 @@ namespace City_Center.Models
             public string eve_telefono { get; set; }
             public string eve_tipo { get; set; }
             public string loc_nombre { get; set; }
+            public bool eve_guardado { get; set; }
+            public bool oculta { get; set; }
+            public int eve_id_guardado { get; set; }
+
         }
 
         public class EventosReturn
@@ -39,9 +43,6 @@ namespace City_Center.Models
             public int estatus { get; set; }
             public List<EventosDetalle> resultado { get; set; }
         }
-
-
-
 
     }
 }
