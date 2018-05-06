@@ -81,8 +81,8 @@ namespace City_Center.ViewModels
                     var content = new FormUrlEncodedContent(new[]
                     {
                         new KeyValuePair<string, string>("gua_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
-                        new KeyValuePair<string, string>("gua_id_evento", Convert.ToString(this.des_id)),
-                        new KeyValuePair<string, string>("gua_id_promocion", "0")
+                        new KeyValuePair<string, string>("gua_id_destacado", Convert.ToString(this.des_id)),
+                       
                     });
 
                     var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/store", content);
@@ -107,8 +107,6 @@ namespace City_Center.ViewModels
         }
 
         #endregion
-
-
 
         #region Contructors
         public DestacadosItemViewModel()

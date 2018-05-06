@@ -20,8 +20,12 @@ namespace City_Center.Models
             public string des_fecha_hora_fin { get; set; }
             public int des_id_usuario_creo { get; set; }
             public string des_fecha_hora_creo { get; set; }
-            public int? des_id_usuario_modifico { get; set; }
+            public int des_id_usuario_modifico { get; set; }
             public string des_fecha_hora_modifico { get; set; }
+            public bool oculta { get; set; }
+            public bool des_guardado { get; set; }
+            public int des_id_guardado { get; set; }
+           
         }
 
         public class DestacadosReturn

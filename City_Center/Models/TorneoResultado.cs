@@ -19,6 +19,10 @@ namespace City_Center.Models
             public int? tor_id_usuario_modifico { get; set; }
             public string tor_fecha_hora_modifico { get; set; }
             public int tor_estatus { get; set; }
+            public bool tor_guardado { get; set; }
+            public int tor_id_guardado { get; set; }
+            public bool oculta { get; set; }
+           
         }
 
         public class TorneoReturn

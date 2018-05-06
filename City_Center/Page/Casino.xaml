@@ -184,11 +184,28 @@
                                                             </OnPlatform>
                                                         </Label.FontFamily>
                                                     </Label>
-                                                    <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" VerticalOptions = "Start" HorizontalOptions = "Center" >
+                                                    <Image Margin="12"
+                                                           Grid.Row="1"
+                                                           Grid.Column="2"
+                                                           Grid.RowSpan="2"
+                                                           Aspect="AspectFit"
+                                                           Source="Favorito"
+                                                           IsVisible="{Binding oculta}">
+                                                           VerticalOptions = "Start"
+                                                           HorizontalOptions = "Center" >
                                                         <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
                                                         </Image.GestureRecognizers>
                                                     </Image>
+
+                                                    <Image Margin="15" Grid.Row="1"
+                                                           Grid.Column="2"
+                                                           Grid.RowSpan="2"
+                                                           Aspect="AspectFit"
+                                                           Source="FavoritoOK"
+                                                           IsVisible="{Binding des_guardado}">
+                                                   </Image>
+                                                        
                                                     <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions = "Start" HorizontalOptions = "Center" >
                                                         <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding CompartirCommand}" />
@@ -392,16 +409,37 @@
                                                             </OnPlatform>
                                                         </Label.FontFamily>
                                                     </Label>
-                                                    <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" VerticalOptions = "Start" HorizontalOptions = "Center" >
+                                                    <Image Margin="12"
+                                                           Grid.Row="1"
+                                                           Grid.Column="2"
+                                                           Grid.RowSpan="2"
+                                                           Aspect="AspectFit"
+                                                           Source="Favorito"
+                                                           IsVisible="{Binding oculta}"
+                                                           VerticalOptions = "Start"
+                                                           HorizontalOptions = "Center" >
                                                         <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
                                                         </Image.GestureRecognizers>
                                                     </Image>
-                                                    <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions = "Start" HorizontalOptions = "Center" >
-                                                        <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding CompartirCommand}" />
-                                                        </Image.GestureRecognizers>
+
+                                                         <Image Margin="12"
+                                                            Grid.Row="1"
+                                                            Grid.Column="2"
+                                                            Grid.RowSpan="2"
+                                                            Aspect="AspectFit"
+                                                            Source="FavoritoOK"
+                                                            IsVisible="{Binding tor_guardado}"
+                                                            VerticalOptions="Start"
+                                                            HorizontalOptions="Center" >
                                                     </Image>
+                                                    <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions = "Start" HorizontalOptions = "Center" >
+                                                      
+                                                    </Image>
+
+<!--                                                          <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding CompartirCommand}" />
+                                                        </Image.GestureRecognizers>-->
                                                
                                             </Grid>
                                         </DataTemplate>

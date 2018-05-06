@@ -216,10 +216,22 @@ namespace City_Center.ViewModels
                 }
 
 
+                string IDUsuario;
+
+                try
+                {
+                    IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
+                }
+                catch (Exception)
+                {
+                    IDUsuario = "";
+                }
+
+
                 var content = new FormUrlEncodedContent(new[]
                 {
-                new KeyValuePair<string, string>("", ""),
-            });
+                new KeyValuePair<string, string>("usu_id", IDUsuario),
+                });
 
 
                 var response = await this.apiService.Get<DestacadosReturn>("/casino/destacados", "/indexApp", content);
@@ -252,7 +264,10 @@ namespace City_Center.ViewModels
                 des_descripcion = l.des_descripcion,
                 des_fecha_hora_inicio = l.des_fecha_hora_inicio,
                 des_nombre = l.des_nombre,
-                des_id = l.des_id
+                des_id = l.des_id,
+                des_guardado = l.des_guardado,
+                des_id_guardado = l.des_id_guardado,
+                oculta = !(bool)l.des_guardado
             });
         }
 
@@ -506,10 +521,22 @@ namespace City_Center.ViewModels
                 }
 
 
+                string IDUsuario;
+
+                try
+                {
+                    IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
+                }
+                catch (Exception)
+                {
+                    IDUsuario = "";
+                }
+
+
                 var content = new FormUrlEncodedContent(new[]
                 {
-                new KeyValuePair<string, string>("", ""),
-            });
+                new KeyValuePair<string, string>("usu_id", IDUsuario),
+                });
 
 
                 var response = await this.apiService.Get<TorneoReturn>("/casino/torneos", "/indexApp", content);
@@ -549,6 +576,9 @@ namespace City_Center.ViewModels
                 tor_id_usuario_modifico = l.tor_id_usuario_modifico,
                 tor_fecha_hora_modifico = l.tor_fecha_hora_modifico,
                 tor_estatus = l.tor_estatus,
+                tor_guardado = l.tor_guardado,
+                tor_id_guardado = l.tor_id_guardado,
+                oculta = !(bool)l.tor_guardado
             });
         }
 
