@@ -65,7 +65,6 @@ namespace City_Center.ViewModels
 
         #region Commands
 
-
         public ICommand MoaSpaCommand
         {
             get
@@ -90,34 +89,43 @@ namespace City_Center.ViewModels
         #region Methods
         private async void LoadHabitaciones()
         {
-            var connection = await this.apiService.CheckConnection();
 
-            if (!connection.IsSuccess)
+            try
             {
-                await Mensajes.Error(connection.Message);
+                var connection = await this.apiService.CheckConnection();
 
-                return;
-            }
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
+
+                    return;
+                }
 
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
             });
 
 
-            var response = await this.apiService.Get<HabitacionesReturn>("/hotel_spa/habitaciones", "/indexApp", content);
+                var response = await this.apiService.Get<HabitacionesReturn>("/hotel_spa/habitaciones", "/indexApp", content);
 
-            if (!response.IsSuccess)
-            {
-                await Mensajes.Error("Error al cargar Habitaciones");
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Habitaciones");
 
-                return;
+                    return;
+                }
+
+                this.listHabitaciones = (HabitacionesReturn)response.Result;
+
+                HabitacionesDetalle = new ObservableCollection<HotelItemViewModel>(this.ToHabitacionesItemViewModel());
+
             }
-
-            this.listHabitaciones = (HabitacionesReturn)response.Result;
-
-            HabitacionesDetalle = new ObservableCollection<HotelItemViewModel>(this.ToHabitacionesItemViewModel());
+            catch (Exception ex)
+            {
+                await Mensajes.Error("Hotel - Habitaciones" + ex.ToString());
+            }
 
         }
 
@@ -149,36 +157,43 @@ namespace City_Center.ViewModels
 
         private async void LoadMoaSpa()
         {
-            var connection = await this.apiService.CheckConnection();
-
-            if (!connection.IsSuccess)
+            try
             {
-                await Mensajes.Error(connection.Message);
+                var connection = await this.apiService.CheckConnection();
 
-            }
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
+
+                }
 
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
-            });
+                });
+
+                var response = await this.apiService.Get<MoaSpaReturn>("/hotel_spa/galeria_moi_spa", "/indexApp", content);
+
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Moi Spa");
+                    return;
+                }
+
+                this.listMoaSpa = (MoaSpaReturn)response.Result;
 
 
-            var response = await this.apiService.Get<MoaSpaReturn>("/hotel_spa/galeria_moi_spa", "/indexApp", content);
+                Imagen_Selected = VariablesGlobales.RutaServidor + this.listMoaSpa.resultado[0].gal_imagen;
 
-            if (!response.IsSuccess)
-            {
-                await Mensajes.Error("Error al cargar Moi Spa");
-                return;
+
+                MoaSpaDetalle = new ObservableCollection<MoaSpaDetalle>(this.ToMoaSpaItemViewModel());
+
             }
-
-            this.listMoaSpa = (MoaSpaReturn)response.Result;
-
-
-            Imagen_Selected = VariablesGlobales.RutaServidor + this.listMoaSpa.resultado[0].gal_imagen;
-
-
-            MoaSpaDetalle = new ObservableCollection<MoaSpaDetalle>(this.ToMoaSpaItemViewModel());
+            catch (Exception ex)
+            {
+                await Mensajes.Error("Hotel - SpoMoa" + ex.ToString());
+            }
 
         }
 
@@ -199,38 +214,44 @@ namespace City_Center.ViewModels
             });
         }
 
-
         private async void LoadPromociones()
         {
-            var connection = await this.apiService.CheckConnection();
-
-            if (!connection.IsSuccess)
+            try
             {
-                await Mensajes.Error(connection.Message);
+                var connection = await this.apiService.CheckConnection();
 
-                return;
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
 
-            }
+                    return;
+                }
 
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
             });
 
 
-            var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
+                var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
 
-            if (!response.IsSuccess)
-            {
-                await Mensajes.Error("Error al cargar Promociones");
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Promociones");
 
-                return;
+                    return;
+                }
+
+                this.listPromociones = (PromocionesReturn)response.Result;
+
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "hopa"));
+
             }
-
-            this.listPromociones = (PromocionesReturn)response.Result;
-
-            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "hopa"));
+            catch (Exception ex)
+            {
+                await Mensajes.Error("Hotel - Promociones" + ex.ToString());
+            }
 
         }
 
@@ -271,7 +292,6 @@ namespace City_Center.ViewModels
             this.LoadHabitaciones();
             this.LoadPromociones();
            
-
         }
         #endregion
     }

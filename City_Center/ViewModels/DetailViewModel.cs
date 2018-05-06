@@ -105,7 +105,7 @@ namespace City_Center.ViewModels
         {
             try
             {
-                var result = await Application.Current.MainPage.DisplayAlert("CityCenter", "Are you sure you want to exit the application?", "OK", "Cancel");
+                var result = await Application.Current.MainPage.DisplayAlert("CityCenter", "¿Estás seguro de que quieres salir de la aplicación?", "OK", "Cancelar");
 
                 string Mensajevalida = string.Format("Result {0}", result);
 
@@ -275,9 +275,9 @@ namespace City_Center.ViewModels
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                await Mensajes.Error(ex.ToString());
+             //   await Mensajes.Error("Detalle Tarjeta" + ex.ToString());
             }
 
         }

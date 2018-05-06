@@ -281,46 +281,54 @@ namespace City_Center.ViewModels
 
         private async void LoadTorneo()
         {
-            var connection = await this.apiService.CheckConnection();
-
-            if (!connection.IsSuccess)
-            {
-                await Mensajes.Error(connection.Message);
-
-                return;
-            }
-
-            string IDUsuario;
-
             try
             {
-                IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
-            }
-            catch (Exception)
-            {
-                IDUsuario = "";
-            }
+                var connection = await this.apiService.CheckConnection();
+
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
+
+                    return;
+                }
+
+                string IDUsuario;
+
+                try
+                {
+                    IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
+                }
+                catch (Exception)
+                {
+                    IDUsuario = "";
+                }
 
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("usu_id", IDUsuario),
-            });
+                });
 
+                var response = await this.apiService.Get<TorneoReturn>("/casino/torneos", "/indexApp", content);
 
-            var response = await this.apiService.Get<TorneoReturn>("/casino/torneos", "/indexApp", content);
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Torneos");
 
-            if (!response.IsSuccess)
+                    return;
+                }
+
+                this.listTorneo = (TorneoReturn)response.Result;
+
+                TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+
+            }
+            catch (Exception ex)
             {
-                await Mensajes.Error("Error al cargar Torneos");
 
-                return;
             }
 
-            this.listTorneo = (TorneoReturn)response.Result;
-
-            TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
-
+           
         }
 
         private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel()
@@ -393,9 +401,9 @@ namespace City_Center.ViewModels
                 VerTarjeta = true;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                await Mensajes.Error(ex.ToString());
+                //await Mensajes.Error(ex.ToString());
 
                 ImagenTarjeta = "";
                 VerTarjeta = false;

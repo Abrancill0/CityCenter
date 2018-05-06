@@ -198,11 +198,11 @@
                                         </Frame.Padding>
                                        <StackLayout>
 
-                                          <Label Text="Huéspedes" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                                          <Label Text="Personas" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
                                             <Grid Padding="15, 0">
                                           <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>    
                                           <Picker x:Name="NoPersona"
-                                                  Title="Huespedés"
+                                                  Title="Personas"
                                                   SelectedItem="{Binding NoPersonas, Mode=TwoWay}"
                                                   ItemsSource="{Binding ListaOpciones1}"
                                                   ></Picker>

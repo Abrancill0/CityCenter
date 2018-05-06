@@ -15,7 +15,6 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
-         
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -149,7 +148,7 @@
                 <StackLayout x:Name="SL1" IsVisible="true">
                     <StackLayout Margin="10">
 
-                        <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Correo electrónico">
+                        <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Correo electrónico*">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -158,7 +157,7 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
 
-                         <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Contraseña" IsPassword="true">
+                         <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Contraseña*" IsPassword="true">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -167,7 +166,7 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
 
-                         <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Cambiar Contraseña" IsPassword="true">
+                         <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Cambiar Contraseña*" IsPassword="true">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -176,7 +175,7 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
 
-                         <xfx:XfxEntry Text="{Binding Ciudad}" Style="{DynamicResource EntryStyle}" Placeholder="Ciudad" >
+                         <xfx:XfxEntry Text="{Binding Ciudad}" Style="{DynamicResource EntryStyle}" Placeholder="Ciudad*" >
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -184,7 +183,6 @@
                                 </OnPlatform>
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
-
                          <xfx:XfxEntry Text="{Binding Fecha}" Placeholder="Fecha de Nacimiento" >
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
@@ -193,9 +191,7 @@
                                 </OnPlatform>
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
-                       
                         <Label Margin = "50,0" Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Silver"/>
-
                          <StackLayout>
                             <Label Text="Tipo documento" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
                             <Grid Padding="15, 0">    
@@ -207,10 +203,22 @@
                                     SelectedItem="{Binding TipoDocumento, Mode=TwoWay}"></Picker>
                             </Grid>
                             </StackLayout>
-                        <Entry Placeholder="Numero de documento"
-                               Text="{Binding NumeroDocumento, Mode=TwoWay}"/>
-                        <Entry Placeholder="Numero de socio Win"
-                               Text="{Binding NumeroSocio, Mode=TwoWay}"/>
+                        <xfx:XfxEntry Text="{Binding NumeroDocumento, Mode=TwoWay}" Placeholder="Numero de documento" >
+                        <Entry.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">60</On>
+                                </OnPlatform>
+                            </Entry.HeightRequest>
+                        </xfx:XfxEntry>
+                         <xfx:XfxEntry Text="{Binding NumeroSocio, Mode=TwoWay}" Placeholder="Numero de socio Win" >
+                            <Entry.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">60</On>
+                                </OnPlatform>
+                            </Entry.HeightRequest>
+                        </xfx:XfxEntry>
                         <Button Text="GUARDAR"
                                 BackgroundColor="#250c4b"
                                 TextColor="White"

@@ -250,7 +250,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error(ex.ToString());
+                await Mensajes.Error("Casino - Destacados" + ex.ToString());
             }
 
 
@@ -307,7 +307,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error(ex.ToString());
+                await Mensajes.Error("Casino - Pozos" + ex.ToString());
             }
 
         }
@@ -365,10 +365,8 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error(ex.ToString());
+                await Mensajes.Error("Casino - Sala Poker" + ex.ToString());
             }
-
-
 
         }
 
@@ -423,7 +421,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error(ex.ToString());
+                await Mensajes.Error("Casino - Ganadores" + ex.ToString());
             }
 
 
@@ -485,7 +483,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error(ex.ToString());
+                await Mensajes.Error("Casino - Tarjetas" + ex.ToString());
             }
 
         }
@@ -555,7 +553,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error(ex.ToString());
+                await Mensajes.Error("Casino - Torneos" + ex.ToString());
             }
 
         }
@@ -618,7 +616,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error(ex.ToString());
+                await Mensajes.Error("Casino - Promociones" + ex.ToString());
             }
 
         }

@@ -57,7 +57,15 @@ namespace City_Center.ViewModels
 
         private void Todos()
         {
-            RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel());
+            try
+            {
+                RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel());
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         public ICommand RestaurantesCommand
@@ -70,8 +78,15 @@ namespace City_Center.ViewModels
 
         private void Restaurantes()
         {
-           
-            RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel().Where(l => l.reb_tipo == "R"));
+            try
+            {
+                RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel().Where(l => l.reb_tipo == "R"));
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
 
@@ -85,7 +100,14 @@ namespace City_Center.ViewModels
 
         private void Bar()
         {
-            RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel().Where(l => l.reb_tipo == "B"));
+            try
+            {
+                RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel().Where(l => l.reb_tipo == "B"));
+            }
+            catch (Exception)
+            {
+
+            }
 
         }
 
@@ -94,34 +116,42 @@ namespace City_Center.ViewModels
         #region Methods
         private async void LoadRestaurantes()
         {
-            var connection = await this.apiService.CheckConnection();
-
-            if (!connection.IsSuccess)
+            try
             {
-                await Mensajes.Error(connection.Message);
+                var connection = await this.apiService.CheckConnection();
 
-                return;
-            }
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
+
+                    return;
+                }
 
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
-            });
+                });
 
 
-            var response = await this.apiService.GetReal<RestaurantReturn>("/gastronomia", "/obtenerRestaurantBar", content);
-           
-            if (!response.IsSuccess)
-            {
-                await Mensajes.Error("Error al cargar Restaurantes/Bar");
+                var response = await this.apiService.GetReal<RestaurantReturn>("/gastronomia", "/obtenerRestaurantBar", content);
 
-                return;
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Restaurantes/Bar");
+
+                    return;
+                }
+
+                this.listRestaruant = (RestaurantReturn)response.Result;
+
+                RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel());
+
             }
-
-            this.listRestaruant = (RestaurantReturn)response.Result;
-
-            RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel());
+            catch (Exception ex)
+            {
+                await Mensajes.Error("Gastronomia - Restaurantes" + ex.ToString());
+            }
 
         }
 
@@ -136,7 +166,7 @@ namespace City_Center.ViewModels
                 reb_ver_hotel_spa = l.reb_ver_hotel_spa,
                 reb_reservas = l.reb_reservas,
                 reb_tipo = l.reb_tipo,
-                reb_imagen_1 =  l.reb_imagen_1,
+                reb_imagen_1 = l.reb_imagen_1,
                 reb_imagen_2 = l.reb_imagen_2,
                 reb_imagen_3 = l.reb_imagen_3,
                 reb_imagen_4 = l.reb_imagen_4,
@@ -150,34 +180,43 @@ namespace City_Center.ViewModels
 
         private async void LoadPromociones()
         {
-            var connection = await this.apiService.CheckConnection();
 
-            if (!connection.IsSuccess)
+            try
             {
-                await Mensajes.Error(connection.Message);
+                var connection = await this.apiService.CheckConnection();
 
-                return;
-            }
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
+
+                    return;
+                }
 
 
-            var content = new FormUrlEncodedContent(new[]
-            {
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("", ""),
-            });
+                });
 
 
-            var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
+                var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
 
-            if (!response.IsSuccess)
-            {
-                await Mensajes.Error("Error al cargar Promociones");
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Promociones");
 
-                return;
+                    return;
+                }
+
+                this.listPromociones = (PromocionesReturn)response.Result;
+
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "gas"));
+
             }
-
-            this.listPromociones = (PromocionesReturn)response.Result;
-
-            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "gas"));
+            catch (Exception ex)
+            {
+                await Mensajes.Error("Gastronomia - Promociones" + ex.ToString());
+            }
 
         }
 

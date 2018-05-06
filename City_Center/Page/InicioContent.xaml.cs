@@ -37,9 +37,9 @@ namespace City_Center.Page
         {
             base.OnAppearing();
 
-            ListaOpciones = new string[] { "1", "2", "3", "4"};
+            ListaOpciones = new string[] { "1", "2", "3", "4", "5", "6", "7","8"};
 
-            ListaOpciones2 = new string[] { "Restaurant 1", "Restaurant 2", "Restaurant 3", "Restaurant 4" };
+            ListaOpciones2 = new string[] { "JARANÁ", "LE GULA", "PIU" };
 
             ListaOpciones3 = new string[] { "No", "Si"};
 
