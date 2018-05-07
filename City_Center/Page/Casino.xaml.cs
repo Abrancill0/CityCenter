@@ -113,7 +113,6 @@ namespace City_Center.Page
             SL4.IsVisible = true;
         }
 
-
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             try
@@ -155,5 +154,29 @@ namespace City_Center.Page
 
             }
         }
+    
+        void CambiaIcono(object sender, System.EventArgs e)
+        {
+            try
+            {
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                if (isLoggedIn)
+                {
+
+                    Image image = sender as Image;
+
+                    image.Source = "FavoritoOK";
+                }
+               
+            }
+            catch (Exception ex)
+            {
+
+               
+            }
+        }
+    
     }
 }

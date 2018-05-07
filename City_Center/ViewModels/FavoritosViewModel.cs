@@ -80,13 +80,21 @@ namespace City_Center.ViewModels
         {
             return this.list.resultado.Select(l => new FavoritoItemViewModel
             {
-                eve_imagen = "http://cc.comprogapp.com/" + l.eve_imagen,
-                eve_descripcion = l.eve_descripcion,
-                eve_nombre = l.eve_nombre,
-                eve_link = l.eve_link,
-                eve_fecha_hora_inicio =l.eve_fecha_hora_inicio,
-                eve_id = l.eve_id,
-                gua_id = l.gua_id
+                  gua_id = l.gua_id,
+                  gua_id_usuario  = l.gua_id_usuario,
+                  gua_id_evento = l.gua_id_evento,
+                  gua_id_promocion = l.gua_id_promocion,
+                  gua_id_torneo = l.gua_id_torneo,
+                  gua_id_destacado = l.gua_id_destacado,
+                  gua_id_usuario_creo = l.gua_id_usuario_creo,
+                  gua_fecha_hora_creo = l.gua_fecha_hora_creo,
+                  gua_id_usuario_modifico = l.gua_id_usuario_modifico,
+                  gua_fecha_hora_modifico = l.gua_fecha_hora_modifico,
+                  nombre = l.nombre,
+                  descripcion = l.descripcion,
+                  imagen = "http://cc.comprogapp.com/" + l.imagen,
+                  imagen_2 = l.imagen_2,
+                  link = l.link
             });
         }
 

@@ -25,7 +25,7 @@
                                               LoadingPlaceholder="image_loading.png"
                                               ErrorPlaceholder="image_error.png"
                                               Source="Favorito"
-                                              IsVisible="{Binding ds.oculta}">
+                                              IsVisible="{Binding ds.oculta,Mode=TwoWay}">
                     <ffimageloading:CachedImage.GestureRecognizers>
                        <TapGestureRecognizer  />
                          <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
@@ -38,7 +38,7 @@
                                                  LoadingPlaceholder="image_loading.png"
                                                  ErrorPlaceholder="image_error.png"
                                                  Source="FavoritoOK"
-                                                 IsVisible="{Binding ds.des_guardado}">
+                                                 IsVisible="{Binding ds.des_guardado,Mode=TwoWay}">
                     </ffimageloading:CachedImage>
                     
 

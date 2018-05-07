@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-             x:Class="City_Center.Page.DetalleTorneo">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.DetalleTorneo">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
@@ -15,25 +10,54 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-         <ScrollView BindingContext="{Binding TorneoDetalle}">
+        <ScrollView BindingContext="{Binding TorneoDetalle}">
             <StackLayout>
                 <StackLayout Margin="20" x:Name="SLT">
+                     <StackLayout Spacing="0">
                     <ffimageloading:CachedImage HeightRequest="180"
                                                 Aspect="AspectFill"
                                                 LoadingPlaceholder="image_loading.png"
                                                 ErrorPlaceholder="image_error.png"
                                                 Source="{Binding td.tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" />
+                                                </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" Margin="15">
+                        <Image  Aspect="AspectFit"
+                                Source="Favorito"
+                                IsVisible="{Binding td.oculta}"
+                                VerticalOptions="Start"
+                                HorizontalOptions="Center"
+                                HeightRequest="30"
+                                WidthRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image Aspect="AspectFit"
+                               Source="FavoritoOK"
+                               IsVisible="{Binding td.tor_guardado}"
+                               HeightRequest="30"
+                               WidthRequest="30">
+                        </Image>
+                        <Image Aspect="AspectFit"
+                               Source="Compartir"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Center"
+                               HeightRequest="30"
+                               WidthRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CompartirCommand}" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
                     <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="{Binding td.tor_nombre}">
                     </Label>
                     <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="{Binding td.tor_descripcion}">
                     </Label>
-                   
-
                 </StackLayout>
-                <Button  Margin="30" Text="INSCRIBETE" TextColor="White" BackgroundColor="#E91E63" Clicked="Handle_Clicked">
-                    </Button>
+                
+                <Button Margin="30" Text="INSCRIBETE" TextColor="White" BackgroundColor="#E91E63" Clicked="Handle_Clicked">
+                </Button>
                 <StackLayout x:Name="SLR" IsVisible="false" Margin="10">
-                  
                     <xfx:XfxEntry Placeholder="Nombre y apellido*" Style="{DynamicResource EntryStyle}" Text="{Binding Password, Mode=TwoWay}">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
@@ -58,7 +82,6 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                     </xfx:XfxEntry>
-
                     <xfx:XfxEntry Placeholder="Nacionalidad*" Style="{DynamicResource EntryStyle}" IsPassword="true" Text="{Binding Password, Mode=TwoWay}">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
@@ -67,7 +90,6 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                     </xfx:XfxEntry>
-
                     <xfx:XfxEntry Placeholder="Pais*" Style="{DynamicResource EntryStyle}" IsPassword="true" Text="{Binding Password, Mode=TwoWay}">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
@@ -76,7 +98,6 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                     </xfx:XfxEntry>
-
                     <xfx:XfxEntry Placeholder="Provincia*" Style="{DynamicResource EntryStyle}" IsPassword="true" Text="{Binding Password, Mode=TwoWay}">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
@@ -85,7 +106,6 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                     </xfx:XfxEntry>
-
                     <xfx:XfxEntry Placeholder="Ciudad*" Style="{DynamicResource EntryStyle}" IsPassword="true" Text="{Binding Password, Mode=TwoWay}">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
@@ -94,7 +114,7 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                     </xfx:XfxEntry>
-                    <Button  Margin="30" Text="RESERVAR" TextColor="White" BackgroundColor="#E91E63">
+                    <Button Margin="30" Text="RESERVAR" TextColor="White" BackgroundColor="#E91E63">
                     </Button>
                 </StackLayout>
             </StackLayout>

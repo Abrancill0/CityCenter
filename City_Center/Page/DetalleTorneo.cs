@@ -26,5 +26,29 @@ namespace City_Center.Page
             }
            
         }
+    
+        void CambiaIcono(object sender, System.EventArgs e)
+        {
+            try
+            {
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                if (isLoggedIn)
+                {
+
+                    Image image = sender as Image;
+
+                    image.Source = "FavoritoOK";
+                }
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+    
     }
 }

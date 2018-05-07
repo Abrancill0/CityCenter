@@ -47,10 +47,38 @@
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                                 </ffimageloading:CachedImage>
 
+
                                             <Label TextColor="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" FontFamily="Oswald-Regular" />
                                             <Label TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" FontSize="Small" FontFamily="Oswald-Regular" />
-                                           
-                                            <Image Margin="15" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir">
+
+                                            <Image Grid.Row="1" Grid.Column="2"
+                                                           Aspect="AspectFit"
+                                                           Source="Favorito"
+                                                           IsVisible="{Binding oculta}"
+                                                           VerticalOptions = "Start"
+                                                           HorizontalOptions = "Center"
+                                                           HeightRequest="30"
+                                                           WidthRequest="30">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"/>
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+
+                                                    <Image Margin="15" Grid.Row="1" Grid.Column="2"
+                                                           Aspect="AspectFit"
+                                                           Source="FavoritoOK"
+                                                           VerticalOptions = "Start"
+                                                           HorizontalOptions = "Center"
+                                                           HeightRequest="30"
+                                                           WidthRequest="30"
+                                                           IsVisible="{Binding tor_guardado}">
+                                                   </Image>
+
+                                            <Image Grid.Row="1" Grid.Column="3"
+                                                   Aspect="AspectFit"
+                                                   Source="Compartir"
+                                                   HeightRequest="30"
+                                                   WidthRequest="30">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                 </Image.GestureRecognizers>

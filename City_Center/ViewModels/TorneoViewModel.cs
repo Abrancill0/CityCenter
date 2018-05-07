@@ -42,10 +42,20 @@ namespace City_Center.ViewModels
                 return;
             }
 
+            string IDUsuario;
+
+            try
+            {
+                IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
+            }
+            catch (Exception)
+            {
+                IDUsuario = "";
+            }
 
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("", ""),
+                new KeyValuePair<string, string>("usu_id", IDUsuario),
             });
 
 

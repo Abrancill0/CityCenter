@@ -484,7 +484,7 @@
                                                            HorizontalOptions = "Center"
                                                            IsVisible="{Binding oculta}">
                                                         <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
+                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"  />
                                                         </Image.GestureRecognizers>
                                                     </Image>
 
