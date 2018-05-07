@@ -420,7 +420,7 @@
                                 </Label>
                             </Grid>
                             <!--Carousel-->
-                            <Grid >
+                      <!--      <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="15" />
                                     <ColumnDefinition Width="Auto" />
@@ -431,7 +431,7 @@
                                 </Grid.RowDefinitions>
                                 <Image  BackgroundColor="Transparent" Source = "arrow_left_thin"  Grid.Row="0" Grid.Column="2"/>
                                 <Image  BackgroundColor="Transparent" Source = "arrow_right_thin"  Grid.Row="0" Grid.Column= "0"/>
-
+-->
                            <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
                                 <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" HeightRequest="300">
                                     <cv:CarouselViewControl.ItemTemplate >
@@ -513,7 +513,7 @@
                                     </cv:CarouselViewControl.ItemTemplate>
                                 </cv:CarouselViewControl>
                             </StackLayout>
-                                </Grid>
+                               <!-- </Grid>-->
                             <!--Carousel-->
                             <AbsoluteLayout Padding = "5,30"
                                             HeightRequest="200"
