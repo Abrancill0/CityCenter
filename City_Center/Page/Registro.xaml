@@ -110,15 +110,16 @@
                     <Label Text="TOMAR FOTO" TextColor="#250c4b" FontSize="18" FontFamily="Oswald-Regular" HorizontalTextAlignment="Center" VerticalOptions="Center" Grid.Row="0" Grid.Column="1">
                     </Label>
                 </Grid>
-                <Button Text="" Command="{Binding RegistroCommand}" IsEnabled="{Binding IsEnabled,Mode=TwoWay}" Style="{DynamicResource StyleButton}" BackgroundColor="Transparent" Image="btn_registrarme.png" ContentLayout="Left,0">
-                </Button>
-                <Label Text="O" HorizontalTextAlignment="Center">
-                </Label>
-                <Button BackgroundColor="Transparent" Command="{Binding FacebookCommand}" IsEnabled="{Binding IsEnabled, Mode=TwoWay}" Style="{DynamicResource StyleButton}" HeightRequest="55" Text="" Image="btn_face.png" ContentLayout="Left,0">
-                </Button>
-                <Button BackgroundColor="Transparent" Command="{Binding GoogleCommand}" IsEnabled="{Binding IsEnabled, Mode=TwoWay}" Style="{DynamicResource StyleButton}" HeightRequest="55" Text="" Image="btn_google.png" ContentLayout="Left,0">
-                </Button>
-
+                <StackLayout Margin = "10,10" HorizontalOptions = "Center">
+                    <Button Text="" Command="{Binding RegistroCommand}" IsEnabled="{Binding IsEnabled,Mode=TwoWay}" Style="{DynamicResource StyleButton}" BackgroundColor="Transparent" Image="btn_registrarme.png" ContentLayout="Left,0">
+                    </Button>
+                    <Label Text="O" HorizontalTextAlignment="Center">
+                    </Label>
+                    <Button BackgroundColor="Transparent" Command="{Binding FacebookCommand}" IsEnabled="{Binding IsEnabled, Mode=TwoWay}" Style="{DynamicResource StyleButton}" HeightRequest="55" Text="" Image="btn_face.png" ContentLayout="Left,0">
+                    </Button>
+                    <Button BackgroundColor="Transparent" Command="{Binding GoogleCommand}" IsEnabled="{Binding IsEnabled, Mode=TwoWay}" Style="{DynamicResource StyleButton}" HeightRequest="55" Text="" Image="btn_google.png" ContentLayout="Left,0">
+                    </Button>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
