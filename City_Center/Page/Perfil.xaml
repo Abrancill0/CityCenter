@@ -62,6 +62,7 @@
                                     FontFamily="Oswald-Regular"
                                     Grid.Column="2"
                                     Grid.Row="0"
+                                    Margin="0, 15"
                                     FontSize = "Small"
                                     VerticalOptions = "EndAndExpand"
                                     Text="HOLA"/>
@@ -250,7 +251,12 @@
                 </StackLayout>
                     
                 <StackLayout x:Name="SL3" IsVisible="false">
+<<<<<<< HEAD
+                    <view:VistaPerfilNotificaciones>
+                    </view:VistaPerfilNotificaciones>
+=======
                     <!--Content-->
+>>>>>>> 064dd1f0f60bdc1420426554f255374637cb31d1
                 </StackLayout>
             </StackLayout>
         </ScrollView>
