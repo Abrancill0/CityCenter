@@ -433,7 +433,9 @@
                                 <Image  BackgroundColor="Transparent" Source = "arrow_right_thin"  Grid.Row="0" Grid.Column= "0"/>
 -->
                            <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
-                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" HeightRequest="300">
+                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        HeightRequest="300">
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
                                             <Grid BackgroundColor = "White">

@@ -130,7 +130,12 @@
                            <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5">
                                 <cv:CarouselViewControl 
                                             ItemsSource="{Binding DestacadosDetalle}"
-                                            HorizontalOptions="FillAndExpand" HeightRequest="300">
+                                            HorizontalOptions="FillAndExpand"
+                                            HeightRequest="300"
+                                            AnimateTransition="true"
+                                            ShowArrows="true"
+                                            ArrowsTintColor="Black"
+                                            ArrowsBackgroundColor="Silver">
                                              
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
@@ -344,7 +349,13 @@
                                 <!--Carousel-->
                             
                            <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" >
-                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}" HeightRequest="300"  HorizontalOptions="FillAndExpand" >
+                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"
+                                                        HeightRequest="300"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        AnimateTransition="true"
+                                                        ShowArrows="true"
+                                                        ArrowsTintColor="Black"
+                                                        ArrowsBackgroundColor="Silver">
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
                                             <Grid BackgroundColor = "White" CompressedLayout.IsHeadless="true">
