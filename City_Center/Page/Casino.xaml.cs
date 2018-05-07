@@ -26,6 +26,7 @@ namespace City_Center.Page
             listaCasino.ItemsSource = ListaOpciones;
 
             MainViewModel.GetInstance().Casino = new CasinoViewModel();
+            loadTarjet();
         }
 
         protected override void OnAppearing()
@@ -48,8 +49,45 @@ namespace City_Center.Page
             if (response.estatus != 0){
                foreach(TarjetasDetalle it in response.resultado)
                 {
-                    
+                    Grid grid = new Grid{
+                        
+                    };
+                    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(.5f, GridUnitType.Auto) });
+                    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1.5f, GridUnitType.Auto) });
+                    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1f, GridUnitType.Star) });
+                    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1f, GridUnitType.Star) });
+
+                    Image image = new Image
+                    {
+                        Source = "http://cc.comprogapp.com/" + it.tar_imagen,
+                        Aspect = Aspect.AspectFit
+                    };
+
+                    Label name = new Label
+                    {
+                        Text = it.tar_nombre,
+                        TextColor = Color.FromHex("4A3697"),
+                        FontSize = 18f,
+                        HorizontalOptions = LayoutOptions.Start,
+                        VerticalOptions = LayoutOptions.End
+                    };
+
+                    Label desc = new Label
+                    {
+                        Text = it.tar_descripcion,
+                        TextColor = Color.Black,
+                        FontSize = 12f,
+                        VerticalOptions = LayoutOptions.Center,
+                        HorizontalTextAlignment = TextAlignment.Start
+                    };
+
+                    grid.Children.Add(name, 1, 0);
+                    grid.Children.Add(desc, 1, 1);
+                    grid.Children.Add(image, 0, 0);
+                    Grid.SetRowSpan(image, 2);
+                    slTarjetas.Children.Add(grid);
                 }
+
             }
 
         }

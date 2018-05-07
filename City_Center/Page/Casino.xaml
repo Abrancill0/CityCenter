@@ -541,7 +541,7 @@
                 </ScrollView>
             </StackLayout>
             <StackLayout x:Name="SL3" IsVisible="false" BackgroundColor="White">
-                
+                <ScrollView >
                     <StackLayout Spacing="1" Margin="2">
                         <Label HorizontalOptions="Start" Margin="10, 20" TextColor="#250c4b" Text="¿QUERÉS TENER LA TARJETA WIN?">
                             <Label.FontFamily>
@@ -577,69 +577,13 @@
                                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                     </OnPlatform>
                             </Button.FontFamily></Button>
-                    </StackLayout>
+                        </StackLayout>
                   
                     
-                        <ListView ItemsSource="{Binding TarjetasDetalle}" HasUnevenRows="true" RowHeight="90" SeparatorVisibility="None" HeightRequest = "600">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <ViewCell.View>
-                                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                                                <Frame.OutlineColor>
-                                                    <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
-                                                </Frame.OutlineColor>
-                                                <Frame.Margin>
-                                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                                                </Frame.Margin>
-                                                <Frame.Padding>
-                                                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                                                </Frame.Padding>
-                                                <StackLayout Orientation="Horizontal">
-                                                    <Grid HorizontalOptions="FillAndExpand">
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="1.5*" />
-                                                            <ColumnDefinition Width="2*" />
-                                                        </Grid.ColumnDefinitions>
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition Height="Auto" />
-                                                            <RowDefinition Height="Auto" />
-                                                        </Grid.RowDefinitions>
-                                                        <ffimageloading:CachedImage
-                                                            HeightRequest="90"
-                                                            WidthRequest="100"
-                                                            Aspect="AspectFit"
-                                                            DownsampleToViewSize="true"
-                                                            LoadingPlaceholder="image_loading.png"
-                                                            ErrorPlaceholder="image_error.png"
-                                                            Source="{Binding tar_imagen}"
-                                                            Grid.Row="0" Grid.Column="0"
-                                                            Grid.RowSpan="2" />
-                                                        <Label TextColor="Black" Grid.Row="0" Grid.Column="1" Text="{Binding tar_nombre}" VerticalOptions = "Start" HorizontalTextAlignment="Start" FontSize="Medium" FontFamily="Oswald-Regular" ><Label.FontFamily>
-                                                            <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                                </OnPlatform>
-                                                            </Label.FontFamily>
-                                                        </Label>
-                                                        <Label TextColor="Black" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Start" VerticalOptions = "Start" Text="{Binding tar_descripcion}" FontSize="Small" FontFamily="Oswald-Regular" >
-                                                            <Label.FontFamily>
-                                                            <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                                </OnPlatform>
-                                                            </Label.FontFamily>
-                                                        </Label>
-                                                    </Grid>
-                                                </StackLayout>
-                                            </Frame>
-                                        </ViewCell.View>
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
+                       <StackLayout x:Name = "slTarjetas"  Padding = "5,15"></StackLayout>
                     
-                </StackLayout>
+                    </StackLayout>
+                </ScrollView>
             </StackLayout>
             <StackLayout x:Name="SL4" IsVisible="false">
                 <ScrollView Orientation="Vertical">
