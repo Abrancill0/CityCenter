@@ -22,7 +22,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Perfil}">
-        <Grid BackgroundColor="#8A7C9E" VerticalOptions = "Center" >
+        <Grid HeightRequest="130" BackgroundColor="#8A7C9E" VerticalOptions = "Center" >
                     <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60">
                         </ColumnDefinition>
@@ -64,8 +64,7 @@
                                     Grid.Row="0"
                                     FontSize = "Small"
                                     VerticalOptions = "EndAndExpand"
-                                    Text="HOLA"
-                                    Margin = "0,50,0,0"/>
+                                    Text="HOLA"/>
                 
                             <Label  TextColor="White"
                                     FontSize = "20"
@@ -150,8 +149,6 @@
                     </ContentView>
                 </Grid>
                 <StackLayout x:Name="SL1" IsVisible="true">
-                    <StackLayout Margin="10">
-
                         <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Correo electrónico*">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
@@ -245,13 +242,14 @@
                                     </OnPlatform>
                                 </Button.FontFamily>
                         </Button>
-                    </StackLayout>
                 </StackLayout>
-                <StackLayout x:Name="SL2" Margin="10" IsVisible="false">
+                    
+                <StackLayout x:Name="SL2" IsVisible="false">
                     <view:VistaPerfilConfiguracion>
                     </view:VistaPerfilConfiguracion>
                 </StackLayout>
-                <StackLayout x:Name="SL3" Margin="10" IsVisible="false">
+                    
+                <StackLayout x:Name="SL3" IsVisible="false">
                     <!--Content-->
                 </StackLayout>
             </StackLayout>

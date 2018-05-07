@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X5k-f2-b5h">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="gAE-YM-kbH">
+            <objects>
+                <viewController id="X5k-f2-b5h" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="444"/>
+                        <viewControllerLayoutGuide type="bottom" id="445"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" misplaced="YES" image="splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="23" userInteractionEnabled="NO" adjustsImageSizeForAccessibilityContentSizeCategory="YES">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" priority="1" id="39"/>
+                            <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" priority="1" id="41"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349" y="339"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="RESERVAHOTEL_S.png" width="316" height="316"/>
+        <image name="RESERVAHOTEL.png" width="316" height="316"/>
+        <image name="RESERVATUMESA_S.png" width="316" height="316"/>
+        <image name="RESERVATUMESA.png" width="316" height="316"/>
+        <image name="TICKETSHOWS_S.png" width="316" height="316"/>
+        <image name="TICKETSHOWS.png" width="316" height="316"/>
+        <image name="TIENDAONLINE_S.png" width="316" height="316"/>
+        <image name="TIENDAONLINE.png" width="316" height="316"/>
+        <image name="casino.png" width="38" height="38"/>
+        <image name="food.png" width="38" height="38"/>
+        <image name="home.png" width="38" height="38"/>
+        <image name="hotel.png" width="38" height="38"/>
+        <image name="info2.png" width="38" height="38"/>
+        <image name="arrow_left_thin.png" width="400" height="400"/>
+        <image name="arrow_right_thin.png" width="400" height="400"/>
+        <image name="btn_close.png" width="329" height="160"/>
+        <image name="btn_face.png" width="550" height="72"/>
+        <image name="btn_google.png" width="550" height="72"/>
+        <image name="btn_ingresar.png" width="550" height="72"/>
+        <image name="btn_registrar.png" width="720" height="100"/>
+        <image name="btn_registrarme.png" width="550" height="72"/>
+        <image name="campana.png" width="51" height="57"/>
+        <image name="circle.png" width="324" height="315"/>
+        <image name="circulo_blanco.png" width="324" height="315"/>
+        <image name="Compartir.png" width="96" height="96"/>
+        <image name="Favorito.png" width="68" height="84"/>
+        <image name="icon.png" width="72" height="72"/>
+        <image name="logo_hdpi.png" width="140" height="38"/>
+        <image name="logout.png" width="38" height="38"/>
+        <image name="ojo.png" width="24" height="24"/>
+        <image name="rowdown.png" width="29" height="28"/>
+        <image name="showPass.png" width="220" height="132"/>
+        <image name="tarjeta.png" width="621" height="404"/>
+        <image name="user.png" width="128" height="128"/>
+        <image name="Almohada.png" width="224" height="224"/>
+        <image name="AreaAcreditacion.png" width="224" height="224"/>
+        <image name="AreaComercial.png" width="224" height="224"/>
+        <image name="ArrowDown.png" width="30" height="17"/>
+        <image name="ArrowUp.png" width="56" height="32"/>
+        <image name="Articulosbebe.png" width="224" height="224"/>
+        <image name="B.png" width="224" height="224"/>
+        <image name="BabySitter.png" width="164" height="150"/>
+        <image name="BabySitter1.png" width="224" height="224"/>
+        <image name="Business.png" width="164" height="150"/>
+        <image name="Bussines.png" width="224" height="224"/>
+        <image name="CabinaTraduccion.png" width="224" height="224"/>
+        <image name="CASINOmin.jpg" width="800" height="510"/>
+        <image name="CASINOmin.png" width="800" height="218"/>
+        <image name="Chat.png" width="38" height="38"/>
+        <image name="ChekIn.png" width="224" height="224"/>
+        <image name="close_circle_button.png" width="111" height="111"/>
+        <image name="CONVENCIONESmin.png" width="800" height="218"/>
+        <image name="EquipoTecnico.png" width="224" height="224"/>
+        <image name="error.png" width="24" height="24"/>
+        <image name="Facebook.png" width="225" height="225"/>
+        <image name="GASTRONOMIAmin.png" width="800" height="218"/>
+        <image name="Hab_1.jpg" width="800" height="533"/>
+        <image name="Hab_2.jpg" width="800" height="533"/>
+        <image name="Hab_3.jpg" width="800" height="533"/>
+        <image name="Hab_4.jpg" width="800" height="533"/>
+        <image name="Hab_5.jpg" width="800" height="533"/>
+        <image name="Hab_6.jpg" width="800" height="533"/>
+        <image name="HOMEmin.jpg" width="1024" height="576"/>
+        <image name="HOTELmin.png" width="800" height="325"/>
+        <image name="Icono1.png" width="31" height="25"/>
+        <image name="image_error.png" width="200" height="200"/>
+        <image name="image_loading.png" width="200" height="200"/>
+        <image name="Info.png" width="23" height="19"/>
+        <image name="informacion.png" width="24" height="24"/>
+        <image name="Lavanderia.png" width="224" height="224"/>
+        <image name="logo.png" width="100" height="27"/>
+        <image name="Menu.png" width="20" height="20"/>
+        <image name="MenuRestaurant.png" width="224" height="224"/>
+        <image name="Parking.png" width="224" height="224"/>
+        <image name="R.png" width="224" height="224"/>
+        <image name="Reserva.png" width="317" height="316"/>
+        <image name="ReservacionHotel.png" width="316" height="316"/>
+        <image name="ReservarResaurant.png" width="224" height="224"/>
+        <image name="RoomServices.png" width="224" height="224"/>
+        <image name="SistemaCerrado.png" width="224" height="224"/>
+        <image name="SPAmin.jpg" width="5760" height="3840"/>
+        <image name="splashfinal.PNG" width="1653" height="1240"/>
+        <image name="splashscreen.png" width="720" height="1230"/>
+        <image name="success.png" width="24" height="24"/>
+        <image name="svip1.jpg" width="1024" height="683"/>
+        <image name="svip2.jpg" width="1024" height="662"/>
+        <image name="TicketsShows.png" width="159" height="159"/>
+        <image name="Tienda.png" width="159" height="158"/>
+        <image name="ValetParking.png" width="224" height="224"/>
+        <image name="VariedadGastronomica.png" width="224" height="224"/>
+        <image name="VideoConferencia.png" width="224" height="224"/>
+        <image name="vip1.jpg" width="1024" height="683"/>
+        <image name="vip2.jpg" width="1024" height="683"/>
+        <image name="warning.png" width="24" height="24"/>
+        <image name="Wifi.png" width="224" height="224"/>
+        <image name="WifiLibre.png" width="224" height="224"/>
+        <image name="FavoritoOK.png" width="24" height="24"/>
+        <image name="DummyCard.png" width="242" height="157"/>
+    </resources>
+</document>
