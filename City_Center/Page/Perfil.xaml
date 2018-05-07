@@ -6,6 +6,9 @@
               xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
               xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              x:Class="City_Center.Page.Perfil">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Icon="Chat"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Name="TabTopLabel" TargetType="Label">
@@ -18,7 +21,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding Perfil}" BackgroundColor="#8A7C9E">
+        <StackLayout BindingContext="{Binding Perfil}">
         <Grid BackgroundColor="#8A7C9E" VerticalOptions = "Center" >
                     <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60">
@@ -37,7 +40,7 @@
                        HorizontalOptions="Center"
                        Grid.Column="1"
                        Grid.Row="0"
-                        Grid.RowSpan = "2">
+                       Grid.RowSpan = "2">
                                 <Image x:Name="ImageCircle" 
                                        Source="circulo_blanco.png" 
                                        VerticalOptions="Center" 
@@ -63,6 +66,7 @@
                                     VerticalOptions = "EndAndExpand"
                                     Text="HOLA"
                                     Margin = "0,50,0,0"/>
+                
                             <Label  TextColor="White"
                                     FontSize = "20"
                                     FontFamily="Oswald-Regular"

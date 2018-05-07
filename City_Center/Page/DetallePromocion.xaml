@@ -93,7 +93,7 @@
                        </ffimageloading:CachedImage.GestureRecognizers>
                        </ffimageloading:CachedImage>
                      <Button 
-                        Text="RESERVAR PROMO"
+                        Text="PROMO"
                         TextColor="White"
                         BackgroundColor="#250C4B"
                         Clicked="Handle_Clicked"/>
@@ -114,7 +114,7 @@
                 </StackLayout>
                
                 <StackLayout x:Name="SLR" IsVisible="false" Margin="10">
-                    <Label Text="PROMOCIONES"
+                    <Label Text="PROMOCIÓN"
                            TextColor="#250C4B"
                            FontSize="Medium"
                            HorizontalOptions="Center"

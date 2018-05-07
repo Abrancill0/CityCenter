@@ -776,13 +776,7 @@ namespace City_Center.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_textfield_search_material = global::City_Center.Droid.Resource.Drawable.abc_textfield_search_material;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_vector_test = global::City_Center.Droid.Resource.Drawable.abc_vector_test;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password = global::City_Center.Droid.Resource.Drawable.avd_hide_password;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_1 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_1;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_2 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_2;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_3 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_3;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password = global::City_Center.Droid.Resource.Drawable.avd_show_password;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_1 = global::City_Center.Droid.Resource.Drawable.avd_show_password_1;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_2 = global::City_Center.Droid.Resource.Drawable.avd_show_password_2;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_3 = global::City_Center.Droid.Resource.Drawable.avd_show_password_3;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_bottom_navigation_item_background = global::City_Center.Droid.Resource.Drawable.design_bottom_navigation_item_background;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_fab_background = global::City_Center.Droid.Resource.Drawable.design_fab_background;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_ic_visibility = global::City_Center.Droid.Resource.Drawable.design_ic_visibility;
@@ -5114,6 +5108,7 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f02005b
 			public const int avd_hide_password = 2130837595;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f0201d5
 			public const int avd_hide_password_1 = 2130837973;
 			
@@ -5135,6 +5130,11 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0201da
 			public const int avd_show_password_3 = 2130837978;
 			
+=======
+			// aapt resource value: 0x7f02005c
+			public const int avd_show_password = 2130837596;
+			
+>>>>>>> d761904ca955ad012b179cbb1ad366adebfea08a
 			// aapt resource value: 0x7f02005d
 			public const int B = 2130837597;
 			
