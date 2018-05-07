@@ -149,12 +149,11 @@ namespace City_Center.ViewModels
                     MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
-                    //MainViewModel.GetInstance().Casino = new CasinoViewModel();
+                    MainViewModel.GetInstance().Casino = new CasinoViewModel();
                     //MainViewModel.GetInstance().Hotel = new HotelViewModel();
                     //MainViewModel.GetInstance().SalasEventos = new SalasEventosViewModel();
                     //MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
-               
                     MasterPage fpm = new MasterPage();
                     fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
                     fpm.Detail = new NavigationPage(new TabPage()); // You have to create a Detail ContenPage()
@@ -220,60 +219,81 @@ namespace City_Center.ViewModels
         {
             _googleManager = DependencyService.Get<IGoogleManager>();
 
+            UserDialogs.Instance.ShowLoading("Iniciando sesion...", MaskType.Black);
+
             _googleManager.Login(OnLoginComplete);
 
-            _googleManager.Logout();
+            //UserDialogs.Instance.HideLoading();
+
         }
 
         private async void OnLoginComplete(GoogleUser googleUser, string message)
         {
             if (googleUser != null)
             {
-
-                int ValUsu = await ValidaUsuario(googleUser.Email);
+                ValidaUsuarioReturn ValUsu = await ValidaUsuario(googleUser.Email);
 
                 string IDUsuario;
+                string TipoDocumento="";
+                string NumeroDocumento="";
+                string NumeroSocio="";
+                string Ciudad = "";
+                string FechaNacimiento="";
 
-                if (ValUsu == 0)
+                if (ValUsu == null)
                 {
-                    IDUsuario = await GuardaUsuarioGF(googleUser.Name, googleUser.Email); 
+                    IDUsuario = await GuardaUsuarioGF(googleUser.Name, googleUser.Email);
+
+                    await Mensajes.success("Usuario creado correctamente");
                 }
                 else
                 {
-                    IDUsuario = Convert.ToString(ValUsu);
+                    IDUsuario = Convert.ToString(ValUsu.usu_id);
+                    TipoDocumento = ValUsu.usu_tipo_documento;
+                    NumeroDocumento = ValUsu.usu_no_documento;
+                    NumeroSocio = ValUsu.usu_id_tarjeta_socio;
+                    Ciudad = ValUsu.usu_ciudad;
+                    FechaNacimiento = ValUsu.usu_fecha_nacimiento;
                 }
 
                 Application.Current.Properties["IsLoggedIn"] = true;
                 Application.Current.Properties["IdUsuario"] = IDUsuario;
                 Application.Current.Properties["Email"] = googleUser.Email;
                 Application.Current.Properties["NombreCompleto"] = googleUser.Name;
-                Application.Current.Properties["Ciudad"] = "";
+                Application.Current.Properties["Ciudad"] = Ciudad;
                 Application.Current.Properties["Pass"] = "";
-                Application.Current.Properties["FechaNacimiento"] = "";
+                Application.Current.Properties["FechaNacimiento"] = FechaNacimiento;
                 Application.Current.Properties["FotoPerfil"] = googleUser.Picture;
                 Application.Current.Properties["TipoCuenta"] = "Google";
-
-
-                Application.Current.Properties["TipoDocumento"] = "";
-                Application.Current.Properties["NumeroDocumento"] = "";
-                Application.Current.Properties["NumeroSocio"] = "";
+                Application.Current.Properties["TipoDocumento"] = TipoDocumento;
+                Application.Current.Properties["NumeroDocumento"] = NumeroDocumento;
+                Application.Current.Properties["NumeroSocio"] = NumeroSocio;
 
                 await Application.Current.SavePropertiesAsync();
 
+                _googleManager = DependencyService.Get<IGoogleManager>();
+                _googleManager.Logout();
 
                 MainViewModel.GetInstance().Master = new MasterViewModel();
                 MainViewModel.GetInstance().Inicio = new InicioViewModel();
                 MainViewModel.GetInstance().Detail = new DetailViewModel();
                 MainViewModel.GetInstance().Casino = new CasinoViewModel();
-                MainViewModel.GetInstance().Hotel = new HotelViewModel();
-                MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
-                await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+                MasterPage fpm = new MasterPage();
+                fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
+                fpm.Detail = new NavigationPage(new TabPage()); // You have to create a Detail ContenPage()
+                Application.Current.MainPage = fpm;
 
+                await Mensajes.success("Bienvenido " + googleUser.Name);
+
+                UserDialogs.Instance.HideLoading();
+
+               
             }
             else
             {
                 await Mensajes.Error(message);
+                UserDialogs.Instance.HideLoading();
 
                 return;
             }
@@ -298,21 +318,29 @@ namespace City_Center.ViewModels
         {
             if (facebookUser != null)
             {
-                
-                int ValUsu = await ValidaUsuario(facebookUser.Email);
+
+                ValidaUsuarioReturn ValUsu = await ValidaUsuario(facebookUser.Email);
 
                 string IDUsuario;
+                string TipoDocumento = "";
+                string NumeroDocumento = "";
+                string NumeroSocio = "";
+                string Ciudad = "";
+                string FechaNacimiento = "";
 
-                if (ValUsu == 0)
+                if (ValUsu == null)
                 {
                     IDUsuario = await GuardaUsuarioGF(facebookUser.FirstName + ' ' + facebookUser.LastName, facebookUser.Email);
-
                 }
                 else
                 {
-                    IDUsuario = Convert.ToString(ValUsu);
+                    IDUsuario = Convert.ToString(ValUsu.usu_id);
+                    TipoDocumento = ValUsu.usu_tipo_documento;
+                    NumeroDocumento = ValUsu.usu_no_documento;
+                    NumeroSocio = ValUsu.usu_id_tarjeta_socio;
+                    Ciudad = ValUsu.usu_ciudad;
+                    FechaNacimiento = ValUsu.usu_fecha_nacimiento;
                 }
-
 
                 Application.Current.Properties["IsLoggedIn"] = true;
                 Application.Current.Properties["IdUsuario"] = IDUsuario;
@@ -323,11 +351,9 @@ namespace City_Center.ViewModels
                 Application.Current.Properties["FechaNacimiento"] = "";
                 Application.Current.Properties["FotoPerfil"] =facebookUser.Picture;
                 Application.Current.Properties["TipoCuenta"] = "Facebook";
-
-                Application.Current.Properties["TipoDocumento"] = "";
-
-                Application.Current.Properties["NumeroDocumento"] = "";
-                Application.Current.Properties["NumeroSocio"] = "";
+                Application.Current.Properties["TipoDocumento"] = TipoDocumento;
+                Application.Current.Properties["NumeroDocumento"] = NumeroDocumento;
+                Application.Current.Properties["NumeroSocio"] = NumeroSocio;
 
                 await Application.Current.SavePropertiesAsync();
 
@@ -404,38 +430,35 @@ namespace City_Center.ViewModels
             return Convert.ToString(listRegistro.resultado.usu_id);
         }
 
-        private async Task<int> ValidaUsuario(string CorreoElectronico)
+        private async Task<ValidaUsuarioReturn> ValidaUsuario(string CorreoElectronico)
         {
             var content = new FormUrlEncodedContent(new[]
            {
                 new KeyValuePair<string, string>("usu_usuario", CorreoElectronico)
             });
 
-            ///usuario_valido
             var response = await this.apiService.Get<ValidaUsuarioReturn>("/usuarios", "/usuario_valido", content);
 
             if (!response.IsSuccess)
             {
                 await Mensajes.Error(response.Message);
 
-                return 0;
+                return null;
             }
-
 
             listValidaUsuario = (ValidaUsuarioReturn)response.Result;
 
 
             if (listValidaUsuario.resultado == "Usuario disponible.")
             {
-                return 0;
+                return null;
 
             }
             else
             {
-                return listValidaUsuario.usu_id;
+                return listValidaUsuario;
 
             }
-
 
         }
 

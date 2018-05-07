@@ -13,12 +13,12 @@ using System.Threading.Tasks;
 
 namespace City_Center.ViewModels
 {
-    public class PerfilViewModel:BaseViewModel
+    public class PerfilViewModel : BaseViewModel
     {
         #region Services
         private ApiService apiService;
         #endregion
-       
+
 
         #region Attributes
         private string email;
@@ -31,10 +31,11 @@ namespace City_Center.ViewModels
         private string tipoDocumento;
         private string numeroDocumento;
         private string numeroSocio;
+        private bool hC;
 
-        private string NoSocio;
+        //private string NoSocio;
 
-        private TarjetaUsuarioReturn listaTarjetausuario;
+        //private TarjetaUsuarioReturn listaTarjetausuario;
 
         private ActualizaUsuarioReturn list;
 
@@ -84,6 +85,12 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.nombre, value); }
         }
 
+        public bool HC
+        {
+            get { return this.hC; }
+            set { SetValue(ref this.hC, value); }
+        }
+
         public string TipoDocumento
         {
             get { return this.tipoDocumento; }
@@ -127,16 +134,16 @@ namespace City_Center.ViewModels
 
                 if (MensajeTarjeta == "OK")
                 {
-                    await Mensajes.success("Tarjeta vinculada correctamente");  
+                    await Mensajes.success("Tarjeta vinculada correctamente");
                 }
                 else
                 {
-                  await Mensajes.Info(MensajeTarjeta);
+                    await Mensajes.Info(MensajeTarjeta);
 
                     NumeroSocio = "";
                 }
             }
-          
+
             var content = new FormUrlEncodedContent(new[]
            {
                 new KeyValuePair<string, string>("usu_fecha_nacimiento", Fecha),
@@ -189,19 +196,29 @@ namespace City_Center.ViewModels
         {
             try
             {
-            Email = Application.Current.Properties["Email"].ToString();
-            Nombre = Application.Current.Properties["NombreCompleto"].ToString();
-            Ciudad = Application.Current.Properties["Ciudad"].ToString();
-            Contraseña = Application.Current.Properties["Pass"].ToString();
-            Contraseña2 = Application.Current.Properties["Pass"].ToString();
-            Fecha = Application.Current.Properties["FechaNacimiento"].ToString();
-            Imagen = Application.Current.Properties["FotoPerfil"].ToString();
+                Email = Application.Current.Properties["Email"].ToString();
+                Nombre = Application.Current.Properties["NombreCompleto"].ToString();
+                Ciudad = Application.Current.Properties["Ciudad"].ToString();
+                Contraseña = Application.Current.Properties["Pass"].ToString();
+                Contraseña2 = Application.Current.Properties["Pass"].ToString();
+                Fecha = Application.Current.Properties["FechaNacimiento"].ToString();
+                Imagen = Application.Current.Properties["FotoPerfil"].ToString();
 
-            TipoDocumento  = Application.Current.Properties["TipoDocumento"].ToString();
-            NumeroDocumento  = Application.Current.Properties["NumeroDocumento"].ToString();
-            NumeroSocio   = Application.Current.Properties["NumeroSocio"].ToString();
+                TipoDocumento = Application.Current.Properties["TipoDocumento"].ToString();
+                NumeroDocumento = Application.Current.Properties["NumeroDocumento"].ToString();
+                NumeroSocio = Application.Current.Properties["NumeroSocio"].ToString();
+
+                if (Application.Current.Properties["TipoCuenta"].ToString() != "CityCenter")
+                {
+                    HC = false;
+                }
+                else
+                {
+                    HC = true;
+                }
+
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -257,7 +274,6 @@ namespace City_Center.ViewModels
             }
 
         }
-
 
         #endregion
 

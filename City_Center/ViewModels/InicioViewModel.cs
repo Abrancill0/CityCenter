@@ -386,7 +386,10 @@ namespace City_Center.ViewModels
                     PuntosWin = 0;
                     NoSocio = "";
 
+                    ImagenTarjeta = "";
                     VerTarjeta = false;
+                    PuntosWin = 0;
+                    NoSocio = "";
 
                     return;
                 }

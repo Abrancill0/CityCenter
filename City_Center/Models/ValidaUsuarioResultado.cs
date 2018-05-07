@@ -17,11 +17,13 @@ namespace City_Center.Models
             public string usu_celular { get; set; }
             public string usu_fecha_registro { get; set; }
             public string usu_fecha_nacimiento { get; set; }
-            public int usu_id_tarjeta_socio { get; set; }
+            public string usu_id_tarjeta_socio { get; set; }
             public string usu_ciudad { get; set; }
             public string usu_imagen { get; set; }
             public int usu_id_rol { get; set; }
             public int usu_estatus { get; set; }
+            public string usu_tipo_documento { get; set; }
+            public string usu_no_documento { get; set; }
         }
     }
 }

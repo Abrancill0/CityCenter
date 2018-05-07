@@ -511,13 +511,16 @@
                             </StackLayout>
                                 </Grid>
                             <!--Carousel-->
-                            <AbsoluteLayout Padding = "5,30" HeightRequest="200" WidthRequest="300" HorizontalOptions="Center">
+                            <AbsoluteLayout Padding = "5,30"
+                                            HeightRequest="200"
+                                            WidthRequest="300"
+                                            HorizontalOptions="Center"
+                                            IsVisible="{Binding VerTarjeta}">
                                 <Image Source="{Binding ImagenTarjeta}"
                                        Aspect="Fill" 
                                        HeightRequest="200" 
-                                       WidthRequest="300"
-                                       />
-                                <!--IsVisible="{Binding PerfilVisible}"-->
+                                       WidthRequest="300"/>
+                                
                                 
                                 <Label Text="PUNTOS WIN"
                                        FontSize = "12"

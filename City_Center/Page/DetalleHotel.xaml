@@ -48,7 +48,11 @@
                  <StackLayout Margin="10">
                 <Label Text="{Binding hd.hab_descripcion}"></Label>
                 </StackLayout>
-              <Button Margin="20,10,20,10" TextColor="White" BackgroundColor="#2D97A3" Text="RESERVA ONLINE" />
+              <Button Margin="20,10,20,10"
+                      TextColor="White"
+                      BackgroundColor="#2D97A3"
+                      Text="RESERVA ONLINE"
+                      Clicked="BtnReservaOnline"/>
             </StackLayout>
             <StackLayout HorizontalOptions="FillAndExpand" Margin="3">
                 <Label FontFamily="Oswald-Regular"

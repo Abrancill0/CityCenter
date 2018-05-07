@@ -157,7 +157,11 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
 
-                         <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Contraseña*" IsPassword="true">
+                         <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}"
+                                       Style="{DynamicResource EntryStyle}"
+                                       Placeholder="Contraseña*"
+                                       IsPassword="true"
+                                       IsEnabled="{Binding HC, Mode=TwoWay}">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -166,7 +170,11 @@
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
 
-                         <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Cambiar Contraseña*" IsPassword="true">
+                         <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}"
+                                       Style="{DynamicResource EntryStyle}"
+                                       Placeholder="Cambiar Contraseña*"
+                                       IsPassword="true"
+                                       IsEnabled="{Binding HC, Mode=TwoWay}">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>

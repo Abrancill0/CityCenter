@@ -13,6 +13,7 @@ namespace City_Center.Page
     public partial class Hotel : ContentPage
     {
         public WebViewHotel _webHotel;
+        private string[] ListaOpciones;
 
         public Hotel()
         {
@@ -31,6 +32,12 @@ namespace City_Center.Page
             _webHotel = new WebViewHotel();
             NavigationPage.SetTitleIcon(this, "logo.png");
 
+            ListaOpciones = new string[] { "1", "2", "3", "4", "5", "6", "7", "8" };
+
+            NoPersona.ItemsSource = ListaOpciones;
+
+            NoPersona.SelectedIndex = 0;
+
         }
 
      
@@ -48,7 +55,7 @@ namespace City_Center.Page
             {
                 VariablesGlobales.FechaInicio = FechaInicio.Date;
                 VariablesGlobales.FechaFin = FechaFinal.Date;
-                VariablesGlobales.NumeroHuespedes = Convert.ToInt32(Personas.Text);
+                VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.SelectedItem);
                await Navigation.PushPopupAsync(_webHotel);
             }
             catch (Exception ex)

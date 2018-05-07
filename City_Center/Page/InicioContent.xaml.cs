@@ -122,7 +122,6 @@ namespace City_Center.Page
             tienda.Source = "TIENDAONLINE_S";
         }
 
-
     }
 
 }

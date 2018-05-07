@@ -190,7 +190,7 @@
                                                            Grid.RowSpan="2"
                                                            Aspect="AspectFit"
                                                            Source="Favorito"
-                                                           IsVisible="{Binding oculta}">
+                                                           IsVisible="{Binding oculta}"
                                                            VerticalOptions = "Start"
                                                            HorizontalOptions = "Center" >
                                                         <Image.GestureRecognizers>

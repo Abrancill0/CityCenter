@@ -19,22 +19,33 @@
                                             Source="{Binding dd.des_imagen}" />
             </StackLayout>
 
-            <StackLayout HorizontalOptions="End"  Orientation="Horizontal">
-                  <ffimageloading:CachedImage  Aspect="AspectFit"
-                                               HeightRequest="20"
-                                               WidthRequest="20"
-                                               LoadingPlaceholder="image_loading.png"
-                                               ErrorPlaceholder="image_error.png"
-                                            Source="Favorito" >
+            <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="15">
+                  <ffimageloading:CachedImage Aspect="AspectFit"
+                                              HeightRequest="30"
+                                              WidthRequest="30"
+                                              LoadingPlaceholder="image_loading.png"
+                                              ErrorPlaceholder="image_error.png"
+                                              Source="Favorito"
+                                              IsVisible="{Binding dd.oculta}">
                     <ffimageloading:CachedImage.GestureRecognizers>
-                       <TapGestureRecognizer   />
-                       <!-- Command="{Binding GuardaFavoritoCommand}"-->
+                       <TapGestureRecognizer  />
+                         <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
                     </ffimageloading:CachedImage.GestureRecognizers>
                     </ffimageloading:CachedImage>
 
-                 <ffimageloading:CachedImage 
-                                            HeightRequest="20"
-                                            WidthRequest="20"
+                     <ffimageloading:CachedImage Aspect="AspectFit"
+                                                 HeightRequest="30"
+                                                 WidthRequest="30"
+                                                 LoadingPlaceholder="image_loading.png"
+                                                 ErrorPlaceholder="image_error.png"
+                                                 Source="FavoritoOK"
+                                                 IsVisible="{Binding dd.des_guardado}">
+                    </ffimageloading:CachedImage>
+                    
+
+                 <ffimageloading:CachedImage
+                                            HeightRequest="30"
+                                            WidthRequest="30"
                                             Aspect="AspectFit"
                                             LoadingPlaceholder="image_loading.png"
                                             ErrorPlaceholder="image_error.png"
@@ -45,7 +56,6 @@
                     </ffimageloading:CachedImage>
                 
             </StackLayout>
-
             
             <StackLayout Margin="5">
                  <StackLayout Orientation="Vertical" Margin="5">
@@ -56,7 +66,7 @@
                 <Label Text="{Binding dd.des_descripcion}"></Label>
 
                 <StackLayout Orientation="Vertical" Margin="5">
-                     <Button Text="COMPRA ONLLINE" TextColor="White" BackgroundColor="#3F51B5"></Button>
+                     <Button Text="COMPRA ONLINE" TextColor="White" BackgroundColor="#3F51B5"></Button>
                 <Button Text="COMPRA TELÉFONICA" TextColor="White" BackgroundColor="#3F51B5"></Button>
                 </StackLayout>
             </StackLayout>

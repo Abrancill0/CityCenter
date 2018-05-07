@@ -4,9 +4,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Windows.Input;
+using Acr.UserDialogs;
 using City_Center.Clases;
 using City_Center.Page;
 using City_Center.Services;
+using City_Center.Services.Contracts;
 using GalaSoft.MvvmLight.Command;
 using Xamarin.Forms;
 using static City_Center.Models.TarjetaUsuarioResultado;
@@ -32,6 +34,9 @@ namespace City_Center.ViewModels
 
         private TarjetaUsuarioReturn listaTarjetausuario;
         private ObservableCollection<TarjetaUsuarioDetalle> tarjetaUsuarioDetalle;
+
+
+        private IGoogleManager _googleManager;
         #endregion
 
         #region Properties
@@ -111,6 +116,7 @@ namespace City_Center.ViewModels
 
                 if (Mensajevalida == "Result True")
                 {
+                    UserDialogs.Instance.ShowLoading("Cerrando sesion...", MaskType.Black);
 
                     Application.Current.Properties["IsLoggedIn"] = false;
                     Application.Current.Properties["IdUsuario"] = 0;
@@ -124,19 +130,32 @@ namespace City_Center.ViewModels
 
                     await Application.Current.SavePropertiesAsync();
 
-                    ((MasterPage)Application.Current.MainPage).IsPresented = false;
-
+                    MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();
+                    MainViewModel.GetInstance().Detail = new DetailViewModel();
+                    MainViewModel.GetInstance().Casino = new CasinoViewModel();
 
                     PerfilVisible = false;
                     OpcionesVisible = true;
 
+                    ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
+                    _googleManager = DependencyService.Get<IGoogleManager>();
+                    _googleManager.Logout();
+                  
+                    MasterPage fpm = new MasterPage();
+                    fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
+                    fpm.Detail = new NavigationPage(new TabPage()); // You have to create a Detail ContenPage()
+                    Application.Current.MainPage = fpm;
+
+                    UserDialogs.Instance.HideLoading();
                 }
 
             }
             catch (Exception ex)
             {
+                UserDialogs.Instance.HideLoading();
+
                 await Application.Current.MainPage.DisplayAlert(
                           "Error",
                            ex.ToString(),
