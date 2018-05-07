@@ -60,11 +60,18 @@ namespace City_Center.Page
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
-            VariablesGlobales.FechaInicio = FechaInicio.Date;
-            VariablesGlobales.FechaFin = FechaFinal.Date;
-            VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.SelectedItem);
+            if (FechaFinal.Date < FechaInicio.Date)
+            {
+                await Mensajes.Info("La fecha final no puede ser menor a la fecha inicial");
+            }
+            else
+            {
+                VariablesGlobales.FechaInicio = FechaInicio.Date;
+                VariablesGlobales.FechaFin = FechaFinal.Date;
+                VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.SelectedItem);
 
-           await Navigation.PushPopupAsync(_webHotel);
+                await Navigation.PushPopupAsync(_webHotel);   
+            }
         }
 
         private void Btn1_Clicked(object sender, EventArgs e)
