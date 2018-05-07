@@ -169,7 +169,7 @@
                                 </OnPlatform>
                             </Label.FontFamily>
                                         </Label>
-                                <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding HabitacionesDetalle}">
+                                <flv:FlowListView HeightRequest="435" SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding HabitacionesDetalle}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
                                             <Grid Padding="3">
@@ -214,7 +214,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label Margin="10,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
+                                <Label Margin="20,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
                                          <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -222,7 +222,7 @@
                                 </OnPlatform>
                             </Label.FontFamily>
                                         </Label>
-                        <RelativeLayout HeightRequest="200" VerticalOptions="Start">
+                        <RelativeLayout HeightRequest="210" VerticalOptions="Start">
                             <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}"
                                       RowHeight="150"  SeparatorVisibility="None"
                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}"
