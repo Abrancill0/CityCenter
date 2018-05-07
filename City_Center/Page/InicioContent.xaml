@@ -250,6 +250,7 @@
                                     </StackLayout>
                                 </Grid>
                             </StackLayout>
+
                             <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
                                 <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                                     <Frame.Margin>
@@ -274,7 +275,7 @@
 
                                 </Frame>
                             </StackLayout>
-                            <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+                            <StackLayout Orientation="Vertical" Margin="0,-5" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
                                 <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                                     <Frame.Margin>
                                         <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
@@ -286,7 +287,7 @@
                                         <Label Text="Restaurants" TextColor="Gray" Margin="5,0,0,0" FontSize="Small"></Label>
                                         <Grid Padding="15, 0">
                                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
-                                      <Picker Margin="4" 
+                                      <Picker Margin="2" 
                                               x:Name="CR"
                                               Title="Seleccionar..."
                                               SelectedItem="{Binding NombreRestaurante, Mode=TwoWay}"
@@ -298,7 +299,7 @@
 
                                 </Frame>
                             </StackLayout>
-                            <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
+                            <StackLayout Orientation="Vertical" Margin="0, -2" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
                                 <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                                     <Frame.Margin>
                                         <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
@@ -310,7 +311,7 @@
                                        <Label Text="Silla para ninños" TextColor="Gray" Margin="5,0,0,0" FontSize="Small"></Label>
                                         <Grid Padding="15, 0">
                                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
-                                      <Picker Margin="5"
+                                      <Picker Margin="2"
                                               x:Name="Combosillaniños"
                                                SelectedItem="{Binding SillaNiños, Mode=TwoWay}"
                                              
@@ -341,7 +342,7 @@
                                     </xfx:XfxEntry>
                                 </Frame>
                             </StackLayout>
-                            <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
+                            <StackLayout Orientation="Vertical" Margin="0,-8" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
                                 <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                                     <Frame.Margin>
                                         <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
@@ -361,7 +362,7 @@
                                     </xfx:XfxEntry>
                                 </Frame>
                             </StackLayout>
-                            <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
+                            <StackLayout Orientation="Vertical" Margin="0,-10" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
                                 <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                                     <Frame.Margin>
                                         <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
