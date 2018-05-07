@@ -203,6 +203,7 @@
                         </Frame>
                         <Button Margin="30, 20" FontSize="Small" TextColor="White" BackgroundColor="#250c4b" Text="VER OPCIONES" />
                     </StackLayout>
+                    
                     <StackLayout x:Name="SL3" IsVisible="false" HorizontalOptions="FillAndExpand" Margin="5">
                         <Grid HorizontalOptions="FillAndExpand">
                             <Grid.ColumnDefinitions>
@@ -231,6 +232,7 @@
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
+
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
                                         <Label Text="Fecha">
                                         </Label>
@@ -258,16 +260,16 @@
                                     </Frame.Padding>
                                    <StackLayout>
 
-                                      <Label Text="Personas" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
-                                        <Grid Padding="15, 0">
-                                      <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>    
-                                      <Picker x:Name="NoPersona1"
+                                      <Label Text="Personas" TextColor="Gray" Margin="5,0,0,0" FontSize="Small"></Label>
+                                      <Grid Padding="15, 0">
+                                          <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>    
+                                          <Picker x:Name="NoPersona1"
                                               Title="Personas"
                                               SelectedItem="{Binding NoPersonas, Mode=TwoWay}"
 
                                               ></Picker>
                                             <!--ItemsSource="{Binding ListaOpciones}"-->
-                                            </Grid>
+                                      </Grid>
                                     </StackLayout>
 
                                 </Frame>
@@ -281,10 +283,10 @@
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
                                     <StackLayout>
-                                        <Label Text="Restaurants" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                                        <Label Text="Restaurants" TextColor="Gray" Margin="5,0,0,0" FontSize="Small"></Label>
                                         <Grid Padding="15, 0">
                                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
-                                      <Picker Margin="5" 
+                                      <Picker Margin="4" 
                                               x:Name="CR"
                                               Title="Seleccionar..."
                                               SelectedItem="{Binding NombreRestaurante, Mode=TwoWay}"
@@ -305,7 +307,7 @@
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
                                     <StackLayout>
-                                       <Label Text="Silla para ninños" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                                       <Label Text="Silla para ninños" TextColor="Gray" Margin="5,0,0,0" FontSize="Small"></Label>
                                         <Grid Padding="15, 0">
                                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
                                       <Picker Margin="5"
@@ -347,7 +349,7 @@
                                     <Frame.Padding>
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
-                                    <xfx:XfxEntry Placeholder="Correo Electrònico*"
+                                    <xfx:XfxEntry Placeholder="Correo Electrónico*"
                                                   Text ="{Binding Correo, Mode=TwoWay}"
                                                   Margin="5,0,5,0">
                                         <Entry.HeightRequest>
@@ -367,7 +369,7 @@
                                     <Frame.Padding>
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
-                                    <xfx:XfxEntry Placeholder="Telèfono*"
+                                    <xfx:XfxEntry Placeholder="Teléfono*"
                                                   Text ="{Binding Telefono, Mode=TwoWay}"
                                                   Margin="5,0,5,0" >
                                         <Entry.HeightRequest>
@@ -387,6 +389,7 @@
                                 Text="RESERVAR"
                                 Command ="{Binding ReservarCommand}"/>
                     </StackLayout>
+                    
                     <StackLayout x:Name="SL4" IsVisible="false">
                         <!--Content-->
                     </StackLayout>

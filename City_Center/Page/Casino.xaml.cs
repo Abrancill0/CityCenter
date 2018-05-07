@@ -18,6 +18,7 @@ namespace City_Center.Page
 
             ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2" };
 
+            NavigationPage.SetTitleIcon(this, "logo.png");
             Img2provisional.Source = "vip1";
             listaCasino.ItemsSource = ListaOpciones;
 

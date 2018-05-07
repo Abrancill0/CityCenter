@@ -98,5 +98,7 @@
 	<string>City Center necesita uso de tu gps</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>City Center necesita uso de tu ubicación</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

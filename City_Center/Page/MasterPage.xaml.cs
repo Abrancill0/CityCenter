@@ -10,6 +10,7 @@ namespace City_Center.Page
         public MasterPage()
         {
             InitializeComponent();
+           
             Detail = new NavigationPage (new TabPage());
         }
     }
