@@ -5,15 +5,25 @@
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              x:Class="City_Center.Page.DetalleRestaurante">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Icon="Chat"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding DetalleRestaurante}" BackgroundColor="White">
             <StackLayout>
+                <StackLayout HorizontalOptions="Start" Padding="10,10">
                 <Label Text="{Binding rd.reb_nombre}"
                        FontSize="Large"
-                       Margin="10"
-                       FontFamily="Oswald-Regular"
+                       Margin="20"
                        TextColor="#250C4B">
+                    <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
                 </Label>
+               </StackLayout>
                 <StackLayout HorizontalOptions="FillAndExpand">
                     <ffimageloading:CachedImage x:Name="Img1provisional" HeightRequest="150" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding rd.reb_imagen_1 ,StringFormat='http://cc.comprogapp.com/{0}'}" />
                 </StackLayout>
