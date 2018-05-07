@@ -385,6 +385,7 @@
     <BundleResource Include="Resources\WifiLibre.png" />
     <BundleResource Include="Resources\FavoritoOK.png" />
     <BundleResource Include="Resources\DummyCard.png" />
+    <BundleResource Include="Resources\btn_contacto.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />
@@ -398,6 +399,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <Import Project="..\City_Center\City_Center.projitems" Label="Shared" Condition="Exists('..\City_Center\City_Center.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

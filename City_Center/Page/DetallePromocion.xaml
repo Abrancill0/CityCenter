@@ -95,6 +95,7 @@
                      <Button 
                         Text="PROMO"
                         TextColor="White"
+                        HeightRequest="50"
                         BackgroundColor="#250C4B"
                         Clicked="Handle_Clicked"/>
                          <ffimageloading:CachedImage x:Name="FlechaAbajo"

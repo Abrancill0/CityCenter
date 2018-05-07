@@ -339,7 +339,7 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                            <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF" Margin="8">
+                            <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF" Margin="5">
                                 <Grid HorizontalOptions="FillAndExpand" CompressedLayout.IsHeadless="true">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*">
@@ -366,7 +366,7 @@
                                 <Image  BackgroundColor="Transparent" Source = "arrow_right_thin"  Grid.Row="0" Grid.Column= "0"/>
 
                            <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
-                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" HeightRequest="300">
+                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" >
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
                                             <Grid BackgroundColor = "White" CompressedLayout.IsHeadless="true">
@@ -452,7 +452,7 @@
                         </Frame>
                         <StackLayout Spacing="1" Margin="5">
                               <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" 
-                                     Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular"></Label>
+                                    Margin = "10,0" Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular"></Label>
                         <StackLayout HorizontalOptions="FillAndExpand">
                             <ffimageloading:CachedImage x:Name="Img1provisional"
                             HeightRequest="150"
@@ -502,7 +502,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="GANADORES" TextColor="#250c4b" FontFamily="Oswald-Regular" />
+                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="GANADORES" Margin = "10,0" TextColor="#250c4b" FontFamily="Oswald-Regular" />
                                 <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding GanadoresDetalle}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
@@ -541,7 +541,7 @@
                 </ScrollView>
             </StackLayout>
             <StackLayout x:Name="SL3" IsVisible="false" BackgroundColor="White">
-                
+                <ScrollView >
                     <StackLayout Spacing="1" Margin="2">
                         <Label HorizontalOptions="Start" Margin="10, 20" TextColor="#250c4b" Text="¿QUERÉS TENER LA TARJETA WIN?">
                             <Label.FontFamily>
@@ -577,70 +577,13 @@
                                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                     </OnPlatform>
                             </Button.FontFamily></Button>
-                    </StackLayout>
+                        </StackLayout>
                   
-                    <StackLayout VerticalOptions = "FillAndExpand" Padding = "10,10">
-                        <ListView ItemsSource="{Binding TarjetasDetalle}" HasUnevenRows="true" RowHeight="90" SeparatorVisibility="None">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <ViewCell.View>
-                                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                                                <Frame.OutlineColor>
-                                                    <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
-                                                </Frame.OutlineColor>
-                                                <Frame.Margin>
-                                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                                                </Frame.Margin>
-                                                <Frame.Padding>
-                                                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                                                </Frame.Padding>
-                                                <StackLayout Orientation="Horizontal">
-                                                    <Grid HorizontalOptions="FillAndExpand">
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="1.5*" />
-                                                            <ColumnDefinition Width="2*" />
-                                                        </Grid.ColumnDefinitions>
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition Height="Auto" />
-                                                            <RowDefinition Height="Auto" />
-                                                        </Grid.RowDefinitions>
-                                                        <ffimageloading:CachedImage
-                                                            HeightRequest="90"
-                                                            WidthRequest="100"
-                                                            Aspect="AspectFit"
-                                                            DownsampleToViewSize="true"
-                                                            LoadingPlaceholder="image_loading.png"
-                                                            ErrorPlaceholder="image_error.png"
-                                                            Source="{Binding tar_imagen}"
-                                                            Grid.Row="0" Grid.Column="0"
-                                                            Grid.RowSpan="2" />
-                                                        <Label TextColor="Black" Grid.Row="0" Grid.Column="1" Text="{Binding tar_nombre}" VerticalOptions = "Start" HorizontalTextAlignment="Start" FontSize="Medium" FontFamily="Oswald-Regular" ><Label.FontFamily>
-                                                            <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                                </OnPlatform>
-                                                            </Label.FontFamily>
-                                                        </Label>
-                                                        <Label TextColor="Black" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Start" VerticalOptions = "Start" Text="{Binding tar_descripcion}" FontSize="Small" FontFamily="Oswald-Regular" >
-                                                            <Label.FontFamily>
-                                                            <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                                </OnPlatform>
-                                                            </Label.FontFamily>
-                                                        </Label>
-                                                    </Grid>
-                                                </StackLayout>
-                                            </Frame>
-                                        </ViewCell.View>
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                 </StackLayout>
                     
-                </StackLayout>
+                       <StackLayout x:Name = "slTarjetas"  Padding = "5,15"></StackLayout>
+                    
+                    </StackLayout>
+                </ScrollView>
             </StackLayout>
             <StackLayout x:Name="SL4" IsVisible="false">
                 <ScrollView Orientation="Vertical">

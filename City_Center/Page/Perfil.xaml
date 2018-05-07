@@ -22,7 +22,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Perfil}">
-        <Grid BackgroundColor="#8A7C9E" VerticalOptions = "Center" >
+        <Grid HeightRequest="130" BackgroundColor="#8A7C9E" VerticalOptions = "Center" >
                     <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60">
                         </ColumnDefinition>
@@ -62,10 +62,10 @@
                                     FontFamily="Oswald-Regular"
                                     Grid.Column="2"
                                     Grid.Row="0"
+                                    Margin="0, 15"
                                     FontSize = "Small"
                                     VerticalOptions = "EndAndExpand"
-                                    Text="HOLA"
-                                    Margin = "0,50,0,0"/>
+                                    Text="HOLA"/>
                 
                             <Label  TextColor="White"
                                     FontSize = "20"
@@ -100,7 +100,7 @@
                         <RowDefinition Height="40">
                         </RowDefinition>
                     </Grid.RowDefinitions>
-                    <Label x:Name="LabelTab1" Text="PERFIL" TextColor="#FDFDFD" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
+                    <Label x:Name="LabelTab1" FontSize="9" Text="PERFIL" TextColor="#FDFDFD" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
                              <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -108,7 +108,7 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                     </Label>
-                    <Label x:Name="LabelTab2" Text="CONFIGURACIÓN" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                    <Label x:Name="LabelTab2" FontSize="9" Text="CONFIGURACIÓN" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
                              <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -116,7 +116,7 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                     </Label>
-                    <Label x:Name="LabelTab3" Text="NOTIFICACIONES" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
+                    <Label x:Name="LabelTab3" FontSize="9" Text="NOTIFICACIONES" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
                              <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -150,8 +150,6 @@
                     </ContentView>
                 </Grid>
                 <StackLayout x:Name="SL1" IsVisible="true">
-                    <StackLayout Margin="10">
-
                         <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Correo electrónico*">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
@@ -245,14 +243,16 @@
                                     </OnPlatform>
                                 </Button.FontFamily>
                         </Button>
-                    </StackLayout>
                 </StackLayout>
-                <StackLayout x:Name="SL2" Margin="10" IsVisible="false">
+                    
+                <StackLayout x:Name="SL2" IsVisible="false">
                     <view:VistaPerfilConfiguracion>
                     </view:VistaPerfilConfiguracion>
                 </StackLayout>
-                <StackLayout x:Name="SL3" Margin="10" IsVisible="false">
-                    <!--Content-->
+                    
+                <StackLayout x:Name="SL3" IsVisible="false">
+                    <view:VistaPerfilNotificaciones>
+                    </view:VistaPerfilNotificaciones>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

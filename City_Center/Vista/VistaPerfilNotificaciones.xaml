@@ -3,10 +3,67 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="City_Center.Vista.VistaPerfilNotificaciones">
     <ContentView.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+      <StackLayout >
+            <StackLayout Margin="10" >
+            <Label HorizontalOptions="Start" Text="PROMOCIÓN" TextColor="#250C4B" >
+                    <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                    </OnPlatform>
+                </Label.FontFamily>
+                </Label>
+                <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+            </StackLayout>
+
+            <StackLayout Margin="10" >
+            <Label HorizontalOptions="Start" Text="EVENTO" TextColor="#250C4B">
+                    <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                    </OnPlatform>
+                </Label.FontFamily>
+                </Label>
+                <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+            </StackLayout>
+
+             <StackLayout Margin="10">
+              <Label HorizontalOptions="Start" Text="SHOW" TextColor="#250C4B">
+                    <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                    </OnPlatform>
+                </Label.FontFamily>
+                </Label>
+                 <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+            </StackLayout>
+
+            <StackLayout Margin="10" >
+            <Label HorizontalOptions="Start" Text="RESERVACIÓN" TextColor="#250C4B">
+                    <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                    </OnPlatform>
+                </Label.FontFamily>
+                </Label>
+                 <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+            </StackLayout>
+
+          <StackLayout Margin="10" >
+            <Label HorizontalOptions="Start" Text="PROMOCIÓN" TextColor="#250C4B">
+                    <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                    </OnPlatform>
+                </Label.FontFamily>
+                </Label>
+                 <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+            </StackLayout>
+
         </StackLayout>
     </ContentView.Content>
 </ContentView>

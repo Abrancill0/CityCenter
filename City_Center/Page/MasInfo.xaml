@@ -153,8 +153,8 @@
 
                    
 
-                    <Button Text="CONTACTO"  Clicked="Handle_Clicked" BackgroundColor="#3F51B5" TextColor="White"></Button>
-
+                    <Button Text=""   Image ="btn_contacto.png" HeightRequest = "50"
+                        ContentLayout = "Left,0" Clicked="Handle_Clicked2" BackgroundColor="#3F51B5" TextColor="White"></Button>
 
                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" x:Name="Frame1" IsVisible="false">
                             <Frame.Margin>
@@ -391,20 +391,15 @@
                             </ListView>
                         </RelativeLayout>
                             <Label HorizontalOptions="Start" TextColor="Black" Margin="10, 15"></Label>
-                                <Label Margin="10, 0" Text="El respaldo del equipamiento técnico más avanzado" TextColor="Black" HorizontalOptions="Start"></Label>
-                                <Label Margin="10, 0" Text="y el servicio de excelencia se combinan con una " TextColor="Black" HorizontalOptions="Start"></Label>
-                                <Label Margin="10, 0" Text="cocina contemporánea e innovadora. Cuenta" TextColor="Black" HorizontalOptions="Start"></Label>
-                                <Label Margin="10, 0" Text="tmbién con áreas ideales para bienvenida y" TextColor="Black" HorizontalOptions="Start"></Label>
-                                <Label Margin="10, 0" Text="registro. Todo lo necesario para que sus reuniones y" TextColor="Black" HorizontalOptions="Start"></Label>
-                                <Label Margin="10, 0" Text="eventos sean únicos y exitosos." TextColor="Black" HorizontalOptions="Start"></Label>
+                                <Label Margin="15, 55,15,55" Text="El respaldo del equipamiento técnico más avanzado y el servicio de excelencia se combinan con una cocina contemporánea e innovadora. Cuenta tmbién con áreas ideales para bienvenida y registro. Todo lo necesario para que sus reuniones y eventos sean únicos y exitosos."  TextColor="Black" HorizontalOptions="FillAndExpand"></Label>
                             <Label HorizontalOptions="Start" TextColor="Black" Margin="10, 20"></Label>
                     </StackLayout>
 
 
 
 
-                    <Button Text="CONTACTO"  Clicked="Handle_Clicked2" BackgroundColor="#3F51B5" TextColor="White"></Button>
-
+                    <Button Text=""   Image ="btn_contacto.png" HeightRequest = "50"
+                        ContentLayout = "Left,0" Clicked="Handle_Clicked2" BackgroundColor="#3F51B5" TextColor="White"></Button>
 
                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" x:Name="Frame2" IsVisible="false">
                             <Frame.Margin>
