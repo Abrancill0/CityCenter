@@ -4,6 +4,9 @@ using City_Center.ViewModels;
 using Xamarin.Forms;
 using City_Center.Models;
 using static City_Center.Models.SalaPokerResultado;
+using City_Center.Clases;
+using System.Net.Http;
+using static City_Center.Models.TarjetasResultado;
 
 namespace City_Center.Page
 {
@@ -28,6 +31,26 @@ namespace City_Center.Page
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+
+        }
+
+        private async void loadTarjet()
+        {
+            var content = new FormUrlEncodedContent(new[]
+                {
+                new KeyValuePair<string, string>("", ""),
+            });
+            Restcliente DatosUsuarioRequest = new Restcliente();
+
+            var response = await DatosUsuarioRequest.Get<TarjetasReturn>("/tarjetas/indexApp", content);
+
+            if (response.estatus != 0){
+               foreach(TarjetasDetalle it in response.resultado)
+                {
+                    
+                }
+            }
 
         }
 

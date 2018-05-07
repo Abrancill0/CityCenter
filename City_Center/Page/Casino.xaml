@@ -339,7 +339,7 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                            <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF" Margin="8">
+                            <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF" Margin="5">
                                 <Grid HorizontalOptions="FillAndExpand" CompressedLayout.IsHeadless="true">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*">
@@ -366,7 +366,7 @@
                                 <Image  BackgroundColor="Transparent" Source = "arrow_right_thin"  Grid.Row="0" Grid.Column= "0"/>
 
                            <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
-                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" HeightRequest="300">
+                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" >
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
                                             <Grid BackgroundColor = "White" CompressedLayout.IsHeadless="true">
@@ -452,7 +452,7 @@
                         </Frame>
                         <StackLayout Spacing="1" Margin="5">
                               <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" 
-                                     Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular"></Label>
+                                    Margin = "10,0" Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular"></Label>
                         <StackLayout HorizontalOptions="FillAndExpand">
                             <ffimageloading:CachedImage x:Name="Img1provisional"
                             HeightRequest="150"
@@ -502,7 +502,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="GANADORES" TextColor="#250c4b" FontFamily="Oswald-Regular" />
+                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="GANADORES" Margin = "10,0" TextColor="#250c4b" FontFamily="Oswald-Regular" />
                                 <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding GanadoresDetalle}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
@@ -579,8 +579,8 @@
                             </Button.FontFamily></Button>
                     </StackLayout>
                   
-                    <StackLayout VerticalOptions = "FillAndExpand" Padding = "10,10">
-                        <ListView ItemsSource="{Binding TarjetasDetalle}" HasUnevenRows="true" RowHeight="90" SeparatorVisibility="None">
+                    
+                        <ListView ItemsSource="{Binding TarjetasDetalle}" HasUnevenRows="true" RowHeight="90" SeparatorVisibility="None" HeightRequest = "600">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -638,7 +638,6 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                 </StackLayout>
                     
                 </StackLayout>
             </StackLayout>

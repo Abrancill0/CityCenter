@@ -372,7 +372,6 @@
     <AndroidResource Include="Resources\drawable\Lavanderia.png" />
     <AndroidResource Include="Resources\drawable\RoomServices.png" />
     <AndroidResource Include="Resources\drawable\ValetParking.png" />
-    <AndroidResource Include="Resources\drawable\Wifi.png" />
     <AndroidResource Include="Resources\drawable\splashscreen.png" />
     <AndroidResource Include="Resources\drawable-hdpi\btn_close.png" />
     <AndroidResource Include="Resources\drawable-hdpi\btn_face.png" />
@@ -385,13 +384,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\tarjeta.png" />
     <AndroidResource Include="Resources\drawable-hdpi\user.png" />
     <AndroidResource Include="Resources\drawable\close_circle_button.png" />
-    <AndroidResource Include="Resources\drawable\AreaAcreditacion.png" />
-    <AndroidResource Include="Resources\drawable\AreaComercial.png" />
-    <AndroidResource Include="Resources\drawable\CabinaTraduccion.png" />
-    <AndroidResource Include="Resources\drawable\EquipoTecnico.png" />
     <AndroidResource Include="Resources\drawable\Parking.png" />
-    <AndroidResource Include="Resources\drawable\SistemaCerrado.png" />
-    <AndroidResource Include="Resources\drawable\VariedadGastronomica.png" />
     <AndroidResource Include="Resources\drawable\VideoConferencia.png" />
     <AndroidResource Include="Resources\drawable\WifiLibre.png" />
     <AndroidResource Include="Resources\drawable\ojo.png" />
@@ -477,6 +470,15 @@
     <AndroidResource Include="Resources\drawable\FavoritoOK.png" />
     <AndroidResource Include="Resources\drawable\DummyCard.png" />
     <AndroidResource Include="Resources\drawable-hdpi\btn_contacto.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\AreaAcreditacion.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\AreaComercial.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\CabinaTraduccion.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\EquipoTecnico.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Parking.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\SistemaCerrado.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\VariedadGastronomica.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\VideoConferencia.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Wifi.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
