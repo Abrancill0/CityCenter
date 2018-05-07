@@ -475,6 +475,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\circulo_blanco.png" />
     <AndroidResource Include="Resources\drawable\logout.png" />
     <AndroidResource Include="Resources\drawable\FavoritoOK.png" />
+    <AndroidResource Include="Resources\drawable\DummyCard.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
