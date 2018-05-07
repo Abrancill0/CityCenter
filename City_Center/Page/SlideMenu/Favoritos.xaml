@@ -46,7 +46,7 @@
                                     
                                 <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column = "0" BackgroundColor="#FFFFFF" >
                                     <Label Text="{Binding nombre}" FontSize= "14" HorizontalOptions="Center" VerticalOptions="StartAndExpand" />
-                                    <Label Text="{Binding gua_fecha_hora_creo}" TextColor ="Black" HorizontalOptions="Center" VerticalOptions= "CenterAndExpand" />
+                                    <Label Text="{Binding fecha}" TextColor ="Black" HorizontalOptions="Center" VerticalOptions= "CenterAndExpand" />
                                 </StackLayout>
                                  <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column = "1" Grid.ColumnSpan="2" >
                                     <Image Aspect="AspectFit"

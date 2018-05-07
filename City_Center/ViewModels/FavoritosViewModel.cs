@@ -94,7 +94,8 @@ namespace City_Center.ViewModels
                   descripcion = l.descripcion,
                   imagen = "http://cc.comprogapp.com/" + l.imagen,
                   imagen_2 = l.imagen_2,
-                  link = l.link
+                  link = l.link,
+                  fecha = l.fecha
             });
         }
 

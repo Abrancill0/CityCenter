@@ -126,9 +126,8 @@
                                     </Grid.RowDefinitions>
                                     <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="DESTACADOS" TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0" />
                                 </Grid>
-                               
-
-                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
+                           
+                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5">
                                 <cv:CarouselViewControl 
                                             ItemsSource="{Binding DestacadosDetalle}"
                                             HorizontalOptions="FillAndExpand" HeightRequest="300">
@@ -206,7 +205,7 @@
                                     </cv:CarouselViewControl.ItemTemplate>
                                 </cv:CarouselViewControl>
                             </StackLayout>
-                         
+                               
                     </StackLayout>
                         </Frame>
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
@@ -343,9 +342,9 @@
                                     <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="TORNEOS"  TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0" />
                                 </Grid>
                                 <!--Carousel-->
-                         
-                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
-                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" >
+                            
+                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" >
+                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}" HeightRequest="300"  HorizontalOptions="FillAndExpand" >
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
                                             <Grid BackgroundColor = "White" CompressedLayout.IsHeadless="true">

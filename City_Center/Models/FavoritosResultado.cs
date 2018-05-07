@@ -23,6 +23,7 @@ namespace City_Center.Models
             public string imagen { get; set; }
             public string imagen_2 { get; set; }
             public string link { get; set; }
+            public string fecha { get; set; }
         }
 
         public class FavoritoReturn
