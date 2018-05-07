@@ -253,10 +253,6 @@
                 <StackLayout x:Name="SL3" IsVisible="false">
                     <view:VistaPerfilNotificaciones>
                     </view:VistaPerfilNotificaciones>
-<<<<<<< HEAD
-=======
-                    <!--Content-->
->>>>>>> c86afd290afc14869868baa9017d3d831477ab25
                 </StackLayout>
             </StackLayout>
         </ScrollView>
