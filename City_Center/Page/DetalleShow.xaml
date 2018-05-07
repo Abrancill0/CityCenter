@@ -75,6 +75,17 @@
                              TextColor="White"
                              Clicked="Handle_Clicked"
                              BackgroundColor="#250C4B"></Button>
+
+                        <Label />
+
+                        <Label Text="Agregar a Calendario" HorizontalOptions="Center" FontSize="Small" TextColor="Gray">
+                        <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
                 </StackLayout>
             </StackLayout>
 

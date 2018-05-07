@@ -100,7 +100,7 @@
                         <RowDefinition Height="40">
                         </RowDefinition>
                     </Grid.RowDefinitions>
-                    <Label x:Name="LabelTab1" Text="PERFIL" TextColor="#FDFDFD" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
+                    <Label x:Name="LabelTab1" FontSize="9" Text="PERFIL" TextColor="#FDFDFD" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
                              <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -108,7 +108,7 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                     </Label>
-                    <Label x:Name="LabelTab2" Text="CONFIGURACIÓN" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                    <Label x:Name="LabelTab2" FontSize="9" Text="CONFIGURACIÓN" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
                              <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -116,7 +116,7 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                     </Label>
-                    <Label x:Name="LabelTab3" Text="NOTIFICACIONES" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
+                    <Label x:Name="LabelTab3" FontSize="9" Text="NOTIFICACIONES" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
                              <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>

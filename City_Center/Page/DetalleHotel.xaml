@@ -4,10 +4,23 @@
               BindingContext="{Binding Main, Source={StaticResource Locator}}"
               xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="City_Center.Page.DetalleHotel">
+     <ContentPage.ToolbarItems>
+        <ToolbarItem  Icon="Chat"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
     <ScrollView BindingContext="{Binding DetalleHotel}">
          <StackLayout Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout>
+                    <StackLayout HorizontalOptions="Start" Padding="30,30">
+                        <Label Text="{Binding hd.hab_nombre}" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
                  <StackLayout HorizontalOptions="FillAndExpand">
                             <ffimageloading:CachedImage x:Name="Img1provisional"
                             HeightRequest="150"
@@ -37,7 +50,6 @@
                                                                                 ErrorPlaceholder="image_error.png"
                                                                                 Source="{Binding .}">
                                                      </ffimageloading:CachedImage>
-                                           
                                                 </StackLayout>
                                             </ContentView>
                                         </ViewCell>
@@ -48,20 +60,27 @@
                  <StackLayout Margin="10">
                 <Label Text="{Binding hd.hab_descripcion}"></Label>
                 </StackLayout>
-              <Button Margin="20,10,20,10"
+              <Button Margin="40,20,40,20"
                       TextColor="White"
                       BackgroundColor="#2D97A3"
                       Text="RESERVA ONLINE"
                       Clicked="BtnReservaOnline"/>
             </StackLayout>
-            <StackLayout HorizontalOptions="FillAndExpand" Margin="3">
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="10,15" Margin="3">
                 <Label FontFamily="Oswald-Regular"
                        FontSize="Default"
                        FontAttributes="Bold"
                        HorizontalOptions="Start"
                        HorizontalTextAlignment="Start"
                        Text="OTRAS HABITACIONES"
-                       TextColor="#250C4B"></Label>
+                       TextColor="#250C4B">
+                           <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                    </Label>
                  <RelativeLayout HeightRequest="100" VerticalOptions="Start">
                             <ListView Rotation="270" ItemsSource="{Binding HabitacionesDetalle}"
                                       RowHeight="100" SeparatorVisibility="None"
