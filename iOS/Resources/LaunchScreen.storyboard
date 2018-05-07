@@ -133,5 +133,6 @@
         <image name="WifiLibre.png" width="224" height="224"/>
         <image name="FavoritoOK.png" width="24" height="24"/>
         <image name="DummyCard.png" width="242" height="157"/>
+        <image name="btn_contacto.png" width="550" height="76"/>
     </resources>
 </document>
