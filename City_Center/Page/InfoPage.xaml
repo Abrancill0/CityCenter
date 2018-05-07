@@ -99,8 +99,11 @@
               <StackLayout>
                      <maps:Map x:Name="MyMap" MapType="Street" HeightRequest="240"/>
                      <Label TextColor="#474747" Font="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Start"
-                     Text="City Center se encuentra ubicado en Bv. Oroño y Av. Circunvalcion en la ciudad de Rossario (Santa Fe, Argentina). Su acceso se ubica justo sobre el ingreso sur de la ciudad llegando por Autopista desde Buenos Aires."></Label>
-
+                     Text="City Center se encuentra ubicado en Bv. Oroño y Av. Circunvalcion en la ciudad de Rossario (Santa Fe, Argentina)."></Label>
+                     <Label TextColor="#474747" Font="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Start"
+                     Text="Su acceso se ubica justo sobre el ingreso sur de la ciudad llegando por Autopista desde Buenos Aires."></Label>
+                     <Label TextColor="#474747" Font="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Start"
+                    ></Label>
                     <Label TextColor="#6C6C6C" Text="DISTANCIA DESDE LAS CIUDADES DE REFERENCIA:" HorizontalOptions="Start"/>
                     <Label TextColor="#6C6C6C" Text="  •    Buenos Aires (por autopista): 306 Km" HorizontalOptions="Start"/>
                     <Label TextColor="#6C6C6C" Text="  •    Córdoba (por Ruta 9): 401 Km" HorizontalOptions="Start"/>

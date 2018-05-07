@@ -152,6 +152,7 @@
                         
                             <Button Margin="30" TextColor="White" BackgroundColor="#2D97A3" Clicked="Handle_Clicked" Text="VER OPCIONES" />
                         </StackLayout>
+                        <StackLayout BackgroundColor="White">
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
                                 <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
@@ -160,7 +161,14 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label Margin="-250,10,0,0" Text="HABITACIONES" TextColor="#250c4b" FontFamily="Oswald-Regular" />
+                                <Label Margin="-220,10,0,0" Text="HABITACIONES" TextColor="#250c4b">
+                                         <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                                        </Label>
                                 <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding HabitacionesDetalle}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
@@ -206,7 +214,14 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#6E5D87" FontFamily="Oswald-Regular" />   
+                                <Label Margin="10,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
+                                         <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                                        </Label>
                         <RelativeLayout HeightRequest="200" VerticalOptions="Start">
                             <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}"
                                       RowHeight="150"  SeparatorVisibility="None"
@@ -261,6 +276,7 @@
                          </StackLayout>
                         </Frame>
                     </StackLayout>
+                  </StackLayout>
                 </ScrollView>
             </StackLayout>
             <StackLayout x:Name="SL2" IsVisible="false">
