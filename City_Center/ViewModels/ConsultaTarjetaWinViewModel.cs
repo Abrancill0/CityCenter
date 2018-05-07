@@ -62,6 +62,7 @@ namespace City_Center.ViewModels
             try
             {
                 
+                 LoadTarjetaUsuario();
 
                
             }

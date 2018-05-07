@@ -24,6 +24,8 @@ namespace City_Center.Page
 
             TipoDocumento.SelectedIndex = 0;
 
+            TarjetaPrueba.Source = "DummyCard";
+
         }
 
     }
