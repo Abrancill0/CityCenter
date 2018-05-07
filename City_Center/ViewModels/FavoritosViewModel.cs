@@ -68,6 +68,12 @@ namespace City_Center.ViewModels
 
            FavoritoDetalle = new ObservableCollection<FavoritoItemViewModel>(this.ToEventosItemViewModel());
 
+
+            if (this.list.resultado.Count == 0)
+            {
+                await Mensajes.Info("No se tiene ningun Guardado");
+            }
+
         }
 
         private IEnumerable<FavoritoItemViewModel> ToEventosItemViewModel()

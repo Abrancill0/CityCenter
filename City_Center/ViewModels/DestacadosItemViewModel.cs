@@ -98,10 +98,14 @@ namespace City_Center.ViewModels
                     await Mensajes.success(list.mensaje);
 
                 }
+                else
+                {
+                await Mensajes.Info("Inicia Sesion para guardar este Destacado");
+            }
             }
             catch (Exception)
             {
-                await Mensajes.Info("Inicia Sesion para guardar este torneo");
+                await Mensajes.Info("Inicia Sesion para guardar este Destacado");
             }
 
         }

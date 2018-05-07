@@ -129,14 +129,26 @@
                                     </Grid>
                                 </StackLayout>
                             </Frame>
-                           <StackLayout>
-                          <Label Text="Huéspedes" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
-                            <Grid Padding="15, 0">    
-                            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
-                            <Picker Margin="5" x:Name="NoPersona" Title="Huespedés"></Picker>
+                           
+
+                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                <Frame.Margin>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                </Frame.Margin>
+                                <Frame.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                </Frame.Padding>
+
+                               <StackLayout> 
+                                <Label Text="Huéspedes" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                                <Grid Padding="15, 0">    
+                                <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
+                                <Picker Margin="5" x:Name="NoPersona" Title="Huespedés"></Picker>
                                      <!--ItemsSource="{Binding ListaOpciones}" -->
-                            </Grid>
-                            </StackLayout>
+                                </Grid>
+                                </StackLayout>
+                                    </Frame>
+
                         
                             <Button Margin="30" TextColor="White" BackgroundColor="#2D97A3" Clicked="Handle_Clicked" Text="VER OPCIONES" />
                         </StackLayout>

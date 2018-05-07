@@ -92,7 +92,15 @@ namespace City_Center.ViewModels
 
         private  void Todos()
         {
-            EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel());
+            try
+            {
+                EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel());
+            }
+            catch (Exception ex)
+            {
+
+            }
+           
 
         }
 
