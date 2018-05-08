@@ -103,7 +103,7 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" Margin="5">
+            <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand">
                 <ScrollView>
                     <StackLayout>
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
@@ -231,15 +231,22 @@
                                
                     </StackLayout>
                         </Frame>
-                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" HorizontalOptions="FillAndExpand">
                             <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Margin>
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="POZOS" TextColor="#250c4b" FontFamily="Oswald-Regular" />
+                                 <Label Margin="20,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
+                                      <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                      </Label.FontFamily>
+                                 </Label>  
                                 <flv:FlowListView SeparatorVisibility="None"
                                                   HasUnevenRows="true"
                                                   FlowColumnMinWidth="110"
