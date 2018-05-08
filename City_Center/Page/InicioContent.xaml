@@ -261,8 +261,13 @@
                                     </Frame.Padding>
                                    <StackLayout>
 
-                                      <Label Text="Personas" TextColor="Gray" Margin="5,0,0,0" FontSize="Small"></Label>
-                                      <Grid Padding="15, 0">
+                                      <Label Text="Personas"
+                                             TextColor="Gray"
+                                             Margin="5,0,0,0"
+                                             HorizontalOptions="Start"
+                                             HorizontalTextAlignment="Start"
+                                             FontSize="Small"></Label>
+                                      <Grid Padding="5, 0">
                                           <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>    
                                           <Picker x:Name="NoPersona1"
                                               Title="Personas"
@@ -284,8 +289,14 @@
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
                                     <StackLayout>
-                                        <Label Text="Restaurants" TextColor="Gray" Margin="5,0,0,0" FontSize="Small"></Label>
-                                        <Grid Padding="15, 0">
+                                        <Label
+                                        Text="Restaurants"
+                                        TextColor="Gray"
+                                        Margin="5,0,0,0"
+                                        HorizontalOptions="Start"
+                                        HorizontalTextAlignment="Start"
+                                        FontSize="Small"/>
+                                        <Grid Padding="5, 0">
                                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
                                       <Picker Margin="2" 
                                               x:Name="CR"
@@ -308,8 +319,13 @@
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
                                     <StackLayout>
-                                       <Label Text="Silla para ninños" TextColor="Gray" Margin="5,0,0,0" FontSize="Small"></Label>
-                                        <Grid Padding="15, 0">
+                                       <Label Text="Silla para niños"
+                                              TextColor="Gray"
+                                              Margin="5,0,0,0"
+                                              HorizontalOptions="Start"
+                                              HorizontalTextAlignment="Start"
+                                              FontSize="Small"></Label>
+                                        <Grid Padding="5, 0">
                                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
                                       <Picker Margin="2"
                                               x:Name="Combosillaniños"
