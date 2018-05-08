@@ -22,9 +22,17 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Casino}">
-            <StackLayout>
-                <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="CASINOmin" />
-            </StackLayout>
+            
+                <AbsoluteLayout>
+                    <Image HeightRequest="100" Aspect="AspectFill"  Source="CASINOmin" />
+                     <Button Image ="checkin_rosa"
+                            BackgroundColor = "Transparent"
+                              ContentLayout = "Left,0"
+                             Text = ""
+                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.9,0.5,-1,-1"/>
+                </AbsoluteLayout>
+            
             <Grid BackgroundColor="#E91E63" Padding="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*">
