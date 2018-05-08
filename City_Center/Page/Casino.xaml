@@ -246,24 +246,17 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-<<<<<<< HEAD
-                                 <Label Margin="20,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
-                                      <Label.FontFamily>
-=======
+
+                              
                                 <Label HorizontalOptions="Start" Margin="20, 0" HorizontalTextAlignment="Start" Text="POZOS" TextColor="#250c4b" FontFamily="Oswald-Regular">
                                     <Label.FontFamily>
->>>>>>> 26b77c91bdb3d3aae9151aad7cfb7955558c560d
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
                                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                         </OnPlatform>
-<<<<<<< HEAD
                                       </Label.FontFamily>
                                  </Label>  
-=======
-                                    </Label.FontFamily>
-                                </Label>
->>>>>>> 26b77c91bdb3d3aae9151aad7cfb7955558c560d
+
                                 <flv:FlowListView SeparatorVisibility="None"
                                                   HasUnevenRows="true"
                                                   FlowColumnMinWidth="110"
