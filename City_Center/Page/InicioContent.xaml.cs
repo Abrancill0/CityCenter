@@ -74,9 +74,9 @@ namespace City_Center.Page
                     await Navigation.PushPopupAsync(_webHotel);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-            await  Mensajes.Info("No se pudo acceder a las reservaciones, intente mas tarde.")
+                await Mensajes.Info("No se pudo acceder a las reservaciones, intente mas tarde.");
             }
            
         }
