@@ -5114,7 +5114,6 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f02005b
 			public const int avd_hide_password = 2130837595;
 			
-<<<<<<< HEAD
 			// aapt resource value: 0x7f0201db
 			public const int avd_hide_password_1 = 2130837979;
 			
@@ -5123,21 +5122,10 @@ namespace City_Center.Droid
 			
 			// aapt resource value: 0x7f0201dd
 			public const int avd_hide_password_3 = 2130837981;
-=======
-			// aapt resource value: 0x7f0201d6
-			public const int avd_hide_password_1 = 2130837974;
-			
-			// aapt resource value: 0x7f0201d7
-			public const int avd_hide_password_2 = 2130837975;
-			
-			// aapt resource value: 0x7f0201d8
-			public const int avd_hide_password_3 = 2130837976;
->>>>>>> 7186e9d5fcbd01caa80b2afec7533002e4b6f052
 			
 			// aapt resource value: 0x7f02005c
 			public const int avd_show_password = 2130837596;
 			
-<<<<<<< HEAD
 			// aapt resource value: 0x7f0201de
 			public const int avd_show_password_1 = 2130837982;
 			
@@ -5146,16 +5134,6 @@ namespace City_Center.Droid
 			
 			// aapt resource value: 0x7f0201e0
 			public const int avd_show_password_3 = 2130837984;
-=======
-			// aapt resource value: 0x7f0201d9
-			public const int avd_show_password_1 = 2130837977;
-			
-			// aapt resource value: 0x7f0201da
-			public const int avd_show_password_2 = 2130837978;
-			
-			// aapt resource value: 0x7f0201db
-			public const int avd_show_password_3 = 2130837979;
->>>>>>> 7186e9d5fcbd01caa80b2afec7533002e4b6f052
 			
 			// aapt resource value: 0x7f02005d
 			public const int B = 2130837597;
