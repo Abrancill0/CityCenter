@@ -21,7 +21,6 @@ namespace City_Center.Models
         }
 
 
-
         public class RecompesasWinReturn
         {
             public int estatus { get; set; }

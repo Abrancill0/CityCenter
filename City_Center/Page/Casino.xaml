@@ -133,9 +133,10 @@
                                             HorizontalOptions="FillAndExpand"
                                             HeightRequest="300"
                                             AnimateTransition="true"
-                                            ShowArrows="true"
+                                           >
+                                       <!--  ShowArrows="true"
                                             ArrowsTintColor="Black"
-                                            ArrowsBackgroundColor="Silver">
+                                            ArrowsBackgroundColor="Silver"-->
                                              
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
@@ -353,9 +354,10 @@
                                                         HeightRequest="300"
                                                         HorizontalOptions="FillAndExpand"
                                                         AnimateTransition="true"
-                                                        ShowArrows="true"
+                                                       >
+                                       <!--  ShowArrows="true"
                                                         ArrowsTintColor="Black"
-                                                        ArrowsBackgroundColor="Silver">
+                                                        ArrowsBackgroundColor="Silver"-->
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
                                             <Grid BackgroundColor = "White" CompressedLayout.IsHeadless="true">

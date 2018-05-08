@@ -67,7 +67,31 @@ namespace City_Center.ViewModels
 
             this.listRecompensasWin = (RecompesasWinReturn)response.Result;
 
-            RecompensasWinDetalle = new ObservableCollection<RecompesasWinDetalle>(this.ToRecompensasWinViewModel());
+            RecompensasWinDetalle = new ObservableCollection<RecompesasWinDetalle>();
+
+            foreach (var l in listRecompensasWin.resultado)
+            {
+
+
+
+                RecompensasWinDetalle.Add(new RecompesasWinDetalle()
+                {
+                    wre_id = l.wre_id,
+                    wre_nombre = l.wre_nombre,
+                    wre_descripcion = l.wre_descripcion,
+                    wre_puntos = l.wre_puntos,
+                    wre_id_usuario_creo = l.wre_id_usuario_creo,
+                    wre_fecha_hora_creo = l.wre_fecha_hora_creo,
+                    wre_id_usuario_modifico = l.wre_id_usuario_modifico,
+                    wre_fecha_hora_modifico = l.wre_fecha_hora_modifico,
+                    wre_estatus = l.wre_estatus,
+                    wre_eliminado = l.wre_eliminado,
+                    Color = ""
+                });
+
+            }
+
+            //RecompensasWinDetalle = new ObservableCollection<RecompesasWinDetalle>(this.ToRecompensasWinViewModel());
 
         }
 
