@@ -467,7 +467,6 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\drawable-hdpi\circulo_blanco.png" />
     <AndroidResource Include="Resources\drawable\logout.png" />
-    <AndroidResource Include="Resources\drawable\FavoritoOK.png" />
     <AndroidResource Include="Resources\drawable\DummyCard.png" />
     <AndroidResource Include="Resources\drawable-hdpi\btn_contacto.png" />
     <AndroidResource Include="Resources\drawable-hdpi\AreaAcreditacion.png" />
@@ -482,7 +481,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\checkin_rosa.png" />
     <AndroidResource Include="Resources\drawable-hdpi\checkin_verde.png" />
     <AndroidResource Include="Resources\drawable-hdpi\favorito1.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\favorito2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\FavoritoOk.png" />
     <AndroidResource Include="Resources\drawable-hdpi\favorito3.png" />
   </ItemGroup>
   <ItemGroup>
