@@ -11,6 +11,7 @@ namespace City_Center.Page
         public InfoPage()
         {
             InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "logo.png");
         }
 
         void Tab1_Tapped(object sender, System.EventArgs e)

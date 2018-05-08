@@ -12,6 +12,7 @@ namespace City_Center.Page
         public Login()
         {
             InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "logo.png");
         }
 
         private  void showPass(object sender, EventArgs e)
