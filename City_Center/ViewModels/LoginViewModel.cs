@@ -156,7 +156,7 @@ namespace City_Center.ViewModels
 
                     MasterPage fpm = new MasterPage();
                     fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
-                    fpm.Detail = new NavigationPage(new TabPage()); // You have to create a Detail ContenPage()
+                    fpm.Detail = new NavigationPage(new TabPage()){ BarBackgroundColor = Color.FromHex("#23144B") }; // You have to create a Detail ContenPage()
                     Application.Current.MainPage = fpm;
 
                     await Mensajes.success("Bienvenido " + list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos);
