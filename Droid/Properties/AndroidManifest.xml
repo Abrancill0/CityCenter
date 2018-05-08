@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.1" package="com.CityCenter.Danthop" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.2" package="com.CityCenter.Danthop" android:installLocation="auto" android:versionCode="2">
 	<uses-sdk android:minSdkVersion="21" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="CityCenter" android:icon="@drawable/icon"
-                 android:hardwareAccelerated="true"
-                 android:largeHeap="true">
+	<application android:label="CityCenter" android:icon="@drawable/icon" android:hardwareAccelerated="true" android:largeHeap="true">
 		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDwkOwy8PEkqlZzTqDmbi_SpI_bMY6tIe8" />
 		<provider android:name="android.support.v4.content.FileProvider" android:authorities="com.CityCenter.Danthop.fileprovider" android:exported="false" android:grantUriPermissions="true">
 			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
