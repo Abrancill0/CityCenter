@@ -54,7 +54,7 @@
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
-                <Label x:Name="LabelTab2" FontSize="12" HorizontalOptions="Center" TextColor="#F282A9" Text="POKER" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                <Label x:Name="LabelTab2" FontSize="12" HorizontalOptions="Center" TextColor="#F282A9" Text="PÓKER" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -111,7 +111,7 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" Margin="5">
+            <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand">
                 <ScrollView>
                     <StackLayout>
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
@@ -132,7 +132,14 @@
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
-                                    <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="DESTACADOS" TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0" />
+                                    <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Margin="20, 0" Text="DESTACADOS" TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0">
+                                        <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                    </Label>
                                 </Grid>
                            
                            <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5">
@@ -239,15 +246,22 @@
                                
                     </StackLayout>
                         </Frame>
-                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" HorizontalOptions="FillAndExpand">
                             <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Margin>
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="POZOS" TextColor="#250c4b" FontFamily="Oswald-Regular" />
+                                <Label HorizontalOptions="Start" Margin="20, 0" HorizontalTextAlignment="Start" Text="POZOS" TextColor="#250c4b" FontFamily="Oswald-Regular">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                      </Label.FontFamily>
+                                 </Label>  
                                 <flv:FlowListView SeparatorVisibility="None"
                                                   HasUnevenRows="true"
                                                   FlowColumnMinWidth="110"
@@ -377,7 +391,14 @@
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
-                                    <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="TORNEOS"  TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0" />
+                                    <Label HorizontalOptions="Start" Margin="20, 0" HorizontalTextAlignment="Start" Text="TORNEOS"  TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0">
+                                        <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                    </Label>
                                 </Grid>
                                 <!--Carousel-->
                             
@@ -475,7 +496,14 @@
                         </Frame>
                         <StackLayout Spacing="1" Margin="5">
                               <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" 
-                                    Margin = "10,0" Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular"></Label>
+                                    Margin = "20,0" Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular">
+                                <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                            </Label>
                         <StackLayout HorizontalOptions="FillAndExpand">
                             <ffimageloading:CachedImage x:Name="Img1provisional"
                             HeightRequest="150"
@@ -517,15 +545,22 @@
                             </ListView>
                         </RelativeLayout>
                         </StackLayout>
-                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                        <Frame IsClippedToBounds="True" HeightRequest="260" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
                                 <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
                             </Frame.Margin>
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="GANADORES" Margin = "10,0" TextColor="#250c4b" FontFamily="Oswald-Regular" />
+                            <StackLayout Padding="0, 30" HorizontalOptions="FillAndExpand" Spacing="0">
+                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="GANADORES" Margin = "20,0" TextColor="#250c4b" FontFamily="Oswald-Regular">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
                                 <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding GanadoresDetalle}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
@@ -537,7 +572,7 @@
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
                                                 <ffimageloading:CachedImage
-                                                HeightRequest="100"
+                                                HeightRequest="80"
                                                 Aspect="AspectFill" 
                                                 LoadingPlaceholder="image_loading.png"
                                                 ErrorPlaceholder="image_error.png"
@@ -553,7 +588,6 @@
                                                        FontFamily="Oswald-regular"
                                                       FontSize="Small"
                                                        Text="{Binding gan_nombre}" />
-
                                             </Grid>
                                         </DataTemplate>
                                     </flv:FlowListView.FlowColumnTemplate>
