@@ -1,15 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
+using static City_Center.Models.EventosResultado;
 
 namespace City_Center.Page.SlideMenu
 {
     public partial class Show : ContentPage
     {
+
+        ObservableCollection<EventosDetalle> items;
+
         public Show()
         {
             InitializeComponent();
+
+            NavigationPage.SetTitleIcon(this, "logo.png");
         }
 
         protected override void OnDisappearing()
@@ -60,5 +66,29 @@ namespace City_Center.Page.SlideMenu
             BV3.IsVisible = true;
 
         }
+
+        void CambiaIcono(object sender, System.EventArgs e)
+        {
+            try
+            {
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                if (isLoggedIn)
+                {
+
+                    Image image = sender as Image;
+
+                    image.Source = "FavoritoOK";
+                }
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
     }
 }

@@ -53,10 +53,20 @@ namespace City_Center.Page
         {
             try
             {
-                VariablesGlobales.FechaInicio = FechaInicio.Date;
-                VariablesGlobales.FechaFin = FechaFinal.Date;
-                VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.SelectedItem);
-               await Navigation.PushPopupAsync(_webHotel);
+                
+            if (FechaFinal.Date < FechaInicio.Date)
+                {
+                    await Mensajes.Info("La fecha final no puede ser menor a la fecha inicial");
+                }
+                else
+                {
+                    VariablesGlobales.FechaInicio = FechaInicio.Date;
+                    VariablesGlobales.FechaFin = FechaFinal.Date;
+                    VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.SelectedItem);
+
+                    await Navigation.PushPopupAsync(_webHotel);
+                }
+
             }
             catch (Exception ex)
             {

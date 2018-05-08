@@ -42,20 +42,29 @@
                                 <ffimageloading:CachedImage Grid.Row="0" Aspect="AspectFill" Grid.ColumnSpan="3"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
-                                                                            Source="{Binding eve_imagen}"
-                                                                            DownsampleToViewSize="true"/>
+                                                                            Source="{Binding imagen}"/>
                                     
                                 <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column = "0" BackgroundColor="#FFFFFF" >
-                                    <Label Text="{Binding eve_nombre}" FontSize= "14" HorizontalOptions="Center" VerticalOptions="StartAndExpand" />
-                                    <Label Text="{Binding eve_fecha_hora_inicio}" TextColor ="Black" HorizontalOptions="Center" VerticalOptions= "CenterAndExpand" />
+                                    <Label Text="{Binding nombre}" FontSize= "14" HorizontalOptions="Center" VerticalOptions="StartAndExpand" />
+                                    <Label Text="{Binding fecha}" TextColor ="Black" HorizontalOptions="Center" VerticalOptions= "CenterAndExpand" />
                                 </StackLayout>
                                  <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column = "1" Grid.ColumnSpan="2" >
-                                    <Image Aspect="AspectFit" Source="Favorito" VerticalOptions = "Center" HorizontalOptions = "Center" HeightRequest = "30" WidthRequest = "30">
+                                    <Image Aspect="AspectFit"
+                                           Source="FavoritoOK"
+                                           VerticalOptions = "Center"
+                                           HorizontalOptions = "Center"
+                                           HeightRequest = "30"
+                                           WidthRequest = "30">
                                         <Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
+                                            <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono" />
                                         </Image.GestureRecognizers>
                                     </Image>
-                                    <Image Aspect="AspectFit" Source="Compartir" VerticalOptions = "Center" HorizontalOptions = "Center" HeightRequest = "35" WidthRequest = "35">
+                                    <Image Aspect="AspectFit"
+                                           Source="Compartir"
+                                           VerticalOptions = "Center"
+                                           HorizontalOptions = "Center"
+                                           HeightRequest = "30"
+                                           WidthRequest = "30">
                                         <Image.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                         </Image.GestureRecognizers>

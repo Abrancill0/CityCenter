@@ -224,7 +224,7 @@
                                         </Label>
                         <RelativeLayout HeightRequest="210" VerticalOptions="Start">
                             <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}"
-                                      RowHeight="150"  SeparatorVisibility="None"
+                                      RowHeight="200"  SeparatorVisibility="None"
                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}"
                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}"
                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}"

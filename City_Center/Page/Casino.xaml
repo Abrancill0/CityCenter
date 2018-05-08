@@ -126,22 +126,17 @@
                                     </Grid.RowDefinitions>
                                     <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="DESTACADOS" TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0" />
                                 </Grid>
-                               <Grid >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="15" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="15" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Image  BackgroundColor="Transparent" Source = "arrow_left_thin"  Grid.Row="0" Grid.Column="2"/>
-                                <Image  BackgroundColor="Transparent" Source = "arrow_right_thin"  Grid.Row="0" Grid.Column= "0"/>
-
-                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
+                           
+                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5">
                                 <cv:CarouselViewControl 
                                             ItemsSource="{Binding DestacadosDetalle}"
-                                            HorizontalOptions="FillAndExpand" HeightRequest="300">
+                                            HorizontalOptions="FillAndExpand"
+                                            HeightRequest="300"
+                                            AnimateTransition="true"
+                                           >
+                                       <!--  ShowArrows="true"
+                                            ArrowsTintColor="Black"
+                                            ArrowsBackgroundColor="Silver"-->
                                              
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
@@ -168,7 +163,16 @@
                                                         <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
                                                     </ffimageloading:CachedImage>
-                                                    <Label Margin="2,2,0,0" TextColor = "#5D5D5D" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding des_nombre}" HorizontalTextAlignment="Start" FontSize="15" VerticalOptions = "Center" FontFamily="Oswald-Regular" > 
+                                                    <Label Margin="5,2,0,0"
+                                                           TextColor = "#5D5D5D"
+                                                           Grid.Row="1"
+                                                           Grid.Column="0"
+                                                           Grid.ColumnSpan="2"
+                                                           Text="{Binding des_nombre}"
+                                                           HorizontalTextAlignment="Start"
+                                                           HorizontalOptions="Start"
+                                                           FontSize="15"
+                                                           VerticalOptions = "Center" > 
                                                         <Label.FontFamily>
                                                             <OnPlatform x:TypeArguments="x:String">
                                                                 <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -176,7 +180,15 @@
                                                             </OnPlatform>
                                                         </Label.FontFamily>
                                                     </Label>
-                                                    <Label Margin="2,0,0,0" TextColor = "#5D5D5D" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding des_fecha_hora_inicio}" VerticalOptions = "Start" FontSize="12" >
+                                                    <Label Margin="5,0,0,0"
+                                                           TextColor = "#5D5D5D"
+                                                           Grid.Row="2" Grid.Column="0" 
+                                                           Grid.ColumnSpan="2"
+                                                           HorizontalTextAlignment="Start"
+                                                           HorizontalOptions="Start"
+                                                           Text="{Binding des_fecha_hora_inicio}"
+                                                           VerticalOptions = "Start"
+                                                           FontSize="12" >
                                                         <Label.FontFamily>
                                                             <OnPlatform x:TypeArguments="x:String">
                                                                 <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -194,7 +206,7 @@
                                                            VerticalOptions = "Start"
                                                            HorizontalOptions = "Center" >
                                                         <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
+                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"  />
                                                         </Image.GestureRecognizers>
                                                     </Image>
 
@@ -216,7 +228,7 @@
                                     </cv:CarouselViewControl.ItemTemplate>
                                 </cv:CarouselViewControl>
                             </StackLayout>
-                                </Grid>
+                               
                     </StackLayout>
                         </Frame>
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
@@ -272,10 +284,17 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b" FontFamily="Oswald-Regular" />   
+                                 <Label Margin="20,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
+                                         <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                                        </Label>  
                         <RelativeLayout HeightRequest="200" VerticalOptions="Start">
                             <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}"
-                                      RowHeight="150"  SeparatorVisibility="None"
+                                      RowHeight="200"  SeparatorVisibility="None"
                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}"
                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}"
                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}"
@@ -285,7 +304,7 @@
                                     <DataTemplate>
                                         <ViewCell>
                                             <ContentView Rotation="90" BackgroundColor="Transparent">
-                                                <StackLayout HeightRequest="250" WidthRequest="230" Margin="0,5,0,0">
+                                                <StackLayout HeightRequest="250" WidthRequest="100" Margin="0,5,0,0">
                                                             <Grid Padding="3" CompressedLayout.IsHeadless="true">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
@@ -293,8 +312,8 @@
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                                     <ffimageloading:CachedImage HeightRequest="250" 
-                                                                                WidthRequest="130"
+                                                     <ffimageloading:CachedImage HeightRequest="190"
+                                                                                 WidthRequest="80"
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
@@ -353,20 +372,16 @@
                                     <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="TORNEOS"  TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0" />
                                 </Grid>
                                 <!--Carousel-->
-                            <Grid >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="15" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="15" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Image  BackgroundColor="Transparent" Source = "arrow_left_thin"  Grid.Row="0" Grid.Column="2"/>
-                                <Image  BackgroundColor="Transparent" Source = "arrow_right_thin"  Grid.Row="0" Grid.Column= "0"/>
-
-                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
-                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"  HorizontalOptions="FillAndExpand" >
+                            
+                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" >
+                                <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"
+                                                        HeightRequest="300"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        AnimateTransition="true"
+                                                       >
+                                       <!--  ShowArrows="true"
+                                                        ArrowsTintColor="Black"
+                                                        ArrowsBackgroundColor="Silver"-->
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
                                             <Grid BackgroundColor = "White" CompressedLayout.IsHeadless="true">
@@ -419,7 +434,7 @@
                                                            VerticalOptions = "Start"
                                                            HorizontalOptions = "Center" >
                                                         <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
+                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
                                                         </Image.GestureRecognizers>
                                                     </Image>
 
@@ -446,7 +461,7 @@
                                     </cv:CarouselViewControl.ItemTemplate>
                                 </cv:CarouselViewControl>
                             </StackLayout>
-                                </Grid>
+                               
                             <!--Carousel-->
                             </StackLayout>
                         </Frame>

@@ -425,6 +425,7 @@ namespace City_Center.ViewModels
             this.LoadTarjetaUsuario();
             this.LoadTorneo();
 
+            FechaInicio = DateTime.Today;
         }
         #endregion
     }

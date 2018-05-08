@@ -112,7 +112,8 @@
                                                           <TapGestureRecognizer Command="{Binding DetalleCommand}" />
                                                     </Frame.GestureRecognizers>
                                                 <StackLayout Orientation="Vertical">
-                                                    <ffimageloading:CachedImage HeightRequest="100"
+                                                    <Grid HeightRequest="160">
+                                                    <ffimageloading:CachedImage 
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
@@ -121,23 +122,28 @@
                                                             <TapGestureRecognizer Command="{Binding DetalleCommand}" />
                                                         </ffimageloading:CachedImage.GestureRecognizers>
                                                     </ffimageloading:CachedImage>
-                                                    <StackLayout Padding="0,45,20,0" HorizontalOptions="End" HeightRequest="55" WidthRequest="55">
+                                                        </Grid>
+                                                    <Grid>
+                                                    <StackLayout HorizontalOptions="End" HeightRequest="55" WidthRequest="55">
                                                         <ffimageloading:CachedImage 
                                                         HeightRequest="55" 
                                                             Aspect="AspectFit"
+                                                            Margin="0, -35, 10, 0"
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png" 
                                                         Source="{Binding reb_tipo}" 
                                                         DownsampleToViewSize="true"/>
                                                     </StackLayout>
-                                                    <StackLayout Padding="5,-20,0,0">
+                                                    <StackLayout >
                                                         <Label TextColor="#7A5BA5" Text="{Binding reb_nombre}"
                                                                HorizontalOptions="Start"
+                                                               Margin="10, 10, 0, 0"
                                                                HorizontalTextAlignment="Start"
                                                                FontSize="Medium"
                                                                FontFamily="Oswald-Regular"
                                                                FontAttributes="Bold"/>
                                                     </StackLayout>
+                                                        </Grid>
                                                 </StackLayout>
                                             </Frame>
                                         </ViewCell.View>
@@ -153,9 +159,18 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b" FontFamily="Oswald-Regular" />
+                                <Label Margin="20,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
+                                         <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                                        </Label>
                                 <RelativeLayout HeightRequest="200" VerticalOptions="Start">
-                                    <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}" RowHeight="150" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
+                                    <ListView Rotation="270" 
+                                              ItemsSource="{Binding PromocionesDetalle}" 
+                                              RowHeight="200" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <ViewCell>

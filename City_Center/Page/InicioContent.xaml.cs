@@ -20,7 +20,6 @@ namespace City_Center.Page
         {
             InitializeComponent();
             _webHotel = new WebViewHotel();
-            NavigationPage.SetTitleIcon(this, "logo.png");
 
         }
 
@@ -60,11 +59,18 @@ namespace City_Center.Page
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
-            VariablesGlobales.FechaInicio = FechaInicio.Date;
-            VariablesGlobales.FechaFin = FechaFinal.Date;
-            VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.SelectedItem);
+            if (FechaFinal.Date < FechaInicio.Date)
+            {
+                await Mensajes.Info("La fecha final no puede ser menor a la fecha inicial");
+            }
+            else
+            {
+                VariablesGlobales.FechaInicio = FechaInicio.Date;
+                VariablesGlobales.FechaFin = FechaFinal.Date;
+                VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.SelectedItem);
 
-           await Navigation.PushPopupAsync(_webHotel);
+                await Navigation.PushPopupAsync(_webHotel);   
+            }
         }
 
         private void Btn1_Clicked(object sender, EventArgs e)
@@ -120,6 +126,29 @@ namespace City_Center.Page
             tickets.Source = "TICKETSHOWS";
             reservarMesa.Source = "RESERVATUMESA";
             tienda.Source = "TIENDAONLINE_S";
+        }
+
+        void CambiaIcono(object sender, System.EventArgs e)
+        {
+            try
+            {
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                if (isLoggedIn)
+                {
+
+                    Image image = sender as Image;
+
+                    image.Source = "FavoritoOK";
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+
+            }
         }
 
     }

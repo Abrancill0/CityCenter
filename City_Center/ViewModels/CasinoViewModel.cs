@@ -657,11 +657,11 @@ namespace City_Center.ViewModels
             this.apiService = new ApiService();
 
             this.LoadDestacados();
+            this.LoadTorneo();
             this.LoadPromociones();
             this.LoadPozos();
             this.LoadSalaPoker();
             this.LoadTarjetas();
-
         }
 
 
