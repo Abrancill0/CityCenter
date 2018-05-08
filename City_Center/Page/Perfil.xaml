@@ -193,15 +193,9 @@
                                 </OnPlatform>
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
-
-                         <xfx:XfxEntry Text="{Binding Fecha}" Placeholder="Fecha de Nacimiento" >
-                            <Entry.HeightRequest>
-                                <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">60</On>
-                                </OnPlatform>
-                            </Entry.HeightRequest>
-                        </xfx:XfxEntry>
+                        <DatePicker Date="{Binding Fecha}" Placeholder="Fecha de Nacimiento"> 
+                        </DatePicker>
+                       
                         <Label HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin = "50,0" Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Black"/>
                          <StackLayout>
                             <Label Text="Tipo documento" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>

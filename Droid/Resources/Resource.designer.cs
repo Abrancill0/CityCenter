@@ -5394,7 +5394,7 @@ namespace City_Center.Droid
 			public const int favorito3 = 2130837682;
 			
 			// aapt resource value: 0x7f0200b3
-			public const int FavoritoOk = 2130837683;
+			public const int FavoritoOK = 2130837683;
 			
 			// aapt resource value: 0x7f0200b4
 			public const int food = 2130837684;

@@ -481,7 +481,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\checkin_rosa.png" />
     <AndroidResource Include="Resources\drawable-hdpi\checkin_verde.png" />
     <AndroidResource Include="Resources\drawable-hdpi\favorito1.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\FavoritoOk.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\FavoritoOK.png" />
     <AndroidResource Include="Resources\drawable-hdpi\favorito3.png" />
   </ItemGroup>
   <ItemGroup>
