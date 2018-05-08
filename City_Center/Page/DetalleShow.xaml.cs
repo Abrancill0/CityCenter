@@ -11,6 +11,7 @@ namespace City_Center.Page
         public DetalleShow()
         {
             InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "logo.png");
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)

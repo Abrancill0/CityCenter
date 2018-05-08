@@ -11,6 +11,8 @@ namespace City_Center.Page
         public TabPage()
         {
             InitializeComponent();
+
+            NavigationPage.SetTitleIcon(this, "logo.png");
         }
     }
 }

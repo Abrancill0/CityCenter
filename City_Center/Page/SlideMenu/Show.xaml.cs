@@ -14,6 +14,8 @@ namespace City_Center.Page.SlideMenu
         public Show()
         {
             InitializeComponent();
+
+            NavigationPage.SetTitleIcon(this, "logo.png");
         }
 
         protected override void OnDisappearing()

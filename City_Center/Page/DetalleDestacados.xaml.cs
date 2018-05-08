@@ -10,6 +10,8 @@ namespace City_Center.Page
         public DetalleDestacados()
         {
             InitializeComponent();
+
+            NavigationPage.SetTitleIcon(this, "logo.png");
         }
     }
 }

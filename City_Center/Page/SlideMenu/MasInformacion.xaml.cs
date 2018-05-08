@@ -10,6 +10,8 @@ namespace City_Center.Page.SlideMenu
         public MasInformacion()
         {
             InitializeComponent();
+
+            NavigationPage.SetTitleIcon(this, "logo.png");
         }
     }
 }

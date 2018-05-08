@@ -16,6 +16,7 @@ namespace City_Center.Page
         public DetalleRestaurante()
         {
             InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "logo.png");
         }
 
         protected override void OnAppearing()
