@@ -193,6 +193,7 @@
                                 </OnPlatform>
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
+
                          <xfx:XfxEntry Text="{Binding Fecha}" Placeholder="Fecha de Nacimiento" >
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
