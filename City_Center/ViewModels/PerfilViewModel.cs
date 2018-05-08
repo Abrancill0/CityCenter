@@ -123,6 +123,13 @@ namespace City_Center.ViewModels
 
         private async void ActualizaPerfil()
         {
+
+            if (Contraseña != Contraseña2)
+            {
+                await Mensajes.Info("No coiciden las contraseñas,favor de verificar");  
+            }
+
+
             if (string.IsNullOrEmpty(NumeroSocio))
             {
                 await Mensajes.Info("Usuario actual no cuenta con tarjeta Win");
@@ -178,13 +185,17 @@ namespace City_Center.ViewModels
 
             list = (ActualizaUsuarioReturn)response.Result;
 
+            Application.Current.Properties["Email"] = Email;
+            Application.Current.Properties["NombreCompleto"]= Nombre ;
+            Application.Current.Properties["Ciudad"] = Ciudad;
+            Application.Current.Properties["Pass"] = Contraseña ;
+            Application.Current.Properties["Pass"] = Contraseña2;
+            Application.Current.Properties["FechaNacimiento"] = Fecha;
+            Application.Current.Properties["FotoPerfil"] = Imagen;
 
-            //Application.Current.Properties["NombreCompleto"] = Nombre;
-            //Ciudad = Application.Current.Properties["Ciudad"].ToString();
-            //Contraseña = Application.Current.Properties["Pass"].ToString();
-            //Contraseña2 = Application.Current.Properties["Pass"].ToString();
-            //Fecha = Application.Current.Properties["FechaNacimiento"].ToString();
-
+            Application.Current.Properties["TipoDocumento"] =TipoDocumento;
+            Application.Current.Properties["NumeroDocumento"] =NumeroDocumento;
+            Application.Current.Properties["NumeroSocio"] = NumeroSocio;
 
             await Mensajes.success("Usuario Actualizado correctamente");
         }

@@ -226,7 +226,7 @@
                                           <Picker x:Name="NoPersona"
                                                   Title="Personas"
                                                   SelectedItem="{Binding NoPersonas, Mode=TwoWay}"
-                                                  ItemsSource="{Binding ListaOpciones1}"
+                                                 
                                                   ></Picker>
                                                 </Grid>
                                         </StackLayout>

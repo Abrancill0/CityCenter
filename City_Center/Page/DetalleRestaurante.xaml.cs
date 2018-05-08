@@ -7,9 +7,7 @@ namespace City_Center.Page
 {
     public partial class DetalleRestaurante : ContentPage
     {
-        string[] ListaOpciones;
-
-        private string[] ListaOpciones1;
+        private string[] ListaOpciones;
         private string[] ListaOpciones2;
         private string[] ListaOpciones3;
 
@@ -33,7 +31,7 @@ namespace City_Center.Page
 
             ListaOpciones3 = new string[] { "No", "Si" };
 
-            NoPersona.ItemsSource = ListaOpciones1;
+            NoPersona.ItemsSource = ListaOpciones;
             CR.ItemsSource = ListaOpciones2;
             Combosillaniños.ItemsSource = ListaOpciones3;
 

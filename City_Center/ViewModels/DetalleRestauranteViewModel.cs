@@ -11,6 +11,7 @@ using System.Linq;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using City_Center.Models;
+using Android.Gms.Auth;
 
 namespace City_Center.ViewModels
 {
@@ -321,6 +322,8 @@ namespace City_Center.ViewModels
             this.apiService = new ApiService();
 
             this.rd = rd;
+
+            FechaInicio = DateTime.Today;
 
             LoadDetalleRestaurante();
         }

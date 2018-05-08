@@ -193,12 +193,26 @@
                                 </OnPlatform>
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
-                        <DatePicker Date="{Binding Fecha}" Placeholder="Fecha de Nacimiento"> 
-                        </DatePicker>
-                       
+
+                        <StackLayout>
+                            <Label Text="Fecha Nacimiento"
+                                   TextColor="Gray"
+                                   Margin="5,2,0,0"
+                                   HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   FontSize="Small"></Label>
+                             <DatePicker Date="{Binding Fecha}"> 
+                                </DatePicker>
+                            </StackLayout>
+
                         <Label HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin = "50,0" Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Black"/>
                          <StackLayout>
-                            <Label Text="Tipo documento" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                            <Label Text="Tipo documento"
+                                   TextColor="Gray"
+                                   Margin="5,2,0,0"
+                                   FontSize="Small"
+                                   HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"></Label>
                             <Grid Padding="2, 0">    
                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
                             <Picker Margin="5"
