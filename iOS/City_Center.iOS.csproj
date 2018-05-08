@@ -383,13 +383,12 @@
     <BundleResource Include="Resources\warning.png" />
     <BundleResource Include="Resources\Wifi.png" />
     <BundleResource Include="Resources\WifiLibre.png" />
-    <BundleResource Include="Resources\FavoritoOK.png" />
     <BundleResource Include="Resources\DummyCard.png" />
     <BundleResource Include="Resources\btn_contacto.png" />
     <BundleResource Include="Resources\checkin_rosa.png" />
     <BundleResource Include="Resources\checkin_verde.png" />
     <BundleResource Include="Resources\favorito1.png" />
-    <BundleResource Include="Resources\favorito2.png" />
+    <BundleResource Include="Resources\FavoritoOk.png" />
     <BundleResource Include="Resources\favorito3.png" />
   </ItemGroup>
   <ItemGroup>
