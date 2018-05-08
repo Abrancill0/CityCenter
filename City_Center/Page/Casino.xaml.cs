@@ -46,7 +46,8 @@ namespace City_Center.Page
 
             var response = await DatosUsuarioRequest.Get<TarjetasReturn>("/tarjetas/indexApp", content);
 
-            if (response.estatus != 0){
+            if (response.estatus != 0)
+            {
                foreach(TarjetasDetalle it in response.resultado)
                 {
                     Grid grid = new Grid{
@@ -61,7 +62,7 @@ namespace City_Center.Page
                     {
                         Source = "http://cc.comprogapp.com/" + it.tar_imagen,
                         Aspect = Aspect.AspectFit
-                    };
+                   };
 
                     Label name = new Label
                     {
