@@ -32,6 +32,8 @@ namespace City_Center.ViewModels
         private int puntosWin;
         private string noSocio;
 
+        private bool verTarjeta;
+
         private TarjetaUsuarioReturn listaTarjetausuario;
         private ObservableCollection<TarjetaUsuarioDetalle> tarjetaUsuarioDetalle;
 
@@ -93,6 +95,12 @@ namespace City_Center.ViewModels
         {
             get { return this.noSocio; }
             set { SetValue(ref this.noSocio, value); }
+        }
+
+        public bool VerTarjeta
+        {
+            get { return this.verTarjeta; }
+            set { SetValue(ref this.verTarjeta, value); }
         }
 
         #endregion
@@ -264,6 +272,8 @@ namespace City_Center.ViewModels
             if (!connection.IsSuccess)
             {
                 await Mensajes.Error(connection.Message);
+                   
+                VerTarjeta = false;
 
                 return;
             }
@@ -282,21 +292,23 @@ namespace City_Center.ViewModels
             {
                 await Mensajes.Error("Error al cargar Tarjeta WIn");
 
+                    VerTarjeta = false;
+
                 return;
             }
 
             this.listaTarjetausuario = (TarjetaUsuarioReturn)response.Result;
 
-            ImagenTarjeta = VariablesGlobales.RutaServidor + listaTarjetausuario.resultado.tar_imagen;
+                ImagenTarjeta = VariablesGlobales.RutaServidor + listaTarjetausuario.resultado.tar_imagen;
 
                 PuntosWin = listaTarjetausuario.resultado.tar_puntos;
                 NoSocio = listaTarjetausuario.resultado.tar_id;
 
-
+                VerTarjeta = true;
             }
             catch (Exception)
             {
-             //   await Mensajes.Error("Detalle Tarjeta" + ex.ToString());
+                VerTarjeta = false;
             }
 
         }

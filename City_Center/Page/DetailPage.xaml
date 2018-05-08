@@ -23,7 +23,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <StackLayout VerticalOptions="EndAndExpand">
-                <AbsoluteLayout IsVisible="{Binding PerfilVisible}"
+                <AbsoluteLayout IsVisible="{Binding VerTarjeta}"
                     Padding = "5,45"
                                 HeightRequest="150"
                                 WidthRequest="250"
@@ -32,7 +32,7 @@
                            Aspect="Fill" 
                            HeightRequest="150" 
                            WidthRequest="250"
-                           IsVisible="{Binding PerfilVisible}"/>
+                           IsVisible="{Binding VerTarjeta}"/>
                     
                     <Label Text="PUNTOS WIN"
                            FontSize = "8"
@@ -40,7 +40,7 @@
                            HorizontalOptions="Center"                         
                            AbsoluteLayout.LayoutFlags="PositionProportional"
                            AbsoluteLayout.LayoutBounds="0.9,0.1,-1,-1"
-                           IsVisible="{Binding PerfilVisible}">
+                           IsVisible="{Binding VerTarjeta}">
                     </Label>
                    <Label Text="{Binding PuntosWin}"
                            FontSize = "12"
@@ -48,7 +48,7 @@
                            HorizontalOptions="Center"                         
                            AbsoluteLayout.LayoutFlags="PositionProportional"
                            AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1"
-                          IsVisible="{Binding PerfilVisible}">
+                          IsVisible="{Binding VerTarjeta}">
                     </Label>
                     <Label Text="Socio N. "
                            FontSize = "Micro"
@@ -56,7 +56,7 @@
                            HorizontalOptions="Center"                         
                            AbsoluteLayout.LayoutFlags="PositionProportional"
                            AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1"
-                           IsVisible="{Binding PerfilVisible}">
+                           IsVisible="{Binding VerTarjeta}">
                     </Label>
                     <Label 
                            Text="{Binding NoSocio}"
@@ -66,7 +66,7 @@
                            VerticalOptions="Center"                
                            AbsoluteLayout.LayoutFlags="PositionProportional"
                            AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1"
-                        IsVisible="{Binding PerfilVisible}">
+                        IsVisible="{Binding VerTarjeta}">
                     </Label>
                 </AbsoluteLayout>
                 <Grid ColumnSpacing="5" BackgroundColor="#1B0938" IsVisible="{Binding PerfilVisible}">

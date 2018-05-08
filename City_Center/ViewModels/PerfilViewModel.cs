@@ -163,7 +163,7 @@ namespace City_Center.ViewModels
                 new KeyValuePair<string, string>("usu_estatus", "1"),
                 new KeyValuePair<string, string>("usu_tipo_documento", TipoDocumento),
                 new KeyValuePair<string, string>("usu_no_documento", NumeroDocumento),
-
+                new KeyValuePair<string, string>("passUpdate","1" ),
             });
 
 

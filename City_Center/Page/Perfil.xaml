@@ -149,7 +149,7 @@
                         </ContentView.GestureRecognizers>
                     </ContentView>
                 </Grid>
-                <StackLayout x:Name="SL1" IsVisible="true">
+                <StackLayout x:Name="SL1" IsVisible="true" Margin="10">
                         <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Correo electrónico*">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
@@ -204,7 +204,7 @@
                         <Label HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin = "50,0" Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Black"/>
                          <StackLayout>
                             <Label Text="Tipo documento" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
-                            <Grid Padding="15, 0">    
+                            <Grid Padding="2, 0">    
                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
                             <Picker Margin="5"
                                     x:Name="TipoDocumento"
