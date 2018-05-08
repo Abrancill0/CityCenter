@@ -483,6 +483,8 @@
     <AndroidResource Include="Resources\drawable-hdpi\favorito1.png" />
     <AndroidResource Include="Resources\drawable-hdpi\FavoritoOK.png" />
     <AndroidResource Include="Resources\drawable-hdpi\favorito3.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\promodown.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\promoup.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
