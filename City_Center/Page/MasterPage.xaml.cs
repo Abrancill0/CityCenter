@@ -11,7 +11,8 @@ namespace City_Center.Page
         {
             InitializeComponent();
            
-            Detail = new NavigationPage (new TabPage());
+            Detail = new NavigationPage (new TabPage()){ BarBackgroundColor = Color.FromHex("#23144B")};
+           
         }
     }
 }

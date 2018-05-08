@@ -21,6 +21,7 @@ namespace City_Center
             bool isLoggedIn = Properties.ContainsKey("IsLoggedIn") ?
                      (bool)Properties["IsLoggedIn"] : false;
 
+
             //if (isLoggedIn)
             //{
             MainPage = new MasterPage();

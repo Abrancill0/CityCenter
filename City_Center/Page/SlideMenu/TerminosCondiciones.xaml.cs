@@ -10,6 +10,8 @@ namespace City_Center.Page.SlideMenu
         public TerminosCondiciones()
         {
             InitializeComponent();
+
+            NavigationPage.SetTitleIcon(this, "logo.png");
         }
     }
 }
