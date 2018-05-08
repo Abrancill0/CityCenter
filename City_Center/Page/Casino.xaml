@@ -9,7 +9,9 @@
       <ContentPage.ToolbarItems>
         <ToolbarItem Icon="Chat"/>
     </ContentPage.ToolbarItems>
+
     <ContentPage.Resources>
+        
         <ResourceDictionary>
             <Style x:Name="TabTopLabel" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
@@ -23,15 +25,26 @@
     <ContentPage.Content>
         <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Casino}">
             
-                <AbsoluteLayout>
-                    <Image HeightRequest="100" Aspect="AspectFill"  Source="CASINOmin" />
+                 <Grid  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                     <Image  Aspect="AspectFill"  Source="CASINOmin" Grid.Row = "0" Grid.Column = "0" Grid.ColumnSpan = "2"  />
                      <Button Image ="checkin_rosa"
                             BackgroundColor = "Transparent"
-                              ContentLayout = "Left,0"
+                             ContentLayout = "Left,0"
                              Text = ""
-                            AbsoluteLayout.LayoutFlags="PositionProportional"
-                           AbsoluteLayout.LayoutBounds="0.9,0.5,-1,-1"/>
-                </AbsoluteLayout>
+                             Grid.Row = "0" Grid.Column = "1"
+                             VerticalOptions = "Center"
+                            />
+                </Grid>
             
             <Grid BackgroundColor="#E91E63" Padding="0">
                 <Grid.ColumnDefinitions>

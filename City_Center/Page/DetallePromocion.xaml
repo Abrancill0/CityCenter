@@ -80,15 +80,13 @@
                            HorizontalTextAlignment="Start"
                            Text="{Binding pd.pro_descripcion}" />
                 </StackLayout>
-                <StackLayout Margin="30,30,30,25" BackgroundColor="#250C4B" >
+                <StackLayout>
                      <ffimageloading:CachedImage x:Name="FlechaArriba"
                                                  IsVisible="false"
-                                            HeightRequest="20"
-                                            WidthRequest="20"
                                             Aspect="AspectFit"
                                             LoadingPlaceholder="image_loading.png"
                                             ErrorPlaceholder="image_error.png"
-                                            Source="ArrowUp"
+                                            Source="promoup"
                                             HorizontalOptions="Center"
                                             Margin="0,5,0,0">
                        <ffimageloading:CachedImage.GestureRecognizers>
@@ -96,25 +94,22 @@
                        </ffimageloading:CachedImage.GestureRecognizers>
                        </ffimageloading:CachedImage>
                      <Button 
-                        Text="PROMO"
                         TextColor="White"
-                        HeightRequest="50"
-                        BackgroundColor="#250C4B"
+                        WidthRequest="120"
+                        HeightRequest="80"
                         Clicked="Handle_Clicked"/>
                          <ffimageloading:CachedImage x:Name="FlechaAbajo"
-                                            HeightRequest="20"
-                                            WidthRequest="20"
                                             Aspect="AspectFit"
                                             LoadingPlaceholder="image_loading.png"
                                             ErrorPlaceholder="image_error.png"
-                                            Source="ArrowDown"
+                                            Source="promodown"
                                             HorizontalOptions="Center"
                                             Margin="0,0,0,5">
                        <ffimageloading:CachedImage.GestureRecognizers>
                        <TapGestureRecognizer Tapped="Handle_Clicked" />
                        </ffimageloading:CachedImage.GestureRecognizers>
                        </ffimageloading:CachedImage>
-                                            
+
                 </StackLayout>
                
                 <StackLayout x:Name="SLR" IsVisible="false" Margin="10">

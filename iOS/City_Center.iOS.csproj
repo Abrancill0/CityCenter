@@ -390,6 +390,8 @@
     <BundleResource Include="Resources\favorito1.png" />
     <BundleResource Include="Resources\FavoritoOk.png" />
     <BundleResource Include="Resources\favorito3.png" />
+    <BundleResource Include="Resources\promodown.png" />
+    <BundleResource Include="Resources\promoup.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />
