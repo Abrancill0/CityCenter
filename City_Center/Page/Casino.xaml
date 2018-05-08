@@ -270,7 +270,7 @@
                                 <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b" FontFamily="Oswald-Regular" />   
                         <RelativeLayout HeightRequest="200" VerticalOptions="Start">
                             <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}"
-                                      RowHeight="150"  SeparatorVisibility="None"
+                                      RowHeight="200"  SeparatorVisibility="None"
                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}"
                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}"
                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}"
@@ -280,7 +280,7 @@
                                     <DataTemplate>
                                         <ViewCell>
                                             <ContentView Rotation="90" BackgroundColor="Transparent">
-                                                <StackLayout HeightRequest="250" WidthRequest="230" Margin="0,5,0,0">
+                                                <StackLayout HeightRequest="250" WidthRequest="100" Margin="0,5,0,0">
                                                             <Grid Padding="3" CompressedLayout.IsHeadless="true">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
@@ -288,8 +288,8 @@
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                                     <ffimageloading:CachedImage HeightRequest="250" 
-                                                                                WidthRequest="130"
+                                                     <ffimageloading:CachedImage HeightRequest="190"
+                                                                                 WidthRequest="80"
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
