@@ -26,10 +26,29 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Hotel}">
-            <StackLayout>
-                <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="HOTELmin" />
-            </StackLayout>
+        <StackLayout  Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Hotel}">
+         
+            <Grid  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                     <Image  Aspect="AspectFill"  Source="HOTELmin" Grid.Row = "0" Grid.Column = "0" Grid.ColumnSpan = "2"  />
+                     <Button Image ="checkin_verde"
+                            BackgroundColor = "Transparent"
+                             ContentLayout = "Left,0"
+                             Text = ""
+                             Grid.Row = "0" Grid.Column = "1"
+                             VerticalOptions = "Center"
+                            />
+                </Grid>
+               
             <Grid BackgroundColor="#2D97A3" Padding="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*">
@@ -394,7 +413,14 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout Padding="10, 10, 0, 0" HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#6E5D87" FontFamily="Oswald-Regular" />   
+                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#6E5D87" FontFamily="Oswald-Regular">
+                                         <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                                    </Label>
                         <RelativeLayout HeightRequest="200" VerticalOptions="Start">
                             <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}"
                                       RowHeight="150"  SeparatorVisibility="None"

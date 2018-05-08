@@ -479,6 +479,11 @@
     <AndroidResource Include="Resources\drawable-hdpi\VariedadGastronomica.png" />
     <AndroidResource Include="Resources\drawable-hdpi\VideoConferencia.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Wifi.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\checkin_rosa.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\checkin_verde.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\favorito1.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\favorito2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\favorito3.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />

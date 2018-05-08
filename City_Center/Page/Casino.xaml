@@ -22,9 +22,17 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Casino}">
-            <StackLayout>
-                <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  DownsampleUseDipUnits="false" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="CASINOmin" />
-            </StackLayout>
+            
+                <AbsoluteLayout>
+                    <Image HeightRequest="100" Aspect="AspectFill"  Source="CASINOmin" />
+                     <Button Image ="checkin_rosa"
+                            BackgroundColor = "Transparent"
+                              ContentLayout = "Left,0"
+                             Text = ""
+                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.9,0.5,-1,-1"/>
+                </AbsoluteLayout>
+            
             <Grid BackgroundColor="#E91E63" Padding="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*">
@@ -246,8 +254,11 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+<<<<<<< HEAD
 
                               
+=======
+>>>>>>> fdaa379abadcadfc3c686fcf1d9bf42cf8d41591
                                 <Label HorizontalOptions="Start" Margin="20, 0" HorizontalTextAlignment="Start" Text="POZOS" TextColor="#250c4b" FontFamily="Oswald-Regular">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
@@ -256,7 +267,10 @@
                                         </OnPlatform>
                                       </Label.FontFamily>
                                  </Label>  
+<<<<<<< HEAD
 
+=======
+>>>>>>> fdaa379abadcadfc3c686fcf1d9bf42cf8d41591
                                 <flv:FlowListView SeparatorVisibility="None"
                                                   HasUnevenRows="true"
                                                   FlowColumnMinWidth="110"
