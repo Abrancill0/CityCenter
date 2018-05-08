@@ -112,7 +112,8 @@
                                                           <TapGestureRecognizer Command="{Binding DetalleCommand}" />
                                                     </Frame.GestureRecognizers>
                                                 <StackLayout Orientation="Vertical">
-                                                    <ffimageloading:CachedImage HeightRequest="100"
+                                                    <Grid HeightRequest="160">
+                                                    <ffimageloading:CachedImage 
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
@@ -121,23 +122,28 @@
                                                             <TapGestureRecognizer Command="{Binding DetalleCommand}" />
                                                         </ffimageloading:CachedImage.GestureRecognizers>
                                                     </ffimageloading:CachedImage>
-                                                    <StackLayout Padding="0,45,20,0" HorizontalOptions="End" HeightRequest="55" WidthRequest="55">
+                                                        </Grid>
+                                                    <Grid>
+                                                    <StackLayout HorizontalOptions="End" HeightRequest="55" WidthRequest="55">
                                                         <ffimageloading:CachedImage 
                                                         HeightRequest="55" 
                                                             Aspect="AspectFit"
+                                                            Margin="0, -35, 10, 0"
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png" 
                                                         Source="{Binding reb_tipo}" 
                                                         DownsampleToViewSize="true"/>
                                                     </StackLayout>
-                                                    <StackLayout Padding="5,-20,0,0">
+                                                    <StackLayout >
                                                         <Label TextColor="#7A5BA5" Text="{Binding reb_nombre}"
                                                                HorizontalOptions="Start"
+                                                               Margin="10, 10, 0, 0"
                                                                HorizontalTextAlignment="Start"
                                                                FontSize="Medium"
                                                                FontFamily="Oswald-Regular"
                                                                FontAttributes="Bold"/>
                                                     </StackLayout>
+                                                        </Grid>
                                                 </StackLayout>
                                             </Frame>
                                         </ViewCell.View>
