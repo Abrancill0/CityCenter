@@ -135,13 +135,19 @@
                                                         DownsampleToViewSize="true"/>
                                                     </StackLayout>
                                                     <StackLayout >
-                                                        <Label TextColor="#7A5BA5" Text="{Binding reb_nombre}"
+                                                        <Label TextColor="#341E58" Text="{Binding reb_nombre}"
                                                                HorizontalOptions="Start"
                                                                Margin="10, 10, 0, 0"
                                                                HorizontalTextAlignment="Start"
                                                                FontSize="Medium"
-                                                               FontFamily="Oswald-Regular"
-                                                               FontAttributes="Bold"/>
+                                                               FontAttributes="Bold">
+                                                                <Label.FontFamily>
+                                                                    <OnPlatform x:TypeArguments="x:String">
+                                                                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                    </OnPlatform>
+                                                                </Label.FontFamily>
+                                                             </Label>
                                                     </StackLayout>
                                                         </Grid>
                                                 </StackLayout>
