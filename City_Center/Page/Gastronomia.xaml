@@ -159,9 +159,18 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b" FontFamily="Oswald-Regular" />
+                                <Label Margin="20,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
+                                         <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                                        </Label>
                                 <RelativeLayout HeightRequest="200" VerticalOptions="Start">
-                                    <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}" RowHeight="150" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
+                                    <ListView Rotation="270" 
+                                              ItemsSource="{Binding PromocionesDetalle}" 
+                                              RowHeight="200" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <ViewCell>
