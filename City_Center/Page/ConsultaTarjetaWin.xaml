@@ -13,7 +13,8 @@
             <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontFamily" Value="Roboto-Regular" />
-                <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
+                <Setter Property="ActivePlaceholderColor" Value="#FFFFFF"/>
+
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -29,14 +30,20 @@
                 </Label.FontFamily>
             </Label>
             <StackLayout Padding = "50,5" HorizontalOptions = "Center">
-                <Label Text="Tipo documento" TextColor="Gray" Margin="5,2,0,0" FontSize="Small" />
+                <Label Text="Tipo documento" TextColor="White" Margin="5,2,0,0" FontSize="Small" />
                 <Grid Padding="15, 0">
                     <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End" />
-                    <Picker Margin="5" x:Name="TipoDocumento" TextColor = "White" ItemsSource="{Binding ListaOpciones}" Title="Tipo Documento">
+                    <Picker Margin="5" x:Name="TipoDocumento"
+                            TextColor = "White"
+                            ItemsSource="{Binding ListaOpciones}"
+                            Title="Tipo Documento">
                     </Picker>
                 </Grid>
             
-                <xfx:XfxEntry TextColor = "White" Style="{DynamicResource EntryStyle}" Placeholder="Numero de Documento">
+                <xfx:XfxEntry TextColor = "White"
+                              Style="{DynamicResource EntryStyle}"
+                              Placeholder="Numero de Documento"
+                              PlaceholderColor="White">
                     <Entry.HeightRequest>
                         <OnPlatform x:TypeArguments="x:Double">
                             <On Platform="iOS">60</On>
@@ -57,6 +64,7 @@
                <xfx:XfxEntry TextColor = "White"
                              Style="{DynamicResource EntryStyle}"
                              Placeholder="No Socio"
+                             PlaceholderColor="White"
                              Text="{Binding NoSocio,Mode=TwoWay}">
                     <Entry.HeightRequest >
                         <OnPlatform x:TypeArguments="x:Double">

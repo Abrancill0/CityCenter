@@ -8,21 +8,27 @@
             <Label HorizontalOptions="Start"
                    HorizontalTextAlignment="Start"
                    TextColor="#250c4b"
-                   FontFamily="Oswald-Regular"
+
                    Text="RECOMPESAS WIN"
                    FontSize="Large"
-                   Margin="5"/>
+                   Margin="5">
+                 <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+            </Label>
             <ListView ItemsSource="{Binding RecompensasWinDetalle}" HasUnevenRows="true" HeightRequest="100">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal" BackgroundColor="{Binding Color}">
                                     <Grid HorizontalOptions="FillAndExpand" Margin="5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1.5*" />
                                             <ColumnDefinition Width="1*" />
-                                            <ColumnDefinition Width="0.5*" />
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="1*" />
@@ -38,14 +44,7 @@
                                                Grid.Row="0"
                                                Grid.Column="1"
                                                HorizontalTextAlignment="Start"
-                                               Text="{Binding wre_puntos}"
-                                               FontSize="Small"
-                                               FontFamily="Oswald-Regular" />
-                                        <Label TextColor="Black"
-                                               Grid.Row="0"
-                                               Grid.Column="2"
-                                               HorizontalTextAlignment="Start"
-                                               Text="PTS"
+                                               Text="{Binding wre_puntos,StringFormat='{0} PTS'}"
                                                FontSize="Small"
                                                FontFamily="Oswald-Regular" />
                                     </Grid>

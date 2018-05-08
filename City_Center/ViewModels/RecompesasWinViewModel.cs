@@ -69,11 +69,11 @@ namespace City_Center.ViewModels
 
             RecompensasWinDetalle = new ObservableCollection<RecompesasWinDetalle>();
 
+            string Color ="#FFFFFF";
+
             foreach (var l in listRecompensasWin.resultado)
             {
-
-
-
+                
                 RecompensasWinDetalle.Add(new RecompesasWinDetalle()
                 {
                     wre_id = l.wre_id,
@@ -86,8 +86,17 @@ namespace City_Center.ViewModels
                     wre_fecha_hora_modifico = l.wre_fecha_hora_modifico,
                     wre_estatus = l.wre_estatus,
                     wre_eliminado = l.wre_eliminado,
-                    Color = ""
+                    Color = Color
                 });
+
+                if (Color =="#FFFFFF")
+                {
+                    Color = "#FCE8F0"; 
+                }
+                else
+                {
+                    Color = "#FFFFFF"; 
+                }
 
             }
 
