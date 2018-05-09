@@ -13,12 +13,12 @@ namespace City_Center.Page
     public partial class Casino : ContentPage
     {
         string[] ListaOpciones;
-
+       
         public Casino()
         {
             InitializeComponent();
             //MainViewModel.GetInstance().Casino = new CasinoViewModel();
-
+         
             ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2" };
 
             NavigationPage.SetTitleIcon(this, "logo.png");
@@ -32,7 +32,6 @@ namespace City_Center.Page
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
 
         }
 

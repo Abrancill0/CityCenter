@@ -11,7 +11,6 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
-        
         <ResourceDictionary>
             <Style x:Name="TabTopLabel" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
