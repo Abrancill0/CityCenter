@@ -697,6 +697,8 @@ namespace City_Center.ViewModels
             this.LoadPozos();
             this.LoadSalaPoker();
             this.LoadTarjetas();
+
+            
         }
 
 

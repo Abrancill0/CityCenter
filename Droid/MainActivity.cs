@@ -51,6 +51,7 @@ namespace City_Center.Droid
             BottomTabbedRenderer.ItemSpacing = 8;
             BottomTabbedRenderer.ItemPadding = new Xamarin.Forms.Thickness(8);
             BottomTabbedRenderer.BottomBarHeight = 50;
+			BottomTabbedRenderer.ItemPadding = 4;
 
             FacebookSdk.SdkInitialize(this);
             Rg.Plugins.Popup.Popup.Init(this, bundle);

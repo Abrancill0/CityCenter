@@ -8,6 +8,7 @@ namespace City_Center.Page
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TabPage : BottomTabbedPage
     {
+      
         public TabPage()
         {
             InitializeComponent();
