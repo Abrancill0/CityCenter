@@ -121,13 +121,21 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                                        <Label Text="Llegada" FontSize = "20">
+                                        <Label Text="Llegada"
+                                               FontSize = "Small"
+                                               TextColor="Gray"
+                                               Margin="5,0,0,0"
+                                               FontFamily="Oswald-Regular">
                                         </Label>
                                         <DatePicker Format="dd/MM/yyyy" x:Name="FechaInicio">
                                         </DatePicker>
                                     </StackLayout>
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
-                                        <Label Text="Salida" FontSize = "20">
+                                        <Label Text="Salida"
+                                               FontSize = "Small"
+                                               TextColor="Gray"
+                                               Margin="5,0,0,0"
+                                               FontFamily="Oswald-Regular">
                                         </Label>
                                         <DatePicker Format="dd/MM/yyyy" x:Name="FechaFinal">
                                         </DatePicker>
@@ -143,7 +151,11 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout>
-                            <Label Text="Huéspedes" TextColor="Gray" Margin="5,2,0,0" FontSize="Small"></Label>
+                            <Label Text="Huéspedes"
+                                   TextColor="Gray"
+                                   Margin="6,2,0,0"
+                                   FontSize="Small"
+                                   FontFamily="Oswald-Regular"/>
                             <Grid Padding="15, 0">    
                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
                             <Picker Margin="5" x:Name="NoPersona" Title="Huespedés"></Picker>
@@ -156,7 +168,7 @@
                                 FontSize="Small"
                                 TextColor="White"
                                 BackgroundColor="#250c4b"
-
+                                FontFamily="Oswald-Regular"
                          Clicked="Handle_Clicked"
                                 Text="VER OPCIONES" />
                     </StackLayout>

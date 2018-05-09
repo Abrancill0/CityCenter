@@ -8,7 +8,7 @@
             <Label HorizontalOptions="Start" Text="PROMOCIÓN" TextColor="#250C4B" >
                     <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="iOS" Value="Oswald-Regular"/>
                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                     </OnPlatform>
                 </Label.FontFamily>
@@ -20,7 +20,7 @@
             <Label HorizontalOptions="Start" Text="EVENTO" TextColor="#250C4B">
                     <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="iOS" Value="Oswald-Regular"/>
                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                     </OnPlatform>
                 </Label.FontFamily>
@@ -32,7 +32,7 @@
               <Label HorizontalOptions="Start" Text="SHOW" TextColor="#250C4B">
                     <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="iOS" Value="Oswald-Regular"/>
                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                     </OnPlatform>
                 </Label.FontFamily>
@@ -44,7 +44,7 @@
             <Label HorizontalOptions="Start" Text="RESERVACIÓN" TextColor="#250C4B">
                     <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="iOS" Value="Oswald-Regular"/>
                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                     </OnPlatform>
                 </Label.FontFamily>
@@ -56,7 +56,7 @@
             <Label HorizontalOptions="Start" Text="PROMOCIÓN" TextColor="#250C4B">
                     <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="iOS" Value="Oswald-Regular"/>
                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                     </OnPlatform>
                 </Label.FontFamily>

@@ -7,7 +7,7 @@
             <Label Margin = "10,0" Text="ENVÍO DE NOTIFICACIONES" HorizontalOptions="Start" HorizontalTextAlignment="Start" TextColor="#250C4B" FontSize="Medium" >
                  <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="iOS" Value="Oswald-Regular"/>
                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                     </OnPlatform>
                 </Label.FontFamily>

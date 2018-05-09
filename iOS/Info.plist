@@ -39,9 +39,9 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Fonts/Roboto-Regular</string>
-		<string>Fonts/Oswald-Bold</string>
-		<string>Fonts/Oswald-Regular</string>
+		<string>Fonts/Roboto-Regular.ttf</string>
+		<string>Fonts/Oswald-Bold.ttf</string>
+		<string>Oswald-Regular.ttf</string>
 		<string>Fonts/materialicons</string>
 	</array>
 	<key>CFBundleURLTypes</key>

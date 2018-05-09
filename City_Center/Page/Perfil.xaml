@@ -21,8 +21,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding Perfil}">
-        <Grid HeightRequest="130" BackgroundColor="#8A7C9E" VerticalOptions = "Center" >
+        <StackLayout Spacing="0" BindingContext="{Binding Perfil}">
+                <Grid HeightRequest="130" BackgroundColor="#8A7C9E" VerticalOptions = "Center" >
                     <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60">
                         </ColumnDefinition>
@@ -32,7 +32,6 @@
                         </ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
@@ -62,31 +61,41 @@
                                     FontFamily="Oswald-Regular"
                                     Grid.Column="2"
                                     Grid.Row="0"
-                                    Margin="0, 15"
+                                    Margin="-10,40,0,0"
                                     FontSize = "Small"
-                                    VerticalOptions = "EndAndExpand"
-                                    Text="HOLA"/>
-                
+                                    HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Start"
+                                    VerticalTextAlignment="End"
+                                    VerticalOptions = "End"
+                                    Text="HOLA">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                            </Label>
                             <Label  TextColor="White"
                                     FontSize = "20"
                                     FontFamily="Oswald-Regular"
                                     FontAttributes="Bold"
                                     Grid.Column="2"
                                     Grid.Row="1"
+                                    HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Start"
                                     VerticalOptions = "StartAndExpand"
+                                    VerticalTextAlignment="Start"
+                                    Margin="-10,-5,0,0"
                                     Text="{Binding Nombre, Mode=TwoWay}">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="iOS" Value="Oswald-Regular"/>
                                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                         </OnPlatform>
                                     </Label.FontFamily>
                             </Label>
                     </Grid>
-        
-        <ScrollView BackgroundColor = "White">
-             
-            <StackLayout>
+        <StackLayout>
                 <Grid BackgroundColor="#250c4b" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*">
@@ -150,6 +159,8 @@
                     </ContentView>
                 </Grid>
                 <StackLayout x:Name="SL1" IsVisible="true" Margin="10">
+                    <ScrollView BackgroundColor = "White">
+                      <StackLayout Spacing="0">
                         <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Correo electrónico*">
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
@@ -158,8 +169,7 @@
                                 </OnPlatform>
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
-
-                         <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}"
+                        <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}"
                                        Style="{DynamicResource EntryStyle}"
                                        Placeholder="Contraseña*"
                                        IsPassword="true"
@@ -171,8 +181,7 @@
                                 </OnPlatform>
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
-
-                         <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}"
+                        <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}"
                                        Style="{DynamicResource EntryStyle}"
                                        Placeholder="Cambiar Contraseña*"
                                        IsPassword="true"
@@ -184,8 +193,7 @@
                                 </OnPlatform>
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
-
-                         <xfx:XfxEntry Text="{Binding Ciudad}" Style="{DynamicResource EntryStyle}" Placeholder="Ciudad*" >
+                        <xfx:XfxEntry Text="{Binding Ciudad}" Style="{DynamicResource EntryStyle}" Placeholder="Ciudad*" >
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -193,7 +201,6 @@
                                 </OnPlatform>
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
-
                         <StackLayout>
                             <Label Text="Fecha Nacimiento"
                                    TextColor="Gray"
@@ -204,9 +211,13 @@
                              <DatePicker Date="{Binding Fecha}"> 
                                 </DatePicker>
                             </StackLayout>
-
-                        <Label HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin = "50,0" Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Black"/>
-                         <StackLayout>
+                        <Label HorizontalTextAlignment="Center"
+                               HorizontalOptions="Center"
+                               FontSize="Small"
+                               Margin = "50,25" 
+                               Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" 
+                               TextColor="Black"/>
+                        <StackLayout Margin="5">
                             <Label Text="Tipo documento"
                                    TextColor="Gray"
                                    Margin="5,2,0,0"
@@ -230,7 +241,7 @@
                                 </OnPlatform>
                             </Entry.HeightRequest>
                         </xfx:XfxEntry>
-                         <xfx:XfxEntry Text="{Binding NumeroSocio, Mode=TwoWay}" Placeholder="Numero de socio Win" >
+                        <xfx:XfxEntry Text="{Binding NumeroSocio, Mode=TwoWay}" Placeholder="Numero de socio Win" >
                             <Entry.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -251,20 +262,23 @@
                                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                     </OnPlatform>
                                 </Button.FontFamily>
-                        </Button>
-                </StackLayout>
-                    
+                        </Button>  
+                      </StackLayout> 
+                    </ScrollView>
+                </StackLayout> 
                 <StackLayout x:Name="SL2" IsVisible="false">
-                    <view:VistaPerfilConfiguracion>
+                    <ScrollView> 
+                        <view:VistaPerfilConfiguracion>
                     </view:VistaPerfilConfiguracion>
-                </StackLayout>
-                    
+                    </ScrollView>
+                </StackLayout>  
                 <StackLayout x:Name="SL3" IsVisible="false">
-                    <view:VistaPerfilNotificaciones>
+                    <ScrollView>
+                          <view:VistaPerfilNotificaciones>
                     </view:VistaPerfilNotificaciones>
+                    </ScrollView>
                 </StackLayout>
             </StackLayout>
-        </ScrollView>
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -85,12 +85,17 @@
                         </Image>
                         <!--"user.png"-->
                     </AbsoluteLayout>
-                    <Label Text="{Binding NombreUsuario}" TextColor="White" Grid.Row="0" Grid.Column="1" VerticalOptions="Center">
+                    <Label Text="{Binding NombreUsuario}"
+                           TextColor="White"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           VerticalOptions="Center"
+                           LineBreakMode="TailTruncation" WidthRequest="85">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding PerfilCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
-                    <Image Source="campana.png" Grid.Row="0" Grid.Column="2" HeightRequest="20">
+                    <Image Source="campana.png" Grid.Row="0" Grid.Column="2" HeightRequest="20" >
                     </Image>
                     <Button Command="{Binding CierraSesionCommand}" Text="Cerrar sesión" Image="logout" TextColor="White" VerticalOptions="Center" BackgroundColor="#1B0938" ContentLayout="Right,0" Grid.Row="0" Grid.Column="3" FontSize="12"
                         FontFamily="Oswald-Bold">

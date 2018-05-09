@@ -270,10 +270,7 @@ namespace City_Center.ViewModels
                 Application.Current.Properties["NumeroSocio"] = NumeroSocio;
 
                 await Application.Current.SavePropertiesAsync();
-
-                _googleManager = DependencyService.Get<IGoogleManager>();
-                _googleManager.Logout();
-
+    
                 MainViewModel.GetInstance().Master = new MasterViewModel();
                 MainViewModel.GetInstance().Inicio = new InicioViewModel();
                 MainViewModel.GetInstance().Detail = new DetailViewModel();
@@ -311,7 +308,11 @@ namespace City_Center.ViewModels
         {
             _facebookManager = DependencyService.Get<IFacebookManager>();
 
+			 UserDialogs.Instance.ShowLoading("Iniciando sesion...", MaskType.Black);
+
             _facebookManager.Login(OnLoginComplete);
+
+			_facebookManager.Logout();
         }
 
         private async void OnLoginComplete(FacebookUser facebookUser, string message)
@@ -357,14 +358,19 @@ namespace City_Center.ViewModels
 
                 await Application.Current.SavePropertiesAsync();
 
-                MainViewModel.GetInstance().Master = new MasterViewModel();
+				MainViewModel.GetInstance().Master = new MasterViewModel();
                 MainViewModel.GetInstance().Inicio = new InicioViewModel();
                 MainViewModel.GetInstance().Detail = new DetailViewModel();
                 MainViewModel.GetInstance().Casino = new CasinoViewModel();
-                MainViewModel.GetInstance().Hotel = new HotelViewModel();
-                MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
-                await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+				MasterPage fpm = new MasterPage();
+                fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
+                fpm.Detail = new NavigationPage(new TabPage()); // You have to create a Detail ContenPage()
+                Application.Current.MainPage = fpm;
+
+				await Mensajes.success("Bienvenido " + facebookUser.FirstName + ' ' + facebookUser.LastName);
+
+                UserDialogs.Instance.HideLoading();
             }
             else
             {
@@ -375,8 +381,7 @@ namespace City_Center.ViewModels
 
             }
         }
-
-
+        
         public ICommand RestablecePassCommand
         {
             get

@@ -283,8 +283,6 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
-    <BundleResource Include="Resources\Fonts\Oswald-Bold.ttf" />
-    <BundleResource Include="Resources\Fonts\Oswald-Regular.ttf" />
     <BundleResource Include="GoogleService-Info.plist" />
     <BundleResource Include="Resources\Fonts\materialicons.ttf" />
     <BundleResource Include="Resources\RESERVAHOTEL_S.png" />
@@ -392,6 +390,11 @@
     <BundleResource Include="Resources\favorito3.png" />
     <BundleResource Include="Resources\promodown.png" />
     <BundleResource Include="Resources\promoup.png" />
+    <BundleResource Include="Resources\Fonts\Oswald-Bold.ttf" />
+    <BundleResource Include="Resources\Fonts\Oswald-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Fonts\Roboto-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />
@@ -399,9 +402,6 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="GoogleManager.cs" />
     <Compile Include="Controls\TLScrollViewRenderer.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Fonts\Roboto-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
