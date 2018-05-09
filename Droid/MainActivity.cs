@@ -13,6 +13,7 @@ using FFImageLoading.Forms.Droid;
 using Naxam.Controls.Platform.Droid;
 using Xamarin;
 using Acr.UserDialogs;
+using Plugin.CurrentActivity;
 //using FFImageLoading.Forms.Droid;
 
 namespace City_Center.Droid
@@ -31,6 +32,8 @@ namespace City_Center.Droid
 
             Xfx.XfxControls.Init();
             UserDialogs.Init(this);
+
+			//CrossCurrentActivity.Current.Activity.Init(this, bundle);
 
             Forms.SetFlags("FastRenderers_Experimental");
 

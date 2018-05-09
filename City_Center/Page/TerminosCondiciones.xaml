@@ -8,8 +8,9 @@
    <ContentPage.Content>
         <ScrollView>
            <StackLayout Margin="15">
-                 <Label FontSize="Micro" Text="TÉRMINOS Y CONDICIONES DE USO"></Label>
-            <Label FontSize="Micro" Text="A continuación se detallan los Términos y Condiciones que regulan el uso que realicen las
+                 <Label FontSize="Small" Text="TÉRMINOS Y CONDICIONES DE USO"
+                        HorizontalOptions="Center" HorizontalTextAlignment="Center" FontFamily="Roboto-Regular"></Label>
+            <Label  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontSize="Small" FontFamily="Roboto-Regular" Text="A continuación se detallan los Términos y Condiciones que regulan el uso que realicen las
 personas físicas mayores de edad ó jurídicas (mediante apoderado con poder suficiente) que
 ingresen al sitio de CASINO DE ROSARIO S.A. (CUIT 30-70979529- 1) “citycenter-rosario.com.ar”
 ó descarguen su “APP”. El ingreso del Usuario al sitio referido ó la descarga de la aplicación

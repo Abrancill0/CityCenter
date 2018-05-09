@@ -8,11 +8,29 @@ namespace City_Center.Page
 {
     public partial class MasInfo : ContentPage
     {
+		private string[] ListTipoEvento;
+
         public MasInfo()
         {
             InitializeComponent();
         }
 
+		protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+			ListTipoEvento = new string[] { "Congresos, Convenciones, Seminarios", "Eventos Corporativos", "Eventos Sociales", "Casamiento", "Otros" };
+            
+			TipoEvento.ItemsSource = ListTipoEvento;
+                
+			TipoEvento.SelectedIndex = 0;
+
+			TipoEvento1.ItemsSource = ListTipoEvento;
+
+            TipoEvento1.SelectedIndex = 0;
+        }
+
+        
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
@@ -20,6 +38,8 @@ namespace City_Center.Page
             GC.Collect();
 
         }
+
+		//TipoEvento
 
         void Tab1_Tapped(object sender, System.EventArgs e)
         {
@@ -96,18 +116,19 @@ namespace City_Center.Page
             {
                 Stack1.IsVisible = false;
                 Frame1.IsVisible = true;
+				BtnContacto1.Image = "ContactoUp.png";
 
             }
             else
             {
-
+				BtnContacto1.Image = "btn_contacto.png";
                 Stack1.IsVisible = true;
                 Frame1.IsVisible = false;
             }
 
         }
 
-            void Handle_Clicked2(object sender, System.EventArgs e)
+        void Handle_Clicked2(object sender, System.EventArgs e)
             {
                 if (Frame2.IsVisible == false)
                 {

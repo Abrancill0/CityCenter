@@ -35,6 +35,8 @@ namespace City_Center.Models
             public bool eve_guardado { get; set; }
             public bool oculta { get; set; }
             public int eve_id_guardado { get; set; }
+			public bool ocultallamada { get; set; }
+			public bool ocultaonline { get; set; }
 
         }
 

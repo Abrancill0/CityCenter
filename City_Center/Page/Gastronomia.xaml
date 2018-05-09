@@ -159,7 +159,7 @@
                         </ListView>
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Margin>
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
@@ -201,15 +201,21 @@
                                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                                      </ffimageloading:CachedImage>
 
-                                                     <Label x:Name="Label"
+                                                      <Label x:Name="Label"
                                                        Margin="5"
-                                                       HorizontalOptions="Start"
-                                                       HorizontalTextAlignment="Start"
+                                                       HorizontalOptions="Center"
+                                                       HorizontalTextAlignment="Center"
                                                        VerticalOptions="End"
                                                        TextColor="White"
-                                                       FontFamily="Oswald-regular"
                                                        FontSize="Small"
-                                                       Text="{Binding pro_nombre}" />
+                                                       Text="{Binding pro_nombre}">
+                                                           <Label.FontFamily>
+                                                                <OnPlatform x:TypeArguments="x:String">
+                                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                </OnPlatform>
+                                                           </Label.FontFamily>
+                                                     </Label>
                                                                 
                                                                 </Grid>
                                                 </StackLayout>

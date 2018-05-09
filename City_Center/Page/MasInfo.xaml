@@ -9,12 +9,10 @@
      <ContentPage.ToolbarItems>
         <ToolbarItem  Icon="Chat"/>
     </ContentPage.ToolbarItems>
-    <ContentPage.Resources>
-
-        <ResourceDictionary>
+    <ContentPage.Resources><ResourceDictionary>
             <Style x:Name="TabTopLabel" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
-                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="FontFamily" Value="Oswald-Regular" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
@@ -31,7 +29,6 @@
             <StackLayout>
                 <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="CONVENCIONESmin" />
             </StackLayout>
-          
             <Grid BackgroundColor="#3F51B5" Padding="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*">
@@ -48,7 +45,7 @@
                 <Label x:Name="LabelTab1" Text="PRINCIPAL" TextColor="#E7E9F6" FontSize="12" Grid.Column="0" Style="{DynamicResource TabTopLabel}">
                     <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="iOS" Value="Oswald-Regular"/>
                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
@@ -96,12 +93,11 @@
             <StackLayout x:Name="SL1" IsVisible="true">
             <ScrollView>
                     <StackLayout>
-                          <StackLayout x:Name="Stack1">
+                          <StackLayout x:Name="Stack1" Spacing="0">
                          <StackLayout HorizontalOptions="FillAndExpand">
                             <ffimageloading:CachedImage x:Name="Img1provisional"
                             HeightRequest="150"
                             Aspect="AspectFill"
-                         
                             LoadingPlaceholder="image_loading.png"
                             ErrorPlaceholder="image_error.png"
                             Source="{Binding Imagen_Selected}" />
@@ -129,7 +125,6 @@
                                                                                 Source="{Binding gal_imagen}">
                                                         
                                                      </ffimageloading:CachedImage>
-                                                   
                                                 </StackLayout>
                                             </ContentView>
                                         </ViewCell>
@@ -138,34 +133,113 @@
                             </ListView>
                         </RelativeLayout>
                             <StackLayout HorizontalOptions="FillAndExpand" Padding="0, 20, 0, 10" Spacing="0">
-                                <Label Text="La multiplicidad de espacios reflejada en los " TextColor="Black" HorizontalOptions="Start" Margin="15, 0" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"></Label>
-                                <Label Text="salones, las terrazas al aire libre, las 14 ofertas " TextColor="Black" HorizontalOptions="Start" Margin="15, 0" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"></Label>
-                                <Label Text="gastronómicas así como la sala de usos múltiples " TextColor="Black" HorizontalOptions="Start" Margin="15, 0" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"></Label>
-                                <Label Text="permite la realización de actividades en simultáneo " TextColor="Black" HorizontalOptions="Start" Margin="15, 0" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"></Label>
-                                <Label Text="y conveniente al complejo en un lugar ideal para el " TextColor="Black" HorizontalOptions="Start" Margin="15, 0" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"></Label>
-                                <Label Text="desarrollo de congresos, convenciones, ferias, " TextColor="Black" HorizontalOptions="Start" Margin="15, 0" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"></Label>
-                                <Label Text="exposiciones, shows, premiaciones, seminarios " TextColor="Black" HorizontalOptions="Start" Margin="15, 0" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"></Label>
-                                <Label Text="viajes de incentivo, banquetes, lanzamientos de " TextColor="Black" HorizontalOptions="Start" Margin="15, 0" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"></Label>
-                                <Label Text="productos, desfiles, de los cuales ya hemos sido " TextColor="Black" HorizontalOptions="Start" Margin="15, 0" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"></Label>
-                      
+                                <Label Text="La  multiplicidad  de  espacios  reflejada  en  los "
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"> 
+                                   <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular"/>
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                        </OnPlatform>
+                                   </Label.FontFamily>
+                                    </Label>
+                                <Label Text="salones, las terrazas al aire libre,las 14 ofertas "
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       XAlign="Start"/>
+                                <Label Text="gastronómicas así como la sala de usos múltiples "
+                                       TextColor="Black" HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontSize="Default"> 
+                                   <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular"/>
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                        </OnPlatform>
+                                   </Label.FontFamily>
+                                    </Label>
+                                <Label Text="permite la realización de actividades en simultáneo "
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"> 
+                                   <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular"/>
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                        </OnPlatform>
+                                   </Label.FontFamily>
+                                    </Label>
+                                <Label Text="y conveniente al complejo en un lugar ideal para el "
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"/>
+                                <Label Text="desarrollo de congresos, convenciones, ferias, "
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"/>
+                                <Label Text="exposiciones, shows, premiaciones, seminarios "
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"/>
+                                <Label Text="viajes de incentivo, banquetes, lanzamientos de "
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"/>
+                                <Label Text="productos, desfiles, de los cuales ya hemos sido "
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"/>
+                                <Label Text="anfitrinones."
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"/>
+
                                 <Label HorizontalOptions="Start" TextColor="Black" Margin="10, 10"></Label>
                             </StackLayout>
                     </StackLayout>
-
-                   
-
-                    <Button Text=""   Image ="btn_contacto.png" HeightRequest = "50"
-                        ContentLayout = "Left,0" Clicked="Handle_Clicked2" BackgroundColor="#3F51B5" TextColor="White"></Button>
+                    <Button x:Name="BtnContacto1" Text="" Image ="btn_contacto.png" HeightRequest = "50"
+                        ContentLayout = "Left,0" Clicked="Handle_Clicked" BackgroundColor="#3F51B5" TextColor="White"></Button>
 
                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" x:Name="Frame1" IsVisible="false">
                             <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Margin>
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                        <StackLayout>
-                            <xfx:XfxEntry Placeholder="Nombre y apellido *" Margin="5,0,5,0">
+                         <StackLayout Margin="10">
+                            <xfx:XfxEntry Placeholder="Nombre y apellido *"
+                                          Margin="5,0,5,0"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Nombre}">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -173,8 +247,11 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-                             <xfx:XfxEntry Placeholder="Correo Electronico *" Margin="5,0,5,0">
+                             <xfx:XfxEntry Placeholder="Correo Electronico *"
+                                           Margin="5,0,5,0"
+                                           Style="{DynamicResource EntryStyle}"
+                                           Text="{Binding Correo}"
+                                           Keyboard="Email">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -182,8 +259,10 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-                            <xfx:XfxEntry Placeholder="Empresa" Margin="5,0,5,0">
+                            <xfx:XfxEntry Placeholder="Empresa*"
+                                          Margin="5,0,5,0"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Empresa}">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -191,9 +270,11 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-
-                             <xfx:XfxEntry Placeholder="Tipo de Evento *" Margin="5,0,5,0">
+                                  <xfx:XfxEntry Placeholder="Celular*"
+                                          Margin="5,0,5,0"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Celular}"
+                                          Keyboard="Numeric">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -201,8 +282,24 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-                            <xfx:XfxEntry Placeholder="Cantidad de asistentes *" Margin="5,0,5,0">
+                           <StackLayout Spacing="0" Margin="5">
+                                      <Label Text="Personas"
+                                             TextColor="Gray"
+                                             Margin="5,0,0,0"
+                                             HorizontalOptions="Start"
+                                             HorizontalTextAlignment="Start"
+                                             FontSize="Micro"></Label>
+                                      <Grid Padding="5, 0">
+                                          <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>    
+                                          <Picker x:Name="TipoEvento1"
+                                              Title="Tipo de Evento *"
+                                              SelectedItem="{Binding TipoEvento, Mode=TwoWay}"/>
+                                      </Grid>
+                           </StackLayout>
+                            <xfx:XfxEntry Placeholder="Cantidad de asistentes *"
+                                          Margin="5,0,5,0"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Asistentes}">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -210,8 +307,19 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-                            <xfx:XfxEntry Placeholder="Fechas Aproximadas *" Margin="5,0,5,0">
+                            <StackLayout Spacing="0" Margin="5">
+                                      <Label Text="Fecha Aproximadas *"
+                                             TextColor="Gray"
+                                             Margin="5,0,0,0"
+                                             HorizontalOptions="Start"
+                                             HorizontalTextAlignment="Start"
+                                             FontSize="Micro"/>
+                                          <DatePicker Date="{Binding Fecha, Mode=TwoWay}"/>
+                           </StackLayout>
+                            <xfx:XfxEntry Placeholder="Comentarios *"
+                                          Margin="5,0,5,0"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Comentarios}">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -219,35 +327,20 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-
-                            <xfx:XfxEntry Placeholder="Comentarios *" Margin="5,0,5,0">
-                                <Entry.HeightRequest>
-                                    <OnPlatform x:TypeArguments="x:Double">
-                                        <On Platform="iOS">60</On>
-                                        <On Platform="Android,Windows">60</On>
-                                    </OnPlatform>
-                                </Entry.HeightRequest>
-                            </xfx:XfxEntry>
-
-
-                            <Button Text="ENVIAR" BackgroundColor="#3F51B5" TextColor="White" ></Button>
+                            <Button Text="ENVIAR"
+                                    BackgroundColor="#3F51B5"
+                                    TextColor="White"
+                                    FontFamily="Oswald-Regular"
+                                    Command="{Binding EnviaCorreoCommand}"/>
                              </StackLayout>
                         </Frame>
-                   
                     </StackLayout>
-                  
-
                 </ScrollView>
-                
             </StackLayout>
             <StackLayout x:Name="SL2" IsVisible="false">
                 <ScrollView>
-
                     <StackLayout Margin="10,10,0,0">
 
-                   
-                        
                         <StackLayout Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"
                                                       
@@ -348,7 +441,7 @@
             <StackLayout x:Name="SL3" IsVisible="false">
                <ScrollView>
                     <StackLayout>
-                    <StackLayout x:Name="Stack2">
+                    <StackLayout x:Name="Stack2" Spacing="0">
                          <StackLayout HorizontalOptions="FillAndExpand">
                             <ffimageloading:CachedImage x:Name="Img1provisional2"
                             HeightRequest="150"
@@ -391,26 +484,67 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-                            <StackLayout HorizontalOptions="Start" Padding="15, 20">
-                                <Label Text="El respaldo del equipamiento técnico más avanzado y el servicio de excelencia se combinan con una cocina contemporánea e innovadora. Cuenta tmbién con áreas ideales para bienvenida y registro. Todo lo necesario para que sus reuniones y eventos sean únicos y exitosos."  TextColor="Black" HorizontalOptions="Start"></Label>
+                          <StackLayout HorizontalOptions="FillAndExpand" Padding="0, 20, 0, 20" Spacing="0">
+                                <Label Text="El respaldo del equipamiento técnico más avanzado"
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"></Label>
+                                <Label Text="y el servicio de excelencia se combinan con una"
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"></Label>
+                                <Label Text="cocina contemporánea e innovadora. Cuenta"
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"></Label>
+                                <Label Text="tmbién con áreas ideales para bienvenida y"
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"></Label>
+                                <Label Text="registro. Todo lo necesario para que sus reuniones y"
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"></Label>
+                                <Label Text="eventos sean únicos y exitosos."
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       Margin="15, 0"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"
+                                       FontFamily="Roboto-Regular"></Label>
                            </StackLayout>
                     </StackLayout>
 
-
-
-
-                    <Button Text=""   Image ="btn_contacto.png" HeightRequest = "50"
+                    <Button Text="" Image ="btn_contacto.png" HeightRequest = "50"
                         ContentLayout = "Left,0" Clicked="Handle_Clicked2" BackgroundColor="#3F51B5" TextColor="White"></Button>
 
                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" x:Name="Frame2" IsVisible="false">
                             <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Margin>
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                        <StackLayout>
-                            <xfx:XfxEntry Placeholder="Nombre y apellido *" Margin="5,0,5,0">
+                        <StackLayout Margin="10">
+                            <xfx:XfxEntry Placeholder="Nombre y apellido *"
+                                          Margin="5,0,5,0"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Nombre}">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -418,8 +552,11 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-                             <xfx:XfxEntry Placeholder="Correo Electronico *" Margin="5,0,5,0">
+                             <xfx:XfxEntry Placeholder="Correo Electronico *"
+                                           Margin="5,0,5,0"
+                                           Style="{DynamicResource EntryStyle}"
+                                           Text="{Binding Correo}"
+                                           Keyboard="Email">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -427,8 +564,10 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-                            <xfx:XfxEntry Placeholder="Empresa" Margin="5,0,5,0">
+                            <xfx:XfxEntry Placeholder="Empresa*"
+                                          Margin="5,0,5,0"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Empresa}">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -436,9 +575,11 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-
-                             <xfx:XfxEntry Placeholder="Tipo de Evento *" Margin="5,0,5,0">
+                                  <xfx:XfxEntry Placeholder="Celular*"
+                                          Margin="5,0,5,0"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Celular}"
+                                          Keyboard="Numeric">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -446,8 +587,24 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-                            <xfx:XfxEntry Placeholder="Cantidad de asistentes *" Margin="5,0,5,0">
+                           <StackLayout Spacing="0" Margin="5">
+                                      <Label Text="Personas"
+                                             TextColor="Gray"
+                                             Margin="5,0,0,0"
+                                             HorizontalOptions="Start"
+                                             HorizontalTextAlignment="Start"
+                                             FontSize="Micro"></Label>
+                                      <Grid Padding="5, 0">
+                                          <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>    
+                                          <Picker x:Name="TipoEvento"
+                                              Title="Tipo de Evento *"
+                                              SelectedItem="{Binding TipoEvento, Mode=TwoWay}"/>
+                                      </Grid>
+                           </StackLayout>
+                            <xfx:XfxEntry Placeholder="Cantidad de asistentes *"
+                                          Margin="5,0,5,0"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Asistentes}">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -455,8 +612,19 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-                            <xfx:XfxEntry Placeholder="Fechas Aproximadas *" Margin="5,0,5,0">
+                            <StackLayout Spacing="0" Margin="5">
+                                      <Label Text="Fecha Aproximadas *"
+                                             TextColor="Gray"
+                                             Margin="5,0,0,0"
+                                             HorizontalOptions="Start"
+                                             HorizontalTextAlignment="Start"
+                                             FontSize="Micro"/>
+                                          <DatePicker Date="{Binding Fecha, Mode=TwoWay}"/>
+                           </StackLayout>
+                            <xfx:XfxEntry Placeholder="Comentarios *"
+                                          Margin="5,0,5,0"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Comentarios}">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -464,19 +632,11 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-
-
-                            <xfx:XfxEntry Placeholder="Comentarios *" Margin="5,0,5,0">
-                                <Entry.HeightRequest>
-                                    <OnPlatform x:TypeArguments="x:Double">
-                                        <On Platform="iOS">60</On>
-                                        <On Platform="Android,Windows">60</On>
-                                    </OnPlatform>
-                                </Entry.HeightRequest>
-                            </xfx:XfxEntry>
-
-
-                            <Button Text="ENVIAR" BackgroundColor="#3F51B5" TextColor="White" ></Button>
+                            <Button Text="ENVIAR"
+                                    BackgroundColor="#3F51B5"
+                                    TextColor="White"
+                                    FontFamily="Oswald-Regular"
+                                    Command="{Binding EnviaCorreoCommand}"/>
                              </StackLayout>
                         </Frame>
                     </StackLayout>

@@ -27,9 +27,8 @@ namespace City_Center.PopUp
 
             int dias = (int)(VariablesGlobales.FechaFin.Date - VariablesGlobales.FechaInicio.Date).TotalDays;
 
-            Browser.Source = "https://api.pxsol.com/search/insert?Pos=Palermitano&ProductID=3035&Currency=USD&Lng=es&Type=Hotel&Start=" + Fecha1 + "&End" + Fecha2 + "&Nights=" + dias + "&Groups=º&GroupsForm=1:" + VariablesGlobales.NumeroHuespedes + ",0,0t&Device=Computer&tag=hotelesdon.com";
-
-
+			Browser.Source = "https://api.pxsol.com/search/insert?Pos=PullmanCityCenterRosario&ProductID=3176&Currency=ARS&Lng=es&Type=Hotel&Start=" + Fecha1 + "&End" + Fecha2 + "&Nights=" + dias + "&Groups=º&GroupsForm=1:" + VariablesGlobales.NumeroHuespedes + ",0,0t&Device=Mobile&tag=hotelesdon.com";
+            
         }
 
         private void OnCloseButtonTapped(object sender, EventArgs e)

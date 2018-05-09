@@ -9,6 +9,7 @@ using Plugin.Share;
 using Xamarin.Forms;
 using static City_Center.Models.EventosResultado;
 using City_Center.Clases;
+using Plugin.Messaging;
 
 namespace City_Center.ViewModels
 {
@@ -94,6 +95,41 @@ namespace City_Center.ViewModels
 
         }
 
+        
+
+		public ICommand LlamarCommand
+        {
+            get
+            {
+				return new RelayCommand(Llamar);
+            }
+        }
+
+		private  void Llamar()
+        {
+			var phoneCallTask = CrossMessaging.Current.PhoneDialer;
+
+            if (phoneCallTask.CanMakePhoneCall)
+            {
+                phoneCallTask.MakePhoneCall(ds.eve_telefono, ds.eve_nombre);
+            }
+
+        }
+
+		public ICommand CompraOnlineCommand
+        {
+            get
+            {
+				return new RelayCommand(CompraOnline);
+            }
+        }
+
+		private void CompraOnline()
+        {
+			Device.OpenUri(new Uri(ds.eve_link));
+
+        }
+        
         #endregion
 
         #region Methods

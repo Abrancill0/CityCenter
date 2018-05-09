@@ -170,8 +170,26 @@ namespace City_Center.ViewModels
                 eve_id = l.eve_id,
                 eve_guardado = l.eve_guardado,
                 eve_id_guardado = l.eve_id_guardado,
-                oculta = !(bool)l.eve_guardado
-            });
+                oculta = !(bool)l.eve_guardado,
+                eve_fecha_hora_fin = l.eve_fecha_hora_fin,
+				eve_id_usuario_creo = l.eve_id_usuario_creo,
+				eve_fecha_hora_creo= l.eve_fecha_hora_creo,
+				eve_id_usuario_modifico = l.eve_id_usuario_modifico,
+				eve_fecha_hora_modifico = l.eve_fecha_hora_modifico,
+				eve_num_usuarios_inscritos = l.eve_num_usuarios_inscritos,
+				eve_num_compartidos = l.eve_num_compartidos,
+				eve_num_favoritos = l.eve_num_favoritos,
+				eve_lista = l.eve_lista,
+				eve_carrucel = l.eve_carrucel,
+				eve_descripcion_locacion = l.eve_descripcion_locacion,
+				eve_destacado = l.eve_destacado,
+				updated_at = l.updated_at,
+				created_at = l.created_at,
+				eve_telefono = l.eve_telefono,
+				eve_tipo = l.eve_tipo,
+				ocultallamada =(string.IsNullOrEmpty(l.eve_telefono) ? false : true),
+				ocultaonline =(string.IsNullOrEmpty(l.eve_link) ? false : true)
+                });
         }
 
         #endregion

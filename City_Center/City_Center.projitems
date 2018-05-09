@@ -273,7 +273,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DetalleHotelViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GastronomiaViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HotelItemViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SalasEventosResultadoViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SalasEventosViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GastronomiaItemViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PromocionesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RecompesasWinViewModel.cs" />

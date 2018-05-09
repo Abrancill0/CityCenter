@@ -135,8 +135,36 @@
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                                 </ffimageloading:CachedImage>
 
-                                            <Label TextColor="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding eve_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" FontFamily="Oswald-Regular" />
-                                            <Label TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding eve_fecha_hora_inicio}" FontSize="Small" FontFamily="Oswald-Regular" />
+                                            <Label TextColor="Black" Grid.Row="1"
+                                                   Grid.Column="0"
+                                                   Grid.ColumnSpan="2"
+                                                   Text="{Binding eve_nombre}"
+                                                   HorizontalTextAlignment="Start"
+                                                   HorizontalOptions="Start"
+                                                   Margin="5,0,0,0"
+                                                   FontSize="Medium">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                            </Label>
+                                            <Label TextColor="Black" Grid.Row="2"
+                                                   Grid.Column="0"
+                                                   Grid.ColumnSpan="2"
+                                                   HorizontalTextAlignment="Start"
+                                                   HorizontalOptions="Start"
+                                                   Text="{Binding eve_fecha_hora_inicio}"
+                                                   Margin="5,0,0,0"
+                                                   FontSize="Small">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                            </Label>
                                             <Image Margin="15" Grid.Row="1"
                                                    Grid.Column="2"
                                                    Grid.RowSpan="2"

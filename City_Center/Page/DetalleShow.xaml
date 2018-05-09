@@ -58,8 +58,24 @@
 
             <StackLayout Margin="5">
                  <StackLayout Orientation="Vertical" Margin="5">
-                    <Label Text="{Binding ds.eve_nombre}" TextColor="#250C4B" FontFamily="Oswald-Regular" FontSize="Medium" ></Label>
-                    <Label Text="{Binding ds.eve_fecha_hora_inicio}" FontSize="Small" ></Label>
+                    <Label Text="{Binding ds.eve_nombre}"
+                           TextColor="#250C4B"
+                           FontSize="Medium" >
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                            </Label>
+                    <Label Text="{Binding ds.eve_fecha_hora_inicio}" FontSize="Small">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                            </Label>
                 </StackLayout>
                 
                 <Label Text="{Binding ds.eve_descripcion}" FontSize="Small" Margin="5"></Label>
@@ -68,12 +84,14 @@
                      <Button Text="COMPRA ONLINE"
                              FontAttributes="Bold"
                              TextColor="White"
-
+                             IsVisible="{Binding ds.ocultaonline, Mode=TwoWay}"
+                             Command="{Binding CompraOnlineCommand}"
                              BackgroundColor="#250C4B"></Button>
                      <Button Text="COMPRA TELÉFONICA"
                              FontAttributes="Bold"
                              TextColor="White"
-                             Clicked="Handle_Clicked"
+                             IsVisible="{Binding ds.ocultallamada,Mode=TwoWay}"
+                             Command="{Binding LlamarCommand}"
                              BackgroundColor="#250C4B"></Button>
 
                         <Label />

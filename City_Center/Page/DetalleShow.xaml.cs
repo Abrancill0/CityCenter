@@ -14,15 +14,6 @@ namespace City_Center.Page
             NavigationPage.SetTitleIcon(this, "logo.png");
         }
 
-        void Handle_Clicked(object sender, System.EventArgs e)
-        {
-            var phoneCallTask = CrossMessaging.Current.PhoneDialer;
-
-            if (phoneCallTask.CanMakePhoneCall)
-            {
-                phoneCallTask.MakePhoneCall("4441118438","Nuemero anterior");
-                //4446574294
-            }
-        }
+        
     }
 }

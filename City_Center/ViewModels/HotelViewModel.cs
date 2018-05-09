@@ -11,6 +11,8 @@ using static City_Center.Models.HabitacionesResultado;
 using static City_Center.Models.MoaSpaResultado;
 using static City_Center.Models.PromocionesResultado;
 using City_Center.Clases;
+using Plugin.Share;
+
 
 namespace City_Center.ViewModels
 {
@@ -65,6 +67,7 @@ namespace City_Center.ViewModels
 
         #region Commands
 
+
         public ICommand MoaSpaCommand
         {
             get
@@ -81,6 +84,35 @@ namespace City_Center.ViewModels
                 this.LoadMoaSpa();
             }
 
+        }
+
+
+		public ICommand UbicacionHotelCommand
+        {
+            get
+            {
+				return new RelayCommand(UbicacionHotel);
+            }
+        }
+
+		private async void UbicacionHotel()
+        {
+			try
+            {
+                Plugin.Share.Abstractions.ShareMessage Compartir = new Plugin.Share.Abstractions.ShareMessage();
+
+               // var Ubicacion = await GetCurrentPosition();
+
+                Compartir.Text = "Pendiente";
+                Compartir.Title = "Tu ubicacion";
+                Compartir.Url = "";
+
+                await CrossShare.Current.Share(Compartir);
+            }
+            catch (Exception ex)
+            {
+                Mensajes.Info("No pudimos acceder a tu ubicacion");
+            }
         }
 
 

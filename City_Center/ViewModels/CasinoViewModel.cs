@@ -18,6 +18,8 @@ using static City_Center.Models.TarjetasResultado;
 using static City_Center.Models.PromocionesResultado;
 using City_Center.Clases;
 using static City_Center.Models.TorneoResultado;
+using Plugin.Share;
+
 
 namespace City_Center.ViewModels
 {
@@ -119,6 +121,39 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Commands
+
+
+      
+		//UbicacionCasinoCommand
+		public ICommand UbicacionCasinoCommand
+        {
+            get
+            {
+				return new RelayCommand(UbicacionCasino);
+            }
+        }
+
+		private async void UbicacionCasino()
+        {
+			try
+   			{
+				Plugin.Share.Abstractions.ShareMessage Compartir = new Plugin.Share.Abstractions.ShareMessage();
+    
+           // var Ubicacion = await GetCurrentPosition();
+
+            Compartir.Text = "Pendiente";
+            Compartir.Title = "Tu ubicacion";
+            Compartir.Url = "";
+
+            await CrossShare.Current.Share(Compartir); 
+			    }
+			catch (Exception ex)
+			{
+				Mensajes.Info("No pudimos acceder a tu ubicacion");
+			}
+
+        }
+        
         public ICommand VerRecompensasCommand
         {
             get
@@ -394,30 +429,30 @@ namespace City_Center.ViewModels
                 var connection = await this.apiService.CheckConnection();
 
                 if (!connection.IsSuccess)
-                {
+				{
                     await Mensajes.Error(connection.Message);
 
                     return;
                 }
 
                 var content = new FormUrlEncodedContent(new[]
-                {
-                new KeyValuePair<string, string>("", ""),
-            });
+				{
+				new KeyValuePair<string, string>("", ""),
+			});
 
 
-                var response = await this.apiService.Get<GanadoresReturn>("/casino/ganadores", "/indexApp", content);
+				var response = await this.apiService.Get<GanadoresReturn>("/casino/ganadores", "/indexApp", content);
 
-                if (!response.IsSuccess)
-                {
-                    await Mensajes.Error("Error al cargar Ganadores");
+				if (!response.IsSuccess)
+				{
+					await Mensajes.Error("Error al cargar Ganadores");
 
-                    return;
-                }
+					return;
+				}
 
-                this.listGanadores = (GanadoresReturn)response.Result;
+				this.listGanadores = (GanadoresReturn)response.Result;
 
-                GanadoresDetalle = new ObservableCollection<GanadoresDetalle>(this.ToGanadoresViewModel());
+				GanadoresDetalle = new ObservableCollection<GanadoresDetalle>(this.ToGanadoresViewModel());
             }
             catch (Exception ex)
             {
@@ -588,28 +623,28 @@ namespace City_Center.ViewModels
                 var connection = await this.apiService.CheckConnection();
 
                 if (!connection.IsSuccess)
-                {
+				{
                     await Mensajes.Error(connection.Message);
 
                     return;
                 }
 
                 var content = new FormUrlEncodedContent(new[]
-                {
-                new KeyValuePair<string, string>("", ""),
-            });
+				{
+				new KeyValuePair<string, string>("", ""),
+			});
 
 
-                var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
+				var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
 
-                if (!response.IsSuccess)
-                {
-                    await Mensajes.Error("Error al cargar Promociones");
+				if (!response.IsSuccess)
+				{
+					await Mensajes.Error("Error al cargar Promociones");
 
-                    return;
-                }
+					return;
+				}
 
-                this.listPromociones = (PromocionesReturn)response.Result;
+				this.listPromociones = (PromocionesReturn)response.Result;
 
                 PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "cas"));
 

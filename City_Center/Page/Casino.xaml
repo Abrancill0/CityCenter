@@ -43,6 +43,9 @@
                              Text = ""
                              Grid.Row = "0" Grid.Column = "1"
                              VerticalOptions = "Center"
+                             WidthRequest="100"
+                             HeightRequest="100"
+                             Command="{Binding UbicacionCasinoCommand}"
                             />
                 </Grid>
             
@@ -305,7 +308,14 @@
                                                        TextColor="White"
                                                        FontFamily="Oswald-regular"
                                                        FontSize="Small"
-                                                       Text="{Binding poz_descripcion}" />
+                                                       Text="{Binding poz_descripcion}" >
+                                                           <Label.FontFamily>
+                                                                <OnPlatform x:TypeArguments="x:String">
+                                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                </OnPlatform>
+                                                           </Label.FontFamily>
+                                                     </Label>
                                             </Grid>
                                         </DataTemplate>
                                     </flv:FlowListView.FlowColumnTemplate>
@@ -315,7 +325,7 @@
 
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Margin>
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
@@ -364,13 +374,19 @@
 
                                                      <Label x:Name="Label"
                                                        Margin="5"
-                                                       HorizontalOptions="Start"
-                                                       HorizontalTextAlignment="Start"
+                                                       HorizontalOptions="Center"
+                                                       HorizontalTextAlignment="Center"
                                                        VerticalOptions="End"
                                                        TextColor="White"
-                                                       FontFamily="Oswald-regular"
                                                        FontSize="Small"
-                                                       Text="{Binding pro_nombre}" />
+                                                       Text="{Binding pro_nombre}">
+                                                           <Label.FontFamily>
+                                                                <OnPlatform x:TypeArguments="x:String">
+                                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                </OnPlatform>
+                                                           </Label.FontFamily>
+                                                     </Label>
                                                                 
                                                                 </Grid>
                                                 </StackLayout>
@@ -602,7 +618,14 @@
                                                        TextColor="White"
                                                        FontFamily="Oswald-regular"
                                                        FontSize="Small"
-                                                       Text="{Binding gan_nombre}" />
+                                                       Text="{Binding gan_nombre}" >
+                                                           <Label.FontFamily>
+                                                                <OnPlatform x:TypeArguments="x:String">
+                                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                </OnPlatform>
+                                                           </Label.FontFamily>
+                                                     </Label>
                                             </Grid>
                                         </DataTemplate>
                                     </flv:FlowListView.FlowColumnTemplate>
