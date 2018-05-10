@@ -44,7 +44,7 @@
                     <RowDefinition Height="40">
                     </RowDefinition>
                 </Grid.RowDefinitions>
-                <Label x:Name="LabelTab1" Text="TODOS" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="9" TextColor="#EAE8ED" Grid.Column="0" Style="{DynamicResource TabTopLabel}">
+                <Label x:Name="LabelTab1" Text="TODOS" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="10" TextColor="#EAE8ED" Grid.Column="0" Style="{DynamicResource TabTopLabel}">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -52,7 +52,7 @@
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
-                <Label x:Name="LabelTab2" Text="JARANA" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="9" TextColor="#71628A" Grid.Column="1" Style="{DynamicResource TabTopLabel}">
+                <Label x:Name="LabelTab2" Text="JARANA" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="10" TextColor="#71628A" Grid.Column="1" Style="{DynamicResource TabTopLabel}">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -60,7 +60,7 @@
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
-                <Label x:Name="LabelTab3" Text="CENTRO DE CONVENCIONES" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="9" TextColor="#71628A" Grid.Column="2" Style="{DynamicResource TabTopLabel}">
+                <Label x:Name="LabelTab3" Text="CENTRO DE CONVENCIONES" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="10" TextColor="#71628A" Grid.Column="2" Style="{DynamicResource TabTopLabel}">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>

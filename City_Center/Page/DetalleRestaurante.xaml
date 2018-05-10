@@ -112,6 +112,9 @@
                                                    ErrorPlaceholder="image_error.png"
                                                    Source="ChekIn"
                                                    HorizontalOptions="Start">
+                                            <ffimageloading:CachedImage.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding CheckInReservaCommand}"/>
+                                                </ffimageloading:CachedImage.GestureRecognizers>
                                            </ffimageloading:CachedImage>
                                            <Label Text="Check-In"
                                                   HorizontalTextAlignment="Center"

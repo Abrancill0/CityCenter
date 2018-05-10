@@ -11,6 +11,10 @@ using System.Linq;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using City_Center.Models;
+using Plugin.Share;
+using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
+using Plugin.Permissions.Abstractions;
 
 namespace City_Center.ViewModels
 {
@@ -185,7 +189,42 @@ namespace City_Center.ViewModels
             this.Telefono = string.Empty;
 
         }
+
         #region Command
+
+		public ICommand CheckInReservaCommand
+        {
+            get
+            {
+				return new RelayCommand(CheckInReserva);
+            }
+        }
+
+		private async void CheckInReserva()
+        {
+			try
+            {
+                Plugin.Share.Abstractions.ShareMessage Compartir = new Plugin.Share.Abstractions.ShareMessage();
+
+                var hasPermission = await Utils.CheckPermissions(Permission.Location);
+                if (!hasPermission)
+                    return;
+
+
+                var Posicion = await Ubicacion.GetCurrentPosition();
+
+                Compartir.Text = "Ubicacion Actual";
+                Compartir.Title = "Tu ubicacion";
+                Compartir.Url = "https://www.google.com/maps/@" + Posicion.Latitude + "," + Posicion.Longitude + "," + "16z";
+
+                await CrossShare.Current.Share(Compartir);
+            }
+            catch (Exception ex)
+            {
+                await Mensajes.Info("No pudimos acceder a tu ubicacion");
+            } 
+
+        }
 
         #endregion
 

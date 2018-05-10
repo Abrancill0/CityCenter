@@ -92,5 +92,6 @@ namespace City_Center.Page
                 SLR.IsVisible = false;
             }
         }
+  
     }
 }

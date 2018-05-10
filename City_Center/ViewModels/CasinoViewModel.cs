@@ -153,7 +153,7 @@ namespace City_Center.ViewModels
 
 				await CrossShare.Current.Share(Compartir);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				await Mensajes.Info("No pudimos acceder a tu ubicacion");
 			}

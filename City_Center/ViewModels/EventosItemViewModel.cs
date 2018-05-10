@@ -79,7 +79,7 @@ namespace City_Center.ViewModels
                     var list = (GuardadoGenerico)response.Result;
 
                   
-                    await Mensajes.success(list.mensaje);
+					await Mensajes.success("Guardado Correctamente");
 
                 }
                 else

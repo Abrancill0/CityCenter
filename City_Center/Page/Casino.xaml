@@ -135,7 +135,7 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand">
+            <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" BackgroundColor="White">
                 <ScrollView>
                     <StackLayout>
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
@@ -291,7 +291,8 @@
                                 <flv:FlowListView SeparatorVisibility="None"
                                                   HasUnevenRows="true"
                                                   FlowColumnMinWidth="110"
-                                                  FlowItemsSource="{Binding PozosDetalle}">
+                                                  FlowItemsSource="{Binding PozosDetalle}"
+                                                  HeightRequest="300">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
                                             <Grid Padding="3" CompressedLayout.IsHeadless="true" >
