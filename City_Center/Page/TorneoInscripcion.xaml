@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="City_Center.Page.TorneoInscripcion"
-               BindingContext="{Binding Main, Source={StaticResource Locator}}"
-              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls">
-     <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="Chat"/>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="City_Center.Page.TorneoInscripcion" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="Chat" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -17,107 +13,87 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-    <StackLayout Margin="10">
-               
-                    <xfx:XfxEntry Placeholder="Nombre y apellido*"
-                                  Style="{DynamicResource EntryStyle}"
-                                  x:Name="Nombre">
-                        <Entry.HeightRequest>
-                            <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">50</On>
-                            </OnPlatform>
-                        </Entry.HeightRequest>
-                    </xfx:XfxEntry>
 
-                    <xfx:XfxEntry Placeholder="Correo*"
-                                  Style="{DynamicResource EntryStyle}"
-                                  x:Name="Correo">
-                        <Entry.HeightRequest>
-                            <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">50</On>
-                            </OnPlatform>
-                        </Entry.HeightRequest>
-                    </xfx:XfxEntry>
-                    <StackLayout>
-                            <Label Text="Tipo de documento*"
-                                   TextColor="Gray"
-                                   Margin="6,2,0,0"
-                                   FontSize="Small"
-                                   FontFamily="Oswald-Regular"/>
-                            <Grid Padding="5, 0">    
-                            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
-                            <Picker x:Name="TipoDocumento"
-                                    Title="Seleccione un tipo de documento"
-                                   />
-                                 
-                            </Grid>
-                            </StackLayout>
+    <ScrollView>
+         <StackLayout Margin="10">
+            <xfx:XfxEntry Placeholder="Nombre y apellido*" Style="{DynamicResource EntryStyle}" x:Name="Nombre">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">50</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+            </xfx:XfxEntry>
+            <xfx:XfxEntry Placeholder="Correo*" Style="{DynamicResource EntryStyle}" x:Name="Correo">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">50</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+            </xfx:XfxEntry>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Tipo de documento*" TextColor="Gray" Margin="6,2,0,0" FontSize="Small" FontFamily="Oswald-Regular" />
+             
+                    <Picker x:Name="TipoDocumento" Title="Seleccione un tipo de documento" />
                 
-                    <xfx:XfxEntry Placeholder="Numero de documento*"
-                                  Style="{DynamicResource EntryStyle}"
-                                  x:Name="NumeroDocumento">
-                        <Entry.HeightRequest>
-                            <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">50</On>
-                            </OnPlatform>
-                        </Entry.HeightRequest>
-                    </xfx:XfxEntry>
+            </StackLayout>
+            <xfx:XfxEntry Placeholder="Numero de documento*" Style="{DynamicResource EntryStyle}" x:Name="NumeroDocumento">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">50</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+            </xfx:XfxEntry>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Fecha de nacimiento*"
+                       TextColor="Gray"
+                       Margin="6,2,0,0"
+                       FontSize="Small"
+                       FontFamily="Oswald-Regular" />
+               
+                    <DatePicker x:Name="Fecha" />
+              
+            </StackLayout>
+            <xfx:XfxEntry Placeholder="Nacionalidad*" Style="{DynamicResource EntryStyle}" x:Name="Nacionalidad">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">50</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+            </xfx:XfxEntry>
+            <xfx:XfxEntry Placeholder="Pais*" Style="{DynamicResource EntryStyle}" x:Name="Pais">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">50</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+            </xfx:XfxEntry>
+            <xfx:XfxEntry Placeholder="Provincia*" Style="{DynamicResource EntryStyle}" x:Name="Provincia">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">50</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+            </xfx:XfxEntry>
+            <xfx:XfxEntry Placeholder="Ciudad*" Style="{DynamicResource EntryStyle}" x:Name="Ciudad">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">50</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+            </xfx:XfxEntry>
+            <Button Margin="30" Text="RESERVAR" TextColor="White" BackgroundColor="#E91E63" Clicked="Handle_Clicked">
+            </Button>
 
+        </StackLayout>   
+        </ScrollView>
+        
 
-                    <StackLayout>
-                            <Label Text="Fecha de nacimiento*"
-                                   TextColor="Gray"
-                                   Margin="6,2,0,0"
-                                   FontSize="Small"
-                                   FontFamily="Oswald-Regular"/>
-                            <Grid Padding="15, 0">    
-                            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
-                            <DatePicker x:Name="Fecha"/>
-                            </Grid>
-                            </StackLayout>
-                    
-                    <xfx:XfxEntry Placeholder="Nacionalidad*" Style="{DynamicResource EntryStyle}" x:Name="Nacionalidad" >
-                        <Entry.HeightRequest>
-                            <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">50</On>
-                            </OnPlatform>
-                        </Entry.HeightRequest>
-                    </xfx:XfxEntry>
-                    <xfx:XfxEntry Placeholder="Pais*" Style="{DynamicResource EntryStyle}" x:Name="Pais" >
-                        <Entry.HeightRequest>
-                            <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">50</On>
-                            </OnPlatform>
-                        </Entry.HeightRequest>
-                    </xfx:XfxEntry>
-                    <xfx:XfxEntry Placeholder="Provincia*" Style="{DynamicResource EntryStyle}" x:Name="Provincia">
-                        <Entry.HeightRequest>
-                            <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">50</On>
-                            </OnPlatform>
-                        </Entry.HeightRequest>
-                    </xfx:XfxEntry>
-                    <xfx:XfxEntry Placeholder="Ciudad*" Style="{DynamicResource EntryStyle}" x:Name="Ciudad">
-                        <Entry.HeightRequest>
-                            <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">50</On>
-                            </OnPlatform>
-                        </Entry.HeightRequest>
-                    </xfx:XfxEntry>
-                    <Button Margin="30"
-                            Text="RESERVAR"
-                            TextColor="White"
-                            BackgroundColor="#E91E63"
-                            Clicked="Handle_Clicked">
-                    </Button>
-                </StackLayout>
-            
     </ContentPage.Content>
 </ContentPage>
