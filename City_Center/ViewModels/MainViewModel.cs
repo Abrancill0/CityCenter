@@ -43,6 +43,7 @@ namespace City_Center.ViewModels
         public DestacadosItemViewModel DestacadosItem { get; set; }
         public ReiniciaPassViewModel ReiniciaPass { get; set; }
         public ConsultaTarjetaWinViewModel ConsultaTarjetaWin { get; set; }
+		public CambiaPassViewModel CambiaContrasena { get; set; }
         #endregion
 
         #region Contructors

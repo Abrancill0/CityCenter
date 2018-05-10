@@ -412,22 +412,24 @@
                          <Label Margin="15,0,0,0" HorizontalOptions="Start"
                                 TextColor="Black"
                                 HorizontalTextAlignment="Start"
-                                Text="UN LUGAR EXCLUSIVO CREADO PARA EL">
+                                Text="UN LUGAR EXCLUSIVO CREADO PARA EL"
+                                FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
                         <Label Margin="15,-10,0,0"  HorizontalOptions="Start"
                                 TextColor="Black"
                                 HorizontalTextAlignment="Start"
-                               Text="BIENESTAR Y CUIDADO DEL CUERPO QUE SE">
+                               Text="BIENESTAR Y CUIDADO DEL CUERPO QUE SE"
+                               FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
@@ -435,22 +437,24 @@
                                HorizontalOptions="Start"
                                TextColor="Black"
                                HorizontalTextAlignment="Start"
-                               Text="ENCUENTRA CON EL ESPIRITU A TRAVÉS DEL">
+                               Text="ENCUENTRA CON EL ESPIRITU A TRAVÉS DEL"
+                               FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                     <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
                         <Label Margin="15,-10,0,0"  HorizontalOptions="Start"
                                 TextColor="Black"
                                 HorizontalTextAlignment="Start"
-                                Text="RELAX, MASAJES Y TÉCNICAS CORPORALES">
+                                Text="RELAX, MASAJES Y TÉCNICAS CORPORALES"
+                               FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
@@ -458,11 +462,12 @@
                         <Label Margin="10,20,0,0"  TextColor="Black"
                                 HorizontalOptions="Start"
                                 HorizontalTextAlignment="Start"
-                               Text="Cuenta con espacios como:">
+                               Text="Cuenta con espacios como:"
+                               FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
@@ -470,11 +475,12 @@
                         <Label Margin="20,20,0,0"  TextColor="Black"
                                 HorizontalOptions="Start"
                                 HorizontalTextAlignment="Start"
-                               Text="• Hammam">
+                               Text="• Hammam"
+                               FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
@@ -482,11 +488,12 @@
                            <Label Margin="20,0,0,0" TextColor="Black"  
                                 HorizontalOptions="Start"
                                 HorizontalTextAlignment="Start"
-                               Text="• Sauna seco">
+                               Text="• Sauna seco"
+                                  FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
@@ -494,11 +501,12 @@
                            <Label Margin="20,0,0,0" TextColor="Black"  
                                 HorizontalOptions="Start"
                                 HorizontalTextAlignment="Start"
-                               Text="• Duchas especiales">
+                               Text="• Duchas especiales"
+                                  FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                     <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
@@ -506,11 +514,12 @@
                            <Label Margin="20,0,0,0" TextColor="Black" 
                                 HorizontalOptions="Start"
                                 HorizontalTextAlignment="Start"
-                               Text="• Salas relax">
+                               Text="• Salas relax"
+                                  FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
@@ -518,11 +527,12 @@
                            <Label Margin="20,0,0,0" TextColor="Black"
                                  HorizontalOptions="Start"
                                 HorizontalTextAlignment="Start"
-                               Text="• Poscinas ludica climatizada">
+                               Text="• Poscinas ludica climatizada"
+                                  FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                     <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
@@ -530,11 +540,12 @@
                            <Label Margin="20,0,0,0" TextColor="Black" 
                                 HorizontalOptions="Start"
                                 HorizontalTextAlignment="Start"
-                               Text="• Piscina exterior">
+                               Text="• Piscina exterior"
+                                  FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
@@ -542,11 +553,12 @@
                           <Label Margin="20,0,0,0" TextColor="Black" 
                                 HorizontalOptions="Start"
                                 HorizontalTextAlignment="Start"
-                               Text="• Fitness center">
+                               Text="• Fitness center"
+                                 FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                     <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>
@@ -554,11 +566,12 @@
                          <Label Margin="20,0,0,0" TextColor="Black"
                                 HorizontalOptions="Start"
                                 HorizontalTextAlignment="Start"
-                               Text="• Canchas de tenis y de paddle">
+                               Text="• Canchas de tenis y de paddle"
+                                FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
                                     </Label>

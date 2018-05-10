@@ -34,6 +34,8 @@ namespace City_Center.ViewModels
         #region Commands
 
 
+
+
         #endregion
 
         #region Methods
@@ -96,7 +98,7 @@ namespace City_Center.ViewModels
                   imagen_2 = l.imagen_2,
                   link = l.link,
                   fecha = l.fecha,
-				  ocultallamada = false,
+				  ocultallamada = (string.IsNullOrEmpty(l.telefono) ? false : true),
 				  ocultaonline = (string.IsNullOrEmpty(l.link) ? false : true),
 				  ocultatorneo = l.gua_id_torneo == 0 ? false : true,
             });

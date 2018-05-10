@@ -9,6 +9,8 @@ using Plugin.Share;
 using Xamarin.Forms;
 using static City_Center.Models.FavoritosResultado;
 using City_Center.Clases;
+using Plugin.Messaging;
+using City_Center.Page;
 
 namespace City_Center.ViewModels
 {
@@ -111,6 +113,58 @@ namespace City_Center.ViewModels
             }
         }
       
+        
+        public ICommand LlamarCommand
+        {
+            get
+            {
+                return new RelayCommand(Llamar);
+            }
+        }
+
+        private void Llamar()
+        {
+            var phoneCallTask = CrossMessaging.Current.PhoneDialer;
+
+            if (phoneCallTask.CanMakePhoneCall)
+            {
+                phoneCallTask.MakePhoneCall("12345678", nombre);
+            }
+
+        }
+
+        public ICommand CompraOnlineCommand
+        {
+            get
+            {
+                return new RelayCommand(CompraOnline);
+            }
+        }
+
+        private void CompraOnline()
+        {
+            Device.OpenUri(new Uri(link));
+
+        }
+        
+        
+		public ICommand InscribirteTorneoCommand
+        {
+            get
+            {
+				return new RelayCommand(Inscribir);
+            }
+        }
+
+		private async void Inscribir()
+        {
+		
+           //MainViewModel.GetInstance().TorneoDetalle = new TorneoDetalleViewModel();
+
+            await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new TorneoInscripcion());
+            
+        }
+
         #endregion
 
 

@@ -18,6 +18,13 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
+       
+            <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="Roboto-Regular" />
+                <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
+            </Style>
+    
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -227,6 +234,7 @@
                             <Picker Margin="5"
                                     x:Name="TipoDocumento"
                                     ItemsSource="{Binding ListaOpciones}"
+                                   
                                     Title="Tipo Documento"
                                     SelectedItem="{Binding TipoDocumento, Mode=TwoWay}"></Picker>
                             </Grid>

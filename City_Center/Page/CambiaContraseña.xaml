@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-             x:Class="City_Center.Page.CambiaContraseña">
-      <ContentPage.Resources>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.CambiaContraseña">
+    <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
                 <Setter Property="TextColor" Value="Black" />
@@ -14,46 +10,46 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding ReiniciaPass}" Margin="20">
-            <Label Text="OLVIDASTE TU CONTRASEÑA" TextColor="#250c4b" FontFamily="Oswald-Regular" FontSize="Medium" HorizontalTextAlignment="Center" />
-            <Label Text="Coloca tu correo electronico para restablecer tu contraseña" HorizontalTextAlignment="Center" TextColor="Silver" FontSize="Small">
+        <StackLayout BindingContext="{Binding CambiaContrasena}" Margin="20">
+            <Label Text="CAMBIAR CONTRASEÑA" TextColor="#250c4b" FontSize="Medium" HorizontalTextAlignment="Center">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Oswald-Regular" />
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                    </OnPlatform>
+                </Label.FontFamily>
             </Label>
-            <xfx:XfxEntry Placeholder="Correo electronico"
-                          Style="{DynamicResource EntryStyle}"
-                          Text="{Binding CorreoElectronico, Mode=TwoWay}">
+            <xfx:XfxEntry Placeholder="Contraseña Temporal" Style="{DynamicResource EntryStyle}" Text="{Binding Contrasenatemp, Mode=TwoWay}" IsPassword="true">
                 <Entry.HeightRequest>
                     <OnPlatform x:TypeArguments="x:Double">
                         <On Platform="iOS">60</On>
-                        <On Platform="Android,Windows">50</On>
+                        <On Platform="Android,Windows">60</On>
                     </OnPlatform>
                 </Entry.HeightRequest>
             </xfx:XfxEntry>
-             <xfx:XfxEntry Placeholder="Nueva Contraseña"
-                          Style="{DynamicResource EntryStyle}"
-                          Text="{Binding CorreoElectronico, Mode=TwoWay}">
+            <xfx:XfxEntry Placeholder="Nueva Contraseña" Style="{DynamicResource EntryStyle}" Text="{Binding Contrasena1, Mode=TwoWay}" IsPassword="true">
                 <Entry.HeightRequest>
                     <OnPlatform x:TypeArguments="x:Double">
                         <On Platform="iOS">60</On>
-                        <On Platform="Android,Windows">50</On>
+                        <On Platform="Android,Windows">60</On>
                     </OnPlatform>
                 </Entry.HeightRequest>
             </xfx:XfxEntry>
-             <xfx:XfxEntry Placeholder="Confirmar Contraseña"
-                          Style="{DynamicResource EntryStyle}"
-
-                          Text="{Binding CorreoElectronico, Mode=TwoWay}">
+            <xfx:XfxEntry Placeholder="Confirmar Contraseña" Style="{DynamicResource EntryStyle}" Text="{Binding Contrasena2, Mode=TwoWay}" IsPassword="true">
                 <Entry.HeightRequest>
                     <OnPlatform x:TypeArguments="x:Double">
                         <On Platform="iOS">60</On>
-                        <On Platform="Android,Windows">50</On>
+                        <On Platform="Android,Windows">60</On>
                     </OnPlatform>
                 </Entry.HeightRequest>
             </xfx:XfxEntry>
-            <Button BackgroundColor="#250C4B"
-                    Command="{Binding RestableceCommand}"
-                     TextColor="White"
-                     FontFamily="Oswald-regular"
-                    HeightRequest="55" Text="Enviar"  >
+            <Button BackgroundColor="#250C4B" Command="{Binding CambiaContrasenaCommand}" TextColor="White" FontFamily="Oswald-regular" HeightRequest="55" Text="Enviar">
+                <Button.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Oswald-Regular" />
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                    </OnPlatform>
+                </Button.FontFamily>
             </Button>
         </StackLayout>
     </ContentPage.Content>

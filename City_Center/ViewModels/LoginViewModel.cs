@@ -127,42 +127,61 @@ namespace City_Center.ViewModels
                 if  (list.estatus==1)
                 {
                     
-                    Application.Current.Properties["IsLoggedIn"] = true;
-                    Application.Current.Properties["IdUsuario"] = list.resultado.usu_id;
-                    Application.Current.Properties["Email"] = this.Email;
-                    Application.Current.Properties["NombreCompleto"] = list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos;
-                    Application.Current.Properties["Ciudad"] = list.resultado.usu_ciudad;
-                    Application.Current.Properties["Pass"] = this.Password;
-                    Application.Current.Properties["FechaNacimiento"] = list.resultado.usu_fecha_nacimiento;
-                    Application.Current.Properties["FotoPerfil"] = VariablesGlobales.RutaServidor + list.resultado.usu_imagen;
-                    Application.Current.Properties["TipoCuenta"] = "CityCenter";
+					if (string.IsNullOrEmpty(list.resultado.usu_contrasena_temp))
+					{
+						Application.Current.Properties["IsLoggedIn"] = true;
+                        Application.Current.Properties["IdUsuario"] = list.resultado.usu_id;
+                        Application.Current.Properties["Email"] = this.Email;
+                        Application.Current.Properties["NombreCompleto"] = list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos;
+                        Application.Current.Properties["Ciudad"] = list.resultado.usu_ciudad;
+                        Application.Current.Properties["Pass"] = this.Password;
+                        Application.Current.Properties["FechaNacimiento"] = list.resultado.usu_fecha_nacimiento;
+                        Application.Current.Properties["FotoPerfil"] = VariablesGlobales.RutaServidor + list.resultado.usu_imagen;
+                        Application.Current.Properties["TipoCuenta"] = "CityCenter";
 
-                    Application.Current.Properties["TipoDocumento"] = list.resultado.usu_tipo_documento;
-                    Application.Current.Properties["NumeroDocumento"] = list.resultado.usu_no_documento;
-                    Application.Current.Properties["NumeroSocio"] = list.resultado.usu_id_tarjeta_socio;
+                        Application.Current.Properties["TipoDocumento"] = list.resultado.usu_tipo_documento;
+                        Application.Current.Properties["NumeroDocumento"] = list.resultado.usu_no_documento;
+                        Application.Current.Properties["NumeroSocio"] = list.resultado.usu_id_tarjeta_socio;
 
-                    await Application.Current.SavePropertiesAsync();
+                        await Application.Current.SavePropertiesAsync();
 
-                    this.Email = string.Empty;
-                    this.Password = string.Empty;
+                        this.Email = string.Empty;
+                        this.Password = string.Empty;
 
-                    MainViewModel.GetInstance().Master = new MasterViewModel();
-                    MainViewModel.GetInstance().Inicio = new InicioViewModel();
-                    MainViewModel.GetInstance().Detail = new DetailViewModel();
-                    MainViewModel.GetInstance().Casino = new CasinoViewModel();
-                    //MainViewModel.GetInstance().Hotel = new HotelViewModel();
-                    //MainViewModel.GetInstance().SalasEventos = new SalasEventosViewModel();
-                    //MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
+                        MainViewModel.GetInstance().Master = new MasterViewModel();
+                        MainViewModel.GetInstance().Inicio = new InicioViewModel();
+                        MainViewModel.GetInstance().Detail = new DetailViewModel();
+                        MainViewModel.GetInstance().Casino = new CasinoViewModel();
+                        //MainViewModel.GetInstance().Hotel = new HotelViewModel();
+                        //MainViewModel.GetInstance().SalasEventos = new SalasEventosViewModel();
+                        //MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
-                    MasterPage fpm = new MasterPage();
-                    fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
-                    fpm.Detail = new NavigationPage(new TabPage()){ BarBackgroundColor = Color.FromHex("#23144B") }; // You have to create a Detail ContenPage()
-                    Application.Current.MainPage = fpm;
+                        MasterPage fpm = new MasterPage();
+                        fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
+                        fpm.Detail = new NavigationPage(new TabPage()) { BarBackgroundColor = Color.FromHex("#23144B") }; // You have to create a Detail ContenPage()
+                        Application.Current.MainPage = fpm;
 
-                    await Mensajes.success("Bienvenido " + list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos);
+                        await Mensajes.success("Bienvenido " + list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos);
 
-                    UserDialogs.Instance.HideLoading();
+                        UserDialogs.Instance.HideLoading();
+	
+					}
 
+					else
+					{
+						MainViewModel.GetInstance().CambiaContrasena = new CambiaPassViewModel();
+
+						VariablesGlobales.IDUsuario = Convert.ToString(list.resultado.usu_id);
+
+                        ((MasterPage)Application.Current.MainPage).IsPresented = false;
+      
+						await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new CambiaContraseña());
+
+                         UserDialogs.Instance.HideLoading();
+
+					}
+
+                                   
                    
                 }
                 else

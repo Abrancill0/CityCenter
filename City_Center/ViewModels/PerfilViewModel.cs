@@ -10,6 +10,7 @@ using static City_Center.Models.ActualizaUsuarioResultado;
 using static City_Center.Models.RegistroUsuario;
 using static City_Center.Models.TarjetaUsuarioResultado;
 using System.Threading.Tasks;
+using static City_Center.Models.TarjetaValidaResultado;
 
 namespace City_Center.ViewModels
 {
@@ -25,7 +26,7 @@ namespace City_Center.ViewModels
         private string contraseña;
         private string contraseña2;
         private string ciudad;
-        private string fecha;
+        private DateTime fecha;
         private string imagen;
         private string nombre;
         private string tipoDocumento;
@@ -66,7 +67,7 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.ciudad, value); }
         }
 
-        public string Fecha
+        public DateTime Fecha
         {
             get { return this.fecha; }
             set { SetValue(ref this.fecha, value); }
@@ -153,7 +154,7 @@ namespace City_Center.ViewModels
 
             var content = new FormUrlEncodedContent(new[]
            {
-                new KeyValuePair<string, string>("usu_fecha_nacimiento", Fecha),
+                new KeyValuePair<string, string>("usu_fecha_nacimiento", Fecha.ToString("yyyy-MM-dd")),
                 new KeyValuePair<string, string>("usu_contrasena",contraseña),
                 new KeyValuePair<string, string>("usu_id", Application.Current.Properties["IdUsuario"].ToString()),
                 new KeyValuePair<string, string>("usu_usuario", Email),
@@ -212,7 +213,7 @@ namespace City_Center.ViewModels
                 Ciudad = Application.Current.Properties["Ciudad"].ToString();
                 Contraseña = Application.Current.Properties["Pass"].ToString();
                 Contraseña2 = Application.Current.Properties["Pass"].ToString();
-                Fecha = Application.Current.Properties["FechaNacimiento"].ToString();
+				Fecha = Convert.ToDateTime(Application.Current.Properties["FechaNacimiento"].ToString());
                 Imagen = Application.Current.Properties["FotoPerfil"].ToString();
 
                 TipoDocumento = Application.Current.Properties["TipoDocumento"].ToString();
@@ -253,11 +254,12 @@ namespace City_Center.ViewModels
 
                 var content = new FormUrlEncodedContent(new[]
                 {
-                    new KeyValuePair<string, string>("usu_id_tarjeta ",NoTarjeta )
+					new KeyValuePair<string, string>("tarjeta",Application.Current.Properties["IdUsuario"].ToString()),
+					new KeyValuePair<string, string>("usu",NoTarjeta )
                 });
 
 
-                var response = await this.apiService.Get<TarjetaUsuarioReturn>("/tarjetas", "/tarjetaUsuario", content);
+				var response = await this.apiService.Get<TarjetaValidaReturn>("/es/register", "/valida_tarjeta_socio", content);
 
                 if (!response.IsSuccess)
                 {
@@ -266,11 +268,7 @@ namespace City_Center.ViewModels
                     return "No Existe tarjeta Ingresada";
                 }
 
-                //this.listaTarjetausuario = (TarjetaUsuarioReturn)response.Result;
-
-
-                //NoSocio = listaTarjetausuario.resultado.tar_id;
-
+               
                 //if (NoTarjeta != NoSocio)
                 //{
                 //await  Mensajes.Info("La tarjeta ingresada es diferente a la que tiene asiganda el usuario");

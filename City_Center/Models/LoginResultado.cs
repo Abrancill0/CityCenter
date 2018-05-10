@@ -69,7 +69,7 @@ namespace City_Center.Models
             public string created_at { get; set; }
             public string updated_at { get; set; }
             public string usu_tipo_documento { get; set; }
-         
+			public string usu_contrasena_temp { get; set; }
             public string usu_no_documento { get; set; }
         }
 

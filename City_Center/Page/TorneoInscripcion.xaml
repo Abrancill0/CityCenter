@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.DetalleTorneo">
-      <ContentPage.ToolbarItems>
+             x:Class="City_Center.Page.TorneoInscripcion"
+               BindingContext="{Binding Main, Source={StaticResource Locator}}"
+              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls">
+     <ContentPage.ToolbarItems>
         <ToolbarItem  Icon="Chat"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
@@ -17,55 +17,11 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView BindingContext="{Binding TorneoDetalle}">
-            <StackLayout>
-                <StackLayout Margin="20" x:Name="SLT">
-                     <StackLayout Spacing="0">
-                    <ffimageloading:CachedImage HeightRequest="180"
-                                                Aspect="AspectFill"
-                                                LoadingPlaceholder="image_loading.png"
-                                                ErrorPlaceholder="image_error.png"
-                                                Source="{Binding td.tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" />
-                                                </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" Margin="15">
-                        <Image  Aspect="AspectFit"
-                                Source="Favorito"
-                                IsVisible="{Binding td.oculta}"
-                                VerticalOptions="Start"
-                                HorizontalOptions="Center"
-                                HeightRequest="30"
-                                WidthRequest="30">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
-                            </Image.GestureRecognizers>
-                        </Image>
-                        <Image Aspect="AspectFit"
-                               Source="FavoritoOK"
-                               IsVisible="{Binding td.tor_guardado}"
-                               HeightRequest="30"
-                               WidthRequest="30">
-                        </Image>
-                        <Image Aspect="AspectFit"
-                               Source="Compartir"
-                               VerticalOptions="Start"
-                               HorizontalOptions="Center"
-                               HeightRequest="30"
-                               WidthRequest="30">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding CompartirCommand}" />
-                            </Image.GestureRecognizers>
-                        </Image>
-                    </StackLayout>
-                    <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="{Binding td.tor_nombre}">
-                    </Label>
-                    <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="{Binding td.tor_descripcion}">
-                    </Label>
-                </StackLayout>
-                
-                <Button Margin="30" Text="INSCRIBETE" TextColor="White" BackgroundColor="#E91E63" Clicked="Handle_Clicked">
-                </Button>
-                <StackLayout x:Name="SLR" IsVisible="false" Margin="10">
-                    <xfx:XfxEntry Placeholder="Nombre y apellido*" Style="{DynamicResource EntryStyle}" Text="{Binding Nombre, Mode=TwoWay}">
+    <StackLayout Margin="10">
+               
+                    <xfx:XfxEntry Placeholder="Nombre y apellido*"
+                                  Style="{DynamicResource EntryStyle}"
+                                  x:Name="Nombre">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -74,7 +30,9 @@
                         </Entry.HeightRequest>
                     </xfx:XfxEntry>
 
-                    <xfx:XfxEntry Placeholder="Correo*" Style="{DynamicResource EntryStyle}" Text="{Binding Correo, Mode=TwoWay}">
+                    <xfx:XfxEntry Placeholder="Correo*"
+                                  Style="{DynamicResource EntryStyle}"
+                                  x:Name="Correo">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -82,8 +40,6 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                     </xfx:XfxEntry>
-
-
                     <StackLayout>
                             <Label Text="Tipo de documento*"
                                    TextColor="Gray"
@@ -92,15 +48,16 @@
                                    FontFamily="Oswald-Regular"/>
                             <Grid Padding="5, 0">    
                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
-                            <Picker
-                                    x:Name="TipoDocumento"
+                            <Picker x:Name="TipoDocumento"
                                     Title="Seleccione un tipo de documento"
-                                    SelectedItem="{Binding TipoDocumento, Mode=TwoWay}"/>
+                                   />
                                  
                             </Grid>
                             </StackLayout>
                 
-                    <xfx:XfxEntry Placeholder="Numero de documento*" Style="{DynamicResource EntryStyle}" Text="{Binding NumeroDocumento, Mode=TwoWay}">
+                    <xfx:XfxEntry Placeholder="Numero de documento*"
+                                  Style="{DynamicResource EntryStyle}"
+                                  x:Name="NumeroDocumento">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -118,11 +75,11 @@
                                    FontFamily="Oswald-Regular"/>
                             <Grid Padding="15, 0">    
                             <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
-                            <DatePicker Date="{Binding Fecha, Mode=TwoWay}"/>
+                            <DatePicker x:Name="Fecha"/>
                             </Grid>
                             </StackLayout>
                     
-                    <xfx:XfxEntry Placeholder="Nacionalidad*" Style="{DynamicResource EntryStyle}" Text="{Binding Nacionalidad, Mode=TwoWay}">
+                    <xfx:XfxEntry Placeholder="Nacionalidad*" Style="{DynamicResource EntryStyle}" x:Name="Nacionalidad" >
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -130,7 +87,7 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                     </xfx:XfxEntry>
-                    <xfx:XfxEntry Placeholder="Pais*" Style="{DynamicResource EntryStyle}" Text="{Binding Pais, Mode=TwoWay}">
+                    <xfx:XfxEntry Placeholder="Pais*" Style="{DynamicResource EntryStyle}" x:Name="Pais" >
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -138,7 +95,7 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                     </xfx:XfxEntry>
-                    <xfx:XfxEntry Placeholder="Provincia*" Style="{DynamicResource EntryStyle}" Text="{Binding Provincia, Mode=TwoWay}">
+                    <xfx:XfxEntry Placeholder="Provincia*" Style="{DynamicResource EntryStyle}" x:Name="Provincia">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -146,7 +103,7 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                     </xfx:XfxEntry>
-                    <xfx:XfxEntry Placeholder="Ciudad*" Style="{DynamicResource EntryStyle}" Text="{Binding Ciudad, Mode=TwoWay}">
+                    <xfx:XfxEntry Placeholder="Ciudad*" Style="{DynamicResource EntryStyle}" x:Name="Ciudad">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -158,10 +115,9 @@
                             Text="RESERVAR"
                             TextColor="White"
                             BackgroundColor="#E91E63"
-                            Command="{Binding EnviaCorreoCommand}">
+                            Clicked="Handle_Clicked">
                     </Button>
                 </StackLayout>
-            </StackLayout>
-        </ScrollView>
+            
     </ContentPage.Content>
 </ContentPage>

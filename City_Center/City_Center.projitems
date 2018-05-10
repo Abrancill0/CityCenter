@@ -147,6 +147,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\TorneoInscripcion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\HttpClientPostMethod.cs" />
@@ -344,6 +348,12 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\Ubicacion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Clases\Utils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\TorneoInscripcion.xaml.cs">
+      <DependentUpon>TorneoInscripcion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\CambiaContrasenaResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CambiaPassViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TarjetaValidaResultado.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

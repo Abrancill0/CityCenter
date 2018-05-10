@@ -6,6 +6,8 @@ namespace City_Center.Clases
         public static string RutaServidor = "http://cc.comprogapp.com/";
         public static string RutaImagene;
 
+		public static string IDUsuario;
+
         public static string Img1;
         public static string Img2;
         public static string Img3;

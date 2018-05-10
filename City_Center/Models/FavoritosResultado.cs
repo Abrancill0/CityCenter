@@ -27,6 +27,7 @@ namespace City_Center.Models
 			public bool ocultallamada { get; set; }
 			public bool ocultaonline { get; set; }
 			public bool ocultatorneo { get; set; }
+			public string telefono { get; set; }
         }
 
         public class FavoritoReturn

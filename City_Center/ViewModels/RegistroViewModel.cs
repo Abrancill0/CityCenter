@@ -215,7 +215,7 @@ namespace City_Center.ViewModels
                 new KeyValuePair<string, string>("usu_id_tarjeta_socio", "1"),
                 new KeyValuePair<string, string>("usu_estatus", "1"),
                 new KeyValuePair<string, string>("usu_id_tarjeta_socio", ""),
-                new KeyValuePair<string, string>("usu_fecha_nacimiento", this.Fecha.ToString("yyyy/MM/dd")),
+                new KeyValuePair<string, string>("usu_fecha_nacimiento", this.Fecha.ToString("yyyy-MM-dd")),
             });
 
 
@@ -242,6 +242,7 @@ namespace City_Center.ViewModels
             Application.Current.Properties["Pass"] = this.Password;
             Application.Current.Properties["FechaNacimiento"] = this.Fecha;
             Application.Current.Properties["FotoPerfil"] = RutaImagen;
+			Application.Current.Properties["TipoCuenta"] = "CityCenter";
 
             Application.Current.Properties["TipoDocumento"] = "";
             Application.Current.Properties["NumeroDocumento"] = "";

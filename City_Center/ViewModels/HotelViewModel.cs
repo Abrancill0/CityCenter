@@ -111,9 +111,9 @@ namespace City_Center.ViewModels
                 
                 var Posicion = await Ubicacion.GetCurrentPosition();
 
-                Compartir.Text = Posicion.Latitude + ", " + Posicion.Altitude;
+				Compartir.Text = "Ubicacion Actual";
                 Compartir.Title = "Tu ubicacion";
-                Compartir.Url = "";
+				Compartir.Url = "https://www.google.com/maps/@" + Posicion.Latitude + "," + Posicion.Longitude + "," + "16z";
 
                 await CrossShare.Current.Share(Compartir);
             }

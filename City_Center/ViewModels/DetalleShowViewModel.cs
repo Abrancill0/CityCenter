@@ -95,8 +95,7 @@ namespace City_Center.ViewModels
 
         }
 
-        
-
+              
 		public ICommand LlamarCommand
         {
             get

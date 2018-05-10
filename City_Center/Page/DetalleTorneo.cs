@@ -7,10 +7,19 @@ namespace City_Center.Page
 {
     public partial class DetalleTorneo : ContentPage
     {
+		private string[] ListaOpciones;
+
         public DetalleTorneo()
         {
             InitializeComponent();
             NavigationPage.SetTitleIcon(this, "logo.png");
+
+			ListaOpciones = new string[] { "DNI", "LE", "LC", "CI" };
+
+            TipoDocumento.ItemsSource = ListaOpciones;
+
+            TipoDocumento.SelectedIndex = 0;
+
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)

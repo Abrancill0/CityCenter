@@ -13,11 +13,88 @@ using static City_Center.Models.TorneoResultado;
 
 namespace City_Center.ViewModels
 {
-    public class TorneoDetalleViewModel
+	public class TorneoDetalleViewModel:BaseViewModel
     {
         #region Attributes
         private ApiService apiService;
+
+		private string nombre;
+		private string correo;
+		private string tipoDocumento;
+		private string numeroDocumento;
+		private DateTime fecha;
+		private string nacionalidad;
+		private string pais;
+		private string provincia;
+		private string ciudad;
+        
         #endregion
+
+		#region Properties
+        public TorneoDetalle td
+        {
+            get;
+            set;
+        }
+        
+		public string Correo
+        {
+			get { return this.correo; }
+			set { SetValue(ref this.correo, value); }
+        }
+
+        public string Nombre
+        {
+            get { return this.nombre; }
+            set { SetValue(ref this.nombre, value); }
+        }
+  
+		public string TipoDocumento
+        {
+			get { return this.tipoDocumento; }
+			set { SetValue(ref this.tipoDocumento, value); }
+        }
+
+		public string NumeroDocumento
+        {
+			get { return this.numeroDocumento; }
+			set { SetValue(ref this.numeroDocumento, value); }
+        }
+
+		public string Nacionalidad
+        {
+			get { return this.nacionalidad; }
+			set { SetValue(ref this.nacionalidad, value); }
+        }
+
+        public DateTime Fecha
+        {
+            get { return this.fecha; }
+            set { SetValue(ref this.fecha, value); }
+        }
+
+		public string Pais
+        {
+			get { return this.pais; }
+			set { SetValue(ref this.pais, value); }
+        }
+
+
+		public string Provincia
+        {
+			get { return this.provincia; }
+			set { SetValue(ref this.provincia, value); }
+        }
+
+		public string Ciudad
+        {
+			get { return this.ciudad; }
+			set { SetValue(ref this.ciudad, value); }
+        }
+
+        #endregion
+
+
 
         #region Command
         public ICommand CompartirCommand
@@ -89,20 +166,112 @@ namespace City_Center.ViewModels
 
         }
 
-        #endregion
 
-        #region Properties
-        public TorneoDetalle td
-        {
-            get;
-            set;
-        }
-        #endregion
 
+        public ICommand EnviaCorreoCommand
+		{
+			get
+			{
+				return new RelayCommand(EnviaCorreo);	
+			}
+		}
+
+        private async void EnviaCorreo()
+		{
+         
+			if (string.IsNullOrEmpty(Nombre))
+			{
+			await Mensajes.Info("Nombre Requerido");
+				return;
+			}
+
+			if (string.IsNullOrEmpty(Correo))
+            {
+                await Mensajes.Info("Correo Requerido");
+                return;
+            }
+
+			if (string.IsNullOrEmpty(NumeroDocumento))
+            {
+				await    Mensajes.Info("Numero de documento Requerido");
+                return;
+            }
+
+			if (string.IsNullOrEmpty(Nacionalidad))
+            {
+				await  Mensajes.Info("Nacionalidad Requerido");
+                return;
+            }
+
+			if (string.IsNullOrEmpty(Provincia))
+            {
+				await  Mensajes.Info("Provincia Requerido");
+                return;
+            }
+
+			if (string.IsNullOrEmpty(TipoDocumento))
+            {
+				await  Mensajes.Info("Tipo de documento Requerido");
+                return;
+            }
+
+			if (string.IsNullOrEmpty(Pais))
+            {
+				await  Mensajes.Info("Pais Requerido");
+                return;
+            }
+
+			if (string.IsNullOrEmpty(Ciudad))
+            {
+				await  Mensajes.Info("Ciudad Requerido");
+                return;
+            }
+
+			var content = new FormUrlEncodedContent(new[]
+            {
+				new KeyValuePair<string, string>("email", Correo), 
+				new KeyValuePair<string, string>("tor_nombre", td.tor_nombre),            
+				new KeyValuePair<string, string>("nombre", Convert.ToString(Nombre)),            
+				new KeyValuePair<string, string>("numero_documento", NumeroDocumento),
+				new KeyValuePair<string, string>("nacionalidad", Nacionalidad),
+				new KeyValuePair<string, string>("provincia", Provincia),
+				new KeyValuePair<string, string>("tipo_de_documento", TipoDocumento),
+				new KeyValuePair<string, string>("fecha_nac", Convert.ToString(Fecha.ToString("dd-MM-yyyy"))),
+				new KeyValuePair<string, string>("pais", Pais),
+				new KeyValuePair<string, string>("ciudad", Ciudad)
+
+            });
+
+
+			var response = await this.apiService.Get<GuardadoGenerico>("/casino/torneos", "/registro_torneo", content);
+
+            if (!response.IsSuccess)
+            {
+                await Mensajes.Error(response.Message);
+				return;
+            }
+
+            await Mensajes.success("Correo enviado exitosamente");
+
+			Correo = string.Empty;
+            Nombre=string.Empty;         
+			NumeroDocumento=string.Empty;
+			Nacionalidad=string.Empty;
+			Provincia = string.Empty;
+			TipoDocumento =string.Empty;
+			pais =string.Empty;
+			Ciudad =string.Empty;
+            
+		}
+              
+        #endregion
+      
         public TorneoDetalleViewModel(TorneoDetalle td)
         {
             this.apiService = new ApiService();
             this.td = td;
+
+			Fecha = DateTime.Today;
 
         }
     }
