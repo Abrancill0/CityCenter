@@ -342,6 +342,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)PopUp\LoadingPopupPage.xaml.cs">
       <DependentUpon>LoadingPopupPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Clases\Ubicacion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Clases\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

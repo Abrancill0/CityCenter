@@ -24,6 +24,9 @@ namespace City_Center.Models
             public string imagen_2 { get; set; }
             public string link { get; set; }
             public string fecha { get; set; }
+			public bool ocultallamada { get; set; }
+			public bool ocultaonline { get; set; }
+			public bool ocultatorneo { get; set; }
         }
 
         public class FavoritoReturn

@@ -14,6 +14,7 @@ using Naxam.Controls.Platform.Droid;
 using Xamarin;
 using Acr.UserDialogs;
 using Plugin.CurrentActivity;
+using Plugin.Permissions;
 //using FFImageLoading.Forms.Droid;
 
 namespace City_Center.Droid
@@ -22,13 +23,14 @@ namespace City_Center.Droid
 
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-       
         protected override void OnCreate(Bundle bundle)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
+
+			Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, bundle);
 
             Xfx.XfxControls.Init();
             UserDialogs.Init(this);
@@ -95,6 +97,11 @@ namespace City_Center.Droid
                 (manager as FacebookManager)._callbackManager.OnActivityResult(requestCode, (int)resultCode, data);
             }
         }
-
+        
+		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+        
     }
 }

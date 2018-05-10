@@ -59,11 +59,12 @@ namespace City_Center.Page
 
                     Image image = new Image
                     {
-                        Source = "http://cc.comprogapp.com/" + it.tar_imagen,
-                        WidthRequest = 80,
-						HeightRequest = 80
+                        Source = "http://cc.comprogapp.com/" + it.tar_imagen+"?1",
+                        WidthRequest = 60,
+						HeightRequest = 60,
+                        Aspect=Aspect.Fill
                    };
-
+                    
                     Label name = new Label
                     {
                         Text = it.tar_nombre,

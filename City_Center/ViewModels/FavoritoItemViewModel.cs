@@ -110,9 +110,7 @@ namespace City_Center.ViewModels
                 await Mensajes.Info("Inicia Sesion para eliminar Guardados");
             }
         }
-
-
-
+      
         #endregion
 
 

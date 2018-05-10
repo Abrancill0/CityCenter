@@ -9,7 +9,6 @@
       <ContentPage.ToolbarItems>
         <ToolbarItem Icon="Chat"/>
     </ContentPage.ToolbarItems>
-
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Name="TabTopLabel" TargetType="Label">
@@ -22,9 +21,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Casino}">
-            
-                 <Grid  >
+        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Casino}"> <Grid  >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*">
                     </ColumnDefinition>
@@ -36,7 +33,7 @@
                     </RowDefinition>
                 </Grid.RowDefinitions>
                      <Image  Aspect="AspectFill"  Source="CASINOmin" Grid.Row = "0" Grid.Column = "0" Grid.ColumnSpan = "2"  />
-                     <Button Image ="checkin_rosa"
+                     <!--<Button Image ="checkin_rosa"
                             BackgroundColor = "Transparent"
                              ContentLayout = "Left,0"
                              Text = ""
@@ -45,7 +42,19 @@
                              WidthRequest="100"
                              HeightRequest="100"
                              Command="{Binding UbicacionCasinoCommand}"
-                            />
+                            />-->
+
+                 <Image   Aspect="AspectFit"
+                         Source="checkin_rosa"
+                         Grid.Row = "0"
+                         Grid.Column = "1"
+                         VerticalOptions = "Center"
+                         WidthRequest="60"
+                         HeightRequest="60">
+                     <Image.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding UbicacionCasinoCommand}"  />
+                     </Image.GestureRecognizers>
+                </Image>
                 </Grid>
             
             <Grid BackgroundColor="#E91E63" Padding="0">

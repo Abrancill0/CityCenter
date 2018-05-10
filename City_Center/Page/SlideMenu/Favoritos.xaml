@@ -34,7 +34,6 @@
                                     <RowDefinition Height="0.8*" />
                                     <RowDefinition Height="1.8*" />
                                 </Grid.RowDefinitions>
-
                                 <ffimageloading:CachedImage  HeightRequest="250" Grid.Row="0" Aspect="AspectFill" Grid.ColumnSpan="3"
                                                 LoadingPlaceholder="image_loading.png"
                                                 ErrorPlaceholder="image_error.png"
@@ -98,8 +97,24 @@
                                               BackgroundColor="#FFFFFF"
                                               Spacing = "5"
                                               VerticalOptions="Start">
-                                    <Button VerticalOptions = "Center" Text="COMPRA ONLINE" HeightRequest = "35" TextColor="White" BackgroundColor="#250C4B"></Button>
-                                    <Button VerticalOptions = "Center" Text="COMPRA TELEFÓNICA" HeightRequest = "35" TextColor="White" BackgroundColor="#250C4B"></Button>
+                                    <Button VerticalOptions = "Center"
+                                            Text="COMPRA ONLINE"
+                                            HeightRequest = "35"
+                                            TextColor="White"
+                                            BackgroundColor="#250C4B"
+                                            IsVisible="{Binding ocultaonline,Mode=TwoWay}"/>
+                                    <Button VerticalOptions = "Center"
+                                            Text="COMPRA TELEFÓNICA"
+                                            HeightRequest = "35"
+                                            TextColor="White"
+                                            BackgroundColor="#250C4B"
+                                            IsVisible="{Binding ocultallamada,Mode=TwoWay}"/>
+                                    <Button VerticalOptions = "Center"
+                                            Text="INSCRIBETE"
+                                            HeightRequest = "35"
+                                            TextColor="White"
+                                            BackgroundColor="#250C4B"
+                                            IsVisible="{Binding ocultatorneo,Mode=TwoWay}"/>
                                 </StackLayout>
                             </Grid>
                         </DataTemplate>

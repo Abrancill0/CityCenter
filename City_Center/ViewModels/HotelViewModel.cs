@@ -12,6 +12,9 @@ using static City_Center.Models.MoaSpaResultado;
 using static City_Center.Models.PromocionesResultado;
 using City_Center.Clases;
 using Plugin.Share;
+using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
+using Plugin.Permissions.Abstractions;
 
 
 namespace City_Center.ViewModels
@@ -101,9 +104,14 @@ namespace City_Center.ViewModels
             {
                 Plugin.Share.Abstractions.ShareMessage Compartir = new Plugin.Share.Abstractions.ShareMessage();
 
-               // var Ubicacion = await GetCurrentPosition();
 
-                Compartir.Text = "Pendiente";
+                var hasPermission = await Utils.CheckPermissions(Permission.Location);
+                if (!hasPermission)
+                    return;
+                
+                var Posicion = await Ubicacion.GetCurrentPosition();
+
+                Compartir.Text = Posicion.Latitude + ", " + Posicion.Altitude;
                 Compartir.Title = "Tu ubicacion";
                 Compartir.Url = "";
 

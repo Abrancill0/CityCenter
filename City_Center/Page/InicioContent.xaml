@@ -124,9 +124,14 @@
                                         <Label Text="Llegada"
                                                FontSize = "Small"
                                                TextColor="Gray"
-                                               Margin="5,0,0,0"
-                                               FontFamily="Oswald-Regular">
-                                        </Label>
+                                               Margin="5,0,0,0">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                          </Label>
                                         <DatePicker Format="dd/MM/yyyy" x:Name="FechaInicio">
                                         </DatePicker>
                                     </StackLayout>
@@ -134,9 +139,14 @@
                                         <Label Text="Salida"
                                                FontSize = "Small"
                                                TextColor="Gray"
-                                               Margin="5,0,0,0"
-                                               FontFamily="Oswald-Regular">
-                                        </Label>
+                                               Margin="5,0,0,0">
+                                         <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                          </Label>
                                         <DatePicker Format="dd/MM/yyyy" x:Name="FechaFinal">
                                         </DatePicker>
                                     </StackLayout>
@@ -192,13 +202,26 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                                        <Label Text="Rango de fecha">
+                                        <Label Text="Rango de fecha"  TextColor="Gray">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                </OnPlatform>
+                                            </Label.FontFamily>
                                         </Label>
                                         <DatePicker>
                                         </DatePicker>
                                     </StackLayout>
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
-                                        <Label Text="Hola" TextColor="White"/>
+                                        <Label Text="Hola" TextColor="White">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
                                         <DatePicker>
                                         </DatePicker>
                                     </StackLayout>
@@ -246,7 +269,13 @@
                                     </Grid.RowDefinitions>
 
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                                        <Label Text="Fecha">
+                                        <Label Text="Fecha" TextColor="Gray">
+                                             <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                </OnPlatform>
+                                            </Label.FontFamily>
                                         </Label>
                                         <DatePicker Date="{Binding FechaInicio, Mode=TwoWay}" >
                                             
@@ -254,7 +283,13 @@
                                      <!--   -->
                                     </StackLayout>
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
-                                        <Label Text="Hora">
+                                        <Label Text="Hora" TextColor="Gray">
+                                         <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                </OnPlatform>
+                                            </Label.FontFamily>
                                         </Label>
                                         <TimePicker Time="{Binding HoraInicio, Mode=TwoWay}">
                                         </TimePicker>
@@ -440,8 +475,30 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
-                                <Label Text="TORNEOS" HorizontalTextAlignment="Start" Margin="15,15,0,0" TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0" />
-                                <Label Text="Ver Todo" HorizontalTextAlignment="End" Margin="0,15,15,0" TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="1">
+                                <Label Text="TORNEOS"
+                                       HorizontalTextAlignment="Start"
+                                       Margin="15,15,0,0"
+                                       TextColor="#250c4b"
+                                       Grid.Row="0"
+                                       Grid.Column="0">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                    </Label>
+                                <Label Text="Ver Todo"
+                                       HorizontalTextAlignment="End"
+                                       Margin="0,15,15,0"
+                                       TextColor="#250c4b"
+                                       Grid.Row="0" Grid.Column="1">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Oswald-Regular"/>
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        </OnPlatform>
+                                    </Label.FontFamily>
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding ShowCommand}" />
                                     </Label.GestureRecognizers>

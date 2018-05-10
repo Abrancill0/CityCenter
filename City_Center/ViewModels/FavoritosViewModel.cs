@@ -95,7 +95,10 @@ namespace City_Center.ViewModels
                   imagen = "http://cc.comprogapp.com/" + l.imagen,
                   imagen_2 = l.imagen_2,
                   link = l.link,
-                  fecha = l.fecha
+                  fecha = l.fecha,
+				  ocultallamada = false,
+				  ocultaonline = (string.IsNullOrEmpty(l.link) ? false : true),
+				  ocultatorneo = l.gua_id_torneo == 0 ? false : true,
             });
         }
 
