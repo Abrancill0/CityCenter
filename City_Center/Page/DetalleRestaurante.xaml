@@ -10,15 +10,15 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding DetalleRestaurante}" BackgroundColor="White">
-            <StackLayout>
+            <StackLayout Spacing="0">
                 <StackLayout HorizontalOptions="Start" Padding="10,10">
                 <Label Text="{Binding rd.reb_nombre}"
-                       FontSize="Large"
-                       Margin="20"
+                       FontSize="25"
+                       Margin="10"
                        TextColor="#250C4B">
                     <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="iOS" Value="Oswald-Regular"/>
                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
@@ -81,7 +81,13 @@
                                                    FontFamily="Oswald-Regular"
                                                    TextColor="#250C4B"
                                                    Margin="0,0,10,0"
-                                                   HorizontalOptions="End"></Label>
+                                                   HorizontalOptions="End"><Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Oswald-Regular"/>
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
                                            <ffimageloading:CachedImage Margin="5"
                                                    HeightRequest="50"
                                                    Grid.Row="0" Grid.Column="1"
@@ -99,9 +105,15 @@
                                                    HorizontalTextAlignment="Center"
                                                    Grid.Row="1"
                                                    Grid.Column="1"
-                                                   FontFamily="Oswald-Regular"
                                                    TextColor="#250C4B"
-                                                   HorizontalOptions="Center"></Label>
+                                                   HorizontalOptions="Center">
+                                                   <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Oswald-Regular"/>
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
                                            <ffimageloading:CachedImage Margin="5"
                                                    HeightRequest="50"
                                                    Grid.Row="0"
@@ -122,7 +134,14 @@
                                                   Grid.Column="2"
                                                   FontFamily="Oswald-Regular"
                                                   TextColor="#250C4B"
-                                                  HorizontalOptions="Start"></Label>
+                                                  HorizontalOptions="Start">
+                                                   <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Oswald-Regular"/>
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
                                             </Grid>
                     </StackLayout>
                     <StackLayout Padding="0, 30" x:Name="SLM" BackgroundColor="#EBEBEB" IsVisible="false" HorizontalOptions="FillAndExpand">

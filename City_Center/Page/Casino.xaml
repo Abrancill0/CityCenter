@@ -691,8 +691,8 @@
             </StackLayout>
             <StackLayout x:Name="SL4" IsVisible="false">
                 <ScrollView Orientation="Vertical">
-                    <StackLayout>
-             <StackLayout Spacing="1" Margin="5">
+                    <StackLayout BackgroundColor="White">
+             <StackLayout Spacing="0" Margin="5">
                               
                         <StackLayout HorizontalOptions="FillAndExpand">
                             <ffimageloading:CachedImage x:Name="Img2provisional"
@@ -734,7 +734,8 @@
                         </RelativeLayout>
                         </StackLayout>
                 <StackLayout HorizontalOptions="FillAndExpand" Margin="5">
-                                <Label HorizontalTextAlignment="Start" Text="Horarios: Lunes a domingo de 02 pm a 05 am" Margin="10, 10" HorizontalOptions="Center" TextColor="Black"></Label>
+                                <Label HorizontalTextAlignment="Start" Text="Horarios: Lunes a domingo de 02 pm a 05 am" Margin="10, 10" HorizontalOptions="Center" TextColor="Black">
+                                </Label>
                                 <Label Text="" HorizontalOptions="Start" TextColor="Black"></Label>
                                 <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="Accede a dos exclusivos sectores para aquellos" FontSize="Small" TextColor="Black"></Label>
                                 <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="clientes que deseen privacidad y atencion" FontSize="Small" TextColor="Black"></Label>

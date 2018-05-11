@@ -78,7 +78,8 @@ namespace City_Center.ViewModels
 
                     var list = (GuardadoGenerico)response.Result;
 
-                  
+                 
+
 					await Mensajes.success("Guardado Correctamente");
 
                 }
@@ -106,11 +107,11 @@ namespace City_Center.ViewModels
 
         private async void VerDetalleShow()
         {
-
+            
             MainViewModel.GetInstance().DetalleShow = new DetalleShowViewModel(this);
 
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new DetalleShow());
-
+            
             //await Application.Current.MainPage.Navigation.PushModalAsync(new DetalleShow());
         }
 

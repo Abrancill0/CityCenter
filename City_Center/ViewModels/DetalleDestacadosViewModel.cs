@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Windows.Input;
+using City_Center.Clases;
 using City_Center.Models;
 using City_Center.Services;
 using GalaSoft.MvvmLight.Command;
@@ -39,16 +40,17 @@ namespace City_Center.ViewModels
             }
         }
 
-        private void CompartirUrl()
+        private async void CompartirUrl()
         {
-            //Plugin.Share.Abstractions.ShareMessage Compartir = new Plugin.Share.Abstractions.ShareMessage();
 
-            //Compartir.Text = this.ds.eve_nombre;
-            //Compartir.Title = this.ds.eve_nombre;
-            //Compartir.Url = this.ds.eve_link;
+            Plugin.Share.Abstractions.ShareMessage Compartir = new Plugin.Share.Abstractions.ShareMessage();
 
-            //await CrossShare.Current.Share(Compartir);
+            Compartir.Text = dd.des_descripcion;
+            Compartir.Title = dd.des_nombre;
+            Compartir.Url = "http://cc.comprogapp.com/es/show-detail/" + dd.des_id + "/" + this.dd;
 
+            await CrossShare.Current.Share(Compartir);
+            
         }
 
         public ICommand GuardaFavoritoCommand
@@ -59,34 +61,45 @@ namespace City_Center.ViewModels
             }
         }
 
-        private void GuardaFavorito()
+        private async void GuardaFavorito()
         {
-            //var content = new FormUrlEncodedContent(new[]
-            // {
-            //    new KeyValuePair<string, string>("gua_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
-            //    new KeyValuePair<string, string>("gua_id_evento", Convert.ToString(this.ds.eve_id)),
-            //    new KeyValuePair<string, string>("gua_id_promocion", "0")
+			try
+            {
 
-            // });
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
 
-            //var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/store", content);
+                if (isLoggedIn)
+                {
+                    var content = new FormUrlEncodedContent(new[]
+                    {
+                        new KeyValuePair<string, string>("gua_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                        new KeyValuePair<string, string>("gua_id_destacado", Convert.ToString(dd.des_id)),
 
-            //if (!response.IsSuccess)
-            //{
-            //    await Application.Current.MainPage.DisplayAlert(
-            //          "Error",
-            //          response.Message,
-            //          "Ok");
-            //    return;
-            //}
+                    });
 
-            //var list = (GuardadoGenerico)response.Result;
+                    var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/store", content);
 
-            //await Application.Current.MainPage.DisplayAlert(
-                     //"City Center",
-                     // list.mensaje,
-                     //"Ok");
+                    if (!response.IsSuccess)
+                    {
+                        await Mensajes.Error("Error al guardar Guardados");
+                        return;
+                    }
 
+                    var list = (GuardadoGenerico)response.Result;
+
+					await Mensajes.success("Guardado Correctamente");
+
+                }
+                else
+                {
+                    await Mensajes.Info("Inicia Sesion para guardar este Destacado");
+                }
+            }
+            catch (Exception)
+            {
+                await Mensajes.Info("Inicia Sesion para guardar este Destacado");
+            }         
         }
 
         #endregion

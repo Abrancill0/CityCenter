@@ -28,11 +28,13 @@ namespace City_Center.Page
             {
                 SLR.IsVisible = true;
                 SLT.IsVisible = false;
+				BotonInscripcion.Text = "REGRESAR";
             }
             else
             {
                 SLR.IsVisible = false;
                 SLT.IsVisible = true;
+				BotonInscripcion.Text = "INSCRIBETE";
             }
            
         }

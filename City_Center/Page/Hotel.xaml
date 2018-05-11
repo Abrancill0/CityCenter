@@ -221,8 +221,14 @@
                                     TextColor="White"
                                     BackgroundColor="#2D97A3"
                                     Clicked="Handle_Clicked"
-                                    Text="VER OPCIONES"
-                                    FontFamily="Oswald-Regular"/>
+                                    Text="VER OPCIONES">
+                                <Button.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                </OnPlatform>
+                                            </Button.FontFamily>
+                            </Button>
                         </StackLayout>
                         <StackLayout BackgroundColor="White">
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
@@ -612,7 +618,7 @@
                                                                                
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
-                                                                                Source="{Binding pro_imagen}">
+                                                                                Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}">>
                                                      </ffimageloading:CachedImage>
                                                 </StackLayout>
                                             </ContentView>

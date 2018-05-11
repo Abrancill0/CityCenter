@@ -10,9 +10,9 @@
     <ContentPage.Content>
     <ScrollView BindingContext="{Binding DetalleHotel}">
          <StackLayout Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout>
-                    <StackLayout HorizontalOptions="Start" Padding="30,30">
-                        <Label Text="{Binding hd.hab_nombre}" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
+            <StackLayout Spacing="0">
+                    <StackLayout HorizontalOptions="Start" Padding="30,20">
+                        <Label Text="{Binding hd.hab_nombre}" FontSize="26" HorizontalTextAlignment="Start" TextColor="#23144B">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -64,15 +64,23 @@
                       TextColor="White"
                       BackgroundColor="#2D97A3"
                       Text="RESERVA ONLINE"
-                      Clicked="BtnReservaOnline"/>
+                      Clicked="BtnReservaOnline">
+                         <Button.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Button.FontFamily>
+                    </Button>
             </StackLayout>
-            <StackLayout HorizontalOptions="FillAndExpand" Padding="10,15" Margin="3">
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="2,10">
                 <Label FontFamily="Oswald-Regular"
                        FontSize="Default"
                        FontAttributes="Bold"
                        HorizontalOptions="Start"
                        HorizontalTextAlignment="Start"
                        Text="OTRAS HABITACIONES"
+                       Margin="4,0,0,0"
                        TextColor="#250C4B">
                            <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">

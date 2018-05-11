@@ -15,6 +15,7 @@ using Xamarin;
 using Acr.UserDialogs;
 using Plugin.CurrentActivity;
 using Plugin.Permissions;
+using ImageCircle.Forms.Plugin.Droid;
 //using FFImageLoading.Forms.Droid;
 
 namespace City_Center.Droid
@@ -35,6 +36,8 @@ namespace City_Center.Droid
             Xfx.XfxControls.Init();
             UserDialogs.Init(this);
 
+			ImageCircleRenderer.Init();
+
 			//CrossCurrentActivity.Current.Activity.Init(this, bundle);
 
             Forms.SetFlags("FastRenderers_Experimental");
@@ -47,13 +50,14 @@ namespace City_Center.Droid
 
             */
 
-            BottomTabbedRenderer.ItemAlign = ItemAlignFlags.Top;
+            BottomTabbedRenderer.ItemAlign = ItemAlignFlags.Default;
             BottomTabbedRenderer.FontSize = 10;
-            BottomTabbedRenderer.IconSize = 45;
+            BottomTabbedRenderer.IconSize = 30;
             BottomTabbedRenderer.ItemSpacing = 8;
             BottomTabbedRenderer.ItemPadding = new Xamarin.Forms.Thickness(8);
             BottomTabbedRenderer.BottomBarHeight = 50;
 			BottomTabbedRenderer.ItemPadding = 4;
+
 
             FacebookSdk.SdkInitialize(this);
             Rg.Plugins.Popup.Popup.Init(this, bundle);

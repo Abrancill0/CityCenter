@@ -213,7 +213,7 @@ namespace City_Center.ViewModels
                 Ciudad = Application.Current.Properties["Ciudad"].ToString();
                 Contraseña = Application.Current.Properties["Pass"].ToString();
                 Contraseña2 = Application.Current.Properties["Pass"].ToString();
-				Fecha = Convert.ToDateTime(Application.Current.Properties["FechaNacimiento"].ToString());
+
                 Imagen = Application.Current.Properties["FotoPerfil"].ToString();
 
                 TipoDocumento = Application.Current.Properties["TipoDocumento"].ToString();
@@ -228,6 +228,8 @@ namespace City_Center.ViewModels
                 {
                     HC = true;
                 }
+
+				Fecha = Convert.ToDateTime(Application.Current.Properties["FechaNacimiento"].ToString());
 
             }
             catch (Exception)

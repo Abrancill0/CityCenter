@@ -59,22 +59,61 @@
             
             <StackLayout Margin="5">
                  <StackLayout Orientation="Vertical" Margin="5">
-                    <Label Text="{Binding dd.des_nombre}" TextColor="#3F51B5" ></Label>
-                    <Label Text="{Binding dd.des_fecha_hora_inicio}" ></Label>
+                    <Label Text="{Binding dd.des_nombre}"
+                           TextColor="#250C4B" FontSize="Large">
+                        <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                       <On Platform="iOS" Value="Oswald-Regular"/>
+                                       <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <Label Text="{Binding dd.des_fecha_hora_inicio}"
+                           FontSize="Small">
+                            <Label.FontFamily>
+                                     <OnPlatform x:TypeArguments="x:String">
+                                           <On Platform="iOS" Value="Oswald-Regular"/>
+                                           <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                    </OnPlatform>
+                            </Label.FontFamily>
+                    </Label>
                 </StackLayout>
-                
-                <Label Text="{Binding dd.des_descripcion}"></Label>
+                <Label Text="{Binding dd.des_descripcion}" FontSize="Small">
+                        <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                       <On Platform="iOS" Value="Oswald-Regular"/>
+                                       <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                        </Label.FontFamily>
+                </Label>
 
                 <StackLayout Orientation="Vertical" Margin="5">
-                     <Button Text="COMPRA ONLINE" TextColor="White" BackgroundColor="#3F51B5"></Button>
-                <Button Text="COMPRA TELÉFONICA" TextColor="White" BackgroundColor="#3F51B5"></Button>
+                     <Button Text="COMPRA ONLINE"
+                             TextColor="White"
+                             Margin="20,10"
+                             BackgroundColor="#250C4B">
+                        <Button.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                       <On Platform="iOS" Value="Oswald-Regular"/>
+                                       <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                        </Button.FontFamily>
+
+                    </Button>
+                <Button Text="COMPRA TELÉFONICA"
+                        TextColor="White"
+                        Margin="20,5"
+                        BackgroundColor="#250C4B">
+                         <Button.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                       <On Platform="iOS" Value="Oswald-Regular"/>
+                                       <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                        </Button.FontFamily>
+                    </Button>
                 </StackLayout>
             </StackLayout>
                
-               
-
-                <!--</Grid>-->
-
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>
