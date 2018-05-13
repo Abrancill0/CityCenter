@@ -40,6 +40,8 @@ namespace City_Center.iOS
             Rg.Plugins.Popup.Popup.Init();
             LoadApplication(new App());
 
+			ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
+
             FirebasePushNotificationManager.Initialize(options, new NotificationUserCategory[]
             {
                 new NotificationUserCategory("message",new List<NotificationUserAction> {

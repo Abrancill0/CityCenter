@@ -7,11 +7,11 @@ using DLToolkit.Forms.Controls;
 //using FFImageLoading.Forms;
 
 namespace City_Center
-{
-
+{   
     public partial class App : Application
-    {
-       
+    {   
+		public static NavigationPage NavPage { get; set; }
+        
         public App()
         {
             InitializeComponent();

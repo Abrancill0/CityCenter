@@ -409,6 +409,9 @@
     <BundleResource Include="Resources\Fonts\Roboto-Regular.ttf" />
     <BundleResource Include="Resources\ContactoUp.jpeg" />
     <BundleResource Include="Resources\ReservaPromoDown.png" />
+    <BundleResource Include="Resources\Bar1.png" />
+    <BundleResource Include="Resources\Bar2.png" />
+    <BundleResource Include="Resources\Bar3.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

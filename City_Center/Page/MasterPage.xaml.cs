@@ -7,12 +7,15 @@ namespace City_Center.Page
 {
     public partial class MasterPage : MasterDetailPage
     {
+		      
         public MasterPage()
         {
             InitializeComponent();
            
-            Detail = new NavigationPage (new TabPage()){ BarBackgroundColor = Color.FromHex("#23144B")};
-           
+			App.NavPage = new NavigationPage(new TabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+
+			Detail = App.NavPage; //new NavigationPage (new TabPage()){ BarBackgroundColor = Color.FromHex("#23144B")};
+                    
         }
     }
 }

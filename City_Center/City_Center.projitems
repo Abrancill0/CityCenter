@@ -168,9 +168,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Page\CarruselPage.xaml.cs">
       <DependentUpon>CarruselPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Page\TabPage.xaml.cs">
-      <DependentUpon>TabPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Page\Casino.xaml.cs">
       <DependentUpon>Casino.xaml</DependentUpon>
     </Compile>
@@ -354,6 +351,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\CambiaContrasenaResultado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CambiaPassViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TarjetaValidaResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NavigationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\TabPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

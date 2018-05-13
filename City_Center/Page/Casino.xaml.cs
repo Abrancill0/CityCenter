@@ -15,8 +15,9 @@ namespace City_Center.Page
         string[] ListaOpciones;
        
         public Casino()
-        {
-            InitializeComponent();
+        {   
+         
+			InitializeComponent();
             //MainViewModel.GetInstance().Casino = new CasinoViewModel();
          
             ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2" };
@@ -27,12 +28,20 @@ namespace City_Center.Page
 
             MainViewModel.GetInstance().Casino = new CasinoViewModel();
             loadTarjet();
+
         }
 
         protected override void OnAppearing()
-        {
+		{
+
+   //         #if __ANDROID__
+			//Naxam.Controls.Platform.Droid.BottomTabbedRenderer.BackgroundColor  = new Android.Graphics.Color(187, 69, 101);// Android.Graphics.Color.Rgb(187, 69, 101);
+            //#endif
+
             base.OnAppearing();
 
+   
+			         
         }
 
         private async void loadTarjet()

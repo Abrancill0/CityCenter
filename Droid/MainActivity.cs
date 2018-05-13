@@ -53,10 +53,13 @@ namespace City_Center.Droid
             BottomTabbedRenderer.ItemAlign = ItemAlignFlags.Default;
             BottomTabbedRenderer.FontSize = 10;
             BottomTabbedRenderer.IconSize = 30;
+
+			BottomTabbedRenderer.ItemIconTintList =null;
             BottomTabbedRenderer.ItemSpacing = 8;
             BottomTabbedRenderer.ItemPadding = new Xamarin.Forms.Thickness(8);
             BottomTabbedRenderer.BottomBarHeight = 50;
-			BottomTabbedRenderer.ItemPadding = 4;
+			//BottomTabbedRenderer.BackgroundColor = Android.Graphics.Color.Rgb(98, 45, 88);
+			//BottomTabbedRenderer.ItemPadding = 4;
 
 
             FacebookSdk.SdkInitialize(this);
@@ -65,8 +68,8 @@ namespace City_Center.Droid
 
             CachedImageRenderer.Init(enableFastRenderer:true);
 
-            CarouselViewRenderer.Init();
-
+			CarouselView.FormsPlugin.Android.CarouselViewRenderer.Init();
+            
             DependencyService.Register<IGoogleManager, GoogleManager>();
             DependencyService.Register<IFacebookManager, FacebookManager>();
 

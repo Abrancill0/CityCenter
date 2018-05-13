@@ -14,6 +14,7 @@ using static City_Center.Models.EventosResultado;
 using static City_Center.Models.TorneoResultado;
 using City_Center.Clases;
 using static City_Center.Models.TarjetaUsuarioResultado;
+using Acr.UserDialogs;
 
 namespace City_Center.ViewModels
 {
@@ -154,11 +155,28 @@ namespace City_Center.ViewModels
 
         private async void TodoShows()
         {
-            MainViewModel.GetInstance().Torneo = new TorneoViewModel();
+           //MainViewModel.GetInstance().Torneo = new TorneoViewModel();
 
-            ((MasterPage)Application.Current.MainPage).IsPresented = false;
+            //((MasterPage)Application.Current.MainPage).IsPresented = false;
 
-            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Torneos());
+            //await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Torneos());
+
+			//await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new MyPage1());
+
+			//MyPage1
+
+			//UserDialogs.Instance.DatePrompt
+         
+            
+			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                MinimumDate = DateTime.Now.AddDays(-3),
+                MaximumDate = DateTime.Now.AddDays(1),
+                Title="Prueba",
+                
+                
+			});
 
         }
 

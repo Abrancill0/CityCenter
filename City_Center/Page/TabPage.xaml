@@ -5,10 +5,10 @@
              x:Class="City_Center.Page.TabPage"
              xmlns:local="clr-namespace:City_Center.Page"
              Icon="Menu.png" > 
-             <local:InicioContent x:Name="Inicio" Icon="home"  BackgroundColor="#622D58"/>
-             <local:Casino x:Name="Casino" Icon="casino" BackgroundColor="#BB4565"/>
-             <local:Hotel x:Name="Hotel" Icon="hotel" BackgroundColor="#8DC7CD"/>
-             <local:Gastronomia x:Name="Comida" Icon="food" BackgroundColor="#FFA487"/>
-             <local:MasInfo x:Name="Info" Icon="info2" BackgroundColor="#8E99CF"/>
+             <local:InicioContent x:Name="Inicio"  Icon="home"  />
+             <local:Casino x:Name="Casino"  Icon="casino" />
+             <local:Hotel x:Name="Hotel" Icon="hotel"  />
+             <local:Gastronomia x:Name="Comida" Icon="food"   />
+             <local:MasInfo x:Name="Info" Icon="info2"  />
 </naxam:BottomTabbedPage>
 
