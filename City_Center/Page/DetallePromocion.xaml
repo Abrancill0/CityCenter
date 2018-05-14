@@ -47,7 +47,8 @@
                            FontFamily="Oswald-regular"
                            TextColor="Silver"
                            FontAttributes="Bold"
-                           Text="{Binding pd.pro_nombre}" />
+                           Text="{Binding pd.pro_nombre}"
+                           FontSize="Medium"/>
                         
                      <Label HorizontalOptions="Start"
                            HorizontalTextAlignment="Start"
@@ -57,7 +58,8 @@
                            FontFamily="Oswald-regular"
                            TextColor="#250C4B"
                            FontAttributes="Bold"
-                           Text="{Binding pd.loc_nombre,StringFormat='LUGAR:{0}'}" />
+                           Text="{Binding pd.loc_nombre,StringFormat='LUGAR:{0}'}"
+                           FontSize="Medium" />
 
                          <ffimageloading:CachedImage 
                                             HeightRequest="30"
