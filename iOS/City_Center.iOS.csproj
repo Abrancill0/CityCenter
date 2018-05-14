@@ -265,6 +265,7 @@
     <Reference Include="ImageCircle.Forms.Plugin.iOS">
       <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.2.0.2\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="MonoTouch.Dialog-1" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -419,6 +420,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="GoogleManager.cs" />
     <Compile Include="Controls\TLScrollViewRenderer.cs" />
+    <Compile Include="IosForceKeyboardDismissalService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />

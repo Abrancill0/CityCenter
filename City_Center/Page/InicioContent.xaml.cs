@@ -6,6 +6,7 @@ using City_Center.PopUp;
 using Rg.Plugins.Popup.Extensions;
 using City_Center.Clases;
 using Acr.UserDialogs;
+using City_Center.Helper;
 
 namespace City_Center.Page
 {
@@ -158,16 +159,18 @@ namespace City_Center.Page
                 IsCancellable = true,
                 MinimumDate = DateTime.Now.AddDays(0)
             });
-
+            
 
 			if (result.Ok)
 			{
 				FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
 				FechaInicio.Unfocus();
+				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 			}
 			else
 			{
 				FechaInicio.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 			}
 			         
 			//String.Format("{0:dd MMMM yyyy}"
@@ -187,10 +190,12 @@ namespace City_Center.Page
             {
                 FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
 				FechaFinal.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
 				FechaFinal.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
 
             //String.Format("{0:dd MMMM yyyy}"
@@ -210,10 +215,12 @@ namespace City_Center.Page
             {
                 FechaR1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
 				FechaR1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
 				FechaR1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
 
             //String.Format("{0:dd MMMM yyyy}"
@@ -233,10 +240,12 @@ namespace City_Center.Page
             {
                 FechaRango1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
 				FechaRango1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
 				FechaRango1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
 
             //String.Format("{0:dd MMMM yyyy}"
@@ -256,10 +265,12 @@ namespace City_Center.Page
             {
                 FechaRango2.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
 				FechaRango2.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
 				FechaRango2.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
 
             //String.Format("{0:dd MMMM yyyy}"
@@ -278,10 +289,12 @@ namespace City_Center.Page
             {
 				HoraR1.Text = Convert.ToString(result.SelectedTime);
 				HoraR1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
 				HoraR1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             
 		}
@@ -295,10 +308,12 @@ namespace City_Center.Page
 				Restaurante.Text = result.ToString();
 
 				Restaurante.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 			}
 			else
 			{
 				Restaurante.Unfocus();	
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 			}
 
 		}
@@ -312,10 +327,12 @@ namespace City_Center.Page
                 SillaNiño.Text = result.ToString();
 
 				SillaNiño.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
 				SillaNiño.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
 
         }

@@ -346,6 +346,7 @@
     <Compile Include="GoogleManager.cs" />
     <Compile Include="SplashActivity.cs" />
     <Compile Include="MainApplication.cs" />
+    <Compile Include="AndroidForceKeyboardDismissalService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

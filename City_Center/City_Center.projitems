@@ -353,12 +353,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\TarjetaValidaResultado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NavigationViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\TabPage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\IForceKeyboardDismissalService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />
     <Folder Include="$(MSBuildThisFileDirectory)Page\SlideMenu\" />
     <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
     <Folder Include="$(MSBuildThisFileDirectory)PopUp\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helper\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Vista\VistaPerfil.xaml">
