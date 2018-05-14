@@ -636,8 +636,8 @@
                     
             </StackLayout>
             <StackLayout x:Name="SL3" IsVisible="false">
-                <ScrollView>
-                    <StackLayout Padding="10, 10" HorizontalOptions="StartAndExpand" Orientation="Vertical">
+                <ScrollView BackgroundColor="White">
+                    <StackLayout Padding="10, 10" HorizontalOptions="StartAndExpand" Orientation="Vertical" BackgroundColor="White">
                    
                         <StackLayout Orientation="Horizontal">
                             <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="RoomServices" />

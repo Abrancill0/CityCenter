@@ -29,6 +29,8 @@ namespace City_Center.Page
                         //Application.Current.MainPage = new MasterPage();
                         listviewMenu.SelectedItem = null;
 
+						App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
+
                         ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
                         break;
@@ -36,6 +38,8 @@ namespace City_Center.Page
                       
                         //Application.Current.MainPage = new MasterPage();
                         listviewMenu.SelectedItem = null;
+
+						App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
 
                         ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
@@ -60,6 +64,8 @@ namespace City_Center.Page
 
                         listviewMenu.SelectedItem = null;
 
+						App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
+
                         ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
                         //if (MainViewModel.GetInstance().Favoritos == null)
@@ -81,13 +87,15 @@ namespace City_Center.Page
 
                          bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
                               (bool)Application.Current.Properties["IsLoggedIn"] : false;
-
+                        
                         ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
                         listviewMenu.SelectedItem = null;
 
                         if (isLoggedIn)
                         {
+							App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
+
                             MainViewModel.GetInstance().Favoritos = new FavoritosViewModel();
                             MainViewModel.GetInstance().FavoritoItem = new FavoritoItemViewModel();
 
@@ -106,6 +114,8 @@ namespace City_Center.Page
                         //Application.Current.MainPage = new MasterPage();
                         listviewMenu.SelectedItem = null;
 
+						App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
+
                             ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
                             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new InfoPage());
@@ -117,6 +127,8 @@ namespace City_Center.Page
                         listviewMenu.SelectedItem = null;
 
                         ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+						App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
 
                         await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new TerminosCondiciones());
 

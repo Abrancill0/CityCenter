@@ -62,8 +62,8 @@ namespace City_Center.Page
 						{
 							this.BackgroundColor = Color.FromHex("#645877");
 						}
-
                         
+						App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
                         
                         break;
                         

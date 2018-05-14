@@ -501,6 +501,7 @@
     <AndroidResource Include="Resources\drawable\Hab_4.jpg" />
     <AndroidResource Include="Resources\drawable\Hab_5.jpg" />
     <AndroidResource Include="Resources\drawable\Hab_6.jpg" />
+    <AndroidResource Include="Resources\values\colors.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
