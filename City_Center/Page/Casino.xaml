@@ -203,7 +203,7 @@
                                                         <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
                                                     </ffimageloading:CachedImage>
-                                                    <Label Margin="5,2,0,0"
+                                                    <Label Margin="10,2,0,0"
                                                            TextColor = "#5D5D5D"
                                                            Grid.Row="1"
                                                            Grid.Column="0"
@@ -220,7 +220,7 @@
                                                             </OnPlatform>
                                                         </Label.FontFamily>
                                                     </Label>
-                                                    <Label Margin="5,0,0,0"
+                                                    <Label Margin="10,0,0,0"
                                                            TextColor = "#5D5D5D"
                                                            Grid.Row="2" Grid.Column="0" 
                                                            Grid.ColumnSpan="2"
@@ -244,21 +244,37 @@
                                                            Source="Favorito"
                                                            IsVisible="{Binding oculta}"
                                                            VerticalOptions = "Start"
-                                                           HorizontalOptions = "Center" >
+                                                           HorizontalOptions = "Center"
+                                                           HeightRequest="30"
+                                                           WidthRequest="30">
                                                         <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"  />
                                                         </Image.GestureRecognizers>
                                                     </Image>
 
-                                                    <Image Margin="15" Grid.Row="1"
+                                                    <Image Margin="12"
+                                                           Grid.Row="1"
                                                            Grid.Column="2"
                                                            Grid.RowSpan="2"
                                                            Aspect="AspectFit"
                                                            Source="FavoritoOK"
-                                                           IsVisible="{Binding des_guardado}">
+                                                           IsVisible="{Binding des_guardado}"
+                                                           VerticalOptions = "Start"
+                                                           HorizontalOptions = "Center"
+                                                           HeightRequest="30"
+                                                           WidthRequest="30">
                                                    </Image>
                                                         
-                                                    <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions = "Start" HorizontalOptions = "Center" >
+                                                    <Image Margin="10"
+                                                           Grid.Row="1"
+                                                           Grid.Column="3"
+                                                           Grid.RowSpan="2"
+                                                           Aspect="AspectFit"
+                                                           Source="Compartir"
+                                                           VerticalOptions = "Start"
+                                                           HorizontalOptions = "Center"
+                                                           HeightRequest="30"
+                                                           WidthRequest="30">
                                                         <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                         </Image.GestureRecognizers>
@@ -534,9 +550,9 @@
                             <!--Carousel-->
                             </StackLayout>
                         </Frame>
-                        <StackLayout Spacing="1" Margin="5">
-                              <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" 
-                                    Margin = "20,0" Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular">
+                        <StackLayout Spacing="0" Margin="5">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" 
+                                    Margin = "20,5" Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular">
                                 <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Oswald-Regular"/>
@@ -544,46 +560,46 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                             </Label>
-                        <StackLayout HorizontalOptions="FillAndExpand">
-                            <ffimageloading:CachedImage x:Name="Img1provisional"
-                            HeightRequest="150"
-                            Aspect="AspectFill"
-                            DownsampleToViewSize="true"
-                            LoadingPlaceholder="image_loading.png"
-                            ErrorPlaceholder="image_error.png"
-                            Source="{Binding Imagen_Selected}" />
-                        </StackLayout>
-                        <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
-                            <ListView Rotation="270" ItemsSource="{Binding SalaPokerDetalle}"
-                                      ItemSelected="Handle_ItemSelected"
-                                      RowHeight="100" SeparatorVisibility="None"
-                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
-                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
-                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}"
-                                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                                      CachingStrategy="RecycleElement">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <ContentView Rotation="90" BackgroundColor="Transparent">
-                                                <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
-                                                    <ffimageloading:CachedImage HeightRequest="100" 
-                                                                                WidthRequest="100"
-                                                                                Aspect="AspectFill"
-                                                                                DownsampleToViewSize="true"
-                                                                                LoadingPlaceholder="image_loading.png"
-                                                                                ErrorPlaceholder="image_error.png"
-                                                                                Source="{Binding spo_imagen}">
-                                                        
-                                                     </ffimageloading:CachedImage>
-                                                   
-                                                </StackLayout>
-                                            </ContentView>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </RelativeLayout>
+                            <StackLayout HorizontalOptions="FillAndExpand">
+                                <ffimageloading:CachedImage x:Name="Img1provisional"
+                                HeightRequest="150"
+                                Aspect="AspectFill"
+                                DownsampleToViewSize="true"
+                                LoadingPlaceholder="image_loading.png"
+                                ErrorPlaceholder="image_error.png"
+                                Source="{Binding Imagen_Selected}" />
+                            </StackLayout>
+                            <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
+                                <ListView Rotation="270" ItemsSource="{Binding SalaPokerDetalle}"
+                                          ItemSelected="Handle_ItemSelected"
+                                          RowHeight="100" SeparatorVisibility="None"
+                                          RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
+                                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
+                                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}"
+                                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                          CachingStrategy="RecycleElement">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <ContentView Rotation="90" BackgroundColor="Transparent">
+                                                    <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
+                                                        <ffimageloading:CachedImage HeightRequest="100" 
+                                                                                    WidthRequest="100"
+                                                                                    Aspect="AspectFill"
+                                                                                    DownsampleToViewSize="true"
+                                                                                    LoadingPlaceholder="image_loading.png"
+                                                                                    ErrorPlaceholder="image_error.png"
+                                                                                    Source="{Binding spo_imagen}">
+                                                            
+                                                         </ffimageloading:CachedImage>
+                                                       
+                                                    </StackLayout>
+                                                </ContentView>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </RelativeLayout>
                         </StackLayout>
                         <Frame IsClippedToBounds="True" HeightRequest="260" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>

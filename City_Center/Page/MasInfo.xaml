@@ -338,8 +338,8 @@
                 </ScrollView>
             </StackLayout>
             <StackLayout x:Name="SL2" IsVisible="false">
-                <ScrollView>
-                    <StackLayout Margin="10,10,0,0">
+                <ScrollView BackgroundColor="White">
+                    <StackLayout Margin="10,10,0,0" BackgroundColor="White">
 
                         <StackLayout Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"

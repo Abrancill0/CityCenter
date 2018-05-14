@@ -127,17 +127,37 @@
                     </Button>
                 </Grid>
             </StackLayout>
-            <StackLayout Padding="0,10,10,10" BackgroundColor="#1B0938" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand" IsVisible="{Binding OpcionesVisible}">
-                <Label Text="REGISTRARME" FontSize="Small" TextColor="White" FontFamily="Oswald-Bold" FontAttributes="Bold" Margin="10" VerticalOptions="Center">
+            <StackLayout Padding="0,10,10,10" BackgroundColor="#1B0938" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" IsVisible="{Binding OpcionesVisible}">
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                       <Label Text="REGISTRARME" FontSize="Small"
+                       TextColor="White"
+                       FontFamily="Oswald-Bold"
+                       FontAttributes="Bold"
+                       Margin="10"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="Center">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding RegistrarseCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="INICIAR SESIÓN" FontSize="Small" TextColor="White" FontFamily="Oswald-Bold" FontAttributes="Bold" Margin="10">
+                       <Label Text="INICIAR SESIÓN"
+                       FontSize="Small"
+                       TextColor="White"
+                       FontFamily="Oswald-Bold"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="Center"
+                       Margin="10">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding IniciarSesionCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
+                </StackLayout>
+             
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

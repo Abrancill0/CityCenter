@@ -53,8 +53,9 @@ namespace City_Center.Page
 					return;
 				}
 
+				DateTime Fecha1 = Convert.ToDateTime(FechaFinal.Text);
 
-				if (Convert.ToDateTime(FechaFinal.Text + " 12:00:00 a.m.") < Convert.ToDateTime(FechaInicio.Text + " 12:00:00 a.m."))
+				if (Fecha1 < Convert.ToDateTime(FechaInicio.Text + " 12:00:00 a.m."))
                 {
                     await Mensajes.Info("La fecha final no puede ser menor a la fecha inicial");
                 }
