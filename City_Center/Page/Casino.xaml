@@ -736,7 +736,7 @@
                                 <DataTemplate>
                                     <ViewCell>
                                         <ViewCell.View>
-                                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                            <Frame IsClippedToBounds="True" OutlineColor="Gray" HasShadow="True" BackgroundColor="White">
                                                 <Frame.OutlineColor>
                                                     <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
                                                 </Frame.OutlineColor>
@@ -759,15 +759,22 @@
                                                         <ffimageloading:CachedImage
                                                             HeightRequest="90"
                                                             WidthRequest="100"
-                                                            Aspect="AspectFit"
+                                                            Aspect="AspectFill"
                                                            
                                                             LoadingPlaceholder="image_loading.png"
                                                             ErrorPlaceholder="image_error.png"
                                                             Source="{Binding tar_imagen}"
                                                             Grid.Row="0" Grid.Column="0"
                                                             Grid.RowSpan="2" />
-                                                        <Label TextColor="Black" Grid.Row="0" Grid.Column="1" Text="{Binding tar_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" FontFamily="Oswald-Regular" />
-                                                        <Label TextColor="Black" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Start" Text="{Binding tar_descripcion}" FontSize="Small" FontFamily="Oswald-Regular" />
+                                                        <Label TextColor="Black" Grid.Row="0" Margin="5, -10, 0, 0" Grid.Column="1" Text="{Binding tar_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" HorizontalOptions="Start" FontFamily="Oswald-Regular">
+                                                                <Label.FontFamily>
+                                                                        <OnPlatform x:TypeArguments="x:String">
+                                                                            <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                        </OnPlatform>
+                                                                </Label.FontFamily>
+                                                        </Label>
+                                                        <Label TextColor="Black" Margin="3, -20, 0, 0" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Start" Text="{Binding tar_descripcion}" FontSize="Small" FontFamily="Oswald-Regular" />
                                                     </Grid>
                                                 </StackLayout>
                                             </Frame>
