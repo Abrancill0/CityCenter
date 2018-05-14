@@ -623,7 +623,7 @@
                                                        Margin="5"
                                                        HorizontalOptions="Center"
                                                        HorizontalTextAlignment="Center"
-                                                       VerticalOptions="Start"
+                                                       VerticalOptions="End"
                                                        TextColor="White"
                                                        FontFamily="Oswald-regular"
                                                        FontSize="Small"

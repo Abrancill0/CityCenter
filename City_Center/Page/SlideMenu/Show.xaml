@@ -140,7 +140,7 @@
                                                    Text="{Binding eve_nombre}"
                                                    HorizontalTextAlignment="Start"
                                                    HorizontalOptions="Start"
-                                                   Margin="5,0,0,0"
+                                                   Margin="15,0,0,0"
                                                    FontSize="Medium">
                                                     <Label.FontFamily>
                                                         <OnPlatform x:TypeArguments="x:String">
@@ -155,7 +155,7 @@
                                                    HorizontalTextAlignment="Start"
                                                    HorizontalOptions="Start"
                                                    Text="{Binding eve_fecha_hora_inicio}"
-                                                   Margin="5,0,0,0"
+                                                   Margin="15,0,0,10"
                                                    FontSize="Small">
                                                     <Label.FontFamily>
                                                         <OnPlatform x:TypeArguments="x:String">

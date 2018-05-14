@@ -343,82 +343,103 @@
 
                         <StackLayout Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"
-                                                      
+                                                         Margin="8,0,0,5"
                                                         LoadingPlaceholder="image_loading.png" 
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="EquipoTecnico" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     EQUIPO TECNICO DE VANGUARDIA" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="       EQUIPO TECNICO DE VANGUARDIA" TextColor="#8A7C9E" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50" 
                                                         Aspect="AspectFit"
-                                                       
+                                                        Margin="8,0,0,5"
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="CabinaTraduccion" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     CABINAS DE TRADUCCION SIMULTÁNEAS" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start" 
+                                   HorizontalTextAlignment="Start"
+                                   Text="     CABINAS DE TRADUCCION SIMULTÁNEAS"
+                                   TextColor="#8A7C9E" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50"
                                                         Aspect="AspectFit"
-                                                      
+                                                        Margin="8,0,0,5"
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="Wifi" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     WIFI LIBRE" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="       WIFI LIBRE"
+                                   TextColor="#8A7C9E" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand"
                                      Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50"
                                                         Aspect="AspectFit"
-                                                       
+                                                        Margin="8,0,0,5"
                                                         LoadingPlaceholder="image_loading.png" 
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="VideoConferencia" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     VIDEO CONFERENCIA" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="       VIDEO CONFERENCIA"
+                                   TextColor="#8A7C9E" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50"
                                                         Aspect="AspectFit"
-                                                       
+                                                        Margin="8,0,0,5"
                                                         LoadingPlaceholder="image_loading.png" 
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="AreaAcreditacion" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     ÁREA DE ACREDITACIONES" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="       ÁREA DE ACREDITACIONES" TextColor="#8A7C9E" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50"
                                                         Aspect="AspectFit"
-
+                                                        Margin="8,0,0,5"
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="SistemaCerrado" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     SISTEMA CERRADO VIGILANCIA" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="       SISTEMA CERRADO VIGILANCIA" TextColor="#8A7C9E" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50"
                                                         Aspect="AspectFit"
-
+                                                        Margin="8,0,0,5"
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="Parking" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     PARKING PARA 2600 AUTOS" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="       PARKING PARA 2600 AUTOS" TextColor="#8A7C9E" FontSize="Micro">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50"
                                                         Aspect="AspectFit"
-                                                       
+                                                        Margin="8,0,0,5"
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="AreaComercial" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     ÁREA COMERCIAL" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="       ÁREA COMERCIAL"
+                                   TextColor="#8A7C9E"
+                                   FontSize="Micro">
                             </Label>             
                     </StackLayout>
 
@@ -426,11 +447,15 @@
                              <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50"
                                                         Aspect="AspectFit"
-
+                                                        Margin="8,0,0,5"
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="VariedadGastronomica" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     GRAN VARIEDAD GASTRONÓMICA" TextColor="Black" FontSize="Micro">
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   TextColor="#8A7C9E"
+                                   Text="     GRAN VARIEDAD GASTRONÓMICA"
+                                   FontSize="Micro">
                             </Label>
                         </StackLayout>
 

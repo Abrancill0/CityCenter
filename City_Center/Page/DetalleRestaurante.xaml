@@ -73,14 +73,14 @@
                                                     <TapGestureRecognizer  Tapped="Handle_Tapped"/>
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                            </ffimageloading:CachedImage>
-                                            <Label Text="Menu"
-                                                   HorizontalTextAlignment="Center"
+                                            <Label Text="MENÚ"
+                                                   HorizontalTextAlignment="Start"
                                                    IsVisible="{Binding MM}"
                                                    Grid.Row="1"
                                                    Grid.Column="0"
                                                    FontFamily="Oswald-Regular"
                                                    TextColor="#250C4B"
-                                                   Margin="0,0,10,0"
+                                                   Margin="20,0,10,0"
                                                    HorizontalOptions="End"><Label.FontFamily>
                                                         <OnPlatform x:TypeArguments="x:String">
                                                             <On Platform="iOS" Value="Oswald-Regular"/>
@@ -101,7 +101,7 @@
                                                     <TapGestureRecognizer Tapped="Handle_Tapped_1"/>
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                            </ffimageloading:CachedImage>
-                                            <Label Text="Reservar"
+                                            <Label Text="RESERVAR"
                                                    HorizontalTextAlignment="Center"
                                                    Grid.Row="1"
                                                    Grid.Column="1"
@@ -128,12 +128,13 @@
                                                     <TapGestureRecognizer Command="{Binding CheckInReservaCommand}"/>
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                            </ffimageloading:CachedImage>
-                                           <Label Text="Check-In"
+                                           <Label Text="CHECK-IN"
                                                   HorizontalTextAlignment="Center"
                                                   Grid.Row="1"
                                                   Grid.Column="2"
                                                   FontFamily="Oswald-Regular"
                                                   TextColor="#250C4B"
+                                                  Margin="5,0,0,0"
                                                   HorizontalOptions="Start">
                                                    <Label.FontFamily>
                                                         <OnPlatform x:TypeArguments="x:String">

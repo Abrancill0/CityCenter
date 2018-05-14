@@ -640,8 +640,11 @@
                     <StackLayout Padding="10, 10" HorizontalOptions="StartAndExpand" Orientation="Vertical">
                    
                         <StackLayout Orientation="Horizontal">
-                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="RoomServices" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     ROOM SERVICES 24 HRS" TextColor="Black" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="RoomServices" />
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start" Text="       ROOM SERVICES 24 HRS"
+                                   TextColor="#8A7C9E"
+                                   FontSize="Micro">
                                 <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular"/>
@@ -651,8 +654,12 @@
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="ValetParking" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     VALET PARKING" TextColor="Black" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="5,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="ValetParking" />
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="       VALET PARKING"
+                                   TextColor="#8A7C9E"
+                                   FontSize="Micro">
                                 <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular"/>
@@ -662,8 +669,11 @@
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Lavanderia" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     SERVICIO DE LAVANDERIA Y TINTORERIA" TextColor="Black" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Lavanderia" />
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="       SERVICIO DE LAVANDERIA Y TINTORERIA"
+                                   TextColor="#8A7C9E" FontSize="Micro">
                                 <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular"/>
@@ -673,8 +683,9 @@
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Bussines" />
-                            <Label  HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="    BUSINESS CENTER" TextColor="Black" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Bussines" />
+                            <Label  HorizontalOptions="Start" HorizontalTextAlignment="Start"
+                                    Text="       BUSINESS CENTER" TextColor="#8A7C9E" FontSize="Micro">
                                 <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular"/>
@@ -684,8 +695,9 @@
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="WifiLibre" />
-                            <Label  HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="    WIFI" TextColor="Black" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="WifiLibre" />
+                            <Label  HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Start" Text="       WIFI" TextColor="#8A7C9E" FontSize="Micro">
                                 <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular"/>
@@ -695,8 +707,8 @@
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="BabySitter1" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     BABY SITTER" TextColor="Black" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="BabySitter1" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       BABY SITTER" TextColor="#8A7C9E" FontSize="Micro">
                                 <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular"/>
@@ -706,8 +718,8 @@
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Articulosbebe" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     ARTICULOS PARA LA ASISTENCIA DE SU BEBE" TextColor="Black" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Articulosbebe" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       ARTICULOS PARA LA ASISTENCIA DE SU BEBE" TextColor="#8A7C9E" FontSize="Micro">
                                 <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular"/>
@@ -717,8 +729,8 @@
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Almohada" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="     ALMOHADAS ESPECIALES PARA DESCANSO Y RELAJACIÓN" TextColor="Black" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Almohada" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       ALMOHADAS ESPECIALES PARA DESCANSO Y RELAJACIÓN" TextColor="#8A7C9E" FontSize="Micro">
                                 <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular"/>

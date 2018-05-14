@@ -38,8 +38,8 @@ namespace City_Center.ViewModels
         private int puntosWin;
         private string noSocio;
 
-        DateTime fechaInicio;
-        DateTime horaInicio;
+        string fechaInicio;
+        string horaInicio;
         string noPersonas;
         string nombreRestaurante;
         string sillaNiños;
@@ -69,13 +69,13 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.tarjetaUsuarioDetalle, value); }
         }
 
-        public DateTime FechaInicio
+        public string FechaInicio
         {
             get { return this.fechaInicio; }
             set { SetValue(ref this.fechaInicio, value); }
         }
 
-        public DateTime HoraInicio
+		public string HoraInicio
         {
             get { return this.horaInicio; }
             set { SetValue(ref this.horaInicio, value); }
@@ -155,29 +155,12 @@ namespace City_Center.ViewModels
 
         private async void TodoShows()
         {
-           //MainViewModel.GetInstance().Torneo = new TorneoViewModel();
+           MainViewModel.GetInstance().Torneo = new TorneoViewModel();
 
-            //((MasterPage)Application.Current.MainPage).IsPresented = false;
+            ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
-            //await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Torneos());
-
-			//await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new MyPage1());
-
-			//MyPage1
-
-			//UserDialogs.Instance.DatePrompt
-         
-            
-			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
-            {
-                IsCancellable = true,
-                MinimumDate = DateTime.Now.AddDays(-3),
-                MaximumDate = DateTime.Now.AddDays(1),
-                Title="Prueba",
-                
-                
-			});
-
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Torneos());
+          
         }
 
         public ICommand ReservarCommand
@@ -212,7 +195,7 @@ namespace City_Center.ViewModels
             }
 
 
-            string CuerpoMensaje = "Fecha:" + this.FechaInicio.ToString("dd/MM/yyyy") + "\n" +
+            string CuerpoMensaje = "Fecha:" + this.FechaInicio + "\n" +
                                    "Hora: " + this.HoraInicio + "\n" +
                                    "Personas: " + this.NoPersonas + "\n" +
                                    "Restaurant: " + this.NombreRestaurante + "\n" +
@@ -443,7 +426,11 @@ namespace City_Center.ViewModels
             this.LoadTarjetaUsuario();
             this.LoadTorneo();
 
-            FechaInicio = DateTime.Today;
+			this.FechaInicio = "00/00/00";
+			this.HoraInicio = "00:00";
+			this.NombreRestaurante = "Seleccionar";
+			this.SillaNiños = "No";
+            
         }
         #endregion
     }

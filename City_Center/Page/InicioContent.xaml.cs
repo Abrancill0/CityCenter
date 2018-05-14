@@ -5,29 +5,25 @@ using Xamarin.Forms;
 using City_Center.PopUp;
 using Rg.Plugins.Popup.Extensions;
 using City_Center.Clases;
+using Acr.UserDialogs;
 
 namespace City_Center.Page
 {
     public partial class InicioContent : ContentPage
     {
         public WebViewHotel _webHotel;
-
-        private string[] ListaOpciones;
-        private string[] ListaOpciones2;
-        private string[] ListaOpciones3;
-
+        
         public InicioContent()
         {
-			
-
             InitializeComponent();
+			//FechaInicio.ShowSoftInputOnFocus = false;
+
             _webHotel = new WebViewHotel();
 
         }
 
         protected override void OnDisappearing()
-        {
-
+        {         
             base.OnDisappearing();
 
             GC.Collect();
@@ -37,41 +33,35 @@ namespace City_Center.Page
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            ListaOpciones = new string[] { "1", "2", "3", "4", "5", "6", "7","8"};
-
-            ListaOpciones2 = new string[] { "JARANÁ", "LE GULA", "PIU" };
-
-            ListaOpciones3 = new string[] { "No", "Si"};
-
-            NoPersona.ItemsSource = ListaOpciones;
-
-            NoPersona1.ItemsSource = ListaOpciones;
-
-            CR.ItemsSource = ListaOpciones2;
-
-            Combosillaniños.ItemsSource = ListaOpciones3;
-
-            NoPersona.SelectedIndex = 0;
-            NoPersona1.SelectedIndex = 0;
-            CR.SelectedIndex = 0;
-            Combosillaniños.SelectedIndex = 0;
-           
+   
         }
 
-        async void Handle_Clicked(object sender, System.EventArgs e)
+		async void Handle_Clicked(object sender, System.EventArgs e)
         {
             try
             {
-                if (FechaFinal.Date < FechaInicio.Date)
+				if (FechaInicio.Text == "00/00/00")
+                {
+					await Mensajes.Info("Fecha inicial requerida.");
+					return;
+                }
+
+				if (FechaFinal.Text =="00/00/00")
+				{
+					await Mensajes.Info("Fecha inicial requerida.");
+					return;
+				}
+
+
+				if (Convert.ToDateTime(FechaFinal.Text + " 12:00:00 a.m.") < Convert.ToDateTime(FechaInicio.Text + " 12:00:00 a.m."))
                 {
                     await Mensajes.Info("La fecha final no puede ser menor a la fecha inicial");
                 }
                 else
                 {
-                    VariablesGlobales.FechaInicio = FechaInicio.Date;
-                    VariablesGlobales.FechaFin = FechaFinal.Date;
-                    VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.SelectedItem);
+					VariablesGlobales.FechaInicio = Convert.ToDateTime(FechaInicio.Text);
+					VariablesGlobales.FechaFin = Convert.ToDateTime(FechaFinal.Text);
+                    VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
                     await Navigation.PushPopupAsync(_webHotel);
                 }
@@ -161,6 +151,175 @@ namespace City_Center.Page
             }
         }
 
-    }
+		async void FechaInicio_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+		 {         
+			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                MinimumDate = DateTime.Now.AddDays(0)
+            });
+
+
+			if (result.Ok)
+			{
+				FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+				FechaInicio.Unfocus();
+			}
+			else
+			{
+				FechaInicio.Unfocus();
+			}
+			         
+			//String.Format("{0:dd MMMM yyyy}"
+
+		 }
+
+		async void FechaFin_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                MinimumDate = DateTime.Now.AddDays(0)
+            });
+
+
+            if (result.Ok)
+            {
+                FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+				FechaFinal.Unfocus();
+            }
+            else
+            {
+				FechaFinal.Unfocus();
+            }
+
+            //String.Format("{0:dd MMMM yyyy}"
+
+        }
+
+		async void FechaR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                MinimumDate = DateTime.Now.AddDays(0)
+            });
+
+
+            if (result.Ok)
+            {
+                FechaR1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+				FechaR1.Unfocus();
+            }
+            else
+            {
+				FechaR1.Unfocus();
+            }
+
+            //String.Format("{0:dd MMMM yyyy}"
+
+        }
+
+		async void FechaRango1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                MinimumDate = DateTime.Now.AddDays(0)
+            });
+
+
+            if (result.Ok)
+            {
+                FechaRango1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+				FechaRango1.Unfocus();
+            }
+            else
+            {
+				FechaRango1.Unfocus();
+            }
+
+            //String.Format("{0:dd MMMM yyyy}"
+
+        }
+
+		async void FechaRango2_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                MinimumDate = DateTime.Now.AddDays(0)
+            });
+
+
+            if (result.Ok)
+            {
+                FechaRango2.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+				FechaRango2.Unfocus();
+            }
+            else
+            {
+				FechaRango2.Unfocus();
+            }
+
+            //String.Format("{0:dd MMMM yyyy}"
+
+        }
+
+		async void HoraR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+		{
+			var result = await UserDialogs.Instance.TimePromptAsync(new TimePromptConfig
+            {
+                 IsCancellable=true
+            });
+            
+
+			if (result.Ok)
+            {
+				HoraR1.Text = Convert.ToString(result.SelectedTime);
+				HoraR1.Unfocus();
+            }
+            else
+            {
+				HoraR1.Unfocus();
+            }
+            
+		}
+
+        async void Restaurant_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+		{
+			var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "Cancel", null, null, "JARANÁ", "LE GULA", "PIU");
+            
+			if (result !="Cancel")
+			{
+				Restaurante.Text = result.ToString();
+
+				Restaurante.Unfocus();
+			}
+			else
+			{
+				Restaurante.Unfocus();	
+			}
+
+		}
+        
+		async void SillaNinos_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            var result = await UserDialogs.Instance.ActionSheetAsync("Sillas niños", "Cancel", null, null, "No", "Si");
+
+            if (result != "Cancel")
+            {
+                SillaNiño.Text = result.ToString();
+
+				SillaNiño.Unfocus();
+            }
+            else
+            {
+				SillaNiño.Unfocus();
+            }
+
+        }
+
+	}
 
 }

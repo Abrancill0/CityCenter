@@ -69,8 +69,8 @@ namespace City_Center.Page
                     Image image = new Image
                     {
                         Source = "http://cc.comprogapp.com/" + it.tar_imagen+"?1",
-                        WidthRequest = 40,
-						HeightRequest = 70
+
+                        Aspect=Aspect.AspectFill
                    };
                     
                     Label name = new Label
