@@ -131,92 +131,136 @@
             <StackLayout x:Name="SL1" IsVisible="true">
                 <ScrollView>
                     <StackLayout>
-                        <StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand">
                             <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                                <Frame.Margin>
-                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                                </Frame.Margin>
-                                <Frame.Padding>
-                                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                                </Frame.Padding>
-                                <StackLayout Orientation="Horizontal" BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand">
-                                    <Grid HorizontalOptions="FillAndExpand">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="1*">
-                                            </ColumnDefinition>
-                                            <ColumnDefinition Width="1*">
-                                            </ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*" />
-                                        </Grid.RowDefinitions>
-                                        <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                                            <Label Text="Llegada"
-                                                   HorizontalOptions="Start"
-                                                HorizontalTextAlignment="Start"
-                                                   Margin="5,0,0,0"
-                                                   TextColor="Gray">
-                                             <Label.FontFamily>
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                            </Frame.Padding>
+                            <StackLayout Orientation="Horizontal" BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand">
+                                <Grid HorizontalOptions="FillAndExpand" CompressedLayout.IsHeadless="true">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="2"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                                        <Label Text="Llegada"
+                                               FontSize = "Medium"
+                                               TextColor="Gray"
+                                               Margin="5,0,0,0"
+                                               HorizontalOptions="Start"
+                                               HorizontalTextAlignment="Start">
+                                            <Label.FontFamily>
                                                 <OnPlatform x:TypeArguments="x:String">
                                                     <On Platform="iOS" Value="Oswald-Regular"/>
                                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                                 </OnPlatform>
                                             </Label.FontFamily>
-                                                </Label>
-                                            <DatePicker Format="dd/MM/yyyy" x:Name="FechaInicio">
-                                            </DatePicker>
-                                        </StackLayout>
-                                        <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
-                                            <Label Text="Salida"
-                                                   HorizontalOptions="Start"
-                                                   HorizontalTextAlignment="Start"
-                                                Margin="5,0,0,0" TextColor="Gray">
-                                              <Label.FontFamily>
+                                          </Label>
+                                           <xfx:XfxEntry x:Name="FechaInicio"
+                                                  Text ="00/00/00"
+                                                  Margin="5,-20,5,-12"
+                                                  PlaceholderColor="Transparent"
+                                                  Focused="FechaInicio_Focused"
+                                                  >
+                                        <Entry.HeightRequest>
+                                            <OnPlatform x:TypeArguments="x:Double">
+                                                <On Platform="iOS">60</On>
+                                                <On Platform="Android,Windows">60</On>
+                                            </OnPlatform>
+                                        </Entry.HeightRequest>
+                                         <Entry.FontFamily>
                                                 <OnPlatform x:TypeArguments="x:String">
                                                     <On Platform="iOS" Value="Oswald-Regular"/>
                                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                                 </OnPlatform>
-                                            </Label.FontFamily>
-                                                </Label>
-                                            <DatePicker Format="dd/MM/yyyy" x:Name="FechaFinal">
-                                            </DatePicker>
-                                        </StackLayout>
-                                    </Grid>
-                                </StackLayout>
-                            </Frame>
-                           
-
-                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                                <Frame.Margin>
-                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                                </Frame.Margin>
-                                <Frame.Padding>
-                                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                                </Frame.Padding>
-
-                               <StackLayout> 
-                                <Label Text="Huéspedes"
-                                       TextColor="Gray"
-                                       Margin="5,2,0,0"
-                                       HorizontalOptions="Start"
-                                       HorizontalTextAlignment="Start"
-                                       FontSize="Small">
+                                            </Entry.FontFamily>
+                                    </xfx:XfxEntry>
+                                    </StackLayout>
+                                    <BoxView Color="Silver" Grid.Column="1" Grid.Row="0" Margin="0,5,0,5" />
+                                    <StackLayout Margin="4" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
+                                        <Label Text="Salida"
+                                               FontSize = "Medium"
+                                               TextColor="Gray"
+                                               Margin="5,0,0,0"
+                                              HorizontalOptions="Start"
+                                              HorizontalTextAlignment="Start">
                                          <Label.FontFamily>
                                                 <OnPlatform x:TypeArguments="x:String">
                                                     <On Platform="iOS" Value="Oswald-Regular"/>
                                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                                 </OnPlatform>
                                             </Label.FontFamily>
-                                                </Label>
-                                <Grid Padding="15, 0">    
-                                <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
-                                <Picker Margin="5" x:Name="NoPersona" Title="Huespedés"></Picker>
-                                     <!--ItemsSource="{Binding ListaOpciones}" -->
-                                </Grid>
-                                </StackLayout>
-                                    </Frame>
+                                          </Label>
+                                           <xfx:XfxEntry x:Name="FechaFinal"
+                                                  Text ="00/00/00"
+                                                         PlaceholderColor="Transparent"
+                                                  Margin="5,-20,5,-12"
+                                                  Focused="FechaFin_Focused">
+                                        <Entry.HeightRequest>
+                                            <OnPlatform x:TypeArguments="x:Double">
+                                                <On Platform="iOS">60</On>
+                                                <On Platform="Android,Windows">60</On>
+                                            </OnPlatform>
+                                        </Entry.HeightRequest>
+                                         <Entry.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                </OnPlatform>
+                                            </Entry.FontFamily>
+                                    </xfx:XfxEntry>
 
-                        
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                            </Frame.Padding>
+                            <StackLayout>
+                            <Label Text="Huéspedes"
+                                   TextColor="Gray"
+                                   Margin="8,0,0,0"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start">
+                                   <Label.FontFamily>
+                                      <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                       </OnPlatform>
+                                   </Label.FontFamily>
+                            </Label>
+                                <xfx:XfxEntry x:Name="NoPersona"
+                                              Text ="1"
+                                              Margin="8,-20,5,-12"
+                                              Keyboard="Numeric">
+                                        <Entry.HeightRequest>
+                                            <OnPlatform x:TypeArguments="x:Double">
+                                                <On Platform="iOS">60</On>
+                                                <On Platform="Android,Windows">60</On>
+                                            </OnPlatform>
+                                        </Entry.HeightRequest>
+                                         <Entry.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                </OnPlatform>
+                                            </Entry.FontFamily>
+                                </xfx:XfxEntry>
+                            </StackLayout>
+                        </Frame>
                             <Button Margin="30"
                                     TextColor="White"
                                     BackgroundColor="#2D97A3"
