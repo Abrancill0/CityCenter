@@ -27,80 +27,74 @@ namespace City_Center.Page
             listaCasino.ItemsSource = ListaOpciones;
 
             MainViewModel.GetInstance().Casino = new CasinoViewModel();
-            loadTarjet();
+           // loadTarjet();
 
         }
 
         protected override void OnAppearing()
-		{
-
-   //         #if __ANDROID__
-			//Naxam.Controls.Platform.Droid.BottomTabbedRenderer.BackgroundColor  = new Android.Graphics.Color(187, 69, 101);// Android.Graphics.Color.Rgb(187, 69, 101);
-            //#endif
-
+		{         
             base.OnAppearing();
-
    
 			         
         }
 
-        private async void loadTarjet()
-        {
-            var content = new FormUrlEncodedContent(new[]
-                {
-                new KeyValuePair<string, string>("", ""),
-            });
-            Restcliente DatosUsuarioRequest = new Restcliente();
+        //private async void loadTarjet()
+        //{
+        //    var content = new FormUrlEncodedContent(new[]
+        //        {
+        //        new KeyValuePair<string, string>("", ""),
+        //    });
+        //    Restcliente DatosUsuarioRequest = new Restcliente();
 
-            var response = await DatosUsuarioRequest.Get<TarjetasReturn>("/tarjetas/indexApp", content);
+        //    var response = await DatosUsuarioRequest.Get<TarjetasReturn>("/tarjetas/indexApp", content);
 
-            if (response.estatus != 0)
-            {
-               foreach(TarjetasDetalle it in response.resultado)
-                {
-                    Grid grid = new Grid{
+        //    if (response.estatus != 0)
+        //    {
+        //       foreach(TarjetasDetalle it in response.resultado)
+        //        {
+        //            Grid grid = new Grid{
                         
-                    };
-                    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(.5f, GridUnitType.Auto) });
-                    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1.5f, GridUnitType.Auto) });
-                    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1f, GridUnitType.Star) });
-                    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1f, GridUnitType.Star) });
+        //            };
+        //            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(.5f, GridUnitType.Auto) });
+        //            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1.5f, GridUnitType.Auto) });
+        //            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1f, GridUnitType.Star) });
+        //            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1f, GridUnitType.Star) });
 
-                    Image image = new Image
-                    {
-                        Source = "http://cc.comprogapp.com/" + it.tar_imagen+"?1",
+        //            Image image = new Image
+        //            {
+        //                Source = "http://cc.comprogapp.com/" + it.tar_imagen+"?1",
 
-                        Aspect=Aspect.AspectFill
-                   };
+        //                Aspect=Aspect.AspectFill
+        //           };
                     
-                    Label name = new Label
-                    {
-                        Text = it.tar_nombre,
-                        TextColor = Color.FromHex("4A3697"),
-                        FontSize = 18f,
-                        HorizontalOptions = LayoutOptions.Start,
-                        VerticalOptions = LayoutOptions.End
-                    };
+        //            Label name = new Label
+        //            {
+        //                Text = it.tar_nombre,
+        //                TextColor = Color.FromHex("4A3697"),
+        //                FontSize = 18f,
+        //                HorizontalOptions = LayoutOptions.Start,
+        //                VerticalOptions = LayoutOptions.End
+        //            };
 
-                    Label desc = new Label
-                    {
-                        Text = it.tar_descripcion,
-                        TextColor = Color.Black,
-                        FontSize = 12f,
-                        VerticalOptions = LayoutOptions.Center,
-                        HorizontalTextAlignment = TextAlignment.Start
-                    };
+        //            Label desc = new Label
+        //            {
+        //                Text = it.tar_descripcion,
+        //                TextColor = Color.Black,
+        //                FontSize = 12f,
+        //                VerticalOptions = LayoutOptions.Center,
+        //                HorizontalTextAlignment = TextAlignment.Start
+        //            };
 
-                    grid.Children.Add(name, 1, 0);
-                    grid.Children.Add(desc, 1, 1);
-                    grid.Children.Add(image, 0, 0);
-                    Grid.SetRowSpan(image, 2);
-                    slTarjetas.Children.Add(grid);
-                }
+        //            grid.Children.Add(name, 1, 0);
+        //            grid.Children.Add(desc, 1, 1);
+        //            grid.Children.Add(image, 0, 0);
+        //            Grid.SetRowSpan(image, 2);
+        //            slTarjetas.Children.Add(grid);
+        //        }
 
-            }
+        //    }
 
-        }
+        //}
 
         protected override void OnDisappearing()
         {

@@ -850,7 +850,9 @@
                                                            Source="Favorito"
                                                            VerticalOptions = "Start"
                                                            HorizontalOptions = "Center"
-                                                           IsVisible="{Binding oculta}">
+                                                           IsVisible="{Binding oculta}"
+                                                            WidthRequest="25"
+                                                           HeightRequest="25">
                                                         <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"  />
                                                         </Image.GestureRecognizers>
@@ -864,13 +866,24 @@
                                                             Source="FavoritoOK"
                                                             IsVisible="{Binding tor_guardado}"
                                                             VerticalOptions="Start"
-                                                            HorizontalOptions="Center" >
+                                                            HorizontalOptions="Center"
+                                                            WidthRequest="25"
+                                                            HeightRequest="25">
                                                     </Image>
                                                     <!-- <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
                                                         </Image.GestureRecognizers>-->
                                                     
-                                                    <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions = "Start" HorizontalOptions = "Center" >
+                                                    <Image Margin="10"
+                                                           Grid.Row="1"
+                                                           Grid.Column="3"
+                                                           Grid.RowSpan="2"
+                                                           Aspect="AspectFit"
+                                                           Source="Compartir"
+                                                           VerticalOptions = "Start"
+                                                           HorizontalOptions = "Center"
+                                                           WidthRequest="25"
+                                                           HeightRequest="25">
                                                         <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                         </Image.GestureRecognizers>

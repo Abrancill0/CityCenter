@@ -128,7 +128,7 @@
                 </Grid>
             </StackLayout>
             <StackLayout Padding="0,10,10,10" BackgroundColor="#1B0938" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" IsVisible="{Binding OpcionesVisible}">
-                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                        <Label Text="REGISTRARME" FontSize="Small"
                        TextColor="White"
                        FontFamily="Oswald-Bold"
