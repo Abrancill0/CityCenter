@@ -7,6 +7,7 @@ using Rg.Plugins.Popup.Extensions;
 using City_Center.Clases;
 using Acr.UserDialogs;
 using City_Center.Helper;
+using System.Globalization;
 
 namespace City_Center.Page
 {
@@ -62,8 +63,8 @@ namespace City_Center.Page
                 }
                 else
                 {
-					VariablesGlobales.FechaInicio = Convert.ToDateTime(FechaInicio.Text);
-					VariablesGlobales.FechaFin = Convert.ToDateTime(FechaFinal.Text);
+					VariablesGlobales.FechaInicio = DateTime.Parse(FechaInicio.Text);
+					VariablesGlobales.FechaFin = DateTime.Parse(FechaFinal.Text);
                     VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
                     await Navigation.PushPopupAsync(_webHotel);
@@ -71,6 +72,7 @@ namespace City_Center.Page
             }
             catch (Exception ex)
             {
+				await DisplayAlert("oj", ex.ToString(), "ok");
 				await Mensajes.Info("No se pudo acceder a las reservaciones, intente mas tarde.");
             }
            
