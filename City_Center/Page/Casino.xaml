@@ -691,7 +691,7 @@
                 </ScrollView>
             </StackLayout>
             <StackLayout x:Name="SL3" IsVisible="false" BackgroundColor="White">
-                <ScrollView >
+               
                     <StackLayout Spacing="1" Margin="2">
                         <Label HorizontalOptions="Start" Margin="10, 20" TextColor="#250c4b" Text="¿QUERÉS TENER LA TARJETA WIN?">
                             <Label.FontFamily>
@@ -781,7 +781,6 @@
                         </StackLayout>
                     
                     </StackLayout>
-                </ScrollView>
             </StackLayout>
             <StackLayout x:Name="SL4" IsVisible="false">
                 <ScrollView Orientation="Vertical">

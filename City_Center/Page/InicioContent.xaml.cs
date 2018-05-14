@@ -53,9 +53,10 @@ namespace City_Center.Page
 					return;
 				}
 
-				DateTime Fecha1 = Convert.ToDateTime(FechaFinal.Text);
+				DateTime Fecha1 = DateTime.Parse(FechaFinal.Text);
+                DateTime Fecha2 = DateTime.Parse(FechaInicio.Text);
 
-				if (Fecha1 < Convert.ToDateTime(FechaInicio.Text + " 12:00:00 a.m."))
+				if (Fecha1.Date < Fecha2.Date)
                 {
                     await Mensajes.Info("La fecha final no puede ser menor a la fecha inicial");
                 }
@@ -70,7 +71,7 @@ namespace City_Center.Page
             }
             catch (Exception)
             {
-                await Mensajes.Info("No se pudo acceder a las reservaciones, intente mas tarde.");
+				await Mensajes.Info("No se pudo acceder a las reservaciones, intente mas tarde.");
             }
            
         }
