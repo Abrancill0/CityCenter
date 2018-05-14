@@ -227,7 +227,7 @@ namespace City_Center.ViewModels
                 pro_id = l.pro_id,
                 pro_id_evento = l.pro_id_evento,
                 pro_id_locacion = l.pro_id_locacion,
-                pro_nombre = l.pro_nombre,
+				pro_nombre = l.pro_nombre.ToUpper(),
                 pro_descripcion = l.pro_descripcion,
                 pro_imagen = l.pro_imagen,
                 pro_tipo_promocion = l.pro_tipo_promocion,

@@ -358,7 +358,8 @@
                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}"
                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}"
                                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                                      CachingStrategy="RecycleElement">
+                                      CachingStrategy="RecycleElement"
+                                      >
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
@@ -577,7 +578,7 @@
                            <Label Margin="20,0,0,0" TextColor="Black"
                                  HorizontalOptions="Start"
                                 HorizontalTextAlignment="Start"
-                               Text="• Poscinas ludica climatizada"
+                               Text="• Piscinas ludica climatizada"
                                   FontSize="Small">
                              <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">

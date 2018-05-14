@@ -33,7 +33,7 @@ namespace City_Center.ViewModels
 		private string celular;
 		private string tipoEvento;
 		private string asistentes;
-		private DateTime fecha;
+		private string fecha;
 		private string comentarios;
 
         #endregion
@@ -89,7 +89,7 @@ namespace City_Center.ViewModels
 			set { SetValue(ref this.asistentes, value); }
         }
 
-		public DateTime Fecha
+		public string Fecha
         {
 			get { return this.fecha; }
 			set { SetValue(ref this.fecha, value); }
@@ -129,13 +129,7 @@ namespace City_Center.ViewModels
                 return;
             }
 
-			if (string.IsNullOrEmpty(this.Empresa))
-            {
-                await Mensajes.Error("Empresa requerido");
-
-                return;
-            }
-
+		         
 			if (string.IsNullOrEmpty(this.Celular))
             {
 				await Mensajes.Error("Celular requerido");
@@ -184,9 +178,7 @@ namespace City_Center.ViewModels
 			this.Comentarios = string.Empty;
 
         }
-
-
-		//
+  
         #endregion
 
         #region Methods
@@ -248,7 +240,7 @@ namespace City_Center.ViewModels
         public SalasEventosViewModel()
         {
             this.apiService = new ApiService();
-			Fecha = DateTime.Today;
+			Fecha = "00/00/0000";
             this.LoadSalasEventos();
            
         }

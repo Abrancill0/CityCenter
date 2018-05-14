@@ -132,7 +132,7 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-                            <StackLayout HorizontalOptions="FillAndExpand" Padding="0, 20, 0, 10" Spacing="0">
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="0, 20, 0, 10" Spacing="0" BackgroundColor="White">
                                 <Label Text="La  multiplicidad  de  espacios  reflejada  en  los "
                                        TextColor="Black"
                                        HorizontalOptions="Start"
@@ -259,7 +259,7 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-                            <xfx:XfxEntry Placeholder="Empresa*"
+                            <xfx:XfxEntry Placeholder="Empresa"
                                           Margin="5,0,5,0"
                                           Style="{DynamicResource EntryStyle}"
                                           Text="{Binding Empresa}">
@@ -288,7 +288,7 @@
                                              Margin="5,0,0,0"
                                              HorizontalOptions="Start"
                                              HorizontalTextAlignment="Start"
-                                             FontSize="Micro"></Label>
+                                             FontSize="12"></Label>
                                       <Grid Padding="5, 0">
                                           <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>    
                                           <Picker x:Name="TipoEvento1"
@@ -307,16 +307,28 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-                            <StackLayout Spacing="0" Margin="5">
+                            <StackLayout Spacing="0" Margin="5" Orientation="Vertical">
                                       <Label Text="Fecha Aproximadas *"
                                              TextColor="Gray"
                                              Margin="5,0,0,0"
                                              HorizontalOptions="Start"
                                              HorizontalTextAlignment="Start"
-                                             FontSize="Micro"/>
-                                          <DatePicker Date="{Binding Fecha, Mode=TwoWay}"/>
+                                             FontSize="12"/>
+                                    
+                            <xfx:XfxEntry x:Name="Fecha1"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Fecha, Mode=TwoWay}"
+                                          Focused="Handle_Focused">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
+
                            </StackLayout>
-                            <xfx:XfxEntry Placeholder="Comentarios *"
+                            <xfx:XfxEntry Placeholder="Comentarios"
                                           Margin="5,0,5,0"
                                           Style="{DynamicResource EntryStyle}"
                                           Text="{Binding Comentarios}">
@@ -589,7 +601,7 @@
                                     </OnPlatform>
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
-                            <xfx:XfxEntry Placeholder="Empresa*"
+                            <xfx:XfxEntry Placeholder="Empresa"
                                           Margin="5,0,5,0"
                                           Style="{DynamicResource EntryStyle}"
                                           Text="{Binding Empresa}">
@@ -638,15 +650,27 @@
                                 </Entry.HeightRequest>
                             </xfx:XfxEntry>
                             <StackLayout Spacing="0" Margin="5">
-                                      <Label Text="Fecha Aproximadas *"
+                                 <Label Text="Fecha Aproximadas *"
                                              TextColor="Gray"
                                              Margin="5,0,0,0"
                                              HorizontalOptions="Start"
                                              HorizontalTextAlignment="Start"
-                                             FontSize="Micro"/>
-                                          <DatePicker Date="{Binding Fecha, Mode=TwoWay}"/>
+                                             FontSize="12"/>
+                                    
+                            <xfx:XfxEntry x:Name="Fecha2"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Margin="0,5,0,0"
+                                          Text="{Binding Fecha, Mode=TwoWay}"
+                                          Focused="Handle_Focused_1">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">60</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                            </xfx:XfxEntry>
                            </StackLayout>
-                            <xfx:XfxEntry Placeholder="Comentarios *"
+                            <xfx:XfxEntry Placeholder="Comentarios"
                                           Margin="5,0,5,0"
                                           Style="{DynamicResource EntryStyle}"
                                           Text="{Binding Comentarios}">

@@ -74,13 +74,13 @@
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                            </ffimageloading:CachedImage>
                                             <Label Text="MENÚ"
-                                                   HorizontalTextAlignment="Start"
+                                                   HorizontalTextAlignment="End"
                                                    IsVisible="{Binding MM}"
                                                    Grid.Row="1"
                                                    Grid.Column="0"
                                                    FontFamily="Oswald-Regular"
                                                    TextColor="#250C4B"
-                                                   Margin="-10,0,10,0"
+                                                   Margin="-20,0,10,0"
                                                    HorizontalOptions="End"><Label.FontFamily>
                                                         <OnPlatform x:TypeArguments="x:String">
                                                             <On Platform="iOS" Value="Oswald-Regular"/>
