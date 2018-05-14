@@ -33,8 +33,8 @@
                                 IsVisible="{Binding td.oculta}"
                                 VerticalOptions="Start"
                                 HorizontalOptions="Center"
-                                HeightRequest="30"
-                                WidthRequest="30">
+                                WidthRequest="25"
+                                HeightRequest="25">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
                             </Image.GestureRecognizers>
@@ -42,15 +42,15 @@
                         <Image Aspect="AspectFit"
                                Source="FavoritoOK"
                                IsVisible="{Binding td.tor_guardado}"
-                               HeightRequest="30"
-                               WidthRequest="30">
+                               WidthRequest="25"
+                               HeightRequest="25">
                         </Image>
                         <Image Aspect="AspectFit"
                                Source="Compartir"
                                VerticalOptions="Start"
                                HorizontalOptions="Center"
-                               HeightRequest="30"
-                               WidthRequest="30">
+                               WidthRequest="25"
+                               HeightRequest="25">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                             </Image.GestureRecognizers>

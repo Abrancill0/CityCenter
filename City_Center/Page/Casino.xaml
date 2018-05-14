@@ -517,7 +517,7 @@
                                                            Grid.Column="0"
                                                            Grid.ColumnSpan="2"
                                                            HorizontalTextAlignment="Start"
-                                                           HorizontalOptions="Star"
+                                                           HorizontalOptions="Start"
                                                            Text="{Binding tor_fecha_hora_inicio}"
                                                            VerticalOptions = "Start"
                                                            FontSize="12"
