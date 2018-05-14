@@ -56,7 +56,7 @@ namespace City_Center.Page
 				DateTime Fecha1 = DateTime.Parse(FechaInicio.Text);
 				DateTime Fecha2 = DateTime.Parse(FechaFinal.Text);
 
-				if (Fecha1.Date < Fecha2.Date)
+				if (Fecha2.Date < Fecha1.Date)
                 {
                     await Mensajes.Info("La fecha final no puede ser menor a la fecha inicial");
                 }

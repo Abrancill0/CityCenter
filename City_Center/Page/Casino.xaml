@@ -766,7 +766,7 @@
                                                             Source="{Binding tar_imagen}"
                                                             Grid.Row="0" Grid.Column="0"
                                                             Grid.RowSpan="2" />
-                                                        <Label TextColor="Black" Grid.Row="0" Margin="5, -10, 0, 0" Grid.Column="1" Text="{Binding tar_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" HorizontalOptions="Start" FontFamily="Oswald-Regular">
+                                                        <Label TextColor="#2B124F" Grid.Row="0" Margin="5, -10, -10, 0" Grid.Column="1" Text="{Binding tar_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" HorizontalOptions="Start" FontFamily="Oswald-Regular">
                                                                 <Label.FontFamily>
                                                                         <OnPlatform x:TypeArguments="x:String">
                                                                             <On Platform="iOS" Value="Oswald-Regular"/>
@@ -774,7 +774,7 @@
                                                                         </OnPlatform>
                                                                 </Label.FontFamily>
                                                         </Label>
-                                                        <Label TextColor="Black" Margin="3, -20, 0, 0" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Start" Text="{Binding tar_descripcion}" FontSize="Small" FontFamily="Oswald-Regular" />
+                                                        <Label TextColor="Black" Margin="3, -20, 5, 0" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Start" Text="{Binding tar_descripcion}" FontSize="Small" FontFamily="Oswald-Regular" />
                                                     </Grid>
                                                 </StackLayout>
                                             </Frame>
