@@ -53,8 +53,8 @@ namespace City_Center.Page
 					return;
 				}
 
-				DateTime Fecha1 = DateTime.Parse(FechaFinal.Text);
-                DateTime Fecha2 = DateTime.Parse(FechaInicio.Text);
+				DateTime Fecha1 = DateTime.Parse(FechaInicio.Text);
+				DateTime Fecha2 = DateTime.Parse(FechaFinal.Text);
 
 				if (Fecha1.Date < Fecha2.Date)
                 {
@@ -69,7 +69,7 @@ namespace City_Center.Page
                     await Navigation.PushPopupAsync(_webHotel);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 				await Mensajes.Info("No se pudo acceder a las reservaciones, intente mas tarde.");
             }
@@ -156,6 +156,7 @@ namespace City_Center.Page
 
 		async void FechaInicio_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		 {         
+			
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
@@ -168,11 +169,12 @@ namespace City_Center.Page
 				FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
 				FechaInicio.Unfocus();
 				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
 			}
 			else
 			{
 				FechaInicio.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 			}
 			         
 			//String.Format("{0:dd MMMM yyyy}"
@@ -180,7 +182,7 @@ namespace City_Center.Page
 		 }
 
 		async void FechaFin_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-        {
+        {         
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
@@ -192,12 +194,14 @@ namespace City_Center.Page
             {
                 FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
 				FechaFinal.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                
             }
             else
             {
 				FechaFinal.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+               
             }
 
             //String.Format("{0:dd MMMM yyyy}"

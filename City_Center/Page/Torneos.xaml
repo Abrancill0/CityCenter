@@ -8,9 +8,16 @@
         <ToolbarItem Icon="Chat" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding Torneo}">
-            <ListView ItemsSource="{Binding TorneoDetalle}" RowHeight="250"
-                      HasUnevenRows="false" HeightRequest="400">
+        <StackLayout BindingContext="{Binding Torneo}" Spacing="0">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                     <Image  Aspect="AspectFill"  Source="CASINOmin"/>
+            </StackLayout>
+            
+            <ListView ItemsSource="{Binding TorneoDetalle}"
+                      RowHeight="250"
+                      HasUnevenRows="false"
+                      HeightRequest="400"
+                      Margin="10">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -51,17 +58,44 @@
                                                 </ffimageloading:CachedImage>
 
 
-                                            <Label TextColor="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" FontFamily="Oswald-Regular" />
-                                            <Label TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" FontSize="Small" FontFamily="Oswald-Regular" />
-
+                                            <Label TextColor="Black"
+                                                   Grid.Row="1"
+                                                   Grid.Column="0"
+                                                   Grid.ColumnSpan="2"
+                                                   Text="{Binding tor_nombre}"
+                                                   HorizontalTextAlignment="Start"
+                                                   FontSize="Small"
+                                                   Margin="15,0,0,0">
+                                                         <Label.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                            </OnPlatform>
+                                                        </Label.FontFamily>
+                                                    </Label>
+                                            <Label TextColor="Black"
+                                                   Grid.Row="2"
+                                                   Grid.Column="0" 
+                                                   Grid.ColumnSpan="2"
+                                                   Margin="15,-8,0,0"
+                                                   HorizontalTextAlignment="Start"
+                                                   Text="{Binding tor_fecha_hora_inicio}"
+                                                   FontSize="Micro">
+                                                         <Label.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                            </OnPlatform>
+                                                        </Label.FontFamily>
+                                                    </Label>
                                             <Image Grid.Row="1" Grid.Column="2"
                                                            Aspect="AspectFit"
                                                            Source="Favorito"
                                                            IsVisible="{Binding oculta}"
                                                            VerticalOptions = "Start"
                                                            HorizontalOptions = "Center"
-                                                           HeightRequest="30"
-                                                           WidthRequest="30">
+                                                           HeightRequest="25"
+                                                           WidthRequest="25">
                                                         <Image.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"/>
                                                         </Image.GestureRecognizers>
@@ -72,16 +106,16 @@
                                                            Source="FavoritoOK"
                                                            VerticalOptions = "Start"
                                                            HorizontalOptions = "Center"
-                                                           HeightRequest="30"
-                                                           WidthRequest="30"
+                                                           HeightRequest="25"
+                                                           WidthRequest="25"
                                                            IsVisible="{Binding tor_guardado}">
                                                    </Image>
 
                                             <Image Grid.Row="1" Grid.Column="3"
                                                    Aspect="AspectFit"
                                                    Source="Compartir"
-                                                   HeightRequest="30"
-                                                   WidthRequest="30">
+                                                   HeightRequest="25"
+                                                   WidthRequest="25">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                 </Image.GestureRecognizers>

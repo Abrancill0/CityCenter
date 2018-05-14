@@ -169,6 +169,8 @@
                                                    Grid.RowSpan="2"
                                                    Aspect="AspectFit"
                                                    Source="Favorito"
+                                                   WidthRequest="25"
+                                                   HeightRequest="25"
                                                    IsVisible="{Binding oculta,Mode=TwoWay}">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"/>
@@ -180,12 +182,21 @@
                                                    Grid.RowSpan="2"
                                                    Aspect="AspectFit"
                                                    Source="FavoritoOK"
+                                                   WidthRequest="25"
+                                                   HeightRequest="25"
                                                    IsVisible="{Binding eve_guardado,Mode=TwoWay}">
                                             </Image>
 <!--                                             <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
                                                 </Image.GestureRecognizers>-->
-                                            <Image Margin="15" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir">
+                                            <Image Margin="15"
+                                                   Grid.Row="1"
+                                                   Grid.Column="3"
+                                                   Grid.RowSpan="2"
+                                                   Aspect="AspectFit"
+                                                   Source="Compartir"
+                                                   WidthRequest="25"
+                                                   HeightRequest="25">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                 </Image.GestureRecognizers>

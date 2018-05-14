@@ -7,13 +7,15 @@ using City_Center.PopUp;
 using Rg.Plugins.Popup.Extensions;
 using City_Center.ViewModels;
 using City_Center.Clases;
+using City_Center.Helper;
+using Acr.UserDialogs;
 
 namespace City_Center.Page
 {
     public partial class Hotel : ContentPage
     {
         public WebViewHotel _webHotel;
-        private string[] ListaOpciones;
+       
 
         public Hotel()
         {
@@ -32,11 +34,7 @@ namespace City_Center.Page
             _webHotel = new WebViewHotel();
             NavigationPage.SetTitleIcon(this, "logo.png");
 
-            ListaOpciones = new string[] { "1", "2", "3", "4", "5", "6", "7", "8" };
 
-            NoPersona.ItemsSource = ListaOpciones;
-
-            NoPersona.SelectedIndex = 0;
 
         }
 
@@ -51,26 +49,39 @@ namespace City_Center.Page
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
-            try
+			try
             {
-                
-            if (FechaFinal.Date < FechaInicio.Date)
+                if (FechaInicio.Text == "00/00/00")
+                {
+                    await Mensajes.Info("Fecha inicial requerida.");
+                    return;
+                }
+
+                if (FechaFinal.Text == "00/00/00")
+                {
+                    await Mensajes.Info("Fecha inicial requerida.");
+                    return;
+                }
+
+                DateTime Fecha1 = DateTime.Parse(FechaInicio.Text);
+                DateTime Fecha2 = DateTime.Parse(FechaFinal.Text);
+
+                if (Fecha1.Date < Fecha2.Date)
                 {
                     await Mensajes.Info("La fecha final no puede ser menor a la fecha inicial");
                 }
                 else
                 {
-                    VariablesGlobales.FechaInicio = FechaInicio.Date;
-                    VariablesGlobales.FechaFin = FechaFinal.Date;
-                    VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.SelectedItem);
+                    VariablesGlobales.FechaInicio = Convert.ToDateTime(FechaInicio.Text);
+                    VariablesGlobales.FechaFin = Convert.ToDateTime(FechaFinal.Text);
+                    VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
                     await Navigation.PushPopupAsync(_webHotel);
                 }
-
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", "E: "+ex.ToString(), "ok");
+                await Mensajes.Info("No se pudo acceder a las reservaciones, intente mas tarde.");
             }
            
         }
@@ -143,5 +154,61 @@ namespace City_Center.Page
 
 
         }
-    }
+    
+		async void FechaInicio_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                MinimumDate = DateTime.Now.AddDays(0)
+            });
+
+
+            if (result.Ok)
+            {
+                FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                FechaInicio.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+            }
+            else
+            {
+                FechaInicio.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+
+            //String.Format("{0:dd MMMM yyyy}"
+
+        }
+
+        async void FechaFin_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                MinimumDate = DateTime.Now.AddDays(0)
+            });
+
+
+            if (result.Ok)
+            {
+                FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                FechaFinal.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+            }
+            else
+            {
+                FechaFinal.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+            }
+
+            //String.Format("{0:dd MMMM yyyy}"
+
+        }
+	
+	
+	}
 }
