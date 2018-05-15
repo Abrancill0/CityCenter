@@ -5,6 +5,8 @@ using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 using City_Center.Clases;
+using Acr.UserDialogs;
+using City_Center.Helper;
 
 namespace City_Center.Page
 {
@@ -20,8 +22,7 @@ namespace City_Center.Page
         public Registro()
         {
             InitializeComponent();
-
-            FechaInicio.Date = DateTime.Now;
+   
         }
 
 
@@ -77,5 +78,31 @@ namespace City_Center.Page
         {
             await Camara();
         }
+
+
+		async void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                MinimumDate = DateTime.Now.AddDays(0)
+            });
+
+
+            if (result.Ok)
+            {
+                Fecha1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                Fecha1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+            }
+            else
+            {
+                Fecha1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+
+        }
+
     }
 }

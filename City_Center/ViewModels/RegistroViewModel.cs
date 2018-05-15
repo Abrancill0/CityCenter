@@ -28,7 +28,7 @@ namespace City_Center.ViewModels
         #region Attributes
         private string email;
         private string ciudad;
-        private DateTime fecha;
+        private string fecha;
         private string password;
         private string password2;
         private bool isEnabled;
@@ -58,7 +58,7 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.email, value); }
         }
 
-        public DateTime Fecha
+        public string Fecha
         {
             get { return this.fecha; }
             set { SetValue(ref this.fecha, value); }
@@ -215,7 +215,7 @@ namespace City_Center.ViewModels
                 new KeyValuePair<string, string>("usu_id_tarjeta_socio", "1"),
                 new KeyValuePair<string, string>("usu_estatus", "1"),
                 new KeyValuePair<string, string>("usu_id_tarjeta_socio", ""),
-                new KeyValuePair<string, string>("usu_fecha_nacimiento", this.Fecha.ToString("yyyy-MM-dd")),
+                new KeyValuePair<string, string>("usu_fecha_nacimiento", this.Fecha),
             });
 
 
@@ -569,7 +569,7 @@ namespace City_Center.ViewModels
         {
             this.apiService = new ApiService();
             this.isEnabled = true;
-           
+			this.Fecha = "00/00/0000";
         }
         #endregion
 

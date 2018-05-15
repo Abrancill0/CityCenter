@@ -74,14 +74,14 @@
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                            </ffimageloading:CachedImage>
                                             <Label Text="MENÚ"
-                                                   HorizontalTextAlignment="End"
+                                                   HorizontalTextAlignment="Center"
                                                    IsVisible="{Binding MM}"
                                                    Grid.Row="1"
                                                    Grid.Column="0"
                                                    FontFamily="Oswald-Regular"
                                                    TextColor="#250C4B"
-                                                   Margin="-20,0,10,0"
-                                                   HorizontalOptions="End"><Label.FontFamily>
+                                                   Margin="70,0,10,0"
+                                                   HorizontalOptions="Center"><Label.FontFamily>
                                                         <OnPlatform x:TypeArguments="x:String">
                                                             <On Platform="iOS" Value="Oswald-Regular"/>
                                                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>

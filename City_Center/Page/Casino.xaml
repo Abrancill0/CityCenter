@@ -308,28 +308,36 @@
                                                   HasUnevenRows="true"
                                                   FlowColumnMinWidth="110"
                                                   FlowItemsSource="{Binding PozosDetalle}"
-                                                  HeightRequest="300">
+                                                  HeightRequest="350">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
-                                            <Grid Padding="3" CompressedLayout.IsHeadless="true" >
+                                         
+
+                                              
+                                                    <Grid Padding="1" CompressedLayout.IsHeadless="true" >
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="100"
+                                            
+                                                        <ffimageloading:CachedImage HeightRequest="100"
+                                                                                    
                                                                             Aspect="AspectFill"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding poz_imagen}"
-                                                                            DownsampleToViewSize="true"
-                                                                            />
-                                                <Label x:Name="Label"
+                                                                            DownsampleToViewSize="true">
+                                                          
+                                                            </ffimageloading:CachedImage>
+
+                                                    <Label x:Name="Label"
                                                        Margin="5"
                                                        HorizontalOptions="Center"
                                                        HorizontalTextAlignment="Center"
-                                                       VerticalOptions="Start"
+                                                       VerticalOptions="End"
+                                                       VerticalTextAlignment="End"
                                                        TextColor="White"
                                                        FontFamily="Oswald-regular"
                                                        FontSize="Small"
@@ -340,8 +348,10 @@
                                                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                                                 </OnPlatform>
                                                            </Label.FontFamily>
-                                                     </Label>
+                                                     </Label> 
+
                                             </Grid>
+                                               
                                         </DataTemplate>
                                     </flv:FlowListView.FlowColumnTemplate>
                                 </flv:FlowListView>
@@ -590,7 +600,7 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                             </Label>
-                            <StackLayout HorizontalOptions="FillAndExpand">
+                            <StackLayout Margin="-5,0,-5,0" HorizontalOptions="FillAndExpand">
                                 <ffimageloading:CachedImage x:Name="Img1provisional"
                                 HeightRequest="150"
                                 Aspect="AspectFill"

@@ -151,6 +151,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SlideMenu\PruebaGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\HttpClientPostMethod.cs" />
@@ -354,6 +358,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NavigationViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\TabPage.xaml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helper\IForceKeyboardDismissalService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SlideMenu\PruebaGrid.xaml.cs">
+      <DependentUpon>PruebaGrid.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

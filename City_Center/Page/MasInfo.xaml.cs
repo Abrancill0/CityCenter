@@ -157,22 +157,40 @@ namespace City_Center.Page
 
             if (result.Ok)
             {
-				Fecha2.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-				Fecha2.Unfocus();
+				Fecha1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+				Fecha1.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 
             }
             else
             {
-				Fecha2.Unfocus();
+				Fecha1.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 			}   
 
 		}
 
-		void Handle_Focused_1(object sender, Xamarin.Forms.FocusEventArgs e)
+	async void Handle_Focused_1(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
-			throw new NotImplementedException();
+			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+        {
+            IsCancellable = true,
+            MinimumDate = DateTime.Now.AddDays(0)
+        });
+
+
+            if (result.Ok)
+            {
+                Fecha2.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                Fecha2.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+            }
+            else
+            {
+                Fecha2.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }   
 		}
 	}
 }
