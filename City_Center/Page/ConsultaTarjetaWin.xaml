@@ -14,8 +14,7 @@
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontFamily" Value="Roboto-Regular" />
                 <Setter Property="ActivePlaceholderColor" Value="#FFFFFF"/>
-
-            </Style>
+                </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -29,27 +28,51 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <StackLayout Padding = "50,5" HorizontalOptions = "Center">
-                <Label Text="Tipo documento" TextColor="White" Margin="5,2,0,0" FontSize="Small" />
-                <Grid Padding="15, 0">
+            <StackLayout HorizontalOptions = "Center" Margin="15,5">
+                <Grid>
                     <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End" />
-                    <Picker Margin="5" x:Name="TipoDocumento"
-                            TextColor = "White"
-                            ItemsSource="{Binding ListaOpciones}"
-                            Title="Tipo Documento">
-                    </Picker>
-                </Grid>
-            
-                <xfx:XfxEntry TextColor = "White"
-                              Style="{DynamicResource EntryStyle}"
-                              Placeholder="Numero de Documento"
-                              PlaceholderColor="White">
+                    <xfx:XfxEntry x:Name="TipoDocumento" TextColor = "White"
+                                Style="{DynamicResource EntryStyle}"
+                                Placeholder="Tipo Documento"
+                                PlaceholderColor="White"
+                                FontSize="16"
+                                Text="{Binding TipoDocumento,Mode=TwoWay}"
+                                Focused="Handle_Focused"
+                                IsEnabled="false">
                     <Entry.HeightRequest>
                         <OnPlatform x:TypeArguments="x:Double">
-                            <On Platform="iOS">60</On>
-                            <On Platform="Android,Windows">50</On>
+                            <On Platform="iOS">70</On>
+                            <On Platform="Android,Windows">70</On>
                         </OnPlatform>
                     </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular"/>
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                </xfx:XfxEntry>
+                </Grid>
+                <xfx:XfxEntry TextColor = "White"
+                              Style="{DynamicResource EntryStyle}"
+                              Placeholder="Número de Documento"
+                              PlaceholderColor="White"
+                              FontSize="16"
+                              Keyboard="Numeric"
+                              Text="{Binding NumeroDocumento,Mode=TwoWay}"
+                              IsEnabled="false">
+                    <Entry.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="iOS">70</On>
+                            <On Platform="Android,Windows">70</On>
+                        </OnPlatform>
+                    </Entry.HeightRequest>
+                    <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular"/>
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                            </OnPlatform>
+                        </Entry.FontFamily>
                 </xfx:XfxEntry>
 
             </StackLayout>
@@ -63,20 +86,26 @@
                                AbsoluteLayout.LayoutBounds="0.5,0.9,-1,-1">
                <xfx:XfxEntry TextColor = "White"
                              Style="{DynamicResource EntryStyle}"
-                             Placeholder="No Socio"
+                             Placeholder="Socio N."
                              PlaceholderColor="White"
-                             Text="{Binding NoSocio,Mode=TwoWay}">
+                             Text="{Binding NoSocio,Mode=TwoWay}"
+                             Keyboard="Numeric"
+                             IsEnabled="false">
                     <Entry.HeightRequest >
                         <OnPlatform x:TypeArguments="x:Double">
                             <On Platform="iOS">60</On>
-                            <On Platform="Android,Windows">50</On>
+                            <On Platform="Android,Windows">60</On>
                         </OnPlatform>
                     </Entry.HeightRequest>
-                
+                    <Entry.FontFamily>
+                          <OnPlatform x:TypeArguments="x:String">
+                              <On Platform="iOS" Value="Oswald-Regular"/>
+                              <On Platform="Android" Value="Oswald-Regular.ttf#Roboto-Regular"/>
+                          </OnPlatform>
+                    </Entry.FontFamily>
                 </xfx:XfxEntry>
                     </StackLayout>
-            </AbsoluteLayout>
-                  
+            </AbsoluteLayout>    
             <Button Margin="30"
                     FontSize="Small"
                     TextColor="White"
@@ -84,10 +113,11 @@
                     BorderColor = "White"
                     BorderWidth = ".3"
                     Text="CONSULTAR PUNTOS"
+                    IsVisible="false"
                     Command="{Binding ConsultaPuntosCommand}">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="iOS" Value="Oswald-Regular"/>
                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                     </OnPlatform>
                 </Button.FontFamily></Button>

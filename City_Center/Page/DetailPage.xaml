@@ -9,7 +9,12 @@
              BackgroundColor="Transparent">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Detail}" BackgroundColor="#250c4b">
-            <ListView x:Name="listviewMenu" ItemsSource="{Binding ListaOpciones}" ItemSelected="Handle_ItemSelected" BackgroundColor="#250c4b" SeparatorVisibility="Default" HasUnevenRows="True" RowHeight="50">
+            <ListView x:Name="listviewMenu"
+                      ItemsSource="{Binding ListaOpciones}"
+                      ItemSelected="Handle_ItemSelected"
+                      BackgroundColor="#250c4b"
+                      SeparatorVisibility="Default"
+                      HasUnevenRows="True" RowHeight="55">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -21,7 +26,18 @@
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
-                                    <Label Grid.Column="0" Grid.Row="0" Text="{Binding .}" FontSize="Small" TextColor="White" FontFamily="Oswald-Bold" FontAttributes="Bold">
+                                    <Label Grid.Column="0"
+                                           Grid.Row="0"
+                                           Text="{Binding .}"
+                                           FontSize="Small"
+                                           TextColor="White"
+                                           Margin="15,0,0,0">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="Oswald-Regular"/>
+                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                            </OnPlatform>
+                                        </Label.FontFamily>
                                     </Label>
                                 </Grid>
                             </ViewCell.View>
@@ -29,51 +45,75 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <StackLayout VerticalOptions="EndAndExpand">
+            <StackLayout VerticalOptions="EndAndExpand" >
                 <AbsoluteLayout IsVisible="{Binding VerTarjeta}"
-                    Padding = "5,45"
-                                HeightRequest="150"
-                                WidthRequest="250"
+                    Padding = "5,20,5,0"
+                                Margin="0,0,0,-45"
+                                HeightRequest="230"
+                                WidthRequest="280"
                                 HorizontalOptions="Center">
                     <Image Source="{Binding ImagenTarjeta}"
                            Aspect="Fill" 
-                           HeightRequest="150" 
-                           WidthRequest="250"
+                           HeightRequest="230" 
+                           WidthRequest="280"
                            IsVisible="{Binding VerTarjeta}"/>
-                    
                     <Label Text="PUNTOS WIN"
-                           FontSize = "8"
+                           FontSize = "Small"
                            TextColor="White" 
                            HorizontalOptions="Center"                         
                            AbsoluteLayout.LayoutFlags="PositionProportional"
                            AbsoluteLayout.LayoutBounds="0.9,0.1,-1,-1"
                            IsVisible="{Binding VerTarjeta}">
+                        <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                     <On Platform="iOS" Value="Oswald-Regular"/>
+                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                 </OnPlatform>
+                        </Label.FontFamily>
                     </Label>
                    <Label Text="{Binding PuntosWin}"
-                           FontSize = "12"
+                           FontSize = "14"
                            TextColor="White"
                            HorizontalOptions="Center"                         
                            AbsoluteLayout.LayoutFlags="PositionProportional"
                            AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1"
                           IsVisible="{Binding VerTarjeta}">
+                         <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                     <On Platform="iOS" Value="Oswald-Regular"/>
+                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                 </OnPlatform>
+                        </Label.FontFamily>
                     </Label>
                     <Label Text="Socio N. "
-                           FontSize = "Micro"
+                           FontSize = "14"
                            TextColor="White" 
                            HorizontalOptions="Center"                         
                            AbsoluteLayout.LayoutFlags="PositionProportional"
                            AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1"
                            IsVisible="{Binding VerTarjeta}">
+                         <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                     <On Platform="iOS" Value="Oswald-Regular"/>
+                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                 </OnPlatform>
+                        </Label.FontFamily>
                     </Label>
                     <Label 
-                           Text="{Binding NoSocio}"
+                           Text="{Binding NoSocio,StringFormat='96538905{0}'}"
                            TextColor="White"
-                           FontSize="Small"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"                
+                           FontSize="19"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Start"                
                            AbsoluteLayout.LayoutFlags="PositionProportional"
                            AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1"
                         IsVisible="{Binding VerTarjeta}">
+                        <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                     <On Platform="iOS" Value="Oswald-Regular"/>
+                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                 </OnPlatform>
+                        </Label.FontFamily>
                     </Label>
                 </AbsoluteLayout>
                 <Grid ColumnSpacing="5" BackgroundColor="#1B0938" IsVisible="{Binding PerfilVisible}">
@@ -85,6 +125,7 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <AbsoluteLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center">
                         <Image x:Name="ImageCircle" Source="circulo_blanco.png" HeightRequest="70" WidthRequest="70" VerticalOptions="Center" />
@@ -115,16 +156,38 @@
                            Grid.Row="0"
                            Grid.Column="1"
                            VerticalOptions="Center"
-                           LineBreakMode="WordWrap" WidthRequest="45">
+                           LineBreakMode="WordWrap" WidthRequest="60">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding PerfilCommand}" />
                         </Label.GestureRecognizers>
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                               <On Platform="iOS" Value="Oswald-Regular"/>
+                               <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                            </OnPlatform>
+                       </Label.FontFamily>
                     </Label>
-                    <Image Source="campana.png" Grid.Row="0" Grid.Column="2" HeightRequest="15" >
+                    <Image Source="campana.png" Grid.Row="0" Grid.Column="2" HeightRequest="20" >
                     </Image>
-                    <Button Command="{Binding CierraSesionCommand}" Text="Cerrar sesión" Image="logout" TextColor="White" VerticalOptions="Center" BackgroundColor="#1B0938" ContentLayout="Right,0" Grid.Row="0" Grid.Column="3" FontSize="12"
-                        FontFamily="Oswald-Bold">
+                    <Button Command="{Binding CierraSesionCommand}" Text="Cerrar sesión"
+                            TextColor="White"
+                            BackgroundColor="Transparent"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                            Grid.Row="0"
+                            WidthRequest="80"
+                            Margin="10,0,5,0"
+                            Grid.Column="3"
+                            FontSize="12">
+                        <Button.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                               <On Platform="iOS" Value="Oswald-Regular"/>
+                               <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                            </OnPlatform>
+                       </Button.FontFamily>
                     </Button>
+                    <Image Source="logout.png" HorizontalOptions="Start" Margin="-10,0,15,0" HeightRequest="20" Grid.Row="0" Grid.Column="4" Aspect="AspectFit">
+                    </Image>
                 </Grid>
             </StackLayout>
             <StackLayout Padding="0,10,10,10" BackgroundColor="#1B0938" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" IsVisible="{Binding OpcionesVisible}">

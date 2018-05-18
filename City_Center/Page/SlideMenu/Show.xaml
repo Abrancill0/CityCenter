@@ -25,7 +25,7 @@
                 <Label Text="SHOWS" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="iOS" Value="Oswald-Regular"/>
                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                         </OnPlatform>
                     </Label.FontFamily>
@@ -37,30 +37,30 @@
                     </ColumnDefinition>
                     <ColumnDefinition Width="2*">
                     </ColumnDefinition>
-                    <ColumnDefinition Width="2*">
+                    <ColumnDefinition Width="3.5*">
                     </ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40">
                     </RowDefinition>
                 </Grid.RowDefinitions>
-                <Label x:Name="LabelTab1" Text="TODOS" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="10" TextColor="#EAE8ED" Grid.Column="0" Style="{DynamicResource TabTopLabel}">
+                <Label x:Name="LabelTab1" Text="TODOS" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="12" TextColor="#EAE8ED" Grid.Column="0" Style="{DynamicResource TabTopLabel}">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="iOS" Value="Oswald-Regular"/>
                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
-                <Label x:Name="LabelTab2" Text="JARANA" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="10" TextColor="#71628A" Grid.Column="1" Style="{DynamicResource TabTopLabel}">
+                <Label x:Name="LabelTab2" Text="JARANA" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="12" TextColor="#71628A" Grid.Column="1" Style="{DynamicResource TabTopLabel}">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                            <On Platform="iOS" Value="FOswald-Regular"/>
                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
-                <Label x:Name="LabelTab3" Text="CENTRO DE CONVENCIONES" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="10" TextColor="#71628A" Grid.Column="2" Style="{DynamicResource TabTopLabel}">
+                <Label x:Name="LabelTab3" Text="CENTRO DE CONVENCIONES" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="12" TextColor="#71628A" Grid.Column="2" Style="{DynamicResource TabTopLabel}">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
                             <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -94,7 +94,9 @@
                 </ContentView>
             </Grid>
             <ListView ItemsSource="{Binding EventosDetalle}" RowHeight="250"
-                      HasUnevenRows="false" HeightRequest="600">
+                      HasUnevenRows="false"
+                      SeparatorVisibility="None"
+                      Margin="10,7,10,10">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -104,12 +106,12 @@
                                         <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
                                     </Frame.OutlineColor>
                                     <Frame.Margin>
-                                        <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                        <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
                                     </Frame.Margin>
                                     <Frame.Padding>
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
-                                    <StackLayout Orientation="Horizontal"> 
+                                    <StackLayout Orientation="Horizontal" Spacing="0"> 
                                         <Grid HorizontalOptions="FillAndExpand">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="1*" />
@@ -144,7 +146,7 @@
                                                    FontSize="Medium">
                                                     <Label.FontFamily>
                                                         <OnPlatform x:TypeArguments="x:String">
-                                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                            <On Platform="iOS" Value="Oswald-Regular"/>
                                                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                                         </OnPlatform>
                                                     </Label.FontFamily>
@@ -154,17 +156,31 @@
                                                    Grid.ColumnSpan="2"
                                                    HorizontalTextAlignment="Start"
                                                    HorizontalOptions="Start"
-                                                   Text="{Binding eve_fecha_hora_inicio}"
-                                                   Margin="15,0,0,10"
+                                                   Text="{Binding eve_fecha_hora_inicio, StringFormat='{0:dd MMMM yyyy h:mm tt}'}"
+                                                   Margin="15,-10,0,10"
                                                    FontSize="Small">
                                                     <Label.FontFamily>
                                                         <OnPlatform x:TypeArguments="x:String">
-                                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                            <On Platform="iOS" Value="Oswald-Regular"/>
                                                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                                         </OnPlatform>
                                                     </Label.FontFamily>
                                             </Label>
-                                            <Image Margin="15" Grid.Row="1"
+                                             <Image Margin="2,15"
+                                                    Grid.Row="1"
+                                                   Grid.Column="2"
+                                                   Grid.RowSpan="2"
+                                                   Aspect="AspectFit"
+                                                   Source="FavoritoOK"
+                                                   WidthRequest="25"
+                                                   HeightRequest="25"
+                                                    IsVisible="{Binding eve_guardado,Mode=TwoWay}">
+                                            </Image>
+                                            <!--<Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
+                                                </Image.GestureRecognizers>-->                                           
+                                            <Image Margin="2,5,0,25" 
+                                                   Grid.Row="1"
                                                    Grid.Column="2"
                                                    Grid.RowSpan="2"
                                                    Aspect="AspectFit"
@@ -176,27 +192,14 @@
                                                     <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"/>
                                                 </Image.GestureRecognizers>
                                             </Image>
-
-                                            <Image Margin="15" Grid.Row="1"
-                                                   Grid.Column="2"
-                                                   Grid.RowSpan="2"
-                                                   Aspect="AspectFit"
-                                                   Source="FavoritoOK"
-                                                   WidthRequest="25"
-                                                   HeightRequest="25"
-                                                   IsVisible="{Binding eve_guardado,Mode=TwoWay}">
-                                            </Image>
-<!--                                             <Image.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
-                                                </Image.GestureRecognizers>-->
-                                            <Image Margin="15"
+                                            <Image Margin="2,5,10,25"
                                                    Grid.Row="1"
                                                    Grid.Column="3"
                                                    Grid.RowSpan="2"
                                                    Aspect="AspectFit"
                                                    Source="Compartir"
-                                                   WidthRequest="25"
-                                                   HeightRequest="25">
+                                                   WidthRequest="30"
+                                                   HeightRequest="30">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                 </Image.GestureRecognizers>

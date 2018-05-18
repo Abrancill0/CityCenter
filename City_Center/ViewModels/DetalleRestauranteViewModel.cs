@@ -34,11 +34,11 @@ namespace City_Center.ViewModels
         private string NombreViejo;
         private string Nombrenuevo;
         private string NombreMenu;
+		private Thickness Margen;
         private bool mM;
-
-
-        DateTime fechaInicio;
-        DateTime horaInicio;
+        
+        string fechaInicio;
+        string horaInicio;
         string noPersonas;
         string nombreRestaurante;
         string sillaNiños;
@@ -72,13 +72,13 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.mM, value); }
         }
 
-        public DateTime FechaInicio
+        public string FechaInicio
         {
             get { return this.fechaInicio; }
             set { SetValue(ref this.fechaInicio, value); }
         }
 
-        public DateTime HoraInicio
+        public string HoraInicio
         {
             get { return this.horaInicio; }
             set { SetValue(ref this.horaInicio, value); }
@@ -153,7 +153,7 @@ namespace City_Center.ViewModels
             }
 
 
-            string CuerpoMensaje = "Fecha:" + this.FechaInicio.ToString("dd/MM/yyyy") + "\n" +
+            string CuerpoMensaje = "Fecha:" + this.FechaInicio + "\n" +
                                    "Hora: " + this.HoraInicio + "\n" +
                                    "Personas: " + this.NoPersonas + "\n" +
                                    "Restaurant: " + this.NombreRestaurante + "\n" +
@@ -273,11 +273,13 @@ namespace City_Center.ViewModels
 
                 if (NombreViejo == Nombrenuevo)
                 {
-                    NombreMenu = ""; 
+                    NombreMenu = "";
+					Margen = new Thickness(0, 0, 0, 0);
                 }
                 else
                 {
                     NombreMenu =  NombreViejo; 
+					Margen = new Thickness(0, 5, 0, 10);
                 }
 
                 RestaurantMenuDetalle.Add(new MenuDetalle()
@@ -294,7 +296,8 @@ namespace City_Center.ViewModels
                     mde_id_usuario_modifico = l.mde_id_usuario_modifico,
                     mde_fecha_hora_modifico = l.mde_fecha_hora_modifico,
                     mde_estatus = l.mde_estatus,
-                    NombreMenu = NombreMenu
+                    NombreMenu = NombreMenu,
+					Margen = Margen
                                
                 });
 
@@ -361,8 +364,10 @@ namespace City_Center.ViewModels
 
             this.rd = rd;
 
-            FechaInicio = DateTime.Today;
-
+            this.FechaInicio = "00/00/0000";
+			this.HoraInicio = "00:00";
+			this.SillaNiños = "No";
+				
             LoadDetalleRestaurante();
         }
         #endregion

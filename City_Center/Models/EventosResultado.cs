@@ -11,7 +11,7 @@ namespace City_Center.Models
             public int eve_id { get; set; }
             public string eve_nombre { get; set; }
             public string eve_descripcion { get; set; }
-            public string eve_fecha_hora_inicio { get; set; }
+            public DateTime eve_fecha_hora_inicio { get; set; }
             public string eve_fecha_hora_fin { get; set; }
             public int eve_id_usuario_creo { get; set; }
             public string eve_fecha_hora_creo { get; set; }

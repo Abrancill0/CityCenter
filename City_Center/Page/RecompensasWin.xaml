@@ -4,28 +4,26 @@
         <ToolbarItem Icon="Chat" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding RecompesasWin}" Margin="5">
+        <StackLayout BindingContext="{Binding RecompesasWin}" Margin="5" BackgroundColor="White">
             <Label HorizontalOptions="Start"
                    HorizontalTextAlignment="Start"
-                   TextColor="#250c4b"
-
-                   Text="RECOMPESAS WIN"
-                   FontSize="Large"
-                   Margin="5">
-                 <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                   TextColor="#250c4b" Text="RECOMPESAS WIN" FontSize="Large" Margin="5">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Oswald-Regular" />
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                    </OnPlatform>
+                </Label.FontFamily>
             </Label>
             <ListView ItemsSource="{Binding RecompensasWinDetalle}" HasUnevenRows="true" HeightRequest="100">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <StackLayout Orientation="Horizontal" BackgroundColor="{Binding Color}">
-                                    <Grid HorizontalOptions="FillAndExpand" Margin="5">
+                                <StackLayout Padding="0,10"
+                                    Orientation="Horizontal"
+                                    BackgroundColor="{Binding Color}">
+                                    <Grid HorizontalOptions="FillAndExpand">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1.5*" />
                                             <ColumnDefinition Width="1*" />
@@ -33,20 +31,34 @@
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="1*" />
                                         </Grid.RowDefinitions>
-                                        <Label TextColor="Black"
-                                               Grid.Row="0"
+                                        <Label TextColor="Black" Grid.Row="0"
                                                Grid.Column="0"
                                                Text="{Binding wre_nombre}"
                                                HorizontalTextAlignment="Start"
                                                FontSize="Medium"
-                                               FontFamily="Oswald-Regular" />
+                                               Margin="5,0,0,0">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="Oswald-Regular"/>
+                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                        </Label>
                                         <Label TextColor="Black"
                                                Grid.Row="0"
                                                Grid.Column="1"
-                                               HorizontalTextAlignment="Start"
+                                               HorizontalTextAlignment="End"
+                                               HorizontalOptions="End"
                                                Text="{Binding wre_puntos,StringFormat='{0} PTS'}"
                                                FontSize="Small"
-                                               FontFamily="Oswald-Regular" />
+                                               Margin="0,0,5,0">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="Oswald-Regular"/>
+                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                        </Label>
                                     </Grid>
                                 </StackLayout>
                             </ViewCell.View>

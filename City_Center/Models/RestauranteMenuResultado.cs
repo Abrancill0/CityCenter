@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace City_Center.Models
 {
@@ -42,7 +43,7 @@ namespace City_Center.Models
 
         public class MenuDetalle
         {
-            public int mde_id { get; set; }
+			public int mde_id { get; set; }
             public int mde_id_menu { get; set; }
             public int mde_id_restaurant { get; set; }
             public string mde_nombre { get; set; }
@@ -55,6 +56,7 @@ namespace City_Center.Models
             public string mde_fecha_hora_modifico { get; set; }
             public string mde_estatus { get; set; }
             public string NombreMenu { get; set; }
+			public Thickness Margen { get; set; }         
         }
 
         public class RestauranteMenuDetalle

@@ -16,7 +16,7 @@
                                         ShowIndicators="true">
                     <cv:CarouselViewControl.ItemTemplate>
                         <DataTemplate>
-                            <Grid BackgroundColor = "White"
+                            <Grid 
                                   RowSpacing="0"
                                   ColumnSpacing = "0" 
                                   HorizontalOptions="FillAndExpand"
@@ -34,12 +34,18 @@
                                     <RowDefinition Height="0.8*" />
                                     <RowDefinition Height="1.8*" />
                                 </Grid.RowDefinitions>
-                                <ffimageloading:CachedImage  HeightRequest="250" Grid.Row="0" Aspect="AspectFill" Grid.ColumnSpan="3"
+                                <ffimageloading:CachedImage HeightRequest="250"
+                                                            Grid.Row="0"
+                                                            Aspect="AspectFill"
+                                                            Grid.ColumnSpan="3"
                                                 LoadingPlaceholder="image_loading.png"
                                                 ErrorPlaceholder="image_error.png"
                                                 Source="{Binding imagen}"/>
-                                    
-                                <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column = "0" BackgroundColor="#FFFFFF" Padding = "25,10">
+                                <StackLayout Orientation="Vertical"
+                                             Grid.Row="1"
+                                             Grid.Column = "0"
+                                             BackgroundColor="#FFFFFF"
+                                             Padding = "25,10">
                                     <Label Text="{Binding nombre}"
                                            BackgroundColor = "White"
                                            FontSize= "14"
@@ -59,7 +65,6 @@
                                           TextColor = "#5D5D5D"
                                            HorizontalOptions="Start"
                                            VerticalOptions= "Start">
-
                                         <Label.FontFamily>
                                             <OnPlatform x:TypeArguments="x:String">
                                                 <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -68,7 +73,7 @@
                                         </Label.FontFamily>
                                      </Label>
                                 </StackLayout>
-                                 <StackLayout Padding = "10,10" Orientation="Horizontal" Grid.Row="1" Grid.Column = "1" Grid.ColumnSpan="2" BackgroundColor = "White">
+                                <StackLayout Padding = "10,10" Orientation="Horizontal" Grid.Row="1" Grid.Column = "1" Grid.ColumnSpan="2" BackgroundColor = "White">
                                     <Image Aspect="AspectFit"
                                            Source="FavoritoOK"
                                            VerticalOptions = "Start"

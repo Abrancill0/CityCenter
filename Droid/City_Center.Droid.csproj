@@ -350,6 +350,7 @@
     <Compile Include="SplashActivity.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="AndroidForceKeyboardDismissalService.cs" />
+    <Compile Include="MyTabs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -506,6 +507,8 @@
     <AndroidResource Include="Resources\drawable\Hab_5.jpg" />
     <AndroidResource Include="Resources\drawable\Hab_6.jpg" />
     <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\drawable\CloseG.png" />
+    <AndroidResource Include="Resources\color\icon_tab.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
@@ -513,6 +516,7 @@
     <AndroidAsset Include="Assets\Oswald-Regular.ttf" />
     <AndroidAsset Include="Assets\materialicons.ttf" />
     <AndroidAsset Include="Assets\fontawesome.ttf" />
+    <AndroidAsset Include="Assets\Oswald-Medium.ttf" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -522,6 +526,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\xml\" />
+    <Folder Include="Resources\color\" />
   </ItemGroup>
   <Import Project="..\City_Center\City_Center.projitems" Label="Shared" Condition="Exists('..\City_Center\City_Center.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

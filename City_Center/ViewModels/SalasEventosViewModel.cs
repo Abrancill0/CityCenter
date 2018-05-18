@@ -241,6 +241,7 @@ namespace City_Center.ViewModels
         {
             this.apiService = new ApiService();
 			Fecha = "00/00/0000";
+			this.TipoEvento = "Casamiento";
             this.LoadSalasEventos();
            
         }

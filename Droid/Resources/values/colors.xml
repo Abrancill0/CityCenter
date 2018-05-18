@@ -2,4 +2,5 @@
 <resources>
   <color name="ListViewSelected">#FFFFFF</color>
   <color name="ListViewHighlighted">#FFFFFF</color>
+  <color name="colorAccent">#FFFFFF</color>  
 </resources>

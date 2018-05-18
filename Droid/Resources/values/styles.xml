@@ -27,12 +27,16 @@
          colorControlHighlight and colorSwitchThumbNormal. -->
         <item name="windowActionModeOverlay">true</item>
 
-
         <item name="android:colorLongPressedHighlight">@color/ListViewHighlighted</item>
         <item name="android:colorPressedHighlight">@color/ListViewSelected</item>
         <item name="android:colorFocusedHighlight">@color/ListViewSelected</item>
         <item name="android:colorActivatedHighlight">@color/ListViewSelected</item>
-       
+
+
+        <item name="android:state_selected">@color/ListViewSelected</item>
+      
+
+               
     </style>
     <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorAccent">#250C4B</item>
