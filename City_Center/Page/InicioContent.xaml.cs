@@ -8,6 +8,7 @@ using City_Center.Clases;
 using Acr.UserDialogs;
 using City_Center.Helper;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace City_Center.Page
 {
@@ -161,8 +162,9 @@ namespace City_Center.Page
 			
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
-                IsCancellable = true,
-                MinimumDate = DateTime.Now.AddDays(0)
+				Title = "Llegada",
+				IsCancellable = true,
+				MinimumDate = DateTime.Now.AddDays(0)
             });
             
 
@@ -188,7 +190,9 @@ namespace City_Center.Page
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
-                MinimumDate = DateTime.Now.AddDays(0)
+				MinimumDate = DateTime.Now.AddDays(0),
+                Title = "Salida"
+                
             });
 
 
@@ -345,6 +349,36 @@ namespace City_Center.Page
 
         }
 
+        void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+		{
+		   try
+			{
+				Entry entry = sender as Entry;
+                String val = entry.Text; //Get Current Text
+
+                
+                if (val.Length > 0)//If it is more than your character restriction
+                {               
+          
+					Match match = Regex.Match(val, @"([0-9\-]+)$",
+                                    RegexOptions.IgnoreCase);
+
+					if (!match.Success)
+                    {
+						val = val.Remove(val.Length - 1);
+						entry.Text = val;
+						return;
+                    }
+     
+                     //Set the Old value
+                }
+			}
+			catch (Exception)
+			{
+
+			}
+
+		}
 	}
 
 }

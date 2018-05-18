@@ -85,15 +85,13 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <StackLayout x:Name="SL1" IsVisible="true">
-                <ScrollView>
-                    <StackLayout>
+            <ScrollView>
+                    <StackLayout HeightRequest="{Binding TamanoRestaurant}" BackgroundColor="White">
                         <ListView ItemsSource="{Binding RestaurantDetalle}"
                                   HasUnevenRows="false"
                                   RowHeight="230"
                                   Margin="7,10,7,10"
-                                  SeparatorVisibility="None"
-                                  BackgroundColor="White">
+                                  SeparatorVisibility="None">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -103,7 +101,7 @@
                                                     <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
                                                 </Frame.OutlineColor>
                                                 <Frame.Margin>
-                                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                                    <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
                                                 </Frame.Margin>
                                                 <Frame.Padding>
                                                     <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
@@ -112,7 +110,7 @@
                                                           <TapGestureRecognizer Command="{Binding DetalleCommand}" />
                                                     </Frame.GestureRecognizers>
                                                 <StackLayout Orientation="Vertical">
-                                                    <Grid HeightRequest="160">
+                                                    <Grid HeightRequest="210">
                                                     <ffimageloading:CachedImage 
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading.png"
@@ -122,13 +120,13 @@
                                                             <TapGestureRecognizer Command="{Binding DetalleCommand}" />
                                                         </ffimageloading:CachedImage.GestureRecognizers>
                                                     </ffimageloading:CachedImage>
-                                                        </Grid>
+                                                    </Grid>
                                                     <Grid>
-                                                    <StackLayout HorizontalOptions="End" HeightRequest="55" WidthRequest="55">
+                                                    <StackLayout HorizontalOptions="End" HeightRequest="65" WidthRequest="65">
                                                         <ffimageloading:CachedImage 
-                                                        HeightRequest="55" 
+                                                        HeightRequest="65" 
                                                             Aspect="AspectFit"
-                                                            Margin="0, -35, 10, 0"
+                                                            Margin="0, -40, 10, 0"
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png" 
                                                         Source="{Binding reb_tipo}" 
@@ -157,22 +155,19 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                     
+                        <StackLayout HorizontalOptions="FillAndExpand"
+                                     VerticalOptions="EndAndExpand"
+                                     Padding="0,15,0,0"
+                                     Spacing="0">
                                 <Label Margin="20,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
                                          <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                        </Label>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                </OnPlatform>
+                                        </Label.FontFamily>
+                                </Label>
                                 <RelativeLayout HeightRequest="200" VerticalOptions="Start">
                                     <ListView Rotation="270" 
                                               ItemsSource="{Binding PromocionesDetalle}" 
@@ -226,10 +221,8 @@
                                     </ListView>
                                 </RelativeLayout>
                             </StackLayout>
-                        </Frame>
                     </StackLayout>
-                </ScrollView>
-            </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

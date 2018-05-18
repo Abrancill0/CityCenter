@@ -22,6 +22,9 @@ namespace City_Center.ViewModels
         private int puntosWin;
         private string noSocio;
 
+		private string tipoDocumento;
+		private string numeroDocumento;
+
         private TarjetaUsuarioReturn listaTarjetausuario;
 
         #endregion
@@ -45,6 +48,21 @@ namespace City_Center.ViewModels
             get { return this.noSocio; }
             set { SetValue(ref this.noSocio, value); }
         }
+
+        
+		public string TipoDocumento
+        {
+			get { return this.tipoDocumento; }
+			set { SetValue(ref this.tipoDocumento, value); }
+        }
+
+		public string NumeroDocumento
+        {
+			get { return this.numeroDocumento; }
+			set { SetValue(ref this.numeroDocumento, value); }
+        }
+
+
 
         #endregion
 
@@ -95,7 +113,8 @@ namespace City_Center.ViewModels
                     return;
                 }
 
-
+				NoSocio = Application.Current.Properties["NumeroSocio"].ToString();
+                
                 var content = new FormUrlEncodedContent(new[]
                 {
                     new KeyValuePair<string, string>("usu_id_tarjeta",NoSocio )
@@ -116,6 +135,9 @@ namespace City_Center.ViewModels
                 ImagenTarjeta = VariablesGlobales.RutaServidor + listaTarjetausuario.resultado.tar_imagen;
 
                 PuntosWin = listaTarjetausuario.resultado.tar_puntos;
+				NumeroDocumento = Application.Current.Properties["NumeroDocumento"].ToString();
+				TipoDocumento = Application.Current.Properties["TipoDocumento"].ToString();
+
                 //NoSocio = listaTarjetausuario.resultado.tar_id;
 
 
@@ -135,7 +157,7 @@ namespace City_Center.ViewModels
         {
             this.apiService = new ApiService();
            
-            //LoadTarjetaUsuario();
+			LoadTarjetaUsuario();
         }
         #endregion
     }

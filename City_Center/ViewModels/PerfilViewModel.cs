@@ -26,7 +26,7 @@ namespace City_Center.ViewModels
         private string contraseña;
         private string contraseña2;
         private string ciudad;
-        private DateTime fecha;
+        private string fecha;
         private string imagen;
         private string nombre;
         private string tipoDocumento;
@@ -67,7 +67,7 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.ciudad, value); }
         }
 
-        public DateTime Fecha
+        public string Fecha
         {
             get { return this.fecha; }
             set { SetValue(ref this.fecha, value); }
@@ -154,7 +154,7 @@ namespace City_Center.ViewModels
 
             var content = new FormUrlEncodedContent(new[]
            {
-                new KeyValuePair<string, string>("usu_fecha_nacimiento", Fecha.ToString("yyyy-MM-dd")),
+                new KeyValuePair<string, string>("usu_fecha_nacimiento", Fecha),
                 new KeyValuePair<string, string>("usu_contrasena",contraseña),
                 new KeyValuePair<string, string>("usu_id", Application.Current.Properties["IdUsuario"].ToString()),
                 new KeyValuePair<string, string>("usu_usuario", Email),
@@ -228,8 +228,9 @@ namespace City_Center.ViewModels
                 {
                     HC = true;
                 }
+				DateTime fecha1 = Convert.ToDateTime(Application.Current.Properties["FechaNacimiento"].ToString());
 
-				Fecha = Convert.ToDateTime(Application.Current.Properties["FechaNacimiento"].ToString());
+				Fecha = String.Format("{0:dd/MM/yyyy}",fecha1);
 
             }
             catch (Exception)

@@ -75,7 +75,7 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Image Aspect="AspectFit" Source="RESERVATUMESA" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
-                    </Image>
+                     </Image>
                     <Image x:Name = "reservarMesa" Aspect="AspectFit" Source="RESERVATUMESA" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Btn3_Clicked" />
@@ -100,7 +100,7 @@
                </Grid>
             </StackLayout>
             <ScrollView>
-                <StackLayout>
+                <StackLayout Padding="0,0,0,10">
                     <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" Margin="5">
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
@@ -135,8 +135,7 @@
                                                   Text ="00/00/00"
                                                   Margin="5,-20,5,-12"
                                                   PlaceholderColor="Transparent"
-                                                  Focused="FechaInicio_Focused"
-                                                  >
+                                                  Focused="FechaInicio_Focused">
                                         <Entry.HeightRequest>
                                             <OnPlatform x:TypeArguments="x:Double">
                                                 <On Platform="iOS">60</On>
@@ -209,7 +208,8 @@
                                 <xfx:XfxEntry x:Name="NoPersona"
                                               Text ="1"
                                               Margin="8,-20,5,-12"
-                                              Keyboard="Numeric">
+                                              Keyboard="Numeric"
+                                              TextChanged="Handle_TextChanged">
                                         <Entry.HeightRequest>
                                             <OnPlatform x:TypeArguments="x:Double">
                                                 <On Platform="iOS">60</On>
@@ -225,16 +225,17 @@
                                 </xfx:XfxEntry>
                             </StackLayout>
                         </Frame>
-                        <Button Margin="30"
-                                FontSize="Medium"
+                        <Button Margin="30,10,30,7"
+                                FontSize="14"
                                 TextColor="White"
                                 BackgroundColor="#250c4b"
                                 Clicked="Handle_Clicked"
+                                HeightRequest="40"
                                 Text="VER OPCIONES">
                                   <Button.FontFamily>
                                       <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                    <On Platform="iOS" Value="Oswald-Medium"/>
+                                                    <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium"/>
                                        </OnPlatform>
                                   </Button.FontFamily>
                          </Button>
@@ -332,18 +333,19 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                         </Frame>
-                        <Button Margin="30, 20"
-                                FontSize="Small"
+                        <Button Margin="30,1,30,7"
+                                FontSize="14"
                                 TextColor="White"
                                 BackgroundColor="#250c4b"
+                                HeightRequest="40"
                                 Text="VER OPCIONES">
-                            <Button.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                </OnPlatform>
-                                            </Button.FontFamily>
-                            </Button>
+                           <Button.FontFamily>
+                                      <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Medium"/>
+                                                    <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium"/>
+                                       </OnPlatform>
+                                  </Button.FontFamily>
+                         </Button>
                     </StackLayout>
                     
                     <StackLayout x:Name="SL3" IsVisible="false" HorizontalOptions="FillAndExpand" Margin="5" Spacing="0">
@@ -635,9 +637,6 @@
                                             </Entry.FontFamily>
                                     </xfx:XfxEntry>
                                     </StackLayout>
-
-                                    
-
                                 </Frame>
                             </StackLayout>
                             <StackLayout Orientation="Vertical" Margin="0,-5" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
@@ -720,32 +719,33 @@
                                 </Frame>
                             </StackLayout>
                         </Grid>
-                        <Button Margin="30"
-                                FontSize="Medium"
+                          <Button Margin="30,20,30,7"
+                                FontSize="14"
                                 TextColor="White"
                                 BackgroundColor="#250c4b"
-                                Text="RESERVAR"
-                                Command ="{Binding ReservarCommand}">
-                             <Button.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                </OnPlatform>
-                                            </Button.FontFamily>
-                            </Button>
+                                HeightRequest="40"
+                                 Text="RESERVAR"
+                                Command ="{Binding ReservarCommand}">>
+                           <Button.FontFamily>
+                                      <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Medium"/>
+                                                    <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium"/>
+                                       </OnPlatform>
+                                  </Button.FontFamily>
+                         </Button>
                     </StackLayout>
                     
                     <StackLayout x:Name="SL4" IsVisible="false">
                         <!--Content-->
                     </StackLayout>
-                    <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                   <!-- <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                         <Frame.Margin>
                             <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
                         </Frame.Margin>
                         <Frame.Padding>
                             <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                        </Frame.Padding>
-                        <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF" Margin="8">
+                        </Frame.Padding>-->
+                        <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF">
                             <Grid HorizontalOptions="FillAndExpand">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*">
@@ -979,25 +979,22 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-                                
-
-
                             </StackLayout>
-                               <!-- </Grid>-->
-                            <!--Carousel-->
-                            <AbsoluteLayout Padding = "5,30"
-                                            HeightRequest="200"
-                                            WidthRequest="300"
+                           
+                            <AbsoluteLayout Padding = "5,20,5,0"
+                                            Margin="0,0,0,-50"
+                                            HeightRequest="250"
+                                            WidthRequest="320"
                                             HorizontalOptions="Center"
                                             IsVisible="{Binding VerTarjeta}">
                                 <Image Source="{Binding ImagenTarjeta}"
                                        Aspect="Fill" 
-                                       HeightRequest="200" 
-                                       WidthRequest="300"/>
+                                       HeightRequest="250" 
+                                       WidthRequest="320"/>
                                 
                                 
                                 <Label Text="PUNTOS WIN"
-                                       FontSize = "12"
+                                       FontSize = "14"
                                        TextColor="White" 
                                        HorizontalOptions="Center"                         
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
@@ -1025,38 +1022,39 @@
                                         </Label.FontFamily>
                                 </Label>
                                 <Label Text="Socio N. "
-                                       FontSize = "Micro"
+                                       FontSize = "14"
                                        TextColor="White" 
-                                       HorizontalOptions="Center"                         
+                                       HorizontalOptions="Center"  
+                                       
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
                                        AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1">
 
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="iOS" Value="Oswald-Regular"/>
                                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                         </OnPlatform>
                                     </Label.FontFamily>
                                 </Label>
                                 <Label 
-                                       Text="{Binding NoSocio}"
+                                       Text="{Binding NoSocio,StringFormat='96538905{0}'}"
                                        TextColor="White"
-                                       FontSize="Medium"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center"                
+                                       FontSize="20"
+                                       HorizontalOptions="Start"
+                                       VerticalOptions="Start"                
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
                                        AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1">
                                     
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="iOS" Value="Oswald-Regular"/>
                                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                         </OnPlatform>
                                     </Label.FontFamily>
                                 </Label>
                             </AbsoluteLayout>
                         </StackLayout>
-                    </Frame>
+                    <!--</Frame>-->
                 </StackLayout>
             </ScrollView>
         </StackLayout>

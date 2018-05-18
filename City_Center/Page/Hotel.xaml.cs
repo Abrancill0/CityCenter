@@ -33,9 +33,7 @@ namespace City_Center.Page
             //};
             _webHotel = new WebViewHotel();
             NavigationPage.SetTitleIcon(this, "logo.png");
-
-
-
+            
         }
 
      
@@ -130,8 +128,7 @@ namespace City_Center.Page
             SL2.IsVisible = false;
             SL3.IsVisible = true;
         }
-
-
+        
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             try
@@ -161,7 +158,8 @@ namespace City_Center.Page
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
-                MinimumDate = DateTime.Now.AddDays(0)
+				MinimumDate = DateTime.Now.AddDays(0),
+                Title="Llegada"
             });
 
 
@@ -187,7 +185,8 @@ namespace City_Center.Page
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
-                MinimumDate = DateTime.Now.AddDays(0)
+				MinimumDate = DateTime.Now.AddDays(0),
+                Title = "Salida"
             });
 
 

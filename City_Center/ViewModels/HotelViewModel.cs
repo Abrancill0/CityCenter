@@ -36,7 +36,7 @@ namespace City_Center.ViewModels
         private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
 
         private string imagen_Selected;
-
+		private int tamanoHabitacion; 
 
         #endregion
 
@@ -66,6 +66,12 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.imagen_Selected, value); }
         }
 
+		public int TamanoHabitacion
+        {
+			get { return this.tamanoHabitacion; }
+			set { SetValue(ref this.tamanoHabitacion, value); }
+        }
+        
         #endregion
 
         #region Commands
@@ -117,9 +123,9 @@ namespace City_Center.ViewModels
 
                 await CrossShare.Current.Share(Compartir);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Mensajes.Info("No pudimos acceder a tu ubicacion");
+             await Mensajes.Info("No pudimos acceder a tu ubicacion");
             }
         }
 
@@ -160,13 +166,66 @@ namespace City_Center.ViewModels
                 this.listHabitaciones = (HabitacionesReturn)response.Result;
 
                 HabitacionesDetalle = new ObservableCollection<HotelItemViewModel>(this.ToHabitacionesItemViewModel());
+                
+				int contador = HabitacionesDetalle.Count;
+
+                switch (contador)
+                {
+                    case 1:
+                        TamanoHabitacion = 125;
+                        break;
+                    case 2:
+						TamanoHabitacion = 125;
+                        break;
+
+                    case 3:
+						TamanoHabitacion = 125;
+                        break;
+
+                    case 4:
+						TamanoHabitacion = 250;
+                        break;
+
+                    case 5:
+						TamanoHabitacion = 250;
+                        break;
+
+                    case 6:
+						TamanoHabitacion = 250;
+                        break;
+
+                    case 7:
+						TamanoHabitacion = 375;
+                        break;
+
+                    case 8:
+						TamanoHabitacion = 375;
+                        break;
+
+                    case 9:
+						TamanoHabitacion = 375;
+                        break;
+
+                    case 10:
+						TamanoHabitacion = 500;
+                        break;
+
+                    case 11:
+						TamanoHabitacion = 500;
+                        break;
+                    case 12:
+						TamanoHabitacion = 500;
+                        break;
+                }
+
+
 
             }
             catch (Exception ex)
             {
                 await Mensajes.Error("Hotel - Habitaciones" + ex.ToString());
             }
-
+            
         }
 
         private IEnumerable<HotelItemViewModel> ToHabitacionesItemViewModel()

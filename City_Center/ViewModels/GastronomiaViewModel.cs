@@ -26,6 +26,8 @@ namespace City_Center.ViewModels
         private PromocionesReturn listPromociones;
         private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
 
+		private int tamanoRestaurant;
+
         #endregion
 
         #region Properties
@@ -43,6 +45,12 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.promocionesDetalle, value); }
         }
 
+		public int TamanoRestaurant
+        {
+			get { return this.tamanoRestaurant; }
+			set { SetValue(ref this.tamanoRestaurant, value); }
+        }
+        
         #endregion
 
         #region Commands
@@ -60,7 +68,12 @@ namespace City_Center.ViewModels
             try
             {
                 RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel());
-            }
+            
+				int Contador = RestaurantDetalle.Count;
+
+				TamanoRestaurant = (Contador * 235) + 220;
+			
+			}
             catch (Exception)
             {
 
@@ -81,7 +94,12 @@ namespace City_Center.ViewModels
             try
             {
                 RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel().Where(l => l.reb_tipo == "R"));
-            }
+            
+				int Contador = RestaurantDetalle.Count;
+
+				TamanoRestaurant = (Contador * 235) + 220;
+					
+			}
             catch (Exception)
             {
 
@@ -103,7 +121,13 @@ namespace City_Center.ViewModels
             try
             {
                 RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel().Where(l => l.reb_tipo == "B"));
-            }
+            
+				int Contador = restaurantDetalle.Count;
+
+				TamanoRestaurant = (Contador * 235) + 250;
+			
+			
+			}
             catch (Exception)
             {
 
@@ -146,6 +170,10 @@ namespace City_Center.ViewModels
                 this.listRestaruant = (RestaurantReturn)response.Result;
 
                 RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel());
+
+				int Contador = RestaurantDetalle.Count;
+
+				TamanoRestaurant = (Contador * 235) + 220;
 
             }
             catch (Exception ex)

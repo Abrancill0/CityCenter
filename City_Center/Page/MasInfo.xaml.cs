@@ -22,16 +22,12 @@ namespace City_Center.Page
 
 			ListTipoEvento = new string[] { "Casamiento", "Congresos, Convenciones, Seminarios", "Eventos Corporativos", "Eventos Sociales", "Otros" };
 
-			TipoEvento.ItemsSource = ListTipoEvento;
+			//TipoEvento.ItemsSource = ListTipoEvento;
 
-			TipoEvento.SelectedIndex = 0;
-
-			TipoEvento1.ItemsSource = ListTipoEvento;
-
-			TipoEvento1.SelectedIndex = 0;
+			//TipoEvento.SelectedIndex = 0;
+   
 		}
-
-
+        
 		protected override void OnDisappearing()
 		{
 			base.OnDisappearing();
@@ -39,9 +35,7 @@ namespace City_Center.Page
 			GC.Collect();
 
 		}
-
-		//TipoEvento
-
+       
 		void Tab1_Tapped(object sender, System.EventArgs e)
 		{
 			LabelTab1.TextColor = Color.FromHex("#E7E9F6");
@@ -113,10 +107,10 @@ namespace City_Center.Page
 
 		void Handle_Clicked(object sender, System.EventArgs e)
 		{
-			if (Frame1.IsVisible == false)
+			if (Stack1.IsVisible == true)
 			{
 				Stack1.IsVisible = false;
-				Frame1.IsVisible = true;
+				SLContacto1.IsVisible = true;
 				BtnContacto1.Image = "ContactoUp.png";
 
 			}
@@ -124,24 +118,24 @@ namespace City_Center.Page
 			{
 				BtnContacto1.Image = "btn_contacto.png";
 				Stack1.IsVisible = true;
-				Frame1.IsVisible = false;
+				SLContacto1.IsVisible = false;
 			}
 
 		}
 
 		void Handle_Clicked2(object sender, System.EventArgs e)
 		{
-			if (Frame2.IsVisible == false)
+			if (Stack2.IsVisible == true)
 			{
 				Stack2.IsVisible = false;
-				Frame2.IsVisible = true;
+				SLContacto2.IsVisible = true;
 
 			}
 			else
 			{
 
 				Stack2.IsVisible = true;
-				Frame2.IsVisible = false;
+				SLContacto2.IsVisible = false;
 			}
 
 		}
@@ -149,48 +143,89 @@ namespace City_Center.Page
 		async void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
-        {
-            IsCancellable = true,
-            MinimumDate = DateTime.Now.AddDays(0)
-        });
+			{
+				IsCancellable = true,
+				MinimumDate = DateTime.Now.AddDays(0)
+			});
 
 
-            if (result.Ok)
-            {
+			if (result.Ok)
+			{
 				Fecha1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
 				Fecha1.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 
-            }
-            else
-            {
+			}
+			else
+			{
 				Fecha1.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-			}   
+				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+			}
 
 		}
 
-	async void Handle_Focused_1(object sender, Xamarin.Forms.FocusEventArgs e)
+		async void Handle_Focused_1(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+			{
+				IsCancellable = true,
+				MinimumDate = DateTime.Now.AddDays(0)
+			});
+
+
+			if (result.Ok)
+			{
+				Fecha2.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+				Fecha2.Unfocus();
+				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+			}
+			else
+			{
+				Fecha2.Unfocus();
+				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+			}
+		}
+
+      
+		async void TipoEvento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            IsCancellable = true,
-            MinimumDate = DateTime.Now.AddDays(0)
-        });
+			var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "Cancel", null, null, "Casamiento", "Congresos, Convenciones, Seminarios", "Eventos Corporativos", "Eventos Sociales", "Otros");
 
-
-            if (result.Ok)
+            if (result != "Cancel")
             {
-                Fecha2.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-                Fecha2.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+				TipoEvento.Text = result.ToString();
 
+				TipoEvento.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
-                Fecha2.Unfocus();
+				TipoEvento.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }   
-		}
+            }
+
+        }
+
+
+		async void TipoEvento1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "Cancel", null, null, "Casamiento", "Congresos, Convenciones, Seminarios", "Eventos Corporativos", "Eventos Sociales", "Otros");
+
+            if (result != "Cancel")
+            {
+                TipoEvento1.Text = result.ToString();
+
+                TipoEvento1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+            else
+            {
+                TipoEvento1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+
+        }
+
 	}
 }

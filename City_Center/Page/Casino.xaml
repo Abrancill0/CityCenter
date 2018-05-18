@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              x:Class="City_Center.Page.Casino">
@@ -32,25 +33,14 @@
                     <RowDefinition Height="100">
                     </RowDefinition>
                 </Grid.RowDefinitions>
-                     <Image  Aspect="AspectFill"  Source="CASINOmin" Grid.Row = "0" Grid.Column = "0" Grid.ColumnSpan = "2"  />
-                     <!--<Button Image ="checkin_rosa"
-                            BackgroundColor = "Transparent"
-                             ContentLayout = "Left,0"
-                             Text = ""
-                             Grid.Row = "0" Grid.Column = "1"
-                             VerticalOptions = "Center"
-                             WidthRequest="100"
-                             HeightRequest="100"
-                             Command="{Binding UbicacionCasinoCommand}"
-                            />-->
-
-                 <Image   Aspect="AspectFit"
-                         Source="checkin_rosa"
-                         Grid.Row = "0"
-                         Grid.Column = "1"
-                         VerticalOptions = "Center"
-                         WidthRequest="60"
-                         HeightRequest="60">
+                     <Image Aspect="AspectFill"  Source="CASINOmin" Grid.Row = "0" Grid.Column = "0" Grid.ColumnSpan = "2"/>
+                     <Image Aspect="AspectFit"
+                            Source="checkin_rosa"
+                            Grid.Row = "0"
+                            Grid.Column = "1"
+                            VerticalOptions = "Center"
+                            WidthRequest="55"
+                            HeightRequest="55">
                      <Image.GestureRecognizers>
                             <TapGestureRecognizer  Command="{Binding UbicacionCasinoCommand}"  />
                      </Image.GestureRecognizers>
@@ -135,7 +125,7 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+            <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="3">
                 <ScrollView>
                     <StackLayout>
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
@@ -287,50 +277,45 @@
                                
                     </StackLayout>
                         </Frame>
-                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" HorizontalOptions="FillAndExpand">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" Margin="20, 0" HorizontalTextAlignment="Start" Text="POZOS" TextColor="#250c4b" FontFamily="Oswald-Regular">
+                        <StackLayout HorizontalOptions="FillAndExpand" Margin="0,25,0,-20">
+                                <Label HorizontalOptions="Start"
+                                       Margin="20,0,0, 0"
+                                       HorizontalTextAlignment="Start"
+                                       Text="POZOS"
+                                       FontSize="14"
+                                       TextColor="#250c4b">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Oswald-Regular"/>
                                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                         </OnPlatform>
-                                      </Label.FontFamily>
-                                 </Label>  
-
+                                    </Label.FontFamily>
+                                </Label>
                                 <flv:FlowListView SeparatorVisibility="None"
                                                   HasUnevenRows="true"
-                                                  FlowColumnMinWidth="110"
+                                                  FlowColumnMinWidth="120"
                                                   FlowItemsSource="{Binding PozosDetalle}"
-                                                  HeightRequest="350">
+                                                  HeightRequest="{Binding TamanoPozos}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
-                                         
-
-                                              
-                                                    <Grid Padding="1" CompressedLayout.IsHeadless="true" >
+                                            <Grid Padding="1" CompressedLayout.IsHeadless="true" >
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                            
-                                                        <ffimageloading:CachedImage HeightRequest="100"
-                                                                                    
-                                                                            Aspect="AspectFill"
+                                                       <ffimageloading:CachedImage HeightRequest="120"
+                                                                                   WidthRequest="115"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding poz_imagen}"
                                                                             DownsampleToViewSize="true">
-                                                          
-                                                            </ffimageloading:CachedImage>
+                                                                <ffimageloading:CachedImage.Transformations>
+                                                                    <fftransformations:RoundedTransformation Radius="15"/>
+                                                                </ffimageloading:CachedImage.Transformations>
+                                                
+                                                       </ffimageloading:CachedImage>
 
                                                     <Label x:Name="Label"
                                                        Margin="5"
@@ -356,17 +341,9 @@
                                     </flv:FlowListView.FlowColumnTemplate>
                                 </flv:FlowListView>
                             </StackLayout>
-                        </Frame>
-
-                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                 <Label Margin="20,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
+                    
+                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,30,0,0">
+                                 <Label Margin="20,3,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
                                          <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular"/>
@@ -403,8 +380,10 @@
                                                                                 DownsampleToViewSize="true">
                                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                                  <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
-
                                                                 </ffimageloading:CachedImage.GestureRecognizers>
+                                                                  <ffimageloading:CachedImage.Transformations>
+                                                                    <fftransformations:RoundedTransformation Radius="15"/>
+                                                                </ffimageloading:CachedImage.Transformations>
                                                      </ffimageloading:CachedImage>
 
                                                      <Label x:Name="Label"
@@ -432,7 +411,7 @@
                             </ListView>
                         </RelativeLayout>
                          </StackLayout>
-                        </Frame>
+                       
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
@@ -590,9 +569,9 @@
                             <!--Carousel-->
                             </StackLayout>
                         </Frame>
-                        <StackLayout Spacing="0" Margin="5">
+                        <StackLayout Spacing="0" Margin="0,20,0,0">
                             <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" 
-                                    Margin = "20,5" Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular">
+                                    Margin = "20,0,0,7" Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular">
                                 <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Oswald-Regular"/>
@@ -600,7 +579,7 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                             </Label>
-                            <StackLayout Margin="-5,0,-5,0" HorizontalOptions="FillAndExpand">
+                            <StackLayout Margin="-5,0,-5,0" HorizontalOptions="FillAndExpand" Spacing="0">
                                 <ffimageloading:CachedImage x:Name="Img1provisional"
                                 HeightRequest="150"
                                 Aspect="AspectFill"
@@ -641,15 +620,13 @@
                                 </ListView>
                             </RelativeLayout>
                         </StackLayout>
-                        <Frame IsClippedToBounds="True" HeightRequest="260" HasShadow="True" BackgroundColor="White">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout Padding="0, 30" HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="GANADORES" Margin = "20,0" TextColor="#250c4b" FontFamily="Oswald-Regular">
+                       
+                            <StackLayout Margin="0,25,0,10" HorizontalOptions="FillAndExpand" Spacing="0">
+                                <Label HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start"
+                                       Text="GANADORES"
+                                       Margin = "20,0,0,7"
+                                       TextColor="#250c4b" FontFamily="Oswald-Regular">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Oswald-Regular"/>
@@ -657,7 +634,11 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                                 </Label>
-                                <flv:FlowListView SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding GanadoresDetalle}">
+                                <flv:FlowListView SeparatorVisibility="None"
+                                                  HasUnevenRows="true"
+                                                  FlowColumnMinWidth="120"
+                                                  FlowItemsSource="{Binding GanadoresDetalle}"
+                                                  HeightRequest="{Binding TamanoGanadores}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
                                             <Grid Padding="3">
@@ -667,13 +648,17 @@
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                                <ffimageloading:CachedImage
-                                                HeightRequest="80"
-                                                Aspect="AspectFill" 
+                                            <ffimageloading:CachedImage
+                                                 HeightRequest="120"
+                                                 WidthRequest="118"
                                                 LoadingPlaceholder="image_loading.png"
                                                 ErrorPlaceholder="image_error.png"
                                                 Source="{Binding gan_imagen}"
-                                                DownsampleToViewSize="true"/>
+                                                DownsampleToViewSize="true">
+                                                        <ffimageloading:CachedImage.Transformations>
+                                                              <fftransformations:RoundedTransformation Radius="15"/>
+                                                        </ffimageloading:CachedImage.Transformations>
+                                            </ffimageloading:CachedImage>
 
                                                 <Label x:Name="Label"
                                                        Margin="5"
@@ -696,7 +681,7 @@
                                     </flv:FlowListView.FlowColumnTemplate>
                                 </flv:FlowListView>
                             </StackLayout>
-                        </Frame>
+                      
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
@@ -712,30 +697,55 @@
                                 </OnPlatform>
                             </Label.FontFamily>
                         </Label>
-                            <Label HorizontalOptions="Start" Margin="10, 0" Text="Ser Socio Win es muy facil! Tan solo completando" TextColor="Black" FontSize="Small" ></Label>
-                            <Label HorizontalOptions="Start" Margin="10, 0" Text="un formulario y presentandote en el Centro de" TextColor="Black" FontSize="Small" ></Label>
-                            <Label HorizontalOptions="Start" Margin="10, 0" Text="Atencion a Clientes, se obtiene sin cargo la tarjeta" TextColor="Black" FontSize="Small" ></Label>
-                            <Label HorizontalOptions="Start" Margin="10, 0" Text="que le permitirá obtener promociones fabulosas." TextColor="Black" FontSize="Small"></Label>
-                            <Label HorizontalOptions="Start" Margin="0, 0" TextColor="Black" FontSize="Small"></Label>
+                            <Label HorizontalOptions="Start"
+                                   Margin="10, 0"
+                                   Text="Ser Socio Win es muy facil! Tan solo completando"
+                                   TextColor="#6C6C6C"
+                                   FontSize="Small" ></Label>
+                            <Label HorizontalOptions="Start"
+                                   Margin="10, 0"
+                                   Text="un formulario y presentandote en el Centro de"
+                                   TextColor="#6C6C6C"
+                                   FontSize="Small" ></Label>
+                            <Label HorizontalOptions="Start"
+                                   Margin="10, 0"
+                                   Text="Atencion a Clientes, se obtiene sin cargo la tarjeta"
+                                   TextColor="#6C6C6C"
+                                   FontSize="Small" ></Label>
+                            <Label HorizontalOptions="Start"
+                                   Margin="10, 0"
+                                   Text="que le permitirá obtener promociones fabulosas."
+                                   TextColor="#6C6C6C"
+                                   FontSize="Small"></Label>
+                            <Label HorizontalOptions="Start"
+                                   Margin="0, 0"
+                                   TextColor="#6C6C6C"
+                                   FontSize="Small"></Label>
 
-                        <StackLayout Padding = "35, 0" Spacing = "10">
-                            <Button HeightRequest = "35" Text="RECOMPENSAS" Command="{Binding VerRecompensasCommand}" TextColor="White" BackgroundColor="#E91E63">
+                        <StackLayout Padding = "40,10,40,10" Spacing = "12">
+                            <Button HeightRequest = "40"
+                                    Text="RECOMPENSAS"
+                                    Command="{Binding VerRecompensasCommand}"
+                                    TextColor="White"
+                                    BackgroundColor="#E91E63"
+                                    FontSize="14">
                                 <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Oswald-Regular"/>
-                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        <On Platform="iOS" Value="Oswald-Medium"/>
+                                        <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium"/>
                                     </OnPlatform>
                                 </Button.FontFamily>
                             </Button>
-                            <Button HeightRequest = "35"
+                            <Button HeightRequest = "40"
                                     Text="CONSULTAR PUNTOS"
                                     TextColor="White"
                                     BackgroundColor="#E91E63"
-                                    Command="{Binding ConsultaPuntosCommand}">
+                                    Command="{Binding ConsultaPuntosCommand}"
+                                    FontSize="14">
                              <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Oswald-Regular"/>
-                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        <On Platform="iOS" Value="Oswald-Medium"/>
+                                        <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium"/>
                                     </OnPlatform>
                             </Button.FontFamily></Button>
                         </StackLayout>
@@ -744,14 +754,16 @@
                        <StackLayout Padding = "5,15">
                        <ListView ItemsSource="{Binding TarjetasDetalle}"
                                  HasUnevenRows="true"
-                                 RowHeight="90"
+                                 RowHeight="85"
                                  SeparatorVisibility="None"
-                                 HeightRequest="800">
+                                 HeightRequest="{Binding TamanoTarjeta}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
                                         <ViewCell.View>
-                                            <Frame IsClippedToBounds="True" OutlineColor="Gray" HasShadow="True" BackgroundColor="White">
+                                            <Frame IsClippedToBounds="True"
+                                                   HasShadow="True"
+                                                   BackgroundColor="White">
                                                 <Frame.OutlineColor>
                                                     <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
                                                 </Frame.OutlineColor>
@@ -761,7 +773,7 @@
                                                 <Frame.Padding>
                                                     <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                                 </Frame.Padding>
-                                                <StackLayout Orientation="Horizontal">
+                                                <StackLayout Orientation="Horizontal" Spacing="0"> 
                                                     <Grid HorizontalOptions="FillAndExpand">
                                                         <Grid.ColumnDefinitions>
                                                             <ColumnDefinition Width="1.5*" />
@@ -772,16 +784,20 @@
                                                             <RowDefinition Height="1*" />
                                                         </Grid.RowDefinitions>
                                                         <ffimageloading:CachedImage
-                                                            HeightRequest="90"
+                                                            HeightRequest="88"
                                                             WidthRequest="100"
                                                             Aspect="AspectFill"
-                                                           
+                                                            Margin="1,1,0,0"
                                                             LoadingPlaceholder="image_loading.png"
                                                             ErrorPlaceholder="image_error.png"
                                                             Source="{Binding tar_imagen}"
                                                             Grid.Row="0" Grid.Column="0"
-                                                            Grid.RowSpan="2" />
-                                                        <Label TextColor="#2B124F" Grid.Row="0" Margin="5, -10, -10, 0" Grid.Column="1" Text="{Binding tar_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" HorizontalOptions="Start" FontFamily="Oswald-Regular">
+                                                            Grid.RowSpan="2">
+                                                                 <ffimageloading:CachedImage.Transformations>
+                                                                    <fftransformations:RoundedTransformation Radius="20"/>
+                                                                 </ffimageloading:CachedImage.Transformations>
+                                                        </ffimageloading:CachedImage>
+                                                            <Label TextColor="#2B124F" Grid.Row="0" Margin="5, -1, -10, 0" Grid.Column="1" Text="{Binding tar_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" HorizontalOptions="Start" FontFamily="Oswald-Regular">
                                                                 <Label.FontFamily>
                                                                         <OnPlatform x:TypeArguments="x:String">
                                                                             <On Platform="iOS" Value="Oswald-Regular"/>
@@ -789,7 +805,20 @@
                                                                         </OnPlatform>
                                                                 </Label.FontFamily>
                                                         </Label>
-                                                        <Label TextColor="Black" Margin="3, -20, 5, 0" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Start" Text="{Binding tar_descripcion}" FontSize="Small" FontFamily="Oswald-Regular" />
+                                                        <Label TextColor="#6C6C6C"
+                                                               Margin="3, -20, 5, 0"
+                                                               Grid.Row="1"
+                                                               Grid.Column="1"
+                                                               HorizontalTextAlignment="Start"
+                                                               Text="{Binding tar_descripcion}"
+                                                               FontSize="12">
+                                                                <Label.FontFamily>
+                                                                        <OnPlatform x:TypeArguments="x:String">
+                                                                            <On Platform="iOS" Value="Roboto-Regular"/>
+                                                                            <On Platform="Android" Value="Roboto-Regular.ttf#Oswald-Regular"/>
+                                                                        </OnPlatform>
+                                                                </Label.FontFamily>
+                                                        </Label>
                                                     </Grid>
                                                 </StackLayout>
                                             </Frame>
@@ -812,18 +841,16 @@
             <StackLayout x:Name="SL4" IsVisible="false">
                 <ScrollView Orientation="Vertical">
                     <StackLayout BackgroundColor="White">
-             <StackLayout Spacing="0" Margin="5">
-                              
-                        <StackLayout HorizontalOptions="FillAndExpand">
-                            <ffimageloading:CachedImage x:Name="Img2provisional"
-                            HeightRequest="150"
-                            Aspect="AspectFill"
-                          
-                            LoadingPlaceholder="image_loading.png"
-                            ErrorPlaceholder="image_error.png"
-                            Source="{Binding Imagen_Selected}" />
-                        </StackLayout>
-                        <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
+                       <StackLayout Spacing="0">
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <ffimageloading:CachedImage x:Name="Img2provisional"
+                                    HeightRequest="150"
+                                    Aspect="AspectFill"  
+                                    LoadingPlaceholder="image_loading.png"
+                                    ErrorPlaceholder="image_error.png"
+                                    Source="{Binding Imagen_Selected}" />
+                                </StackLayout>
+                         <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
                             <ListView x:Name="listaCasino" Rotation="270" ItemsSource="ListaOpciones"
                                       ItemSelected="Handle_ItemSelected2"
                                       RowHeight="100" SeparatorVisibility="None"
@@ -853,21 +880,63 @@
                             </ListView>
                         </RelativeLayout>
                         </StackLayout>
-                <StackLayout HorizontalOptions="FillAndExpand" Margin="5">
-                                <Label HorizontalTextAlignment="Start" Text="Horarios: Lunes a domingo de 02 pm a 05 am" Margin="10, 10" HorizontalOptions="Center" TextColor="Black">
-                                </Label>
-                                <Label Text="" HorizontalOptions="Start" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="Accede a dos exclusivos sectores para aquellos" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="clientes que deseen privacidad y atencion" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="personalizada: Site VIP y Site VIP Slots. Ingreso" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="independiente, sector exclusivo de" TextColor="Black" FontSize="Small"></Label>
-                                <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="estacionamiento, acceso sin esperas, sala de juegos" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="privada y servicio gastronómico forman parte de" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="los exclusivos beneficios que un cliente VIP puede" FontSize="Small" TextColor="Black"></Label>
-                                <Label HorizontalTextAlignment="Start" Margin="10,-3" HorizontalOptions="Start" Text="disfurtar en nuestro complejo" FontSize="Small" TextColor="Black"></Label> 
-                                <Label></Label> 
-                        </StackLayout>
-                        </StackLayout>
+                       <StackLayout HorizontalOptions="FillAndExpand" Margin="5">
+                                            <Label Text="Horarios: Lunes a domingo de 02 pm a 05 am"
+                                                   Margin="-5, 10,0,15"
+                                                   HorizontalOptions="Center"
+                                                   HorizontalTextAlignment="Center"
+                                                   TextColor="#6C6C6C"/>
+                                            <Label HorizontalTextAlignment="Start"
+                                                   Margin="10,-3"
+                                                   HorizontalOptions="Start"
+                                                   Text="Accede a dos exclusivos sectores para aquellos"
+                                                   FontSize="Small"
+                                                   TextColor="#6C6C6C"></Label>
+                                            <Label HorizontalTextAlignment="Start"
+                                                   Margin="10,-3"
+                                                   HorizontalOptions="Start"
+                                                   Text="clientes que deseen privacidad y atención"
+                                                   FontSize="Small"
+                                                   TextColor="#6C6C6C"></Label>
+                                            <Label HorizontalTextAlignment="Start"
+                                                   Margin="10,-3"
+                                                   HorizontalOptions="Start"
+                                                   Text="personalizada: Site VIP y Site VIP Slots. Ingreso"
+                                                   FontSize="Small"
+                                                   TextColor="#6C6C6C"></Label>
+                                            <Label HorizontalTextAlignment="Start"
+                                                   Margin="10,-3"
+                                                   HorizontalOptions="Start"
+                                                   Text="independiente, sector exclusivo de"
+                                                   TextColor="#6C6C6C"
+                                                   FontSize="Small"></Label>
+                                            <Label HorizontalTextAlignment="Start"
+                                                   Margin="10,-3"
+                                                   HorizontalOptions="Start"
+                                                   Text="estacionamiento, acceso sin esperas, sala de juegos"
+                                                   FontSize="Small"
+                                                   TextColor="#6C6C6C"></Label>
+                                            <Label HorizontalTextAlignment="Start"
+                                                   Margin="10,-3"
+                                                   HorizontalOptions="Start"
+                                                   Text="privada y servicio gastronómico forman parte de"
+                                                   FontSize="Small"
+                                                   TextColor="#6C6C6C"></Label>
+                                            <Label HorizontalTextAlignment="Start"
+                                                   Margin="10,-3"
+                                                   HorizontalOptions="Start"
+                                                   Text="los exclusivos beneficios que un cliente VIP puede"
+                                                   FontSize="Small"
+                                                   TextColor="#6C6C6C"></Label>
+                                            <Label HorizontalTextAlignment="Start"
+                                                   Margin="10,-3"
+                                                   HorizontalOptions="Start"
+                                                   Text="disfurtar en nuestro complejo"
+                                                   FontSize="Small"
+                                                   TextColor="#6C6C6C"></Label> 
+                                            <Label/> 
+                                    </StackLayout>
+                    </StackLayout>
                 </ScrollView>
             </StackLayout>
         </StackLayout>

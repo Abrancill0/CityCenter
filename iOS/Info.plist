@@ -43,6 +43,7 @@
 		<string>Fonts/Oswald-Bold.ttf</string>
 		<string>Fonts/Oswald-Regular.ttf</string>
 		<string>Fonts/materialicons</string>
+		<string>Nuevo elemento</string>
 	</array>
 	<key>CFBundleURLTypes</key>
 	<array>

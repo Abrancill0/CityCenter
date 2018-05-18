@@ -410,6 +410,8 @@
     <BundleResource Include="Resources\Bar1.png" />
     <BundleResource Include="Resources\Bar2.png" />
     <BundleResource Include="Resources\Bar3.png" />
+    <BundleResource Include="Resources\Fonts\Oswald-Medium.ttf" />
+    <BundleResource Include="Resources\Fonts\CloseG.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

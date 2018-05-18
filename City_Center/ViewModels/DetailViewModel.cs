@@ -186,6 +186,8 @@ namespace City_Center.ViewModels
 
             ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
+			App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
+
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Perfil());
 
         }
@@ -203,6 +205,8 @@ namespace City_Center.ViewModels
             MainViewModel.GetInstance().Login = new LoginViewModel();
 
             ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+			App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
 
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Login());
 

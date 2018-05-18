@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:City_Center.Vista"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-             x:Class="City_Center.Page.Perfil">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:view="clr-namespace:City_Center.Vista" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.Perfil">
     <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="Chat"/>
+        <ToolbarItem Icon="Chat" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -19,42 +12,31 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
-       
             <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontFamily" Value="Roboto-Regular" />
                 <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
             </Style>
-    
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Spacing="0" BindingContext="{Binding Perfil}">
-                <Grid HeightRequest="130" BackgroundColor="#8A7C9E" VerticalOptions = "Center" >
-                    <Grid.ColumnDefinitions>
+            <Grid HeightRequest="130" BackgroundColor="#8A7C9E" VerticalOptions="Center">
+                <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60">
-                        </ColumnDefinition>
-                        <ColumnDefinition Width="Auto">
-                        </ColumnDefinition>
-                        <ColumnDefinition Width="Auto">
-                        </ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                         <AbsoluteLayout 
-                       HorizontalOptions="Center"
-                       Grid.Column="1"
-                       Grid.Row="0"
-                       Grid.RowSpan = "2">
-                                <Image x:Name="ImageCircle" 
-                                       Source="circulo_blanco.png" 
-                                       VerticalOptions="Center" 
-                                       Aspect = "Fill"
-                                       HeightRequest = "120"
-                                       WidthRequest = "120"/>
-                              <!--  <ffimageloading:CachedImage
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="Auto">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="Auto">
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <AbsoluteLayout HorizontalOptions="Center" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+                    <Image x:Name="ImageCircle" Source="circulo_blanco.png" VerticalOptions="Center" Aspect="Fill" HeightRequest="120" WidthRequest="120" />
+                    <!--  <ffimageloading:CachedImage
                                     HeightRequest="50"
                                     WidthRequest="50"
                                     Aspect="AspectFill"
@@ -64,61 +46,39 @@
                                     AbsoluteLayout.LayoutFlags="PositionProportional" 
                                     AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"
                                     Source="{Binding Imagen, Mode=TwoWay}" />-->
-                        <controls:CircleImage Source="{Binding Imagen, Mode=TwoWay}" 
-                                              Aspect="AspectFill"
-                                              AbsoluteLayout.LayoutFlags="PositionProportional" 
-                                              AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
-                          <controls:CircleImage.WidthRequest>
+                    <controls:CircleImage Source="{Binding Imagen, Mode=TwoWay}" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                        <controls:CircleImage.WidthRequest>
                             <OnPlatform x:TypeArguments="x:Double">
-                              <On Platform="Android, iOS">70</On>
+                                <On Platform="Android, iOS">70</On>
                             </OnPlatform>
-                          </controls:CircleImage.WidthRequest>
-                          <controls:CircleImage.HeightRequest>
+                        </controls:CircleImage.WidthRequest>
+                        <controls:CircleImage.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
-                              <On Platform="Android, iOS">70</On>
+                                <On Platform="Android, iOS">70</On>
                             </OnPlatform>
-                          </controls:CircleImage.HeightRequest>
-                        </controls:CircleImage>
-
-                        </AbsoluteLayout>
-                            <Label  TextColor="White"
-                                    Grid.Column="2"
-                                    Grid.Row="0"
-                                    Margin="-10,30,0,0"
-                                    FontSize = "Small"
-                                    HorizontalOptions="Start"
-                                    HorizontalTextAlignment="Start"
-                                    VerticalTextAlignment="End"
-                                    VerticalOptions = "End"
-                                    Text="HOLA">
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                            </Label>
-                            <Label  TextColor="White"
-                                    FontSize = "Small"
-                                    FontAttributes="Bold"
-                                    Grid.Column="2"
-                                    Grid.Row="1"
-                                    HorizontalOptions="Start"
-                                    HorizontalTextAlignment="Start"
-                                    VerticalOptions = "StartAndExpand"
-                                    VerticalTextAlignment="Start"
-                                    Margin="-10,-3,0,0"
-                                    Text="{Binding Nombre, Mode=TwoWay}">
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                            </Label>
-                    </Grid>
-        <StackLayout>
-                <Grid BackgroundColor="#250c4b" >
+                        </controls:CircleImage.HeightRequest>
+                    </controls:CircleImage>
+                </AbsoluteLayout>
+                <Label TextColor="White" Grid.Column="2" Grid.Row="0" Margin="-10,30,0,0" FontSize="Small" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End" Text="HOLA">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular" />
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Label TextColor="White" FontSize="Small" FontAttributes="Bold" Grid.Column="2" Grid.Row="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="StartAndExpand" VerticalTextAlignment="Start" Margin="-10,-3,0,0"
+                    Text="{Binding Nombre, Mode=TwoWay}">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular" />
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </Grid>
+            <StackLayout>
+                <Grid BackgroundColor="#250c4b">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*">
                         </ColumnDefinition>
@@ -131,29 +91,29 @@
                         <RowDefinition Height="40">
                         </RowDefinition>
                     </Grid.RowDefinitions>
-                    <Label x:Name="LabelTab1" FontSize="9" Text="PERFIL" TextColor="#FDFDFD" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
-                             <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                        </OnPlatform>
-                                    </Label.FontFamily>
+                    <Label x:Name="LabelTab1" FontSize="12" Text="PERFIL" TextColor="#FDFDFD" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Fonts/Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
                     </Label>
-                    <Label x:Name="LabelTab2" FontSize="9" Text="CONFIGURACIÓN" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
-                             <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                        </OnPlatform>
-                                    </Label.FontFamily>
+                    <Label x:Name="LabelTab2" FontSize="12" Text="CONFIGURACIÓN" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Fonts/Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
                     </Label>
-                    <Label x:Name="LabelTab3" FontSize="9" Text="NOTIFICACIONES" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
-                             <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                        </OnPlatform>
-                                    </Label.FontFamily>
+                    <Label x:Name="LabelTab3" FontSize="12" Text="NOTIFICACIONES" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Fonts/Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
                     </Label>
                     <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
                     </BoxView>
@@ -181,127 +141,281 @@
                     </ContentView>
                 </Grid>
                 <StackLayout x:Name="SL1" IsVisible="true" Margin="10">
-                    <ScrollView BackgroundColor = "White">
-                      <StackLayout Spacing="0">
-                        <xfx:XfxEntry Text="{Binding Email,Mode=TwoWay}" Style="{DynamicResource EntryStyle}" Placeholder="Correo electrónico*">
-                            <Entry.HeightRequest>
-                                <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">60</On>
-                                </OnPlatform>
-                            </Entry.HeightRequest>
-                        </xfx:XfxEntry>
-                        <xfx:XfxEntry Text="{Binding Contraseña, Mode=TwoWay}"
-                                       Style="{DynamicResource EntryStyle}"
-                                       Placeholder="Contraseña*"
-                                       IsPassword="true"
-                                       IsEnabled="{Binding HC, Mode=TwoWay}">
-                            <Entry.HeightRequest>
-                                <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">60</On>
-                                </OnPlatform>
-                            </Entry.HeightRequest>
-                        </xfx:XfxEntry>
-                        <xfx:XfxEntry Text="{Binding Contraseña2, Mode=TwoWay}"
-                                       Style="{DynamicResource EntryStyle}"
-                                       Placeholder="Cambiar Contraseña*"
-                                       IsPassword="true"
-                                       IsEnabled="{Binding HC, Mode=TwoWay}">
-                            <Entry.HeightRequest>
-                                <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">60</On>
-                                </OnPlatform>
-                            </Entry.HeightRequest>
-                        </xfx:XfxEntry>
-                        <xfx:XfxEntry Text="{Binding Ciudad}" Style="{DynamicResource EntryStyle}" Placeholder="Ciudad*" >
-                            <Entry.HeightRequest>
-                                <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">60</On>
-                                </OnPlatform>
-                            </Entry.HeightRequest>
-                        </xfx:XfxEntry>
+                    <ScrollView BackgroundColor="White">
                         <StackLayout Spacing="0">
-                            <Label Text="Fecha Nacimiento"
-                                   TextColor="Gray"
-                                   Margin="5,2,0,0"
-                                   HorizontalOptions="Start"
-                                   HorizontalTextAlignment="Start"
-                                   FontSize="Micro"></Label>
-                             <DatePicker Date="{Binding Fecha}"> 
-                                </DatePicker>
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <Label Text="Correo electrónico *"
+                                       FontSize="12"
+                                       Margin="5,0,0,-15"
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <xfx:XfxEntry IsEnabled="false"
+                                              Style="{DynamicResource EntryStyle}"
+                                              Text="{Binding Email ,Mode=TwoWay}"
+                                              PlaceholderColor="#7A5BA5"
+                                              TextColor="Black"
+                                              FontSize="14"
+                                              Keyboard="Default">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
                             </StackLayout>
-                        <Label HorizontalTextAlignment="Center"
-                               HorizontalOptions="Center"
-                               FontSize="Small"
-                               Margin = "50,25" 
-                               Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" 
-                               TextColor="Black"/>
-                        <StackLayout Spacing="0">
-                            <Label Text="Tipo documento"
-                                   TextColor="Gray"
-                                   Margin="5,2,0,0"
-                                   FontSize="Micro"
-                                   HorizontalOptions="Start"
-                                   HorizontalTextAlignment="Start"></Label>
-                            <Grid Padding="2, 0">    
-                            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
-                            <Picker Margin="5"
-                                    x:Name="TipoDocumento"
-                                    ItemsSource="{Binding ListaOpciones}"
-                                   
-                                    Title="Tipo Documento"
-                                    SelectedItem="{Binding TipoDocumento, Mode=TwoWay}"></Picker>
-                            </Grid>
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <Label Text="Contraseña *"
+                                       FontSize="12"
+                                       Margin="5,0,0,-15"
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}"
+                                              Text="{Binding Contraseña ,Mode=TwoWay}"
+                                              PlaceholderColor="#7A5BA5"
+                                              TextColor="Black" 
+                                              FontSize="14" Keyboard="Default"
+                                              IsEnabled="{Binding HC, Mode=TwoWay}"
+                                              IsPassword="true">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
                             </StackLayout>
-                        <xfx:XfxEntry Text="{Binding NumeroDocumento, Mode=TwoWay}" Placeholder="Numero de documento" >
-                        <Entry.HeightRequest>
-                                <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">60</On>
-                                </OnPlatform>
-                            </Entry.HeightRequest>
-                        </xfx:XfxEntry>
-                        <xfx:XfxEntry Text="{Binding NumeroSocio, Mode=TwoWay}" Placeholder="Numero de socio Win" >
-                            <Entry.HeightRequest>
-                                <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">60</On>
-                                </OnPlatform>
-                            </Entry.HeightRequest>
-                        </xfx:XfxEntry>
-                        <Button Text="GUARDAR"
-                                BackgroundColor="#250c4b"
-                                TextColor="White"
-                                FontAttributes="Bold"
-                                Command="{Binding ActualizaPerfilCommand}"
-                                Margin = "30,30,30,30"
-                                HeightRequest = "40">
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <Label Text="Cambiar Contraseña *"
+                                       FontSize="12"
+                                       Margin="5,0,0,-15"
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}"
+                                              Text="{Binding Contraseña2 ,Mode=TwoWay}"
+                                              PlaceholderColor="#7A5BA5"
+                                              TextColor="Black"
+                                              FontSize="14"
+                                              Keyboard="Default" IsEnabled="{Binding HC, Mode=TwoWay}" IsPassword="true">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <Label Text="Ciudad *" FontSize="12" Margin="5,0,0,-15" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}" Text="{Binding Ciudad ,Mode=TwoWay}" PlaceholderColor="#7A5BA5" TextColor="Black" FontSize="14" Keyboard="Default">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <Label Text="Fecha Nacimiento *" FontSize="12" Margin="5,0,0,-15" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <xfx:XfxEntry x:Name="Fecha"
+                                              Style="{DynamicResource EntryStyle}"
+                                              Text="{Binding Fecha ,Mode=TwoWay}"
+                                              PlaceholderColor="#7A5BA5"
+                                              TextColor="Black"
+                                              FontSize="14"
+                                              Keyboard="Default"
+                                              Focused="Fecha_Focused">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+                            </StackLayout>
+                            <Label HorizontalTextAlignment="Center"
+                                   HorizontalOptions="Center"
+                                   FontSize="Small"
+                                   Margin="50,25"
+                                   Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Black" />
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <Label Text="Tipo documento *" FontSize="12" Margin="5,0,0,-15" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <xfx:XfxEntry x:Name="TipoDocumento"
+                                              Style="{DynamicResource EntryStyle}"
+                                              Text="{Binding TipoDocumento ,Mode=TwoWay}"
+                                              PlaceholderColor="#7A5BA5"
+                                              TextColor="Black"
+                                              FontSize="14"
+                                              Keyboard="Default"
+                                              Focused="TipoDocumento_Focused">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <Label Text="Numero de documento *" FontSize="12" Margin="5,0,0,-15" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}" Text="{Binding NumeroDocumento ,Mode=TwoWay}" PlaceholderColor="#7A5BA5" TextColor="Black" FontSize="14" Keyboard="Default">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <Label Text="Numero de socio Win *" FontSize="12" Margin="5,0,0,-15" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <xfx:XfxEntry
+                                    Style="{DynamicResource EntryStyle}"
+                                    Text="{Binding NumeroSocio ,Mode=TwoWay}"
+                                    PlaceholderColor="#7A5BA5"
+                                    TextColor="Black"
+                                    FontSize="14"
+                                    Keyboard="Default">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+                            </StackLayout>
+                            <Button Text="GUARDAR" BackgroundColor="#250c4b" TextColor="White" FontAttributes="Bold" Command="{Binding ActualizaPerfilCommand}" Margin="30,30,30,30" HeightRequest="40">
                                 <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        <On Platform="iOS" Value="Fonts/Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                                     </OnPlatform>
                                 </Button.FontFamily>
-                        </Button>  
-                      </StackLayout> 
+                            </Button>
+                        </StackLayout>
                     </ScrollView>
-                </StackLayout> 
+                </StackLayout>
                 <StackLayout x:Name="SL2" IsVisible="false">
-                    <ScrollView> 
+                    <ScrollView>
                         <view:VistaPerfilConfiguracion>
-                    </view:VistaPerfilConfiguracion>
+                        </view:VistaPerfilConfiguracion>
                     </ScrollView>
-                </StackLayout>  
+                </StackLayout>
                 <StackLayout x:Name="SL3" IsVisible="false">
                     <ScrollView>
-                          <view:VistaPerfilNotificaciones>
-                    </view:VistaPerfilNotificaciones>
+                        <view:VistaPerfilNotificaciones>
+                        </view:VistaPerfilNotificaciones>
                     </ScrollView>
                 </StackLayout>
             </StackLayout>
-            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

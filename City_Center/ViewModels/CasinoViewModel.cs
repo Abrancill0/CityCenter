@@ -54,8 +54,14 @@ namespace City_Center.ViewModels
 
 		private PromocionesReturn listPromociones;
 		private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
-
+        
 		private string imagen_Selected;
+
+		private int tamanoGanadores;
+
+		private int tamanoPozos;
+
+		private int tamanoTarjeta;
 
 		#endregion
 
@@ -97,6 +103,12 @@ namespace City_Center.ViewModels
 			set { SetValue(ref this.imagen_Selected, value); }
 		}
 
+		public int TamanoGanadores
+        {
+			get { return this.tamanoGanadores; }
+			set { SetValue(ref this.tamanoGanadores, value); }
+        }
+        
 		public ObservableCollection<EventosItemViewModel> EventosDetalle
 		{
 			get { return this.eventosDetalle; }
@@ -120,6 +132,18 @@ namespace City_Center.ViewModels
 			get { return this.torneoDetalle; }
 			set { SetValue(ref this.torneoDetalle, value); }
 		}
+        
+		public int TamanoPozos
+        {
+			get { return this.tamanoPozos; }
+			set { SetValue(ref this.tamanoPozos, value); }
+        }
+
+		public int TamanoTarjeta
+        {
+			get { return this.tamanoTarjeta; }
+			set { SetValue(ref this.tamanoTarjeta, value); }
+        }
 
 		#endregion
 
@@ -233,11 +257,32 @@ namespace City_Center.ViewModels
 
 		public async void ConsultaPuntos()
 		{
-			MainViewModel.GetInstance().ConsultaTarjetaWin = new ConsultaTarjetaWinViewModel();
+			bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                    (bool)Application.Current.Properties["IsLoggedIn"] : false;
 
+			if (isLoggedIn)
+			{
 
-			await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ConsultaTarjetaWin());
+				string Nosocio = Application.Current.Properties["NumeroSocio"].ToString();
 
+				if (Nosocio == "0")
+				{
+					await Mensajes.Info("No tienes ninguna tarjeta asociada");
+
+					return;
+				}
+
+				App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
+                
+				MainViewModel.GetInstance().ConsultaTarjetaWin = new ConsultaTarjetaWinViewModel();
+
+                await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ConsultaTarjetaWin());
+			}
+			else
+			{
+				await Mensajes.Info("Inicia Sesion para consultar puntos");  	
+			}
+            
 		}
 
 
@@ -329,7 +374,7 @@ namespace City_Center.ViewModels
 				var content = new FormUrlEncodedContent(new[]
 				{
 				new KeyValuePair<string, string>("", ""),
-			});
+			    });
 
 
 				var response = await this.apiService.Get<PozosReturn>("/casino/pozos", "/indexApp", content);
@@ -344,6 +389,58 @@ namespace City_Center.ViewModels
 				this.listPozos = (PozosReturn)response.Result;
 
 				PozosDetalle = new ObservableCollection<pozosDetalle>(this.ToPozosItemViewModel());
+
+                int contador = PozosDetalle.Count;
+
+                switch (contador)
+                {
+                    case 1:
+                        TamanoPozos = 125;
+                        break;
+                    case 2:
+                        TamanoPozos = 125;
+                        break;
+
+                    case 3:
+                        TamanoPozos = 125;
+                        break;
+
+                    case 4:
+                        TamanoPozos = 250;
+                        break;
+
+                    case 5:
+                        TamanoPozos = 250;
+                        break;
+
+                    case 6:
+                        TamanoPozos = 250;
+                        break;
+
+                    case 7:
+                        TamanoPozos = 375;
+                        break;
+
+                    case 8:
+                        TamanoPozos = 375;
+                        break;
+
+                    case 9:
+                        TamanoPozos = 375;
+                        break;
+
+                    case 10:
+                        TamanoPozos = 500;
+                        break;
+
+                    case 11:
+                        TamanoPozos = 500;
+                        break;
+                    case 12:
+                        TamanoPozos = 500;
+                        break;
+                }
+            
 
 			}
 			catch (Exception ex)
@@ -444,7 +541,7 @@ namespace City_Center.ViewModels
 				var content = new FormUrlEncodedContent(new[]
 				{
 				new KeyValuePair<string, string>("", ""),
-			});
+			    });
 
 
 				var response = await this.apiService.Get<GanadoresReturn>("/casino/ganadores", "/indexApp", content);
@@ -459,6 +556,58 @@ namespace City_Center.ViewModels
 				this.listGanadores = (GanadoresReturn)response.Result;
 
 				GanadoresDetalle = new ObservableCollection<GanadoresDetalle>(this.ToGanadoresViewModel());
+
+				int contador = GanadoresDetalle.Count;
+                
+				switch (contador)
+                {
+                    case 1:
+						TamanoGanadores = 125;
+                        break;
+                    case 2:
+						TamanoGanadores = 125;
+                        break;
+
+					case 3:
+						TamanoGanadores = 125;
+                        break;
+
+					case 4:
+						TamanoGanadores = 250;
+                        break;
+
+					case 5:
+						TamanoGanadores = 250;
+                        break;
+
+					case 6:
+						TamanoGanadores = 250;
+                        break;
+
+					case 7:
+						TamanoGanadores = 375;
+                        break;
+
+					case 8:
+						TamanoGanadores = 375;
+                        break;
+
+					case 9:
+						TamanoGanadores = 375;
+                        break;
+
+					case 10:
+						TamanoGanadores = 500;
+                        break;
+
+					case 11:
+                        TamanoGanadores = 500;
+                        break;
+					case 12:
+                        TamanoGanadores = 500;
+                        break;
+                }
+            
 			}
 			catch (Exception ex)
 			{
@@ -504,7 +653,7 @@ namespace City_Center.ViewModels
 				var content = new FormUrlEncodedContent(new[]
 				{
 				new KeyValuePair<string, string>("", ""),
-			});
+			    });
 
 
 				var response = await this.apiService.Get<TarjetasReturn>("/tarjetas", "/indexApp", content);
@@ -520,6 +669,43 @@ namespace City_Center.ViewModels
 				this.listTarjetas = (TarjetasReturn)response.Result;
 
 				TarjetasDetalle = new ObservableCollection<TarjetasDetalle>(this.ToTarjetasViewModel());
+
+				int contador = TarjetasDetalle.Count;
+
+                switch (contador)
+                {
+                    case 1:
+                        TamanoTarjeta = 145;
+                        break;
+                    case 2:
+						TamanoTarjeta = 290;
+                        break;
+                        
+                    case 3:
+						TamanoTarjeta = 435;
+                        break;
+
+                    case 4:
+						TamanoTarjeta = 580;
+                        break;
+
+                    case 5:
+						TamanoTarjeta = 725;
+                        break;
+
+                    case 6:
+						TamanoTarjeta = 850;
+                        break;
+
+                    case 7:
+						TamanoTarjeta = 995;
+                        break;
+
+                    case 8:
+						TamanoTarjeta = 1140;
+                        break;
+      
+                }
 
 			}
 			catch (Exception ex)

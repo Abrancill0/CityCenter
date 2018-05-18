@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:City_Center.Vista"
-             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.Hotel">
-     <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="Chat"/>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:view="clr-namespace:City_Center.Vista" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.Hotel">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="Chat" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -26,9 +20,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout  Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Hotel}">
-         
-            <Grid  >
+        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Hotel}">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*">
                     </ColumnDefinition>
@@ -39,33 +32,13 @@
                     <RowDefinition Height="100">
                     </RowDefinition>
                 </Grid.RowDefinitions>
-                     <Image  Aspect="AspectFill"  Source="HOTELmin" Grid.Row = "0" Grid.Column = "0" Grid.ColumnSpan = "2"  />
-                     <!--<Button Image ="checkin_verde"
-                            BackgroundColor = "Transparent"
-                             ContentLayout = "Left,0"
-                             Text = ""
-                             Grid.Row = "0" Grid.Column = "1"
-                                                          WidthRequest="100"
-                             HeightRequest="100"
-                             VerticalOptions = "Center"
-                             Command="{Binding UbicacionHotelCommand}"
-                            />-->
-
-
-                 <Image   Aspect="AspectFit"
-                         Source="checkin_verde"
-                         Grid.Row = "0"
-                         Grid.Column = "1"
-                         VerticalOptions = "Center"
-                          WidthRequest="60"
-                         HeightRequest="60">
-                     <Image.GestureRecognizers>
-                            <TapGestureRecognizer  Command="{Binding UbicacionHotelCommand}"  />
-                     </Image.GestureRecognizers>
+                <Image Aspect="AspectFill" Source="HOTELmin" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+                <Image Aspect="AspectFit" Source="checkin_verde" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" WidthRequest="55" HeightRequest="55">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding UbicacionHotelCommand}" />
+                    </Image.GestureRecognizers>
                 </Image>
-                
-                </Grid>
-               
+            </Grid>
             <Grid BackgroundColor="#2D97A3" Padding="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*">
@@ -81,27 +54,27 @@
                 </Grid.RowDefinitions>
                 <Label x:Name="LabelTab1" Text="PRINCIPAL" Style="{DynamicResource TabTopLabel}" TextColor="#E8F3F4" FontSize="12" Grid.Column="0" Margin="5">
                     <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular" />
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
                 <Label x:Name="LabelTab2" Text="SPA" Style="{DynamicResource TabTopLabel}" TextColor="#6FB7C0" FontSize="12" Grid.Column="1" Margin="5">
                     <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular" />
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
-                <Label x:Name="LabelTab3" Text="SERVICIOS" Style="{DynamicResource TabTopLabel}" TextColor="#6FB7C0" FontSize="12" Grid.Column="2" Margin="5" >
+                <Label x:Name="LabelTab3" Text="SERVICIOS" Style="{DynamicResource TabTopLabel}" TextColor="#6FB7C0" FontSize="12" Grid.Column="2" Margin="5">
                     <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular" />
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                        </OnPlatform>
+                    </Label.FontFamily>
                 </Label>
                 <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
                 </BoxView>
@@ -133,325 +106,224 @@
                     <StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand">
                             <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout Orientation="Horizontal" BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand">
-                                <Grid HorizontalOptions="FillAndExpand" CompressedLayout.IsHeadless="true">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="1*"/>
-                                        <ColumnDefinition Width="2"/>
-                                        <ColumnDefinition Width="1*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                                        <Label Text="Llegada"
-                                               FontSize = "Medium"
-                                               TextColor="Gray"
-                                               Margin="5,0,0,0"
-                                               HorizontalOptions="Start"
-                                               HorizontalTextAlignment="Start">
-                                            <Label.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                </OnPlatform>
-                                            </Label.FontFamily>
-                                          </Label>
-                                           <xfx:XfxEntry x:Name="FechaInicio"
-                                                  Text ="00/00/00"
-                                                  Margin="5,-20,5,-12"
-                                                  PlaceholderColor="Transparent"
-                                                  Focused="FechaInicio_Focused"
-                                                  >
+                                <Frame.Margin>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                </Frame.Margin>
+                                <Frame.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                </Frame.Padding>
+                                <StackLayout Orientation="Horizontal" BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand">
+                                    <Grid HorizontalOptions="FillAndExpand" CompressedLayout.IsHeadless="true">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="2" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <StackLayout Margin="4" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                                            <Label Text="Llegada" FontSize="Medium" TextColor="Gray" Margin="5,0,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+                                            <xfx:XfxEntry x:Name="FechaInicio" Text="00/00/00" Margin="5,-20,5,-12" PlaceholderColor="Transparent" Focused="FechaInicio_Focused">
+                                                <Entry.HeightRequest>
+                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                        <On Platform="iOS">60</On>
+                                                        <On Platform="Android,Windows">60</On>
+                                                    </OnPlatform>
+                                                </Entry.HeightRequest>
+                                                <Entry.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                    </OnPlatform>
+                                                </Entry.FontFamily>
+                                            </xfx:XfxEntry>
+                                        </StackLayout>
+                                        <BoxView Color="Silver" Grid.Column="1" Grid.Row="0" Margin="0,5,0,5" />
+                                        <StackLayout Margin="4" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
+                                            <Label Text="Salida" FontSize="Medium" TextColor="Gray" Margin="5,0,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+                                            <xfx:XfxEntry x:Name="FechaFinal" Text="00/00/00" PlaceholderColor="Transparent" Margin="5,-20,5,-12" Focused="FechaFin_Focused">
+                                                <Entry.HeightRequest>
+                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                        <On Platform="iOS">60</On>
+                                                        <On Platform="Android,Windows">60</On>
+                                                    </OnPlatform>
+                                                </Entry.HeightRequest>
+                                                <Entry.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                    </OnPlatform>
+                                                </Entry.FontFamily>
+                                            </xfx:XfxEntry>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                <Frame.Margin>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                </Frame.Margin>
+                                <Frame.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                </Frame.Padding>
+                                <StackLayout>
+                                    <Label Text="Huéspedes" TextColor="Gray" Margin="8,0,0,0" FontSize="Medium" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="Oswald-Regular" />
+                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                    <xfx:XfxEntry x:Name="NoPersona" Text="1" Margin="8,-20,5,-12" Keyboard="Numeric">
                                         <Entry.HeightRequest>
                                             <OnPlatform x:TypeArguments="x:Double">
                                                 <On Platform="iOS">60</On>
                                                 <On Platform="Android,Windows">60</On>
                                             </OnPlatform>
                                         </Entry.HeightRequest>
-                                         <Entry.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                </OnPlatform>
-                                            </Entry.FontFamily>
+                                        <Entry.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="Oswald-Regular" />
+                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                            </OnPlatform>
+                                        </Entry.FontFamily>
                                     </xfx:XfxEntry>
-                                    </StackLayout>
-                                    <BoxView Color="Silver" Grid.Column="1" Grid.Row="0" Margin="0,5,0,5" />
-                                    <StackLayout Margin="4" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
-                                        <Label Text="Salida"
-                                               FontSize = "Medium"
-                                               TextColor="Gray"
-                                               Margin="5,0,0,0"
-                                              HorizontalOptions="Start"
-                                              HorizontalTextAlignment="Start">
-                                         <Label.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                </OnPlatform>
-                                            </Label.FontFamily>
-                                          </Label>
-                                           <xfx:XfxEntry x:Name="FechaFinal"
-                                                  Text ="00/00/00"
-                                                         PlaceholderColor="Transparent"
-                                                  Margin="5,-20,5,-12"
-                                                  Focused="FechaFin_Focused">
-                                        <Entry.HeightRequest>
-                                            <OnPlatform x:TypeArguments="x:Double">
-                                                <On Platform="iOS">60</On>
-                                                <On Platform="Android,Windows">60</On>
-                                            </OnPlatform>
-                                        </Entry.HeightRequest>
-                                         <Entry.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                </OnPlatform>
-                                            </Entry.FontFamily>
-                                    </xfx:XfxEntry>
-
-                                    </StackLayout>
-                                </Grid>
-                            </StackLayout>
-                        </Frame>
-                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout>
-                            <Label Text="Huéspedes"
-                                   TextColor="Gray"
-                                   Margin="8,0,0,0"
-                                   FontSize="Medium"
-                                   HorizontalOptions="Start"
-                                   HorizontalTextAlignment="Start">
-                                   <Label.FontFamily>
-                                      <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                       </OnPlatform>
-                                   </Label.FontFamily>
-                            </Label>
-                                <xfx:XfxEntry x:Name="NoPersona"
-                                              Text ="1"
-                                              Margin="8,-20,5,-12"
-                                              Keyboard="Numeric">
-                                        <Entry.HeightRequest>
-                                            <OnPlatform x:TypeArguments="x:Double">
-                                                <On Platform="iOS">60</On>
-                                                <On Platform="Android,Windows">60</On>
-                                            </OnPlatform>
-                                        </Entry.HeightRequest>
-                                         <Entry.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                </OnPlatform>
-                                            </Entry.FontFamily>
-                                </xfx:XfxEntry>
-                            </StackLayout>
-                        </Frame>
-                            <Button Margin="30"
-                                    TextColor="White"
-                                    BackgroundColor="#2D97A3"
-                                    Clicked="Handle_Clicked"
-                                    Text="VER OPCIONES">
+                                </StackLayout>
+                            </Frame>
+                            <Button TextColor="White" BackgroundColor="#2D97A3" Clicked="Handle_Clicked" HeightRequest="40" Margin="30,10,30,7" FontSize="14" Text="VER OPCIONES">
                                 <Button.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                </OnPlatform>
-                                            </Button.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Button.FontFamily>
                             </Button>
                         </StackLayout>
                         <StackLayout BackgroundColor="White">
-                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="White">
                                 <Label Margin="-220,10,0,0" Text="HABITACIONES" TextColor="#250c4b">
-                                         <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                        </Label>
-                                <flv:FlowListView HeightRequest="435" SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="110" FlowItemsSource="{Binding HabitacionesDetalle}">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <flv:FlowListView HeightRequest="{Binding TamanoHabitacion,Mode=TwoWay}" SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="120" FlowItemsSource="{Binding HabitacionesDetalle}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
-                                            <Grid Padding="3">
+                                            <Grid Padding="1">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="100"
-                                                                            Aspect="AspectFill"
-                                                                            LoadingPlaceholder="image_loading.png"
-                                                                            ErrorPlaceholder="image_error.png"
-                                                                            Source="{Binding hab_imagen}"
-                                                                            DownsampleToViewSize="true">
-                                                <ffimageloading:CachedImage.GestureRecognizers>
-                                                <TapGestureRecognizer  Command="{Binding DetalleCommand}"  />
-                                                </ffimageloading:CachedImage.GestureRecognizers>
+                                                <ffimageloading:CachedImage HeightRequest="120" WidthRequest="115" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding hab_imagen}" DownsampleToViewSize="true">
+                                                    <ffimageloading:CachedImage.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding DetalleCommand}" />
+                                                    </ffimageloading:CachedImage.GestureRecognizers>
+                                                    <ffimageloading:CachedImage.Transformations>
+                                                        <fftransformations:RoundedTransformation Radius="15" />
+                                                    </ffimageloading:CachedImage.Transformations>
                                                 </ffimageloading:CachedImage>
-                                                 <Label x:Name="Label"
-                                                       Margin="5"
-                                                       HorizontalOptions="Start"
-                                                       HorizontalTextAlignment="Start"
-                                                       VerticalOptions="End"
-                                                       TextColor="White"
-                                                       FontFamily="Oswald-regular"
-                                                       FontSize="Small"
-                                                       Text="{Binding hab_nombre}">
-                                                           <Label.FontFamily>
-                                                                <OnPlatform x:TypeArguments="x:String">
-                                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                                </OnPlatform>
-                                                           </Label.FontFamily>
-                                                     </Label>
+                                                <Label x:Name="Label" Margin="5" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="End" TextColor="White" FontFamily="Oswald-regular" FontSize="Small" LineBreakMode="WordWrap" WidthRequest="50"
+                                                    Text="{Binding hab_nombre}">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
                                             </Grid>
                                         </DataTemplate>
                                     </flv:FlowListView.FlowColumnTemplate>
                                 </flv:FlowListView>
                             </StackLayout>
-                        </Frame>
-
-
-                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label Margin="20,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
-                                         <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                        </Label>
-                        <RelativeLayout HeightRequest="210" VerticalOptions="Start">
-                            <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}"
-                                      RowHeight="200"  SeparatorVisibility="None"
-                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}"
-                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}"
-                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}"
-                                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                                      CachingStrategy="RecycleElement"
-                                      >
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <ContentView Rotation="90" BackgroundColor="Transparent">
-                                                 <StackLayout HeightRequest="250" WidthRequest="230" Margin="0,5,0,0">
-                                                            <Grid Padding="3">
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="*" />
-                                                </Grid.RowDefinitions>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="*" />
-                                                </Grid.ColumnDefinitions>
-                                                     <ffimageloading:CachedImage HeightRequest="250" 
-                                                                                WidthRequest="130"
-                                                                                Aspect="AspectFill"
-                                                                                LoadingPlaceholder="image_loading.png"
-                                                                                ErrorPlaceholder="image_error.png"
-                                                                                DownsampleToViewSize="true"
-                                                                                Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}">
-                                                                <ffimageloading:CachedImage.GestureRecognizers>
-                                                                 <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
-
-                                                                </ffimageloading:CachedImage.GestureRecognizers>
-                                                     </ffimageloading:CachedImage>
-
-                                                       <Label x:Name="Label"
-                                                       Margin="5"
-                                                       HorizontalOptions="Center"
-                                                       HorizontalTextAlignment="Center"
-                                                       VerticalOptions="End"
-                                                       TextColor="White"
-                                                       FontSize="Small"
-                                                       Text="{Binding pro_nombre}">
-                                                           <Label.FontFamily>
-                                                                <OnPlatform x:TypeArguments="x:String">
-                                                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                                </OnPlatform>
-                                                           </Label.FontFamily>
-                                                     </Label>
-                                                                
-                                                                </Grid>
-                                                </StackLayout>
-                                            </ContentView>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </RelativeLayout>
-                         </StackLayout>
-                        </Frame>
+                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="White" Padding="0,10,0,0">
+                                <Label Margin="20,5,0,-3" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <RelativeLayout HeightRequest="200" VerticalOptions="Start">
+                                    <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}" RowHeight="200" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <ContentView Rotation="90" BackgroundColor="Transparent">
+                                                        <StackLayout HeightRequest="250" WidthRequest="100" Margin="0,5,0,0">
+                                                            <Grid Padding="3" CompressedLayout.IsHeadless="true">
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="*" />
+                                                                </Grid.RowDefinitions>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*" />
+                                                                </Grid.ColumnDefinitions>
+                                                                <ffimageloading:CachedImage HeightRequest="190" WidthRequest="80" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" DownsampleToViewSize="true">
+                                                                    <ffimageloading:CachedImage.GestureRecognizers>
+                                                                        <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
+                                                                    </ffimageloading:CachedImage.GestureRecognizers>
+                                                                    <ffimageloading:CachedImage.Transformations>
+                                                                        <fftransformations:RoundedTransformation Radius="15" />
+                                                                    </ffimageloading:CachedImage.Transformations>
+                                                                </ffimageloading:CachedImage>
+                                                                <Label x:Name="Label" Margin="5" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" TextColor="White" FontSize="Small" Text="{Binding pro_nombre}">
+                                                                    <Label.FontFamily>
+                                                                        <OnPlatform x:TypeArguments="x:String">
+                                                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                                        </OnPlatform>
+                                                                    </Label.FontFamily>
+                                                                </Label>
+                                                            </Grid>
+                                                        </StackLayout>
+                                                    </ContentView>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </RelativeLayout>
+                            </StackLayout>
+                        </StackLayout>
                     </StackLayout>
-                  </StackLayout>
                 </ScrollView>
             </StackLayout>
             <StackLayout x:Name="SL2" IsVisible="false">
                 <ScrollView>
-                    <StackLayout Spacing="1" Margin="5">
-                         
+                    <StackLayout Spacing="1" BackgroundColor="White">
                         <StackLayout HorizontalOptions="FillAndExpand">
-                            <ffimageloading:CachedImage x:Name="Img1provisional"
-                            HeightRequest="150"
-                            Aspect="AspectFill"
-                          
-                            LoadingPlaceholder="image_loading.png"
-                            ErrorPlaceholder="image_error.png"
-                            Source="{Binding Imagen_Selected}" />
+                            <ffimageloading:CachedImage x:Name="Img1provisional" HeightRequest="150" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding Imagen_Selected}" />
                         </StackLayout>
                         <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
-                            <ListView Rotation="270" ItemsSource="{Binding MoaSpaDetalle}"
-                                      ItemSelected="Handle_ItemSelected"
-                                      RowHeight="100" SeparatorVisibility="None"
-                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
-                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
-                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}"
-                                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                                      CachingStrategy="RecycleElement">
+                            <ListView Rotation="270" ItemsSource="{Binding MoaSpaDetalle}" ItemSelected="Handle_ItemSelected" RowHeight="100" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
                                             <ContentView Rotation="90" BackgroundColor="Transparent">
                                                 <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
-                                                    <ffimageloading:CachedImage HeightRequest="100" 
-                                                                                WidthRequest="100"
-                                                                                Aspect="AspectFill"
-                                                                                DownsampleToViewSize="true"
-                                                                                LoadingPlaceholder="image_loading.png"
-                                                                                ErrorPlaceholder="image_error.png"
-                                                                                Source="{Binding gal_imagen}">
-                                                        
-                                                     </ffimageloading:CachedImage>
-                                                   
+                                                    <ffimageloading:CachedImage HeightRequest="100" WidthRequest="100" Aspect="AspectFill" DownsampleToViewSize="true" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding gal_imagen}">
+                                                    </ffimageloading:CachedImage>
                                                 </StackLayout>
                                             </ContentView>
                                         </ViewCell>
@@ -460,328 +332,251 @@
                             </ListView>
                         </RelativeLayout>
                         <StackLayout Padding="10, 30" BackgroundColor="White" Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                         <Label Margin="15,0,0,0" HorizontalOptions="Start"
-                                TextColor="Black"
-                                HorizontalTextAlignment="Start"
-                                Text="UN LUGAR EXCLUSIVO CREADO PARA EL"
-                                FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-                        <Label Margin="15,-10,0,0"  HorizontalOptions="Start"
-                                TextColor="Black"
-                                HorizontalTextAlignment="Start"
-                               Text="BIENESTAR Y CUIDADO DEL CUERPO QUE SE"
-                               FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-                        <Label Margin="15,-10,0,0"
-                               HorizontalOptions="Start"
-                               TextColor="Black"
-                               HorizontalTextAlignment="Start"
-                               Text="ENCUENTRA CON EL ESPIRITU A TRAVÉS DEL"
-                               FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                     <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-                        <Label Margin="15,-10,0,0"  HorizontalOptions="Start"
-                                TextColor="Black"
-                                HorizontalTextAlignment="Start"
-                                Text="RELAX, MASAJES Y TÉCNICAS CORPORALES"
-                               FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-
-                        <Label Margin="10,20,0,0"  TextColor="Black"
-                                HorizontalOptions="Start"
-                                HorizontalTextAlignment="Start"
-                               Text="Cuenta con espacios como:"
-                               FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-                       
-                        <Label Margin="20,20,0,0"  TextColor="Black"
-                                HorizontalOptions="Start"
-                                HorizontalTextAlignment="Start"
-                               Text="• Hammam"
-                               FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-
-                           <Label Margin="20,0,0,0" TextColor="Black"  
-                                HorizontalOptions="Start"
-                                HorizontalTextAlignment="Start"
-                               Text="• Sauna seco"
-                                  FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-
-                           <Label Margin="20,0,0,0" TextColor="Black"  
-                                HorizontalOptions="Start"
-                                HorizontalTextAlignment="Start"
-                               Text="• Duchas especiales"
-                                  FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                     <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-
-                           <Label Margin="20,0,0,0" TextColor="Black" 
-                                HorizontalOptions="Start"
-                                HorizontalTextAlignment="Start"
-                               Text="• Salas relax"
-                                  FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-
-                           <Label Margin="20,0,0,0" TextColor="Black"
-                                 HorizontalOptions="Start"
-                                HorizontalTextAlignment="Start"
-                               Text="• Piscinas ludica climatizada"
-                                  FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                     <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-                        
-                           <Label Margin="20,0,0,0" TextColor="Black" 
-                                HorizontalOptions="Start"
-                                HorizontalTextAlignment="Start"
-                               Text="• Piscina exterior"
-                                  FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-
-                          <Label Margin="20,0,0,0" TextColor="Black" 
-                                HorizontalOptions="Start"
-                                HorizontalTextAlignment="Start"
-                               Text="• Fitness center"
-                                 FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                     <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-
-                         <Label Margin="20,0,0,0" TextColor="Black"
-                                HorizontalOptions="Start"
-                                HorizontalTextAlignment="Start"
-                               Text="• Canchas de tenis y de paddle"
-                                FontSize="Small">
-                             <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Roboto-Regular"/>
-                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
+                            <Label Margin="15,0,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" Text="UN LUGAR EXCLUSIVO CREADO PARA EL" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="15,-8,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" Text="BIENESTAR Y CUIDADO DEL CUERPO QUE SE" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="15,-8,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" Text="ENCUENTRA CON EL ESPIRITU A TRAVÉS DEL" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="15,-8,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" Text="RELAX, MASAJES Y TÉCNICAS CORPORALES" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="10,20,0,0" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Cuenta con espacios como:" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="20,20,0,0" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="• Hammam" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="20,0,0,0" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="• Sauna seco" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="20,0,0,0" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="• Duchas especiales" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="20,0,0,0" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="• Salas relax" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="20,0,0,0" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="• Piscinas ludica climatizada" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="20,0,0,0" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="• Piscina exterior" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="20,0,0,0" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="• Fitness center" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Label Margin="20,0,0,0" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="• Canchas de tenis y de paddle" FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="White" Padding="0,0,0,10">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#6E5D87" FontFamily="Oswald-Regular" Margin="15,0,0,1">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <RelativeLayout HeightRequest="200" VerticalOptions="Start">
+                                    <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}" RowHeight="200" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <ContentView Rotation="90" BackgroundColor="Transparent">
+                                                        <StackLayout HeightRequest="250" WidthRequest="100" Margin="0,5,0,0">
+                                                            <Grid Padding="3" CompressedLayout.IsHeadless="true">
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="*" />
+                                                                </Grid.RowDefinitions>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*" />
+                                                                </Grid.ColumnDefinitions>
+                                                                <ffimageloading:CachedImage HeightRequest="190" WidthRequest="80" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" DownsampleToViewSize="true">
+                                                                    <ffimageloading:CachedImage.GestureRecognizers>
+                                                                        <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
+                                                                    </ffimageloading:CachedImage.GestureRecognizers>
+                                                                    <ffimageloading:CachedImage.Transformations>
+                                                                        <fftransformations:RoundedTransformation Radius="15" />
+                                                                    </ffimageloading:CachedImage.Transformations>
+                                                                </ffimageloading:CachedImage>
+                                                                <Label x:Name="Label" Margin="5" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" TextColor="White" FontSize="Small" Text="{Binding pro_nombre}">
+                                                                    <Label.FontFamily>
+                                                                        <OnPlatform x:TypeArguments="x:String">
+                                                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                                        </OnPlatform>
+                                                                    </Label.FontFamily>
+                                                                </Label>
+                                                            </Grid>
+                                                        </StackLayout>
+                                                    </ContentView>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </RelativeLayout>
+                        </StackLayout>
                     </StackLayout>
-
-                     <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout Padding="10, 10, 0, 0" HorizontalOptions="FillAndExpand" Spacing="0">
-                                <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#6E5D87" FontFamily="Oswald-Regular">
-                                         <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
-                                    </Label>
-                        <RelativeLayout HeightRequest="200" VerticalOptions="Start">
-                            <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}"
-                                      RowHeight="150"  SeparatorVisibility="None"
-                                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}"
-                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}"
-                                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}"
-                                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                                      CachingStrategy="RecycleElement">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <ContentView Rotation="90" BackgroundColor="Transparent">
-                                                <StackLayout HeightRequest="190" WidthRequest="230" Margin="0,0,0,0">
-                                                    <ffimageloading:CachedImage HeightRequest="190" 
-                                                                                WidthRequest="100"
-                                                                                Aspect="AspectFill"
-                                                                               
-                                                                                LoadingPlaceholder="image_loading.png"
-                                                                                ErrorPlaceholder="image_error.png"
-                                                                                Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}">>
-                                                     </ffimageloading:CachedImage>
-                                                </StackLayout>
-                                            </ContentView>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </RelativeLayout>
-                         </StackLayout>
-                        </Frame>
-
-                        
-                </StackLayout>
                 </ScrollView>
-                    
             </StackLayout>
             <StackLayout x:Name="SL3" IsVisible="false">
                 <ScrollView BackgroundColor="White">
                     <StackLayout Padding="10, 10" HorizontalOptions="StartAndExpand" Orientation="Vertical" BackgroundColor="White">
-                   
                         <StackLayout Orientation="Horizontal">
-                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="RoomServices" />
-                            <Label HorizontalOptions="Start"
-                                   HorizontalTextAlignment="Start" Text="       ROOM SERVICES 24 HRS"
-                                   TextColor="#8A7C9E"
-                                   FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="RoomServices" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       ROOM SERVICES 24 HRS" TextColor="#8A7C9E" FontSize="Small">
                                 <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage Margin="5,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="ValetParking" />
-                            <Label HorizontalOptions="Start"
-                                   HorizontalTextAlignment="Start"
-                                   Text="       VALET PARKING"
-                                   TextColor="#8A7C9E"
-                                   FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="5,0,0,5" HeightRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="ValetParking" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       VALET PARKING" TextColor="#8A7C9E" FontSize="Small">
                                 <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Lavanderia" />
-                            <Label HorizontalOptions="Start"
-                                   HorizontalTextAlignment="Start"
-                                   Text="       SERVICIO DE LAVANDERIA Y TINTORERIA"
-                                   TextColor="#8A7C9E" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Lavanderia" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       SERVICIO DE LAVANDERIA Y TINTORERIA" TextColor="#8A7C9E" FontSize="Small">
                                 <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Bussines" />
-                            <Label  HorizontalOptions="Start" HorizontalTextAlignment="Start"
-                                    Text="       BUSINESS CENTER" TextColor="#8A7C9E" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Bussines" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       BUSINESS CENTER" TextColor="#8A7C9E" FontSize="Small">
                                 <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="WifiLibre" />
-                            <Label  HorizontalOptions="Start"
-                                    HorizontalTextAlignment="Start" Text="       WIFI" TextColor="#8A7C9E" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="WifiLibre" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       WIFI" TextColor="#8A7C9E" FontSize="Small">
                                 <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="BabySitter1" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       BABY SITTER" TextColor="#8A7C9E" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="BabySitter1" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       BABY SITTER" TextColor="#8A7C9E" FontSize="Small">
                                 <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Articulosbebe" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       ARTICULOS PARA LA ASISTENCIA DE SU BEBE" TextColor="#8A7C9E" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Articulosbebe" />
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       ARTICULOS PARA LA ASISTENCIA DE SU BEBE" TextColor="#8A7C9E" FontSize="Small">
                                 <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit"  LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Almohada" />
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Almohada" />
                             <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       ALMOHADAS ESPECIALES PARA DESCANSO Y RELAJACIÓN" TextColor="#8A7C9E" FontSize="Micro">
                                 <Label.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Regular"/>
-                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                </OnPlatform>
-                            </Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
                             </Label>
                         </StackLayout>
                     </StackLayout>

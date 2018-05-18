@@ -21,19 +21,66 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Margin="10" Padding="0,20,0,0" BindingContext="{Binding Login}" >
-            <Label Text="ÍNGRESA" TextColor="#250c4b" FontFamily="Oswald-Regular" FontSize="24" HorizontalTextAlignment="Center" ></Label>
-            <Label Text="Si ya tenés una cuenta, Ingresá para obtener todos los beneficios" HorizontalTextAlignment="Center" TextColor="Silver" FontSize="Small"></Label>
-            <xfx:XfxEntry x:Name="TextCorreo"
-                   Placeholder="Correo electronico"
-                   Style="{DynamicResource EntryStyle}"
-                   Text="{Binding Email, Mode=TwoWay}">
-                 <Entry.HeightRequest>
-                        <OnPlatform x:TypeArguments="x:Double">
-                           <On Platform="iOS">60</On>
-                            <On Platform="Android,Windows">50</On>
-                        </OnPlatform>
-                    </Entry.HeightRequest>
-                </xfx:XfxEntry>
+            <Label Text="INGRESÁ"
+                   TextColor="#250c4b"
+                   FontFamily="Oswald-Regular"
+                   FontSize="24"
+                   HorizontalTextAlignment="Center">
+                <Label.FontFamily>
+                         <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                         </OnPlatform>
+                 </Label.FontFamily>
+            </Label>
+
+            <Label Text="Si ya tenés una cuenta, ingresá para"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   TextColor="Silver"
+                   FontSize="Small"
+                   Margin="30,0,30,0"></Label>
+
+           <Label Text="obtener todos los beneficios"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   TextColor="Silver"
+                   FontSize="Small"
+                   Margin="30,-10,30,20"></Label>
+            
+                   <StackLayout Orientation="Vertical" Spacing="0">
+                        <Label Text="Correo electrónico"
+                               FontSize="12.5"
+                               Margin="5,0,0,-13">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <xfx:XfxEntry x:Name="TextCorreo"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Email, Mode=TwoWay}"
+                                  FontSize="18"
+                                  TextColor="Black"
+                                  PlaceholderColor="#7A5BA5"
+                                  Keyboard="Email">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular"/>
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                            </OnPlatform>
+                    </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    </StackLayout>
+
             <Grid>
                 <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -42,19 +89,43 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="30" />
                     </Grid.ColumnDefinitions>
-                <xfx:XfxEntry x:Name="TextContraseña"
-                       Placeholder="Contraseña"
-                       Style="{DynamicResource EntryStyle}"
-                       IsPassword="true" 
-                       Text="{Binding Password, Mode=TwoWay}"
-                       Grid.Row = "0" Grid.Column = "0">
-                     <Entry.HeightRequest>
+
+
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <Label Text="Contraseña"
+                               FontSize="12.5"
+                               Margin="5,0,0,-13">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <xfx:XfxEntry x:Name="TextContraseña"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Password, Mode=TwoWay}"
+                                  FontSize="18"
+                                  TextColor="Black"
+                                  PlaceholderColor="#7A5BA5"
+                                  IsPassword="true"
+                                  Keyboard="Default"
+                                  Grid.Row = "0" Grid.Column = "0">
+                        <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
-                               <On Platform="iOS">60</On>
+                                <On Platform="iOS">60</On>
                                 <On Platform="Android,Windows">50</On>
                             </OnPlatform>
                         </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular"/>
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                            </OnPlatform>
+                    </Entry.FontFamily>
                     </xfx:XfxEntry>
+                    </StackLayout>
+
                 <Button Grid.Column = "1" Grid.Row = "0"
                         HeightRequest = "20"
                         BackgroundColor = "Transparent"
@@ -63,17 +134,25 @@
                         Image ="ojo.png"
                         ContentLayout = "Left,0"
                         Pressed = "showPass"
-                        Released = "Pass" ></Button>
+                        Released = "Pass"
+                        Margin="0,0,0,-20"></Button>
                         
             </Grid>
             <Label Text="Olvidé mi contraseña"
                    TextColor="#23144B"
                    FontSize="Micro"
                    FontFamily="Oswald-Bold"
+                   Margin="0,10,0,0"
                    HorizontalTextAlignment="End">
                 <Label.GestureRecognizers>
                      <TapGestureRecognizer Command="{Binding RestablecePassCommand}" />
                 </Label.GestureRecognizers>
+                 <Label.FontFamily>
+                         <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                         </OnPlatform>
+                 </Label.FontFamily>
             </Label>
             <StackLayout Padding = "15,0">
                 <Button 
@@ -117,6 +196,7 @@
                     VerticalOptions="EndAndExpand"
                     Image ="btn_registrar.png"
                     ContentLayout = "Left,0"
+                    Margin="0,0,0,-18"
                     >
             </Button>
          </StackLayout>
