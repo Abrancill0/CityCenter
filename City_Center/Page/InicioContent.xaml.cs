@@ -48,14 +48,14 @@ namespace City_Center.Page
 					return;
                 }
 
-				if (FechaFinal.Text =="00/00/00")
+				if (FechaFinal.Text == "00/00/00")
 				{
 					await Mensajes.Info("Fecha inicial requerida.");
 					return;
 				}
 
-				DateTime Fecha1 = DateTime.Parse(FechaInicio.Text);
-				DateTime Fecha2 = DateTime.Parse(FechaFinal.Text);
+				DateTime Fecha1 = Convert.ToDateTime(FechaInicio.Text);
+				DateTime Fecha2 = Convert.ToDateTime(FechaFinal.Text).Date;
 
 				if (Fecha2.Date < Fecha1.Date)
                 {
@@ -63,8 +63,8 @@ namespace City_Center.Page
                 }
                 else
                 {
-					VariablesGlobales.FechaInicio = DateTime.Parse(FechaInicio.Text);
-					VariablesGlobales.FechaFin = DateTime.Parse(FechaFinal.Text);
+					VariablesGlobales.FechaInicio = Convert.ToDateTime(FechaInicio.Text);
+					VariablesGlobales.FechaFin = Convert.ToDateTime(FechaFinal.Text);
                     VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
                     await Navigation.PushPopupAsync(_webHotel);
