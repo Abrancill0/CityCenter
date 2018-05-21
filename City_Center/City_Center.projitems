@@ -359,13 +359,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Page\SlideMenu\PruebaGrid.xaml.cs">
       <DependentUpon>PruebaGrid.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="$(MSBuildThisFileDirectory)MyTabs.cs" />
-=======
     <Compile Include="$(MSBuildThisFileDirectory)Page\CustomTabPage.xaml.cs">
       <DependentUpon>CustomTabPage.xaml</DependentUpon>
     </Compile>
->>>>>>> 3cfe7637ecb505d166951968d2f5e8fd604a8d21
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

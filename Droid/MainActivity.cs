@@ -10,7 +10,6 @@ using Android.Content;
 using Plugin.FirebasePushNotification;
 using CarouselView.FormsPlugin.Android;
 using FFImageLoading.Forms.Droid;
-using Naxam.Controls.Platform.Droid;
 using Xamarin;
 using Acr.UserDialogs;
 using Plugin.CurrentActivity;
@@ -43,24 +42,6 @@ namespace City_Center.Droid
             Forms.SetFlags("FastRenderers_Experimental");
 
             //CachedImageRenderer.Init(true);
-
-            /*BottomTabbedRenderer.IconSize = 30;
-            BottomTabbedRenderer.BottomBarHeight = 45;
-            BottomTabbedRenderer.ItemAlign = ItemAlignFlags.Center;
-
-            */
-
-            BottomTabbedRenderer.ItemAlign = ItemAlignFlags.Default;
-            BottomTabbedRenderer.FontSize = 10;
-            BottomTabbedRenderer.IconSize = 30;
-
-			BottomTabbedRenderer.ItemIconTintList = null;
-            BottomTabbedRenderer.ItemSpacing = 8;
-            BottomTabbedRenderer.ItemPadding = new Xamarin.Forms.Thickness(8);
-            BottomTabbedRenderer.BottomBarHeight = 50;
-			//BottomTabbedRenderer.BackgroundColor = Android.Graphics.Color.Rgb(98, 45, 88);
-			//BottomTabbedRenderer.ItemPadding = 4;
-
 
             FacebookSdk.SdkInitialize(this);
             Rg.Plugins.Popup.Popup.Init(this, bundle);
