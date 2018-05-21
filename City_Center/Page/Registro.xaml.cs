@@ -15,8 +15,7 @@ namespace City_Center.Page
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
             await Camara();
-
-
+            
         }
 
         public Registro()
@@ -85,7 +84,7 @@ namespace City_Center.Page
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
-                MinimumDate = DateTime.Now.AddDays(0)
+				CancelText = "CANCELAR"
             });
 
 

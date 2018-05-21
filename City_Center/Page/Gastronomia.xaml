@@ -110,7 +110,7 @@
                                                           <TapGestureRecognizer Command="{Binding DetalleCommand}" />
                                                     </Frame.GestureRecognizers>
                                                 <StackLayout Orientation="Vertical">
-                                                    <Grid HeightRequest="210">
+                                                    <Grid HeightRequest="230">
                                                     <ffimageloading:CachedImage 
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading.png"

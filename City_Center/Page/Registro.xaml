@@ -24,23 +24,24 @@
     <ContentPage.Content>
         <ScrollView Padding="1,10">
             <StackLayout BindingContext="{Binding Registro}" Margin="10">
-              
-                <Button HorizontalOptions="CenterAndExpand"
-                        Image="ArrowUp"
-                       ContentLayout="Top,10"
-                        Margin="-10,-20,-10,0"
+           <!-- <StackLayout BackgroundColor="#23144B" HorizontalOptions="FillAndExpand">
+                  <Image Source="ArrowUp" HorizontalOptions="Center"/>
+                   <Button HorizontalOptions="Center"
                         Text="¿Aún no te registrás?"
-                TextColor="White"
-                FontSize="12"
-                BackgroundColor="#23144B">
+                        TextColor="White"
+                        FontSize="12"
+                        BackgroundColor="#23144B">
                      <Label.FontFamily>
                              <OnPlatform x:TypeArguments="x:String">
                                  <On Platform="iOS" Value="Oswald-Regular"/>
                                  <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                              </OnPlatform>
                     </Label.FontFamily>
-                </Button>
-                <Label Text="FORMÁ PARTE DE CITY CENTER"
+                </Button>  
+                </StackLayout>-->
+
+                
+                <Label Text="FORMÁ PARTE DE CITY CENTER ROSARIO"
                        HorizontalTextAlignment="Center"
                        HorizontalOptions="Center"
                        TextColor="#250c4b"
@@ -316,7 +317,7 @@
                 <StackLayout Margin = "10,10" HorizontalOptions = "Center">
                     <Button Text="" Command="{Binding RegistroCommand}" IsEnabled="{Binding IsEnabled,Mode=TwoWay}" Style="{DynamicResource StyleButton}" BackgroundColor="Transparent" Image="btn_registrarme.png" ContentLayout="Left,0">
                     </Button>
-                    <Label Text="O" HorizontalTextAlignment="Center">
+                    <Label Text="Ó" HorizontalTextAlignment="Center">
                     </Label>
                     <Button BackgroundColor="Transparent" Command="{Binding FacebookCommand}" IsEnabled="{Binding IsEnabled, Mode=TwoWay}" Style="{DynamicResource StyleButton}" HeightRequest="55" Text="" Image="btn_face.png" ContentLayout="Left,0">
                     </Button>

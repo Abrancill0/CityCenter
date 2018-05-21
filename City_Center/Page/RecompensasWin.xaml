@@ -7,7 +7,7 @@
         <StackLayout BindingContext="{Binding RecompesasWin}" Margin="5" BackgroundColor="White">
             <Label HorizontalOptions="Start"
                    HorizontalTextAlignment="Start"
-                   TextColor="#250c4b" Text="RECOMPESAS WIN" FontSize="Large" Margin="5">
+                   TextColor="#250c4b" Text="RECOMPENSAS WIN" FontSize="Large" Margin="5">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
                         <On Platform="iOS" Value="Oswald-Regular" />

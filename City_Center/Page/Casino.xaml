@@ -33,8 +33,20 @@
                     <RowDefinition Height="100">
                     </RowDefinition>
                 </Grid.RowDefinitions>
-                     <Image Aspect="AspectFill"  Source="CASINOmin" Grid.Row = "0" Grid.Column = "0" Grid.ColumnSpan = "2"/>
-                     <Image Aspect="AspectFit"
+                      <ffimageloading:CachedImage
+                                    Aspect="AspectFill"
+                                    Source="CASINOmin"
+                                    Grid.Row = "0"
+                                    Grid.Column = "0"
+                                    Grid.ColumnSpan = "2"
+                                    LoadingPlaceholder="image_loading.png"
+                                    ErrorPlaceholder="image_error.png"/>
+
+                
+
+
+
+                    <Image Aspect="AspectFit"
                             Source="checkin_rosa"
                             Grid.Row = "0"
                             Grid.Column = "1"
@@ -699,27 +711,27 @@
                         </Label>
                             <Label HorizontalOptions="Start"
                                    Margin="10, 0"
-                                   Text="Ser Socio Win es muy facil! Tan solo completando"
-                                   TextColor="#6C6C6C"
+                                   Text="Ser Socio Win es muy fácil! Tan solo completando"
+                                   TextColor="Black"
                                    FontSize="Small" ></Label>
                             <Label HorizontalOptions="Start"
                                    Margin="10, 0"
-                                   Text="un formulario y presentandote en el Centro de"
-                                   TextColor="#6C6C6C"
+                                   Text="un formulario y presentándolo en el Centro de"
+                                   TextColor="Black"
                                    FontSize="Small" ></Label>
                             <Label HorizontalOptions="Start"
                                    Margin="10, 0"
-                                   Text="Atencion a Clientes, se obtiene sin cargo la tarjeta"
-                                   TextColor="#6C6C6C"
+                                   Text="Atención a Clientes, se obtiene sin cargo la tarjeta"
+                                   TextColor="Black"
                                    FontSize="Small" ></Label>
                             <Label HorizontalOptions="Start"
                                    Margin="10, 0"
                                    Text="que le permitirá obtener promociones fabulosas."
-                                   TextColor="#6C6C6C"
+                                   TextColor="Black"
                                    FontSize="Small"></Label>
                             <Label HorizontalOptions="Start"
                                    Margin="0, 0"
-                                   TextColor="#6C6C6C"
+                                   TextColor="Black"
                                    FontSize="Small"></Label>
 
                         <StackLayout Padding = "40,10,40,10" Spacing = "12">
@@ -885,55 +897,55 @@
                                                    Margin="-5, 10,0,15"
                                                    HorizontalOptions="Center"
                                                    HorizontalTextAlignment="Center"
-                                                   TextColor="#6C6C6C"/>
+                                                   TextColor="Black"/>
                                             <Label HorizontalTextAlignment="Start"
                                                    Margin="10,-3"
                                                    HorizontalOptions="Start"
                                                    Text="Accede a dos exclusivos sectores para aquellos"
                                                    FontSize="Small"
-                                                   TextColor="#6C6C6C"></Label>
+                                                   TextColor="Black"></Label>
                                             <Label HorizontalTextAlignment="Start"
                                                    Margin="10,-3"
                                                    HorizontalOptions="Start"
                                                    Text="clientes que deseen privacidad y atención"
                                                    FontSize="Small"
-                                                   TextColor="#6C6C6C"></Label>
+                                                   TextColor="Black"></Label>
                                             <Label HorizontalTextAlignment="Start"
                                                    Margin="10,-3"
                                                    HorizontalOptions="Start"
                                                    Text="personalizada: Site VIP y Site VIP Slots. Ingreso"
                                                    FontSize="Small"
-                                                   TextColor="#6C6C6C"></Label>
+                                                   TextColor="Black"></Label>
                                             <Label HorizontalTextAlignment="Start"
                                                    Margin="10,-3"
                                                    HorizontalOptions="Start"
                                                    Text="independiente, sector exclusivo de"
-                                                   TextColor="#6C6C6C"
+                                                   TextColor="Black"
                                                    FontSize="Small"></Label>
                                             <Label HorizontalTextAlignment="Start"
                                                    Margin="10,-3"
                                                    HorizontalOptions="Start"
                                                    Text="estacionamiento, acceso sin esperas, sala de juegos"
                                                    FontSize="Small"
-                                                   TextColor="#6C6C6C"></Label>
+                                                   TextColor="Black"></Label>
                                             <Label HorizontalTextAlignment="Start"
                                                    Margin="10,-3"
                                                    HorizontalOptions="Start"
                                                    Text="privada y servicio gastronómico forman parte de"
                                                    FontSize="Small"
-                                                   TextColor="#6C6C6C"></Label>
+                                                   TextColor="Black"></Label>
                                             <Label HorizontalTextAlignment="Start"
                                                    Margin="10,-3"
                                                    HorizontalOptions="Start"
                                                    Text="los exclusivos beneficios que un cliente VIP puede"
                                                    FontSize="Small"
-                                                   TextColor="#6C6C6C"></Label>
+                                                   TextColor="Black"></Label>
                                             <Label HorizontalTextAlignment="Start"
                                                    Margin="10,-3"
                                                    HorizontalOptions="Start"
                                                    Text="disfurtar en nuestro complejo"
                                                    FontSize="Small"
-                                                   TextColor="#6C6C6C"></Label> 
+                                                   TextColor="Black"></Label> 
                                             <Label/> 
                                     </StackLayout>
                     </StackLayout>

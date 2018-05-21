@@ -109,7 +109,7 @@ namespace City_Center.Page
 
 
                        break;
-                    case "MÀS INFORMACIÒN":
+                    case "MÁS INFORMACIÓN":
                        
                         //Application.Current.MainPage = new MasterPage();
                         listviewMenu.SelectedItem = null;
@@ -122,7 +122,7 @@ namespace City_Center.Page
 
 
                         break; 
-                    case "TÈRMINOS Y CONDICIONES GENERALES DE USO":
+                    case "TÉRMINOS Y CONDICIONES GENERALES DE USO":
 
                         listviewMenu.SelectedItem = null;
 

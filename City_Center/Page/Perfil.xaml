@@ -67,7 +67,12 @@
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
-                <Label TextColor="White" FontSize="Small" FontAttributes="Bold" Grid.Column="2" Grid.Row="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="StartAndExpand" VerticalTextAlignment="Start" Margin="-10,-3,0,0"
+                <Label TextColor="White" FontSize="16"
+                       FontAttributes="Bold" Grid.Column="2"
+                       Grid.Row="1" HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start"
+                       VerticalOptions="StartAndExpand"
+                       VerticalTextAlignment="Start" Margin="-10,10,0,0"
                     Text="{Binding Nombre, Mode=TwoWay}">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
@@ -140,13 +145,13 @@
                         </ContentView.GestureRecognizers>
                     </ContentView>
                 </Grid>
-                <StackLayout x:Name="SL1" IsVisible="true" Margin="10">
+                <StackLayout x:Name="SL1" IsVisible="true">
                     <ScrollView BackgroundColor="White">
-                        <StackLayout Spacing="0">
+                        <StackLayout Spacing="0" Margin="10,10,0,10" BackgroundColor="White">
                             <StackLayout Orientation="Vertical" Spacing="0">
                                 <Label Text="Correo electrónico *"
-                                       FontSize="12"
-                                       Margin="5,0,0,-15"
+                                       FontSize="12.5"
+                                       Margin="5,0,0,-13"
                                        TextColor="Black"
                                        HorizontalOptions="Start"
                                        HorizontalTextAlignment="Start">
@@ -162,7 +167,7 @@
                                               Text="{Binding Email ,Mode=TwoWay}"
                                               PlaceholderColor="#7A5BA5"
                                               TextColor="Black"
-                                              FontSize="14"
+                                              FontSize="18"
                                               Keyboard="Default">
                                     <Entry.HeightRequest>
                                         <OnPlatform x:TypeArguments="x:Double">
@@ -180,8 +185,8 @@
                             </StackLayout>
                             <StackLayout Orientation="Vertical" Spacing="0">
                                 <Label Text="Contraseña *"
-                                       FontSize="12"
-                                       Margin="5,0,0,-15"
+                                       FontSize="12.5"
+                                       Margin="5,0,0,-13"
                                        TextColor="Black"
                                        HorizontalOptions="Start"
                                        HorizontalTextAlignment="Start">
@@ -196,7 +201,7 @@
                                               Text="{Binding Contraseña ,Mode=TwoWay}"
                                               PlaceholderColor="#7A5BA5"
                                               TextColor="Black" 
-                                              FontSize="14" Keyboard="Default"
+                                              FontSize="18" Keyboard="Default"
                                               IsEnabled="{Binding HC, Mode=TwoWay}"
                                               IsPassword="true">
                                     <Entry.HeightRequest>
@@ -215,8 +220,8 @@
                             </StackLayout>
                             <StackLayout Orientation="Vertical" Spacing="0">
                                 <Label Text="Cambiar Contraseña *"
-                                       FontSize="12"
-                                       Margin="5,0,0,-15"
+                                       FontSize="12.5"
+                                       Margin="5,0,0,-13"
                                        TextColor="Black"
                                        HorizontalOptions="Start"
                                        HorizontalTextAlignment="Start">
@@ -231,7 +236,7 @@
                                               Text="{Binding Contraseña2 ,Mode=TwoWay}"
                                               PlaceholderColor="#7A5BA5"
                                               TextColor="Black"
-                                              FontSize="14"
+                                              FontSize="18"
                                               Keyboard="Default" IsEnabled="{Binding HC, Mode=TwoWay}" IsPassword="true">
                                     <Entry.HeightRequest>
                                         <OnPlatform x:TypeArguments="x:Double">
@@ -248,7 +253,10 @@
                                 </xfx:XfxEntry>
                             </StackLayout>
                             <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Ciudad *" FontSize="12" Margin="5,0,0,-15" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                <Label Text="Ciudad *" FontSize="12.5" Margin="5,0,0,-13"
+                                       TextColor="Black"
+                                       HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Roboto-Regular" />
@@ -256,7 +264,10 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                                 </Label>
-                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}" Text="{Binding Ciudad ,Mode=TwoWay}" PlaceholderColor="#7A5BA5" TextColor="Black" FontSize="14" Keyboard="Default">
+                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}"
+                                              Text="{Binding Ciudad ,Mode=TwoWay}"
+                                              PlaceholderColor="#7A5BA5" 
+                                              TextColor="Black" FontSize="18" Keyboard="Default">
                                     <Entry.HeightRequest>
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On Platform="iOS">60</On>
@@ -272,7 +283,8 @@
                                 </xfx:XfxEntry>
                             </StackLayout>
                             <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Fecha Nacimiento *" FontSize="12" Margin="5,0,0,-15" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                <Label Text="Fecha Nacimiento *" FontSize="12.5"
+                                       Margin="5,0,0,-13" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Roboto-Regular" />
@@ -285,7 +297,7 @@
                                               Text="{Binding Fecha ,Mode=TwoWay}"
                                               PlaceholderColor="#7A5BA5"
                                               TextColor="Black"
-                                              FontSize="14"
+                                              FontSize="18"
                                               Keyboard="Default"
                                               Focused="Fecha_Focused">
                                     <Entry.HeightRequest>
@@ -304,11 +316,11 @@
                             </StackLayout>
                             <Label HorizontalTextAlignment="Center"
                                    HorizontalOptions="Center"
-                                   FontSize="Small"
+                                   FontSize="16"
                                    Margin="50,25"
                                    Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Black" />
                             <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Tipo documento *" FontSize="12" Margin="5,0,0,-15" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                <Label Text="Tipo documento *" FontSize="12.5" Margin="5,0,0,-13" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Roboto-Regular" />
@@ -321,7 +333,7 @@
                                               Text="{Binding TipoDocumento ,Mode=TwoWay}"
                                               PlaceholderColor="#7A5BA5"
                                               TextColor="Black"
-                                              FontSize="14"
+                                              FontSize="18"
                                               Keyboard="Default"
                                               Focused="TipoDocumento_Focused">
                                     <Entry.HeightRequest>
@@ -339,7 +351,7 @@
                                 </xfx:XfxEntry>
                             </StackLayout>
                             <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Numero de documento *" FontSize="12" Margin="5,0,0,-15" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                <Label Text="Numero de documento *" FontSize="12.5" Margin="5,0,0,-13" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Roboto-Regular" />
@@ -347,7 +359,11 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                                 </Label>
-                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}" Text="{Binding NumeroDocumento ,Mode=TwoWay}" PlaceholderColor="#7A5BA5" TextColor="Black" FontSize="14" Keyboard="Default">
+                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}" 
+                                              Text="{Binding NumeroDocumento ,Mode=TwoWay}"
+                                              PlaceholderColor="#7A5BA5" 
+                                              TextColor="Black"
+                                              FontSize="18" Keyboard="Numeric">
                                     <Entry.HeightRequest>
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On Platform="iOS">60</On>
@@ -363,7 +379,10 @@
                                 </xfx:XfxEntry>
                             </StackLayout>
                             <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Numero de socio Win *" FontSize="12" Margin="5,0,0,-15" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
+                                <Label Text="Número de socio Win *" FontSize="12.5" Margin="5,0,0,-13"
+                                       TextColor="Black" HorizontalOptions="Start"
+                                       HorizontalTextAlignment="Start"
+                                       >
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Roboto-Regular" />
@@ -376,8 +395,8 @@
                                     Text="{Binding NumeroSocio ,Mode=TwoWay}"
                                     PlaceholderColor="#7A5BA5"
                                     TextColor="Black"
-                                    FontSize="14"
-                                    Keyboard="Default">
+                                    FontSize="18"
+                                    Keyboard="Numeric">
                                     <Entry.HeightRequest>
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On Platform="iOS">60</On>

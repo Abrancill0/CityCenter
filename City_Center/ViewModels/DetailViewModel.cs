@@ -153,7 +153,10 @@ namespace City_Center.ViewModels
                   
                     MasterPage fpm = new MasterPage();
                     fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
-                    fpm.Detail = new NavigationPage(new TabPage()){ BarBackgroundColor = Color.FromHex("#23144B") }; // You have to create a Detail ContenPage()
+
+					App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+
+					fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
                     Application.Current.MainPage = fpm;
 
                     UserDialogs.Instance.HideLoading();
@@ -237,7 +240,7 @@ namespace City_Center.ViewModels
         private void LoadEventos()
         {
 
-            ListaOpciones = new string[] { "INICIO", "SHOWS", "PROMOCIONES", "GUARDADOS", "MÀS INFORMACIÒN", "TÈRMINOS Y CONDICIONES GENERALES DE USO" };
+            ListaOpciones = new string[] { "INICIO", "SHOWS", "PROMOCIONES", "GUARDADOS", "MÁS INFORMACIÓN", "TÉRMINOS Y CONDICIONES GENERALES DE USO" };
 
             bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
                               (bool)Application.Current.Properties["IsLoggedIn"] : false;

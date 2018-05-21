@@ -133,8 +133,7 @@ namespace City_Center.Services
 
             }
             catch (Exception ex)
-            {
-                return new Response
+            {                return new Response
                 {
                     IsSuccess = false,
                     Message = ex.ToString(),

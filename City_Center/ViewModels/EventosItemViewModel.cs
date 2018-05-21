@@ -10,6 +10,7 @@ using Plugin.Share;
 using Xamarin.Forms;
 using static City_Center.Models.EventosResultado;
 using City_Center.Clases;
+using System.Linq;
 
 namespace City_Center.ViewModels
 {
@@ -77,8 +78,18 @@ namespace City_Center.ViewModels
                     }
 
                     var list = (GuardadoGenerico)response.Result;
+                    
+					this.eve_guardado = true;
+					this.oculta = false;
+     
+					var actualiza = MainViewModel.GetInstance().listEventos.resultado.Where(l => l.eve_id == this.eve_id).FirstOrDefault();
 
-                 
+					actualiza.eve_guardado = true;
+					actualiza.oculta = false;
+
+					//actualiza.updated_at();
+
+					//this.();
 
 					await Mensajes.success("Guardado Correctamente");
 
@@ -94,6 +105,64 @@ namespace City_Center.ViewModels
             }
 
         }
+        
+		public ICommand EliminaFavoritosCommand
+        {
+            get
+            {
+                return new RelayCommand(EliminaFavoritos);
+            }
+        }
+
+        private async void EliminaFavoritos()
+        {
+            try
+            {            
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                if (isLoggedIn)
+                {
+                    var content = new FormUrlEncodedContent(new[]
+                    {
+						new KeyValuePair<string, string>("gua_id_evento",Convert.ToString(this.eve_id)),
+
+                    });
+
+                    var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/destroy", content);
+
+                    if (!response.IsSuccess)
+                    {
+                        await Mensajes.Error("Error al eliminar Guardados");
+                        return;
+                    }
+
+					this.eve_guardado = false;
+                    this.oculta = true;
+
+                    var actualiza = MainViewModel.GetInstance().listEventos.resultado.Where(l => l.eve_id == this.eve_id).FirstOrDefault();
+
+                    actualiza.eve_guardado = false;
+                    actualiza.oculta = true;
+                    
+                    var list = (GuardadoGenerico)response.Result;
+
+                    await Mensajes.success("Guardado eliminado correctamente");
+
+                }
+                else
+                {
+                    await Mensajes.Info("Inicia Sesion para eliminar Guardados");
+                }
+            }
+            catch (Exception)
+            {
+                await Mensajes.Info("Inicia Sesion para eliminar Guardados");
+            }
+        }
+
+
+
 
 
         public ICommand VerDetalleShowCommand
@@ -103,8 +172,7 @@ namespace City_Center.ViewModels
                 return new RelayCommand(VerDetalleShow);
             }
         }
-
-
+        
         private async void VerDetalleShow()
         {
             

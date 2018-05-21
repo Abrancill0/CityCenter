@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Naxam.Controls.Forms;
 using Xamarin.Forms;
 
 namespace City_Center.Page
@@ -12,7 +11,7 @@ namespace City_Center.Page
         {
             InitializeComponent();
            
-			App.NavPage = new NavigationPage(new TabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+			App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
 
 			Detail = App.NavPage; //new NavigationPage (new TabPage()){ BarBackgroundColor = Color.FromHex("#23144B")};
                     

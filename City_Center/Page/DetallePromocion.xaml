@@ -52,7 +52,7 @@
                                Grid.Row ="0"
                                Grid.Column ="0"
                                Margin="10,0,0,0"
-                               TextColor="Silver"
+                               TextColor="Gray"
                                FontAttributes="Bold"
                                Text="{Binding pd.pro_nombre}"
                                FontSize="14">
@@ -98,6 +98,7 @@
                         </Grid>
                     <Label Margin="5" HorizontalOptions="Start"
                            HorizontalTextAlignment="Start"
+                           TextColor="Black"
                            Text="{Binding pd.pro_descripcion}">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
@@ -117,6 +118,7 @@
                                                Source="promoup"
                                                HorizontalOptions="Center"
                                                VerticalOptions="End"
+                                               HeightRequest="50"
                                                Margin="20,12,20,0">
                        <ffimageloading:CachedImage.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Handle_Clicked" />
@@ -128,6 +130,7 @@
                                             ErrorPlaceholder="image_error.png"
                                             Source="ReservaPromoDown"
                                             HorizontalOptions="Center"
+
                                             Margin="20,0,20,5" VerticalOptions="Start">
                        <ffimageloading:CachedImage.GestureRecognizers>
                        <TapGestureRecognizer Tapped="Handle_Clicked" />
@@ -141,7 +144,7 @@
                              VerticalOptions="FillAndExpand">
                     <Label Text="PROMOCIÓN"
                            TextColor="#250C4B"
-                           FontSize="Medium"
+                           FontSize="18"
                            HorizontalOptions="Center"
                            HorizontalTextAlignment="Center"
                            Margin="0,0,0,45">
@@ -154,8 +157,8 @@
                     </Label>
                     <StackLayout Orientation="Vertical" Spacing="0">
                         <Label Text="Nombre y apellido*"
-                               FontSize="12"
-                               Margin="5,0,0,-20">
+                               FontSize="12.5"
+                               Margin="5,0,0,-13">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Roboto-Regular"/>
@@ -167,7 +170,7 @@
                                   Text="{Binding Nombre, Mode=TwoWay}"
                                   PlaceholderColor="#7A5BA5"
                                   TextColor="Black"
-                                  FontSize="14">
+                                  FontSize="18">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -183,9 +186,9 @@
                     </xfx:XfxEntry>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Spacing="0">
-                        <Label Text="Correo electronico*"
-                               FontSize="12"
-                               Margin="5,0,0,-20">
+                        <Label Text="Correo electrónico*"
+                               FontSize="12.5"
+                               Margin="5,0,0,-12">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Roboto-Regular"/>
@@ -195,7 +198,7 @@
                         </Label>
                         <xfx:XfxEntry Style="{DynamicResource EntryStyle}"
                                   Text="{Binding Correo, Mode=TwoWay}"
-                                  FontSize="14"
+                                  FontSize="18"
                                   TextColor="Black"
                                   PlaceholderColor="#7A5BA5"
                                   Keyboard="Email">
@@ -214,9 +217,9 @@
                     </xfx:XfxEntry>
                     </StackLayout>
                     <StackLayout>
-                        <Label Text="Telefono*"
-                               FontSize="12"
-                               Margin="5,0,0,-20">
+                        <Label Text="Teléfono*"
+                               FontSize="12.5"
+                               Margin="5,0,0,-13">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Roboto-Regular"/>
@@ -227,7 +230,7 @@
                         <xfx:XfxEntry Style="{DynamicResource EntryStyle}"
                                       Text="{Binding Telefono, Mode=TwoWay}"
                                       TextColor="Black"
-                                      FontSize="14"
+                                      FontSize="18"
                                       PlaceholderColor="#7A5BA5"
                                       Keyboard="Telephone">
                         <Entry.HeightRequest>

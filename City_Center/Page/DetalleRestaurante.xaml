@@ -126,7 +126,7 @@
                     
                     <ListView ItemsSource="{Binding RestaurantMenuDetalle}" SeparatorVisibility="None"
                               BackgroundColor="#EBEBEB"
-                              RowHeight="95"
+                              RowHeight="105"
                               CachingStrategy="RecycleElement">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -136,7 +136,7 @@
                                           
                                                  <Label Margin="{Binding Margen,Mode=TwoWay}" 
                                                 Text="{Binding NombreMenu}"
-                                                FontSize="18"
+                                                FontSize="20"
                                                 TextColor="#2C1350" 
                                                 HorizontalTextAlignment="Center"
                                                 VerticalTextAlignment="Start"
@@ -391,7 +391,7 @@
                                             <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                         </Frame.Padding>
                                         <StackLayout Orientation="Vertical">
-                                            <Label Text="Nombre y Apellido*"
+                                            <Label Text="Nombre y apellido*"
                                                 FontSize = "Medium"
                                                 TextColor="Gray"
                                                 Margin="8,3,0,0">
@@ -430,7 +430,7 @@
                                             <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                         </Frame.Padding>
                                          <StackLayout Orientation="Vertical">
-                                             <Label Text="Correo Electrónico*"
+                                             <Label Text="Correo electrónico*"
                                                     FontSize = "Medium"
                                                     TextColor="Gray"
                                                     Margin="8,3,0,0">
@@ -481,7 +481,7 @@
                                                 </Label.FontFamily>
                                               </Label>
                                              <xfx:XfxEntry PlaceholderColor="Transparent"
-                                                           Text ="{Binding Telefono, Mode=TwoWay}"
+                                                           Text ="{Binding Teléfono, Mode=TwoWay}"
                                                            Margin="2,-20,5,-5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
@@ -501,7 +501,7 @@
                                     </Frame>
                                 </StackLayout>
                             </Grid>
-                        <Button Margin="30,15,30,20"
+                        <Button Margin="30,15,30,15"
                                     FontSize="14"
                                     TextColor="White"
                                     BackgroundColor="#fd693a"

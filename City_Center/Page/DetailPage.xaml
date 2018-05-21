@@ -100,7 +100,7 @@
                         </Label.FontFamily>
                     </Label>
                     <Label 
-                           Text="{Binding NoSocio,StringFormat='96538905{0}'}"
+                           Text="{Binding NoSocio}"
                            TextColor="White"
                            FontSize="19"
                            HorizontalOptions="Start"
@@ -128,8 +128,11 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <AbsoluteLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center">
-                        <Image x:Name="ImageCircle" Source="circulo_blanco.png" HeightRequest="70" WidthRequest="70" VerticalOptions="Center" />
-
+                        <Image x:Name="ImageCircle"
+                               Source="circulo_blanco.png"
+                               HeightRequest="70"
+                               WidthRequest="70"
+                               VerticalOptions="Center" />
                         <controls:CircleImage x:Name="Image1"
                                               Source="{Binding Imagen, Mode=TwoWay}"
                                               Aspect="AspectFill"
@@ -145,6 +148,10 @@
                               <On Platform="Android, iOS">40</On>
                             </OnPlatform>
                           </controls:CircleImage.HeightRequest>
+                           <controls:CircleImage.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PerfilCommand}" />
+                        </controls:CircleImage.GestureRecognizers>
+
                         </controls:CircleImage>
 
                       <!--  <Image x:Name="Image1" Source="{Binding Imagen, Mode=TwoWay}" HeightRequest="40" WidthRequest="40" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
@@ -169,15 +176,16 @@
                     </Label>
                     <Image Source="campana.png" Grid.Row="0" Grid.Column="2" HeightRequest="20" >
                     </Image>
-                    <Button Command="{Binding CierraSesionCommand}" Text="Cerrar sesión"
+                    <Button Command="{Binding CierraSesionCommand}" Text="Cerrar Sesión"
                             TextColor="White"
                             BackgroundColor="Transparent"
                             VerticalOptions="Center"
                             HorizontalOptions="End"
                             Grid.Row="0"
-                            WidthRequest="80"
+                            WidthRequest="120"
                             Margin="10,0,5,0"
                             Grid.Column="3"
+                            Grid.ColumnSpan="2"
                             FontSize="12">
                         <Button.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
@@ -186,8 +194,8 @@
                             </OnPlatform>
                        </Button.FontFamily>
                     </Button>
-                    <Image Source="logout.png" HorizontalOptions="Start" Margin="-10,0,15,0" HeightRequest="20" Grid.Row="0" Grid.Column="4" Aspect="AspectFit">
-                    </Image>
+                    <!--<Image Source="logout.png" HorizontalOptions="Start" Margin="-10,0,15,0" HeightRequest="20" Grid.Row="0" Grid.Column="4" Aspect="AspectFit">
+                    </Image>-->
                 </Grid>
             </StackLayout>
             <StackLayout Padding="0,10,10,10" BackgroundColor="#1B0938" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" IsVisible="{Binding OpcionesVisible}">

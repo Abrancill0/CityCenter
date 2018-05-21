@@ -21,10 +21,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\TabPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\Casino.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -155,6 +151,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\CustomTabPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\HttpClientPostMethod.cs" />
@@ -269,7 +269,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\GanadoresResultado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PromocionesWinResultado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TarjetasResultado.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Controls\TLScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SalasEventosResultado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MoaSpaResultado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PromocionesResultado.cs" />
@@ -356,12 +355,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CambiaPassViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TarjetaValidaResultado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NavigationViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Page\TabPage.xaml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helper\IForceKeyboardDismissalService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\SlideMenu\PruebaGrid.xaml.cs">
       <DependentUpon>PruebaGrid.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="$(MSBuildThisFileDirectory)MyTabs.cs" />
+=======
+    <Compile Include="$(MSBuildThisFileDirectory)Page\CustomTabPage.xaml.cs">
+      <DependentUpon>CustomTabPage.xaml</DependentUpon>
+    </Compile>
+>>>>>>> 3cfe7637ecb505d166951968d2f5e8fd604a8d21
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               BindingContext="{Binding Main, Source={StaticResource Locator}}"
               xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              x:Class="City_Center.Page.DetalleHotel">
      <ContentPage.ToolbarItems>
         <ToolbarItem  Icon="Chat"/>
@@ -11,8 +12,8 @@
     <ScrollView BindingContext="{Binding DetalleHotel}">
          <StackLayout Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout Spacing="0">
-                    <StackLayout HorizontalOptions="Start" Padding="30,20">
-                        <Label Text="{Binding hd.hab_nombre}" FontSize="26" HorizontalTextAlignment="Start" TextColor="#23144B">
+                    <StackLayout HorizontalOptions="Start" Padding="30,13">
+                        <Label Text="{Binding hd.hab_nombre}" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
@@ -57,13 +58,14 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-                 <StackLayout Margin="10">
-                <Label Text="{Binding hd.hab_descripcion}"></Label>
+                 <StackLayout >
+                <Label Text="{Binding hd.hab_descripcion}" Margin="10,30,10,0"></Label>
                 </StackLayout>
               <Button Margin="40,20,40,20"
                       TextColor="White"
                       BackgroundColor="#2D97A3"
                       Text="RESERVA ONLINE"
+                      HeightRequest="40"
                       Clicked="BtnReservaOnline">
                          <Button.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
@@ -73,7 +75,7 @@
                             </Button.FontFamily>
                     </Button>
             </StackLayout>
-            <StackLayout HorizontalOptions="FillAndExpand" Padding="2,10">
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="0,10">
                 <Label FontFamily="Oswald-Regular"
                        FontSize="Default"
                        FontAttributes="Bold"
@@ -108,27 +110,23 @@
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                               <!-- <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">-->
-                                                    <ffimageloading:CachedImage HeightRequest="100" 
-                                                                                WidthRequest="100"
-                                                                                Aspect="AspectFill"
-                                                                                LoadingPlaceholder="image_loading.png"
-                                                                                ErrorPlaceholder="image_error.png"
-                                                                                Source="{Binding hab_imagen}">
-                                                   <!-- <ffimageloading:CachedImage.GestureRecognizers>
-                                                        <TapGestureRecognizer  Command="{Binding CambiaHabitacionCommand}"  />
-                                                    </ffimageloading:CachedImage.GestureRecognizers>-->
-                                                     </ffimageloading:CachedImage>
-                                                      <Label x:Name="Label"
-                                                       Margin="5"
-                                                       HorizontalOptions="Start"
-                                                       HorizontalTextAlignment="Start"
-                                                       VerticalOptions="End"
-                                                       TextColor="White"
-                                                       FontFamily="Oswald-regular"
-                                                       FontSize="Small"
-                                                       Text="{Binding hab_nombre}" />
-                                              <!--  </StackLayout>-->
+                                             <ffimageloading:CachedImage HeightRequest="120" WidthRequest="115" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding hab_imagen}" DownsampleToViewSize="true">
+                                                    <ffimageloading:CachedImage.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding DetalleCommand}" />
+                                                    </ffimageloading:CachedImage.GestureRecognizers>
+                                                    <ffimageloading:CachedImage.Transformations>
+                                                        <fftransformations:RoundedTransformation Radius="15" />
+                                                    </ffimageloading:CachedImage.Transformations>
+                                                </ffimageloading:CachedImage>
+                                                <Label x:Name="Label" Margin="5" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="End" TextColor="White" FontFamily="Oswald-regular" FontSize="Small" LineBreakMode="WordWrap" WidthRequest="50"
+                                                    Text="{Binding hab_nombre}">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
                                                 </Grid>
                                             </ContentView>
                                         </ViewCell>

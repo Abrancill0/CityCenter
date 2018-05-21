@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using CarouselView.FormsPlugin.iOS;
 using City_Center.Services.Contracts;
 using Facebook.CoreKit;
-using FFImageLoading.Forms.Touch;
+using FFImageLoading;
+using FFImageLoading.Transformations;
 using Foundation;
 using Google.SignIn;
 using Plugin.FirebasePushNotification;
@@ -21,13 +22,15 @@ namespace City_Center.iOS
        
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-           
             XfxControls.Init();
             ButtonCircle.FormsPlugin.iOS.ButtonCircleRenderer.Init();
-
-            CachedImageRenderer.Init();
-          
+   
             global::Xamarin.Forms.Forms.Init();
+
+            FFImageLoading.Forms.Touch.CachedImageRenderer.Init();
+
+			var ignore = new CircleTransformation();
+
             CarouselViewRenderer.Init();
 
             DependencyService.Register<IGoogleManager, GoogleManager>();
@@ -36,10 +39,12 @@ namespace City_Center.iOS
             var googleServiceDictionary = NSDictionary.FromFile("GoogleService-Info.plist");
 
             SignIn.SharedInstance.ClientID = googleServiceDictionary["CLIENT_ID"].ToString();
-            FormsMaps.Init();
+            
+			FormsMaps.Init();
             Rg.Plugins.Popup.Popup.Init();
-            LoadApplication(new App());
 
+            LoadApplication(new App());
+                     
 			ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
 
             FirebasePushNotificationManager.Initialize(options, new NotificationUserCategory[]
@@ -53,6 +58,19 @@ namespace City_Center.iOS
                 })
 
             });
+
+
+			//var config = new FFImageLoading.Config.Configuration()
+            //{
+            //    VerboseLogging = false,
+            //    VerbosePerformanceLogging = false,
+            //    VerboseMemoryCacheLogging = false,
+            //    VerboseLoadingCancelledLogging = false,
+            //    Logger = new CustomLogger(),
+            //};
+            //ImageService.Instance.Initialize(config);
+
+
 
             return base.FinishedLaunching(app, options);
         }
@@ -68,8 +86,7 @@ namespace City_Center.iOS
             return ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
            
         }
-
-
+        
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
 #if DEBUG
@@ -106,6 +123,25 @@ namespace City_Center.iOS
             // If your application supports background exection this method is called instead of WillTerminate when the user quits.
             FirebasePushNotificationManager.Disconnect();
         }
+
+
+		//public class CustomLogger : FFImageLoading.Helpers.IMiniLogger
+        //{
+        //    public void Debug(string message)
+        //    {
+        //        Console.WriteLine(message);
+        //    }
+
+        //    public void Error(string errorMessage)
+        //    {
+        //        Console.WriteLine(errorMessage);
+        //    }
+
+        //    public void Error(string errorMessage, Exception ex)
+        //    {
+        //        Error(errorMessage + System.Environment.NewLine + ex.ToString());
+        //    }
+        //}
 
     }
 
