@@ -304,9 +304,6 @@
     <Reference Include="Plugin.CurrentActivity">
       <HintPath>..\packages\Plugin.CurrentActivity.2.0.1.4\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
     </Reference>
-    <Reference Include="System.Collections" />
-    <Reference Include="System.Runtime" />
-    <Reference Include="System.Threading.Tasks" />
     <Reference Include="Plugin.Permissions.Abstractions">
       <HintPath>..\packages\Plugin.Permissions.2.2.1\lib\MonoAndroid10\Plugin.Permissions.Abstractions.dll</HintPath>
     </Reference>
@@ -321,9 +318,6 @@
     </Reference>
     <Reference Include="Plugin.Geolocator">
       <HintPath>..\packages\Xam.Plugin.Geolocator.4.2.0\lib\MonoAndroid10\Plugin.Geolocator.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Permissions.Abstractions">
-      <HintPath>bin\Debug\Plugin.Permissions.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="FFImageLoading">
       <HintPath>..\packages\Xamarin.FFImageLoading.2.3.6\lib\MonoAndroid10\FFImageLoading.dll</HintPath>
@@ -350,7 +344,7 @@
     <Compile Include="SplashActivity.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="AndroidForceKeyboardDismissalService.cs" />
-    <Compile Include="MyTabs.cs" />
+    <Compile Include="MyTabsRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

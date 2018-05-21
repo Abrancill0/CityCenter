@@ -5,7 +5,7 @@
              x:Class="City_Center.Page.TabPage"
              xmlns:local="clr-namespace:City_Center.Page"
              Icon="Menu.png" > 
-             <local:InicioContent x:Name="Inicio"  Icon="home"  />
+             <local:InicioContent x:Name="Inicio"  Icon="home"/>
              <local:Casino x:Name="Casino"  Icon="casino" />
              <local:Hotel x:Name="Hotel" Icon="hotel"  />
              <local:Gastronomia x:Name="Comida" Icon="food"   />
