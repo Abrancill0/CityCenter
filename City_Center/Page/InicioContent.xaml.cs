@@ -55,8 +55,20 @@ namespace City_Center.Page
 					return;
 				}
 
-				DateTime Fecha1 = DateTime.Parse(FechaInicio.Text);
-				DateTime Fecha2 = DateTime.Parse(FechaFinal.Text);
+				//DateTime fecha1 = Convert.ToDateTime(Application.Current.Properties["FechaNacimiento"].ToString());
+
+				string Dia = FechaInicio.Text.Substring(0, 2);
+				string Mes = FechaInicio.Text.Substring(3, 2);
+				string Año = FechaInicio.Text.Substring(6, 4);
+
+
+				string Dia2 = FechaFinal.Text.Substring(0, 2);
+				string Mes2 = FechaFinal.Text.Substring(3, 2);
+				string Año2 = FechaFinal.Text.Substring(6, 4);
+
+
+				DateTime Fecha1 = Convert.ToDateTime(Año + "-" + Mes + "-" + Dia);
+				DateTime Fecha2 = Convert.ToDateTime(Año2 + "-" + Mes2 + "-" + Dia2);
 
 				if (Fecha2.Date < Fecha1.Date)
                 {
@@ -64,8 +76,8 @@ namespace City_Center.Page
                 }
                 else
                 {
-					VariablesGlobales.FechaInicio = DateTime.Parse(FechaInicio.Text);
-					VariablesGlobales.FechaFin = DateTime.Parse(FechaFinal.Text);
+					VariablesGlobales.FechaInicio = Fecha1.Date;
+					VariablesGlobales.FechaFin = Fecha2.Date;
                     VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
                     await Navigation.PushPopupAsync(_webHotel);
@@ -73,7 +85,7 @@ namespace City_Center.Page
             }
             catch (Exception ex)
             {
-				await DisplayAlert("oj", ex.ToString(), "ok");
+				//await DisplayAlert("oj", ex.ToString(), "ok");
 				await Mensajes.Info("No se pudo acceder a las reservaciones, intente mas tarde.");
             }
            
@@ -163,6 +175,7 @@ namespace City_Center.Page
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
 				Title = "Llegada",
+                CancelText="CANCELAR",
 				IsCancellable = true,
 				MinimumDate = DateTime.Now.AddDays(0)
             });
@@ -190,6 +203,7 @@ namespace City_Center.Page
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
+				CancelText = "CANCELAR",
 				MinimumDate = DateTime.Now.AddDays(0),
                 Title = "Salida"
                 
@@ -219,6 +233,7 @@ namespace City_Center.Page
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
+				CancelText = "CANCELAR",
                 MinimumDate = DateTime.Now.AddDays(0)
             });
 
@@ -244,6 +259,7 @@ namespace City_Center.Page
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
+				CancelText = "CANCELAR",
                 MinimumDate = DateTime.Now.AddDays(0)
             });
 
@@ -269,6 +285,7 @@ namespace City_Center.Page
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
+				CancelText = "CANCELAR",
                 MinimumDate = DateTime.Now.AddDays(0)
             });
 

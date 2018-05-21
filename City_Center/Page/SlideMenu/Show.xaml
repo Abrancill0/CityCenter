@@ -93,7 +93,7 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <ListView ItemsSource="{Binding EventosDetalle}" RowHeight="250"
+            <ListView ItemsSource="{Binding EventosDetalle, Mode=TwoWay}" RowHeight="250"
                       HasUnevenRows="false"
                       SeparatorVisibility="None"
                       Margin="10,7,10,10">
@@ -166,27 +166,27 @@
                                                         </OnPlatform>
                                                     </Label.FontFamily>
                                             </Label>
-                                             <Image Margin="2,15"
+                                             <Image Margin="2,5,0,25"
                                                     Grid.Row="1"
                                                    Grid.Column="2"
                                                    Grid.RowSpan="2"
-                                                   Aspect="AspectFit"
+                                                  
                                                    Source="FavoritoOK"
-                                                   WidthRequest="25"
-                                                   HeightRequest="25"
+                                                   WidthRequest="10"
+                                                   HeightRequest="10"
                                                     IsVisible="{Binding eve_guardado,Mode=TwoWay}">
                                             </Image>
-                                            <!--<Image.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
-                                                </Image.GestureRecognizers>-->                                           
+                                            <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2" />
+                                                </Image.GestureRecognizers>                                        
                                             <Image Margin="2,5,0,25" 
                                                    Grid.Row="1"
                                                    Grid.Column="2"
                                                    Grid.RowSpan="2"
-                                                   Aspect="AspectFit"
+
                                                    Source="Favorito"
-                                                   WidthRequest="25"
-                                                   HeightRequest="25"
+                                                   WidthRequest="10"
+                                                   HeightRequest="10"
                                                    IsVisible="{Binding oculta,Mode=TwoWay}">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"/>
@@ -196,10 +196,10 @@
                                                    Grid.Row="1"
                                                    Grid.Column="3"
                                                    Grid.RowSpan="2"
-                                                   Aspect="AspectFit"
+
                                                    Source="Compartir"
-                                                   WidthRequest="30"
-                                                   HeightRequest="30">
+                                                   WidthRequest="10"
+                                                   HeightRequest="10">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                 </Image.GestureRecognizers>

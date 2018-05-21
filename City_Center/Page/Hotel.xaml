@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:view="clr-namespace:City_Center.Vista" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.Hotel">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:City_Center.Vista"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.Hotel">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="Chat" />
     </ContentPage.ToolbarItems>
@@ -32,7 +39,16 @@
                     <RowDefinition Height="100">
                     </RowDefinition>
                 </Grid.RowDefinitions>
-                <Image Aspect="AspectFill" Source="HOTELmin" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+                <Image  />
+                <ffimageloading:CachedImage
+                Aspect="AspectFill"
+                Source="HOTELmin"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                LoadingPlaceholder="image_loading.png"
+                ErrorPlaceholder="image_error.png"/>
+                
                 <Image Aspect="AspectFit" Source="checkin_verde" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" WidthRequest="55" HeightRequest="55">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding UbicacionHotelCommand}" />
@@ -103,7 +119,7 @@
             </Grid>
             <StackLayout x:Name="SL1" IsVisible="true">
                 <ScrollView>
-                    <StackLayout>
+                    <StackLayout Margin="0,20,0,0">
                         <StackLayout HorizontalOptions="FillAndExpand">
                             <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                                 <Frame.Margin>
@@ -206,7 +222,7 @@
                                     </xfx:XfxEntry>
                                 </StackLayout>
                             </Frame>
-                            <Button TextColor="White" BackgroundColor="#2D97A3" Clicked="Handle_Clicked" HeightRequest="40" Margin="30,10,30,7" FontSize="14" Text="VER OPCIONES">
+                            <Button TextColor="White" BackgroundColor="#2D97A3" Clicked="Handle_Clicked" HeightRequest="40" Margin="30,10,30,10" FontSize="14" Text="VER OPCIONES">
                                 <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Oswald-Regular" />
@@ -438,14 +454,14 @@
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="White" Padding="0,0,0,10">
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#6E5D87" FontFamily="Oswald-Regular" Margin="15,0,0,1">
-                                <Label.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Oswald-Regular" />
-                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                    </OnPlatform>
-                                </Label.FontFamily>
-                            </Label>
+                            <Label Margin="20,5,0,-3" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
                             <RelativeLayout HeightRequest="200" VerticalOptions="Start">
                                     <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}" RowHeight="200" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
                                         <ListView.ItemTemplate>
@@ -569,8 +585,17 @@
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Almohada" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       ALMOHADAS ESPECIALES PARA DESCANSO Y RELAJACIÓN" TextColor="#8A7C9E" FontSize="Micro">
+                            <ffimageloading:CachedImage Margin="8,0,0,5"
+                                                        HeightRequest="50"
+                                                        Aspect="AspectFit"
+                                                        LoadingPlaceholder="image_loading.png"
+                                                        ErrorPlaceholder="image_error.png"
+                                                        Source="Almohada" />
+                            <StackLayout Orientation="Vertical">
+                                <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="       ALMOHADAS ESPECIALES PARA "
+                                   TextColor="#8A7C9E" FontSize="Small" LineBreakMode="WordWrap">
                                 <Label.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Oswald-Regular" />
@@ -578,6 +603,23 @@
                                     </OnPlatform>
                                 </Label.FontFamily>
                             </Label>
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="       DESCANSO Y RELAJACIÓN"
+                                   TextColor="#8A7C9E"
+                                   FontSize="Small"
+                                   LineBreakMode="WordWrap"
+                                   Margin="0,-5,0,0">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                                
+                            </StackLayout>
+
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>

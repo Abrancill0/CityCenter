@@ -43,10 +43,10 @@ namespace City_Center.ViewModels
 		private ObservableCollection<GanadoresDetalle> ganadoresDetalle;
 		private ObservableCollection<PromocionesWinDetalle> promocionesWinDetalle;
 
-		private TorneoReturn listTorneo;
+
 		private ObservableCollection<TorneoItemViewModel> torneoDetalle;
 
-		private EventosReturn list;
+		//private EventosReturn list;
 		private ObservableCollection<EventosItemViewModel> eventosDetalle;
 
 		private TarjetasReturn listTarjetas;
@@ -148,8 +148,7 @@ namespace City_Center.ViewModels
 		#endregion
 
 		#region Commands
-
-		//UbicacionCasinoCommand
+  
 		public ICommand UbicacionCasinoCommand
 		{
 			get
@@ -222,11 +221,11 @@ namespace City_Center.ViewModels
 				this.LoadSalaPoker();
 			}
 
-			if (this.list == null)
-			{
-				this.LoadTorneo();
-			}
-
+			if (this.TorneoDetalle == null)
+            {
+                this.LoadTorneo();
+            }
+            
 		}
 
 		public ICommand WinCommand
@@ -732,8 +731,7 @@ namespace City_Center.ViewModels
 		}
 
 		private async void LoadTorneo()
-		{
-
+		{         
 			try
 			{
 				var connection = await this.apiService.CheckConnection();
@@ -746,34 +744,34 @@ namespace City_Center.ViewModels
 				}
 
 
-				string IDUsuario;
+				//string IDUsuario;
 
-				try
-				{
-					IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
-				}
-				catch (Exception)
-				{
-					IDUsuario = "";
-				}
-
-
-				var content = new FormUrlEncodedContent(new[]
-				{
-				new KeyValuePair<string, string>("usu_id", IDUsuario),
-				});
+				//try
+				//{
+				//	IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
+				//}
+				//catch (Exception)
+				//{
+				//	IDUsuario = "";
+				//}
 
 
-				var response = await this.apiService.Get<TorneoReturn>("/casino/torneos", "/indexApp", content);
+				//var content = new FormUrlEncodedContent(new[]
+				//{
+				//new KeyValuePair<string, string>("usu_id", IDUsuario),
+				//});
 
-				if (!response.IsSuccess)
-				{
-					await Mensajes.Error("Error al cargar Torneos");
 
-					return;
-				}
+				//var response = await this.apiService.Get<TorneoReturn>("/casino/torneos", "/indexApp", content);
 
-				this.listTorneo = (TorneoReturn)response.Result;
+				//if (!response.IsSuccess)
+				//{
+				//	await Mensajes.Error("Error al cargar Torneos");
+
+				//	return;
+				//}
+
+				//MainViewModel.GetInstance().listTorneo = (TorneoReturn)response.Result;
 
 				TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
@@ -787,7 +785,7 @@ namespace City_Center.ViewModels
 
 		private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel()
 		{
-			return this.listTorneo.resultado.Select(l => new TorneoItemViewModel
+			return MainViewModel.GetInstance().listTorneo.resultado.Select(l => new TorneoItemViewModel
 			{
 				tor_id = l.tor_id,
 				tor_nombre = l.tor_nombre,
@@ -884,7 +882,7 @@ namespace City_Center.ViewModels
 			this.apiService = new ApiService();
 
 			this.LoadDestacados();
-			this.LoadTorneo();
+			//this.LoadTorneo();
 			this.LoadPromociones();
 			this.LoadPozos();
 			this.LoadSalaPoker();

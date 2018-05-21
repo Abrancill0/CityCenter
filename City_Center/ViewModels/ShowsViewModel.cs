@@ -21,8 +21,9 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Attributes
-        private EventosReturn list;
+        //private EventosReturn list;
         private ObservableCollection<EventosItemViewModel> eventosDetalle;
+              
         #endregion
 
         #region Properties
@@ -31,8 +32,7 @@ namespace City_Center.ViewModels
             get { return this.eventosDetalle; }
             set { SetValue(ref this.eventosDetalle, value); }
         }
-
-
+  
         #endregion
 
         #region Commands
@@ -49,13 +49,19 @@ namespace City_Center.ViewModels
             try
             {
                 EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 2));
-           
+
+				//EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.EventosDetalle().Where(l => l.eve_id_locacion == 2));
+                
+				//EventosDetalle2.= EventosDetalle.Where(l => l.eve_id_locacion == 2).Select(p => p).ToList();
+
+				//EventosDetalle.Where(l => l.eve_id_locacion == 2).Select(p => p);
+                                                     
             }
             catch (Exception)
             {
                 Mensajes.Info("No existen eventos en Jaraná");
             }
-            //l.loc_nombre =="Jaraná"
+           
         }
 
 
@@ -72,7 +78,11 @@ namespace City_Center.ViewModels
             try
             {
                 EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 1));
+                
+				//EventosDetalle2 = EventosDetalle.Where(l => l.eve_id_locacion == 1).Select(p => p).ToList();
 
+				//EventosDetalle.Where(l => l.eve_id_locacion == 1).Select(p=>p).ToList();
+                
             }
             catch (Exception)
             {
@@ -95,13 +105,15 @@ namespace City_Center.ViewModels
             try
             {
                 EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel());
+
+				//EventosDetalle.Select(l => l);
+                
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
-           
-
+                    
         }
 
         #endregion
@@ -144,9 +156,14 @@ namespace City_Center.ViewModels
 
                 return;
             }
-
-            this.list = (EventosReturn)response.Result;
-
+            
+			if (MainViewModel.GetInstance().listEventos !=null)
+			{
+				MainViewModel.GetInstance().listEventos.resultado.Clear();
+			}
+			         
+			MainViewModel.GetInstance().listEventos = (EventosReturn)response.Result;
+            
             EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel());
 
             if (EventosDetalle.Count == 0)
@@ -158,7 +175,7 @@ namespace City_Center.ViewModels
 
         private IEnumerable<EventosItemViewModel> ToEventosItemViewModel()
         {
-            return this.list.resultado.Select(l => new EventosItemViewModel
+			return MainViewModel.GetInstance().listEventos.resultado.Select(l => new EventosItemViewModel
             {
                 eve_imagen =  l.eve_imagen,
                 eve_descripcion = l.eve_descripcion,

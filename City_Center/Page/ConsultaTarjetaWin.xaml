@@ -33,7 +33,7 @@
                     <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End" />
                     <xfx:XfxEntry x:Name="TipoDocumento" TextColor = "White"
                                 Style="{DynamicResource EntryStyle}"
-                                Placeholder="Tipo Documento"
+                                Placeholder="Tipo de documento"
                                 PlaceholderColor="White"
                                 FontSize="16"
                                 Text="{Binding TipoDocumento,Mode=TwoWay}"
@@ -82,29 +82,65 @@
                            HeightRequest="200" 
                            WidthRequest="300">
                 </Image>
-                <StackLayout  WidthRequest = "250" AbsoluteLayout.LayoutFlags="PositionProportional"
-                               AbsoluteLayout.LayoutBounds="0.5,0.9,-1,-1">
-               <xfx:XfxEntry TextColor = "White"
-                             Style="{DynamicResource EntryStyle}"
-                             Placeholder="Socio N."
-                             PlaceholderColor="White"
-                             Text="{Binding NoSocio,Mode=TwoWay}"
-                             Keyboard="Numeric"
-                             IsEnabled="false">
-                    <Entry.HeightRequest >
-                        <OnPlatform x:TypeArguments="x:Double">
-                            <On Platform="iOS">60</On>
-                            <On Platform="Android,Windows">60</On>
-                        </OnPlatform>
-                    </Entry.HeightRequest>
-                    <Entry.FontFamily>
-                          <OnPlatform x:TypeArguments="x:String">
-                              <On Platform="iOS" Value="Oswald-Regular"/>
-                              <On Platform="Android" Value="Oswald-Regular.ttf#Roboto-Regular"/>
-                          </OnPlatform>
-                    </Entry.FontFamily>
-                </xfx:XfxEntry>
-                    </StackLayout>
+                  <Label Text="PUNTOS WIN"
+                           FontSize = "Small"
+                           TextColor="White" 
+                           HorizontalOptions="Center"                         
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.9,0.1,-1,-1"
+                           IsVisible="{Binding VerTarjeta}">
+                        <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                     <On Platform="iOS" Value="Oswald-Regular"/>
+                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                 </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                   <Label Text="{Binding PuntosWin}"
+                           FontSize = "14"
+                           TextColor="White"
+                           HorizontalOptions="Center"                         
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1"
+                          IsVisible="{Binding VerTarjeta}">
+                         <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                     <On Platform="iOS" Value="Oswald-Regular"/>
+                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                 </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <Label Text="Socio N. "
+                           FontSize = "14"
+                           TextColor="White" 
+                           HorizontalOptions="Center"                         
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1"
+                           IsVisible="{Binding VerTarjeta}">
+                         <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                     <On Platform="iOS" Value="Oswald-Regular"/>
+                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                 </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <Label 
+                           Text="{Binding NoSocio}"
+                           TextColor="White"
+                           FontSize="19"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Start"                
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1"
+                        IsVisible="{Binding VerTarjeta}">
+                        <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                     <On Platform="iOS" Value="Oswald-Regular"/>
+                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                 </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                 
             </AbsoluteLayout>    
             <Button Margin="30"
                     FontSize="Small"

@@ -15,19 +15,15 @@ namespace City_Center.Page
         {
             InitializeComponent();
         }
-
-
+        
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
             ListaOpciones = new string[] { "DNI", "LE", "LC", "CI" };
-
-
-         
+   
         }
-
-
+        
         void Tab1_Tapped(object sender, System.EventArgs e)
         {
             LabelTab1.TextColor = Color.FromHex("#FDFDFD");
@@ -75,16 +71,14 @@ namespace City_Center.Page
             SL3.IsVisible = true;
 
         }
-
-
-
-
+        
         async void Fecha_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
                 MinimumDate = DateTime.Now.AddDays(0),
+				CancelText = "CANCELAR",
                 Title="Fecha Nacimiento"
             });
 

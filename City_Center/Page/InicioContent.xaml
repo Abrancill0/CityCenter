@@ -100,8 +100,8 @@
                </Grid>
             </StackLayout>
             <ScrollView>
-                <StackLayout Padding="0,0,0,10">
-                    <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" Margin="5">
+                <StackLayout>
+                    <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" Margin="5,18,5,5">
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
                                 <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
@@ -196,7 +196,7 @@
                             <StackLayout>
                             <Label Text="Huéspedes"
                                    TextColor="Gray"
-                                   Margin="8,0,0,0"
+                                   Margin="8,4,0,0"
                                    FontSize="Medium">
                                    <Label.FontFamily>
                                       <OnPlatform x:TypeArguments="x:String">
@@ -206,7 +206,7 @@
                                    </Label.FontFamily>
                             </Label>
                                 <xfx:XfxEntry x:Name="NoPersona"
-                                              Text ="1"
+                                              Text ="2"
                                               Margin="8,-20,5,-12"
                                               Keyboard="Numeric"
                                               TextChanged="Handle_TextChanged">
@@ -225,7 +225,7 @@
                                 </xfx:XfxEntry>
                             </StackLayout>
                         </Frame>
-                        <Button Margin="30,10,30,7"
+                        <Button Margin="30,10,30,10"
                                 FontSize="14"
                                 TextColor="White"
                                 BackgroundColor="#250c4b"
@@ -240,7 +240,7 @@
                                   </Button.FontFamily>
                          </Button>
                     </StackLayout>
-                    <StackLayout x:Name="SL2" IsVisible="false" HorizontalOptions="FillAndExpand" Margin="5">
+                    <StackLayout x:Name="SL2" IsVisible="false" HorizontalOptions="FillAndExpand" Margin="5,18,5,5">
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
                                 <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
@@ -273,7 +273,7 @@
                                             </Label.FontFamily>
                                           </Label>
                                          <xfx:XfxEntry x:Name="FechaRango1"
-                                                  Text ="00/00/00"
+                                                  Text ="00/00/0000"
                                                   Margin="5,-20,5,-12"
                                                   PlaceholderColor="Transparent"
                                                   Focused="FechaRango1_Focused">
@@ -291,7 +291,7 @@
                                             </Entry.FontFamily>
                                     </xfx:XfxEntry>
                                     </StackLayout>
-                                    <StackLayout Margin="4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                                    <StackLayout Margin="-30,4,4,4" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                                         <Label Text="h"
                                                TextColor="White"
                                                FontSize="Medium">
@@ -303,8 +303,10 @@
                                             </Label.FontFamily>
                                         </Label>
                                        <xfx:XfxEntry x:Name="FechaRango2"
-                                                  Text ="00/00/00"
-                                                  Margin="5,-20,0,-12"
+                                                  Text ="00/00/0000"
+                                                  HorizontalOptions="Start"
+                                                  HorizontalTextAlignment="Start"
+                                                  Margin="-30,-20,0,-12"
                                                   PlaceholderColor="Transparent"
                                                   Focused="FechaRango2_Focused">
                                         <Entry.HeightRequest>
@@ -333,7 +335,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                         </Frame>
-                        <Button Margin="30,1,30,7"
+                        <Button Margin="30,7,30,7"
                                 FontSize="14"
                                 TextColor="White"
                                 BackgroundColor="#250c4b"
@@ -347,8 +349,7 @@
                                   </Button.FontFamily>
                          </Button>
                     </StackLayout>
-                    
-                    <StackLayout x:Name="SL3" IsVisible="false" HorizontalOptions="FillAndExpand" Margin="5" Spacing="0">
+                    <StackLayout x:Name="SL3" IsVisible="false" HorizontalOptions="FillAndExpand" Margin="5,18,5,5" Spacing="0">
                         <Grid HorizontalOptions="FillAndExpand">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*">
@@ -609,7 +610,7 @@
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
                                     <StackLayout Orientation="Vertical">
-                                        <Label Text="Nombre y Apellido*"
+                                        <Label Text="Nombre y apellido*"
                                             FontSize = "Medium"
                                             TextColor="Gray"
                                             Margin="8,3,0,0">
@@ -648,7 +649,7 @@
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
                                      <StackLayout Orientation="Vertical">
-                                         <Label Text="Correo Electrónico*"
+                                         <Label Text="Correo electrónico*"
                                                 FontSize = "Medium"
                                                 TextColor="Gray"
                                                 Margin="8,3,0,0">
@@ -700,6 +701,7 @@
                                           </Label>
                                          <xfx:XfxEntry PlaceholderColor="Transparent"
                                                        Text ="{Binding Telefono, Mode=TwoWay}"
+                                                       Keyboard="Numeric"
                                                        Margin="2,-20,5,-5">
                                         <Entry.HeightRequest>
                                             <OnPlatform x:TypeArguments="x:Double">
@@ -738,15 +740,9 @@
                     <StackLayout x:Name="SL4" IsVisible="false">
                         <!--Content-->
                     </StackLayout>
-                   <!-- <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                        <Frame.Margin>
-                            <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                        </Frame.Margin>
-                        <Frame.Padding>
-                            <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                        </Frame.Padding>-->
+                 
                         <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF">
-                            <Grid HorizontalOptions="FillAndExpand">
+                            <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#FFFFFF">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*">
                                     </ColumnDefinition>
@@ -769,7 +765,7 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                                     </Label>
-                                <Label Text="Ver Todo"
+                                <Label Text="Ver Todos"
                                        HorizontalTextAlignment="End"
                                        Margin="0,15,15,0"
                                        TextColor="#250c4b"
@@ -787,7 +783,7 @@
                             </Grid>
                             <!--Carousel-->
           
-                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" Grid.Row="0" Grid.Column="1">
+                           <StackLayout BackgroundColor="#FFFFFF" Grid.Row="0" Grid.Column="1">
                                 <!--<cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"
                                                         HorizontalOptions="FillAndExpand"
                                                         HeightRequest="300">
@@ -982,14 +978,14 @@
                             </StackLayout>
                            
                             <AbsoluteLayout Padding = "5,20,5,0"
-                                            Margin="0,0,0,-50"
-                                            HeightRequest="250"
+                                            Margin="0,0,0,-25"
+                                            HeightRequest="200"
                                             WidthRequest="320"
                                             HorizontalOptions="Center"
                                             IsVisible="{Binding VerTarjeta}">
                                 <Image Source="{Binding ImagenTarjeta}"
                                        Aspect="Fill" 
-                                       HeightRequest="250" 
+                                       HeightRequest="200" 
                                        WidthRequest="320"/>
                                 
                                 
@@ -1013,10 +1009,14 @@
                                        HorizontalOptions="Center"                         
                                        AbsoluteLayout.LayoutFlags="PositionProportional"
                                        AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1">
-                                      
+
+
+
+
+                                
                                         <Label.FontFamily>
                                             <OnPlatform x:TypeArguments="x:String">
-                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                <On Platform="iOS" Value="Oswald-Regular"/>
                                                 <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                             </OnPlatform>
                                         </Label.FontFamily>
@@ -1054,7 +1054,7 @@
                                 </Label>
                             </AbsoluteLayout>
                         </StackLayout>
-                    <!--</Frame>-->
+               
                 </StackLayout>
             </ScrollView>
         </StackLayout>

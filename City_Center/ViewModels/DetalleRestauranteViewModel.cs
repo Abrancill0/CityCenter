@@ -153,25 +153,26 @@ namespace City_Center.ViewModels
             }
 
 
-            string CuerpoMensaje = "Fecha:" + this.FechaInicio + "\n" +
-                                   "Hora: " + this.HoraInicio + "\n" +
-                                   "Personas: " + this.NoPersonas + "\n" +
-                                   "Restaurant: " + this.NombreRestaurante + "\n" +
-                                   "Silla para niños: " + this.SillaNiños + "\n" +
-                                   "Nombre y apellido: " + this.Nombre + "\n" +
-                                   "Correo electrónico: " + this.Correo + "\n" +
-                                   "Teléfono: " + this.Telefono;
-
-
+            //string CuerpoMensaje = "Fecha:" + this.FechaInicio + "\n" +
+                                   //"Hora: " + this.HoraInicio + "\n" +
+                                   //"Personas: " + this.NoPersonas + "\n" +
+                                   //"Restaurant: " + this.NombreRestaurante + "\n" +
+                                   //"Silla para niños: " + this.SillaNiños + "\n" +
+                                   //"Nombre y apellido: " + this.Nombre + "\n" +
+                                   //"Correo electrónico: " + this.Correo + "\n" +
+                                   //"Teléfono: " + this.Telefono;
+            
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("nombre", "Reservacion de Mesa"),
-                new KeyValuePair<string, string>("email", "abrx23@gmail.com"),
-                new KeyValuePair<string, string>("mensaje", CuerpoMensaje),
+				new KeyValuePair<string, string>("restaurant", this.rd.reb_nombre),
+				new KeyValuePair<string, string>("fecha", this.FechaInicio),
+				new KeyValuePair<string, string>("hora", this.HoraInicio),
+				new KeyValuePair<string, string>("personas", this.SillaNiños),
+				new KeyValuePair<string, string>("silla_ninos", this.Telefono),
             });
 
 
-            var response = await this.apiService.Get<GuardadoGenerico>("/correo", "/envioemail", content);
+			var response = await this.apiService.Get<GuardadoGenerico>("/es/gastronomia/reserva", "/correo", content);
 
             if (!response.IsSuccess)
             {
@@ -187,6 +188,11 @@ namespace City_Center.ViewModels
             this.SillaNiños = string.Empty;
             this.Correo = string.Empty;
             this.Telefono = string.Empty;
+
+
+            this.FechaInicio = "00/00/0000";
+            this.HoraInicio = "00:00";
+            
 
         }
 
@@ -274,12 +280,12 @@ namespace City_Center.ViewModels
                 if (NombreViejo == Nombrenuevo)
                 {
                     NombreMenu = "";
-					Margen = new Thickness(0, 0, 0, 0);
+					Margen = new Thickness(0, -5, 0, -15);
                 }
                 else
                 {
                     NombreMenu =  NombreViejo; 
-					Margen = new Thickness(0, 5, 0, 10);
+					Margen = new Thickness(0, 5, 0, 23);
                 }
 
                 RestaurantMenuDetalle.Add(new MenuDetalle()

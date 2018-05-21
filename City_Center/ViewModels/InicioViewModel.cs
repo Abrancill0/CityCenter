@@ -27,8 +27,7 @@ namespace City_Center.ViewModels
         #region Attributes
         private EventosReturn list;
         private ObservableCollection<EventosItemViewModel> eventosDetalle;
-
-        private TorneoReturn listTorneo;
+  
         private ObservableCollection<TorneoItemViewModel> torneoDetalle;
 
         private TarjetaUsuarioReturn listaTarjetausuario;
@@ -195,26 +194,29 @@ namespace City_Center.ViewModels
             }
 
 
-            string CuerpoMensaje = "Fecha:" + this.FechaInicio + "\n" +
-                                   "Hora: " + this.HoraInicio + "\n" +
-                                   "Personas: " + this.NoPersonas + "\n" +
-                                   "Restaurant: " + this.NombreRestaurante + "\n" +
-                                   "Silla para niños: " + this.SillaNiños + "\n" +
-                                   "Nombre y apellido: " + this.Nombre + "\n" +
-                                   "Correo electrónico: " + this.Correo + "\n" +
-                                   "Teléfono: " + this.Telefono;
+            //string CuerpoMensaje = "Fecha:" + this.FechaInicio + "\n" +
+                                   //"Hora: " + this.HoraInicio + "\n" +
+                                   //"Personas: " + this.NoPersonas + "\n" +
+                                   //"Restaurant: " + this.NombreRestaurante + "\n" +
+                                   //"Silla para niños: " + this.SillaNiños + "\n" +
+                                   //"Nombre y apellido: " + this.Nombre + "\n" +
+                                   //"Correo electrónico: " + this.Correo + "\n" +
+                                   //"Teléfono: " + this.Telefono;
+   
 
-
-            var content = new FormUrlEncodedContent(new[]
-            {
-                new KeyValuePair<string, string>("nombre", "Reservacion de Mesa"),
-                new KeyValuePair<string, string>("email", "abrx23@gmail.com"),
-                new KeyValuePair<string, string>("mensaje", CuerpoMensaje),
+			var content = new FormUrlEncodedContent(new[]
+        {
+				new KeyValuePair<string, string>("restaurant", this.NombreRestaurante),
+                new KeyValuePair<string, string>("fecha", this.FechaInicio),
+                new KeyValuePair<string, string>("hora", this.HoraInicio),
+                new KeyValuePair<string, string>("personas", this.SillaNiños),
+                new KeyValuePair<string, string>("silla_ninos", this.Telefono),
             });
 
 
-            var response = await this.apiService.Get<GuardadoGenerico>("/correo", "/envioemail", content);
+            var response = await this.apiService.Get<GuardadoGenerico>("/es/gastronomia/reserva", "/correo", content);
 
+                  
             if (!response.IsSuccess)
             {
                 await Mensajes.Error(response.Message);
@@ -222,8 +224,8 @@ namespace City_Center.ViewModels
 
             await Mensajes.success("Correo enviado exitosamente");
 
-            //this.FechaInicio
-            //this.HoraInicio 
+			this.FechaInicio = "00/00/0000";
+			this.HoraInicio = "00:00";
             this.NoPersonas = string.Empty;
             this.NombreRestaurante = string.Empty;
             this.SillaNiños = string.Empty;
@@ -235,51 +237,7 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Methods
-        private async void LoadEventos()
-        {
-            var connection = await this.apiService.CheckConnection();
-
-            if (!connection.IsSuccess)
-            {
-                await Mensajes.Error(connection.Message);
-
-                return;
-            }
-
-            var content = new FormUrlEncodedContent(new[]
-            {
-                new KeyValuePair<string, string>("", ""),
-            });
-
-
-            var response = await this.apiService.Get<EventosReturn>("/shows", "/indexApp", content);
-
-            if (!response.IsSuccess)
-            {
-                await Mensajes.Error("Error al cargar Shows");
-
-                return;
-            }
-
-            this.list = (EventosReturn)response.Result;
-
-            EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel());
-
-        }
-
-        private IEnumerable<EventosItemViewModel> ToEventosItemViewModel()
-        {
-            return this.list.resultado.Select(l => new EventosItemViewModel
-            {
-                eve_imagen = l.eve_imagen,
-                eve_descripcion = l.eve_descripcion,
-                eve_nombre = l.eve_nombre,
-                eve_fecha_hora_inicio = l.eve_fecha_hora_inicio,
-                eve_link = l.eve_link,
-                eve_id = l.eve_id
-            });
-        }
-
+           
         private async void LoadTorneo()
         {
             try
@@ -319,12 +277,12 @@ namespace City_Center.ViewModels
                     return;
                 }
 
-                this.listTorneo = (TorneoReturn)response.Result;
+                MainViewModel.GetInstance().listTorneo = (TorneoReturn)response.Result;
 
                 TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -334,7 +292,7 @@ namespace City_Center.ViewModels
 
         private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel()
         {
-            return this.listTorneo.resultado.Select(l => new TorneoItemViewModel
+			return MainViewModel.GetInstance().listTorneo.resultado.Select(l => new TorneoItemViewModel
             {
                 tor_id = l.tor_id,
                 tor_nombre = l.tor_nombre,
@@ -426,7 +384,7 @@ namespace City_Center.ViewModels
             this.LoadTarjetaUsuario();
             this.LoadTorneo();
 
-			this.FechaInicio = "00/00/00";
+			this.FechaInicio = "00/00/0000";
 			this.HoraInicio = "00:00";
 			this.NombreRestaurante = "Seleccionar";
 			this.SillaNiños = "No";

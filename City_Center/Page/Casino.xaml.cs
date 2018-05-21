@@ -33,9 +33,7 @@ namespace City_Center.Page
 
         protected override void OnAppearing()
 		{         
-            base.OnAppearing();
-   
-			         
+            base.OnAppearing(); 	         
         }
 
         //private async void loadTarjet()
@@ -97,15 +95,12 @@ namespace City_Center.Page
         //}
 
         protected override void OnDisappearing()
-        {
-
+        {         
             base.OnDisappearing();
 
             GC.Collect();
-
         }
-
-
+       
         void Tab1_Tapped(object sender, System.EventArgs e)
         {
             LabelTab1.TextColor = Color.FromHex("#FDE7EE");
@@ -214,7 +209,7 @@ namespace City_Center.Page
                     Img2provisional.Source = selection.ToString();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -236,7 +231,7 @@ namespace City_Center.Page
                 }
                
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
                

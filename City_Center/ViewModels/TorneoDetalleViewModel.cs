@@ -151,6 +151,9 @@ namespace City_Center.ViewModels
 
                     var list = (GuardadoGenerico)response.Result;
 
+
+
+
                     await Mensajes.success("Guardado Correctamente");
 
                 }
@@ -165,9 +168,7 @@ namespace City_Center.ViewModels
             }
 
         }
-
-
-
+        
         public ICommand EnviaCorreoCommand
 		{
 			get

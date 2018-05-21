@@ -198,6 +198,8 @@ namespace City_Center.ViewModels
             Application.Current.Properties["NumeroDocumento"] =NumeroDocumento;
             Application.Current.Properties["NumeroSocio"] = NumeroSocio;
 
+			await Application.Current.SavePropertiesAsync();
+
             await Mensajes.success("Usuario Actualizado correctamente");
         }
 

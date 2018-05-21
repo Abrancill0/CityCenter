@@ -67,7 +67,7 @@ namespace City_Center.Page.SlideMenu
 
         }
 
-        void CambiaIcono(object sender, System.EventArgs e)
+		void CambiaIcono(object sender, System.EventArgs e)
         {
             try
             {
@@ -80,6 +80,30 @@ namespace City_Center.Page.SlideMenu
                     Image image = sender as Image;
 
                     image.Source = "FavoritoOK";
+                }
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+
+        void CambiaIcono2(object sender, System.EventArgs e)
+        {
+            try
+            {
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                if (isLoggedIn)
+                {
+
+                    Image image = sender as Image;
+
+					image.Source = "Favorito";
                 }
 
             }

@@ -61,17 +61,29 @@ namespace City_Center.Page
                     return;
                 }
 
-                DateTime Fecha1 = DateTime.Parse(FechaInicio.Text);
-                DateTime Fecha2 = DateTime.Parse(FechaFinal.Text);
+                //DateTime fecha1 = Convert.ToDateTime(Application.Current.Properties["FechaNacimiento"].ToString());
 
-                if (Fecha1.Date < Fecha2.Date)
+                string Dia = FechaInicio.Text.Substring(0, 2);
+                string Mes = FechaInicio.Text.Substring(3, 2);
+                string Año = FechaInicio.Text.Substring(6, 4);
+
+
+                string Dia2 = FechaFinal.Text.Substring(0, 2);
+                string Mes2 = FechaFinal.Text.Substring(3, 2);
+                string Año2 = FechaFinal.Text.Substring(6, 4);
+
+
+                DateTime Fecha1 = Convert.ToDateTime(Año + "-" + Mes + "-" + Dia);
+                DateTime Fecha2 = Convert.ToDateTime(Año2 + "-" + Mes2 + "-" + Dia2);
+
+                if (Fecha2.Date < Fecha1.Date)
                 {
                     await Mensajes.Info("La fecha final no puede ser menor a la fecha inicial");
                 }
                 else
                 {
-                    VariablesGlobales.FechaInicio = Convert.ToDateTime(FechaInicio.Text);
-                    VariablesGlobales.FechaFin = Convert.ToDateTime(FechaFinal.Text);
+                    VariablesGlobales.FechaInicio = Fecha1.Date;
+                    VariablesGlobales.FechaFin = Fecha2.Date;
                     VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
                     await Navigation.PushPopupAsync(_webHotel);
@@ -79,6 +91,7 @@ namespace City_Center.Page
             }
             catch (Exception ex)
             {
+                //await DisplayAlert("oj", ex.ToString(), "ok");
                 await Mensajes.Info("No se pudo acceder a las reservaciones, intente mas tarde.");
             }
            
@@ -144,7 +157,7 @@ namespace City_Center.Page
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -159,6 +172,7 @@ namespace City_Center.Page
             {
                 IsCancellable = true,
 				MinimumDate = DateTime.Now.AddDays(0),
+				CancelText = "CANCELAR",
                 Title="Llegada"
             });
 
@@ -186,6 +200,7 @@ namespace City_Center.Page
             {
                 IsCancellable = true,
 				MinimumDate = DateTime.Now.AddDays(0),
+				CancelText = "CANCELAR",
                 Title = "Salida"
             });
 
@@ -207,7 +222,6 @@ namespace City_Center.Page
             //String.Format("{0:dd MMMM yyyy}"
 
         }
-	
 	
 	}
 }

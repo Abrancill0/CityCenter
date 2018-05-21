@@ -106,20 +106,21 @@ namespace City_Center.ViewModels
             }
 
 
-            string CuerpoMensaje = "Nombre y apellido: " + this.Nombre + "\n" +
-                                   "Correo electrónico: " + this.Correo + "\n" +
-                                   "Teléfono: " + this.Telefono;
+            //string CuerpoMensaje = "Nombre y apellido: " + this.Nombre + "\n" +
+                                   //"Correo electrónico: " + this.Correo + "\n" +
+                                   //"Teléfono: " + this.Telefono;
 
-
+                  
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("nombre", "Reservacion de Mesa"),
-                new KeyValuePair<string, string>("email", "abrx23@gmail.com"),
-                new KeyValuePair<string, string>("mensaje", CuerpoMensaje),
+				new KeyValuePair<string, string>("pro_id", Convert.ToString(this.pd.pro_id)),
+				new KeyValuePair<string, string>("nombre", this.Nombre),
+				new KeyValuePair<string, string>("email", this.Correo),
+				new KeyValuePair<string, string>("telefono", this.Telefono),
             });
 
 
-            var response = await this.apiService.Get<GuardadoGenerico>("/correo", "/envioemail", content);
+			var response = await this.apiService.Get<GuardadoGenerico>("/es/promocion-reserva", "/correo_reserva", content);
 
             if (!response.IsSuccess)
             {

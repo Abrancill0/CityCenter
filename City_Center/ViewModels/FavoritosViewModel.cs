@@ -32,10 +32,7 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Commands
-
-
-
-
+        
         #endregion
 
         #region Methods

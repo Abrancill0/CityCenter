@@ -10,6 +10,7 @@ using Xamarin.Forms;
 using static City_Center.Models.EventosResultado;
 using City_Center.Clases;
 using Plugin.Messaging;
+using System.Linq;
 
 namespace City_Center.ViewModels
 {
@@ -83,6 +84,17 @@ namespace City_Center.ViewModels
                 }
 
                 var list = (GuardadoGenerico)response.Result;
+                
+				this.ds.eve_guardado = true;
+				this.ds.oculta = false;
+
+				var actualiza = MainViewModel.GetInstance().listEventos.resultado.Where(l => l.eve_id == this.ds.eve_id).FirstOrDefault();
+
+                actualiza.eve_guardado = true;
+                actualiza.oculta = false;
+
+
+				//this.ds.updated_at();
 
                 await Mensajes.success(list.mensaje);
 

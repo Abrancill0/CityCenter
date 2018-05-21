@@ -10,8 +10,7 @@ namespace City_Center.Page
     public partial class DetalleRestaurante : ContentPage
     {
         private string[] ListaOpciones;
-        private string[] ListaOpciones2;
-        private string[] ListaOpciones3;
+      
 
         public DetalleRestaurante()
         {
@@ -87,6 +86,7 @@ namespace City_Center.Page
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
+				CancelText = "CANCELAR",
                 MinimumDate = DateTime.Now.AddDays(0)
             });
 

@@ -145,6 +145,7 @@ namespace City_Center.Page
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
 			{
 				IsCancellable = true,
+				CancelText = "CANCELAR",
 				MinimumDate = DateTime.Now.AddDays(0)
 			});
 
@@ -169,6 +170,7 @@ namespace City_Center.Page
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
 			{
 				IsCancellable = true,
+				CancelText = "CANCELAR",
 				MinimumDate = DateTime.Now.AddDays(0)
 			});
 
@@ -186,8 +188,7 @@ namespace City_Center.Page
 				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 			}
 		}
-
-      
+  
 		async void TipoEvento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
 			var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "Cancel", null, null, "Casamiento", "Congresos, Convenciones, Seminarios", "Eventos Corporativos", "Eventos Sociales", "Otros");
@@ -206,8 +207,7 @@ namespace City_Center.Page
             }
 
         }
-
-
+        
 		async void TipoEvento1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
             var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "Cancel", null, null, "Casamiento", "Congresos, Convenciones, Seminarios", "Eventos Corporativos", "Eventos Sociales", "Otros");

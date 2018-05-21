@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="City_Center.Page.CustomTabPage">
+      <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="Chat"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ContentView
+            Grid.Row="0"
+            IsVisible="True" x:Name="MainView">
+        </ContentView>
+
+        <ContentView
+            Grid.Row="0"
+            IsVisible="false" x:Name="MainView2">
+        </ContentView>
+
+        <ContentView
+            Grid.Row="0"
+            IsVisible="false" x:Name="MainView3">
+        </ContentView>
+
+        <ContentView
+            Grid.Row="0"
+            IsVisible="false" x:Name="MainView4">
+        </ContentView>
+
+        <ContentView
+            Grid.Row="0"
+            IsVisible="false" x:Name="MainView5">
+        </ContentView>
+
+        <Grid x:Name="Barra" ColumnSpacing="0" RowSpacing="0" Grid.Row="1" BackgroundColor="#645877">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="0">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ClickTap1" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="tab_home_icon_selected" IsVisible="True" Source="home" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="1">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ClickTap2" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="tab_scan_icon_unselected"  Source="casino" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="2">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ClickTap3" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="tab_search_icon_unselected" Source="hotel" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="3">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ClickTap4" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="tab_music_icon_unselected" Source="food" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="4">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ClickTap5" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="tab_music_icon_unselected1" Source="info2" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+
+            </StackLayout>
+            
+        </Grid>
+
+    </Grid>
+</ContentPage>

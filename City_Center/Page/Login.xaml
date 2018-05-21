@@ -22,8 +22,7 @@
     <ContentPage.Content>
         <StackLayout Margin="10" Padding="0,20,0,0" BindingContext="{Binding Login}" >
             <Label Text="INGRESÁ"
-                   TextColor="#250c4b"
-                   FontFamily="Oswald-Regular"
+                   TextColor="#7A5BA5"
                    FontSize="24"
                    HorizontalTextAlignment="Center">
                 <Label.FontFamily>

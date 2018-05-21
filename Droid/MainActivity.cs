@@ -54,7 +54,7 @@ namespace City_Center.Droid
             BottomTabbedRenderer.FontSize = 10;
             BottomTabbedRenderer.IconSize = 30;
 
-			BottomTabbedRenderer.ItemIconTintList =null;
+			BottomTabbedRenderer.ItemIconTintList = null;
             BottomTabbedRenderer.ItemSpacing = 8;
             BottomTabbedRenderer.ItemPadding = new Xamarin.Forms.Thickness(8);
             BottomTabbedRenderer.BottomBarHeight = 50;

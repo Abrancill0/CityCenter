@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
+using static City_Center.Models.EventosResultado;
+using static City_Center.Models.TorneoResultado;
 
 namespace City_Center.ViewModels
 {
     public class MainViewModel
     {
         #region Poperties
-     
+		public EventosReturn listEventos { get; set; }
+		public TorneoReturn listTorneo { get; set; }
         #endregion
 
         #region ViewModels

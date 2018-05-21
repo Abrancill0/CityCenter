@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:view="clr-namespace:City_Center.Vista" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.MasInfo">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:City_Center.Vista"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.MasInfo">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="Chat" />
     </ContentPage.ToolbarItems>
@@ -282,7 +287,7 @@
                                     </xfx:XfxEntry>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" Spacing="0">
-                                    <Label Text="Correo Electronico *"
+                                    <Label Text="Correo electrónico *"
                                            FontSize="12"
                                            Margin="5,0,0,-15"
                                            TextColor="Black"
@@ -384,7 +389,7 @@
                                     </xfx:XfxEntry>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" Spacing="0">
-                                    <Label Text="Tipo de Evento *"
+                                    <Label Text="Tipo de evento *"
                                            FontSize="12"
                                            Margin="5,0,0,-15"
                                            TextColor="Black"
@@ -454,7 +459,7 @@
                                     </xfx:XfxEntry>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" Spacing="0">
-                                    <Label Text="Fecha Aproximadas *"
+                                    <Label Text="Fecha aproximadas *"
                                            FontSize="12"
                                            Margin="5,0,0,-15"
                                            TextColor="Black"
@@ -544,15 +549,15 @@
             </StackLayout>
             <StackLayout x:Name="SL2" IsVisible="false">
                 <ScrollView BackgroundColor="White">
-                    <StackLayout Margin="10,10,0,0" BackgroundColor="White">
+                    <StackLayout Margin="10,20,0,0" BackgroundColor="White">
                         <StackLayout Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit" Margin="8,0,0,5" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="EquipoTecnico" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       EQUIPO TECNICO DE VANGUARDIA" TextColor="#8A7C9E" FontSize="12">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       EQUIPO TÉCNICO DE VANGUARDIA" TextColor="#8A7C9E" FontSize="12">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                             <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit" Margin="8,0,0,5" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="CabinaTraduccion" />
-                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       CABINAS DE TRADUCCION SIMULTÁNEAS" TextColor="#8A7C9E" FontSize="12">
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       CABINAS DE TRADUCCÍON SIMULTÁNEAS" TextColor="#8A7C9E" FontSize="12">
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
@@ -585,7 +590,7 @@
                             <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       ÁREA COMERCIAL" TextColor="#8A7C9E" FontSize="12">
                             </Label>
                         </StackLayout>
-                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="0,0,0,25">
                             <ffimageloading:CachedImage HeightRequest="50" Aspect="AspectFit" Margin="8,0,0,5" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="VariedadGastronomica" />
                             <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" TextColor="#8A7C9E" Text="       GRAN VARIEDAD GASTRONÓMICA" FontSize="12">
                             </Label>
@@ -737,7 +742,7 @@
                                     </xfx:XfxEntry>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" Spacing="0">
-                                    <Label Text="Correo Electronico *"
+                                    <Label Text="Correo electrónico *"
                                            FontSize="12"
                                            Margin="5,0,0,-15"
                                            TextColor="Black"
@@ -909,7 +914,7 @@
                                     </xfx:XfxEntry>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" Spacing="0">
-                                    <Label Text="Fecha Aproximadas *"
+                                    <Label Text="Fecha aproximadas *"
                                            FontSize="12"
                                            Margin="5,0,0,-15"
                                            TextColor="Black"
