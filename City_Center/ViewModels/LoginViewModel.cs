@@ -18,6 +18,7 @@ using City_Center.Clases;
 using Acr.UserDialogs;
 using static City_Center.Models.ValidaUsuarioResultado;
 using City_Center.Database;
+using Rg.Plugins.Popup.Extensions;
 
 namespace City_Center.ViewModels
 {
@@ -476,7 +477,7 @@ namespace City_Center.ViewModels
 
             ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
-            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new RestableceContraseña());  
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushPopupAsync(new RestableceContraseña());  
         }
 
         private async Task<string> GuardaUsuarioGF(string UserNameGF, string EmailGF)

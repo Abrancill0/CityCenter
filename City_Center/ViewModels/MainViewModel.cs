@@ -56,32 +56,24 @@ namespace City_Center.ViewModels
         public ConsultaTarjetaWinViewModel ConsultaTarjetaWin { get; set; }
 		public CambiaPassViewModel CambiaContrasena { get; set; }
         public VincularTarjetaViewModel VincularTarjeta { get; set; }
+        public TabPageViewModel TabPage { get; set; }
         #endregion
 
         #region Contructors
         public MainViewModel()
         {
-            //bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
-            //                  (bool)Application.Current.Properties["IsLoggedIn"] : false;
-
-            //if (isLoggedIn)
-            //{
+            
                 instance = this;
-                //this.TabPageCustom = new TabPageViewModel();
+
                 this.Master = new MasterViewModel();
                 this.Inicio = new InicioViewModel();
-                
+                this.Casino = new CasinoViewModel();
                
-                //this.Hotel = new HotelViewModel();
+                this.Hotel = new HotelViewModel();
                 this.Detail = new DetailViewModel();
-                //this.Gastronomia = new GastronomiaViewModel();
+                this.Gastronomia = new GastronomiaViewModel();
                 this.SalasEventos = new SalasEventosViewModel();
-            //}
-            //else
-            //{
-            //    instance = this;
-            //    this.Login = new LoginViewModel();
-            //}
+          
 
         }
         #endregion

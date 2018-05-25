@@ -1,51 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.RestableceContraseña">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Name="EntryStyle" TargetType="xfx:XfxEntry">
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontFamily" Value="Roboto-Regular" />
-                <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    <ContentPage.Content>
-        <StackLayout BindingContext="{Binding ReiniciaPass}" Margin="20">
-            <Label Text="OLVIDASTE TU CONTRASEÑA" TextColor="#250c4b" FontFamily="Oswald-Regular" FontSize="Medium" HorizontalTextAlignment="Center">
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             x:Class="City_Center.Page.RestableceContraseña">
+    
+    <Frame HorizontalOptions="FillAndExpand"
+             VerticalOptions="FillAndExpand"
+             Margin="40,150,40,200"
+             HasShadow="true"
+             BackgroundColor="White"
+             BindingContext="{Binding ReiniciaPass}">
+        <StackLayout Padding="2"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     Orientation="Vertical">
+            <Image Source="CloseG"
+                           HorizontalOptions="End"
+                           VerticalOptions="Start">
+                        <Image.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="Cerrar"/>
+                        </Image.GestureRecognizers>
+            </Image>
+
+            <Label Text="Proporcionanos tu correo electrónico para enviarte una nueva contraseña"
+                   FontSize="Medium"
+                   HorizontalTextAlignment="Center">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Oswald-Regular" />
-                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                        <On Platform="iOS" Value="Roboto-Regular" />
+                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <Label Text="Coloca tu correo electronico para restablecer tu contraseña"
-                   HorizontalTextAlignment="Center"
-                   TextColor="Silver"
-                   FontSize="Small">
-                <Label.FontFamily>
-                    <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Oswald-Regular" />
-                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                    </OnPlatform>
-                </Label.FontFamily>
-            </Label>
-            <xfx:XfxEntry Placeholder="Correo electronico" Style="{DynamicResource EntryStyle}" Text="{Binding CorreoElectronico, Mode=TwoWay}">
+
+            <xfx:XfxEntry Placeholder="Correo electróico"
+                          ActivePlaceholderColor="#7A5BA5"
+                          TextColor="Black"
+                          Text="{Binding CorreoElectronico, Mode=TwoWay}">
                 <Entry.HeightRequest>
                     <OnPlatform x:TypeArguments="x:Double">
                         <On Platform="iOS">60</On>
                         <On Platform="Android,Windows">60</On>
                     </OnPlatform>
                 </Entry.HeightRequest>
+                <Entry.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Roboto-Regular" />
+                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                    </OnPlatform>
+                </Entry.FontFamily>
             </xfx:XfxEntry>
-            <Button BackgroundColor="#250C4B" Command="{Binding RestableceCommand}" TextColor="White" HeightRequest="55" Text="Enviar">
-                <Button.FontFamily>
+
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand"
+                         Margin="10,0,10,0">
+
+                <Label Text="CANCELAR" TextColor="#250C4B"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start">
+                    <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
                         <On Platform="iOS" Value="Oswald-Regular" />
                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                     </OnPlatform>
-                </Button.FontFamily>
-            </Button>
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+                  </Label.FontFamily>
+                    <Label.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="Cerrar"/>
+                        </Label.GestureRecognizers>
+                </Label> 
+
+                <Label Text="ENVIAR"
+                       TextColor="#250C4B"
+                       HorizontalOptions="End"
+                       HorizontalTextAlignment="End">
+                  <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Oswald-Regular" />
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                    </OnPlatform>
+                  </Label.FontFamily>
+                    
+                     <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RestableceCommand}" />
+                      </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+            </StackLayout>
+    </Frame>
+
+</pages:PopupPage>

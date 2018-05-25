@@ -21,7 +21,7 @@
                         </Image.GestureRecognizers>
             </Image>
             
-             <Label x:Name="Mensaje" Text="Por favor comprobá que los datos son correctos y volve a intentar"
+             <Label x:Name="Mensaje"
               LineBreakMode="WordWrap"
                     Margin="12,13,12,30">
                  <Label.FontFamily>

@@ -16,8 +16,10 @@ namespace City_Center.PopUp
         }
 
       async void Handle_Tapped(object sender, System.EventArgs e)
-        {
+       {
             await Navigation.PopPopupAsync(); 
         }
+
+
     }
 }

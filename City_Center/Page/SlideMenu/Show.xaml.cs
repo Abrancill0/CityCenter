@@ -23,11 +23,11 @@ namespace City_Center.Page.SlideMenu
         {
             base.OnAppearing();
 
-            if (showsito.EventosDetalle !=null)
-            {
-                ListaShow.ItemsSource = null;
-                ListaShow.ItemsSource = showsito.EventosDetalle;
-            }
+            //if (showsito.EventosDetalle !=null)
+            //{
+            //    ListaShow.ItemsSource = null;
+            //    ListaShow.ItemsSource = showsito.EventosDetalle;
+            //}
   
         }
 

@@ -9,7 +9,7 @@
              <Label HorizontalTextAlignment="Center"
                                    HorizontalOptions="Center"
                                    FontSize="16"
-                                   Margin="50,25"
+                                   Margin="40,25"
                                    Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Black" />
              <xfx:XfxEntry Placeholder="Tipo documento *"
                                               x:Name="TipoDocumento"
@@ -17,7 +17,7 @@
                                               Text="{Binding TipoDocumento ,Mode=TwoWay}"
                                               ActivePlaceholderColor="#7A5BA5"
                                               TextColor="Black"
-                                              FontSize="18"
+                                              FontSize="16"
                                               Keyboard="Default"
                                               Focused="TipoDocumento_Focused">
                                     <Entry.HeightRequest>
@@ -38,7 +38,7 @@
                                               Text="{Binding NumeroDocumento ,Mode=TwoWay}"
                                               ActivePlaceholderColor="#7A5BA5"
                                               TextColor="Black"
-                                              FontSize="18" Keyboard="Numeric">
+                                              FontSize="16" Keyboard="Numeric">
                                     <Entry.HeightRequest>
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On Platform="iOS">60</On>
@@ -57,7 +57,7 @@
                                               Text="{Binding NumeroSocio ,Mode=TwoWay}"
                                               ActivePlaceholderColor="#7A5BA5"
                                               TextColor="Black"
-                                              FontSize="18"
+                                              FontSize="16"
                                               Keyboard="Numeric">
                                     <Entry.HeightRequest>
                                         <OnPlatform x:TypeArguments="x:Double">

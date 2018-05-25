@@ -19,7 +19,7 @@ using ImageCircle.Forms.Plugin.Droid;
 
 namespace City_Center.Droid
 {
-    [Activity(Label = "City_Center.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = false,ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "City_Center.Droid", Icon = "@drawable/iconoappccr", Theme = "@style/MyTheme", MainLauncher = false,ScreenOrientation = ScreenOrientation.Portrait)]
 
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {

@@ -26,7 +26,7 @@ namespace City_Center.Page
             Img2provisional.Source = "vip1";
             listaCasino.ItemsSource = ListaOpciones;
 
-            MainViewModel.GetInstance().Casino = new CasinoViewModel();
+          //  MainViewModel.GetInstance().Casino = new CasinoViewModel();
            // loadTarjet();
 
         }

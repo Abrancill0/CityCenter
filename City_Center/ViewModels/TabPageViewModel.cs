@@ -37,7 +37,7 @@ namespace City_Center.ViewModels
         private  void CargaHotel()
         {
            
-            MainViewModel.GetInstance().Hotel = new HotelViewModel();
+          //  MainViewModel.GetInstance().Hotel = new HotelViewModel();
         }
 
 
@@ -51,7 +51,7 @@ namespace City_Center.ViewModels
 
         private  void CargaGastronomia()
         {
-            MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
+          //  MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
         }
 
 

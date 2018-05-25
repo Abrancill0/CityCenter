@@ -10,7 +10,7 @@ namespace City_Center.Page
         public Gastronomia()
         {
             InitializeComponent();
-            MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
+         //   MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
            
         }
 

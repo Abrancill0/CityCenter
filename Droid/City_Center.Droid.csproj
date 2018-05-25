@@ -522,6 +522,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\logowhite.png" />
     <AndroidResource Include="Resources\drawable\logowhite.png" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\drawable\iconoappccr.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
