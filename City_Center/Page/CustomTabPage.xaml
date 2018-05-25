@@ -5,7 +5,7 @@
       <ContentPage.ToolbarItems>
         <ToolbarItem Icon="Chat" Clicked="Handle_Clicked"/>
     </ContentPage.ToolbarItems>
-    <Grid BindingContext="{Binding TabPageCustom}">
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />

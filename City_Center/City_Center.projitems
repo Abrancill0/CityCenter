@@ -402,6 +402,7 @@
       <DependentUpon>VincularTarjetaWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TabPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\VincularTarjetaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

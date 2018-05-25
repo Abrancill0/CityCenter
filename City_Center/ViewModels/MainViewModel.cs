@@ -55,7 +55,7 @@ namespace City_Center.ViewModels
         public ReiniciaPassViewModel ReiniciaPass { get; set; }
         public ConsultaTarjetaWinViewModel ConsultaTarjetaWin { get; set; }
 		public CambiaPassViewModel CambiaContrasena { get; set; }
-        public TabPageViewModel TabPageCustom { get; set; }
+        public VincularTarjetaViewModel VincularTarjeta { get; set; }
         #endregion
 
         #region Contructors
@@ -67,9 +67,10 @@ namespace City_Center.ViewModels
             //if (isLoggedIn)
             //{
                 instance = this;
+                //this.TabPageCustom = new TabPageViewModel();
                 this.Master = new MasterViewModel();
                 this.Inicio = new InicioViewModel();
-            this.TabPageCustom = new TabPageViewModel();
+                
                
                 //this.Hotel = new HotelViewModel();
                 this.Detail = new DetailViewModel();

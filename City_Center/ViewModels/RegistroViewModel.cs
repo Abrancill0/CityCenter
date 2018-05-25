@@ -162,6 +162,8 @@ namespace City_Center.ViewModels
             {
                await Mensajes.Error("Ciudad es requerida.");
 
+                UserDialogs.Instance.HideLoading();
+
                 return;
             }
 
@@ -194,6 +196,16 @@ namespace City_Center.ViewModels
             if (this.Password != this.Password2)
             {
                 await Mensajes.Error("Las contraseñas no coicien.");
+
+                UserDialogs.Instance.HideLoading();
+
+                return;
+            }
+
+
+            if (this.Fecha == "00/00/0000")
+            {
+                await Mensajes.Error("La fecha de nacimiento es obligatoria");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -258,8 +270,8 @@ namespace City_Center.ViewModels
 
             await Application.Current.SavePropertiesAsync();
 
-            var db = new DBFire();
-            await db.saveRoom(new Room() { Email = this.Email, Name = this.Nombre });
+            //var db = new DBFire();
+            //await db.saveRoom(new Room() { Email = this.Email, Name = this.Nombre });
 
             this.Email = string.Empty;
             this.Nombre = string.Empty;
@@ -267,27 +279,9 @@ namespace City_Center.ViewModels
             this.Password = string.Empty;
             this.Ciudad = string.Empty;
 
-            MainViewModel.GetInstance().Master = new MasterViewModel();
-            MainViewModel.GetInstance().Inicio = new InicioViewModel();
-            MainViewModel.GetInstance().Detail = new DetailViewModel();
-            //MainViewModel.GetInstance().Casino = new CasinoViewModel();
-            //MainViewModel.GetInstance().Hotel = new HotelViewModel();
-            //MainViewModel.GetInstance().SalasEventos = new SalasEventosViewModel();
-            //MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
+            MainViewModel.GetInstance().VincularTarjeta = new VincularTarjetaViewModel();
 
-            //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
-
-            //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
-
-            MasterPage fpm = new MasterPage();
-            fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
-			App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
-
-            fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
-            Application.Current.MainPage = fpm;
-
-
-            await Mensajes.Alerta("Bienvenido " + Application.Current.Properties["NombreCompleto"].ToString());
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new VincularTarjetaWin());
 
             UserDialogs.Instance.HideLoading();
 

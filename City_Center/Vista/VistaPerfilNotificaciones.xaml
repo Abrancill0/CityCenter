@@ -13,7 +13,7 @@
                     </OnPlatform>
                 </Label.FontFamily>
                 </Label>
-                <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+                <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Existes nuevas promociones que tal ve te puedan interesar..." />
             </StackLayout>
 
             <StackLayout Margin="10" >
@@ -25,7 +25,7 @@
                     </OnPlatform>
                 </Label.FontFamily>
                 </Label>
-                <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+                <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Existe nuevos eventos cerca de tu ubicacion que tal vez te puedan interesar..." />
             </StackLayout>
 
              <StackLayout Margin="10">
@@ -37,7 +37,7 @@
                     </OnPlatform>
                 </Label.FontFamily>
                 </Label>
-                 <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+                 <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Luis Fonsi en concierto, adquiere tus boletos desde la pagina web o desde la app de City Center" />
             </StackLayout>
 
             <StackLayout Margin="10" >
@@ -49,7 +49,7 @@
                     </OnPlatform>
                 </Label.FontFamily>
                 </Label>
-                 <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+                 <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Ahora pudes realizar reservaciones a tus restaurantes favoritos desde la aplicacion movil" />
             </StackLayout>
 
           <StackLayout Margin="10" >
@@ -61,7 +61,7 @@
                     </OnPlatform>
                 </Label.FontFamily>
                 </Label>
-                 <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+                 <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Existes nuevas promociones que tal ve te puedan interesar..." />
             </StackLayout>
 
         </StackLayout>

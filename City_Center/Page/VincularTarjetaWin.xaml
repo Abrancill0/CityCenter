@@ -1,5 +1,105 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="City_Center.Page.VincularTarjetaWin">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+              BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="City_Center.Page.VincularTarjetaWin">
     <ContentPage.Content>
+        <StackLayout Margin="15" BindingContext="{Binding VincularTarjeta}">
+             <Label HorizontalTextAlignment="Center"
+                                   HorizontalOptions="Center"
+                                   FontSize="16"
+                                   Margin="50,25"
+                                   Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Black" />
+             <xfx:XfxEntry Placeholder="Tipo documento *"
+                                              x:Name="TipoDocumento"
+                                              Style="{DynamicResource EntryStyle}"
+                                              Text="{Binding TipoDocumento ,Mode=TwoWay}"
+                                              ActivePlaceholderColor="#7A5BA5"
+                                              TextColor="Black"
+                                              FontSize="18"
+                                              Keyboard="Default"
+                                              Focused="TipoDocumento_Focused">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+             <xfx:XfxEntry Placeholder="Numero de documento *"
+                                              Style="{DynamicResource EntryStyle}" 
+                                              Text="{Binding NumeroDocumento ,Mode=TwoWay}"
+                                              ActivePlaceholderColor="#7A5BA5"
+                                              TextColor="Black"
+                                              FontSize="18" Keyboard="Numeric">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+             <xfx:XfxEntry Placeholder="Número de socio Win *"
+                                              Style="{DynamicResource EntryStyle}"
+                                              Text="{Binding NumeroSocio ,Mode=TwoWay}"
+                                              ActivePlaceholderColor="#7A5BA5"
+                                              TextColor="Black"
+                                              FontSize="18"
+                                              Keyboard="Numeric">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+             <Button Text="VINCULAR TARJETA"
+                                    BackgroundColor="#250c4b"
+                                    TextColor="White"
+                                    FontAttributes="Bold"
+                                    Margin="30,30,30,30"
+                                    HeightRequest="40"
+                                    Command="{Binding VincularTarjetaCommand}">
+                                <Button.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Button.FontFamily>
+                            </Button>
+             <Label Text="NO VINCULAR AHORA"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#250C4B">
+                <Label.FontFamily>
+                       <OnPlatform x:TypeArguments="x:String">
+                             <On Platform="iOS" Value="Oswald-Regular" />
+                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                       </OnPlatform>
+               </Label.FontFamily>
+                <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding NoVincularCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

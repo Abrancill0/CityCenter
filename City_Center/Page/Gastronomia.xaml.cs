@@ -10,7 +10,7 @@ namespace City_Center.Page
         public Gastronomia()
         {
             InitializeComponent();
-
+            MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
            
         }
 
@@ -21,7 +21,7 @@ namespace City_Center.Page
         }
 
 
-        // MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
+        // M
 
         protected override void OnDisappearing()
         {

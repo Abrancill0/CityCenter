@@ -22,6 +22,8 @@ namespace City_Center.Page
             //Resources = new App().Resources;
             InitializeComponent();
 
+            MainViewModel.GetInstance().Hotel = new HotelViewModel();
+
             //var images = new List<String>
             //{
             //    "Hab_1",
