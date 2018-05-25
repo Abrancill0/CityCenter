@@ -188,7 +188,7 @@ namespace City_Center.Page
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -227,14 +227,57 @@ namespace City_Center.Page
 
                     Image image = sender as Image;
 
-                    image.Source = "FavoritoOK";
+                    if (image.BackgroundColor != Color.Transparent)
+                    {
+                        image.BackgroundColor = Color.Transparent;
+                        image.Source = "FavoritoOK";
+                    }
+                    else
+                    {
+                        image.BackgroundColor = Color.White;
+                        image.Source = "Favorito";
+                    }
+
                 }
-               
+
             }
-            catch (Exception )
+            catch (Exception)
             {
 
-               
+
+            }
+        }
+
+        void CambiaIcono2(object sender, System.EventArgs e)
+        {
+            try
+            {
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                if (isLoggedIn)
+                {
+
+                    Image image = sender as Image;
+
+                    if (image.BackgroundColor != Color.Transparent)
+                    {
+                        image.BackgroundColor = Color.Transparent;
+                        image.Source = "Favorito";
+                    }
+                    else
+                    {
+                        image.BackgroundColor = Color.White;
+                        image.Source = "FavoritoOK";
+                    }
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+
             }
         }
     

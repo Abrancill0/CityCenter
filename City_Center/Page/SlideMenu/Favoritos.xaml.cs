@@ -32,10 +32,11 @@ namespace City_Center.Page.SlideMenu
 
                 if (isLoggedIn)
                 {
-
+                    
                     Image image = sender as Image;
 
                     image.Source = "Favorito";
+                   
                 }
 
             }
@@ -45,5 +46,8 @@ namespace City_Center.Page.SlideMenu
 
             }
         }
+
+      
+
     }
 }

@@ -36,6 +36,8 @@ namespace City_Center.ViewModels
         private string NombreMenu;
 		private Thickness Margen;
         private bool mM;
+
+        private bool rR;
         
         string fechaInicio;
         string horaInicio;
@@ -70,6 +72,13 @@ namespace City_Center.ViewModels
         {
             get { return this.mM; }
             set { SetValue(ref this.mM, value); }
+        }
+
+
+        public bool RR
+        {
+            get { return this.rR; }
+            set { SetValue(ref this.rR, value); }
         }
 
         public string FechaInicio
@@ -121,6 +130,10 @@ namespace City_Center.ViewModels
         }
 
         #endregion
+      
+
+        #region Command
+
         public ICommand ReservarCommand
         {
             get
@@ -154,32 +167,32 @@ namespace City_Center.ViewModels
 
 
             //string CuerpoMensaje = "Fecha:" + this.FechaInicio + "\n" +
-                                   //"Hora: " + this.HoraInicio + "\n" +
-                                   //"Personas: " + this.NoPersonas + "\n" +
-                                   //"Restaurant: " + this.NombreRestaurante + "\n" +
-                                   //"Silla para niños: " + this.SillaNiños + "\n" +
-                                   //"Nombre y apellido: " + this.Nombre + "\n" +
-                                   //"Correo electrónico: " + this.Correo + "\n" +
-                                   //"Teléfono: " + this.Telefono;
-            
+            //"Hora: " + this.HoraInicio + "\n" +
+            //"Personas: " + this.NoPersonas + "\n" +
+            //"Restaurant: " + this.NombreRestaurante + "\n" +
+            //"Silla para niños: " + this.SillaNiños + "\n" +
+            //"Nombre y apellido: " + this.Nombre + "\n" +
+            //"Correo electrónico: " + this.Correo + "\n" +
+            //"Teléfono: " + this.Telefono;
+
             var content = new FormUrlEncodedContent(new[]
             {
-				new KeyValuePair<string, string>("restaurant", this.rd.reb_nombre),
-				new KeyValuePair<string, string>("fecha", this.FechaInicio),
-				new KeyValuePair<string, string>("hora", this.HoraInicio),
-				new KeyValuePair<string, string>("personas", this.SillaNiños),
-				new KeyValuePair<string, string>("silla_ninos", this.Telefono),
+                new KeyValuePair<string, string>("restaurant", this.rd.reb_nombre),
+                new KeyValuePair<string, string>("fecha", this.FechaInicio),
+                new KeyValuePair<string, string>("hora", this.HoraInicio),
+                new KeyValuePair<string, string>("personas", this.SillaNiños),
+                new KeyValuePair<string, string>("silla_ninos", this.Telefono),
             });
 
 
-			var response = await this.apiService.Get<GuardadoGenerico>("/es/gastronomia/reserva", "/correo", content);
+            var response = await this.apiService.Get<GuardadoGenerico>("/es/gastronomia/reserva", "/correo", content);
 
             if (!response.IsSuccess)
             {
                 await Mensajes.Error(response.Message);
             }
 
-            await Mensajes.success("Correo enviado exitosamente");
+            await Mensajes.Alerta("Correo enviado exitosamente");
 
             //this.FechaInicio
             //this.HoraInicio 
@@ -192,11 +205,10 @@ namespace City_Center.ViewModels
 
             this.FechaInicio = "00/00/0000";
             this.HoraInicio = "00:00";
-            
+
 
         }
 
-        #region Command
 
 		public ICommand CheckInReservaCommand
         {
@@ -227,7 +239,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Info("No pudimos acceder a tu ubicacion");
+                await Mensajes.Alerta("No pudimos acceder a tu ubicacion");
             } 
 
         }
@@ -320,6 +332,10 @@ namespace City_Center.ViewModels
                 MM = false;
             }
 
+           // if ()
+
+
+
            // RestaurantMenuDetalle = new ObservableCollection<MenuDetalle>(this.ToRestaurantMenuDetalleItemViewModel());
 
         }
@@ -373,6 +389,19 @@ namespace City_Center.ViewModels
             this.FechaInicio = "00/00/0000";
 			this.HoraInicio = "00:00";
 			this.SillaNiños = "No";
+
+            if (rd.reb_nombre=="PIU")
+            {
+                RR = true;
+            }
+            else if(rd.reb_nombre == "LE GULA")
+            {
+                RR = true;
+            }
+            else
+            {
+                RR = false;
+            }
 				
             LoadDetalleRestaurante();
         }

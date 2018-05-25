@@ -25,7 +25,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\Hotel.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\hotel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -155,6 +155,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopUp\AlertaConfirmacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopUp\WebViewTienda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ChatPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopUp\WebViewCompraOnline.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\VincularTarjetaWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\HttpClientPostMethod.cs" />
@@ -175,8 +195,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Page\Casino.xaml.cs">
       <DependentUpon>Casino.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Page\Hotel.xaml.cs">
-      <DependentUpon>Hotel.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\hotel.xaml.cs">
+      <DependentUpon>hotel.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Page\Gastronomia.xaml.cs">
       <DependentUpon>Gastronomia.xaml</DependentUpon>
@@ -360,8 +380,28 @@
       <DependentUpon>PruebaGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Page\CustomTabPage.xaml.cs">
-      <DependentUpon>CustomTabPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GuardaFavoritosResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PopUp\AlertaConfirmacion.xaml.cs">
+      <DependentUpon>AlertaConfirmacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PopUp\WebViewTienda.xaml.cs">
+      <DependentUpon>WebViewTienda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Database\DBFire.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\Room.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Chat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\ChatPage.xaml.cs">
+      <DependentUpon>ChatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Clases\ChatDataTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PopUp\WebViewCompraOnline.xaml.cs">
+      <DependentUpon>WebViewCompraOnline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\VincularTarjetaWin.xaml.cs">
+      <DependentUpon>VincularTarjetaWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TabPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />
@@ -369,6 +409,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
     <Folder Include="$(MSBuildThisFileDirectory)PopUp\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helper\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Database\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Vista\VistaPerfil.xaml">

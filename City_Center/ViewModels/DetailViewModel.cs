@@ -118,7 +118,7 @@ namespace City_Center.ViewModels
         {
             try
             {
-                var result = await Application.Current.MainPage.DisplayAlert("CityCenter", "¿Estás seguro de que quieres salir de la aplicación?", "OK", "Cancelar");
+                var result = await Application.Current.MainPage.DisplayAlert("CityCenter", "¿ESTÁ SEGURO QUE DESEA SALIR DE LA APLICACACIÓN?", "OK", "Cancelar");
 
                 string Mensajevalida = string.Format("Result {0}", result);
 
@@ -251,8 +251,21 @@ namespace City_Center.ViewModels
                 {
                     PerfilVisible = true;
                     OpcionesVisible = false;
+
                     NombreUsuario = Application.Current.Properties["NombreCompleto"].ToString();
-                    Imagen = Application.Current.Properties["FotoPerfil"].ToString();
+
+                    string fotoPerfil = Application.Current.Properties["FotoPerfil"].ToString();
+
+                    if (fotoPerfil == "http://cc.comprogapp.com/")
+                    {
+                        Imagen = "user";
+                    }
+                    else
+                    {
+                        Imagen = Application.Current.Properties["FotoPerfil"].ToString();
+                    }
+
+                   // Imagen = Application.Current.Properties["FotoPerfil"].ToString();
                    
                 }
                 else

@@ -23,8 +23,10 @@ namespace City_Center.ViewModels
         private RestaurantReturn listRestaruant;
         private ObservableCollection<GastronomiaItemViewModel> restaurantDetalle;
 
-        private PromocionesReturn listPromociones;
         private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
+
+
+            private PromocionesReturn listPromociones;
 
 		private int tamanoRestaurant;
 
@@ -188,7 +190,7 @@ namespace City_Center.ViewModels
             return this.listRestaruant.resultado.Select(l => new GastronomiaItemViewModel
             {
                 reb_id = l.reb_id,
-                reb_nombre = l.reb_nombre,
+                reb_nombre = l.reb_nombre.ToUpper(),
                 reb_descripcion = l.reb_descripcion,
                 reb_descripcion_horario = l.reb_descripcion_horario,
                 reb_ver_hotel_spa = l.reb_ver_hotel_spa,
@@ -219,7 +221,6 @@ namespace City_Center.ViewModels
 
                     return;
                 }
-
 
                 var content = new FormUrlEncodedContent(new[]
                 {

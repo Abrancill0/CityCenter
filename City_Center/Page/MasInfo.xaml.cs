@@ -20,7 +20,7 @@ namespace City_Center.Page
 		{
 			base.OnAppearing();
 
-			ListTipoEvento = new string[] { "Casamiento", "Congresos, Convenciones, Seminarios", "Eventos Corporativos", "Eventos Sociales", "Otros" };
+            ListTipoEvento = new string[] { "Congresos, Convenciones, Seminarios","Casamiento", "Eventos Corporativos", "Eventos Sociales", "Otros" };
 
 			//TipoEvento.ItemsSource = ListTipoEvento;
 
@@ -191,9 +191,9 @@ namespace City_Center.Page
   
 		async void TipoEvento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-			var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "Cancel", null, null, "Casamiento", "Congresos, Convenciones, Seminarios", "Eventos Corporativos", "Eventos Sociales", "Otros");
+            var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "Cancelar", null, null, "Congresos, Convenciones, Seminarios","Casamiento",  "Eventos Corporativos", "Eventos Sociales", "Otros");
 
-            if (result != "Cancel")
+            if (result != "Cancelar")
             {
 				TipoEvento.Text = result.ToString();
 
@@ -210,9 +210,9 @@ namespace City_Center.Page
         
 		async void TipoEvento1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "Cancel", null, null, "Casamiento", "Congresos, Convenciones, Seminarios", "Eventos Corporativos", "Eventos Sociales", "Otros");
+            var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "Cancelar", null, null,"Congresos, Convenciones, Seminarios", "Casamiento",  "Eventos Corporativos", "Eventos Sociales", "Otros");
 
-            if (result != "Cancel")
+            if (result != "Cancelar")
             {
                 TipoEvento1.Text = result.ToString();
 

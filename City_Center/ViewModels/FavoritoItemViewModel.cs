@@ -11,6 +11,7 @@ using static City_Center.Models.FavoritosResultado;
 using City_Center.Clases;
 using Plugin.Messaging;
 using City_Center.Page;
+using System.Linq;
 
 namespace City_Center.ViewModels
 {
@@ -99,12 +100,20 @@ namespace City_Center.ViewModels
 
                     var list = (GuardadoGenerico)response.Result;
 
-                    await Mensajes.success(list.mensaje);
+
+                    //var Item = MainViewModel.GetInstance().listFavoritos.resultado.Where(l => l.gua_id == this.gua_id).SingleOrDefault();
+
+                    //var actualiza = MainViewModel.GetInstance().listFavoritos.resultado;//.Where(l => l.gua_id == this.gua_id).SingleOrDefault();
+
+                    //actualiza.Remove(Item);
+
+                 
+                    await Mensajes.Alerta("Guardado eliminado correctamente");
 
                 }
                 else
                 {
-                    await Mensajes.Info("Inicia Sesion para eliminar Guardados");
+                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
                 }
             }
             catch (Exception)

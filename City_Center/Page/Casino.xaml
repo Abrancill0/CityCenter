@@ -42,10 +42,6 @@
                                     LoadingPlaceholder="image_loading.png"
                                     ErrorPlaceholder="image_error.png"/>
 
-                
-
-
-
                     <Image Aspect="AspectFit"
                             Source="checkin_rosa"
                             Grid.Row = "0"
@@ -140,49 +136,44 @@
             <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="3">
                 <ScrollView>
                     <StackLayout>
-                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF" Margin="8">
-                                <Grid HorizontalOptions="FillAndExpand">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="1*">
-                                        </ColumnDefinition>
-                                        <ColumnDefinition Width="1*">
-                                        </ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Margin="20, 0" Text="DESTACADOS" TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0">
+                         <Label HorizontalOptions="Start"
+                                HorizontalTextAlignment="Start"
+                                Margin="20,10,0,-5" Text="DESTACADOS"
+                                TextColor="#250c4b">
                                         <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Oswald-Regular"/>
                                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                         </OnPlatform>
                                     </Label.FontFamily>
-                                    </Label>
-                                </Grid>
-                           
-                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5">
+                                    </Label>  
+                               
+                                  <Frame HasShadow="True"
+                                               IsClippedToBounds="true"
+                                               BackgroundColor="#FAFAFA">
+                                        <Frame.OutlineColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
+                                    </Frame.OutlineColor>
+                                    <Frame.Margin>
+                                        <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
+                                    </Frame.Margin>
+                                    <Frame.Padding>
+                                        <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                    </Frame.Padding>
+
                                 <cv:CarouselViewControl 
                                             ItemsSource="{Binding DestacadosDetalle}"
                                             HorizontalOptions="FillAndExpand"
                                             HeightRequest="300"
                                             AnimateTransition="true"
-                                           
-                                           >
-                                       <!--  
-                                            ArrowsTintColor="Black"
-                                            ArrowsBackgroundColor="Silver"-->
-                                             
-                                    <cv:CarouselViewControl.ItemTemplate >
+                                            ShowArrows="true"
+                                            ArrowsTintColor="White"
+                                            ArrowsBackgroundColor="Black">
+                                    
+                                    <cv:CarouselViewControl.ItemTemplate>
                                         <DataTemplate>
-                                            <Grid BackgroundColor = "White">
+                                      
+                                           <Grid BackgroundColor="#White"> 
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="1*" />
                                                     <ColumnDefinition Width="1*" />
@@ -253,7 +244,6 @@
                                                             <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"  />
                                                         </Image.GestureRecognizers>
                                                     </Image>
-
                                                     <Image Margin="12"
                                                            Grid.Row="1"
                                                            Grid.Column="2"
@@ -265,8 +255,10 @@
                                                            HorizontalOptions = "Center"
                                                            HeightRequest="25"
                                                            WidthRequest="25">
-                                                   </Image>
-                                                        
+                                                        <Image.GestureRecognizers>
+                                                                 <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2"  />
+                                                           </Image.GestureRecognizers>
+                                                   </Image>   
                                                     <Image Margin="10"
                                                            Grid.Row="1"
                                                            Grid.Column="3"
@@ -282,14 +274,14 @@
                                                         </Image.GestureRecognizers>
                                                     </Image>
                                             </Grid>
-                                        </DataTemplate>
+                             
+                                        
+                                    </DataTemplate>
                                     </cv:CarouselViewControl.ItemTemplate>
                                 </cv:CarouselViewControl>
-                            </StackLayout>
-                               
-                    </StackLayout>
-                        </Frame>
-                        <StackLayout HorizontalOptions="FillAndExpand" Margin="0,25,0,-20">
+                           </Frame>
+                    
+                            <StackLayout HorizontalOptions="FillAndExpand" Margin="0,25,0,-20">
                                 <Label HorizontalOptions="Start"
                                        Margin="20,0,0, 0"
                                        HorizontalTextAlignment="Start"
@@ -329,14 +321,13 @@
                                                 
                                                        </ffimageloading:CachedImage>
 
-                                                    <Label x:Name="Label"
+                                                    <Label
                                                        Margin="5"
                                                        HorizontalOptions="Center"
                                                        HorizontalTextAlignment="Center"
-                                                       VerticalOptions="End"
-                                                       VerticalTextAlignment="End"
+                                                       VerticalOptions="Center"
+                                                       VerticalTextAlignment="Center"
                                                        TextColor="White"
-                                                       FontFamily="Oswald-regular"
                                                        FontSize="Small"
                                                        Text="{Binding poz_descripcion}" >
                                                            <Label.FontFamily>
@@ -347,13 +338,31 @@
                                                            </Label.FontFamily>
                                                      </Label> 
 
+
+                                                     <Label
+                                                       Margin="5"
+                                                       HorizontalOptions="Center"
+                                                       HorizontalTextAlignment="Center"
+                                                       VerticalOptions="End"
+                                                       VerticalTextAlignment="End"
+                                                       TextColor="White"
+                                                       FontSize="Small"
+                                                       Text="{Binding poz_monto}" >
+                                                           <Label.FontFamily>
+                                                                <OnPlatform x:TypeArguments="x:String">
+                                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                </OnPlatform>
+                                                           </Label.FontFamily>
+                                                     </Label> 
+                                            
+
                                             </Grid>
                                                
                                         </DataTemplate>
                                     </flv:FlowListView.FlowColumnTemplate>
                                 </flv:FlowListView>
                             </StackLayout>
-                    
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,30,0,0">
                                  <Label Margin="20,3,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
                                          <Label.FontFamily>
@@ -423,32 +432,16 @@
                             </ListView>
                         </RelativeLayout>
                          </StackLayout>
-                       
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
             <StackLayout x:Name="SL2" IsVisible="false" BackgroundColor="White">
                 <ScrollView>
                     <StackLayout>
-                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF" Margin="5">
-                                <Grid HorizontalOptions="FillAndExpand" CompressedLayout.IsHeadless="true">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="1*">
-                                        </ColumnDefinition>
-                                        <ColumnDefinition Width="1*">
-                                        </ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Label HorizontalOptions="Start" Margin="20, 0" HorizontalTextAlignment="Start" Text="TORNEOS"  TextColor="#250c4b" FontFamily="Oswald-Regular" Grid.Row="0" Grid.Column="0">
+                    <Label HorizontalOptions="Start" Margin="20,10,0,-5"
+                           HorizontalTextAlignment="Start"
+                           Text="TORNEOS"
+                           TextColor="#250c4b">
                                         <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Oswald-Regular"/>
@@ -456,15 +449,26 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                                     </Label>
-                                </Grid>
-                                <!--Carousel-->
-                            
-                           <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5" >
+                        
+                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                            <Frame.OutlineColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
+                                    </Frame.OutlineColor>
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                            </Frame.Padding>
+
+                                
                                 <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"
                                                         HeightRequest="300"
                                                         HorizontalOptions="FillAndExpand"
                                                         AnimateTransition="true"
-                                                       >
+                                                        ShowArrows="true"
+                                                        ArrowsTintColor="White"
+                                                        ArrowsBackgroundColor="Black">
                                        <!--  ShowArrows="true"
                                                         ArrowsTintColor="Black"
                                                         ArrowsBackgroundColor="Silver"-->
@@ -576,10 +580,8 @@
                                         </DataTemplate>
                                     </cv:CarouselViewControl.ItemTemplate>
                                 </cv:CarouselViewControl>
-                            </StackLayout>
-                               
-                            <!--Carousel-->
-                            </StackLayout>
+                          
+                         
                         </Frame>
                         <StackLayout Spacing="0" Margin="0,20,0,0">
                             <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" 

@@ -77,7 +77,6 @@ namespace City_Center.Page
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
-                MinimumDate = DateTime.Now.AddDays(0),
 				CancelText = "CANCELAR",
                 Title="Fecha Nacimiento"
             });

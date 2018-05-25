@@ -32,8 +32,9 @@ namespace City_Center.ViewModels
         private MoaSpaReturn listMoaSpa;
         private ObservableCollection<MoaSpaDetalle> moaSpaDetalle;
 
-        private PromocionesReturn listPromociones;
         private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
+
+        private PromocionesReturn listPromociones;
 
         private string imagen_Selected;
 		private int tamanoHabitacion; 
@@ -125,7 +126,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception)
             {
-             await Mensajes.Info("No pudimos acceder a tu ubicacion");
+             await Mensajes.Alerta("No pudimos acceder a tu ubicacion");
             }
         }
 
@@ -326,11 +327,10 @@ namespace City_Center.ViewModels
                     return;
                 }
 
-
                 var content = new FormUrlEncodedContent(new[]
                 {
                 new KeyValuePair<string, string>("", ""),
-            });
+                });
 
 
                 var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
@@ -351,7 +351,6 @@ namespace City_Center.ViewModels
             {
                 await Mensajes.Error("Hotel - Promociones" + ex.ToString());
             }
-
         }
 
         private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()

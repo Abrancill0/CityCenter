@@ -48,18 +48,22 @@ namespace City_Center.ViewModels
         {
             try
             {
-                EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 2));
-
-				//EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.EventosDetalle().Where(l => l.eve_id_locacion == 2));
+                if (String.IsNullOrEmpty(VariablesGlobales.FechaShowInicio))
+                {
+                    EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 2 ));
                 
-				//EventosDetalle2.= EventosDetalle.Where(l => l.eve_id_locacion == 2).Select(p => p).ToList();
+                }
+                else
+                {
+                    EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 2 && l.eve_fecha_hora_inicio >= Convert.ToDateTime(VariablesGlobales.FechaShowInicio) && l.eve_fecha_hora_inicio <= Convert.ToDateTime(VariablesGlobales.FechaShowFinal)));
+                
+                }
 
-				//EventosDetalle.Where(l => l.eve_id_locacion == 2).Select(p => p);
-                                                     
+                                                    
             }
             catch (Exception)
             {
-                Mensajes.Info("No existen eventos en Jaraná");
+                Mensajes.Alerta("No existen eventos en Jaraná");
             }
            
         }
@@ -77,16 +81,22 @@ namespace City_Center.ViewModels
         {
             try
             {
-                EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 1));
-                
-				//EventosDetalle2 = EventosDetalle.Where(l => l.eve_id_locacion == 1).Select(p => p).ToList();
+                if (String.IsNullOrEmpty(VariablesGlobales.FechaShowInicio))
+                {
+                    EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 1 ));
 
-				//EventosDetalle.Where(l => l.eve_id_locacion == 1).Select(p=>p).ToList();
-                
+                }
+                else
+                {
+                    EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 1 && l.eve_fecha_hora_inicio >= Convert.ToDateTime(VariablesGlobales.FechaShowInicio) && l.eve_fecha_hora_inicio <= Convert.ToDateTime(VariablesGlobales.FechaShowFinal)));
+
+                }
+
+
             }
             catch (Exception)
             {
-                Mensajes.Info("No existen eventos en Centro de Convenciones");
+                Mensajes.Alerta("No existen eventos en Centro de Convenciones");
             }
 
         }
@@ -104,10 +114,15 @@ namespace City_Center.ViewModels
         {
             try
             {
-                EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel());
-
-				//EventosDetalle.Select(l => l);
-                
+                if (String.IsNullOrEmpty(VariablesGlobales.FechaShowInicio))
+                {
+                    EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel());  
+                }
+                else
+                {
+                    EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l=>l.eve_fecha_hora_inicio >= Convert.ToDateTime(VariablesGlobales.FechaShowInicio)  && l.eve_fecha_hora_inicio<=Convert.ToDateTime(VariablesGlobales.FechaShowFinal)));  
+                }
+               
             }
             catch (Exception)
             {
@@ -163,12 +178,22 @@ namespace City_Center.ViewModels
 			}
 			         
 			MainViewModel.GetInstance().listEventos = (EventosReturn)response.Result;
-            
-            EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel());
 
+            if (String.IsNullOrEmpty(VariablesGlobales.FechaShowInicio))
+            {
+                EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel());
+  
+            }
+            else
+            {
+                EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l=>l.eve_fecha_hora_inicio >= Convert.ToDateTime(VariablesGlobales.FechaShowInicio)  && l.eve_fecha_hora_inicio<=Convert.ToDateTime(VariablesGlobales.FechaShowFinal)));  
+  
+            }
+
+           
             if (EventosDetalle.Count == 0)
             {
-                await Mensajes.Info("No se encontro ningun evento");
+                await Mensajes.Alerta("No se encontro ningun evento");
             }
 
         }

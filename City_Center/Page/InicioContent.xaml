@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:City_Center.View"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:view="clr-namespace:City_Center.Vista"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
@@ -132,7 +133,7 @@
                                             </Label.FontFamily>
                                           </Label>
                                            <xfx:XfxEntry x:Name="FechaInicio"
-                                                  Text ="00/00/00"
+                                                  Text ="00/00/0000"
                                                   Margin="5,-20,5,-12"
                                                   PlaceholderColor="Transparent"
                                                   Focused="FechaInicio_Focused">
@@ -273,7 +274,7 @@
                                             </Label.FontFamily>
                                           </Label>
                                          <xfx:XfxEntry x:Name="FechaRango1"
-                                                  Text ="00/00/0000"
+                                                  Text ="{Binding FechaShowInicio}"
                                                   Margin="5,-20,5,-12"
                                                   PlaceholderColor="Transparent"
                                                   Focused="FechaRango1_Focused">
@@ -303,7 +304,7 @@
                                             </Label.FontFamily>
                                         </Label>
                                        <xfx:XfxEntry x:Name="FechaRango2"
-                                                  Text ="00/00/0000"
+                                                  Text ="{Binding FechaShowFin}"
                                                   HorizontalOptions="Start"
                                                   HorizontalTextAlignment="Start"
                                                   Margin="-30,-20,0,-12"
@@ -340,7 +341,8 @@
                                 TextColor="White"
                                 BackgroundColor="#250c4b"
                                 HeightRequest="40"
-                                Text="VER OPCIONES">
+                                Text="VER OPCIONES"
+                                Command="{Binding VerShowsFiltroCommand}">
                            <Button.FontFamily>
                                       <OnPlatform x:TypeArguments="x:String">
                                                     <On Platform="iOS" Value="Oswald-Medium"/>
@@ -738,10 +740,23 @@
                     </StackLayout>
                     
                     <StackLayout x:Name="SL4" IsVisible="false">
-                        <!--Content-->
+                        <Button Margin="30,10,30,10"
+                                FontSize="14"
+                                TextColor="White"
+                                BackgroundColor="#250c4b"
+                                Clicked="Handle_Clicked_1"
+                                HeightRequest="40"
+                                Text="VER TIENDA">
+                                  <Button.FontFamily>
+                                      <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Medium"/>
+                                                    <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium"/>
+                                       </OnPlatform>
+                                  </Button.FontFamily>
+                         </Button>
                     </StackLayout>
                  
-                        <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF">
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF">
                             <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#FFFFFF">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*">
@@ -754,7 +769,7 @@
                                 </Grid.RowDefinitions>
                                 <Label Text="TORNEOS"
                                        HorizontalTextAlignment="Start"
-                                       Margin="15,15,0,0"
+                                       Margin="15,15,0,-8"
                                        TextColor="#250c4b"
                                        Grid.Row="0"
                                        Grid.Column="0">
@@ -767,7 +782,7 @@
                                     </Label>
                                 <Label Text="Ver Todos"
                                        HorizontalTextAlignment="End"
-                                       Margin="0,15,15,0"
+                                       Margin="0,15,15,-8"
                                        TextColor="#250c4b"
                                        Grid.Row="0" Grid.Column="1">
                                     <Label.FontFamily>
@@ -782,14 +797,29 @@
                                 </Label>
                             </Grid>
                             <!--Carousel-->
-          
-                           <StackLayout BackgroundColor="#FFFFFF" Grid.Row="0" Grid.Column="1">
-                                <!--<cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"
+
+
+                              <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                            <Frame.OutlineColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
+                                    </Frame.OutlineColor>
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                            </Frame.Padding>
+                                <cv:CarouselViewControl x:Name="CarruselTorneos"
+                                                        ItemsSource="{Binding TorneoDetalle}"
+                                                        HeightRequest="300"
                                                         HorizontalOptions="FillAndExpand"
-                                                        HeightRequest="300">
+                                                        AnimateTransition="true"
+                                                        ShowArrows="{Binding MuestraFlechas, Mode=TwoWay}"
+                                                        ArrowsTintColor="White"
+                                                        ArrowsBackgroundColor="Black">
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
-                                            <Grid BackgroundColor = "White">
+                                            <Grid BackgroundColor = "White" CompressedLayout.IsHeadless="true">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="1*" />
                                                     <ColumnDefinition Width="1*" />
@@ -801,28 +831,50 @@
                                                     <RowDefinition Height="Auto" />
                                                     <RowDefinition Height="0.5*" />
                                                 </Grid.RowDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="150" Aspect="AspectFill"
+                                                <ffimageloading:CachedImage HeightRequest="150"
+                                                                            Aspect="AspectFill"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
-                                                                            Grid.Row="0" Grid.ColumnSpan="4" >
+                                                                            Grid.Row="0" Grid.ColumnSpan="4"
+                                                                            DownsampleToViewSize="true">
                                                   <ffimageloading:CachedImage.GestureRecognizers>
                                                         <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
                                                     </ffimageloading:CachedImage>
-                                                    <Label Margin="7,4,0,0" TextColor = "#5D5D5D" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}"  HorizontalTextAlignment="Start" FontSize="15" VerticalOptions = "End" FontFamily="Oswald-Regular" >
+                                                    <Label Margin="7,4,0,0"
+                                                           TextColor = "#5D5D5D"
+                                                           Grid.Row="1"
+                                                           Grid.Column="0"
+                                                           Grid.ColumnSpan="2"
+                                                           Text="{Binding tor_nombre}"
+                                                           HorizontalTextAlignment="Start"
+                                                           HorizontalOptions="Start"
+                                                           FontSize="15"
+                                                           VerticalOptions = "End"
+                                                           FontFamily="Oswald-Regular" >
                                                          <Label.FontFamily>
                                                             <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                                <On Platform="iOS" Value="Oswald-Regular"/>
                                                                 <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                                             </OnPlatform>
                                                         </Label.FontFamily>
                                                     </Label>
                                                     
-                                                    <Label Margin="6,0,0,0" TextColor = "#5D5D5D" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" VerticalOptions = "Start" FontSize="12" FontFamily="Oswald-Regular" >
+                                                    <Label Margin="6,0,0,0"
+                                                           TextColor = "#5D5D5D"
+                                                           Grid.Row="2"
+                                                           Grid.Column="0"
+                                                           Grid.ColumnSpan="2"
+                                                           HorizontalTextAlignment="Start"
+                                                           HorizontalOptions="Start"
+                                                           Text="{Binding tor_fecha_hora_inicio}"
+                                                           VerticalOptions = "Start"
+                                                           FontSize="12"
+                                                           FontFamily="Oswald-Regular" >
                                                          <Label.FontFamily>
                                                             <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                                                <On Platform="iOS" Value="Oswald-Regular"/>
                                                                 <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                                             </OnPlatform>
                                                         </Label.FontFamily>
@@ -833,17 +885,17 @@
                                                            Grid.RowSpan="2"
                                                            Aspect="AspectFit"
                                                            Source="Favorito"
+                                                           IsVisible="{Binding oculta}"
                                                            VerticalOptions = "Start"
                                                            HorizontalOptions = "Center"
-                                                           IsVisible="{Binding oculta}"
-                                                            WidthRequest="25"
+                                                           WidthRequest="25"
                                                            HeightRequest="25">
                                                         <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"  />
+                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
                                                         </Image.GestureRecognizers>
                                                     </Image>
 
-                                                     <Image Margin="12"
+                                                         <Image Margin="12"
                                                             Grid.Row="1"
                                                             Grid.Column="2"
                                                             Grid.RowSpan="2"
@@ -855,7 +907,7 @@
                                                             WidthRequest="25"
                                                             HeightRequest="25">
                                                     </Image>
-                                                <Image Margin="10"
+                                                    <Image Margin="10"
                                                            Grid.Row="1"
                                                            Grid.Column="3"
                                                            Grid.RowSpan="2"
@@ -869,14 +921,24 @@
                                                             <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                         </Image.GestureRecognizers>
                                                     </Image>
-                                               
                                             </Grid>
                                         </DataTemplate>
                                     </cv:CarouselViewControl.ItemTemplate>
-                                </cv:CarouselViewControl>-->
+                                </cv:CarouselViewControl>
+                         
+                        </Frame>
 
-                                <RelativeLayout HeightRequest="200" VerticalOptions="Start">
-                            <ListView Rotation="270" ItemsSource="{Binding TorneoDetalle}"
+                         <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,30,0,0">
+                                 <Label Margin="20,3,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
+                                         <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                                        </Label>  
+                        <RelativeLayout HeightRequest="200" VerticalOptions="Start">
+                            <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}"
                                       RowHeight="200"  SeparatorVisibility="None"
                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}"
                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}"
@@ -887,96 +949,57 @@
                                     <DataTemplate>
                                         <ViewCell>
                                             <ContentView Rotation="90" BackgroundColor="Transparent">
-                                           <Grid BackgroundColor = "White">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="1*" />
-                                                    <ColumnDefinition Width="1*" />
-                                                    <ColumnDefinition Width="0.5*" />
-                                                    <ColumnDefinition Width="0.5*" />
-                                                </Grid.ColumnDefinitions>
+                                                <StackLayout HeightRequest="250" WidthRequest="100" Margin="0,5,0,0">
+                                                            <Grid Padding="3" CompressedLayout.IsHeadless="true">
                                                 <Grid.RowDefinitions>
-                                                    <RowDefinition Height="3*" />
-                                                    <RowDefinition Height="Auto" />
-                                                    <RowDefinition Height="0.5*" />
+                                                    <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="150" Aspect="AspectFill"
-                                                                            LoadingPlaceholder="image_loading.png"
-                                                                            ErrorPlaceholder="image_error.png"
-                                                                            Source="{Binding tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
-                                                                            Grid.Row="0" Grid.ColumnSpan="4" >
-                                                  <ffimageloading:CachedImage.GestureRecognizers>
-                                                        <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
-                                                    </ffimageloading:CachedImage.GestureRecognizers>
-                                                    </ffimageloading:CachedImage>
-                                                    <Label Margin="7,4,0,0" TextColor = "#5D5D5D" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}"  HorizontalTextAlignment="Start" FontSize="15" VerticalOptions = "End" FontFamily="Oswald-Regular" >
-                                                         <Label.FontFamily>
-                                                            <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                            </OnPlatform>
-                                                        </Label.FontFamily>
-                                                    </Label>
-                                                    
-                                                    <Label Margin="6,0,0,0" TextColor = "#5D5D5D" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding tor_fecha_hora_inicio}" VerticalOptions = "Start" FontSize="12" FontFamily="Oswald-Regular" >
-                                                         <Label.FontFamily>
-                                                            <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
-                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                            </OnPlatform>
-                                                        </Label.FontFamily>
-                                                    </Label>
-                                                    <Image Margin="12"
-                                                           Grid.Row="1"
-                                                           Grid.Column="2"
-                                                           Grid.RowSpan="2"
-                                                           Aspect="AspectFit"
-                                                           Source="Favorito"
-                                                           VerticalOptions = "Start"
-                                                           HorizontalOptions = "Center"
-                                                           IsVisible="{Binding oculta}"
-                                                            WidthRequest="25"
-                                                           HeightRequest="25">
-                                                        <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"  />
-                                                        </Image.GestureRecognizers>
-                                                    </Image>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                     <ffimageloading:CachedImage HeightRequest="190"
+                                                                                 WidthRequest="80"
+                                                                                Aspect="AspectFill"
+                                                                                LoadingPlaceholder="image_loading.png"
+                                                                                ErrorPlaceholder="image_error.png"
+                                                                                Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
+                                                                                DownsampleToViewSize="true">
+                                                                <ffimageloading:CachedImage.GestureRecognizers>
+                                                                 <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
+                                                                </ffimageloading:CachedImage.GestureRecognizers>
+                                                                  <ffimageloading:CachedImage.Transformations>
+                                                                    <fftransformations:RoundedTransformation Radius="15"/>
+                                                                </ffimageloading:CachedImage.Transformations>
+                                                     </ffimageloading:CachedImage>
 
-                                                     <Image Margin="12"
-                                                            Grid.Row="1"
-                                                            Grid.Column="2"
-                                                            Grid.RowSpan="2"
-                                                            Aspect="AspectFit"
-                                                            Source="FavoritoOK"
-                                                            IsVisible="{Binding tor_guardado}"
-                                                            VerticalOptions="Start"
-                                                            HorizontalOptions="Center"
-                                                            WidthRequest="25"
-                                                            HeightRequest="25">
-                                                    </Image>
-                                                <Image Margin="10"
-                                                           Grid.Row="1"
-                                                           Grid.Column="3"
-                                                           Grid.RowSpan="2"
-                                                           Aspect="AspectFit"
-                                                           Source="Compartir"
-                                                           VerticalOptions = "Start"
-                                                           HorizontalOptions = "Center"
-                                                           WidthRequest="25"
-                                                           HeightRequest="25">
-                                                        <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding CompartirCommand}" />
-                                                        </Image.GestureRecognizers>
-                                                    </Image>
-                                               
-                                            </Grid>
+                                                     <Label x:Name="Label"
+                                                       Margin="5"
+                                                       HorizontalOptions="Center"
+                                                       HorizontalTextAlignment="Center"
+                                                       VerticalOptions="End"
+                                                       TextColor="White"
+                                                       FontSize="Small"
+                                                       Text="{Binding pro_nombre}">
+                                                           <Label.FontFamily>
+                                                                <OnPlatform x:TypeArguments="x:String">
+                                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                </OnPlatform>
+                                                           </Label.FontFamily>
+                                                     </Label>
+                                                                
+                                                                </Grid>
+                                                </StackLayout>
                                             </ContentView>
                                         </ViewCell>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-                            </StackLayout>
-                           
+                         </StackLayout>
+
+
+                        
                             <AbsoluteLayout Padding = "5,20,5,0"
                                             Margin="0,0,0,-25"
                                             HeightRequest="200"
@@ -1037,7 +1060,7 @@
                                     </Label.FontFamily>
                                 </Label>
                                 <Label 
-                                       Text="{Binding NoSocio,StringFormat='96538905{0}'}"
+                                       Text="{Binding NoSocio}"
                                        TextColor="White"
                                        FontSize="20"
                                        HorizontalOptions="Start"

@@ -211,7 +211,6 @@
                                   FontSize="18"
                                   TextColor="Black"
                                   PlaceholderColor="#7A5BA5"
-                                  IsPassword="true"
                                   Keyboard="Default">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
@@ -230,7 +229,7 @@
 
 
                 <StackLayout Orientation="Vertical" Spacing="0">
-                        <Label Text="Fecha Aproximadas *"
+                        <Label Text="Fecha Nacimiento *"
                                FontSize="12.5"
                                Margin="5,0,0,-13">
                             <Label.FontFamily>
@@ -277,7 +276,7 @@
 
 
                         <controls:CircleImage x:Name="Image1"
-                                              Source="user.png"
+                                              Source="user"
                                               Aspect="AspectFill"
                                                AbsoluteLayout.LayoutFlags="PositionProportional"
                                                AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">>

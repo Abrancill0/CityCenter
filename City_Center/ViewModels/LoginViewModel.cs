@@ -17,6 +17,7 @@ using static City_Center.Models.RegistroUsuario;
 using City_Center.Clases;
 using Acr.UserDialogs;
 using static City_Center.Models.ValidaUsuarioResultado;
+using City_Center.Database;
 
 namespace City_Center.ViewModels
 {
@@ -156,14 +157,25 @@ namespace City_Center.ViewModels
                         //MainViewModel.GetInstance().SalasEventos = new SalasEventosViewModel();
                         //MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
+                        //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+
                         MasterPage fpm = new MasterPage();
                         fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 
 						App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
 
-                        fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()                        Application.Current.MainPage = fpm;
+                        fpm.Detail = App.NavPage; // You have to create a Detail ContenPage() 
 
-                        await Mensajes.success("Bienvenido " + list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos);
+                        Application.Current.MainPage = fpm;
+
+                        await Mensajes.Alerta("Bienvenido " + list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos);
+
+
+                        // --- aqui se genera el Room del chat con su correo
+                        //var db = new DBFire();
+                        //await db.saveRoom(new Room() { Name = this.Email });
+                        //await Navigation.PopAsync();
+                        // ---
 
                         UserDialogs.Instance.HideLoading();
 	
@@ -308,6 +320,8 @@ namespace City_Center.ViewModels
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
                     MainViewModel.GetInstance().Casino = new CasinoViewModel();
 
+                    //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+
                     MasterPage fpm = new MasterPage();
                     fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 					App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
@@ -315,7 +329,7 @@ namespace City_Center.ViewModels
                     fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
                     Application.Current.MainPage = fpm;
 
-                    await Mensajes.success("Bienvenido " + googleUser.Name);
+                    await Mensajes.Alerta("Bienvenido " + googleUser.Name);
 
                     UserDialogs.Instance.HideLoading();
 
@@ -416,6 +430,8 @@ namespace City_Center.ViewModels
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
                     MainViewModel.GetInstance().Casino = new CasinoViewModel();
 
+                    //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+
                     MasterPage fpm = new MasterPage();
                     fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 					App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
@@ -423,7 +439,7 @@ namespace City_Center.ViewModels
                     fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
                     Application.Current.MainPage = fpm;
 
-                    await Mensajes.success("Bienvenido " + facebookUser.FirstName + ' ' + facebookUser.LastName);
+                    await Mensajes.Alerta("Bienvenido " + facebookUser.FirstName + ' ' + facebookUser.LastName);
 
                     UserDialogs.Instance.HideLoading();
                 }

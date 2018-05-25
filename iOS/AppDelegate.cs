@@ -12,6 +12,7 @@ using Plugin.FirebasePushNotification.Abstractions;
 using UIKit;
 using Xamarin;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 using Xfx;
 
 namespace City_Center.iOS
@@ -26,6 +27,8 @@ namespace City_Center.iOS
             ButtonCircle.FormsPlugin.iOS.ButtonCircleRenderer.Init();
    
             global::Xamarin.Forms.Forms.Init();
+
+            UINavigationBar.Appearance.TintColor = Color.White.ToUIColor();
 
             FFImageLoading.Forms.Touch.CachedImageRenderer.Init();
 

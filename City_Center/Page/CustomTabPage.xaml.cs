@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using City_Center.Clases;
 
 namespace City_Center.Page
 {
@@ -13,10 +14,28 @@ namespace City_Center.Page
 		private Gastronomia page4 = new Gastronomia();
 		private MasInfo page5 = new MasInfo();
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            VariablesGlobales.FechaShowInicio = string.Empty;
+            VariablesGlobales.FechaShowFinal = string.Empty;
+        }
+
+
 		public void ClickTap1(object sender, EventArgs e)
         {
-            //var page = new InicioContent();
-            //MainView.Content = page1.Content;
+            //tab_home_icon_selected.Source = "home";
+            //tab_Casino_icon_selected.Source = "Casinogray";
+            //tab_hotel_icon_selected.Source = "Hotelgray";
+            //tab_food_icon_selected.Source = "foodgray";
+            //tab_info_icon_selected.Source = "InfoGray";
+
+            BV1.IsVisible = true;
+            BV2.IsVisible = false;
+            BV3.IsVisible = false;
+            BV4.IsVisible = false;
+            BV5.IsVisible = false;
 
 			MainView.IsVisible = true;
             MainView2.IsVisible = false;
@@ -30,8 +49,17 @@ namespace City_Center.Page
 
         public void ClickTap2(object sender, EventArgs e)
         {
-            //var page = new Casino();
-            //MainView.Content = page2.Content;
+            //tab_home_icon_selected.Source = "homegray";
+            //tab_Casino_icon_selected.Source = "casino";
+            //tab_hotel_icon_selected.Source = "Hotelgray";
+            //tab_food_icon_selected.Source = "foodgray";
+            //tab_info_icon_selected.Source = "InfoGray";
+
+            BV1.IsVisible = false;
+            BV2.IsVisible = true;
+            BV3.IsVisible = false;
+            BV4.IsVisible = false;
+            BV5.IsVisible = false;
 
 			MainView.IsVisible = false;
             MainView2.IsVisible = true;
@@ -46,8 +74,17 @@ namespace City_Center.Page
 
         public void ClickTap3(object sender, EventArgs e)
         {
-            //var page = new Hotel();
-            //MainView.Content = page3.Content;
+            //tab_home_icon_selected.Source = "homegray";
+            //tab_Casino_icon_selected.Source = "Casinogray";
+            //tab_hotel_icon_selected.Source = "hotel";
+            //tab_food_icon_selected.Source = "foodgray";
+            //tab_info_icon_selected.Source = "InfoGray";
+
+            BV1.IsVisible = false;
+            BV2.IsVisible = false;
+            BV3.IsVisible = true;
+            BV4.IsVisible = false;
+            BV5.IsVisible = false;
 
 			MainView.IsVisible = false;
             MainView2.IsVisible = false;
@@ -62,8 +99,17 @@ namespace City_Center.Page
 
         public void ClickTap4(object sender, EventArgs e)
         {
-            //var page = new Gastronomia();
-			//MainView.Content = page4.Content;
+            //tab_home_icon_selected.Source = "homegray";
+            //tab_Casino_icon_selected.Source = "Casinogray";
+            //tab_hotel_icon_selected.Source = "Hotelgray";
+            //tab_food_icon_selected.Source = "food";
+            //tab_info_icon_selected.Source = "InfoGray";
+
+            BV1.IsVisible = false;
+            BV2.IsVisible = false;
+            BV3.IsVisible = false;
+            BV4.IsVisible = true;
+            BV5.IsVisible = false;
 
 			MainView.IsVisible = false;
             MainView2.IsVisible = false;
@@ -80,8 +126,17 @@ namespace City_Center.Page
 
 		public void ClickTap5(object sender, EventArgs e)
         {
-			//var page = new MasInfo();
-			//MainView.Content = page5.Content;
+            //tab_home_icon_selected.Source = "homegray";
+            //tab_Casino_icon_selected.Source = "Casinogray";
+            //tab_hotel_icon_selected.Source = "Hotelgray";
+            //tab_food_icon_selected.Source = "foodgray";
+            //tab_info_icon_selected.Source = "info2";
+
+            BV1.IsVisible = false;
+            BV2.IsVisible = false;
+            BV3.IsVisible = false;
+            BV4.IsVisible = false;
+            BV5.IsVisible = true;
 
 			MainView.IsVisible = false;
 			MainView2.IsVisible = false;
@@ -99,7 +154,7 @@ namespace City_Center.Page
         {
             InitializeComponent();
 
-			NavigationPage.SetTitleIcon(this, "logo.png");
+            NavigationPage.SetTitleIcon(this, "logowhite.png");
 
 			//var page = new InicioContent();
             MainView.Content = page1.Content;
@@ -112,6 +167,26 @@ namespace City_Center.Page
 			Barra.BackgroundColor = Color.FromHex("#877BA1");
 
             //App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
+        }
+
+       async void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                //bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                //                    (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                //if (isLoggedIn)
+                //{
+            //        await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ChatPage());
+                //}
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("error", ex.ToString(), "OK");
+            }
+
+
         }
     }
 }

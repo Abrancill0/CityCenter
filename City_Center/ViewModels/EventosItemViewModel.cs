@@ -11,6 +11,8 @@ using Xamarin.Forms;
 using static City_Center.Models.EventosResultado;
 using City_Center.Clases;
 using System.Linq;
+using System.Threading.Tasks;
+using static City_Center.Models.GuardaFavoritosResultado;
 
 namespace City_Center.ViewModels
 {
@@ -62,57 +64,63 @@ namespace City_Center.ViewModels
                 
                 if (isLoggedIn)
                 {
-                    var content = new FormUrlEncodedContent(new[]
+                    if (this.eve_guardado!=true)
                     {
-                        new KeyValuePair<string, string>("gua_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
-                        new KeyValuePair<string, string>("gua_id_evento", Convert.ToString(this.eve_id)),
-                        new KeyValuePair<string, string>("gua_id_promocion", "0")
-                    });
+                        var content = new FormUrlEncodedContent(new[]
+                        {
+                            new KeyValuePair<string, string>("gua_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                            new KeyValuePair<string, string>("gua_id_evento", Convert.ToString(this.eve_id)),
+                            new KeyValuePair<string, string>("gua_id_promocion", "0")
+                        });
 
-                    var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/store", content);
+                        var response = await this.apiService.Get<GuardaFavoritosReturn>("/guardados", "/store", content);
 
-                    if (!response.IsSuccess)
-                    {
-                        await Mensajes.Error("Error al guardar Guardados");
-                        return;
+                        if (!response.IsSuccess)
+                        {
+                            await Mensajes.Error("Error al guardar Guardados");
+                            return;
+                        }
+
+                        var list = (GuardaFavoritosReturn)response.Result;
+
+                        this.eve_guardado = true;
+                        this.oculta = false;
+                        this.eve_id_guardado = list.resultado.gua_id;
+
+                        var actualiza = MainViewModel.GetInstance().listEventos.resultado.Where(l => l.eve_id == this.eve_id).FirstOrDefault();
+
+                        actualiza.eve_guardado = true;
+                        actualiza.oculta = false;
+                        actualiza.eve_id_guardado = list.resultado.gua_id;
+                       
+
+                        await Mensajes.Alerta("Guardado Correctamente");  
                     }
-
-                    var list = (GuardadoGenerico)response.Result;
-                    
-					this.eve_guardado = true;
-					this.oculta = false;
-     
-					var actualiza = MainViewModel.GetInstance().listEventos.resultado.Where(l => l.eve_id == this.eve_id).FirstOrDefault();
-
-					actualiza.eve_guardado = true;
-					actualiza.oculta = false;
-
-					//actualiza.updated_at();
-
-					//this.();
-
-					await Mensajes.success("Guardado Correctamente");
+                    else
+                    {
+                       EliminaFavoritos();    
+                    }
 
                 }
                 else
                 {
-                    await Mensajes.Info("Inicia Sesion para guardar este Show");
+                    await Mensajes.Alerta("Inicia Sesion para guardar este Show");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Info("Inicia Sesion para guardar este Show");
+                await Mensajes.Alerta("Inicia Sesion para guardar este Show");
             }
 
         }
         
 		public ICommand EliminaFavoritosCommand
-        {
+         {
             get
             {
                 return new RelayCommand(EliminaFavoritos);
             }
-        }
+         }
 
         private async void EliminaFavoritos()
         {
@@ -120,49 +128,58 @@ namespace City_Center.ViewModels
             {            
                 bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
                                      (bool)Application.Current.Properties["IsLoggedIn"] : false;
-
+                
                 if (isLoggedIn)
                 {
-                    var content = new FormUrlEncodedContent(new[]
+
+                    if (this.eve_guardado == true)
                     {
-						new KeyValuePair<string, string>("gua_id_evento",Convert.ToString(this.eve_id)),
 
-                    });
+                        var content = new FormUrlEncodedContent(new[]
+                            {
+                            new KeyValuePair<string, string>("gua_id",Convert.ToString(this.eve_id_guardado)),
 
-                    var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/destroy", content);
+                        });
 
-                    if (!response.IsSuccess)
+                        var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/destroy", content);
+
+                        if (!response.IsSuccess)
+                        {
+                            await Mensajes.Error("Error al eliminar Guardados");
+                            return;
+                        }
+
+                        this.eve_guardado = false;
+                        this.oculta = true;
+
+                        var actualiza = MainViewModel.GetInstance().listEventos.resultado.Where(l => l.eve_id == this.eve_id).FirstOrDefault();
+
+                        actualiza.eve_guardado = false;
+                        actualiza.oculta = true;
+
+                        var list = (GuardadoGenerico)response.Result;
+
+                        await Mensajes.Alerta("Guardado eliminado correctamente");
+
+
+                    }
+                    else
                     {
-                        await Mensajes.Error("Error al eliminar Guardados");
-                        return;
+                        GuardaFavorito();  
                     }
 
-					this.eve_guardado = false;
-                    this.oculta = true;
-
-                    var actualiza = MainViewModel.GetInstance().listEventos.resultado.Where(l => l.eve_id == this.eve_id).FirstOrDefault();
-
-                    actualiza.eve_guardado = false;
-                    actualiza.oculta = true;
-                    
-                    var list = (GuardadoGenerico)response.Result;
-
-                    await Mensajes.success("Guardado eliminado correctamente");
 
                 }
                 else
                 {
-                    await Mensajes.Info("Inicia Sesion para eliminar Guardados");
+                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Info("Inicia Sesion para eliminar Guardados");
+                await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
             }
         }
-
-
-
 
 
         public ICommand VerDetalleShowCommand

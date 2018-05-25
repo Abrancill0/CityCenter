@@ -176,16 +176,35 @@
                     </Label>
                     <Image Source="campana.png" Grid.Row="0" Grid.Column="2" HeightRequest="20" >
                     </Image>
-                    <Button Command="{Binding CierraSesionCommand}" Text="Cerrar Sesión"
+                    <Label  Text="Cerrar Sesión"
                             TextColor="White"
                             BackgroundColor="Transparent"
                             VerticalOptions="Center"
                             HorizontalOptions="End"
                             Grid.Row="0"
-                            WidthRequest="120"
+                            WidthRequest="80"
                             Margin="10,0,5,0"
                             Grid.Column="3"
-                            Grid.ColumnSpan="2"
+                            FontSize="12">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                               <On Platform="iOS" Value="Oswald-Regular"/>
+                               <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                            </OnPlatform>
+                       </Label.FontFamily>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CierraSesionCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                   <!-- <Button Command="{Binding CierraSesionCommand}" 
+                            TextColor="White"
+                            BackgroundColor="Transparent"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                            Grid.Row="0"
+                            WidthRequest="80"
+                            Margin="10,0,5,0"
+                            Grid.Column="3"
                             FontSize="12">
                         <Button.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
@@ -193,9 +212,9 @@
                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                             </OnPlatform>
                        </Button.FontFamily>
-                    </Button>
-                    <!--<Image Source="logout.png" HorizontalOptions="Start" Margin="-10,0,15,0" HeightRequest="20" Grid.Row="0" Grid.Column="4" Aspect="AspectFit">
-                    </Image>-->
+                    </Button>-->
+                    <Image Source="logout.png" HorizontalOptions="Start" Margin="-10,0,15,0" HeightRequest="20" Grid.Row="0" Grid.Column="4" Aspect="AspectFit">
+                    </Image>
                 </Grid>
             </StackLayout>
             <StackLayout Padding="0,10,10,10" BackgroundColor="#1B0938" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" IsVisible="{Binding OpcionesVisible}">

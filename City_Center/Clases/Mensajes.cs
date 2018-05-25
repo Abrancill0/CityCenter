@@ -1,6 +1,9 @@
 ﻿using Acr.UserDialogs;
+using City_Center.PopUp;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace City_Center.Clases
 {                    
@@ -30,6 +33,16 @@ namespace City_Center.Clases
 
         return mensajeError;
     }
+
+
+        public static async Task<string> Alerta(string Mensaje)
+        {
+            VariablesGlobales.Mensaje = Mensaje;
+            await Application.Current.MainPage.Navigation.PushPopupAsync(new AlertaConfirmacion());
+
+            return "OK";
+        }
+
 
     //public static async Task<IDisposable> warning(string Mensaje)
    

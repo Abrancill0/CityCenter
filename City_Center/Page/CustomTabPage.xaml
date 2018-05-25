@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="City_Center.Page.CustomTabPage">
       <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat"/>
+        <ToolbarItem Icon="Chat" Clicked="Handle_Clicked"/>
     </ContentPage.ToolbarItems>
-    <Grid>
+    <Grid BindingContext="{Binding TabPageCustom}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
@@ -51,6 +51,14 @@
                     <TapGestureRecognizer Tapped="ClickTap1" NumberOfTapsRequired="1" />
                 </StackLayout.GestureRecognizers>
                 <Image x:Name="tab_home_icon_selected" IsVisible="True" Source="home" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                 <BoxView x:Name="BV1"
+                          BackgroundColor="#EBEBEB"
+                          IsVisible="true"
+                          HeightRequest="2"
+                          WidthRequest="50"
+                          Margin="0,0,0,-5"
+                          VerticalOptions="End">
+                </BoxView>
 
             </StackLayout>
 
@@ -58,33 +66,63 @@
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="ClickTap2" NumberOfTapsRequired="1" />
                 </StackLayout.GestureRecognizers>
-                <Image x:Name="tab_scan_icon_unselected"  Source="casino" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                <Image x:Name="tab_Casino_icon_selected"  Source="casino" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                <BoxView x:Name="BV2"
+                         BackgroundColor="#EBEBEB"
+                         IsVisible="false"
+                         HeightRequest="2"
+                         WidthRequest="50"
+                         Margin="0,0,0,-5"
+                         VerticalOptions="End">
+                </BoxView>
 
 
             </StackLayout>
 
             <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="2">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="ClickTap3" NumberOfTapsRequired="1" />
+                    <TapGestureRecognizer Tapped="ClickTap3" NumberOfTapsRequired="1" Command="{Binding CargaHotelCommand}" />
                 </StackLayout.GestureRecognizers>
-                <Image x:Name="tab_search_icon_unselected" Source="hotel" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
-
+                <Image x:Name="tab_hotel_icon_selected" Source="hotel" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                <BoxView x:Name="BV3"
+                         BackgroundColor="#EBEBEB"
+                         IsVisible="false"
+                         HeightRequest="2"
+                         WidthRequest="50"
+                         Margin="0,0,0,-5"
+                         VerticalOptions="End">
+                </BoxView>
+               
             </StackLayout>
 
             <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="3">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="ClickTap4" NumberOfTapsRequired="1" />
+                    <TapGestureRecognizer Tapped="ClickTap4" NumberOfTapsRequired="1" Command="{Binding CargaGastronomiaCommand}" />
                 </StackLayout.GestureRecognizers>
-                <Image x:Name="tab_music_icon_unselected" Source="food" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
-
+                <Image x:Name="tab_food_icon_selected" Source="food" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                 <BoxView x:Name="BV4"
+                          BackgroundColor="#EBEBEB"
+                          IsVisible="false"
+                          HeightRequest="2"
+                          WidthRequest="50"
+                          Margin="0,0,0,-5"
+                          VerticalOptions="End">
+                </BoxView>
             </StackLayout>
 
             <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="4">
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="ClickTap5" NumberOfTapsRequired="1" />
                 </StackLayout.GestureRecognizers>
-                <Image x:Name="tab_music_icon_unselected1" Source="info2" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
-
+                <Image x:Name="tab_info_icon_selected" Source="info2" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                 <BoxView x:Name="BV5"
+                          BackgroundColor="#EBEBEB"
+                          IsVisible="false"
+                          HeightRequest="2"
+                          WidthRequest="50"
+                          Margin="0,0,0,-5"
+                          VerticalOptions="End">
+                </BoxView>
             </StackLayout>
             
         </Grid>

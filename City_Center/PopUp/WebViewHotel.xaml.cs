@@ -6,9 +6,9 @@ using Xamarin.Forms;
 
 namespace City_Center.PopUp
 {
-    public partial class WebViewHotel : Rg.Plugins.Popup.Pages.PopupPage
-    {
-        public WebViewHotel()
+    public partial class WebViewHotel : ContentPage
+    { 
+    public WebViewHotel()
         {
             InitializeComponent();
            
@@ -31,21 +31,5 @@ namespace City_Center.PopUp
             
         }
 
-        private void OnCloseButtonTapped(object sender, EventArgs e)
-        {
-            CloseAllPopup();
-        }
-
-        protected override bool OnBackgroundClicked()
-        {
-            CloseAllPopup();
-
-            return false;
-        }
-
-        private async void CloseAllPopup()
-        {
-            await Navigation.PopAllPopupAsync();
-        }
     }
 }

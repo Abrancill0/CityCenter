@@ -36,14 +36,22 @@ namespace City_Center.Page
             
         }
 
-     
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+
+        }
+
+
+
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
 
             GC.Collect();
         }
-
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
@@ -86,7 +94,9 @@ namespace City_Center.Page
                     VariablesGlobales.FechaFin = Fecha2.Date;
                     VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
-                    await Navigation.PushPopupAsync(_webHotel);
+                    await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(_webHotel);
+
+                    //await Navigation.PushPopupAsync(_webHotel);
                 }
             }
             catch (Exception ex)

@@ -79,7 +79,7 @@ namespace City_Center.ViewModels
 
             this.CorreoElectronico = string.Empty;
 
-            await Mensajes.success("Contraseña temporal generada y enviada a tu correo!!!");
+            await Mensajes.Alerta("Contraseña temporal generada y enviada a tu correo!!!");
 
 
         }

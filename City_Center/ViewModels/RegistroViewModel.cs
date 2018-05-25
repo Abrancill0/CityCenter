@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 using Acr.UserDialogs;
 using static City_Center.Models.ImagenResultado;
 using static City_Center.Models.ValidaUsuarioResultado;
+using City_Center.Database;
+using Org.BouncyCastle.Crypto.Tls;
 
 namespace City_Center.ViewModels
 {
@@ -199,6 +201,12 @@ namespace City_Center.ViewModels
             }
 
 
+            string Dia = this.Fecha.Substring(0, 2);
+            string Mes = this.Fecha.Substring(3, 2);
+            string Año = this.Fecha.Substring(6, 4);
+
+            //DateTime FechaConvertida = Convert.ToDateTime(Año + "-" + Mes + "-" + Dia);
+
             var content = new FormUrlEncodedContent(new[]
            {
                 new KeyValuePair<string, string>("usu_usuario", this.Email),
@@ -215,7 +223,7 @@ namespace City_Center.ViewModels
                 new KeyValuePair<string, string>("usu_id_tarjeta_socio", "1"),
                 new KeyValuePair<string, string>("usu_estatus", "1"),
                 new KeyValuePair<string, string>("usu_id_tarjeta_socio", ""),
-                new KeyValuePair<string, string>("usu_fecha_nacimiento", this.Fecha),
+                new KeyValuePair<string, string>("usu_fecha_nacimiento", Convert.ToString(Año + "-" + Mes + "-" + Dia)),
             });
 
 
@@ -240,7 +248,7 @@ namespace City_Center.ViewModels
             Application.Current.Properties["NombreCompleto"] = this.Nombre;
             Application.Current.Properties["Ciudad"] = this.Ciudad;
             Application.Current.Properties["Pass"] = this.Password;
-            Application.Current.Properties["FechaNacimiento"] = this.Fecha;
+            Application.Current.Properties["FechaNacimiento"] = Convert.ToString(Año + "-" + Mes + "-" + Dia);
             Application.Current.Properties["FotoPerfil"] = RutaImagen;
 			Application.Current.Properties["TipoCuenta"] = "CityCenter";
 
@@ -248,10 +256,11 @@ namespace City_Center.ViewModels
             Application.Current.Properties["NumeroDocumento"] = "";
             Application.Current.Properties["NumeroSocio"] = "";
 
-
             await Application.Current.SavePropertiesAsync();
 
-           
+            var db = new DBFire();
+            await db.saveRoom(new Room() { Email = this.Email, Name = this.Nombre });
+
             this.Email = string.Empty;
             this.Nombre = string.Empty;
             this.Ciudad = string.Empty;
@@ -268,6 +277,8 @@ namespace City_Center.ViewModels
 
             //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
 
+            //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+
             MasterPage fpm = new MasterPage();
             fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 			App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
@@ -275,7 +286,8 @@ namespace City_Center.ViewModels
             fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
             Application.Current.MainPage = fpm;
 
-            await Mensajes.success("Bienvenido " + this.Nombre);
+
+            await Mensajes.Alerta("Bienvenido " + Application.Current.Properties["NombreCompleto"].ToString());
 
             UserDialogs.Instance.HideLoading();
 
@@ -330,7 +342,7 @@ namespace City_Center.ViewModels
                     {
                         IDUsuario = await GuardaUsuarioGF(googleUser.Name, googleUser.Email);
 
-                        await Mensajes.success("Usuario creado correctamente");
+                        await Mensajes.Alerta("Usuario creado correctamente");
                     }
                     else
                     {
@@ -362,6 +374,8 @@ namespace City_Center.ViewModels
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
                     MainViewModel.GetInstance().Casino = new CasinoViewModel();
 
+                    //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+
                     MasterPage fpm = new MasterPage();
                     fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 					App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
@@ -369,7 +383,7 @@ namespace City_Center.ViewModels
                     fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
                     Application.Current.MainPage = fpm;
 
-                    await Mensajes.success("Bienvenido " + googleUser.Name);
+                    await Mensajes.Alerta("Bienvenido " + googleUser.Name);
 
                     UserDialogs.Instance.HideLoading();
 
@@ -470,6 +484,8 @@ namespace City_Center.ViewModels
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
                     MainViewModel.GetInstance().Casino = new CasinoViewModel();
 
+                   // await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+
                     MasterPage fpm = new MasterPage();
                     fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 					App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
@@ -477,7 +493,7 @@ namespace City_Center.ViewModels
                     fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
                     Application.Current.MainPage = fpm;
 
-                    await Mensajes.success("Bienvenido " + facebookUser.FirstName + ' ' + facebookUser.LastName);
+                    await Mensajes.Alerta("Bienvenido " + facebookUser.FirstName + ' ' + facebookUser.LastName);
 
                     UserDialogs.Instance.HideLoading();
                 }

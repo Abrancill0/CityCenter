@@ -15,6 +15,7 @@ using static City_Center.Models.TorneoResultado;
 using City_Center.Clases;
 using static City_Center.Models.TarjetaUsuarioResultado;
 using Acr.UserDialogs;
+using static City_Center.Models.PromocionesResultado;
 
 namespace City_Center.ViewModels
 {
@@ -25,6 +26,7 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Attributes
+        private PromocionesReturn listPromociones;
         private EventosReturn list;
         private ObservableCollection<EventosItemViewModel> eventosDetalle;
   
@@ -32,6 +34,9 @@ namespace City_Center.ViewModels
 
         private TarjetaUsuarioReturn listaTarjetausuario;
         private ObservableCollection<TarjetaUsuarioDetalle> tarjetaUsuarioDetalle;
+
+
+        private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
 
         private string imagenTarjeta;
         private int puntosWin;
@@ -46,9 +51,26 @@ namespace City_Center.ViewModels
         string correo;
         string telefono;
         bool verTarjeta;
+        bool muestraFlechas=false;
+
+        private string fechaShowInicio;
+        private string fechaShowFin;
         #endregion
 
         #region Properties
+
+        public string FechaShowInicio
+        {
+            get { return this.fechaShowInicio; }
+            set { SetValue(ref this.fechaShowInicio, value); }
+        }
+
+        public string FechaShowFin
+        {
+            get { return this.fechaShowFin; }
+            set { SetValue(ref this.fechaShowFin, value); }
+        }
+
 
         public ObservableCollection<EventosItemViewModel> EventosDetalle
         {
@@ -141,6 +163,19 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.verTarjeta, value); }
         }
 
+
+        public bool MuestraFlechas
+        {
+            get { return this.muestraFlechas; }
+            set { SetValue(ref this.muestraFlechas, value); }
+        }
+
+        public ObservableCollection<PromocionesItemViewModel> PromocionesDetalle
+        {
+            get { return this.promocionesDetalle; }
+            set { SetValue(ref this.promocionesDetalle, value); }
+        }
+
         #endregion
 
         #region Commands
@@ -205,7 +240,7 @@ namespace City_Center.ViewModels
    
 
 			var content = new FormUrlEncodedContent(new[]
-        {
+            {
 				new KeyValuePair<string, string>("restaurant", this.NombreRestaurante),
                 new KeyValuePair<string, string>("fecha", this.FechaInicio),
                 new KeyValuePair<string, string>("hora", this.HoraInicio),
@@ -222,7 +257,7 @@ namespace City_Center.ViewModels
                 await Mensajes.Error(response.Message);
             }
 
-            await Mensajes.success("Correo enviado exitosamente");
+            await Mensajes.Alerta("Correo enviado exitosamente");
 
 			this.FechaInicio = "00/00/0000";
 			this.HoraInicio = "00:00";
@@ -233,6 +268,53 @@ namespace City_Center.ViewModels
             this.Telefono = string.Empty;
 
         }
+
+        public ICommand VerShowsFiltroCommand
+        {
+            get
+            {
+                return new RelayCommand(VerShowsFiltro);
+            }
+        }
+
+        private async void VerShowsFiltro()
+        {
+            
+            if (this.FechaShowInicio=="00/00/0000")
+            {
+              await  Mensajes.Alerta("Fecha inicio obligatoria para consulta de shows");
+                return;
+            }
+
+            if (this.FechaShowFin == "00/00/0000")
+            {
+                await Mensajes.Alerta("Fecha final obligatoria para consulta de shows");
+                return;
+            }
+
+
+            string Dia = this.FechaShowInicio.Substring(0, 2);
+            string Mes = this.FechaShowInicio.Substring(3, 2);
+            string Año = this.FechaShowInicio.Substring(6, 4);
+
+
+            string Dia2 = this.FechaShowFin.Substring(0, 2);
+            string Mes2 = this.FechaShowFin.Substring(3, 2);
+            string Año2 = this.FechaShowFin.Substring(6, 4);
+
+
+            VariablesGlobales.FechaShowInicio = Año + "-" + Mes + "-" + Dia;
+            VariablesGlobales.FechaShowFinal = Año2 + "-" + Mes2 + "-" + Dia2;
+
+            MainViewModel.GetInstance().Shows = new ShowsViewModel();
+
+            ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Show());
+
+
+        }
+
 
         #endregion
 
@@ -281,6 +363,10 @@ namespace City_Center.ViewModels
 
                 TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
+                if (TorneoDetalle.Count>0)
+                {
+                    MuestraFlechas = true;
+                }
             }
             catch (Exception)
             {
@@ -375,6 +461,79 @@ namespace City_Center.ViewModels
 
         }
 
+
+        private async void LoadPromociones()
+        {
+            try
+            {
+                var connection = await this.apiService.CheckConnection();
+
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
+
+                    return;
+                }
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                new KeyValuePair<string, string>("", ""),
+                });
+
+
+                var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
+
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Promociones");
+
+                    return;
+                }
+
+                this.listPromociones = (PromocionesReturn)response.Result;
+
+
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+            }
+            catch (Exception ex)
+            {
+                await Mensajes.Error("Home - Promociones" + ex.ToString());
+            }
+
+        }
+
+        private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()
+        {
+            return this.listPromociones.resultado.Select(l => new PromocionesItemViewModel
+            {
+                pro_id = l.pro_id,
+                pro_id_evento = l.pro_id_evento,
+                pro_id_locacion = l.pro_id_locacion,
+                pro_nombre = l.pro_nombre.ToUpper(),
+                pro_descripcion = l.pro_descripcion,
+                pro_imagen = l.pro_imagen,
+                pro_tipo_promocion = l.pro_tipo_promocion,
+                pro_codigo = l.pro_codigo,
+                pro_compartidos_codigo = l.pro_compartidos_codigo,
+                pro_destacado = l.pro_destacado,
+                pro_fecha_duracion_ini = l.pro_fecha_duracion_ini,
+                pro_fecha_duracion_fin = l.pro_fecha_duracion_fin,
+                pro_importe_decuento = l.pro_importe_decuento,
+                pro_porcentaje_decuento = l.pro_porcentaje_decuento,
+                pro_id_usuario_creo = l.pro_id_usuario_creo,
+                pro_fecha_hora_creo = l.pro_fecha_hora_creo,
+                pro_id_usuario_modifico = l.pro_id_usuario_modifico,
+                pro_fecha_hora_modifico = l.pro_fecha_hora_modifico,
+                pro_tipo = l.pro_tipo,
+                pro_estatus = l.pro_estatus,
+                loc_nombre = l.loc_nombre
+            });
+        }
+
+
+
+
+
         #endregion
 
         #region Contructors
@@ -382,10 +541,14 @@ namespace City_Center.ViewModels
         {
             this.apiService = new ApiService();
             this.LoadTarjetaUsuario();
+            this.LoadPromociones();
             this.LoadTorneo();
 
 			this.FechaInicio = "00/00/0000";
 			this.HoraInicio = "00:00";
+
+            this.FechaShowInicio = "00/00/0000";
+            this.fechaShowFin = "00/00/0000";
 			this.NombreRestaurante = "Seleccionar";
 			this.SillaNiños = "No";
             

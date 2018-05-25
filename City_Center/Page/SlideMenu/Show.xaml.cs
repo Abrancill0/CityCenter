@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using static City_Center.Models.EventosResultado;
+using GalaSoft.MvvmLight.Helpers;
+using City_Center.ViewModels;
 
 namespace City_Center.Page.SlideMenu
 {
     public partial class Show : ContentPage
     {
-
-        ObservableCollection<EventosDetalle> items;
+        ShowsViewModel showsito = new ShowsViewModel();
 
         public Show()
         {
@@ -18,9 +19,25 @@ namespace City_Center.Page.SlideMenu
             NavigationPage.SetTitleIcon(this, "logo.png");
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (showsito.EventosDetalle !=null)
+            {
+                ListaShow.ItemsSource = null;
+                ListaShow.ItemsSource = showsito.EventosDetalle;
+            }
+  
+        }
+
+
+    
+
+
         protected override void OnDisappearing()
         {
-
+            
             base.OnDisappearing();
 
             GC.Collect();
@@ -76,10 +93,20 @@ namespace City_Center.Page.SlideMenu
 
                 if (isLoggedIn)
                 {
-
+                 
                     Image image = sender as Image;
 
-                    image.Source = "FavoritoOK";
+                    if (image.BackgroundColor != Color.Transparent)
+                    {
+                        image.BackgroundColor = Color.Transparent;
+                        image.Source = "FavoritoOK";                        
+                    }
+                    else
+                    {
+                        image.BackgroundColor = Color.White;
+                        image.Source = "Favorito";   
+                    }
+
                 }
 
             }
@@ -89,7 +116,6 @@ namespace City_Center.Page.SlideMenu
 
             }
         }
-
 
         void CambiaIcono2(object sender, System.EventArgs e)
         {
@@ -103,7 +129,17 @@ namespace City_Center.Page.SlideMenu
 
                     Image image = sender as Image;
 
-					image.Source = "Favorito";
+                    if (image.BackgroundColor != Color.Transparent)
+                    {
+                        image.BackgroundColor = Color.Transparent;
+                        image.Source = "Favorito";
+                    }
+                    else
+                    {
+                        image.BackgroundColor = Color.White;
+                        image.Source = "FavoritoOK";
+                    }
+
                 }
 
             }

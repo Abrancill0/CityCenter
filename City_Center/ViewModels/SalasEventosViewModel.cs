@@ -117,14 +117,14 @@ namespace City_Center.ViewModels
         {
 			if (string.IsNullOrEmpty(this.Nombre))
             {
-                await Mensajes.Error("Nombre requerido");
+                await Mensajes.Alerta("Nombre requerido");
 
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Correo))
             {
-                await Mensajes.Error("Correo requerido");
+                await Mensajes.Alerta("Correo requerido");
 
                 return;
             }
@@ -132,14 +132,14 @@ namespace City_Center.ViewModels
 		         
 			if (string.IsNullOrEmpty(this.Celular))
             {
-				await Mensajes.Error("Celular requerido");
+                await Mensajes.Alerta("Celular requerido");
 
                 return;
             }
 
 			if (string.IsNullOrEmpty(this.Asistentes))
             {
-				await Mensajes.Error("Asistentes requerido");
+                await Mensajes.Alerta("Asistentes requerido");
 
                 return;
             }
@@ -166,7 +166,7 @@ namespace City_Center.ViewModels
                 await Mensajes.Error(response.Message);
             }
 
-            await Mensajes.success("Correo enviado exitosamente");
+            await Mensajes.Alerta("Correo enviado exitosamente");
 
             //this.FechaInicio
 			this.Celular = string.Empty; 
@@ -241,7 +241,7 @@ namespace City_Center.ViewModels
         {
             this.apiService = new ApiService();
 			Fecha = "00/00/0000";
-			this.TipoEvento = "Casamiento";
+            this.TipoEvento = "Congresos, Convenciones, Seminarios";
             this.LoadSalasEventos();
            
         }

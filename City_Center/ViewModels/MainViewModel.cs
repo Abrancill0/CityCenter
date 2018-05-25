@@ -1,9 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 using System.Text;
+using City_Center.Clases;
+using City_Center.Services;
 using Xamarin.Forms;
+using static City_Center.Models.DestacadosResultado;
 using static City_Center.Models.EventosResultado;
+using static City_Center.Models.FavoritosResultado;
+using static City_Center.Models.PromocionesResultado;
 using static City_Center.Models.TorneoResultado;
 
 namespace City_Center.ViewModels
@@ -13,6 +19,8 @@ namespace City_Center.ViewModels
         #region Poperties
 		public EventosReturn listEventos { get; set; }
 		public TorneoReturn listTorneo { get; set; }
+        public FavoritoReturn listFavoritos { get; set; }
+        public DestacadosReturn listDestacados { get; set; }
         #endregion
 
         #region ViewModels
@@ -47,6 +55,7 @@ namespace City_Center.ViewModels
         public ReiniciaPassViewModel ReiniciaPass { get; set; }
         public ConsultaTarjetaWinViewModel ConsultaTarjetaWin { get; set; }
 		public CambiaPassViewModel CambiaContrasena { get; set; }
+        public TabPageViewModel TabPageCustom { get; set; }
         #endregion
 
         #region Contructors
@@ -60,8 +69,9 @@ namespace City_Center.ViewModels
                 instance = this;
                 this.Master = new MasterViewModel();
                 this.Inicio = new InicioViewModel();
+            this.TabPageCustom = new TabPageViewModel();
                
-                this.Hotel = new HotelViewModel();
+                //this.Hotel = new HotelViewModel();
                 this.Detail = new DetailViewModel();
                 //this.Gastronomia = new GastronomiaViewModel();
                 this.SalasEventos = new SalasEventosViewModel();
@@ -76,7 +86,7 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Methods
-
+       
 
 
         #endregion

@@ -7,7 +7,6 @@ using Rg.Plugins.Popup.Extensions;
 using City_Center.Clases;
 using Acr.UserDialogs;
 using City_Center.Helper;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace City_Center.Page
@@ -15,6 +14,7 @@ namespace City_Center.Page
     public partial class InicioContent : ContentPage
     {
         public WebViewHotel _webHotel;
+        public AlertaConfirmacion _AlertaConfirmacion;
         
         public InicioContent()
         {
@@ -22,6 +22,8 @@ namespace City_Center.Page
 			//FechaInicio.ShowSoftInputOnFocus = false;
 
             _webHotel = new WebViewHotel();
+
+            _AlertaConfirmacion = new AlertaConfirmacion();
 
         }
 
@@ -36,6 +38,7 @@ namespace City_Center.Page
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
    
         }
 
@@ -43,6 +46,7 @@ namespace City_Center.Page
         {
             try
             {
+               
 				if (FechaInicio.Text == "00/00/00")
                 {
 					await Mensajes.Info("Fecha inicial requerida.");
@@ -79,11 +83,11 @@ namespace City_Center.Page
                 {
 					VariablesGlobales.FechaInicio = Fecha1.Date;
 					VariablesGlobales.FechaFin = Fecha2.Date;
-					VariablesGlobales.FechaInicio = Convert.ToDateTime(FechaInicio.Text);
-					VariablesGlobales.FechaFin = Convert.ToDateTime(FechaFinal.Text);
+				
                     VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
-                    await Navigation.PushPopupAsync(_webHotel);
+                    //await Navigation.PushPopupAsync(_webHotel);
+                    await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(_webHotel);
                 }
             }
             catch (Exception ex)
@@ -161,11 +165,54 @@ namespace City_Center.Page
 
                     Image image = sender as Image;
 
-                    image.Source = "FavoritoOK";
+                    if (image.BackgroundColor != Color.Transparent)
+                    {
+                        image.BackgroundColor = Color.Transparent;
+                        image.Source = "FavoritoOK";
+                    }
+                    else
+                    {
+                        image.BackgroundColor = Color.White;
+                        image.Source = "Favorito";
+                    }
+
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        void CambiaIcono2(object sender, System.EventArgs e)
+        {
+            try
+            {
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                if (isLoggedIn)
+                {
+
+                    Image image = sender as Image;
+
+                    if (image.BackgroundColor != Color.Transparent)
+                    {
+                        image.BackgroundColor = Color.Transparent;
+                        image.Source = "Favorito";
+                    }
+                    else
+                    {
+                        image.BackgroundColor = Color.White;
+                        image.Source = "FavoritoOK";
+                    }
+
+                }
+
+            }
+            catch (Exception)
             {
 
 
@@ -399,6 +446,11 @@ namespace City_Center.Page
 			}
 
 		}
-	}
+
+        async void Handle_Clicked_1(object sender, System.EventArgs e)
+        {
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda());
+        }
+    }
 
 }

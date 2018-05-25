@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="City_Center.PopUp.AlertaConfirmacion">
+
+      <Frame HorizontalOptions="FillAndExpand"
+             VerticalOptions="FillAndExpand"
+             Margin="40,150,40,270"
+             HasShadow="true"
+             BackgroundColor="White">
+        <StackLayout Padding="2"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     Orientation="Vertical">
+            <Image Source="CloseG"
+                           HorizontalOptions="End"
+                           VerticalOptions="Start">
+                        <Image.GestureRecognizers>
+                           <TapGestureRecognizer Tapped="Handle_Tapped" /> 
+                        </Image.GestureRecognizers>
+            </Image>
+            
+             <Label x:Name="Mensaje" Text="Por favor comprobá que los datos son correctos y volve a intentar"
+              LineBreakMode="WordWrap"
+                    Margin="12,13,12,30">
+                 <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                                   <On Platform="iOS" Value="Roboto-Regular"/>
+                                   <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                        </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+
+            <Label Text="OK" TextColor="#250C4B"
+                   FontSize="Small"
+                   HorizontalTextAlignment="Center" HorizontalOptions="Center">
+                 <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                                   <On Platform="iOS" Value="Oswald-Regular"/>
+                                   <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                </Label.FontFamily>
+                 <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Handle_Tapped" />
+                      </Label.GestureRecognizers>
+                </Label>
+        </StackLayout>
+         </Frame>
+    
+</pages:PopupPage>

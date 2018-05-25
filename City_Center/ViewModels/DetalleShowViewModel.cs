@@ -11,6 +11,12 @@ using static City_Center.Models.EventosResultado;
 using City_Center.Clases;
 using Plugin.Messaging;
 using System.Linq;
+using static City_Center.Models.GuardaFavoritosResultado;
+using GalaSoft.MvvmLight.Helpers;
+using System.Collections.ObjectModel;
+using City_Center.PopUp;
+using Rg.Plugins.Popup.Extensions;
+using City_Center.Page;
 
 namespace City_Center.ViewModels
 {
@@ -21,7 +27,7 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Attributes
-
+        ShowsViewModel showsito = new ShowsViewModel();
         #endregion
 
         #region Properties
@@ -66,37 +72,59 @@ namespace City_Center.ViewModels
         {
             try
             {
-                var content = new FormUrlEncodedContent(new[]
-             {
-                new KeyValuePair<string, string>("gua_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
-                new KeyValuePair<string, string>("gua_id_evento", Convert.ToString(this.ds.eve_id)),
-                new KeyValuePair<string, string>("gua_id_promocion", "0")
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                    (bool)Application.Current.Properties["IsLoggedIn"] : false;
 
-             });
-
-                var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/store", content);
-
-                if (!response.IsSuccess)
+                if (isLoggedIn)
                 {
-                    await Mensajes.Error(response.Message);
+                    if (this.ds.eve_guardado == false)
+                    {
+                        var content = new FormUrlEncodedContent(new[]
+                        {
+                            new KeyValuePair<string, string>("gua_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                            new KeyValuePair<string, string>("gua_id_evento", Convert.ToString(this.ds.eve_id)),
+                            new KeyValuePair<string, string>("gua_id_promocion", "0")
+                        });
 
-                    return;
+                        var response = await this.apiService.Get<GuardaFavoritosReturn>("/guardados", "/store", content);
+
+                        if (!response.IsSuccess)
+                        {
+                            await Mensajes.Error(response.Message);
+
+                            return;
+                        }
+
+                        var list = (GuardaFavoritosReturn)response.Result;
+
+                        this.ds.eve_guardado = true;
+                        this.ds.oculta = false;
+                         this.ds.eve_id_guardado=list.resultado.gua_id;
+
+                        var actualiza = MainViewModel.GetInstance().listEventos.resultado.Where(l => l.eve_id == this.ds.eve_id).FirstOrDefault();
+
+                        actualiza.eve_guardado = true;
+                        actualiza.oculta = false;
+                        actualiza.eve_id_guardado = list.resultado.gua_id;
+
+
+                        showsito.EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel());
+                        //MainViewModel.GetInstance().listEventos.resultado.ToList();
+
+                        //= new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel())
+
+
+                        await Mensajes.Alerta("Guardado correctamente");
+                    }
+                    else
+                    {
+                        EliminaFavoritos();
+                    }   
                 }
-
-                var list = (GuardadoGenerico)response.Result;
-                
-				this.ds.eve_guardado = true;
-				this.ds.oculta = false;
-
-				var actualiza = MainViewModel.GetInstance().listEventos.resultado.Where(l => l.eve_id == this.ds.eve_id).FirstOrDefault();
-
-                actualiza.eve_guardado = true;
-                actualiza.oculta = false;
-
-
-				//this.ds.updated_at();
-
-                await Mensajes.success(list.mensaje);
+                else
+                {
+                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                }
 
             }
             catch (Exception)
@@ -104,21 +132,89 @@ namespace City_Center.ViewModels
 
             }
 
-
         }
 
-              
-		public ICommand LlamarCommand
+
+        public ICommand EliminaFavoritosCommand
         {
             get
             {
-				return new RelayCommand(Llamar);
+                return new RelayCommand(EliminaFavoritos);
             }
         }
 
-		private  void Llamar()
+        private async void EliminaFavoritos()
         {
-			var phoneCallTask = CrossMessaging.Current.PhoneDialer;
+            try
+            {
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                if (isLoggedIn)
+                {
+
+                    if (this.ds.eve_guardado == true)
+                    {
+
+                        var content = new FormUrlEncodedContent(new[]
+                       {
+                            new KeyValuePair<string, string>("gua_id",Convert.ToString(this.ds.eve_id_guardado)),
+
+                        });
+
+                        var response = await this.apiService.Get<GuardaFavoritosReturn>("/guardados", "/destroy", content);
+
+                        if (!response.IsSuccess)
+                        {
+                            await Mensajes.Error("Error al eliminar Guardados");
+                            return;
+                        }
+
+                        this.ds.eve_guardado = false;
+                        this.ds.oculta = true;
+                        this.ds.eve_id_guardado = 0;
+
+                        var actualiza = MainViewModel.GetInstance().listEventos.resultado.Where(l => l.eve_id == this.ds.eve_id).FirstOrDefault();
+
+                        actualiza.eve_guardado = false;
+                        actualiza.oculta = true;
+                        actualiza.eve_id_guardado = 0;
+                       
+
+                        await Mensajes.Alerta("Guardado eliminado correctamente");
+
+
+                    }
+                    else
+                    {
+                        GuardaFavorito();
+                    }
+
+
+                }
+                else
+                {
+                    await Mensajes.Info("Inicia Sesion para eliminar Guardados");
+                }
+            }
+            catch (Exception)
+            {
+                await Mensajes.Info("Inicia Sesion para eliminar Guardados");
+            }
+        }
+
+
+        public ICommand LlamarCommand
+        {
+            get
+            {
+                return new RelayCommand(Llamar);
+            }
+        }
+
+        private void Llamar()
+        {
+            var phoneCallTask = CrossMessaging.Current.PhoneDialer;
 
             if (phoneCallTask.CanMakePhoneCall)
             {
@@ -127,24 +223,84 @@ namespace City_Center.ViewModels
 
         }
 
-		public ICommand CompraOnlineCommand
+
+        public ICommand AgregarCalendarioCommand
         {
             get
             {
-				return new RelayCommand(CompraOnline);
+                return new RelayCommand(AgregarCalendario);
             }
         }
 
-		private void CompraOnline()
+        private void AgregarCalendario()
         {
-			Device.OpenUri(new Uri(ds.eve_link));
+            Device.OpenUri(new Uri("http://www.google.com/calendar/event?action=TEMPLATE&text=" + this.ds.eve_nombre +"&dates=20140410T173000/20140412T190000&details=" + this.ds.eve_descripcion + "&location=Aqui+ponemos+la+direcci%C3%B3n+donde+se+celebra+el+evento&trp=false&sprop=www.reviblog.net&sprop=name:ReviBlog"));
 
         }
-        
+
+
+       
+
+        public ICommand CompraOnlineCommand
+        {
+            get
+            {
+                return new RelayCommand(CompraOnline);
+            }
+        }
+
+      async private void CompraOnline()
+        {
+            VariablesGlobales.RutaCompraOnline = ds.eve_link;
+
+           // await app.cur.PushPopupAsync(new WebViewTienda);
+
+
+        // await  Application.Current.MainPage.Navigation.PushAsync(new WebViewCompraOnline());
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewCompraOnline());
+            //Device.OpenUri(new Uri(ds.eve_link));
+
+        }
+
         #endregion
 
         #region Methods
-       
+        private IEnumerable<EventosItemViewModel> ToEventosItemViewModel()
+        {
+            return MainViewModel.GetInstance().listEventos.resultado.Select(l => new EventosItemViewModel
+            {
+                eve_imagen = l.eve_imagen,
+                eve_descripcion = l.eve_descripcion,
+                eve_nombre = l.eve_nombre,
+                eve_fecha_hora_inicio = l.eve_fecha_hora_inicio,
+                eve_link = l.eve_link,
+                eve_id_locacion = l.eve_id_locacion,
+                loc_nombre = l.loc_nombre,
+                eve_id = l.eve_id,
+                eve_guardado = l.eve_guardado,
+                eve_id_guardado = l.eve_id_guardado,
+                oculta = !(bool)l.eve_guardado,
+                eve_fecha_hora_fin = l.eve_fecha_hora_fin,
+                eve_id_usuario_creo = l.eve_id_usuario_creo,
+                eve_fecha_hora_creo = l.eve_fecha_hora_creo,
+                eve_id_usuario_modifico = l.eve_id_usuario_modifico,
+                eve_fecha_hora_modifico = l.eve_fecha_hora_modifico,
+                eve_num_usuarios_inscritos = l.eve_num_usuarios_inscritos,
+                eve_num_compartidos = l.eve_num_compartidos,
+                eve_num_favoritos = l.eve_num_favoritos,
+                eve_lista = l.eve_lista,
+                eve_carrucel = l.eve_carrucel,
+                eve_descripcion_locacion = l.eve_descripcion_locacion,
+                eve_destacado = l.eve_destacado,
+                updated_at = l.updated_at,
+                created_at = l.created_at,
+                eve_telefono = l.eve_telefono,
+                eve_tipo = l.eve_tipo,
+                ocultallamada = (string.IsNullOrEmpty(l.eve_telefono) ? false : true),
+                ocultaonline = (string.IsNullOrEmpty(l.eve_link) ? false : true)
+            });
+        }
+
         #endregion
 
         #region Contructors

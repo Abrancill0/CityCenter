@@ -74,7 +74,17 @@
                                 </OnPlatform>
                             </Label.FontFamily>
                         </Label>
-                        <ffimageloading:CachedImage Margin="5" HeightRequest="50" Grid.Row="0" Grid.Column="1" WidthRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="ReservarResaurant" HorizontalOptions="Center">
+                        <ffimageloading:CachedImage Margin="5"
+                                                    HeightRequest="50"
+                                                    Grid.Row="0"
+                                                    Grid.Column="1"
+                                                    WidthRequest="50"
+                                                    Aspect="AspectFit"
+                                                    LoadingPlaceholder="image_loading.png"
+                                                    ErrorPlaceholder="image_error.png"
+                                                    Source="ReservarResaurant"
+                                                    HorizontalOptions="Center"
+                                                    IsVisible="{Binding RR}">
                             <ffimageloading:CachedImage.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="Handle_Tapped_1" />
                             </ffimageloading:CachedImage.GestureRecognizers>
@@ -85,7 +95,8 @@
                                Grid.Column="1"
                                Margin="0,-5,0,0"
                                TextColor="#8A7C9E"
-                               HorizontalOptions="Center">
+                               HorizontalOptions="Center"
+                               IsVisible="{Binding RR}">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular" />
@@ -93,7 +104,18 @@
                                 </OnPlatform>
                             </Label.FontFamily>
                         </Label>
-                        <ffimageloading:CachedImage Margin="5" HeightRequest="50" Grid.Row="0" Grid.Column="2" WidthRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="ChekIn" HorizontalOptions="Start">
+                        <ffimageloading:CachedImage
+                            Margin="5"
+                            HeightRequest="50"
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            WidthRequest="50"
+                            Aspect="AspectFit"
+                            LoadingPlaceholder="image_loading.png"
+                            ErrorPlaceholder="image_error.png" 
+                            Source="ChekIn"
+                            HorizontalOptions="Start"
+                            >
                             <ffimageloading:CachedImage.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding CheckInReservaCommand}" />
                             </ffimageloading:CachedImage.GestureRecognizers>

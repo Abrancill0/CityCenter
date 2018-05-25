@@ -19,7 +19,8 @@
             </StackLayout>
 
             <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="15">
-                  <ffimageloading:CachedImage Aspect="AspectFit"
+                  <ffimageloading:CachedImage x:Name="Icono1"
+                                              Aspect="AspectFit"
                                               HeightRequest="25"
                                               WidthRequest="25"
                                               LoadingPlaceholder="image_loading.png"
@@ -27,18 +28,22 @@
                                               Source="Favorito"
                                               IsVisible="{Binding ds.oculta, Mode=TwoWay}">
                     <ffimageloading:CachedImage.GestureRecognizers>
-                       <TapGestureRecognizer  />
-                         <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
+                        <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
                     </ffimageloading:CachedImage.GestureRecognizers>
                     </ffimageloading:CachedImage>
 
-                     <ffimageloading:CachedImage Aspect="AspectFit"
+                     <ffimageloading:CachedImage x:Name="Icono2"
+                                                 Aspect="AspectFit"
                                                  HeightRequest="25"
                                                  WidthRequest="25"
                                                  LoadingPlaceholder="image_loading.png"
                                                  ErrorPlaceholder="image_error.png"
                                                  Source="FavoritoOK"
                                                  IsVisible="{Binding ds.eve_guardado, Mode=TwoWay}">
+                        <ffimageloading:CachedImage.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2" />
+                        </ffimageloading:CachedImage.GestureRecognizers>
+                        
                     </ffimageloading:CachedImage>
                     
 
@@ -121,6 +126,9 @@
                                     <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                 </OnPlatform>
                             </Label.FontFamily>
+                            <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding AgregarCalendarioCommand}" />
+                        </Label.GestureRecognizers>
                         </Label>
                 </StackLayout>
             </StackLayout>

@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using static City_Center.Models.RecompensasWinResultado;
 using City_Center.Models;
 using City_Center.Clases;
+using System.Globalization;
 
 namespace City_Center.ViewModels
 {

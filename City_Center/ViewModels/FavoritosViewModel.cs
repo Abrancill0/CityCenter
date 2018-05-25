@@ -17,7 +17,7 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Attributes
-        private FavoritoReturn list;
+       
         private ObservableCollection<FavoritoItemViewModel> favoritoDetalle;
         #endregion
 
@@ -63,21 +63,21 @@ namespace City_Center.ViewModels
                 return;
             }
 
-            this.list = (FavoritoReturn)response.Result;
+            MainViewModel.GetInstance().listFavoritos = (FavoritoReturn)response.Result;
 
            FavoritoDetalle = new ObservableCollection<FavoritoItemViewModel>(this.ToEventosItemViewModel());
 
 
-            if (this.list.resultado.Count == 0)
+            if (MainViewModel.GetInstance().listFavoritos.resultado.Count == 0)
             {
-                await Mensajes.Info("No se tiene ningun Guardado");
+                await Mensajes.Alerta("No se tiene ningun Guardado");
             }
 
         }
 
         private IEnumerable<FavoritoItemViewModel> ToEventosItemViewModel()
         {
-            return this.list.resultado.Select(l => new FavoritoItemViewModel
+            return MainViewModel.GetInstance().listFavoritos.resultado.Select(l => new FavoritoItemViewModel
             {
                   gua_id = l.gua_id,
                   gua_id_usuario  = l.gua_id_usuario,

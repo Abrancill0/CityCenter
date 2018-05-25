@@ -8,7 +8,8 @@
         <ToolbarItem  Icon="Chat"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-         <StackLayout Spacing="0"
+        <ScrollView>
+          <StackLayout Spacing="0"
                       BackgroundColor="White"
                       BindingContext="{Binding DestacadosDetalle}">
             <StackLayout>
@@ -20,7 +21,8 @@
             </StackLayout>
 
             <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="15">
-                  <ffimageloading:CachedImage Aspect="AspectFit"
+                  <ffimageloading:CachedImage x:Name="Icono1"
+                                              Aspect="AspectFit"
                                               HeightRequest="30"
                                               WidthRequest="30"
                                               LoadingPlaceholder="image_loading.png"
@@ -29,21 +31,25 @@
                                               IsVisible="{Binding dd.oculta}">
                     <ffimageloading:CachedImage.GestureRecognizers>
                        <TapGestureRecognizer  />
-                         <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" />
+                         <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
                     </ffimageloading:CachedImage.GestureRecognizers>
                     </ffimageloading:CachedImage>
 
-                     <ffimageloading:CachedImage Aspect="AspectFit"
+                     <ffimageloading:CachedImage x:Name="Icono2"
+                                                 Aspect="AspectFit"
                                                  HeightRequest="30"
                                                  WidthRequest="30"
                                                  LoadingPlaceholder="image_loading.png"
                                                  ErrorPlaceholder="image_error.png"
                                                  Source="FavoritoOK"
                                                  IsVisible="{Binding dd.des_guardado}">
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                         <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono2" />
+                    </ffimageloading:CachedImage.GestureRecognizers>
                     </ffimageloading:CachedImage>
                     
 
-                 <ffimageloading:CachedImage
+                 <ffimageloading:CachedImage  
                                             HeightRequest="30"
                                             WidthRequest="30"
                                             Aspect="AspectFit"
@@ -114,6 +120,7 @@
                 </StackLayout>
             </StackLayout>
                
-            </StackLayout>
+            </StackLayout>  
+        </ScrollView>  
     </ContentPage.Content>
 </ContentPage>

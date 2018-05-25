@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Windows.Input;
 using City_Center.Clases;
@@ -10,6 +11,7 @@ using GalaSoft.MvvmLight.Command;
 using Plugin.Share;
 using Xamarin.Forms;
 using static City_Center.Models.DestacadosResultado;
+using static City_Center.Models.GuardaFavoritosResultado;
 
 namespace City_Center.ViewModels
 {
@@ -85,7 +87,7 @@ namespace City_Center.ViewModels
                        
                     });
 
-                    var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/store", content);
+                    var response = await this.apiService.Get<GuardaFavoritosReturn>("/guardados", "/store", content);
 
                     if (!response.IsSuccess)
                     {
@@ -93,22 +95,102 @@ namespace City_Center.ViewModels
                         return;
                     }
 
-                    var list = (GuardadoGenerico)response.Result;
+                    var list = (GuardaFavoritosReturn)response.Result;
 
-					await Mensajes.success("Guardado Correctamente");
+
+                    this.des_guardado = true;
+                    this.oculta = false;
+
+                    var actualiza = MainViewModel.GetInstance().listDestacados.resultado.Where(l => l.des_id == this.des_id).FirstOrDefault();
+
+                    actualiza.des_guardado = true;
+                    actualiza.oculta = false;
+                    actualiza.des_id_guardado= list.resultado.gua_id;
+
+					await Mensajes.Alerta("Guardado Correctamente");
 
                 }
                 else
                 {
-                await Mensajes.Info("Inicia Sesion para guardar este Destacado");
+                    await Mensajes.Alerta("Inicia Sesion para guardar este Destacado");
             }
             }
             catch (Exception)
             {
-                await Mensajes.Info("Inicia Sesion para guardar este Destacado");
+                await Mensajes.Alerta("Inicia Sesion para guardar este Destacado");
             }
 
         }
+
+
+        public ICommand EliminaFavoritosCommand
+        {
+            get
+            {
+                return new RelayCommand(EliminaFavoritos);
+            }
+        }
+
+        private async void EliminaFavoritos()
+        {
+            try
+            {
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                if (isLoggedIn)
+                {
+
+                    if (this.des_guardado == true)
+                    {
+
+                        var content = new FormUrlEncodedContent(new[]
+                            {
+                            new KeyValuePair<string, string>("gua_id",Convert.ToString(this.des_id_guardado)),
+
+                        });
+
+                        var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/destroy", content);
+
+                        if (!response.IsSuccess)
+                        {
+                            await Mensajes.Error("Error al eliminar Guardados");
+                            return;
+                        }
+
+                        this.des_guardado = false;
+                        this.oculta = true;
+
+                        var actualiza = MainViewModel.GetInstance().listDestacados.resultado.Where(l => l.des_id == this.des_id).FirstOrDefault();
+
+                        actualiza.des_guardado = false;
+                        actualiza.oculta = true;
+
+                       // var list = (GuardadoGenerico)response.Result;
+
+                        await Mensajes.Alerta("Guardado eliminado correctamente");
+
+
+                    }
+                    else
+                    {
+                        GuardaFavorito();
+                    }
+
+
+                }
+                else
+                {
+                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                }
+            }
+            catch (Exception)
+            {
+                await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+            }
+        }
+
+
 
         #endregion
 

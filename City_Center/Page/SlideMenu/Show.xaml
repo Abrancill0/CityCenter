@@ -93,7 +93,8 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <ListView ItemsSource="{Binding EventosDetalle, Mode=TwoWay}" RowHeight="250"
+            <ListView x:Name="ListaShow"
+                      ItemsSource="{Binding EventosDetalle}" RowHeight="250"
                       HasUnevenRows="false"
                       SeparatorVisibility="None"
                       Margin="10,7,10,10">
@@ -175,10 +176,11 @@
                                                    WidthRequest="10"
                                                    HeightRequest="10"
                                                     IsVisible="{Binding eve_guardado,Mode=TwoWay}">
-                                            </Image>
-                                            <Image.GestureRecognizers>
+                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2" />
-                                                </Image.GestureRecognizers>                                        
+                                                </Image.GestureRecognizers>      
+                                            </Image>
+                                                                             
                                             <Image Margin="2,5,0,25" 
                                                    Grid.Row="1"
                                                    Grid.Column="2"

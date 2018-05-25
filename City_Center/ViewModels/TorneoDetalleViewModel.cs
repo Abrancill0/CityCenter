@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Windows.Input;
 using City_Center.Clases;
@@ -9,6 +10,7 @@ using City_Center.Services;
 using GalaSoft.MvvmLight.Command;
 using Plugin.Share;
 using Xamarin.Forms;
+using static City_Center.Models.GuardaFavoritosResultado;
 using static City_Center.Models.TorneoResultado;
 
 namespace City_Center.ViewModels
@@ -94,8 +96,6 @@ namespace City_Center.ViewModels
 
         #endregion
 
-
-
         #region Command
         public ICommand CompartirCommand
         {
@@ -125,46 +125,128 @@ namespace City_Center.ViewModels
             }
         }
 
-        private async void GuardaFavorito()
+
+        public ICommand EliminaFavoritosCommand
+        {
+            get
+            {
+                return new RelayCommand(EliminaFavoritos);
+            }
+        }
+
+        private async void EliminaFavoritos()
         {
             try
             {
-
                 bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
                                      (bool)Application.Current.Properties["IsLoggedIn"] : false;
 
                 if (isLoggedIn)
                 {
-                    var content = new FormUrlEncodedContent(new[]
-                    {
-                        new KeyValuePair<string, string>("gua_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
-                        new KeyValuePair<string, string>("gua_id_torneo", Convert.ToString(td.tor_id)),
-                    });
 
-                    var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/store", content);
-
-                    if (!response.IsSuccess)
+                    if (this.td.tor_guardado == true)
                     {
-                        await Mensajes.Error("Error al guardar Guardados");
-                        return;
+
+                        var content = new FormUrlEncodedContent(new[]
+                            {
+                            new KeyValuePair<string, string>("gua_id",Convert.ToString(this.td.tor_id)),
+
+                        });
+
+                        var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/destroy", content);
+
+                        if (!response.IsSuccess)
+                        {
+                            await Mensajes.Error("Error al eliminar Guardados");
+                            return;
+                        }
+
+                        this.td.tor_guardado = false;
+                        this.td.oculta = true;
+
+                        var actualiza = MainViewModel.GetInstance().listTorneo.resultado.Where(l => l.tor_id == this.td.tor_id).FirstOrDefault();
+
+                        actualiza.tor_guardado = false;
+                        actualiza.oculta = true;
+
+                        var list = (GuardadoGenerico)response.Result;
+
+                        await Mensajes.Alerta("Guardado eliminado correctamente");
+
+
+                    }
+                    else
+                    {
+                        GuardaFavorito();
                     }
 
-                    var list = (GuardadoGenerico)response.Result;
-
-
-
-
-                    await Mensajes.success("Guardado Correctamente");
 
                 }
                 else
                 {
-                    await Mensajes.Info("Inicia Sesion para guardar este torneo");
+                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Info("Inicia Sesion para guardar este torneo");
+                await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+            }
+        }
+
+
+        private async void GuardaFavorito()
+        {
+            try
+            {
+                bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+                if (isLoggedIn)
+                {
+                    if (this.td.tor_guardado == false)
+                    {
+                        var content = new FormUrlEncodedContent(new[]
+                        {
+                            new KeyValuePair<string, string>("gua_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                            new KeyValuePair<string, string>("gua_id_torneo", Convert.ToString(td.tor_id)),
+                        });
+
+                        var response = await this.apiService.Get<GuardaFavoritosReturn>("/guardados", "/store", content);
+
+                        if (!response.IsSuccess)
+                        {
+                            await Mensajes.Error("Error al guardar Guardados");
+                            return;
+                        }
+
+                        var list = (GuardaFavoritosReturn)response.Result;
+
+                        this.td.tor_guardado = true;
+                        this.td.oculta = false;
+                        this.td.tor_id_guardado = list.resultado.gua_id;
+
+                        var actualiza = MainViewModel.GetInstance().listTorneo.resultado.Where(l => l.tor_id == this.td.tor_id).FirstOrDefault();
+
+                        actualiza.tor_guardado = true;
+                        actualiza.oculta = false;
+                        actualiza.tor_id_guardado = list.resultado.gua_id;
+
+                        await Mensajes.Alerta("Guardado Correctamente");  
+                    }
+                    else
+                    {
+                        EliminaFavoritos();  
+                    }
+
+                }
+                else
+                {
+                    await Mensajes.Alerta("Inicia Sesion para guardar este torneo");
+                }
+            }
+            catch (Exception)
+            {
+                await Mensajes.Alerta("Inicia Sesion para guardar este torneo");
             }
 
         }

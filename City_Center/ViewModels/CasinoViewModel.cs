@@ -22,6 +22,7 @@ using Plugin.Share;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using Plugin.Permissions.Abstractions;
+using System.Globalization;
 
 
 namespace City_Center.ViewModels
@@ -33,7 +34,7 @@ namespace City_Center.ViewModels
 		#endregion
 
 		#region Attributes
-		private DestacadosReturn listDestacados;
+
 		private PozosReturn listPozos;
 		private SalaPokerReturn listSalasPoker;
 		private GanadoresReturn listGanadores;
@@ -43,7 +44,7 @@ namespace City_Center.ViewModels
 		private ObservableCollection<GanadoresDetalle> ganadoresDetalle;
 		private ObservableCollection<PromocionesWinDetalle> promocionesWinDetalle;
 
-
+        private PromocionesReturn listPromociones;
 		private ObservableCollection<TorneoItemViewModel> torneoDetalle;
 
 		//private EventosReturn list;
@@ -52,7 +53,7 @@ namespace City_Center.ViewModels
 		private TarjetasReturn listTarjetas;
 		private ObservableCollection<TarjetasDetalle> tarjetasDetalle;
 
-		private PromocionesReturn listPromociones;
+		
 		private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
         
 		private string imagen_Selected;
@@ -178,7 +179,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception)
 			{
-				await Mensajes.Info("No pudimos acceder a tu ubicacion");
+				await Mensajes.Alerta("No pudimos acceder a tu ubicacion");
 			}
 
 		}
@@ -266,7 +267,7 @@ namespace City_Center.ViewModels
 
 				if (Nosocio == "0")
 				{
-					await Mensajes.Info("No tienes ninguna tarjeta asociada");
+					await Mensajes.Alerta("No tienes ninguna tarjeta asociada");
 
 					return;
 				}
@@ -279,7 +280,7 @@ namespace City_Center.ViewModels
 			}
 			else
 			{
-				await Mensajes.Info("Inicia Sesion para consultar puntos");  	
+                await Mensajes.Alerta("Inicia Sesion para consultar puntos");  	
 			}
             
 		}
@@ -328,7 +329,7 @@ namespace City_Center.ViewModels
 					return;
 				}
 
-				this.listDestacados = (DestacadosReturn)response.Result;
+				MainViewModel.GetInstance().listDestacados = (DestacadosReturn)response.Result;
 
 				DestacadosDetalle = new ObservableCollection<DestacadosItemViewModel>(this.ToDestacadosItemViewModel());
 
@@ -343,7 +344,7 @@ namespace City_Center.ViewModels
 
 		private IEnumerable<DestacadosItemViewModel> ToDestacadosItemViewModel()
 		{
-			return this.listDestacados.resultado.Select(l => new DestacadosItemViewModel
+            return MainViewModel.GetInstance().listDestacados.resultado.Select(l => new DestacadosItemViewModel
 			{
 				des_imagen = VariablesGlobales.RutaServidor + l.des_imagen,
 				des_descripcion = l.des_descripcion,
@@ -454,7 +455,7 @@ namespace City_Center.ViewModels
 			return this.listPozos.resultado.Select(l => new pozosDetalle
 			{
 				poz_imagen = VariablesGlobales.RutaServidor + l.poz_imagen,
-				poz_monto = l.poz_monto,
+                poz_monto = l.poz_monto,
 				poz_descripcion = l.poz_descripcion,
 				poz_fecha_entrega = l.poz_fecha_entrega
 
@@ -734,45 +735,6 @@ namespace City_Center.ViewModels
 		{         
 			try
 			{
-				var connection = await this.apiService.CheckConnection();
-
-				if (!connection.IsSuccess)
-				{
-					await Mensajes.Error(connection.Message);
-
-					return;
-				}
-
-
-				//string IDUsuario;
-
-				//try
-				//{
-				//	IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
-				//}
-				//catch (Exception)
-				//{
-				//	IDUsuario = "";
-				//}
-
-
-				//var content = new FormUrlEncodedContent(new[]
-				//{
-				//new KeyValuePair<string, string>("usu_id", IDUsuario),
-				//});
-
-
-				//var response = await this.apiService.Get<TorneoReturn>("/casino/torneos", "/indexApp", content);
-
-				//if (!response.IsSuccess)
-				//{
-				//	await Mensajes.Error("Error al cargar Torneos");
-
-				//	return;
-				//}
-
-				//MainViewModel.GetInstance().listTorneo = (TorneoReturn)response.Result;
-
 				TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
 			}
@@ -807,37 +769,36 @@ namespace City_Center.ViewModels
 
 		private async void LoadPromociones()
 		{
-
 			try
 			{
-				var connection = await this.apiService.CheckConnection();
+                var connection = await this.apiService.CheckConnection();
 
-				if (!connection.IsSuccess)
-				{
-					await Mensajes.Error(connection.Message);
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Error(connection.Message);
 
-					return;
-				}
+                    return;
+                }
 
-				var content = new FormUrlEncodedContent(new[]
-				{
-				new KeyValuePair<string, string>("", ""),
-			});
+                var content = new FormUrlEncodedContent(new[]
+                {
+                new KeyValuePair<string, string>("", ""),
+                });
 
 
-				var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
+                var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
 
-				if (!response.IsSuccess)
-				{
-					await Mensajes.Error("Error al cargar Promociones");
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Error("Error al cargar Promociones");
 
-					return;
-				}
+                    return;
+                }
 
-				this.listPromociones = (PromocionesReturn)response.Result;
+                this.listPromociones = (PromocionesReturn)response.Result;
+
 
 				PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "cas"));
-
 			}
 			catch (Exception ex)
 			{
@@ -848,7 +809,7 @@ namespace City_Center.ViewModels
 
 		private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()
 		{
-			return this.listPromociones.resultado.Select(l => new PromocionesItemViewModel
+            return this.listPromociones.resultado.Select(l => new PromocionesItemViewModel
 			{
 				pro_id = l.pro_id,
 				pro_id_evento = l.pro_id_evento,
@@ -882,7 +843,7 @@ namespace City_Center.ViewModels
 			this.apiService = new ApiService();
 
 			this.LoadDestacados();
-			//this.LoadTorneo();
+			
 			this.LoadPromociones();
 			this.LoadPozos();
 			this.LoadSalaPoker();

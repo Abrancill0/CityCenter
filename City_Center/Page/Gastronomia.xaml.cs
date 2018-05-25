@@ -11,8 +11,17 @@ namespace City_Center.Page
         {
             InitializeComponent();
 
-            MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
+           
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+        }
+
+
+        // MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
         protected override void OnDisappearing()
         {

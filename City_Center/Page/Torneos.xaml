@@ -50,8 +50,8 @@
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
                                                                         Source="{Binding tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
-                                                                        Grid.Row="0" Grid.ColumnSpan="4">
-
+                                                                        Grid.Row="0"
+                                                                        Grid.ColumnSpan="4">
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
                                                 </ffimageloading:CachedImage.GestureRecognizers>
@@ -101,7 +101,7 @@
                                                         </Image.GestureRecognizers>
                                                     </Image>
 
-                                                    <Image Margin="15" Grid.Row="1" Grid.Column="2"
+                                                    <Image Grid.Row="1" Grid.Column="2"
                                                            Aspect="AspectFit"
                                                            Source="FavoritoOK"
                                                            VerticalOptions = "Start"
@@ -109,6 +109,9 @@
                                                            HeightRequest="25"
                                                            WidthRequest="25"
                                                            IsVisible="{Binding tor_guardado}">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2"/>
+                                                        </Image.GestureRecognizers>
                                                    </Image>
 
                                             <Image Grid.Row="1" Grid.Column="3"

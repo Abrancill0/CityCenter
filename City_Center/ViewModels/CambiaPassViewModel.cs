@@ -78,21 +78,21 @@ namespace City_Center.ViewModels
             
             if (string.IsNullOrEmpty(this.contrasenatemp))
             {
-                await Mensajes.Error("Contraseña temporal requrida");
+                await Mensajes.Alerta("Contraseña temporal requerida");
     
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Contrasena1))
             {
-                await Mensajes.Error("Nueva Contraseña requrida");
+                await Mensajes.Alerta("Nueva Contraseña requrida");
             
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Contrasena2))
             {
-                await Mensajes.Error("Confirma Contraseña requrida");
+                await Mensajes.Alerta("Confirma Contraseña requrida");
             
                 return;
             }
@@ -100,7 +100,7 @@ namespace City_Center.ViewModels
 
             if (this.Contrasena1 != this.Contrasena2)
             {
-                await Mensajes.Info("Contraseñas no coiciden");
+                await Mensajes.Alerta("Contraseñas no coiciden");
 
                 return;
             }
@@ -160,7 +160,7 @@ namespace City_Center.ViewModels
 			fpm.Detail = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") }; // You have to create a Detail ContenPage()
 			Application.Current.MainPage = fpm;
 
-			await Mensajes.success("Bienvenido " + list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos);
+			await Mensajes.Alerta("Bienvenido " + list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos);
 
 			UserDialogs.Instance.HideLoading();
          

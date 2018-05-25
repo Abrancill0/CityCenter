@@ -34,10 +34,6 @@ namespace City_Center.ViewModels
         private string numeroSocio;
         private bool hC;
 
-        //private string NoSocio;
-
-        //private TarjetaUsuarioReturn listaTarjetausuario;
-
         private ActualizaUsuarioReturn list;
 
         #endregion
@@ -127,13 +123,13 @@ namespace City_Center.ViewModels
 
             if (Contraseña != Contraseña2)
             {
-                await Mensajes.Info("No coiciden las contraseñas,favor de verificar");  
+                await Mensajes.Alerta("No coiciden las contraseñas,favor de verificar");  
             }
 
 
             if (string.IsNullOrEmpty(NumeroSocio))
             {
-                await Mensajes.Info("Usuario actual no cuenta con tarjeta Win");
+                await Mensajes.Alerta("Usuario actual no cuenta con tarjeta Win");
             }
             else
             {
@@ -142,35 +138,39 @@ namespace City_Center.ViewModels
 
                 if (MensajeTarjeta == "OK")
                 {
-                    await Mensajes.success("Tarjeta vinculada correctamente");
+                    await Mensajes.Alerta("Tarjeta vinculada correctamente");
                 }
                 else
                 {
-                    await Mensajes.Info(MensajeTarjeta);
+                    await Mensajes.Alerta(MensajeTarjeta);
 
                     NumeroSocio = "";
                 }
             }
 
+            string Dia = this.Fecha.Substring(0, 2);
+            string Mes = this.Fecha.Substring(3, 2);
+            string Año = this.Fecha.Substring(6, 4);
+
             var content = new FormUrlEncodedContent(new[]
            {
-                new KeyValuePair<string, string>("usu_fecha_nacimiento", Fecha),
-                new KeyValuePair<string, string>("usu_contrasena",contraseña),
+                new KeyValuePair<string, string>("usu_fecha_nacimiento", Convert.ToString(Año + "-" + Mes + "-" + Dia)),
+                new KeyValuePair<string, string>("usu_contrasena",this.contraseña),
                 new KeyValuePair<string, string>("usu_id", Application.Current.Properties["IdUsuario"].ToString()),
-                new KeyValuePair<string, string>("usu_usuario", Email),
+                new KeyValuePair<string, string>("usu_usuario", this.Email),
                 new KeyValuePair<string, string>("usu_tipo_contrasena", "1"),
                 new KeyValuePair<string, string>("usu_usuario_bloquedado", "0"),
                 new KeyValuePair<string, string>("usu_nombre", Nombre),
                 new KeyValuePair<string, string>("usu_apellidos", ""),
-                new KeyValuePair<string, string>("usu_email", Email),
+                new KeyValuePair<string, string>("usu_email", this.Email),
                 new KeyValuePair<string, string>("usu_telefono", ""),
                 new KeyValuePair<string, string>("usu_celular", ""),
-                new KeyValuePair<string, string>("usu_id_tarjeta_socio", NumeroSocio),
+                new KeyValuePair<string, string>("usu_id_tarjeta_socio", this.NumeroSocio),
                 new KeyValuePair<string, string>("usu_ciudad", ""),
                 new KeyValuePair<string, string>("usu_id_rol", "6"),
                 new KeyValuePair<string, string>("usu_estatus", "1"),
-                new KeyValuePair<string, string>("usu_tipo_documento", TipoDocumento),
-                new KeyValuePair<string, string>("usu_no_documento", NumeroDocumento),
+                new KeyValuePair<string, string>("usu_tipo_documento", this.TipoDocumento),
+                new KeyValuePair<string, string>("usu_no_documento", this.NumeroDocumento),
                 new KeyValuePair<string, string>("passUpdate","1" ),
             });
 
@@ -200,7 +200,7 @@ namespace City_Center.ViewModels
 
 			await Application.Current.SavePropertiesAsync();
 
-            await Mensajes.success("Usuario Actualizado correctamente");
+            await Mensajes.Alerta("Usuario Actualizado correctamente");
         }
 
         #endregion
@@ -211,12 +211,23 @@ namespace City_Center.ViewModels
             try
             {
                 Email = Application.Current.Properties["Email"].ToString();
-                Nombre = Application.Current.Properties["NombreCompleto"].ToString();
+                Nombre = Application.Current.Properties["NombreCompleto"].ToString().ToUpper();
                 Ciudad = Application.Current.Properties["Ciudad"].ToString();
                 Contraseña = Application.Current.Properties["Pass"].ToString();
                 Contraseña2 = Application.Current.Properties["Pass"].ToString();
 
-                Imagen = Application.Current.Properties["FotoPerfil"].ToString();
+                string fotoPerfil = Application.Current.Properties["FotoPerfil"].ToString();
+
+                if (fotoPerfil=="http://cc.comprogapp.com/")
+                {
+                    Imagen = "user"; 
+                }
+                else
+                {
+                    Imagen = Application.Current.Properties["FotoPerfil"].ToString();   
+                }
+
+               
 
                 TipoDocumento = Application.Current.Properties["TipoDocumento"].ToString();
                 NumeroDocumento = Application.Current.Properties["NumeroDocumento"].ToString();

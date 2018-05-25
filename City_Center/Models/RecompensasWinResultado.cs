@@ -10,7 +10,7 @@ namespace City_Center.Models
             public int wre_id { get; set; }
             public string wre_nombre { get; set; }
             public string wre_descripcion { get; set; }
-            public int wre_puntos { get; set; }
+            public string wre_puntos { get; set; }
             public int wre_id_usuario_creo { get; set; }
             public string wre_fecha_hora_creo { get; set; }
             public int? wre_id_usuario_modifico { get; set; }

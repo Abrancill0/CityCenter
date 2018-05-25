@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:City_Center;assembly=City_Center"
+             xmlns:local2="clr-namespace:City_Center.Clases"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             x:Class="City_Center.Page.ChatPage">
+             <ContentPage.Resources>
+                    <ResourceDictionary>
+                        <DataTemplate x:Key="FromTemplate">
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Frame IsClippedToBounds="True"
+                                           HasShadow="True"
+                                           BackgroundColor="White"
+                                           HorizontalOptions="End">
+                                            <Frame.OutlineColor>
+                                                <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
+                                            </Frame.OutlineColor>
+                                            <Frame.Margin>
+                                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                            </Frame.Margin>
+                                            <Frame.Padding>
+                                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                            </Frame.Padding>
+
+                                                     <StackLayout Orientation="Vertical" Margin="5" Spacing="2">
+                                                            <Label Text="{Binding UserName}" TextColor="Silver">
+                                                                <Label.FontFamily>
+                                                                    <OnPlatform x:TypeArguments="x:String">
+                                                                        <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                    </OnPlatform>
+                                                                </Label.FontFamily>
+                                                            </Label>
+                                                            <Label Text="{Binding UserMessage}"
+                                                                   FontSize="Small">
+                                                                <Label.FontFamily>
+                                                                    <OnPlatform x:TypeArguments="x:String">
+                                                                        <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                    </OnPlatform>
+                                                                </Label.FontFamily>
+                                                            </Label>
+                                                            <Label Text="{Binding UserFecha}" FontSize="Micro">
+                                                                <Label.FontFamily>
+                                                                    <OnPlatform x:TypeArguments="x:String">
+                                                                        <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                    </OnPlatform>
+                                                                </Label.FontFamily>
+                                                            </Label>
+                                                </StackLayout>            
+                                    </Frame>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                   
+                        <DataTemplate x:Key="ToTemplate">
+                            <ViewCell>
+                                <ViewCell.View>
+                                       <Frame IsClippedToBounds="True"
+                                           HasShadow="True"
+                                           BackgroundColor="#34b7f1"
+                                           HorizontalOptions="Start">
+                                            <Frame.OutlineColor>
+                                                <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
+                                            </Frame.OutlineColor>
+                                            <Frame.Margin>
+                                                <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                            </Frame.Margin>
+                                            <Frame.Padding>
+                                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                            </Frame.Padding>
+
+                                                     <StackLayout Orientation="Vertical" Margin="5" Spacing="2">
+                                                            <Label Text="{Binding UserName}" TextColor="Silver">
+                                                                <Label.FontFamily>
+                                                                    <OnPlatform x:TypeArguments="x:String">
+                                                                        <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                    </OnPlatform>
+                                                                </Label.FontFamily>
+                                                            </Label>
+                                                            <Label Text="{Binding UserMessage}" FontSize="Small" TextColor="White">
+                                                                <Label.FontFamily>
+                                                                    <OnPlatform x:TypeArguments="x:String">
+                                                                        <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                    </OnPlatform>
+                                                                </Label.FontFamily>
+                                                            </Label>
+                                                            <Label Text="{Binding UserFecha}" FontSize="Micro" TextColor="White">
+                                                                <Label.FontFamily>
+                                                                    <OnPlatform x:TypeArguments="x:String">
+                                                                        <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                    </OnPlatform>
+                                                                </Label.FontFamily>
+                                                            </Label>
+                                                  
+                                                </StackLayout>            
+                                    </Frame>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+
+           <local2:ChatDataTemplateSelector x:Key="chatDataTemplateSelector"
+                                            FromTemplate="{StaticResource FromTemplate}"
+                                            ToTemplate="{StaticResource ToTemplate}" />
+                    </ResourceDictionary>
+
+            </ContentPage.Resources>
+    <ContentPage.Content> 
+        <StackLayout Margin="0,1,0,0">
+
+            <ListView BackgroundColor="#F8F8FF"
+                      ItemsSource="{Binding .}"
+                      x:Name="_listChat"
+                      SeparatorVisibility="None"
+                      HasUnevenRows="true"
+                      IsRefreshing="true"
+                      ItemAppearing="Handle_ItemAppearing"
+                      ItemTemplate="{StaticResource chatDataTemplateSelector}"/>
+
+            <StackLayout Margin="5" HorizontalOptions="FillAndExpand" VerticalOptions="End" Orientation="Horizontal">
+
+                 <xfx:XfxEntry x:Name="_etMessage"
+                               Placeholder="Escribe tu mensaje..."
+                               FloatingHintEnabled="false"
+                               ActivePlaceholderColor="#7A5BA5"
+                               HorizontalOptions="FillAndExpand"
+                               HorizontalTextAlignment="Start"
+                               FontSize="18"
+                               Keyboard="Chat">
+                                        <Entry.HeightRequest>
+                                            <OnPlatform x:TypeArguments="x:Double">
+                                                <On Platform="iOS">60</On>
+                                                <On Platform="Android,Windows">60</On>
+                                            </OnPlatform>
+                                        </Entry.HeightRequest>
+                                         <Entry.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular"/>
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                </OnPlatform>
+                                            </Entry.FontFamily>
+                                    </xfx:XfxEntry>
+            <Button Text="Enviar"
+                    TextColor="White"
+                    HeightRequest="35"
+                    WidthRequest="70"
+                    BackgroundColor="#25d366"
+                    HorizontalOptions="End"
+                    FontSize="Micro"
+                    Clicked="Handle_Clicked">
+                    <Button.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                 <On Platform="iOS" Value="Oswald-Medium"/>
+                                 <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium"/>
+                            </OnPlatform>
+                   </Button.FontFamily>
+                </Button>
+          
+            </StackLayout>
+            </StackLayout>     
+    </ContentPage.Content>
+</ContentPage>

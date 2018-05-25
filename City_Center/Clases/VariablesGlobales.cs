@@ -15,7 +15,16 @@ namespace City_Center.Clases
 
         public static DateTime FechaInicio;
         public static DateTime FechaFin;
+
+        public static string RutaCompraOnline;
+
+
+        public static string FechaShowInicio;
+        public static string FechaShowFinal;
+
         public static int NumeroHuespedes;
+
+        public static string Mensaje;
 
     }
 }

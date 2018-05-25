@@ -4,6 +4,7 @@ using City_Center.Page.SlideMenu;
 using City_Center.ViewModels;
 using Xamarin.Forms;
 using City_Center.Clases;
+using City_Center.Database;
 
 namespace City_Center.Page
 {
@@ -28,6 +29,12 @@ namespace City_Center.Page
                     case "INICIO":
                         //Application.Current.MainPage = new MasterPage();
                         listviewMenu.SelectedItem = null;
+
+                        //var db = new DBFire();
+                        //await db.saveRoom(new Room() { Name = "ab2" });
+
+                        //Application.Current.Properties["Email"] = "ab2";
+                        //await Application.Current.SavePropertiesAsync();
 
 						App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
 
