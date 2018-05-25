@@ -136,7 +136,14 @@
                                        Margin="15, 0"
                                        HorizontalTextAlignment="Start"
                                        LineBreakMode="WordWrap"
-                                       FontSize="14"/>
+                                       FontSize="14">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
                                 <Label Text="gastronómicas  así  como la sala de usos múltiples"
                                        TextColor="Black"
                                        HorizontalOptions="Start"
@@ -185,7 +192,8 @@
                                        HorizontalOptions="Start"
                                        Margin="15, 0"
                                        HorizontalTextAlignment="Start"
-                                       LineBreakMode="WordWrap">
+                                       LineBreakMode="WordWrap"
+                                       FontSize="13.4">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Roboto-Regular" />

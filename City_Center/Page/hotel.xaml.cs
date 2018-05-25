@@ -59,13 +59,13 @@ namespace City_Center.Page
         {
 			try
             {
-                if (FechaInicio.Text == "00/00/00")
+                if (FechaInicio.Text == "00/00/0000")
                 {
                     await Mensajes.Info("Fecha inicial requerida.");
                     return;
                 }
 
-                if (FechaFinal.Text == "00/00/00")
+                if (FechaFinal.Text == "00/00/0000")
                 {
                     await Mensajes.Info("Fecha inicial requerida.");
                     return;

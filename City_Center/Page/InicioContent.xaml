@@ -165,7 +165,7 @@
                                             </Label.FontFamily>
                                           </Label>
                                            <xfx:XfxEntry x:Name="FechaFinal"
-                                                  Text ="00/00/00"
+                                                  Text ="00/00/0000"
                                                          PlaceholderColor="Transparent"
                                                   Margin="5,-20,5,-12"
                                                   Focused="FechaFin_Focused">

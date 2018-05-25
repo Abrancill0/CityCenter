@@ -147,7 +147,7 @@
                                                     </OnPlatform>
                                                 </Label.FontFamily>
                                             </Label>
-                                            <xfx:XfxEntry x:Name="FechaInicio" Text="00/00/00" Margin="5,-20,5,-12" PlaceholderColor="Transparent" Focused="FechaInicio_Focused">
+                                            <xfx:XfxEntry x:Name="FechaInicio" Text="00/00/0000" Margin="5,-20,5,-12" PlaceholderColor="Transparent" Focused="FechaInicio_Focused">
                                                 <Entry.HeightRequest>
                                                     <OnPlatform x:TypeArguments="x:Double">
                                                         <On Platform="iOS">60</On>
@@ -172,7 +172,7 @@
                                                     </OnPlatform>
                                                 </Label.FontFamily>
                                             </Label>
-                                            <xfx:XfxEntry x:Name="FechaFinal" Text="00/00/00" PlaceholderColor="Transparent" Margin="5,-20,5,-12" Focused="FechaFin_Focused">
+                                            <xfx:XfxEntry x:Name="FechaFinal" Text="00/00/0000" PlaceholderColor="Transparent" Margin="5,-20,5,-12" Focused="FechaFin_Focused">
                                                 <Entry.HeightRequest>
                                                     <OnPlatform x:TypeArguments="x:Double">
                                                         <On Platform="iOS">60</On>
