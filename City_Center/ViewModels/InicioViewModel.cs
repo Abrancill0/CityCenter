@@ -207,23 +207,46 @@ namespace City_Center.ViewModels
 
         private async void Reservar()
         {
+            if (this.FechaInicio=="00/00/0000")
+            {
+                await Mensajes.Alerta("Campo fecha es requerida");
+
+                return;
+            }
+
+
+            if (this.HoraInicio == "00:00")
+            {
+                await Mensajes.Alerta("Campo hora es requerida");
+
+                return;
+            }
+
+            if (this.NombreRestaurante == "Seleccionar...")
+            {
+                await Mensajes.Alerta("Campo restaurante es requerida");
+
+                return;
+            }
+
+
             if (string.IsNullOrEmpty(this.Nombre))
             {
-                await Mensajes.Error("Nombre requerido");
+                await Mensajes.Alerta("Nombre requerido");
 
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Correo))
             {
-                await Mensajes.Error("Correo requerido");
+                await Mensajes.Alerta("Correo requerido");
 
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Telefono))
             {
-                await Mensajes.Error("Telefono requerido");
+                await Mensajes.Alerta("Telefono requerido");
 
                 return;
             }
@@ -261,11 +284,12 @@ namespace City_Center.ViewModels
 
 			this.FechaInicio = "00/00/0000";
 			this.HoraInicio = "00:00";
-            this.NoPersonas = string.Empty;
-            this.NombreRestaurante = string.Empty;
-            this.SillaNiños = string.Empty;
+            this.NoPersonas = "2";
+            this.NombreRestaurante = "Seleccionar...";
+            this.SillaNiños = "No";
             this.Correo = string.Empty;
             this.Telefono = string.Empty;
+            this.Nombre = string.Empty;
 
         }
 

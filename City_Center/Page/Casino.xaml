@@ -903,7 +903,7 @@
                                             <Label HorizontalTextAlignment="Start"
                                                    Margin="10,-3"
                                                    HorizontalOptions="Start"
-                                                   Text="Accede a dos exclusivos sectores para aquellos"
+                                                   Text="Accedé a dos exclusivos sectores para aquellos"
                                                    FontSize="Small"
                                                    TextColor="Black"></Label>
                                             <Label HorizontalTextAlignment="Start"

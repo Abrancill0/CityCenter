@@ -163,7 +163,8 @@
                            Grid.Row="0"
                            Grid.Column="1"
                            VerticalOptions="Center"
-                           LineBreakMode="WordWrap" WidthRequest="60">
+                           LineBreakMode="WordWrap" WidthRequest="60"
+                           FontSize="Small">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding PerfilCommand}" />
                         </Label.GestureRecognizers>
@@ -185,7 +186,7 @@
                             WidthRequest="80"
                             Margin="10,0,5,0"
                             Grid.Column="3"
-                            FontSize="12">
+                            FontSize="Small">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
                                <On Platform="iOS" Value="Oswald-Regular"/>
@@ -219,7 +220,7 @@
             </StackLayout>
             <StackLayout Padding="0,10,10,10" BackgroundColor="#1B0938" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" IsVisible="{Binding OpcionesVisible}">
                 <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
-                       <Label Text="REGISTRARME" FontSize="Small"
+                       <Label Text="Registrarme" FontSize="Small"
                        TextColor="White"
                        FontFamily="Oswald-Bold"
                        FontAttributes="Bold"
@@ -232,7 +233,7 @@
                         <TapGestureRecognizer Command="{Binding RegistrarseCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
-                       <Label Text="INICIAR SESIÓN"
+                       <Label Text="Iniciar Sesión"
                        FontSize="Small"
                        TextColor="White"
                        FontFamily="Oswald-Bold"

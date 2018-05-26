@@ -8,7 +8,7 @@
     
     <Frame HorizontalOptions="FillAndExpand"
              VerticalOptions="FillAndExpand"
-             Margin="40,150,40,200"
+             Margin="40,150,40,150"
              HasShadow="true"
              BackgroundColor="White"
              BindingContext="{Binding ReiniciaPass}">
@@ -25,7 +25,7 @@
             </Image>
 
             <Label Text="Proporcionanos tu correo electrónico para enviarte una nueva contraseña"
-                   FontSize="Medium"
+                   FontSize="Small"
                    HorizontalTextAlignment="Center">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
@@ -35,7 +35,7 @@
                 </Label.FontFamily>
             </Label>
 
-            <xfx:XfxEntry Placeholder="Correo electróico"
+            <xfx:XfxEntry Placeholder="Correo electrónico"
                           ActivePlaceholderColor="#7A5BA5"
                           TextColor="Black"
                           Text="{Binding CorreoElectronico, Mode=TwoWay}">
@@ -54,11 +54,10 @@
             </xfx:XfxEntry>
 
             <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="FillAndExpand"
-                         Margin="10,0,10,0">
+                         HorizontalOptions="FillAndExpand">
 
                 <Label Text="CANCELAR" TextColor="#250C4B"
-                       HorizontalOptions="Start"
+                       HorizontalOptions="StartAndExpand"
                        HorizontalTextAlignment="Start">
                     <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
