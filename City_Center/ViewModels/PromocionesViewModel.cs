@@ -47,7 +47,15 @@ namespace City_Center.ViewModels
 
         private void Todos()
         {
-            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+            try
+            {
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+            }
+            catch (Exception)
+            {
+
+            }
+           
         }
 
         public ICommand CasinoCommand
@@ -60,7 +68,14 @@ namespace City_Center.ViewModels
 
         private void Casino()
         {
-            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(l => l.pro_tipo == "cas"));
+            try
+            {
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(l => l.pro_tipo == "cas"));
+            }
+            catch (Exception)
+            {
+
+            }
 
         }
 
@@ -74,8 +89,16 @@ namespace City_Center.ViewModels
 
         private void Hotel()
         {
-            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(l => l.pro_tipo == "hopa"));
-        }
+            try
+            {
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(l => l.pro_tipo == "hopa"));
+ 
+            }
+            catch (Exception )
+            {
+
+            }
+                  }
 
 
         public ICommand ShowCommand
@@ -88,7 +111,17 @@ namespace City_Center.ViewModels
 
         private void Show()
         {
-            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(l => l.pro_tipo == "show"));
+            try
+            {
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(l => l.pro_tipo == "show"));
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+       
         }
 
 
@@ -102,8 +135,17 @@ namespace City_Center.ViewModels
 
         private void Gastronomia()
         {
-            PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(l => l.pro_tipo == "gas"));
-        }
+            try
+            {
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(l => l.pro_tipo == "gas"));
+
+            }
+            catch (Exception)
+            {
+
+            }
+
+         }
 
 
 
