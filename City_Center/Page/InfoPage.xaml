@@ -82,7 +82,7 @@
             </Grid>
                 <StackLayout x:Name="SL1" HorizontalOptions="FillAndExpand" IsVisible="true">
                 <StackLayout Spacing="0">
-                     <ffimageloading:CachedImage HeightRequest="240" Aspect="Fill" Source="svip2" />
+                     <ffimageloading:CachedImage HeightRequest="240" Aspect="Fill" Source="ImageInstitucional" />
                    <Label FontSize="15"
                              TextColor="Black"
                              Margin="16,30,10,0"

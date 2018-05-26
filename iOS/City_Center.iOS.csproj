@@ -426,7 +426,6 @@
     <BundleResource Include="Resources\HOTELmin.png" />
     <BundleResource Include="Resources\Icono1.png" />
     <BundleResource Include="Resources\image_error.png" />
-    <BundleResource Include="Resources\image_loading.png" />
     <BundleResource Include="Resources\Info.png" />
     <BundleResource Include="Resources\informacion.png" />
     <BundleResource Include="Resources\Lavanderia.png" />
@@ -484,7 +483,10 @@
     <BundleResource Include="Resources\foodgray.png" />
     <BundleResource Include="Resources\homegray.png" />
     <BundleResource Include="Resources\Hotelgray.png" />
-    <BundleResource Include="Resources\image_loading.jpg" />
+    <BundleResource Include="Resources\CloseG.png" />
+    <BundleResource Include="Resources\image_loading.png" />
+    <BundleResource Include="Resources\logowhite.png" />
+    <BundleResource Include="Resources\ImageInstitucional.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

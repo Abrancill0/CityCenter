@@ -514,7 +514,7 @@
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
                                     <StackLayout>
-                                        <Label Text="Restaurants"
+                                        <Label Text="Restaurantes"
                                                TextColor="Gray"
                                                Margin="8,5,0,0"
                                                HorizontalOptions="Start"
@@ -528,7 +528,7 @@
                                             </Label.FontFamily>
                                         </Label>
                                         <Grid Padding="5, 0">
-                                        <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
+                                       <!-- <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  -->
                                         <xfx:XfxEntry x:Name="Restaurante"
                                                     Text = "{Binding NombreRestaurante,Mode=TwoWay}"
                                                   Margin="2,-20,5,-5"
@@ -577,7 +577,7 @@
                                             </Label.FontFamily>
                                             </Label>
                                        <Grid Padding="5, 0">
-                                            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
+                                          <!--  <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  -->
                                          <xfx:XfxEntry x:Name="SillaNiño"
                                                   Text ="{Binding SillaNiños,Mode=TwoWay}"
                                                   Margin="2,-20,5,-5"
@@ -625,7 +625,7 @@
                                           </Label>
                                         <xfx:XfxEntry PlaceholderColor="Transparent"
                                                   Text ="{Binding Nombre, Mode=TwoWay}"
-                                                  Margin="2,-20,5,-5">
+                                                  Margin="5,-20,5,-5">
                                         <Entry.HeightRequest>
                                             <OnPlatform x:TypeArguments="x:Double">
                                                 <On Platform="iOS">60</On>
@@ -664,7 +664,7 @@
                                               </Label>
                                          <xfx:XfxEntry PlaceholderColor="Transparent"
                                                       Text ="{Binding Correo, Mode=TwoWay}"
-                                                      Margin="2,-20,5,-5">
+                                                      Margin="5,-20,5,-5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>

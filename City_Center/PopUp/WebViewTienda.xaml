@@ -4,5 +4,6 @@
             x:Class="City_Center.PopUp.WebViewTienda">
   <ContentPage.Content>
           <WebView x:Name="Browser" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+       
     </ContentPage.Content>     
 </ContentPage>

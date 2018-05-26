@@ -467,7 +467,7 @@
                                     </xfx:XfxEntry>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" Spacing="0">
-                                    <Label Text="Fecha aproximadas *"
+                                    <Label Text="Fecha aproximada *"
                                            FontSize="12"
                                            Margin="5,0,0,-15"
                                            TextColor="Black"
@@ -922,7 +922,7 @@
                                     </xfx:XfxEntry>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" Spacing="0">
-                                    <Label Text="Fecha aproximadas *"
+                                    <Label Text="Fecha aproximada *"
                                            FontSize="12"
                                            Margin="5,0,0,-15"
                                            TextColor="Black"

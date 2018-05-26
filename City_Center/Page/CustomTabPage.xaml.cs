@@ -154,7 +154,7 @@ namespace City_Center.Page
         {
             InitializeComponent();
 
-            NavigationPage.SetTitleIcon(this, "logo.png");
+            NavigationPage.SetTitleIcon(this, "logowhite.png");
 			//var page = new InicioContent();
             MainView.Content = page1.Content;
 			MainView2.Content = page2.Content;

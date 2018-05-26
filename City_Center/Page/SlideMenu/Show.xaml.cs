@@ -16,7 +16,7 @@ namespace City_Center.Page.SlideMenu
         {
             InitializeComponent();
 
-            NavigationPage.SetTitleIcon(this, "logo.png");
+            NavigationPage.SetTitleIcon(this, "logowhite.png");
         }
 
         protected override void OnAppearing()
@@ -30,9 +30,6 @@ namespace City_Center.Page.SlideMenu
             //}
   
         }
-
-
-    
 
 
         protected override void OnDisappearing()

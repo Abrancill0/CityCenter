@@ -186,6 +186,8 @@ namespace City_Center.ViewModels
 
             list = (ActualizaUsuarioReturn)response.Result;
 
+           // string RutaImagen = await GuardaImagen(list.resultado.);
+
             Application.Current.Properties["Email"] = Email;
             Application.Current.Properties["NombreCompleto"]= Nombre ;
             Application.Current.Properties["Ciudad"] = Ciudad;
@@ -202,6 +204,52 @@ namespace City_Center.ViewModels
 
             await Mensajes.Alerta("Usuario Actualizado correctamente");
         }
+
+
+        //private async Task<string> GuardaImagen(int UsuarioID)
+        //{
+
+        //    var dirotro = "";
+
+        //    if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
+        //    {
+        //        await Mensajes.Error("No se subio ninguna foto");
+
+        //        return "Error";
+        //    }
+        //    else
+        //    {
+        //        byte[] ImagenSubir = File.ReadAllBytes(VariablesGlobales.RutaImagene);
+
+        //        dirotro = Convert.ToBase64String(ImagenSubir);
+        //    }
+
+        //    var content = new FormUrlEncodedContent(new[]
+        //   {
+        //        new KeyValuePair<string, string>("usu_id", Convert.ToString(UsuarioID)),
+        //        new KeyValuePair<string, string>("usu_imagenstr", dirotro)
+
+        //    });
+
+
+        //    var response = await this.apiService.Get<ImagenReturn>("/usuarios", "/carga_foto", content);
+
+
+        //    if (!response.IsSuccess)
+        //    {
+        //        await Mensajes.Error("Error al cargar la foto");
+
+        //        UserDialogs.Instance.HideLoading();
+
+        //        return "Error";
+        //    }
+
+        //    ListImagen = (ImagenReturn)response.Result;
+
+
+        //    return VariablesGlobales.RutaServidor + ListImagen.resultado;
+
+        //}
 
         #endregion
 

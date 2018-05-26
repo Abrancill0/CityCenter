@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Acr.UserDialogs;
+using City_Center.Clases;
 using City_Center.Helper;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 
 namespace City_Center.Page
@@ -113,5 +117,62 @@ namespace City_Center.Page
             }
            
 		}
-	}
+	
+        //public async Task Camara()
+        //{
+
+        //    try
+        //    {
+        //        await CrossMedia.Current.Initialize();
+
+        //        if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+        //        {
+        //            await DisplayAlert("Error", "Camara no ascesible", "OK");
+        //        }
+
+        //        //obtenemos fecha actual
+        //        long n = Int64.Parse(DateTime.Now.ToString("yyyyMMddHHmmss"));
+
+        //        var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+        //        {
+        //            SaveToAlbum = true,
+        //            Directory = "CityCenter",
+        //            PhotoSize = PhotoSize.Custom,
+        //            CustomPhotoSize = 15,
+        //            CompressionQuality = 10,
+        //            Name = Convert.ToString(n)
+        //        });
+
+        //        VariablesGlobales.RutaImagene = file.Path;
+
+        //        Image1.Source = ImageSource.FromStream(() =>
+        //        {
+        //            var stream = file.GetStream();
+        //            file.Dispose();
+
+        //            return stream;
+        //        });
+
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        await DisplayAlert("Error", ex.ToString(), "OK");
+
+        //    }
+
+
+        //}
+
+
+        //async void Handle_Tapped(object sender, System.EventArgs e)
+        //{
+        //    await Camara();
+        //}
+
+    
+    
+    
+    }
 }

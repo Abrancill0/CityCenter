@@ -366,7 +366,8 @@ namespace City_Center.Page
 
 			if (result.Ok)
             {
-				HoraR1.Text = Convert.ToString(result.SelectedTime);
+                string hora = Convert.ToString(result.SelectedTime);
+                HoraR1.Text = hora.Substring(0,5);
 				HoraR1.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
