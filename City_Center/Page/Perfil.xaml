@@ -108,7 +108,7 @@
                     <Label x:Name="LabelTab1" FontSize="12" Text="PERFIL" TextColor="#FDFDFD" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
-                                <On Platform="iOS" Value="Fonts/Oswald-Regular" />
+                                <On Platform="iOS" Value="Oswald-Regular" />
                                 <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                             </OnPlatform>
                         </Label.FontFamily>
@@ -116,7 +116,7 @@
                     <Label x:Name="LabelTab2" FontSize="12" Text="CONFIGURACIÓN" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
-                                <On Platform="iOS" Value="Fonts/Oswald-Regular" />
+                                <On Platform="iOS" Value="Oswald-Regular" />
                                 <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                             </OnPlatform>
                         </Label.FontFamily>
@@ -124,7 +124,7 @@
                     <Label x:Name="LabelTab3" FontSize="12" Text="NOTIFICACIONES" TextColor="#71628A" Style="{DynamicResource TabTopLabel}" Grid.Column="2">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
-                                <On Platform="iOS" Value="Fonts/Oswald-Regular" />
+                                <On Platform="iOS" Value="Oswald-Regular" />
                                 <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                             </OnPlatform>
                         </Label.FontFamily>
@@ -423,7 +423,7 @@
                             <Button Text="GUARDAR" BackgroundColor="#250c4b" TextColor="White" FontAttributes="Bold" Command="{Binding ActualizaPerfilCommand}" Margin="30,30,30,30" HeightRequest="40">
                                 <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Fonts/Oswald-Regular" />
+                                        <On Platform="iOS" Value="Oswald-Regular" />
                                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                                     </OnPlatform>
                                 </Button.FontFamily>

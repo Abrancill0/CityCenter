@@ -54,7 +54,7 @@
                 <Label x:Name="LabelTab2" Text="SERVICIOS" TextColor="#8E99D3" FontSize="12" Grid.Column="1" Style="{DynamicResource TabTopLabel}">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Fonts/Oswald-Regular" />
+                            <On Platform="iOS" Value="Oswald-Regular" />
                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                         </OnPlatform>
                     </Label.FontFamily>
@@ -62,7 +62,7 @@
                 <Label x:Name="LabelTab3" Text="EVENTOS" TextColor="#8E99D3" FontSize="12" Grid.Column="2" Style="{DynamicResource TabTopLabel}">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Fonts/Oswald-Regular" />
+                            <On Platform="iOS" Value="Oswald-Regular" />
                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                         </OnPlatform>
                     </Label.FontFamily>

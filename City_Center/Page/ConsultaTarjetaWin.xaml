@@ -23,7 +23,7 @@
                    Text="Consultá los puntos que tenés en tu tarjeta WIN" VerticalOptions = "Start" FontSize="Medium" FontFamily="Oswald-Regular" >
                  <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                        <On Platform="iOS" Value="Oswald-Regular"/>
                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                     </OnPlatform>
                 </Label.FontFamily>
