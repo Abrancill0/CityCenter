@@ -1021,7 +1021,7 @@
 
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Fonts/Oswald-Regular"/>
+                                            <On Platform="iOS" Value="Oswald-Regular"/>
                                             <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
                                         </OnPlatform>
                                     </Label.FontFamily>
