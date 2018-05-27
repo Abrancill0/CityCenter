@@ -107,7 +107,7 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
             {
-               await Mensajes.Error("No se subio ninguna foto");
+               await Mensajes.Alerta("No se subio ninguna foto");
 
                return "Error";
             }
@@ -131,7 +131,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error("Error al cargar la foto");
+                await Mensajes.Alerta("Error al cargar la foto");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -160,7 +160,7 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.Ciudad))
             {
-               await Mensajes.Error("Ciudad es requerida.");
+               await Mensajes.Alerta("Ciudad es requerida.");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -170,7 +170,7 @@ namespace City_Center.ViewModels
          
             if (string.IsNullOrEmpty(this.Email))
             {
-                await Mensajes.Error("Correo es requerida.");
+                await Mensajes.Alerta("Correo es requerida.");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -179,7 +179,7 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.Password))
             {
-                await Mensajes.Error("Contresaña es requerida.");
+                await Mensajes.Alerta("Contresaña es requerida.");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -188,14 +188,14 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.Password2))
             {
-                await Mensajes.Error("Contraseña es requerida.");
+                await Mensajes.Alerta("Contraseña es requerida.");
 
                 return;
             }
 
             if (this.Password != this.Password2)
             {
-                await Mensajes.Error("Las contraseñas no coicien.");
+                await Mensajes.Alerta("Las contraseñas no coicien.");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -205,7 +205,7 @@ namespace City_Center.ViewModels
 
             if (this.Fecha == "00/00/0000")
             {
-                await Mensajes.Error("La fecha de nacimiento es obligatoria");
+                await Mensajes.Alerta("La fecha de nacimiento es obligatoria");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -243,7 +243,7 @@ namespace City_Center.ViewModels
 
            if (!response.IsSuccess)
             {
-               await Mensajes.Error("Error al registra usuario");
+               await Mensajes.Alerta("Error al registra usuario");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -385,7 +385,7 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Error(message);
+                    //await Mensajes.Error(message);
                     UserDialogs.Instance.HideLoading();
 
                     return;
@@ -393,7 +393,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception ex)
 			{
-				await Mensajes.Error("Error al acceder a los servicios de Google");
+				await Mensajes.Alerta("Error al acceder a los servicios de Google");
 
                 return; 
 			}
@@ -494,7 +494,7 @@ namespace City_Center.ViewModels
                 else
                 {
 
-                    await Mensajes.Error("Error al acceder a los servicios de Facebook");
+                    await Mensajes.Alerta("Error al acceder a los servicios de Facebook");
 
                     return;
 
@@ -502,7 +502,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception)
 			{
-				await Mensajes.Error("Error al acceder a los servicios de Facebook");
+				await Mensajes.Alerta("Error al acceder a los servicios de Facebook");
 
                 return;
 			}
@@ -536,7 +536,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error(response.Message);
+                await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                 return "Error";
             }
@@ -557,7 +557,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error(response.Message);
+                await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                 return null;
             }

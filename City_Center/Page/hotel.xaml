@@ -5,6 +5,7 @@
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.Hotel">
     <ContentPage.ToolbarItems>
@@ -282,7 +283,55 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                                 </Label>
-                                <RelativeLayout HeightRequest="200" VerticalOptions="Start">
+
+                                <cv:CarouselViewControl ItemsSource="{Binding PromocionesDetalle}"
+                                                    HeightRequest="300"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    AnimateTransition="true"
+                                                    ShowArrows="{Binding MuestraFlechasPromo, Mode=TwoWay}"
+                                                    ArrowsTintColor="White"
+                                                    ArrowsBackgroundColor="Black">
+                                <cv:CarouselViewControl.ItemTemplate>
+                                    <DataTemplate>
+                                          <Grid CompressedLayout.IsHeadless="true">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="*" />
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="*" />
+                                                            </Grid.ColumnDefinitions>
+                                               <ffimageloading:CachedImage
+                                                                        Aspect="AspectFill"
+                                                                        LoadingPlaceholder="image_loading.png"
+                                                                        ErrorPlaceholder="image_error.png"
+                                                                        Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
+                                                                       >
+                                                <ffimageloading:CachedImage.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
+                                                </ffimageloading:CachedImage.GestureRecognizers>
+                                            </ffimageloading:CachedImage>
+                                            <Label Text="{Binding pro_nombre}"
+                                                   Margin="5"
+                                                   HorizontalOptions="Center"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalOptions="End"
+                                                   TextColor="White"
+                                                   FontSize="Small">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>  
+                                         </Grid>
+                                       
+                                        
+                                    </DataTemplate>
+                                </cv:CarouselViewControl.ItemTemplate>
+                            </cv:CarouselViewControl>
+                                
+                                <!--<RelativeLayout HeightRequest="200" VerticalOptions="Start">
                                     <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}" RowHeight="200" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
@@ -319,7 +368,7 @@
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
                                     </ListView>
-                                </RelativeLayout>
+                                </RelativeLayout>-->
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>

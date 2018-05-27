@@ -86,10 +86,10 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert(
-                          "Error",
-                           ex.ToString(),
-                          "Ok");
+                //await Application.Current.MainPage.DisplayAlert(
+                //          "Error",
+                //           ex.ToString(),
+                //          "Ok");
             }
 
         }
@@ -125,7 +125,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Error al cargar Tarjeta WIn");
+                    await Mensajes.Alerta("Ocurrio un error al tratar te consultar tu tarjeta win");
 
                     return;
                 }
@@ -144,7 +144,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error(ex.ToString());
+                //await Mensajes.Error(ex.ToString());
             }
 
         }

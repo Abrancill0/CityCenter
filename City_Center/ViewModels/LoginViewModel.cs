@@ -86,7 +86,7 @@ namespace City_Center.ViewModels
 
                 if (string.IsNullOrEmpty(this.Email))
                 {
-                    await Mensajes.Error("Correo/Usuario Requerido");
+                    await Mensajes.Alerta("Correo/Usuario Requerido");
 
                     UserDialogs.Instance.HideLoading();
 
@@ -95,7 +95,7 @@ namespace City_Center.ViewModels
 
                 if (string.IsNullOrEmpty(this.Password))
                 {
-                    await Mensajes.Error("Contraseña Requerido");
+                    await Mensajes.Alerta("Contraseña Requerido");
 
                     UserDialogs.Instance.HideLoading();
 
@@ -116,7 +116,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Usuario o contraseña incorrecto.");
+                    await Mensajes.Alerta("Usuario o contraseña incorrecto.");
 
                     UserDialogs.Instance.HideLoading();
 
@@ -201,7 +201,7 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Error(list.mensaje);
+                  //  await Mensajes.Error(list.mensaje);
 
                     UserDialogs.Instance.HideLoading();
 
@@ -213,10 +213,10 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert(
-                          "Error",
-                           ex.ToString(),
-                          "Ok");
+               // await Application.Current.MainPage.DisplayAlert(
+               //           "Error",
+               //            ex.ToString(),
+               //           "Ok");
 
                 UserDialogs.Instance.HideLoading();
             }
@@ -338,7 +338,7 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Error(message);
+                    await Mensajes.Alerta("Eror al acceder a los servicios de google");
                     UserDialogs.Instance.HideLoading();
 
                     return;
@@ -346,7 +346,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception)
 			{
-				await Mensajes.Error("Error al acceder a los servicios de Google");
+				await Mensajes.Alerta("Error al acceder a los servicios de google");
 
                 return;
 			}
@@ -447,7 +447,7 @@ namespace City_Center.ViewModels
                 else
                 {
 
-                    await Mensajes.Error("Error al acceder a los servicios de Facebook");
+                    await Mensajes.Alerta("Error al acceder a los servicios de Facebook");
 
                     return;
 
@@ -455,7 +455,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception)
 			{
-				await Mensajes.Error("Error al acceder a los servicios de Facebook");
+				await Mensajes.Alerta("Error al acceder a los servicios de Facebook");
 
                 return;
 
@@ -506,7 +506,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error(response.Message);
+                await Mensajes.Alerta(response.Message);
 
                 return "Error";
             }
@@ -527,7 +527,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error(response.Message);
+                await Mensajes.Alerta(response.Message);
 
                 return null;
             }

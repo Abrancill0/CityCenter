@@ -3,14 +3,89 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="City_Center.Page.TerminosCondiciones">
      <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat" />
+        <ToolbarItem  Icon="Chat"/>
     </ContentPage.ToolbarItems>
-   <ContentPage.Content>
-        <ScrollView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Name="TabTopLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+        <StackLayout Spacing="0">
+                
+            <StackLayout HorizontalOptions="Start" Padding="30,30">
+                <Label Text="TÉRMINOS Y CONDICIONES GENEALES DE USO" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
+                       <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </StackLayout>
+                
+            <Grid BackgroundColor="#250c4b" Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*">
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                    
+                <Label x:Name="LabelTab1" FontSize="12" TextColor="#EAE8ED" Text="TÉRMINOS Y CONDICIONES" Style="{DynamicResource TabTopLabel}" Grid.Column="0">
+                        <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Label x:Name="LabelTab2" FontSize="12" TextColor="#71628A" Text="POLITICAS DE PRIVACIDAD" Style="{DynamicResource TabTopLabel}" Grid.Column="1">
+                        <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+               
+                <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="3" Grid.Column="0" VerticalOptions="End">
+                </BoxView>
+                <BoxView x:Name="BV2" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="3" Grid.Column="1" VerticalOptions="End">
+                </BoxView>
+
+                <ContentView x:Name="CV1" BackgroundColor="Transparent" Grid.Column="0" >
+                    <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tab1_Tapped"></TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+                <ContentView  x:Name="CV2" BackgroundColor="Transparent" Grid.Column="1">
+                    <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tab2_Tapped"></TapGestureRecognizer>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+               
+            </Grid>
+
+             <StackLayout x:Name="SL1" HorizontalOptions="FillAndExpand" IsVisible="true">
+                   <ScrollView>
            <StackLayout Margin="15">
-                 <Label FontSize="Small" Text="TÉRMINOS Y CONDICIONES DE USO"
+                 <Label FontSize="Small" Text="TÉRMINOS Y CONDICIONES DE USO" TextColor="Black"
                         HorizontalOptions="Center" HorizontalTextAlignment="Center" FontFamily="Roboto-Regular"></Label>
-            <Label  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontSize="Small" FontFamily="Roboto-Regular" Text="A continuación se detallan los Términos y Condiciones que regulan el uso que realicen las
+            <Label  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontSize="Small"
+                    TextColor="Black"
+                    Text="A continuación se detallan los Términos y Condiciones que regulan el uso que realicen las
 personas físicas mayores de edad ó jurídicas (mediante apoderado con poder suficiente) que
 ingresen al sitio de CASINO DE ROSARIO S.A. (CUIT 30-70979529- 1) “citycenter-rosario.com.ar”
 ó descarguen su “APP”. El ingreso del Usuario al sitio referido ó la descarga de la aplicación
@@ -101,12 +176,59 @@ originadas en sus actividades en el sitio.-
 9. Modificación: CASINO DE ROSARIO S.A. se reserva el derecho de modificar unilateralmente y
 sin previo aviso los presentes Términos y Condiciones, así como el diseño presentación ó
 configuración del sitio o de la APP sin que ello genera derecho a reclamo alguno por parte de
-los Usuarios.-"
-                >
+los Usuarios.-">
                 
             </Label>
         </StackLayout> 
+                    </ScrollView>
+              </StackLayout>
+
+
+                      <StackLayout x:Name="SL2" HorizontalOptions="FillAndExpand" IsVisible="false" Spacing="0">
+                      <ScrollView>
+                        <StackLayout Margin="15">
+                                <Label FontSize="Small" Text="POLITICA DE PRIVACIDAD" TextColor="Black"/>
+                      
+                    
+                        <Label  HorizontalOptions="Start"
+                    HorizontalTextAlignment="Start"
+                    TextColor="Black"
+                    FontSize="Small"
+                    FontFamily="Roboto-Regular"
+                    Text="CASINO DE ROSARIO S.A. utiliza la información personal brindada por los usuarios para
+desarrollar nuevos productos y servicios que satisfagan las necesidades de los mismos y/o para
+contactarse con ellos, vía mail o telefónica para informar sobre promociones, productos y/o
+servicios. Los usuarios tendrán derecho a manifestar su voluntad de no recibir información
+sobre productos y servicios, según lo dispuesto por el Artículo 16 de la Ley 25.326.
+Los datos personales recolectados no serán difundidos ni empleados para un fin distinto o
+incompatible al tenido en cuenta por el usuario al ingresarlos en la base de datos de CASINO
+DE ROSARIO S.A.
+Se deja expresa constancia de que en caso de que CASINO DE ROSARIO S.A. contrate los
+servicios de persona física ó jurídica a los fines de efectuar tareas de promoción en su nombre,
+las mismas accederán a la información personal brindada por los usuarios, teniendo prohibido
+utilizarla para otros fines.-
+El tratamiento de los datos ingresados por los usuarios así como el envío de información por
+correo electrónico que realice CASINO DE ROSARIO S.A., cuenta con el expreso consentimiento
+libre e informado de los usuarios de conformidad con lo dispuesto por el art. 5 de la Ley
+25.326.-
+La información suministrada por los usuarios en oportunidad de suscribirse puede ser
+modificada por los mismos en cualquier momento.-
+CASINO DE ROSARIO S.A. se obliga a adoptar las medidas técnicas y organizativas que resulten
+necesarias para garantizar la seguridad y confidencialidad de los datos personales ingresados
+por los usuarios y de mantener absoluta confidencialidad de los mismos, en cumplimientos con
+lo dispuesto por los artículos 9 y 10 de la Ley 25.326.-
+Se comunica a los usuarios que la Dirección Nacional de Protección de Datos Personales es el
+Órgano de Control de la Ley 25.326 y tiene la atribución de atender las denuncias y reclamos
+que se interpongan con relación al incumplimiento de las normas sobre protección de datos
+personales.-" />
+                        </StackLayout>
+                    </ScrollView>
+                   
+                    </StackLayout>
+
+                    </StackLayout>
         </ScrollView>
+
 
     </ContentPage.Content>
 </ContentPage>

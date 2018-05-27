@@ -5,13 +5,96 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              x:Class="City_Center.Page.RestableceContraseña">
-    
-    <Frame HorizontalOptions="FillAndExpand"
+
+             <StackLayout  BindingContext="{Binding ReiniciaPass}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+              <Frame  AbsoluteLayout.LayoutBounds="0,0,1,330" AbsoluteLayout.LayoutFlags="WidthProportional"  Margin="15" HorizontalOptions="FillAndExpand"  BackgroundColor="White">
+                <StackLayout IsClippedToBounds="True"  Padding="10, 5" Spacing="3">
+                    <Image Source="CloseG"
+                           HorizontalOptions="End"
+                           VerticalOptions="Start">
+                        <Image.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="Cerrar"/>
+                        </Image.GestureRecognizers>
+                        </Image>
+
+                  <Label Text="Proporcionanos tu correo electrónico para enviarte una nueva contraseña"
+                   FontSize="Small"
+                   HorizontalTextAlignment="Center"
+                         Margin="0,0,0,10">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Roboto-Regular" />
+                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+           
+            <xfx:XfxEntry Placeholder="Correo electrónico"
+                          ActivePlaceholderColor="#7A5BA5"
+                          TextColor="Black"
+                          Text="{Binding CorreoElectronico, Mode=TwoWay}">
+                <Entry.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">60</On>
+                        <On Platform="Android,Windows">60</On>
+                    </OnPlatform>
+                </Entry.HeightRequest>
+                <Entry.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Roboto-Regular" />
+                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                    </OnPlatform>
+                </Entry.FontFamily>
+            </xfx:XfxEntry>
+
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand">
+
+                <Label Text="CANCELAR" TextColor="#250C4B"
+                       HorizontalOptions="StartAndExpand"
+                       HorizontalTextAlignment="Start">
+                    <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Oswald-Regular" />
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                    </OnPlatform>
+                  </Label.FontFamily>
+                    <Label.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="Cerrar" />
+                        </Label.GestureRecognizers>
+                </Label> 
+
+                <Label Text="ENVIAR"
+                       TextColor="#250C4B"
+                       HorizontalOptions="End"
+                       HorizontalTextAlignment="End">
+                  <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Oswald-Regular" />
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                    </OnPlatform>
+                  </Label.FontFamily>
+                    
+                     <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RestableceCommand}" Tapped="EviarCorreo"  />
+                      </Label.GestureRecognizers>
+                </Label>
+                
+
+                      </StackLayout>
+                    </StackLayout>
+                </Frame>
+      
+    </StackLayout>
+
+    <!--<Frame HorizontalOptions="FillAndExpand"
              VerticalOptions="FillAndExpand"
-             Margin="40,150,40,150"
+             Margin="40,100,40,300"
+
+                Padding="50"
              HasShadow="true"
              BackgroundColor="White"
-             BindingContext="{Binding ReiniciaPass}">
+            >
         <StackLayout Padding="2"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"
@@ -34,7 +117,7 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-
+           
             <xfx:XfxEntry Placeholder="Correo electrónico"
                           ActivePlaceholderColor="#7A5BA5"
                           TextColor="Black"
@@ -88,6 +171,6 @@
 
             </StackLayout>
             </StackLayout>
-    </Frame>
+    </Frame>-->
 
 </pages:PopupPage>

@@ -19,5 +19,13 @@ namespace City_Center.Page
             await Navigation.PopPopupAsync();
         }
 
+
+        async void EviarCorreo(object sender, System.EventArgs e)
+        {
+            await Navigation.PopPopupAsync();
+        }
+
+
+
     }
 }

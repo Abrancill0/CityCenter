@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Acr.UserDialogs;
+using City_Center.Helper;
 using Xamarin.Forms;
 
 namespace City_Center.Page
@@ -14,12 +15,8 @@ namespace City_Center.Page
             InitializeComponent();
             NavigationPage.SetTitleIcon(this, "logo.png");
 
-			ListaOpciones = new string[] { "DNI", "LE", "LC", "CI" };
-
-            TipoDocumento.ItemsSource = ListaOpciones;
-
-            TipoDocumento.SelectedIndex = 0;
-
+			
+         
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)
@@ -100,5 +97,49 @@ namespace City_Center.Page
             }
         }
     
+
+
+        async void Fecha_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                CancelText = "CANCELAR",
+                Title = "Fecha Nacimiento"
+            });
+
+
+            if (result.Ok)
+            {
+                Fecha.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                Fecha.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+            else
+            {
+                Fecha.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+        }
+
+        async void TipoDocumento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            var result = await UserDialogs.Instance.ActionSheetAsync("Numero de socio Win", "Cancelar", null, null, "DNI", "LE", "LC", "CI");
+
+            if (result != "Cancelar")
+            {
+                TipoDocumento.Text = result.ToString();
+
+                TipoDocumento.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+            else
+            {
+                TipoDocumento.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+
+        }
+
     }
 }

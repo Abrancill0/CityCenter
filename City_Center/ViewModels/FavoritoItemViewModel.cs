@@ -94,7 +94,7 @@ namespace City_Center.ViewModels
 
                     if (!response.IsSuccess)
                     {
-                        await Mensajes.Error("Error al eliminar Guardados");
+                        await Mensajes.Alerta("Error al eliminar Guardados");
                         return;
                     }
 

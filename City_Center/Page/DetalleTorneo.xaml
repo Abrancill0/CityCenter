@@ -66,19 +66,19 @@
                            Text="{Binding td.tor_nombre}" FontSize="Large" TextColor="#250C4B">
                                 <Label.FontFamily>
                                       <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                      </OnPlatform>
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
                                 </Label.FontFamily>
                     </Label>
                     <Label HorizontalOptions="Start"
                            HorizontalTextAlignment="Start"
                            Text="{Binding td.tor_descripcion}" FontSize="Micro">
                                 <Label.FontFamily>
-                                      <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                      </OnPlatform>
+                                     <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
                                 </Label.FontFamily>
                     </Label>
                 </StackLayout>
@@ -94,10 +94,10 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                           <Entry.FontFamily>
-                                      <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                      </OnPlatform>
+                                     <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
                        </Entry.FontFamily>
                     </xfx:XfxEntry>
 
@@ -109,31 +109,41 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                           <Entry.FontFamily>
-                                      <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                      </OnPlatform>
+                                     <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
                        </Entry.FontFamily>
                     </xfx:XfxEntry>
 
 
-                    <StackLayout>
-                            <Label Text="Tipo de documento*"
-                                   TextColor="Gray"
-                                   Margin="6,2,0,0"
-                                   FontSize="Small"
-                                   FontFamily="Oswald-Regular"/>
-                            <Grid Padding="5, 0">    
-                            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
-                            <Picker
-                                    x:Name="TipoDocumento"
-                                    Title="Seleccione un tipo de documento"
-                                    SelectedItem="{Binding TipoDocumento, Mode=TwoWay}"/>
-                                 
-                            </Grid>
-                            </StackLayout>
+
+                                <xfx:XfxEntry x:Name="TipoDocumento"
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding TipoDocumento, Mode=TwoWay}"
+                                      Placeholder="Tipo documento *"
+                                      TextColor="Black"
+                                      FontSize="18"
+                                      Keyboard="Default"
+                                      Focused="TipoDocumento_Focused">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">50</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                                <Entry.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular"/>
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                    </OnPlatform>
+                            </Entry.FontFamily>
+                            </xfx:XfxEntry>
                 
-                    <xfx:XfxEntry Placeholder="Numero de documento*" Style="{DynamicResource EntryStyle}" Text="{Binding NumeroDocumento, Mode=TwoWay}">
+                    <xfx:XfxEntry Placeholder="Numero de documento*"
+                    FontSize="18"
+                                  Style="{DynamicResource EntryStyle}" Text="{Binding NumeroDocumento, Mode=TwoWay}">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -141,34 +151,54 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                           <Entry.FontFamily>
-                                      <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                      </OnPlatform>
+                                     <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
                        </Entry.FontFamily>
                     </xfx:XfxEntry>
 
 
-                    <StackLayout>
-                            <Label Text="Fecha de nacimiento*"
-                                   TextColor="Gray"
-                                   Margin="6,2,0,0"
-                                   FontSize="Small"
-                                   FontFamily="Oswald-Regular">
-                            <Label.FontFamily>
-                                      <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                      </OnPlatform>
-                            </Label.FontFamily>
-                        </Label>
-                            <Grid Padding="15, 0">    
-                            <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>       
-                            <DatePicker Date="{Binding Fecha, Mode=TwoWay}"/>
-                            </Grid>
-                            </StackLayout>
+                    <xfx:XfxEntry x:Name="Fecha"
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding Fecha, Mode=TwoWay}"
+                                      Placeholder="Fecha Nacimiento *"
+                                      TextColor="Black"
+                                      FontSize="18"
+                                      Keyboard="Default"
+                                      Focused="Fecha_Focused">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">50</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                                <Entry.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular"/>
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                    </OnPlatform>
+                            </Entry.FontFamily>
+                            </xfx:XfxEntry>
                     
-                    <xfx:XfxEntry Placeholder="Nacionalidad*" Style="{DynamicResource EntryStyle}" Text="{Binding Nacionalidad, Mode=TwoWay}">
+                    <xfx:XfxEntry Placeholder="Nacionalidad*"
+                    FontSize="18"
+                                  Style="{DynamicResource EntryStyle}" Text="{Binding Nacionalidad, Mode=TwoWay}">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                          <Entry.FontFamily>
+                                     <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                       </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry Placeholder="Pais*" FontSize="18" Style="{DynamicResource EntryStyle}" Text="{Binding Pais, Mode=TwoWay}">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -177,12 +207,14 @@
                         </Entry.HeightRequest>
                           <Entry.FontFamily>
                                       <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                      </OnPlatform>
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
                        </Entry.FontFamily>
                     </xfx:XfxEntry>
-                    <xfx:XfxEntry Placeholder="Pais*" Style="{DynamicResource EntryStyle}" Text="{Binding Pais, Mode=TwoWay}">
+                    <xfx:XfxEntry Placeholder="Provincia*"
+                    FontSize="18"
+                                  Style="{DynamicResource EntryStyle}" Text="{Binding Provincia, Mode=TwoWay}">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -190,27 +222,15 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                           <Entry.FontFamily>
-                                      <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                      </OnPlatform>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
                        </Entry.FontFamily>
                     </xfx:XfxEntry>
-                    <xfx:XfxEntry Placeholder="Provincia*" Style="{DynamicResource EntryStyle}" Text="{Binding Provincia, Mode=TwoWay}">
-                        <Entry.HeightRequest>
-                            <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="iOS">60</On>
-                                <On Platform="Android,Windows">50</On>
-                            </OnPlatform>
-                        </Entry.HeightRequest>
-                          <Entry.FontFamily>
-                                      <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                      </OnPlatform>
-                       </Entry.FontFamily>
-                    </xfx:XfxEntry>
-                    <xfx:XfxEntry Placeholder="Ciudad*" Style="{DynamicResource EntryStyle}" Text="{Binding Ciudad, Mode=TwoWay}">
+                    <xfx:XfxEntry Placeholder="Ciudad*"
+                    FontSize="18"
+                                  Style="{DynamicResource EntryStyle}" Text="{Binding Ciudad, Mode=TwoWay}">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -218,10 +238,10 @@
                             </OnPlatform>
                         </Entry.HeightRequest>
                         <Entry.FontFamily>
-                                      <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular"/>
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                      </OnPlatform>
+                               <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
                        </Entry.FontFamily>
                     </xfx:XfxEntry>
                     <Button Margin="30"

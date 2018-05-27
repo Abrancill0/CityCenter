@@ -52,6 +52,7 @@ namespace City_Center.ViewModels
         string telefono;
         bool verTarjeta;
         bool muestraFlechas=false;
+        bool muestraFlechasPromo = false;
 
         private string fechaShowInicio;
         private string fechaShowFin;
@@ -170,6 +171,12 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.muestraFlechas, value); }
         }
 
+        public bool MuestraFlechasPromo
+        {
+            get { return this.muestraFlechasPromo; }
+            set { SetValue(ref this.muestraFlechasPromo, value); }
+        }
+
         public ObservableCollection<PromocionesItemViewModel> PromocionesDetalle
         {
             get { return this.promocionesDetalle; }
@@ -277,7 +284,7 @@ namespace City_Center.ViewModels
                   
             if (!response.IsSuccess)
             {
-                await Mensajes.Error(response.Message);
+                await Mensajes.Alerta("Ocurrio un error al enviar el correo");
             }
 
             await Mensajes.Alerta("Correo enviado exitosamente");
@@ -340,6 +347,20 @@ namespace City_Center.ViewModels
         }
 
 
+        private ICommand LoopInfinitoCommand
+        {
+            get
+            {
+                return new RelayCommand(LoopInfinito);
+            }  
+        }
+
+        private async void LoopInfinito()
+        {
+            await  Mensajes.Alerta("se movio");
+        }
+
+
         #endregion
 
         #region Methods
@@ -352,7 +373,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return;
                 }
@@ -378,7 +399,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Error al cargar Torneos");
+                  //  await Mensajes.Alerta("Error al cargar Torneos");
 
                     return;
                 }
@@ -431,7 +452,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return;
                 }
@@ -448,7 +469,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Error al cargar Tarjeta");
+                   // await Mensajes.Alerta("Error al cargar Tarjeta");
 
                     ImagenTarjeta = "";
 
@@ -494,7 +515,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return;
                 }
@@ -509,19 +530,26 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Error al cargar Promociones");
+                   // await Mensajes.Alerta("Error al cargar Promociones");
 
                     return;
                 }
 
                 this.listPromociones = (PromocionesReturn)response.Result;
 
-
                 PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+
+
+                if (PromocionesDetalle.Count > 0)
+                {
+                    MuestraFlechasPromo = true;
+                }
+
+               // MuestraFlechasPromo
             }
             catch (Exception ex)
             {
-                await Mensajes.Error("Home - Promociones" + ex.ToString());
+                //await Mensajes.Error("Home - Promociones" + ex.ToString());
             }
 
         }
@@ -553,9 +581,6 @@ namespace City_Center.ViewModels
                 loc_nombre = l.loc_nombre
             });
         }
-
-
-
 
 
         #endregion

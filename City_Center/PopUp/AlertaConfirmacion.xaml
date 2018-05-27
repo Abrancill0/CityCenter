@@ -6,7 +6,7 @@
 
       <Frame HorizontalOptions="FillAndExpand"
              VerticalOptions="FillAndExpand"
-             Margin="40,150,40,270"
+             Margin="40,150,40,230"
              HasShadow="true"
              BackgroundColor="White">
         <StackLayout Padding="2"
@@ -14,16 +14,21 @@
                      VerticalOptions="FillAndExpand"
                      Orientation="Vertical">
             <Image Source="CloseG"
+                   Margin="0,-12,-12,0"
                            HorizontalOptions="End"
                            VerticalOptions="Start">
                         <Image.GestureRecognizers>
                            <TapGestureRecognizer Tapped="Handle_Tapped" /> 
                         </Image.GestureRecognizers>
             </Image>
-            
+
              <Label x:Name="Mensaje"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Start"
+                    FontSize="16"
               LineBreakMode="WordWrap"
-                    Margin="12,13,12,30">
+                    Margin="40,30,40,30"
+                    TextColor="Black">
                  <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
                                    <On Platform="iOS" Value="Roboto-Regular"/>
@@ -33,8 +38,13 @@
             </Label>
 
             <Label Text="OK" TextColor="#250C4B"
-                   FontSize="Small"
-                   HorizontalTextAlignment="Center" HorizontalOptions="Center">
+                   
+                   Margin="0,50,0,0"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   VerticalTextAlignment="End"
+                   FontSize="16">
                  <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
                                    <On Platform="iOS" Value="Oswald-Regular"/>

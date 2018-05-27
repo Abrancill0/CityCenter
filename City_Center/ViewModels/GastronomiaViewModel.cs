@@ -24,11 +24,11 @@ namespace City_Center.ViewModels
         private ObservableCollection<GastronomiaItemViewModel> restaurantDetalle;
 
         private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
-
-
-            private PromocionesReturn listPromociones;
+        private PromocionesReturn listPromociones;
 
 		private int tamanoRestaurant;
+
+        bool muestraFlechasPromo = false;
 
         #endregion
 
@@ -51,6 +51,12 @@ namespace City_Center.ViewModels
         {
 			get { return this.tamanoRestaurant; }
 			set { SetValue(ref this.tamanoRestaurant, value); }
+        }
+
+        public bool MuestraFlechasPromo
+        {
+            get { return this.muestraFlechasPromo; }
+            set { SetValue(ref this.muestraFlechasPromo, value); }
         }
         
         #endregion
@@ -148,7 +154,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return;
                 }
@@ -164,7 +170,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Error al cargar Restaurantes/Bar");
+                    //await Mensajes.Alerta("Error al cargar Restaurantes/Bar");
 
                     return;
                 }
@@ -180,7 +186,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error("Gastronomia - Restaurantes" + ex.ToString());
+                //await Mensajes.Error("Gastronomia - Restaurantes" + ex.ToString());
             }
 
         }
@@ -217,7 +223,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return;
                 }
@@ -232,7 +238,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Error al cargar Promociones");
+                    //await Mensajes.Alerta("Error al cargar Promociones");
 
                     return;
                 }
@@ -241,10 +247,15 @@ namespace City_Center.ViewModels
 
                 PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "gas"));
 
+                if (PromocionesDetalle.Count > 0)
+                {
+                    MuestraFlechasPromo = true;
+                }
+
             }
             catch (Exception ex)
             {
-                await Mensajes.Error("Gastronomia - Promociones" + ex.ToString());
+                await Mensajes.Alerta("Gastronomia - Promociones" + ex.ToString());
             }
 
         }

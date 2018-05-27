@@ -129,7 +129,28 @@ namespace City_Center.ViewModels
                 return;
             }
 
-		         
+            if (string.IsNullOrEmpty(this.Empresa))
+            {
+                await Mensajes.Alerta("Empresa requerido");
+
+                return;
+            }   
+
+            if (string.IsNullOrEmpty(this.Asistentes))
+            {
+                await Mensajes.Alerta("Cantidad de asistentes requerido");
+
+                return;
+            }   
+
+
+            if (string.IsNullOrEmpty(this.TipoEvento))
+            {
+                await Mensajes.Alerta("Tipo de evento requerido");
+
+                return;
+            }   
+
 			if (string.IsNullOrEmpty(this.Celular))
             {
                 await Mensajes.Alerta("Celular requerido");
@@ -137,9 +158,9 @@ namespace City_Center.ViewModels
                 return;
             }
 
-			if (string.IsNullOrEmpty(this.Asistentes))
+			if (string.IsNullOrEmpty(this.Fecha))
             {
-                await Mensajes.Alerta("Asistentes requerido");
+                await Mensajes.Alerta("Fecha aproximada requerido");
 
                 return;
             }
@@ -163,17 +184,17 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error(response.Message);
+                await Mensajes.Alerta(response.Message);
             }
 
             await Mensajes.Alerta("Correo enviado exitosamente");
 
-            //this.FechaInicio
+            this.Fecha = "00/00/0000";
 			this.Celular = string.Empty; 
             this.Nombre = string.Empty;
             this.Correo = string.Empty;
             this.Empresa = string.Empty;
-            this.TipoEvento = string.Empty;
+            this.TipoEvento = "Congresos, Convenciones, Seminarios";
             this.Asistentes = string.Empty;
 			this.Comentarios = string.Empty;
 
@@ -188,7 +209,7 @@ namespace City_Center.ViewModels
 
             if (!connection.IsSuccess)
             {
-                await Mensajes.Error(connection.Message);
+                await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                 return;
             }
@@ -204,7 +225,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error("Error al cargar Galerias");
+               // await Mensajes.Alerta("Error al cargar Galerias");
 
                 return;
             }

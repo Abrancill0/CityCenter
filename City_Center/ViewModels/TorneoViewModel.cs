@@ -37,7 +37,7 @@ namespace City_Center.ViewModels
 
             if (!connection.IsSuccess)
             {
-                await Mensajes.Error(connection.Message);
+                await Mensajes.Error("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                 return;
             }
@@ -63,7 +63,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error("Error al cargar Torneos");
+                //await Mensajes.Error("Error al cargar Torneos");
 
                 return;
             }

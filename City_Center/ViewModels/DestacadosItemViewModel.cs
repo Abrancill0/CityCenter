@@ -91,7 +91,7 @@ namespace City_Center.ViewModels
 
                     if (!response.IsSuccess)
                     {
-                        await Mensajes.Error("Error al guardar Guardados");
+                        await Mensajes.Error("Ocurrio un error al tratar de salvar el Guardados");
                         return;
                     }
 
@@ -107,17 +107,17 @@ namespace City_Center.ViewModels
                     actualiza.oculta = false;
                     actualiza.des_id_guardado= list.resultado.gua_id;
 
-					await Mensajes.Alerta("Guardado Correctamente");
+					await Mensajes.Alerta("Guardado correctamente");
 
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para guardar este Destacado");
+                    await Mensajes.Alerta("Inicia sesion para poder guardar este destacado");
             }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesion para guardar este Destacado");
+                await Mensajes.Alerta("Inicia sesion para poder este destacado");
             }
 
         }
@@ -154,7 +154,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Error al eliminar Guardados");
+                            await Mensajes.Alerta("Error al tratar de eliminar un guardados");
                             return;
                         }
 
@@ -181,12 +181,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                    await Mensajes.Alerta("Inicia sesion para poder eliminar guardados");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                await Mensajes.Alerta("Inicia sesion para poder eliminar guardados");
             }
         }
 

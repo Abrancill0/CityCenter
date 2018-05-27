@@ -36,6 +36,7 @@ namespace City_Center.Page
                         //Application.Current.Properties["Email"] = "ab2";
                         //await Application.Current.SavePropertiesAsync();
 
+
 						App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
 
                         ((MasterPage)Application.Current.MainPage).IsPresented = false;
@@ -111,7 +112,7 @@ namespace City_Center.Page
                         else
                         {
                             listviewMenu.SelectedItem = null;
-                            await Mensajes.Error("Debes de estar logeado para acceder a esta opcion");
+                            await Mensajes.Alerta("Debes de estar logeado para acceder a esta opcion");
                         }
 
 

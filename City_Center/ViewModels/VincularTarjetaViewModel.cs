@@ -118,7 +118,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error(response.Message);
+                await Mensajes.Alerta("Ocurrio un erro al tratar de vincular la tarjeta win");
 
                 return;
             }
@@ -202,7 +202,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return "No se tiene conexion a internet";
                 }

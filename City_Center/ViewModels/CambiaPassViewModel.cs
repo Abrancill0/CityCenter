@@ -78,21 +78,21 @@ namespace City_Center.ViewModels
             
             if (string.IsNullOrEmpty(this.contrasenatemp))
             {
-                await Mensajes.Alerta("Contraseña temporal requerida");
+                await Mensajes.Alerta("La contraseña temporal es requerida");
     
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Contrasena1))
             {
-                await Mensajes.Alerta("Nueva Contraseña requrida");
+                await Mensajes.Alerta("Nueva contraseña es requrida");
             
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Contrasena2))
             {
-                await Mensajes.Alerta("Confirma Contraseña requrida");
+                await Mensajes.Alerta("Confirma contraseña es requerida");
             
                 return;
             }
@@ -100,7 +100,7 @@ namespace City_Center.ViewModels
 
             if (this.Contrasena1 != this.Contrasena2)
             {
-                await Mensajes.Alerta("Contraseñas no coiciden");
+                await Mensajes.Alerta("Las contraseñas capturadas no coiciden");
 
                 return;
             }
@@ -120,7 +120,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error("Error al cambiar contraseña");
+                await Mensajes.Alerta("Ocurrio un error al cambiar la contraseña");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -131,7 +131,7 @@ namespace City_Center.ViewModels
 
             if (list.mensaje=="Contraseña No Actualizada!!!")
             {
-                await Mensajes.Error("Error al cambiar contraseña");
+                await Mensajes.Alerta("Ocurrio un error al cambiar la contraseña");
 
                 UserDialogs.Instance.HideLoading();
 

@@ -140,7 +140,7 @@ namespace City_Center.ViewModels
 
             if (!connection.IsSuccess)
             {
-                await Mensajes.Error(connection.Message);
+                await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                 return;
             }
@@ -167,7 +167,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error("Error al cargar Shows");
+                await Mensajes.Alerta("Error al cargar Shows");
 
                 return;
             }

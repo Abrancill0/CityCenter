@@ -64,6 +64,10 @@ namespace City_Center.ViewModels
 
 		private int tamanoTarjeta;
 
+        bool muestraFlechasPromo = false;
+
+        bool muestraFlechas = false;
+
 		#endregion
 
 		#region Properties
@@ -146,6 +150,19 @@ namespace City_Center.ViewModels
 			set { SetValue(ref this.tamanoTarjeta, value); }
         }
 
+        public bool MuestraFlechasPromo
+        {
+            get { return this.muestraFlechasPromo; }
+            set { SetValue(ref this.muestraFlechasPromo, value); }
+        }
+
+
+        public bool MuestraFlechas
+        {
+            get { return this.muestraFlechas; }
+            set { SetValue(ref this.muestraFlechas, value); }
+        }
+
 		#endregion
 
 		#region Commands
@@ -179,7 +196,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception)
 			{
-				await Mensajes.Alerta("No pudimos acceder a tu ubicacion");
+				await Mensajes.Alerta("No pudimos acceder a tu ubicacion, por favor activa tu ubicacion desde la configuracion de tu celular");
 			}
 
 		}
@@ -267,7 +284,7 @@ namespace City_Center.ViewModels
 
 				if (Nosocio == "0")
 				{
-					await Mensajes.Alerta("No tienes ninguna tarjeta asociada");
+					await Mensajes.Alerta("No se cuenta con ninguna tarjeta asociada");
 
 					return;
 				}
@@ -280,7 +297,7 @@ namespace City_Center.ViewModels
 			}
 			else
 			{
-                await Mensajes.Alerta("Inicia Sesion para consultar puntos");  	
+                await Mensajes.Alerta("Inicia sesion para poder consultar tus puntos win");  	
 			}
             
 		}
@@ -297,7 +314,7 @@ namespace City_Center.ViewModels
 
 				if (!connection.IsSuccess)
 				{
-					await Mensajes.Error(connection.Message);
+					await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
 				}
 
@@ -324,7 +341,7 @@ namespace City_Center.ViewModels
 
 				if (!response.IsSuccess)
 				{
-					await Mensajes.Error("Error al cargar Destacados");
+					//await Mensajes.Error("Error al cargar Destacados");
 
 					return;
 				}
@@ -336,7 +353,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception ex)
 			{
-				await Mensajes.Error("Casino - Destacados" + ex.ToString());
+				//await Mensajes.Error("Casino - Destacados" + ex.ToString());
 			}
 
 
@@ -365,7 +382,7 @@ namespace City_Center.ViewModels
 
 				if (!connection.IsSuccess)
 				{
-					await Mensajes.Error(connection.Message);
+                    await Mensajes.Error("Parece que no tenés conexión a internet, intentalo mas tarde");
 
 					return;
 				}
@@ -381,7 +398,7 @@ namespace City_Center.ViewModels
 
 				if (!response.IsSuccess)
 				{
-					await Mensajes.Error("Error al cargar Pozos");
+					//await Mensajes.Error("Error al cargar Pozos");
 
 					return;
 				}
@@ -445,7 +462,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception ex)
 			{
-				await Mensajes.Error("Casino - Pozos" + ex.ToString());
+				//await Mensajes.Error("Casino - Pozos" + ex.ToString());
 			}
 
 		}
@@ -471,7 +488,7 @@ namespace City_Center.ViewModels
 				if (!connection.IsSuccess)
 				{
 
-					await Mensajes.Error(connection.Message);
+                    await Mensajes.Error("Parece que no tenés conexión a internet, intentalo mas tarde");
 
 					return;
 				}
@@ -488,7 +505,7 @@ namespace City_Center.ViewModels
 				if (!response.IsSuccess)
 				{
 
-					await Mensajes.Error("Error al cargar Sala de Poker");
+					//await Mensajes.Error("Error al cargar Sala de Poker");
 					return;
 				}
 
@@ -503,7 +520,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception ex)
 			{
-				await Mensajes.Error("Casino - Sala Poker" + ex.ToString());
+				//await Mensajes.Error("Casino - Sala Poker" + ex.ToString());
 			}
 
 		}
@@ -533,7 +550,7 @@ namespace City_Center.ViewModels
 
 				if (!connection.IsSuccess)
 				{
-					await Mensajes.Error(connection.Message);
+                    await Mensajes.Error("Parece que no tenés conexión a internet, intentalo mas tarde");
 
 					return;
 				}
@@ -548,7 +565,7 @@ namespace City_Center.ViewModels
 
 				if (!response.IsSuccess)
 				{
-					await Mensajes.Error("Error al cargar Ganadores");
+					//await Mensajes.Error("Error al cargar Ganadores");
 
 					return;
 				}
@@ -611,7 +628,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception ex)
 			{
-				await Mensajes.Error("Casino - Ganadores" + ex.ToString());
+				//await Mensajes.Error("Casino - Ganadores" + ex.ToString());
 			}
 
 
@@ -644,7 +661,7 @@ namespace City_Center.ViewModels
 
 				if (!connection.IsSuccess)
 				{
-					await Mensajes.Error(connection.Message);
+                    await Mensajes.Error("Parece que no tenés conexión a internet, intentalo mas tarde");
 
 					return;
 				}
@@ -661,7 +678,7 @@ namespace City_Center.ViewModels
 				if (!response.IsSuccess)
 				{
 
-					await Mensajes.Error("Error al cargar Tarjetas");
+					//await Mensajes.Error("Error al cargar Tarjetas");
 
 					return;
 				}
@@ -710,7 +727,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception ex)
 			{
-				await Mensajes.Error("Casino - Tarjetas" + ex.ToString());
+				//await Mensajes.Error("Casino - Tarjetas" + ex.ToString());
 			}
 
 		}
@@ -737,10 +754,16 @@ namespace City_Center.ViewModels
 			{
 				TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
+
+                if (TorneoDetalle.Count > 0)
+                {
+                    MuestraFlechas = true;
+                }
+
 			}
 			catch (Exception ex)
 			{
-				await Mensajes.Error("Casino - Torneos" + ex.ToString());
+				//await Mensajes.Error("Casino - Torneos" + ex.ToString());
 			}
 
 		}
@@ -775,7 +798,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Error("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return;
                 }
@@ -790,7 +813,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Error al cargar Promociones");
+                    //await Mensajes.Error("Error al cargar Promociones");
 
                     return;
                 }
@@ -799,10 +822,17 @@ namespace City_Center.ViewModels
 
 
 				PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "cas"));
-			}
+			
+            
+                if (PromocionesDetalle.Count > 0)
+                {
+                    MuestraFlechasPromo = true;
+                }
+            
+            }
 			catch (Exception ex)
 			{
-				await Mensajes.Error("Casino - Promociones" + ex.ToString());
+				//await Mensajes.Error("Casino - Promociones" + ex.ToString());
 			}
 
 		}

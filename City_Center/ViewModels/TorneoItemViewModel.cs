@@ -90,7 +90,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Error al guardar Guardados");
+                            await Mensajes.Alerta("Error al tratar de salvar este torneo");
                             return;
                         }
 
@@ -115,12 +115,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para guardar este torneo");  
+                    await Mensajes.Alerta("Inicia sesión para guardar este torneo");  
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesion para guardar este torneo");
+                await Mensajes.Alerta("Inicia sesión para guardar este torneo");
             }
 
         }
@@ -157,7 +157,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Error al eliminar Guardados");
+                            await Mensajes.Alerta("Error al eliminar Guardados");
                             return;
                         }
 
@@ -183,16 +183,29 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                    await Mensajes.Alerta("Inicia sesión para eliminar este guardados");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                await Mensajes.Alerta("Inicia sesión para eliminar guardados");
             }
         }
 
 
+
+        private ICommand LoopInfinitoCommand
+        {
+            get
+            {
+                return new RelayCommand(LoopInfinito);
+            }
+        }
+
+        private async void LoopInfinito()
+        {
+            await Mensajes.Alerta("se movio");
+        }
 
         #endregion
 

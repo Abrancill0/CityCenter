@@ -39,6 +39,8 @@ namespace City_Center.ViewModels
         private string imagen_Selected;
 		private int tamanoHabitacion; 
 
+        bool muestraFlechasPromo = false;
+
         #endregion
 
         #region Properties
@@ -71,6 +73,12 @@ namespace City_Center.ViewModels
         {
 			get { return this.tamanoHabitacion; }
 			set { SetValue(ref this.tamanoHabitacion, value); }
+        }
+
+        public bool MuestraFlechasPromo
+        {
+            get { return this.muestraFlechasPromo; }
+            set { SetValue(ref this.muestraFlechasPromo, value); }
         }
         
         #endregion
@@ -143,7 +151,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return;
                 }
@@ -152,14 +160,14 @@ namespace City_Center.ViewModels
                 var content = new FormUrlEncodedContent(new[]
                 {
                 new KeyValuePair<string, string>("", ""),
-            });
+                });
 
 
                 var response = await this.apiService.Get<HabitacionesReturn>("/hotel_spa/habitaciones", "/indexApp", content);
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Error al cargar Habitaciones");
+                    //await Mensajes.Alerta("Error al cargar Habitaciones");
 
                     return;
                 }
@@ -224,7 +232,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error("Hotel - Habitaciones" + ex.ToString());
+                //await Mensajes.Error("Hotel - Habitaciones" + ex.ToString());
             }
             
         }
@@ -263,7 +271,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                 }
 
@@ -277,7 +285,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Error al cargar Moi Spa");
+                   // await Mensajes.Alerta("Error al cargar Moi Spa");
                     return;
                 }
 
@@ -292,7 +300,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error("Hotel - SpoMoa" + ex.ToString());
+            //    await Mensajes.Alerta("Hotel - SpoMoa" + ex.ToString());
             }
 
         }
@@ -322,7 +330,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Alerta(connection.Message);
 
                     return;
                 }
@@ -337,7 +345,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Error("Error al cargar Promociones");
+                   // await Mensajes.Alerta("Error al cargar Promociones");
 
                     return;
                 }
@@ -346,10 +354,15 @@ namespace City_Center.ViewModels
 
                 PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "hopa"));
 
+                if (PromocionesDetalle.Count > 0)
+                {
+                    MuestraFlechasPromo = true;
+                }
+
             }
             catch (Exception ex)
             {
-                await Mensajes.Error("Hotel - Promociones" + ex.ToString());
+               // await Mensajes.Al("Hotel - Promociones" + ex.ToString());
             }
         }
 

@@ -88,7 +88,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Error al guardar Guardados");
+                            await Mensajes.Alerta("Ocurrio un error al tratar de salvar este Guardados");
                             return;
                         }
 
@@ -115,12 +115,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para guardar este Destacado");
+                    await Mensajes.Alerta("Inicia Sesion para guardar este guardado");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesion para guardar este Destacado");
+                await Mensajes.Alerta("Inicia Sesion para guardar este guardado");
             }         
         }
 
@@ -156,7 +156,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Error al eliminar Guardados");
+                            await Mensajes.Alerta("Error al tratar de eliminar este guardados");
                             return;
                         }
 
@@ -183,12 +183,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                    await Mensajes.Alerta("Inicia Sesion para salvar este guardado");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                await Mensajes.Alerta("Inicia Sesion para salvar este guardado");
             }
         }
 

@@ -118,13 +118,13 @@ namespace City_Center.ViewModels
         {
             try
             {
-                var result = await Application.Current.MainPage.DisplayAlert("CityCenter", "¿ESTÁ SEGURO QUE DESEA SALIR DE LA APLICACACIÓN?", "OK", "Cancelar");
+                var result = await Application.Current.MainPage.DisplayAlert("City Center Rosario", "¿ESTÁ SEGURO QUE DESEA SALIR DE LA APLICACACIÓN?", "OK", "Cancelar");
 
                 string Mensajevalida = string.Format("Result {0}", result);
 
                 if (Mensajevalida == "Result True")
                 {
-                    UserDialogs.Instance.ShowLoading("Cerrando sesion...", MaskType.Black);
+                    UserDialogs.Instance.ShowLoading("Cerrando sesión...", MaskType.Black);
 
                     Application.Current.Properties["IsLoggedIn"] = false;
                     Application.Current.Properties["IdUsuario"] = 0;
@@ -167,10 +167,12 @@ namespace City_Center.ViewModels
             {
                 UserDialogs.Instance.HideLoading();
 
-                await Application.Current.MainPage.DisplayAlert(
-                          "Error",
-                           ex.ToString(),
-                          "Ok");
+            //  await  Mensaje.Alerta("Ocurrio un error al cerrar sesion");
+
+                //await Application.Current.MainPage.DisplayAlert(
+                //          "Error",
+                //           ex.ToString(),
+                //          "Ok");
             }
 
         }
@@ -291,7 +293,7 @@ namespace City_Center.ViewModels
 
             if (!connection.IsSuccess)
             {
-                await Mensajes.Error(connection.Message);
+                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
                    
                 VerTarjeta = false;
 
@@ -310,7 +312,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error("Error al cargar Tarjeta WIn");
+              //  await Mensajes.Alerta("Ocurrio un error al cargar tarjeta win");
 
                     VerTarjeta = false;
 

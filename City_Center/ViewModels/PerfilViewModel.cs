@@ -179,7 +179,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error(response.Message);
+                await Mensajes.Alerta("Ocurrio un error al actualizar el usuario");
 
                 return;
             }
@@ -309,7 +309,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return "No se tiene conexion a internet";
                 }
@@ -342,7 +342,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Error(ex.ToString());
+                //await Mensajes.Error(ex.ToString());
                 return "Error";
             }
 

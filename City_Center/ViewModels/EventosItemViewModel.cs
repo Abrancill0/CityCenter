@@ -77,7 +77,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Error al guardar Guardados");
+                            await Mensajes.Alerta("Error al guardar guardados");
                             return;
                         }
 

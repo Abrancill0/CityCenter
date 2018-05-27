@@ -157,269 +157,205 @@
                 <StackLayout x:Name="SL1" IsVisible="true">
                     <ScrollView BackgroundColor="White">
                         <StackLayout Spacing="0" Margin="10,10,0,10" BackgroundColor="White">
-                            <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Correo electrónico *"
-                                       FontSize="12.5"
-                                       Margin="5,0,0,-13"
-                                       TextColor="Black"
-                                       HorizontalOptions="Start"
-                                       HorizontalTextAlignment="Start">
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                                </Label>
-                                <xfx:XfxEntry IsEnabled="false"
-                                              Style="{DynamicResource EntryStyle}"
-                                              Text="{Binding Email ,Mode=TwoWay}"
-                                              PlaceholderColor="#7A5BA5"
-                                              TextColor="Black"
-                                              FontSize="18"
-                                              Keyboard="Default">
-                                    <Entry.HeightRequest>
-                                        <OnPlatform x:TypeArguments="x:Double">
-                                            <On Platform="iOS">60</On>
-                                            <On Platform="Android,Windows">50</On>
-                                        </OnPlatform>
-                                    </Entry.HeightRequest>
-                                    <Entry.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Entry.FontFamily>
-                                </xfx:XfxEntry>
-                            </StackLayout>
-                            <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Contraseña *"
-                                       FontSize="12.5"
-                                       Margin="5,0,0,-13"
-                                       TextColor="Black"
-                                       HorizontalOptions="Start"
-                                       HorizontalTextAlignment="Start">
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                                </Label>
-                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}"
-                                              Text="{Binding Contraseña ,Mode=TwoWay}"
-                                              PlaceholderColor="#7A5BA5"
-                                              TextColor="Black" 
-                                              FontSize="18" Keyboard="Default"
-                                              IsEnabled="{Binding HC, Mode=TwoWay}"
-                                              IsPassword="true">
-                                    <Entry.HeightRequest>
-                                        <OnPlatform x:TypeArguments="x:Double">
-                                            <On Platform="iOS">60</On>
-                                            <On Platform="Android,Windows">50</On>
-                                        </OnPlatform>
-                                    </Entry.HeightRequest>
-                                    <Entry.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Entry.FontFamily>
-                                </xfx:XfxEntry>
-                            </StackLayout>
-                            <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Cambiar Contraseña *"
-                                       FontSize="12.5"
-                                       Margin="5,0,0,-13"
-                                       TextColor="Black"
-                                       HorizontalOptions="Start"
-                                       HorizontalTextAlignment="Start">
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                                </Label>
-                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}"
-                                              Text="{Binding Contraseña2 ,Mode=TwoWay}"
-                                              PlaceholderColor="#7A5BA5"
-                                              TextColor="Black"
-                                              FontSize="18"
-                                              Keyboard="Default" IsEnabled="{Binding HC, Mode=TwoWay}" IsPassword="true">
-                                    <Entry.HeightRequest>
-                                        <OnPlatform x:TypeArguments="x:Double">
-                                            <On Platform="iOS">60</On>
-                                            <On Platform="Android,Windows">50</On>
-                                        </OnPlatform>
-                                    </Entry.HeightRequest>
-                                    <Entry.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Entry.FontFamily>
-                                </xfx:XfxEntry>
-                            </StackLayout>
-                            <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Ciudad *" FontSize="12.5" Margin="5,0,0,-13"
-                                       TextColor="Black"
-                                       HorizontalOptions="Start"
-                                       HorizontalTextAlignment="Start">
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                                </Label>
-                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}"
-                                              Text="{Binding Ciudad ,Mode=TwoWay}"
-                                              PlaceholderColor="#7A5BA5" 
-                                              TextColor="Black" FontSize="18" Keyboard="Default">
-                                    <Entry.HeightRequest>
-                                        <OnPlatform x:TypeArguments="x:Double">
-                                            <On Platform="iOS">60</On>
-                                            <On Platform="Android,Windows">50</On>
-                                        </OnPlatform>
-                                    </Entry.HeightRequest>
-                                    <Entry.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Entry.FontFamily>
-                                </xfx:XfxEntry>
-                            </StackLayout>
-                            <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Fecha Nacimiento *" FontSize="12.5"
-                                       Margin="5,0,0,-13" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                                </Label>
-                                <xfx:XfxEntry x:Name="Fecha"
-                                              Style="{DynamicResource EntryStyle}"
-                                              Text="{Binding Fecha ,Mode=TwoWay}"
-                                              PlaceholderColor="#7A5BA5"
-                                              TextColor="Black"
-                                              FontSize="18"
-                                              Keyboard="Default"
-                                              Focused="Fecha_Focused">
-                                    <Entry.HeightRequest>
-                                        <OnPlatform x:TypeArguments="x:Double">
-                                            <On Platform="iOS">60</On>
-                                            <On Platform="Android,Windows">50</On>
-                                        </OnPlatform>
-                                    </Entry.HeightRequest>
-                                    <Entry.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Entry.FontFamily>
-                                </xfx:XfxEntry>
-                            </StackLayout>
+                           
+                           <xfx:XfxEntry x:Name="TextCorreo"
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding Email, Mode=TwoWay}"
+                                      FontSize="18"
+                                      TextColor="Black"
+                                      Placeholder="Correo electrónico"
+                                      Keyboard="Email">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">50</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                                <Entry.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular"/>
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                    </OnPlatform>
+                            </Entry.FontFamily>
+                            </xfx:XfxEntry>
+
+
+                            <xfx:XfxEntry
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding Contraseña, Mode=TwoWay}"
+                                      TextColor="Black" 
+                                      Placeholder="Contraseña *"
+                                      FontSize="18"
+                                      Keyboard="Default"
+                                      IsEnabled="{Binding HC, Mode=TwoWay}"
+                                      IsPassword="true">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">50</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                                <Entry.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular"/>
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                    </OnPlatform>
+                            </Entry.FontFamily>
+                            </xfx:XfxEntry>
+
+                             <xfx:XfxEntry
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding Contraseña2, Mode=TwoWay}"
+                                      TextColor="Black" 
+                                      Placeholder="Cambiar Contraseña *"
+                                      FontSize="18"
+                                      Keyboard="Default"
+                                      IsEnabled="{Binding HC, Mode=TwoWay}"
+                                      IsPassword="true">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">50</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                                <Entry.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular"/>
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                    </OnPlatform>
+                            </Entry.FontFamily>
+                            </xfx:XfxEntry>
+                                
+                                <xfx:XfxEntry
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding Ciudad, Mode=TwoWay}"
+                                      TextColor="Black" 
+                                      Placeholder="Ciudad *"
+                                      FontSize="18"
+                                      Keyboard="Default"
+                                      IsEnabled="{Binding HC, Mode=TwoWay}">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">50</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                                <Entry.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular"/>
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                    </OnPlatform>
+                            </Entry.FontFamily>
+                            </xfx:XfxEntry>
+
+
+                             <xfx:XfxEntry x:Name="Fecha"
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding Fecha, Mode=TwoWay}"
+                                      Placeholder="Fecha Nacimiento *"
+                                      TextColor="Black"
+                                      FontSize="18"
+                                      Keyboard="Default"
+                                      Focused="Fecha_Focused">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">50</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                                <Entry.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular"/>
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                    </OnPlatform>
+                            </Entry.FontFamily>
+                            </xfx:XfxEntry>
+                            
+                           
+                            
+                       
                             <Label HorizontalTextAlignment="Center"
                                    HorizontalOptions="Center"
                                    FontSize="16"
                                    Margin="50,25"
                                    Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Black" />
-                            <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Tipo documento *" FontSize="12.5" Margin="5,0,0,-13" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                                </Label>
+                          
+
                                 <xfx:XfxEntry x:Name="TipoDocumento"
-                                              Style="{DynamicResource EntryStyle}"
-                                              Text="{Binding TipoDocumento ,Mode=TwoWay}"
-                                              PlaceholderColor="#7A5BA5"
-                                              TextColor="Black"
-                                              FontSize="18"
-                                              Keyboard="Default"
-                                              Focused="TipoDocumento_Focused">
-                                    <Entry.HeightRequest>
-                                        <OnPlatform x:TypeArguments="x:Double">
-                                            <On Platform="iOS">60</On>
-                                            <On Platform="Android,Windows">50</On>
-                                        </OnPlatform>
-                                    </Entry.HeightRequest>
-                                    <Entry.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Entry.FontFamily>
-                                </xfx:XfxEntry>
-                            </StackLayout>
-                            <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Numero de documento *" FontSize="12.5" Margin="5,0,0,-13" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start">
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                                </Label>
-                                <xfx:XfxEntry Style="{DynamicResource EntryStyle}" 
-                                              Text="{Binding NumeroDocumento ,Mode=TwoWay}"
-                                              PlaceholderColor="#7A5BA5" 
-                                              TextColor="Black"
-                                              FontSize="18" Keyboard="Numeric">
-                                    <Entry.HeightRequest>
-                                        <OnPlatform x:TypeArguments="x:Double">
-                                            <On Platform="iOS">60</On>
-                                            <On Platform="Android,Windows">50</On>
-                                        </OnPlatform>
-                                    </Entry.HeightRequest>
-                                    <Entry.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Entry.FontFamily>
-                                </xfx:XfxEntry>
-                            </StackLayout>
-                            <StackLayout Orientation="Vertical" Spacing="0">
-                                <Label Text="Número de socio Win *" FontSize="12.5" Margin="5,0,0,-13"
-                                       TextColor="Black" HorizontalOptions="Start"
-                                       HorizontalTextAlignment="Start"
-                                       >
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                                </Label>
-                                <xfx:XfxEntry
-                                    Style="{DynamicResource EntryStyle}"
-                                    Text="{Binding NumeroSocio ,Mode=TwoWay}"
-                                    PlaceholderColor="#7A5BA5"
-                                    TextColor="Black"
-                                    FontSize="18"
-                                    Keyboard="Numeric">
-                                    <Entry.HeightRequest>
-                                        <OnPlatform x:TypeArguments="x:Double">
-                                            <On Platform="iOS">60</On>
-                                            <On Platform="Android,Windows">50</On>
-                                        </OnPlatform>
-                                    </Entry.HeightRequest>
-                                    <Entry.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Roboto-Regular" />
-                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                        </OnPlatform>
-                                    </Entry.FontFamily>
-                                </xfx:XfxEntry>
-                            </StackLayout>
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding TipoDocumento, Mode=TwoWay}"
+                                      Placeholder="Tipo documento *"
+                                      TextColor="Black"
+                                      FontSize="18"
+                                      Keyboard="Default"
+                                      Focused="TipoDocumento_Focused">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">50</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                                <Entry.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular"/>
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                    </OnPlatform>
+                            </Entry.FontFamily>
+                            </xfx:XfxEntry>
+
+
+
+                            <xfx:XfxEntry
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding NumeroDocumento, Mode=TwoWay}"
+                                      Placeholder="Numero de documento *"
+                                      TextColor="Black"
+                                      FontSize="18"
+                                      Keyboard="Numeric">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">50</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                                <Entry.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular"/>
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                    </OnPlatform>
+                            </Entry.FontFamily>
+                            </xfx:XfxEntry>
+
+
+                            <xfx:XfxEntry
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding NumeroSocio, Mode=TwoWay}"
+                                      Placeholder="Número de socio Win *"
+                                      TextColor="Black"
+                                      FontSize="18"
+                                      Keyboard="Numeric">
+                                <Entry.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">60</On>
+                                        <On Platform="Android,Windows">50</On>
+                                    </OnPlatform>
+                                </Entry.HeightRequest>
+                                <Entry.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular"/>
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                    </OnPlatform>
+                            </Entry.FontFamily>
+                            </xfx:XfxEntry>
+
                             <Button Text="GUARDAR" BackgroundColor="#250c4b" TextColor="White" FontAttributes="Bold" Command="{Binding ActualizaPerfilCommand}" Margin="30,30,30,30" HeightRequest="40">
                                 <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">

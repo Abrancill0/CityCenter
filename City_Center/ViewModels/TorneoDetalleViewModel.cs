@@ -24,7 +24,7 @@ namespace City_Center.ViewModels
 		private string correo;
 		private string tipoDocumento;
 		private string numeroDocumento;
-		private DateTime fecha;
+		private string fecha;
 		private string nacionalidad;
 		private string pais;
 		private string provincia;
@@ -69,7 +69,7 @@ namespace City_Center.ViewModels
 			set { SetValue(ref this.nacionalidad, value); }
         }
 
-        public DateTime Fecha
+        public string Fecha
         {
             get { return this.fecha; }
             set { SetValue(ref this.fecha, value); }
@@ -157,7 +157,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Error al eliminar Guardados");
+                            await Mensajes.Alerta("Error al eliminar Guardados");
                             return;
                         }
 
@@ -215,7 +215,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Error al guardar Guardados");
+                            await Mensajes.Alerta("Error al guardar Guardados");
                             return;
                         }
 
@@ -319,7 +319,7 @@ namespace City_Center.ViewModels
 				new KeyValuePair<string, string>("nacionalidad", Nacionalidad),
 				new KeyValuePair<string, string>("provincia", Provincia),
 				new KeyValuePair<string, string>("tipo_de_documento", TipoDocumento),
-				new KeyValuePair<string, string>("fecha_nac", Convert.ToString(Fecha.ToString("dd-MM-yyyy"))),
+                new KeyValuePair<string, string>("fecha_nac", Fecha),
 				new KeyValuePair<string, string>("pais", Pais),
 				new KeyValuePair<string, string>("ciudad", Ciudad)
 
@@ -330,11 +330,11 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error(response.Message);
+                await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 				return;
             }
 
-            await Mensajes.success("Correo enviado exitosamente");
+            await Mensajes.Alerta("Correo enviado exitosamente");
 
 			Correo = string.Empty;
             Nombre=string.Empty;         
@@ -344,7 +344,8 @@ namespace City_Center.ViewModels
 			TipoDocumento =string.Empty;
 			pais =string.Empty;
 			Ciudad =string.Empty;
-            
+            Fecha = "00/00/0000";
+            pais = string.Empty;
 		}
               
         #endregion
@@ -354,7 +355,7 @@ namespace City_Center.ViewModels
             this.apiService = new ApiService();
             this.td = td;
 
-			Fecha = DateTime.Today;
+			this.Fecha = "00/00/0000";
 
         }
     }
