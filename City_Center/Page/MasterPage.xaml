@@ -1,18 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
-                  xmlns:local="clr-namespace:City_Center.Page"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                  x:Class="City_Center.Page.MasterPage"
-                  BindingContext="{Binding Main, Source={StaticResource Locator}}"
-                  MasterBehavior="SplitOnPortrait"
-                  Title="CC"
-                  >
-    <MasterDetailPage.Master BindingContext="{Binding Master}">
-        
-        <local:DetailPage></local:DetailPage>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:City_Center.Page" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="City_Center.Page.MasterPage" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" BindingContext="{Binding Main, Source={StaticResource Locator}}" MasterBehavior="SplitOnPortrait" Title="CC">
+    <MasterDetailPage.Master>
+        <ContentPage Title="City Center" Icon="Menu.png" BackgroundColor="Transparent" BindingContext="{Binding Detail}">
+            <StackLayout BackgroundColor="#250c4b">
+                <ListView x:Name="listviewMenu" ItemsSource="{Binding ListaOpciones}" ItemSelected="Handle_ItemSelected" BackgroundColor="#250c4b" SeparatorVisibility="Default" HasUnevenRows="True" RowHeight="55">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid Margin="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Text="{Binding .}" FontSize="Small" TextColor="White" Margin="15,0,0,0">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Oswald-Regular" />
+                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <AbsoluteLayout IsVisible="{Binding VerTarjeta}" Padding="5,20,5,0" Margin="0,0,0,-45" HeightRequest="230" WidthRequest="280" HorizontalOptions="Center">
+                        <Image Source="{Binding ImagenTarjeta}" Aspect="Fill" HeightRequest="230" WidthRequest="280" IsVisible="{Binding VerTarjeta}" />
+                        <Label Text="PUNTOS WIN" FontSize="Small" TextColor="White" HorizontalOptions="Center" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.9,0.1,-1,-1" IsVisible="{Binding VerTarjeta}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Regular" />
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <Label Text="{Binding PuntosWin}" FontSize="14" TextColor="White" HorizontalOptions="Center" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.9,0.2,-1,-1" IsVisible="{Binding VerTarjeta}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Regular" />
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <Label Text="Socio N. " FontSize="14" TextColor="White" HorizontalOptions="Center" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.1,0.8,-1,-1" IsVisible="{Binding VerTarjeta}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Regular" />
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <Label Text="{Binding NoSocio}" TextColor="White" FontSize="19" HorizontalOptions="Start" VerticalOptions="Start" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.8,-1,-1" IsVisible="{Binding VerTarjeta}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Regular" />
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </AbsoluteLayout>
+                    <Grid ColumnSpacing="5" BackgroundColor="#1B0938" IsVisible="{Binding PerfilVisible}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <AbsoluteLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center">
+                            <Image x:Name="ImageCircle" Source="circulo_blanco.png" HeightRequest="70" WidthRequest="70" VerticalOptions="Center" />
+                            <controls:CircleImage x:Name="Image1" Source="{Binding Imagen, Mode=TwoWay}" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                                <controls:CircleImage.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="Android, iOS">40</On>
+                                    </OnPlatform>
+                                </controls:CircleImage.WidthRequest>
+                                <controls:CircleImage.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="Android, iOS">40</On>
+                                    </OnPlatform>
+                                </controls:CircleImage.HeightRequest>
+                                <controls:CircleImage.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding PerfilCommand}" />
+                                </controls:CircleImage.GestureRecognizers>
+                            </controls:CircleImage>
+                            <!--  <Image x:Name="Image1" Source="{Binding Imagen, Mode=TwoWay}" HeightRequest="40" WidthRequest="40" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                        </Image>-->
+                            <!--"user.png"-->
+                        </AbsoluteLayout>
+                        <Label Text="{Binding NombreUsuario}" TextColor="White" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" LineBreakMode="WordWrap" WidthRequest="60" FontSize="Small">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding PerfilCommand}" />
+                            </Label.GestureRecognizers>
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Regular" />
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <Image Source="campana.png" Grid.Row="0" Grid.Column="2" HeightRequest="20">
+                        </Image>
+                        <Label Text="Cerrar Sesión" TextColor="White" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="End" Grid.Row="0" WidthRequest="80" Margin="10,0,5,0" Grid.Column="3" FontSize="Small">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Regular" />
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CierraSesionCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <!-- <Button Command="{Binding CierraSesionCommand}" 
+                            TextColor="White"
+                            BackgroundColor="Transparent"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                            Grid.Row="0"
+                            WidthRequest="80"
+                            Margin="10,0,5,0"
+                            Grid.Column="3"
+                            FontSize="12">
+                        <Button.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                               <On Platform="iOS" Value="Oswald-Regular"/>
+                               <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                            </OnPlatform>
+                       </Button.FontFamily>
+                    </Button>-->
+                        <Image Source="logout.png" HorizontalOptions="Start" Margin="-10,0,15,0" HeightRequest="20" Grid.Row="0" Grid.Column="4" Aspect="AspectFit">
+                        </Image>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Padding="0,10,10,10" BackgroundColor="#1B0938" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" IsVisible="{Binding OpcionesVisible}">
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Label Text="Registrarme" FontSize="Small" TextColor="White" FontFamily="Oswald-Bold" FontAttributes="Bold" Margin="10" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding RegistrarseCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Text="Iniciar Sesión" FontSize="Small" TextColor="White" FontFamily="Oswald-Bold" FontAttributes="Bold" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" Margin="10">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding IniciarSesionCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+        <!--BindingContext="{Binding Master}"-->
+        <!-- <local:DetailPage></local:DetailPage>-->
     </MasterDetailPage.Master>
-    
     <MasterDetailPage.Detail>
-        
+        <NavigationPage x:Name="Pruebita">
+            <x:Arguments>
+             <ContentPage>
+                <Grid CompressedLayout.IsHeadless="true">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ContentView Grid.Row="0" IsVisible="True" x:Name="MainView">
+                    </ContentView>
+                    <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView2">
+                    </ContentView>
+                    <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView3">
+                    </ContentView>
+                    <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView4">
+                    </ContentView>
+                    <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView5">
+                    </ContentView>
+                    <Grid x:Name="Barra" ColumnSpacing="0" RowSpacing="0" Grid.Row="1" BackgroundColor="#645877">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ClickTap1" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                            <Image x:Name="tab_home_icon_selected" IsVisible="True" Source="home" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                            <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
+                            </BoxView>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="1">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ClickTap2" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                            <Image x:Name="tab_Casino_icon_selected" Source="casino" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                            <BoxView x:Name="BV2" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
+                            </BoxView>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="2">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ClickTap3" NumberOfTapsRequired="1" Command="{Binding CargaHotelCommand}" />
+                            </StackLayout.GestureRecognizers>
+                            <Image x:Name="tab_hotel_icon_selected" Source="hotel" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                            <BoxView x:Name="BV3" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
+                            </BoxView>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="3">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ClickTap4" NumberOfTapsRequired="1" Command="{Binding CargaGastronomiaCommand}" />
+                            </StackLayout.GestureRecognizers>
+                            <Image x:Name="tab_food_icon_selected" Source="food" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                            <BoxView x:Name="BV4" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
+                            </BoxView>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="4">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ClickTap5" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                            <Image x:Name="tab_info_icon_selected" Source="info2" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                            <BoxView x:Name="BV5" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
+                            </BoxView>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+            </ContentPage>
+            </x:Arguments>
+            
+        </NavigationPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>

@@ -462,7 +462,15 @@ namespace City_Center.Page
 
         void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
-            VariablesGlobales.indice = e.NewValue;
+            try
+            {
+                VariablesGlobales.indice = e.NewValue;
+            }
+            catch (Exception )
+            {
+
+            }
+           
         }
 
         async  void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
@@ -473,14 +481,20 @@ namespace City_Center.Page
 
                 if (VariablesGlobales.indice >= VariablesGlobales.RegistrosTorneo && Direccion =="Right")
                 {
-                    CarruselTorneos.ShowArrows = false;
 
                     CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
                     await Task.Delay(100);
-                    CarruselTorneos.AnimateTransition = false;
-                    CarruselTorneos.Position = 0;
                     CarruselTorneos.AnimateTransition = true;
+                    CarruselTorneos.Position = 1;
+                   // CarruselTorneos.AnimateTransition = true;
                     // CarruselTorneos.ItemsSource.GetCount;
+                }
+                else if (VariablesGlobales.indice <= 0 && Direccion == "Left")
+                {
+                    CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
+                    await Task.Delay(100);
+                    CarruselTorneos.AnimateTransition = true;
+                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo;
                 }
             }
             catch (Exception)

@@ -152,40 +152,20 @@ namespace City_Center.Page
         
         public CustomTabPage()
         {
-            InitializeComponent();
-
+            
+                InitializeComponent();
             NavigationPage.SetTitleIcon(this, "logowhite.png");
-			//var page = new InicioContent();
+
             MainView.Content = page1.Content;
-			MainView2.Content = page2.Content;
-			MainView3.Content = page3.Content;
-			MainView4.Content = page4.Content;
-			MainView5.Content = page5.Content;
+            MainView2.Content = page2.Content;
+            MainView3.Content = page3.Content;
+            MainView4.Content = page4.Content;
+            MainView5.Content = page5.Content;
 
+            Barra.BackgroundColor = Color.FromHex("#877BA1");
 
-			Barra.BackgroundColor = Color.FromHex("#877BA1");
-
-            //App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
         }
-
-       async void Handle_Clicked(object sender, System.EventArgs e)
-        {
-            try
-            {
-                //bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
-                //                    (bool)Application.Current.Properties["IsLoggedIn"] : false;
-
-                //if (isLoggedIn)
-                //{
-            //        await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ChatPage());
-                //}
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("error", ex.ToString(), "OK");
-            }
 
 
         }
     }
-}

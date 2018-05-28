@@ -69,7 +69,7 @@ namespace City_Center.ViewModels
             if (string.IsNullOrEmpty(NumeroSocio))
             {
                 UserDialogs.Instance.HideLoading();
-                await Mensajes.Alerta("El numero de socio es obligatorio para poder vincular la tarjeta win");
+                await Mensajes.Alerta("El número de socio es obligatorio para vincular la tarjeta win");
                 return;
             }
             else
@@ -84,7 +84,7 @@ namespace City_Center.ViewModels
                 {
                     UserDialogs.Instance.HideLoading();
 
-                    await Mensajes.Alerta("La tarjeta colocada no existe, favor de verificar");
+                    await Mensajes.Alerta("La tarjeta colocada no existe, por favor verificala");
 
                     NumeroSocio = "";
                     return;
@@ -118,7 +118,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Ocurrio un erro al tratar de vincular la tarjeta win");
+                await Mensajes.Alerta("Ocurrió un error al tratar de vincular la tarjeta win, intenta de nuevo");
 
                 return;
             }
@@ -132,7 +132,7 @@ namespace City_Center.ViewModels
             await Application.Current.SavePropertiesAsync();
 
 
-            MainViewModel.GetInstance().Master = new MasterViewModel();
+           // MainViewModel.GetInstance().Master = new MasterViewModel();
             MainViewModel.GetInstance().Inicio = new InicioViewModel();
             MainViewModel.GetInstance().Detail = new DetailViewModel();
             //MainViewModel.GetInstance().Casino = new CasinoViewModel();
@@ -167,7 +167,7 @@ namespace City_Center.ViewModels
         {
             UserDialogs.Instance.ShowLoading("Iniciando Sesion...", MaskType.Black);
 
-            MainViewModel.GetInstance().Master = new MasterViewModel();
+            //MainViewModel.GetInstance().Master = new MasterViewModel();
             MainViewModel.GetInstance().Inicio = new InicioViewModel();
             MainViewModel.GetInstance().Detail = new DetailViewModel();
             //MainViewModel.GetInstance().Casino = new CasinoViewModel();
@@ -177,10 +177,10 @@ namespace City_Center.ViewModels
 
 
             MasterPage fpm = new MasterPage();
-            fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
-            App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+           // fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
+            //App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
 
-            fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
+            //fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
             Application.Current.MainPage = fpm;
 
             UserDialogs.Instance.HideLoading();

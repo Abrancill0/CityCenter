@@ -107,7 +107,7 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
             {
-               await Mensajes.Alerta("No se subio ninguna foto");
+               await Mensajes.Alerta("Ninguna foto subida");
 
                return "Error";
             }
@@ -131,7 +131,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Error al cargar la foto");
+                await Mensajes.Alerta("Error al cargar la foto, intenta de nuevo");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -160,7 +160,7 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.Ciudad))
             {
-               await Mensajes.Alerta("Ciudad es requerida.");
+               await Mensajes.Alerta("Ciudad es requerida");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -170,7 +170,7 @@ namespace City_Center.ViewModels
          
             if (string.IsNullOrEmpty(this.Email))
             {
-                await Mensajes.Alerta("Correo es requerida.");
+                await Mensajes.Alerta("Correo electrónico es requerido");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -179,7 +179,7 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.Password))
             {
-                await Mensajes.Alerta("Contresaña es requerida.");
+                await Mensajes.Alerta("Contraseña es requerida");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -188,14 +188,14 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.Password2))
             {
-                await Mensajes.Alerta("Contraseña es requerida.");
+                await Mensajes.Alerta("Contraseña es requerida");
 
                 return;
             }
 
             if (this.Password != this.Password2)
             {
-                await Mensajes.Alerta("Las contraseñas no coicien.");
+                await Mensajes.Alerta("Las contraseñas no coiciden, verificar de nuevo");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -243,7 +243,7 @@ namespace City_Center.ViewModels
 
            if (!response.IsSuccess)
             {
-               await Mensajes.Alerta("Error al registra usuario");
+               await Mensajes.Alerta("Error al registra usuario, intenta de nuevo");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -336,7 +336,7 @@ namespace City_Center.ViewModels
                     {
                         IDUsuario = await GuardaUsuarioGF(googleUser.Name, googleUser.Email);
 
-                        await Mensajes.Alerta("Usuario creado correctamente");
+                        await Mensajes.Alerta("Usuario creado con éxito");
                     }
                     else
                     {
@@ -363,24 +363,24 @@ namespace City_Center.ViewModels
 
                     await Application.Current.SavePropertiesAsync();
 
-                    MainViewModel.GetInstance().Master = new MasterViewModel();
+                   // MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
                     MainViewModel.GetInstance().Casino = new CasinoViewModel();
 
                     //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
 
-                    MasterPage fpm = new MasterPage();
-                    fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
-					App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+                    this.Email = string.Empty;
+                    this.Nombre = string.Empty;
+                    this.Ciudad = string.Empty;
+                    this.Password = string.Empty;
+                    this.Ciudad = string.Empty;
 
-                    fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
-                    Application.Current.MainPage = fpm;
+                    MainViewModel.GetInstance().VincularTarjeta = new VincularTarjetaViewModel();
 
-                    await Mensajes.Alerta("Bienvenido " + googleUser.Name);
+                    await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new VincularTarjetaWin());
 
                     UserDialogs.Instance.HideLoading();
-
 
                 }
                 else
@@ -473,28 +473,28 @@ namespace City_Center.ViewModels
 
                     await Application.Current.SavePropertiesAsync();
 
-                    MainViewModel.GetInstance().Master = new MasterViewModel();
+                    //MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
                     MainViewModel.GetInstance().Casino = new CasinoViewModel();
 
                    // await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+                    this.Email = string.Empty;
+                    this.Nombre = string.Empty;
+                    this.Ciudad = string.Empty;
+                    this.Password = string.Empty;
+                    this.Ciudad = string.Empty;
 
-                    MasterPage fpm = new MasterPage();
-                    fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
-					App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+                    MainViewModel.GetInstance().VincularTarjeta = new VincularTarjetaViewModel();
 
-                    fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
-                    Application.Current.MainPage = fpm;
-
-                    await Mensajes.Alerta("Bienvenido " + facebookUser.FirstName + ' ' + facebookUser.LastName);
+                    await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new VincularTarjetaWin());
 
                     UserDialogs.Instance.HideLoading();
                 }
                 else
                 {
 
-                    await Mensajes.Alerta("Error al acceder a los servicios de Facebook");
+                    await Mensajes.Alerta("Error al acceder a los servicios de Facebook, intente de nuevo");
 
                     return;
 
@@ -502,7 +502,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception)
 			{
-				await Mensajes.Alerta("Error al acceder a los servicios de Facebook");
+				await Mensajes.Alerta("Error al acceder a los servicios de Facebook, intente de nuevo");
 
                 return;
 			}

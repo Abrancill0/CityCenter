@@ -138,7 +138,7 @@ namespace City_Center.ViewModels
 
                     await Application.Current.SavePropertiesAsync();
 
-                    MainViewModel.GetInstance().Master = new MasterViewModel();
+                    //MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
                     MainViewModel.GetInstance().Casino = new CasinoViewModel();

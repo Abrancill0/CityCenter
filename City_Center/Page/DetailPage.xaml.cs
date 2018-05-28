@@ -5,11 +5,13 @@ using City_Center.ViewModels;
 using Xamarin.Forms;
 using City_Center.Clases;
 using City_Center.Database;
+using Acr.UserDialogs;
 
 namespace City_Center.Page
 {
     public partial class DetailPage : ContentPage
     {
+        
         public DetailPage()
         {
             InitializeComponent();
@@ -28,18 +30,21 @@ namespace City_Center.Page
                 {
                     case "INICIO":
                         //Application.Current.MainPage = new MasterPage();
+
+                        UserDialogs.Instance.ShowLoading("Cargando...", MaskType.Black);
+
                         listviewMenu.SelectedItem = null;
 
-                        //var db = new DBFire();
-                        //await db.saveRoom(new Room() { Name = "ab2" });
+                        MasterPage fpm = new MasterPage();
+                        fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 
-                        //Application.Current.Properties["Email"] = "ab2";
-                        //await Application.Current.SavePropertiesAsync();
+                        App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
 
-                       // App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+                        fpm.Detail = App.NavPage; // You have to create a Detail ContenPage() 
 
-                         
-						App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
+                        Application.Current.MainPage = fpm;
+
+                        UserDialogs.Instance.HideLoading();
 
                         ((MasterPage)Application.Current.MainPage).IsPresented = false;
 

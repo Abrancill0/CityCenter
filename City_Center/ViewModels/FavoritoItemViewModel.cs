@@ -94,7 +94,7 @@ namespace City_Center.ViewModels
 
                     if (!response.IsSuccess)
                     {
-                        await Mensajes.Alerta("Error al eliminar Guardados");
+                        await Mensajes.Alerta("Error al eliminar Guardados, intenta de nuevo");
                         return;
                     }
 
@@ -108,17 +108,17 @@ namespace City_Center.ViewModels
                     //actualiza.Remove(Item);
 
                  
-                    await Mensajes.Alerta("Guardado eliminado correctamente");
+                    await Mensajes.Alerta("Eliminado con éxito");
 
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                    await Mensajes.Alerta("Inicia Sesión para eliminar Guardados");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Info("Inicia Sesion para eliminar Guardados");
+                await Mensajes.Info("Inicia Sesión para eliminar Guardados");
             }
         }
       

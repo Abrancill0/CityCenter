@@ -124,21 +124,21 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.Correo))
             {
-                await Mensajes.Alerta("Correo requerido");
+                await Mensajes.Alerta("Correo electrónico requerido");
 
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Empresa))
             {
-                await Mensajes.Alerta("Empresa requerido");
+                await Mensajes.Alerta("Empresa requerida");
 
                 return;
             }   
 
             if (string.IsNullOrEmpty(this.Asistentes))
             {
-                await Mensajes.Alerta("Cantidad de asistentes requerido");
+                await Mensajes.Alerta("Cantidad de asistentes requerida");
 
                 return;
             }   
@@ -160,7 +160,7 @@ namespace City_Center.ViewModels
 
 			if (string.IsNullOrEmpty(this.Fecha))
             {
-                await Mensajes.Alerta("Fecha aproximada requerido");
+                await Mensajes.Alerta("Fecha aproximada requerida");
 
                 return;
             }
@@ -187,7 +187,7 @@ namespace City_Center.ViewModels
                 await Mensajes.Alerta(response.Message);
             }
 
-            await Mensajes.Alerta("Correo enviado exitosamente");
+            await Mensajes.Alerta("Formulario enviado, gracias");
 
             this.Fecha = "00/00/0000";
 			this.Celular = string.Empty; 

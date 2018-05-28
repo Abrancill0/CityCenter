@@ -134,7 +134,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception)
             {
-             await Mensajes.Alerta("No pudimos acceder a tu ubicacion");
+             await Mensajes.Alerta("Ubicación denegada, activa el GPS de tu dispositivo");
             }
         }
 

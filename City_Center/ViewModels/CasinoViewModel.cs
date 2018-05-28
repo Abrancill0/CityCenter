@@ -68,6 +68,8 @@ namespace City_Center.ViewModels
 
         bool muestraFlechas = false;
 
+        bool muestraFlechaDestacado = false;
+
 		#endregion
 
 		#region Properties
@@ -161,6 +163,12 @@ namespace City_Center.ViewModels
         {
             get { return this.muestraFlechas; }
             set { SetValue(ref this.muestraFlechas, value); }
+        }
+
+        public bool MuestraFlechaDestacado
+        {
+            get { return this.muestraFlechaDestacado; }
+            set { SetValue(ref this.muestraFlechaDestacado, value); }
         }
 
 		#endregion
@@ -350,9 +358,20 @@ namespace City_Center.ViewModels
 
 				DestacadosDetalle = new ObservableCollection<DestacadosItemViewModel>(this.ToDestacadosItemViewModel());
 
+                if (DestacadosDetalle.Count>0)
+                {
+                    MuestraFlechaDestacado = true;
+                    VariablesGlobales.RegistrosCasinoDestacados = DestacadosDetalle.Count-1;
+                }
+                else
+                {
+                    MuestraFlechaDestacado = false;
+                }
+
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
+                MuestraFlechaDestacado = false;
 				//await Mensajes.Error("Casino - Destacados" + ex.ToString());
 			}
 
@@ -757,12 +776,19 @@ namespace City_Center.ViewModels
 
                 if (TorneoDetalle.Count > 0)
                 {
+                    VariablesGlobales.RegistrosCasinoTorneo = TorneoDetalle.Count;
                     MuestraFlechas = true;
+                }
+                else
+                {
+                    MuestraFlechas = false;
                 }
 
 			}
 			catch (Exception ex)
 			{
+                MuestraFlechas = false;
+
 				//await Mensajes.Error("Casino - Torneos" + ex.ToString());
 			}
 
@@ -828,10 +854,15 @@ namespace City_Center.ViewModels
                 {
                     MuestraFlechasPromo = true;
                 }
+                else
+                {
+                    MuestraFlechasPromo = false;
+                }
             
             }
-			catch (Exception ex)
+			catch (Exception)
 			{
+                MuestraFlechasPromo = false;
 				//await Mensajes.Error("Casino - Promociones" + ex.ToString());
 			}
 

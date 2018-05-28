@@ -77,7 +77,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Alerta("Error al guardar guardados");
+                            await Mensajes.Alerta("Error al guardar, intenta de nuevo");
                             return;
                         }
 
@@ -94,7 +94,7 @@ namespace City_Center.ViewModels
                         actualiza.eve_id_guardado = list.resultado.gua_id;
                        
 
-                        await Mensajes.Alerta("Guardado Correctamente");  
+                        await Mensajes.Alerta("Guardado con éxito");  
                     }
                     else
                     {
@@ -104,12 +104,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para guardar este Show");
+                    await Mensajes.Alerta("Inicia Sesión para guardar este Show");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesion para guardar este Show");
+                await Mensajes.Alerta("Inicia Sesión para guardar este Show");
             }
 
         }
@@ -145,7 +145,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Error al eliminar Guardados");
+                            await Mensajes.Error("Error al eliminar Guardados, intente de nuevo");
                             return;
                         }
 
@@ -159,7 +159,7 @@ namespace City_Center.ViewModels
 
                         var list = (GuardadoGenerico)response.Result;
 
-                        await Mensajes.Alerta("Guardado eliminado correctamente");
+                        await Mensajes.Alerta("Guardado eliminado con éxito");
 
 
                     }
@@ -172,12 +172,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                    await Mensajes.Alerta("Inicia Sesión para eliminar Guardados");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                await Mensajes.Alerta("Inicia Sesión para eliminar Guardados");
             }
         }
 

@@ -58,7 +58,7 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.CorreoElectronico))
             {
-                await Mensajes.Alerta("Correo electronico requrido");
+                await Mensajes.Alerta("Correo electrónico requerido");
                 return;
             }
 
@@ -73,14 +73,14 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Error al restablecer contraseña");
+                await Mensajes.Alerta("Error al restablecer contraseña, intente de nuevo");
 
                 return;
             }
 
             this.CorreoElectronico = string.Empty;
 
-            await Mensajes.Alerta("Contraseña temporal generada y enviada a tu correo!!!");
+            await Mensajes.Alerta("Contraseña temporal generada, se ha enviado a tu correo electrónico");
 
 
         }

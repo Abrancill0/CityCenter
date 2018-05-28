@@ -123,7 +123,7 @@ namespace City_Center.ViewModels
 
             if (Contraseña != Contraseña2)
             {
-                await Mensajes.Alerta("No coiciden las contraseñas,favor de verificar");  
+                await Mensajes.Alerta("Las contraseñas no coinciden, verificar los campos");  
             }
 
 
@@ -179,7 +179,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Ocurrio un error al actualizar el usuario");
+                await Mensajes.Alerta("Ocurrió un error al actualizar el usuario, intente de nuevo");
 
                 return;
             }
@@ -202,7 +202,7 @@ namespace City_Center.ViewModels
 
 			await Application.Current.SavePropertiesAsync();
 
-            await Mensajes.Alerta("Usuario Actualizado correctamente");
+            await Mensajes.Alerta("Usuario actualizadó con éxito");
         }
 
 

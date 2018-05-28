@@ -58,7 +58,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Error al cargar Guardados");
+                await Mensajes.Alerta("Error al cargar Guardados, intente de nuevo");
 
                 return;
             }
@@ -70,7 +70,7 @@ namespace City_Center.ViewModels
 
             if (MainViewModel.GetInstance().listFavoritos.resultado.Count == 0)
             {
-                await Mensajes.Alerta("No se tiene ningun Guardado");
+                await Mensajes.Alerta("Parece que no tenés Guardados");
             }
 
         }

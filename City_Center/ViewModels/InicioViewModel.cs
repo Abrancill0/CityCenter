@@ -16,6 +16,7 @@ using City_Center.Clases;
 using static City_Center.Models.TarjetaUsuarioResultado;
 using Acr.UserDialogs;
 using static City_Center.Models.PromocionesResultado;
+using Android.Views;
 
 namespace City_Center.ViewModels
 {
@@ -52,8 +53,8 @@ namespace City_Center.ViewModels
         string correo;
         string telefono;
         bool verTarjeta;
-        bool muestraFlechas=false;
-        bool muestraFlechasPromo = false;
+        bool muestraFlechas;
+        bool muestraFlechasPromo;
 
         private string fechaShowInicio;
         private string fechaShowFin;
@@ -399,10 +400,14 @@ namespace City_Center.ViewModels
                     MuestraFlechas = true;
                     VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count-1;
                 }
+                else
+                {
+                    MuestraFlechas = false;   
+                }
             }
             catch (Exception)
             {
-
+                MuestraFlechas = false; 
             }
 
            
@@ -531,11 +536,16 @@ namespace City_Center.ViewModels
                 {
                     MuestraFlechasPromo = true;
                 }
+                else
+                {
+                    MuestraFlechasPromo = false; 
+                }
 
                // MuestraFlechasPromo
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                MuestraFlechasPromo = false;
                 //await Mensajes.Error("Home - Promociones" + ex.ToString());
             }
 

@@ -255,7 +255,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Alerta("Gastronomia - Promociones" + ex.ToString());
+                await Mensajes.Alerta("Gastronomía - Promociones" + ex.ToString());
             }
 
         }

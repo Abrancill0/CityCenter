@@ -28,12 +28,15 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Inicio}">
+        <StackLayout Spacing="0"
+                     BackgroundColor="#EFEFEF"
+                     BindingContext="{Binding Inicio}"
+                     CompressedLayout.IsHeadless="true">
             <StackLayout>
                 <ffimageloading:CachedImage Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="HOMEmin" HeightRequest="110" />
             </StackLayout>
             <StackLayout Padding="0,-30,0,0" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Margin="10">
-                <Grid CompressedLayout.IsHeadless="true">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto">
                         </ColumnDefinition>
@@ -109,7 +112,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout Orientation="Horizontal" BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand">
-                                <Grid HorizontalOptions="FillAndExpand" CompressedLayout.IsHeadless="true">
+                                <Grid HorizontalOptions="FillAndExpand" >
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*" />
                                         <ColumnDefinition Width="2" />
@@ -612,7 +615,9 @@
                             </Button.FontFamily>
                         </Button>
                     </StackLayout>
-                    <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF">
+                    <StackLayout Orientation="Vertical" 
+                                 BackgroundColor="#FFFFFF"
+                                >
                         <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#FFFFFF">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*">
@@ -667,7 +672,7 @@
 >
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
-                                        <Grid BackgroundColor="White" CompressedLayout.IsHeadless="true">
+                                        <Grid BackgroundColor="White">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="1*" />
                                                 <ColumnDefinition Width="1*" />
@@ -781,7 +786,7 @@
                                                    >
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
-                                          <Grid Padding="3" CompressedLayout.IsHeadless="true">
+                                          <Grid Padding="3" >
                                                             <Grid.RowDefinitions>
                                                                 <RowDefinition Height="*" />
                                                             </Grid.RowDefinitions>

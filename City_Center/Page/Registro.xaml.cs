@@ -65,7 +65,7 @@ namespace City_Center.Page
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", ex.ToString(), "OK");
+                //await DisplayAlert("Error", ex.ToString(), "OK");
 
             }
 

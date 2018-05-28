@@ -167,7 +167,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Error al cargar Shows");
+                await Mensajes.Alerta("Error al cargar Shows, intenta de nuevo");
 
                 return;
             }
@@ -193,7 +193,7 @@ namespace City_Center.ViewModels
            
             if (EventosDetalle.Count == 0)
             {
-                await Mensajes.Alerta("No se encontro ningun evento");
+                await Mensajes.Alerta("No se encontro ningún evento");
             }
 
         }

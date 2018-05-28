@@ -21,7 +21,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding SalasEventos}">
+        <StackLayout Spacing="0"
+                     BackgroundColor="#EFEFEF"
+                     BindingContext="{Binding SalasEventos}"
+                     CompressedLayout.IsHeadless="true">
             <StackLayout>
                 <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="CONVENCIONESmin" />
             </StackLayout>
@@ -87,7 +90,7 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <StackLayout x:Name="SL1" IsVisible="true" BackgroundColor="White">
+            <StackLayout x:Name="SL1" IsVisible="true" BackgroundColor="White" CompressedLayout.IsHeadless="true">
                 <ScrollView>
                     <StackLayout BackgroundColor="White">
                         <StackLayout x:Name="Stack1" Spacing="0">
@@ -338,7 +341,7 @@
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
-            <StackLayout x:Name="SL2" IsVisible="false">
+            <StackLayout x:Name="SL2" IsVisible="false" CompressedLayout.IsHeadless="true">
                 <ScrollView BackgroundColor="White">
                     <StackLayout Margin="10,20,0,0" BackgroundColor="White">
                         <StackLayout Orientation="Horizontal">
@@ -389,7 +392,7 @@
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
-            <StackLayout x:Name="SL3" IsVisible="false" BackgroundColor="White">
+            <StackLayout x:Name="SL3" IsVisible="false" BackgroundColor="White" CompressedLayout.IsHeadless="true">
                 <ScrollView>
                     <StackLayout>
                         <StackLayout x:Name="Stack2" Spacing="0">

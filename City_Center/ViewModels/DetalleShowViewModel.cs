@@ -114,7 +114,7 @@ namespace City_Center.ViewModels
                         //= new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel())
 
 
-                        await Mensajes.Alerta("Guardado correctamente");
+                        await Mensajes.Alerta("Guardado con éxito");
                     }
                     else
                     {
@@ -123,7 +123,7 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                    await Mensajes.Alerta("Inicia Sesión para eliminar Guardados");
                 }
 
             }
@@ -166,7 +166,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Error al eliminar Guardados");
+                            await Mensajes.Error("Error al eliminar Guardados, intente de nuevo");
                             return;
                         }
 
@@ -181,7 +181,7 @@ namespace City_Center.ViewModels
                         actualiza.eve_id_guardado = 0;
                        
 
-                        await Mensajes.Alerta("Guardado eliminado correctamente");
+                        await Mensajes.Alerta("Guardado eliminado con éxito");
 
 
                     }
@@ -194,12 +194,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Info("Inicia Sesion para eliminar Guardados");
+                    await Mensajes.Info("Inicia Sesión para eliminar Guardados");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Info("Inicia Sesion para eliminar Guardados");
+                await Mensajes.Info("Inicia Sesión para eliminar Guardados");
             }
         }
 

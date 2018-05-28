@@ -230,9 +230,10 @@
                        VerticalTextAlignment="Center"
                        VerticalOptions="Center">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding RegistrarseCommand}" />
-                    </Label.GestureRecognizers>
+                        <TapGestureRecognizer  Command="{Binding RegistrarseCommand}" />
+                    </Label.GestureRecognizers>    
                 </Label>
+                    
                        <Label Text="Iniciar Sesión"
                        FontSize="Small"
                        TextColor="White"

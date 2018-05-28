@@ -78,21 +78,21 @@ namespace City_Center.ViewModels
             
             if (string.IsNullOrEmpty(this.contrasenatemp))
             {
-                await Mensajes.Alerta("La contraseña temporal es requerida");
+                await Mensajes.Alerta("Contraseña temporal requerida");
     
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Contrasena1))
             {
-                await Mensajes.Alerta("Nueva contraseña es requrida");
+                await Mensajes.Alerta("Nueva contraseña requerida");
             
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Contrasena2))
             {
-                await Mensajes.Alerta("Confirma contraseña es requerida");
+                await Mensajes.Alerta("Necesario confirmar contraseña");
             
                 return;
             }
@@ -100,7 +100,7 @@ namespace City_Center.ViewModels
 
             if (this.Contrasena1 != this.Contrasena2)
             {
-                await Mensajes.Alerta("Las contraseñas capturadas no coiciden");
+                await Mensajes.Alerta("Las contraseñas no coiciden");
 
                 return;
             }
@@ -120,7 +120,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Ocurrio un error al cambiar la contraseña");
+                await Mensajes.Alerta("Ocurrió un error al cambiar la contraseña, intenta de nuevo");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -129,9 +129,9 @@ namespace City_Center.ViewModels
    
             CambiaContrasenaReturn list = (CambiaContrasenaReturn)response.Result;
 
-            if (list.mensaje=="Contraseña No Actualizada!!!")
+            if (list.mensaje=="Contraseña no actualizada, intente de nuevo")
             {
-                await Mensajes.Alerta("Ocurrio un error al cambiar la contraseña");
+                await Mensajes.Alerta("Ocurrió un error al cambiar la contraseña, intente de nuevo");
 
                 UserDialogs.Instance.HideLoading();
 

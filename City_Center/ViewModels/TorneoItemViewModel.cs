@@ -20,7 +20,7 @@ namespace City_Center.ViewModels
     {
         #region Services
         private ApiService apiService;
-        InicioViewModel Inicito = new InicioViewModel();
+        //InicioViewModel Inicito = new InicioViewModel();
         #endregion
 
         #region Commands
@@ -108,7 +108,7 @@ namespace City_Center.ViewModels
                         actualiza.oculta = false;
                         actualiza.tor_id_guardado = list.resultado.gua_id;
 
-                        Inicito.TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+                      //  Inicito.TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
                         await Mensajes.Alerta("Guardado Correctamente");   
                     }

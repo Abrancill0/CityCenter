@@ -18,7 +18,6 @@ namespace City_Center.Clases
 
         public static string RutaCompraOnline;
 
-
         public static string FechaShowInicio;
         public static string FechaShowFinal;
 
@@ -28,6 +27,17 @@ namespace City_Center.Clases
 
         public static int indice;
         public static int RegistrosTorneo;
+
+
+        public static int IndiceCasinoTorneo;
+        public static int IndiceCasinoDestacados;
+
+        public static int RegistrosCasinoTorneo;
+        public static int RegistrosCasinoDestacados;
+
+        //public static int IndicePromocionesHome;
+        //public static int IndicePromocionesC;
+        //public static int IndicePromocionesHome;
 
     }
 }

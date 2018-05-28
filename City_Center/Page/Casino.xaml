@@ -22,7 +22,11 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Casino}"> <Grid  >
+        <StackLayout Spacing="0"
+                     BackgroundColor="#EFEFEF"
+                     BindingContext="{Binding Casino}"
+                     CompressedLayout.IsHeadless="true">
+            <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*">
                     </ColumnDefinition>
@@ -133,7 +137,11 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="3">
+            <StackLayout x:Name="SL1"
+                         IsVisible="true"
+                         HorizontalOptions="FillAndExpand"
+                         BackgroundColor="White" 
+                         Spacing="3">
                 <ScrollView>
                     <StackLayout>
                          <Label HorizontalOptions="Start"
@@ -162,14 +170,16 @@
                                     </Frame.Padding>
 
                                 <cv:CarouselViewControl 
+                                                        x:Name="CarruselDestacados"
+                                                        Scrolled="Scrolled_DT"
+                                                        PositionSelected="PositionSelected_DT"
                                             ItemsSource="{Binding DestacadosDetalle}"
                                             HorizontalOptions="FillAndExpand"
                                             HeightRequest="300"
                                             AnimateTransition="true"
-                                            ShowArrows="true"
+                                            ShowArrows="{Binding MuestraFlechaDestacado, Mode=TwoWay}"
                                             ArrowsTintColor="White"
-                                            ArrowsBackgroundColor="Black"
-                                                >
+                                            ArrowsBackgroundColor="Black">
                                     
                                     <cv:CarouselViewControl.ItemTemplate>
                                         <DataTemplate>
@@ -305,7 +315,7 @@
                                                   HeightRequest="{Binding TamanoPozos}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
-                                            <Grid Padding="1" CompressedLayout.IsHeadless="true" >
+                                            <Grid Padding="1"  >
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
@@ -394,7 +404,7 @@
                                                     ArrowsBackgroundColor="Black">
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
-                                          <Grid Padding="3" CompressedLayout.IsHeadless="true">
+                                          <Grid Padding="3" >
                                                             <Grid.RowDefinitions>
                                                                 <RowDefinition Height="*" />
                                                             </Grid.RowDefinitions>
@@ -447,7 +457,7 @@
                                         <ViewCell>
                                             <ContentView Rotation="90" BackgroundColor="Transparent">
                                                 <StackLayout HeightRequest="250" WidthRequest="100" Margin="0,5,0,0">
-                                                            <Grid Padding="3" CompressedLayout.IsHeadless="true">
+                                                            <Grid Padding="3" >
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
@@ -497,7 +507,10 @@
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
-            <StackLayout x:Name="SL2" IsVisible="false" BackgroundColor="White">
+            <StackLayout x:Name="SL2"
+                         IsVisible="false"
+                         BackgroundColor="White"
+                         >
                 <ScrollView>
                     <StackLayout>
                     <Label HorizontalOptions="Start" Margin="20,10,0,-5"
@@ -530,13 +543,16 @@
                                                         AnimateTransition="true"
                                                         ShowArrows="{Binding MuestraFlechas, Mode=TwoWay}"
                                                         ArrowsTintColor="White"
-                                                        ArrowsBackgroundColor="Black">
+                                                        ArrowsBackgroundColor="Black"
+                                                        x:Name="CarruselTorneos"
+                                                        Scrolled="Scrolled_CT"
+                                                        PositionSelected="PositionSelected_CT">
                                        <!--  ShowArrows="true"
                                                         ArrowsTintColor="Black"
                                                         ArrowsBackgroundColor="Silver"-->
                                     <cv:CarouselViewControl.ItemTemplate >
                                         <DataTemplate>
-                                            <Grid BackgroundColor = "White" CompressedLayout.IsHeadless="true">
+                                            <Grid BackgroundColor = "White" >
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="1*" />
                                                     <ColumnDefinition Width="1*" />
@@ -764,7 +780,10 @@
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
-            <StackLayout x:Name="SL3" IsVisible="false" BackgroundColor="White">
+            <StackLayout x:Name="SL3"
+                         IsVisible="false"
+                         BackgroundColor="White"
+                         >
             <ScrollView>
 
                     <StackLayout Spacing="1" Margin="2">
@@ -917,7 +936,9 @@
 
 
             </StackLayout>
-            <StackLayout x:Name="SL4" IsVisible="false">
+            <StackLayout x:Name="SL4"
+                         IsVisible="false"
+                         >
                 <ScrollView Orientation="Vertical">
                     <StackLayout BackgroundColor="White">
                        <StackLayout Spacing="0">

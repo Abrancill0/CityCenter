@@ -174,7 +174,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Error al cargar Promociones");
+                await Mensajes.Alerta("Error al cargar Promociones, intenta de nuevo");
                 return;
             }
 

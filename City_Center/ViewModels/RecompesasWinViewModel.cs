@@ -62,7 +62,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Error al cargar Recompensas Win");
+                await Mensajes.Alerta("Error al cargar Recompensas Win, intenta de nuevo");
                 return;
             }
 

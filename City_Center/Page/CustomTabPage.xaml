@@ -4,9 +4,9 @@
                BindingContext="{Binding Main, Source={StaticResource Locator}}"
              x:Class="City_Center.Page.CustomTabPage">
       <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat" Clicked="Handle_Clicked"/>
+        <ToolbarItem Icon="Chat"/>
     </ContentPage.ToolbarItems>
-    <Grid BindingContext="{Binding TabPage}">
+    <Grid CompressedLayout.IsHeadless="true" >
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />

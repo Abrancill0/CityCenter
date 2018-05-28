@@ -125,7 +125,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Alerta("Ocurrio un error al tratar te consultar tu tarjeta win");
+                    await Mensajes.Alerta("Ocurrió un error al consultar tarjeta win");
 
                     return;
                 }

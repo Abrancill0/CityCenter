@@ -108,13 +108,13 @@
                 </ContentView>
                 <ContentView x:Name="CV4" BackgroundColor="Transparent" Grid.Column="3">
                     <ContentView.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Tab4_Tapped" Command="{Binding ShowCommand}">
+                        <TapGestureRecognizer Tapped="Tab4_Tapped" Command="{Binding GastronomiaCommand}">
                         </TapGestureRecognizer>
                     </ContentView.GestureRecognizers>
                 </ContentView>
                 <ContentView x:Name="CV5" BackgroundColor="Transparent" Grid.Column="4">
                     <ContentView.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Tab5_Tapped" Command="{Binding GastronomiaCommand}">
+                        <TapGestureRecognizer Tapped="Tab5_Tapped" Command="{Binding ShowCommand}">
                         </TapGestureRecognizer>
                     </ContentView.GestureRecognizers>
                 </ContentView>

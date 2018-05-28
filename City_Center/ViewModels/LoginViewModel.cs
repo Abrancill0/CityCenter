@@ -86,7 +86,7 @@ namespace City_Center.ViewModels
 
                 if (string.IsNullOrEmpty(this.Email))
                 {
-                    await Mensajes.Alerta("Correo/Usuario Requerido");
+                    await Mensajes.Alerta("Correo electrónico/Usuario requerido");
 
                     UserDialogs.Instance.HideLoading();
 
@@ -95,7 +95,7 @@ namespace City_Center.ViewModels
 
                 if (string.IsNullOrEmpty(this.Password))
                 {
-                    await Mensajes.Alerta("Contraseña Requerido");
+                    await Mensajes.Alerta("Contraseña requerida");
 
                     UserDialogs.Instance.HideLoading();
 
@@ -116,7 +116,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Alerta("Usuario o contraseña incorrecto.");
+                    await Mensajes.Alerta("Usuario o Contraseña incorrectos");
 
                     UserDialogs.Instance.HideLoading();
 
@@ -150,7 +150,7 @@ namespace City_Center.ViewModels
                         this.Email = string.Empty;
                         this.Password = string.Empty;
 
-                        MainViewModel.GetInstance().Master = new MasterViewModel();
+                       // MainViewModel.GetInstance().Master = new MasterViewModel();
                         MainViewModel.GetInstance().Inicio = new InicioViewModel();
                         MainViewModel.GetInstance().Detail = new DetailViewModel();
                         MainViewModel.GetInstance().Casino = new CasinoViewModel();
@@ -161,11 +161,11 @@ namespace City_Center.ViewModels
                         //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
 
                         MasterPage fpm = new MasterPage();
-                        fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
+                       // fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 
-						App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+					   //App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
 
-                        fpm.Detail = App.NavPage; // You have to create a Detail ContenPage() 
+                       // fpm.Detail = App.NavPage; // You have to create a Detail ContenPage() 
 
                         Application.Current.MainPage = fpm;
 
@@ -289,7 +289,7 @@ namespace City_Center.ViewModels
                     {
                         IDUsuario = await GuardaUsuarioGF(googleUser.Name, googleUser.Email);
 
-                        await Mensajes.success("Usuario creado correctamente");
+                        await Mensajes.success("Usuario creado con éxito");
                     }
                     else
                     {
@@ -316,18 +316,19 @@ namespace City_Center.ViewModels
 
                     await Application.Current.SavePropertiesAsync();
 
-                    MainViewModel.GetInstance().Master = new MasterViewModel();
+                   // MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
                     MainViewModel.GetInstance().Casino = new CasinoViewModel();
 
                     //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
-
                     MasterPage fpm = new MasterPage();
-                    fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
-					App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+                    // fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 
-                    fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
+                    //App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+
+                    // fpm.Detail = App.NavPage; // You have to create a Detail ContenPage() 
+
                     Application.Current.MainPage = fpm;
 
                     await Mensajes.Alerta("Bienvenido " + googleUser.Name);
@@ -338,7 +339,7 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Eror al acceder a los servicios de google");
+                    await Mensajes.Alerta("Eror al acceder a los servicios de google, intente de nuevo");
                     UserDialogs.Instance.HideLoading();
 
                     return;
@@ -346,7 +347,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception)
 			{
-				await Mensajes.Alerta("Error al acceder a los servicios de google");
+				await Mensajes.Alerta("Error al acceder a los servicios de google, intente de nuevo");
 
                 return;
 			}
@@ -426,7 +427,7 @@ namespace City_Center.ViewModels
 
                     await Application.Current.SavePropertiesAsync();
 
-                    MainViewModel.GetInstance().Master = new MasterViewModel();
+                   // MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
                     MainViewModel.GetInstance().Casino = new CasinoViewModel();
@@ -434,10 +435,12 @@ namespace City_Center.ViewModels
                     //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
 
                     MasterPage fpm = new MasterPage();
-                    fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
-					App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+                    // fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 
-                    fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
+                    //App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+
+                    // fpm.Detail = App.NavPage; // You have to create a Detail ContenPage() 
+
                     Application.Current.MainPage = fpm;
 
                     await Mensajes.Alerta("Bienvenido " + facebookUser.FirstName + ' ' + facebookUser.LastName);
@@ -447,7 +450,7 @@ namespace City_Center.ViewModels
                 else
                 {
 
-                    await Mensajes.Alerta("Error al acceder a los servicios de Facebook");
+                    await Mensajes.Alerta("Error al acceder a los servicios de Facebook, intente de nuevo");
 
                     return;
 
@@ -455,7 +458,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception)
 			{
-				await Mensajes.Alerta("Error al acceder a los servicios de Facebook");
+				await Mensajes.Alerta("Error al acceder a los servicios de Facebook, intente de nuevo");
 
                 return;
 

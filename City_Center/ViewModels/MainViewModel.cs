@@ -26,7 +26,7 @@ namespace City_Center.ViewModels
         #region ViewModels
         public LoginViewModel Login { get; set; }
         public InicioViewModel Inicio { get; set; }
-        public MasterViewModel Master { get; set; }
+      //  public MasterViewModel Master { get; set; }
         public RegistroViewModel Registro { get; set; }
         public ShowsViewModel Shows { get; set; }
         public DetailViewModel Detail { get; set; }
@@ -65,7 +65,7 @@ namespace City_Center.ViewModels
             
                 instance = this;
 
-                this.Master = new MasterViewModel();
+             //   this.Master = new MasterViewModel();
                 this.Inicio = new InicioViewModel();
                 this.Casino = new CasinoViewModel();
                
@@ -80,8 +80,6 @@ namespace City_Center.ViewModels
 
         #region Methods
        
-
-
         #endregion
 
         #region Singleton

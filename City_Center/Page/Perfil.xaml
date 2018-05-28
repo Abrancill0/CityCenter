@@ -368,16 +368,21 @@
                     </ScrollView>
                 </StackLayout>
                 <StackLayout x:Name="SL2" IsVisible="false">
-                    <ScrollView>
+                     <StackLayout Spacing="0" Margin="10,10,0,10" BackgroundColor="White">
+                         <ScrollView>
                         <view:VistaPerfilConfiguracion>
                         </view:VistaPerfilConfiguracion>
                     </ScrollView>
+                     </StackLayout>
+                   
                 </StackLayout>
                 <StackLayout x:Name="SL3" IsVisible="false">
+                     <StackLayout Spacing="0" Margin="10,10,0,10" BackgroundColor="White">
                     <ScrollView>
                         <view:VistaPerfilNotificaciones>
                         </view:VistaPerfilNotificaciones>
                     </ScrollView>
+                          </StackLayout>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

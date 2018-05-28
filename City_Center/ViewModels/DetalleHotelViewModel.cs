@@ -129,7 +129,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error("Error al cargar Habitaciones");
+                await Mensajes.Error("Error al cargar Habitaciones, intente de nuevo");
 
                 return;
             }

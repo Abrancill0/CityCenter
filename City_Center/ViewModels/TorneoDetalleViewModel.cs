@@ -31,8 +31,6 @@ namespace City_Center.ViewModels
 		private string provincia;
 		private string ciudad;
 
-        InicioViewModel Inicito = new InicioViewModel();
-
         #endregion
 
 		#region Properties
@@ -172,7 +170,7 @@ namespace City_Center.ViewModels
                         actualiza.tor_guardado = false;
                         actualiza.oculta = true;
 
-                        Inicito.TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+                       // Inicito.TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
 
                         var list = (GuardadoGenerico)response.Result;
@@ -237,7 +235,7 @@ namespace City_Center.ViewModels
                         actualiza.oculta = false;
                         actualiza.tor_id_guardado = list.resultado.gua_id;
 
-                        Inicito.TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+                       // Inicito.TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
                         await Mensajes.Alerta("Guardado Correctamente");  
                     }
