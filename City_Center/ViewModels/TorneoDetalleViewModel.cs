@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Windows.Input;
@@ -29,7 +30,9 @@ namespace City_Center.ViewModels
 		private string pais;
 		private string provincia;
 		private string ciudad;
-        
+
+        InicioViewModel Inicito = new InicioViewModel();
+
         #endregion
 
 		#region Properties
@@ -169,6 +172,9 @@ namespace City_Center.ViewModels
                         actualiza.tor_guardado = false;
                         actualiza.oculta = true;
 
+                        Inicito.TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+
+
                         var list = (GuardadoGenerico)response.Result;
 
                         await Mensajes.Alerta("Guardado eliminado correctamente");
@@ -230,6 +236,8 @@ namespace City_Center.ViewModels
                         actualiza.tor_guardado = true;
                         actualiza.oculta = false;
                         actualiza.tor_id_guardado = list.resultado.gua_id;
+
+                        Inicito.TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
                         await Mensajes.Alerta("Guardado Correctamente");  
                     }
@@ -347,7 +355,31 @@ namespace City_Center.ViewModels
             Fecha = "00/00/0000";
             pais = string.Empty;
 		}
-              
+           
+
+        private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel()
+        {
+            return MainViewModel.GetInstance().listTorneo.resultado.Select(l => new TorneoItemViewModel
+            {
+                tor_id = l.tor_id,
+                tor_nombre = l.tor_nombre,
+                tor_descripcion = l.tor_descripcion,
+                tor_imagen = l.tor_imagen,
+                tor_fecha_hora_inicio = l.tor_fecha_hora_inicio,
+                tor_fecha_hora_fin = l.tor_fecha_hora_fin,
+                tor_destacado = l.tor_destacado,
+                tor_id_usuario_creo = l.tor_id_usuario_creo,
+                tor_fecha_hora_creo = l.tor_fecha_hora_creo,
+                tor_id_usuario_modifico = l.tor_id_usuario_modifico,
+                tor_fecha_hora_modifico = l.tor_fecha_hora_modifico,
+                tor_estatus = l.tor_estatus,
+                tor_guardado = l.tor_guardado,
+                tor_id_guardado = l.tor_id_guardado,
+                oculta = !(bool)l.tor_guardado
+            });
+        }
+
+
         #endregion
       
         public TorneoDetalleViewModel(TorneoDetalle td)

@@ -292,12 +292,31 @@ namespace City_Center.ViewModels
                 if (NombreViejo == Nombrenuevo)
                 {
                     NombreMenu = "";
-					Margen = new Thickness(0, -5, 0, -15);
+					
+                    if (Device.OS == TargetPlatform.iOS)
+                    {
+                        Margen = new Thickness(0, 0, 0, 0);
+                    }
+                    else if (Device.OS == TargetPlatform.Android)
+                    {
+                        Margen = new Thickness(0, -5, 0, -15);  
+                    }
+                   
                 }
                 else
                 {
                     NombreMenu =  NombreViejo; 
-					Margen = new Thickness(0, 5, 0, 23);
+					//Margen = new Thickness(0, 5, 0, 23);
+
+                    if (Device.OS == TargetPlatform.iOS)
+                    {
+                        Margen = new Thickness(0, 0, 0, 10);
+                    }
+                    else if (Device.OS == TargetPlatform.Android)
+                    {
+                        Margen = new Thickness(0, 5, 0, 23);
+                    }
+
                 }
 
                 RestaurantMenuDetalle.Add(new MenuDetalle()

@@ -234,7 +234,10 @@
                         </StackLayout>
                         <StackLayout BackgroundColor="White">
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="White">
-                                <Label Margin="-220,10,0,0" Text="HABITACIONES" TextColor="#250c4b">
+                                <Label HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Start"
+                                    Margin="15,10,0,0"
+                                    Text="HABITACIONES" TextColor="#250c4b">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Oswald-Regular" />
@@ -242,7 +245,11 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                                 </Label>
-                                <flv:FlowListView HeightRequest="{Binding TamanoHabitacion,Mode=TwoWay}" SeparatorVisibility="None" HasUnevenRows="true" FlowColumnMinWidth="120" FlowItemsSource="{Binding HabitacionesDetalle}">
+                                <flv:FlowListView HeightRequest="{Binding TamanoHabitacion,Mode=TwoWay}"
+                                                  SeparatorVisibility="None"
+                                                  HasUnevenRows="true"
+                                                  FlowColumnCount="3"
+                                                  FlowItemsSource="{Binding HabitacionesDetalle}">
                                     <flv:FlowListView.FlowColumnTemplate>
                                         <DataTemplate>
                                             <Grid Padding="1">
@@ -252,7 +259,13 @@
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="120" WidthRequest="115" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding hab_imagen}" DownsampleToViewSize="true">
+                                                <ffimageloading:CachedImage
+                                                   Aspect="Fill"
+                                                   HeightRequest="120"
+                                                    LoadingPlaceholder="image_loading.png"
+                                                    ErrorPlaceholder="image_error.png"
+                                                    Source="{Binding hab_imagen}"
+                                                    DownsampleToViewSize="true">
                                                     <ffimageloading:CachedImage.GestureRecognizers>
                                                         <TapGestureRecognizer Command="{Binding DetalleCommand}" />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
@@ -275,7 +288,7 @@
                                 </flv:FlowListView>
                             </StackLayout>
                             <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="White" Padding="0,10,0,0">
-                                <Label Margin="20,5,0,-3" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
+                                <Label Margin="20,5,0,5" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Oswald-Regular" />

@@ -662,8 +662,9 @@
                                                     ShowArrows="{Binding MuestraFlechas, Mode=TwoWay}"
                                                     ArrowsTintColor="White"
                                                     ArrowsBackgroundColor="Black"
-
-                                                    PositionSelectedCommand="{Binding LoopInfinitoCommand}">
+                                                    PositionSelected="PositionSelected_CT"
+                                                    Scrolled="Scrolled_CT"
+>
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
                                         <Grid BackgroundColor="White" CompressedLayout.IsHeadless="true">
@@ -701,16 +702,42 @@
                                                     </OnPlatform>
                                                 </Label.FontFamily>
                                             </Label>
-                                            <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" IsVisible="{Binding oculta}" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25"
+                                            <Image Margin="12"
+                                                   Grid.Row="1"
+                                                   Grid.Column="2"
+                                                   Grid.RowSpan="2"
+                                                   Aspect="AspectFit"
+                                                   Source="Favorito"
+                                                   IsVisible="{Binding oculta}"
+                                                   VerticalOptions="Start"
+                                                   HorizontalOptions="Center"
+                                                   WidthRequest="25"
                                                 HeightRequest="25">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
                                                 </Image.GestureRecognizers>
                                             </Image>
-                                            <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="FavoritoOK" IsVisible="{Binding tor_guardado}" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25"
+                                            <Image Margin="12" Grid.Row="1"
+                                                   Grid.Column="2" 
+                                                   Grid.RowSpan="2"
+                                                   Aspect="AspectFit"
+                                                   Source="FavoritoOK"
+                                                   IsVisible="{Binding tor_guardado}"
+                                                   VerticalOptions="Start"
+                                                   HorizontalOptions="Center"
+                                                   WidthRequest="25"
                                                 HeightRequest="25">
-                                            </Image>
-                                            <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                                 <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                           
+                                            <Image Margin="10" Grid.Row="1"
+                                                   Grid.Column="3"
+                                                   Grid.RowSpan="2"
+                                                   Aspect="AspectFit"
+                                                   Source="Compartir"
+                                                   VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25" HeightRequest="25">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                 </Image.GestureRecognizers>

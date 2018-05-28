@@ -145,10 +145,10 @@
                            <TapGestureRecognizer Tapped="Handle_Tapped_3" /> 
                         </Image.GestureRecognizers>
                     </Image>
-                    
+                    <!--RowHeight="105"-->
                     <ListView ItemsSource="{Binding RestaurantMenuDetalle}" SeparatorVisibility="None"
                               BackgroundColor="#EBEBEB"
-                              RowHeight="105"
+                             RowHeight="105"
                               CachingStrategy="RecycleElement">
                         <ListView.ItemTemplate>
                             <DataTemplate>

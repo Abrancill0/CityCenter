@@ -26,5 +26,8 @@ namespace City_Center.Clases
 
         public static string Mensaje;
 
+        public static int indice;
+        public static int RegistrosTorneo;
+
     }
 }

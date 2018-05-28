@@ -296,9 +296,11 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                                 </Label>
+
+                                                                                   <!--WidthRequest="115" HeightRequest="120" -->
                                 <flv:FlowListView SeparatorVisibility="None"
                                                   HasUnevenRows="true"
-                                                  FlowColumnMinWidth="120"
+                                                  FlowColumnCount="3"
                                                   FlowItemsSource="{Binding PozosDetalle}"
                                                   HeightRequest="{Binding TamanoPozos}">
                                     <flv:FlowListView.FlowColumnTemplate>
@@ -310,14 +312,14 @@
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                                       <ffimageloading:CachedImage HeightRequest="120"
-                                                                                   WidthRequest="115"
+                                                       <ffimageloading:CachedImage Aspect="Fill"
+                                                                            HeightRequest="120"      
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding poz_imagen}"
                                                                             DownsampleToViewSize="true">
                                                                 <ffimageloading:CachedImage.Transformations>
-                                                                    <fftransformations:RoundedTransformation Radius="15"/>
+                                                                    <fftransformations:RoundedTransformation Radius="10"/>
                                                                 </ffimageloading:CachedImage.Transformations>
                                                 
                                                        </ffimageloading:CachedImage>
@@ -621,6 +623,9 @@
                                                             HorizontalOptions="Center"
                                                             WidthRequest="25"
                                                             HeightRequest="25">
+                                                 <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2" />
+                                                        </Image.GestureRecognizers>
                                                     </Image>
                                                     <Image Margin="10"
                                                            Grid.Row="1"
@@ -710,7 +715,7 @@
                                 </Label>
                                 <flv:FlowListView SeparatorVisibility="None"
                                                   HasUnevenRows="true"
-                                                  FlowColumnMinWidth="120"
+                                                  FlowColumnCount="3"
                                                   FlowItemsSource="{Binding GanadoresDetalle}"
                                                   HeightRequest="{Binding TamanoGanadores}">
                                     <flv:FlowListView.FlowColumnTemplate>
@@ -723,8 +728,8 @@
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
                                             <ffimageloading:CachedImage
-                                                 HeightRequest="120"
-                                                 WidthRequest="118"
+                                                 Aspect="Fill"
+                                                   HeightRequest="120"
                                                 LoadingPlaceholder="image_loading.png"
                                                 ErrorPlaceholder="image_error.png"
                                                 Source="{Binding gan_imagen}"

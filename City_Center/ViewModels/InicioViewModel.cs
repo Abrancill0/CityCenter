@@ -26,6 +26,7 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Attributes
+
         private PromocionesReturn listPromociones;
         private EventosReturn list;
         private ObservableCollection<EventosItemViewModel> eventosDetalle;
@@ -346,21 +347,6 @@ namespace City_Center.ViewModels
 
         }
 
-
-        private ICommand LoopInfinitoCommand
-        {
-            get
-            {
-                return new RelayCommand(LoopInfinito);
-            }  
-        }
-
-        private async void LoopInfinito()
-        {
-            await  Mensajes.Alerta("se movio");
-        }
-
-
         #endregion
 
         #region Methods
@@ -411,6 +397,7 @@ namespace City_Center.ViewModels
                 if (TorneoDetalle.Count>0)
                 {
                     MuestraFlechas = true;
+                    VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count-1;
                 }
             }
             catch (Exception)

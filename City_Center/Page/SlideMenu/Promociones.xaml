@@ -119,7 +119,8 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <Frame HeightRequest = "450" IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+            <Frame  IsClippedToBounds="True" HasShadow="True" BackgroundColor="White"
+                    VerticalOptions="FillAndExpand">
                 <Frame.Margin>
                     <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
                 </Frame.Margin>
@@ -128,6 +129,7 @@
                 </Frame.Padding>
                 <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
                     <flv:FlowListView FlowColumnCount="2"
+                                      VerticalOptions="FillAndExpand"
                                       SeparatorVisibility="None"
                                       HasUnevenRows="true"
                                       FlowColumnMinWidth="170"

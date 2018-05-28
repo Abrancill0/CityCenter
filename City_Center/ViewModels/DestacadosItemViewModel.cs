@@ -80,34 +80,43 @@ namespace City_Center.ViewModels
 
                 if (isLoggedIn)
                 {
-                    var content = new FormUrlEncodedContent(new[]
+                    if (this.des_guardado == false)
                     {
+                        var content = new FormUrlEncodedContent(new[]
+                     {
                         new KeyValuePair<string, string>("gua_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
                         new KeyValuePair<string, string>("gua_id_destacado", Convert.ToString(this.des_id)),
-                       
+
                     });
 
-                    var response = await this.apiService.Get<GuardaFavoritosReturn>("/guardados", "/store", content);
+                        var response = await this.apiService.Get<GuardaFavoritosReturn>("/guardados", "/store", content);
 
-                    if (!response.IsSuccess)
-                    {
-                        await Mensajes.Error("Ocurrio un error al tratar de salvar el Guardados");
-                        return;
+                        if (!response.IsSuccess)
+                        {
+                            await Mensajes.Error("Ocurrio un error al tratar de salvar el Guardados");
+                            return;
+                        }
+
+                        var list = (GuardaFavoritosReturn)response.Result;
+
+
+                        this.des_guardado = true;
+                        this.oculta = false;
+                        this.des_id_guardado = list.resultado.gua_id;
+
+                        var actualiza = MainViewModel.GetInstance().listDestacados.resultado.Where(l => l.des_id == this.des_id).FirstOrDefault();
+
+                        actualiza.des_guardado = true;
+                        actualiza.oculta = false;
+                        actualiza.des_id_guardado = list.resultado.gua_id;
+
+                        await Mensajes.Alerta("Guardado correctamente");
+
                     }
-
-                    var list = (GuardaFavoritosReturn)response.Result;
-
-
-                    this.des_guardado = true;
-                    this.oculta = false;
-
-                    var actualiza = MainViewModel.GetInstance().listDestacados.resultado.Where(l => l.des_id == this.des_id).FirstOrDefault();
-
-                    actualiza.des_guardado = true;
-                    actualiza.oculta = false;
-                    actualiza.des_id_guardado= list.resultado.gua_id;
-
-					await Mensajes.Alerta("Guardado correctamente");
+                    else
+                    {
+                        EliminaFavoritos();   
+                    }
 
                 }
                 else
@@ -189,8 +198,6 @@ namespace City_Center.ViewModels
                 await Mensajes.Alerta("Inicia sesion para poder eliminar guardados");
             }
         }
-
-
 
         #endregion
 

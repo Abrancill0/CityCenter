@@ -101,9 +101,9 @@ namespace City_Center.Page
 
 		async void TipoDocumento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
-            var result = await UserDialogs.Instance.ActionSheetAsync("Numero de socio Win", "Cancelar", null, null, "DNI", "LE", "LC", "CI");
+            var result = await UserDialogs.Instance.ActionSheetAsync("Numero de socio Win", "CANCELAR", null, null, "DNI", "LE", "LC", "CI");
 
-            if (result != "Cancelar")
+            if (result != "CANCELAR")
             {
 				TipoDocumento.Text = result.ToString();
 

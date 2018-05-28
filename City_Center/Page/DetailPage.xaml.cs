@@ -36,7 +36,9 @@ namespace City_Center.Page
                         //Application.Current.Properties["Email"] = "ab2";
                         //await Application.Current.SavePropertiesAsync();
 
+                       // App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
 
+                         
 						App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
 
                         ((MasterPage)Application.Current.MainPage).IsPresented = false;

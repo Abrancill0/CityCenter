@@ -8,6 +8,11 @@ using City_Center.Clases;
 using Acr.UserDialogs;
 using City_Center.Helper;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using City_Center.ViewModels;
+using CarouselView.FormsPlugin.Abstractions;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace City_Center.Page
 {
@@ -15,6 +20,8 @@ namespace City_Center.Page
     {
         public WebViewHotel _webHotel;
         public AlertaConfirmacion _AlertaConfirmacion;
+
+        InicioViewModel Inicito = new InicioViewModel();
         
         public InicioContent()
         {
@@ -381,9 +388,9 @@ namespace City_Center.Page
 
         async void Restaurant_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
-			var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "Cancel", null, null, "JARANÁ", "LE GULA", "PIU");
+            var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "CANCELAR", null, null, "JARANÁ", "LE GULA", "PIU");
             
-			if (result !="Cancel")
+            if (result !="CANCELAR")
 			{
 				Restaurante.Text = result.ToString();
 
@@ -400,9 +407,9 @@ namespace City_Center.Page
         
 		async void SillaNinos_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            var result = await UserDialogs.Instance.ActionSheetAsync("Sillas niños", "Cancel", null, null, "No", "Si");
+            var result = await UserDialogs.Instance.ActionSheetAsync("Sillas niños", "CANCELAR", null, null, "No", "Si");
 
-            if (result != "Cancel")
+            if (result != "CANCELAR")
             {
                 SillaNiño.Text = result.ToString();
 
@@ -452,6 +459,37 @@ namespace City_Center.Page
         {
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda());
         }
+
+        void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+        {
+            VariablesGlobales.indice = e.NewValue;
+        }
+
+        async  void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+        {
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.indice >= VariablesGlobales.RegistrosTorneo && Direccion =="Right")
+                {
+                    CarruselTorneos.ShowArrows = false;
+
+                    CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
+                    await Task.Delay(100);
+                    CarruselTorneos.AnimateTransition = false;
+                    CarruselTorneos.Position = 0;
+                    CarruselTorneos.AnimateTransition = true;
+                    // CarruselTorneos.ItemsSource.GetCount;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+    
     }
 
 }
