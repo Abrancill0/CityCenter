@@ -204,7 +204,7 @@ namespace City_Center.ViewModels
 			}
 			catch (Exception)
 			{
-				await Mensajes.Alerta("No pudimos acceder a tu ubicacion, por favor activa tu ubicacion desde la configuracion de tu celular");
+				await Mensajes.Alerta("Ubicación denegeada, por favor activa el GPS de tu dispositivo");
 			}
 
 		}
@@ -305,7 +305,7 @@ namespace City_Center.ViewModels
 			}
 			else
 			{
-                await Mensajes.Alerta("Inicia sesion para poder consultar tus puntos win");  	
+                await Mensajes.Alerta("Iniciá sesión para poder consultar tus puntos y recompensas");  	
 			}
             
 		}
@@ -322,7 +322,7 @@ namespace City_Center.ViewModels
 
 				if (!connection.IsSuccess)
 				{
-					await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
+					await Mensajes.Alerta("Verificá tu conexión a Internet");
 
 				}
 
@@ -401,7 +401,7 @@ namespace City_Center.ViewModels
 
 				if (!connection.IsSuccess)
 				{
-                    await Mensajes.Error("Parece que no tenés conexión a internet, intentalo mas tarde");
+                    await Mensajes.Error("Verificá tu conexión a Internet");
 
 					return;
 				}
@@ -507,7 +507,7 @@ namespace City_Center.ViewModels
 				if (!connection.IsSuccess)
 				{
 
-                    await Mensajes.Error("Parece que no tenés conexión a internet, intentalo mas tarde");
+                    await Mensajes.Error("Verificá tu conexión a Internet");
 
 					return;
 				}
@@ -569,7 +569,7 @@ namespace City_Center.ViewModels
 
 				if (!connection.IsSuccess)
 				{
-                    await Mensajes.Error("Parece que no tenés conexión a internet, intentalo mas tarde");
+                    await Mensajes.Error("Verificá tu conexión a Internet");
 
 					return;
 				}
@@ -680,7 +680,7 @@ namespace City_Center.ViewModels
 
 				if (!connection.IsSuccess)
 				{
-                    await Mensajes.Error("Parece que no tenés conexión a internet, intentalo mas tarde");
+                    await Mensajes.Error("Verificá tu conexión a Internet");
 
 					return;
 				}
@@ -824,7 +824,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error("Parece que no tenés conexión a internet, intentalo mas tarde");
+                    await Mensajes.Error("Verificá tu conexión a Internet");
 
                     return;
                 }

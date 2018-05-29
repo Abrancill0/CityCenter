@@ -39,5 +39,6 @@ namespace City_Center.Clases
         //public static int IndicePromocionesC;
         //public static int IndicePromocionesHome;
 
+        public static string TipoChat;
     }
 }

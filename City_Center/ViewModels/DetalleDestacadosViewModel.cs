@@ -88,7 +88,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Alerta("Ocurrió un error al guardar, intente de nuevo");
+                            await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
                             return;
                         }
 
@@ -115,12 +115,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesión para guardar");
+                    await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesión para guardar");
+                await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
             }         
         }
 
@@ -156,7 +156,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Alerta("Error al eliminar el Guardado, intente de nuevo");
+                            await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
                             return;
                         }
 
@@ -183,12 +183,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesión para guardar");
+                    await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesión para guardar");
+                await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
             }
         }
 

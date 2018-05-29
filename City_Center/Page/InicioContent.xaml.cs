@@ -146,18 +146,19 @@ namespace City_Center.Page
             tienda.Source = "TIENDAONLINE";
         }
 
-        private void Btn4_Clicked(object sender, System.EventArgs e)
+       async private void Btn4_Clicked(object sender, System.EventArgs e)
         {
 
-            SL1.IsVisible = false;
-            SL2.IsVisible = false;
-            SL3.IsVisible = false;
-            SL4.IsVisible = true;
+            //SL1.IsVisible = false;
+            //SL2.IsVisible = false;
+            //SL3.IsVisible = false;
+            //SL4.IsVisible = true;
 
-            reservarHotel.Source = "RESERVAHOTEL";
-            tickets.Source = "TICKETSHOWS";
-            reservarMesa.Source = "RESERVATUMESA";
-            tienda.Source = "TIENDAONLINE_S";
+            //reservarHotel.Source = "RESERVAHOTEL";
+            //tickets.Source = "TICKETSHOWS";
+            //reservarMesa.Source = "RESERVATUMESA";
+            //tienda.Source = "TIENDAONLINE_S";
+            await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda());
         }
 
         void CambiaIcono(object sender, System.EventArgs e)
@@ -388,7 +389,7 @@ namespace City_Center.Page
 
         async void Restaurant_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
-            var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "CANCELAR", null, null, "JARANÁ", "LE GULA", "PIU");
+            var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "CANCELAR", null, null, "LE GULA", "PIU");
             
             if (result !="CANCELAR")
 			{
@@ -473,7 +474,7 @@ namespace City_Center.Page
            
         }
 
-        async  void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+         void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
             try
             {
@@ -483,23 +484,23 @@ namespace City_Center.Page
                 {
 
                     CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
-                    await Task.Delay(100);
-                    CarruselTorneos.AnimateTransition = true;
-                    CarruselTorneos.Position = 1;
+                    //await Task.Delay(10);
+                    CarruselTorneos.AnimateTransition = false;
+                    CarruselTorneos.Position = 0;
                    // CarruselTorneos.AnimateTransition = true;
                     // CarruselTorneos.ItemsSource.GetCount;
                 }
-                else if (VariablesGlobales.indice <= 0 && Direccion == "Left")
-                {
-                    CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
-                    await Task.Delay(100);
-                    CarruselTorneos.AnimateTransition = true;
-                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo;
-                }
+                //else if (VariablesGlobales.indice <= 1 && Direccion == "Left")
+                //{
+                //    CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
+                ////   // await Task.Delay(10);
+                //    CarruselTorneos.AnimateTransition = false;
+                //    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo;
+                //}
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                //DisplayAlert("","","");
             }
 
         }

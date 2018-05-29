@@ -192,7 +192,7 @@ namespace City_Center.ViewModels
                 await Mensajes.Error(response.Message);
             }
 
-            await Mensajes.Alerta("Correo enviado exitosamente");
+            await Mensajes.Alerta("La información ha sido enviada correctamente");
 
             //this.FechaInicio
             //this.HoraInicio 
@@ -239,7 +239,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-                await Mensajes.Alerta("No pudimos acceder a tu ubicacion");
+                await Mensajes.Alerta("Ubicación denegada, activa el GPS de tu dispositivo");
             } 
 
         }
@@ -273,7 +273,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error("Error al cargar Restaurantes/Bar");
+                await Mensajes.Error("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
 
                 return;
             }

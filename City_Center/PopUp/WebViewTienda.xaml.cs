@@ -23,7 +23,7 @@ namespace City_Center.PopUp
 
            // NSUrl.FromFilename("http://cc.comprogapp.com/es/tienda");
 
-           Browser.Source = "http://cc.comprogapp.com/es/tienda";
+           Browser.Source = "http://cc.comprogapp.com/tienda_app";
 
         }
 

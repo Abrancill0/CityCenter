@@ -120,7 +120,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Ocurrió un error al cambiar la contraseña, intenta de nuevo");
+                await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -129,9 +129,9 @@ namespace City_Center.ViewModels
    
             CambiaContrasenaReturn list = (CambiaContrasenaReturn)response.Result;
 
-            if (list.mensaje=="Contraseña no actualizada, intente de nuevo")
+            if (list.mensaje=="Ha habido un error en tu solicitud, por favor volvé a intentarlo")
             {
-                await Mensajes.Alerta("Ocurrió un error al cambiar la contraseña, intente de nuevo");
+                await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -160,7 +160,7 @@ namespace City_Center.ViewModels
 			fpm.Detail = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") }; // You have to create a Detail ContenPage()
 			Application.Current.MainPage = fpm;
 
-			await Mensajes.Alerta("Bienvenido " + list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos);
+			await Mensajes.Alerta("Bienvenido/a nuevamente a nuestra app");//+ list.resultado.usu_nombre + ' ' + list.resultado.usu_apellidos);
 
 			UserDialogs.Instance.HideLoading();
          

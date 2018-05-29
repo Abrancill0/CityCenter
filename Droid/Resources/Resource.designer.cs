@@ -5126,26 +5126,26 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f02005b
 			public const int avd_hide_password = 2130837595;
 			
-			// aapt resource value: 0x7f0201e6
-			public const int avd_hide_password_1 = 2130837990;
-			
-			// aapt resource value: 0x7f0201e7
-			public const int avd_hide_password_2 = 2130837991;
-			
 			// aapt resource value: 0x7f0201e8
-			public const int avd_hide_password_3 = 2130837992;
+			public const int avd_hide_password_1 = 2130837992;
+			
+			// aapt resource value: 0x7f0201e9
+			public const int avd_hide_password_2 = 2130837993;
+			
+			// aapt resource value: 0x7f0201ea
+			public const int avd_hide_password_3 = 2130837994;
 			
 			// aapt resource value: 0x7f02005c
 			public const int avd_show_password = 2130837596;
 			
-			// aapt resource value: 0x7f0201e9
-			public const int avd_show_password_1 = 2130837993;
-			
-			// aapt resource value: 0x7f0201ea
-			public const int avd_show_password_2 = 2130837994;
-			
 			// aapt resource value: 0x7f0201eb
-			public const int avd_show_password_3 = 2130837995;
+			public const int avd_show_password_1 = 2130837995;
+			
+			// aapt resource value: 0x7f0201ec
+			public const int avd_show_password_2 = 2130837996;
+			
+			// aapt resource value: 0x7f0201ed
+			public const int avd_show_password_3 = 2130837997;
 			
 			// aapt resource value: 0x7f02005d
 			public const int B = 2130837597;
@@ -6179,11 +6179,11 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0201b4
 			public const int notification_icon_background = 2130837940;
 			
-			// aapt resource value: 0x7f0201e4
-			public const int notification_template_icon_bg = 2130837988;
+			// aapt resource value: 0x7f0201e6
+			public const int notification_template_icon_bg = 2130837990;
 			
-			// aapt resource value: 0x7f0201e5
-			public const int notification_template_icon_low_bg = 2130837989;
+			// aapt resource value: 0x7f0201e7
+			public const int notification_template_icon_low_bg = 2130837991;
 			
 			// aapt resource value: 0x7f0201b5
 			public const int notification_tile_bg = 2130837941;
@@ -6225,106 +6225,112 @@ namespace City_Center.Droid
 			public const int ReservaPromoDown = 2130837953;
 			
 			// aapt resource value: 0x7f0201c2
-			public const int ReservarResaurant = 2130837954;
+			public const int ReservaPromoDown2 = 2130837954;
 			
 			// aapt resource value: 0x7f0201c3
-			public const int RESERVATUMESA = 2130837955;
+			public const int ReservarResaurant = 2130837955;
 			
 			// aapt resource value: 0x7f0201c4
-			public const int RESERVATUMESA_S = 2130837956;
+			public const int RESERVATUMESA = 2130837956;
 			
 			// aapt resource value: 0x7f0201c5
-			public const int RoomServices = 2130837957;
+			public const int RESERVATUMESA_S = 2130837957;
 			
 			// aapt resource value: 0x7f0201c6
-			public const int roundedbg = 2130837958;
+			public const int RoomServices = 2130837958;
 			
 			// aapt resource value: 0x7f0201c7
-			public const int roundedbgdark = 2130837959;
+			public const int roundedbg = 2130837959;
 			
 			// aapt resource value: 0x7f0201c8
-			public const int rowdown = 2130837960;
+			public const int roundedbgdark = 2130837960;
 			
 			// aapt resource value: 0x7f0201c9
-			public const int showPass = 2130837961;
+			public const int rowdown = 2130837961;
 			
 			// aapt resource value: 0x7f0201ca
-			public const int SistemaCerrado = 2130837962;
+			public const int showPass = 2130837962;
 			
 			// aapt resource value: 0x7f0201cb
-			public const int SPAmin = 2130837963;
+			public const int SistemaCerrado = 2130837963;
 			
 			// aapt resource value: 0x7f0201cc
-			public const int splashfinal = 2130837964;
+			public const int SPAmin = 2130837964;
 			
 			// aapt resource value: 0x7f0201cd
-			public const int splashscreen = 2130837965;
+			public const int splash = 2130837965;
 			
 			// aapt resource value: 0x7f0201ce
-			public const int success = 2130837966;
+			public const int splashfinal = 2130837966;
 			
 			// aapt resource value: 0x7f0201cf
-			public const int svip1 = 2130837967;
+			public const int splashscreen1 = 2130837967;
 			
 			// aapt resource value: 0x7f0201d0
-			public const int svip2 = 2130837968;
+			public const int success = 2130837968;
 			
 			// aapt resource value: 0x7f0201d1
-			public const int tarjeta = 2130837969;
+			public const int svip1 = 2130837969;
 			
 			// aapt resource value: 0x7f0201d2
-			public const int TICKETSHOWS = 2130837970;
+			public const int svip2 = 2130837970;
 			
 			// aapt resource value: 0x7f0201d3
-			public const int TICKETSHOWS_S = 2130837971;
+			public const int tarjeta = 2130837971;
 			
 			// aapt resource value: 0x7f0201d4
-			public const int TicketsShows = 2130837972;
+			public const int TICKETSHOWS = 2130837972;
 			
 			// aapt resource value: 0x7f0201d5
-			public const int Tienda = 2130837973;
+			public const int TICKETSHOWS_S = 2130837973;
 			
 			// aapt resource value: 0x7f0201d6
-			public const int TIENDAONLINE = 2130837974;
+			public const int TicketsShows = 2130837974;
 			
 			// aapt resource value: 0x7f0201d7
-			public const int TIENDAONLINE_S = 2130837975;
+			public const int Tienda = 2130837975;
 			
 			// aapt resource value: 0x7f0201d8
-			public const int tooltip_frame_dark = 2130837976;
+			public const int TIENDAONLINE = 2130837976;
 			
 			// aapt resource value: 0x7f0201d9
-			public const int tooltip_frame_light = 2130837977;
+			public const int TIENDAONLINE_S = 2130837977;
 			
 			// aapt resource value: 0x7f0201da
-			public const int Up = 2130837978;
+			public const int tooltip_frame_dark = 2130837978;
 			
 			// aapt resource value: 0x7f0201db
-			public const int user = 2130837979;
+			public const int tooltip_frame_light = 2130837979;
 			
 			// aapt resource value: 0x7f0201dc
-			public const int ValetParking = 2130837980;
+			public const int Up = 2130837980;
 			
 			// aapt resource value: 0x7f0201dd
-			public const int VariedadGastronomica = 2130837981;
+			public const int user = 2130837981;
 			
 			// aapt resource value: 0x7f0201de
-			public const int VideoConferencia = 2130837982;
+			public const int ValetParking = 2130837982;
 			
 			// aapt resource value: 0x7f0201df
-			public const int vip1 = 2130837983;
+			public const int VariedadGastronomica = 2130837983;
 			
 			// aapt resource value: 0x7f0201e0
-			public const int vip2 = 2130837984;
+			public const int VideoConferencia = 2130837984;
 			
 			// aapt resource value: 0x7f0201e1
-			public const int warning = 2130837985;
+			public const int vip1 = 2130837985;
 			
 			// aapt resource value: 0x7f0201e2
-			public const int Wifi = 2130837986;
+			public const int vip2 = 2130837986;
 			
 			// aapt resource value: 0x7f0201e3
-			public const int WifiLibre = 2130837987;
+			public const int warning = 2130837987;
+			
+			// aapt resource value: 0x7f0201e4
+			public const int Wifi = 2130837988;
+			
+			// aapt resource value: 0x7f0201e5
+			public const int WifiLibre = 2130837989;
 			
 			static Drawable()
 			{

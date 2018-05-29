@@ -187,7 +187,7 @@ namespace City_Center.ViewModels
                 await Mensajes.Alerta(response.Message);
             }
 
-            await Mensajes.Alerta("Formulario enviado, gracias");
+            await Mensajes.Alerta("La información ha sido enviada correctamente");
 
             this.Fecha = "00/00/0000";
 			this.Celular = string.Empty; 
@@ -209,7 +209,7 @@ namespace City_Center.ViewModels
 
             if (!connection.IsSuccess)
             {
-                await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
+                await Mensajes.Alerta("Verificá tu conexión a Internet");
 
                 return;
             }

@@ -11,6 +11,7 @@ using Xamarin.Forms;
 using static City_Center.Models.ActualizaUsuarioResultado;
 using static City_Center.Models.TarjetaValidaResultado;
 using Acr.UserDialogs;
+using City_Center.Models;
 
 namespace City_Center.ViewModels
 {
@@ -63,7 +64,7 @@ namespace City_Center.ViewModels
 
         private async void VincularTarjeta()
         {
-            UserDialogs.Instance.ShowLoading("Iniciando Sesion...", MaskType.Black);
+            UserDialogs.Instance.ShowLoading("Procesando...", MaskType.Black);
 
 
             if (string.IsNullOrEmpty(NumeroSocio))
@@ -141,16 +142,38 @@ namespace City_Center.ViewModels
             //MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
            
-            MasterPage fpm = new MasterPage();
-            fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
-            App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+            //MasterPage fpm = new MasterPage();
+            //fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
+            //App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
 
-            fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
-            Application.Current.MainPage = fpm;
+            //fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
+            //Application.Current.MainPage = fpm;
+
+
+            var content1 = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("mensaje", "Gracias por registrarte a City Center Rosarios, Ahora podras disfrutar de los beneficios de utilizar la app."),
+                new KeyValuePair<string, string>("nombre","Bienvenido a City Center Rosario"),
+                new KeyValuePair<string, string>("email", Application.Current.Properties["Email"].ToString()),
+
+            });
+
+
+            var response1 = await this.apiService.Get<GuardadoGenerico>("/correo", "/envioemail", content1);
+
+            if (!response1.IsSuccess)
+            {
+                await Mensajes.Alerta("Ocurrió un error al tratar de enviar correo");
+
+                return;
+            }
+
+
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushModalAsync(new PaginaAceptar());
 
             UserDialogs.Instance.HideLoading();
 
-            await Mensajes.Alerta("Bienvenido " + Application.Current.Properties["NombreCompleto"].ToString());
+            //await Mensajes.Alerta("Bienvenido " + Application.Current.Properties["NombreCompleto"].ToString());
 
         }
 
@@ -165,7 +188,7 @@ namespace City_Center.ViewModels
 
         private async void NoVincular()
         {
-            UserDialogs.Instance.ShowLoading("Iniciando Sesion...", MaskType.Black);
+            UserDialogs.Instance.ShowLoading("Procesando...", MaskType.Black);
 
             //MainViewModel.GetInstance().Master = new MasterViewModel();
             MainViewModel.GetInstance().Inicio = new InicioViewModel();
@@ -176,16 +199,39 @@ namespace City_Center.ViewModels
             //MainViewModel.GetInstance().Gastronomia = new GastronomiaViewModel();
 
 
-            MasterPage fpm = new MasterPage();
+            //MasterPage fpm = new MasterPage();
            // fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
             //App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
 
             //fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
-            Application.Current.MainPage = fpm;
+            //Application.Current.MainPage = fpm;
+
+            var content1 = new FormUrlEncodedContent(new[]
+           {
+                new KeyValuePair<string, string>("mensaje", "Gracias por registrarte a City Center Rosarios, Ahora podras disfrutar de los beneficios de utilizar la app."),
+                new KeyValuePair<string, string>("nombre","Bienvenido a City Center Rosario"),
+                new KeyValuePair<string, string>("email", Application.Current.Properties["Email"].ToString()),
+
+            });
+
+
+            var response1 = await this.apiService.Get<GuardadoGenerico>("/correo", "/envioemail", content1);
+
+            if (!response1.IsSuccess)
+            {
+                await Mensajes.Alerta("Ocurrió un error al tratar de enviar correo");
+
+                return;
+            }
+
+
+           
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushModalAsync(new PaginaAceptar());
 
             UserDialogs.Instance.HideLoading();
 
-            await Mensajes.Alerta("Bienvenido " + Application.Current.Properties["NombreCompleto"].ToString());
+
+           // await Mensajes.Alerta("Bienvenido " + Application.Current.Properties["NombreCompleto"].ToString());
 
         }
 

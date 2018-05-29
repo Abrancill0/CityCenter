@@ -129,13 +129,14 @@ namespace City_Center.Page
 			{
 				Stack2.IsVisible = false;
 				SLContacto2.IsVisible = true;
-
+                BtnContacto2.Image = "ContactoUp.png";
 			}
 			else
 			{
 
 				Stack2.IsVisible = true;
 				SLContacto2.IsVisible = false;
+                BtnContacto2.Image = "btn_contacto.png";
 			}
 
 		}

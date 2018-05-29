@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:City_Center.Page" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="City_Center.Page.MasterPage" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" BindingContext="{Binding Main, Source={StaticResource Locator}}" MasterBehavior="SplitOnPortrait" Title="CC">
     <MasterDetailPage.Master>
-        <ContentPage Title="City Center" Icon="Menu.png" BackgroundColor="Transparent" BindingContext="{Binding Detail}">
+        <ContentPage Title="City Center"
+                     Icon="Menu.png"
+                     BackgroundColor="Transparent"
+                     BindingContext="{Binding Detail}">
             <StackLayout BackgroundColor="#250c4b">
+                <Image HorizontalOptions="Start"
+                       Source="logowhite"
+                       HeightRequest="95"
+                       WidthRequest="140"
+                       Margin="20,10,0,-10"
+                      ></Image>
                 <ListView x:Name="listviewMenu" ItemsSource="{Binding ListaOpciones}" ItemSelected="Handle_ItemSelected" BackgroundColor="#250c4b" SeparatorVisibility="Default" HasUnevenRows="True" RowHeight="55">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -108,7 +117,10 @@
                                 </OnPlatform>
                             </Label.FontFamily>
                         </Label>
-                        <Image Source="campana.png" Grid.Row="0" Grid.Column="2" HeightRequest="20">
+                        <Image Source="campana.png"
+                               HorizontalOptions="Center"
+                               Margin="5"
+                            Grid.Row="0" Grid.Column="2" HeightRequest="20">
                         </Image>
                         <Label Text="Cerrar Sesión" TextColor="White" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="End" Grid.Row="0" WidthRequest="80" Margin="10,0,5,0" Grid.Column="3" FontSize="Small">
                             <Label.FontFamily>
@@ -163,7 +175,12 @@
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <NavigationPage x:Name="Pruebita">
+            <NavigationPage.ToolbarItems>
+                 <ToolbarItem Icon="Chat" Clicked="Chat_click" />
+            </NavigationPage.ToolbarItems>
+
             <x:Arguments>
+                
              <ContentPage>
                 <Grid CompressedLayout.IsHeadless="true">
                     <Grid.RowDefinitions>
@@ -231,6 +248,7 @@
                     </Grid>
                 </Grid>
             </ContentPage>
+                
             </x:Arguments>
             
         </NavigationPage>

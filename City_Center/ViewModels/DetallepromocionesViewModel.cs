@@ -127,7 +127,7 @@ namespace City_Center.ViewModels
                 await Mensajes.Error(response.Message);
             }
 
-            await Mensajes.Alerta("Promoción reservada con éxito");
+            await Mensajes.Alerta("La información ha sido enviada correctamente");
 
         
             this.Nombre = string.Empty;

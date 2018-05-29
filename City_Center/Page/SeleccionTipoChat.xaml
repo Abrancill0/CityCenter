@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="City_Center.Page.SeleccionTipoChat"
+           
+             BackgroundColor="#74648c">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="SELECCIONÁ EL SERVICIO A CLIENTE QUE NECESITÁS" TextColor="White"></Label>
+
+            <StackLayout HorizontalOptions="FillAndExpand">
+
+                  <StackLayout Orientation="Vertical">
+             
+                    <Image  Margin="8,0,0,5"
+                                         HeightRequest="50"
+                                         Aspect="AspectFit"
+                            Source="casino">
+                          <Image.GestureRecognizers>
+                            <TapGestureRecognizer  Tapped="ChatCasino"  />
+                     </Image.GestureRecognizers>
+                    </Image>
+                    
+            <Label Text="Casino" TextColor="White"/>
+            </StackLayout>
+           
+           <StackLayout Orientation="Vertical">
+
+                     <Image  Margin="8,0,0,5"
+                                         HeightRequest="50"
+                                         Aspect="AspectFit"
+                            Source="hotel">
+                          <Image.GestureRecognizers>
+                            <TapGestureRecognizer  Tapped="ChatHotel"  />
+                     </Image.GestureRecognizers>
+                    </Image>
+                    
+           
+                    
+
+            <Label Text="HOTEL Y SPA" TextColor="White"/>
+                
+            </StackLayout>
+            </StackLayout>
+          
+             
+
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

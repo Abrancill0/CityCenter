@@ -24,22 +24,7 @@
     <ContentPage.Content>
         <ScrollView Padding="1,10">
             <StackLayout BindingContext="{Binding Registro}" Margin="10">
-           <!-- <StackLayout BackgroundColor="#23144B" HorizontalOptions="FillAndExpand">
-                  <Image Source="ArrowUp" HorizontalOptions="Center"/>
-                   <Button HorizontalOptions="Center"
-                        Text="¿Aún no te registrás?"
-                        TextColor="White"
-                        FontSize="12"
-                        BackgroundColor="#23144B">
-                     <Label.FontFamily>
-                             <OnPlatform x:TypeArguments="x:String">
-                                 <On Platform="iOS" Value="Oswald-Regular"/>
-                                 <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                             </OnPlatform>
-                    </Label.FontFamily>
-                </Button>  
-                </StackLayout>-->
-
+         
                 
                 <Label Text="FORMÁ PARTE DE CITY CENTER ROSARIO"
                        HorizontalTextAlignment="Center"
@@ -88,7 +73,7 @@
                                       Text="{Binding Email, Mode=TwoWay}"
                                       FontSize="18"
                                       TextColor="Black"
-                                      Placeholder="Correo electrónico"
+                                      Placeholder="Correo electrónico*"
                                       Keyboard="Email">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">

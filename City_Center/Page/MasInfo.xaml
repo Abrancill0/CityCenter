@@ -90,7 +90,7 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <StackLayout x:Name="SL1" IsVisible="true" BackgroundColor="White" CompressedLayout.IsHeadless="true">
+            <StackLayout x:Name="SL1" IsVisible="true" BackgroundColor="White">
                 <ScrollView>
                     <StackLayout BackgroundColor="White">
                         <StackLayout x:Name="Stack1" Spacing="0">
@@ -341,7 +341,7 @@
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
-            <StackLayout x:Name="SL2" IsVisible="false" CompressedLayout.IsHeadless="true">
+            <StackLayout x:Name="SL2" IsVisible="false" >
                 <ScrollView BackgroundColor="White">
                     <StackLayout Margin="10,20,0,0" BackgroundColor="White">
                         <StackLayout Orientation="Horizontal">
@@ -392,7 +392,7 @@
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
-            <StackLayout x:Name="SL3" IsVisible="false" BackgroundColor="White" CompressedLayout.IsHeadless="true">
+            <StackLayout x:Name="SL3" IsVisible="false" BackgroundColor="White">
                 <ScrollView>
                     <StackLayout>
                         <StackLayout x:Name="Stack2" Spacing="0">
@@ -466,7 +466,14 @@
                                 </Label>
                             </StackLayout>
                         </StackLayout>
-                        <Button Text="" Image="btn_contacto.png" HeightRequest="50" ContentLayout="Left,0" Clicked="Handle_Clicked2" BackgroundColor="#3F51B5" TextColor="White">
+                        <Button Text="" 
+                                x:Name="BtnContacto2"
+                                Image="btn_contacto.png"
+                                HeightRequest="50" 
+                                ContentLayout="Left,0"
+                                Clicked="Handle_Clicked2"
+                                BackgroundColor="#3F51B5"
+                                TextColor="White">
                         </Button>
                         <StackLayout Margin="10" x:Name="SLContacto2" IsVisible="false">
                             <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Nombre, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Nombre y apellido*" Keyboard="Default">

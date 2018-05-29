@@ -5,8 +5,18 @@
               BindingContext="{Binding Main, Source={StaticResource Locator}}"
              x:Class="City_Center.Page.VincularTarjetaWin">
     <ContentPage.Content>
-        <StackLayout Margin="15" BindingContext="{Binding VincularTarjeta}">
-             <Label HorizontalTextAlignment="Center"
+        <StackLayout BindingContext="{Binding VincularTarjeta}">
+        <StackLayout BackgroundColor="#23144B"
+                         VerticalOptions="Start"
+                         HorizontalOptions="FillAndExpand"
+                         HeightRequest="50">
+                <Image Source="logowhite" Aspect="AspectFit"
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout Margin="15">
+               <Label HorizontalTextAlignment="Center"
                                    HorizontalOptions="Center"
                                    FontSize="16"
                                    Margin="40,25"
@@ -99,7 +109,10 @@
                 <Label.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding NoVincularCommand}" />
                 </Label.GestureRecognizers>
-            </Label>
+            </Label>  
+            </StackLayout>
+            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

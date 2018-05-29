@@ -114,7 +114,7 @@ namespace City_Center.ViewModels
                         //= new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel())
 
 
-                        await Mensajes.Alerta("Guardado con éxito");
+                        await Mensajes.Alerta("Tu selección fue guardada con éxito");
                     }
                     else
                     {
@@ -123,7 +123,7 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesión para eliminar Guardados");
+                    await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
                 }
 
             }
@@ -166,7 +166,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Error al eliminar Guardados, intente de nuevo");
+                            await Mensajes.Error("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
                             return;
                         }
 
@@ -181,7 +181,7 @@ namespace City_Center.ViewModels
                         actualiza.eve_id_guardado = 0;
                        
 
-                        await Mensajes.Alerta("Guardado eliminado con éxito");
+                        await Mensajes.Alerta("Tu selección fue guardada con éxito");
 
 
                     }
@@ -194,12 +194,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Info("Inicia Sesión para eliminar Guardados");
+                    await Mensajes.Info("Es necesario que te registres para completar esta acción");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Info("Inicia Sesión para eliminar Guardados");
+                await Mensajes.Info("Es necesario que te registres para completar esta acción");
             }
         }
 

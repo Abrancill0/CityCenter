@@ -94,7 +94,7 @@ namespace City_Center.ViewModels
 
                     if (!response.IsSuccess)
                     {
-                        await Mensajes.Alerta("Error al eliminar Guardados, intenta de nuevo");
+                        await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
                         return;
                     }
 
@@ -113,12 +113,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesión para eliminar Guardados");
+                    await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Info("Inicia Sesión para eliminar Guardados");
+                await Mensajes.Info("Es necesario que te registres para completar esta acción");
             }
         }
       

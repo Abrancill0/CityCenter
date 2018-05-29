@@ -318,5 +318,11 @@ namespace City_Center.Page
 
         }
 
+       async void Chat_click(object sender, System.EventArgs e)
+        {
+
+        await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
+ 
+        }
     }
 }

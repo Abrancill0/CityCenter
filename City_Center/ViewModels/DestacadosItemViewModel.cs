@@ -93,7 +93,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Ocurrio un error al tratar de salvar el Guardados");
+                            await Mensajes.Error("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
                             return;
                         }
 
@@ -110,7 +110,7 @@ namespace City_Center.ViewModels
                         actualiza.oculta = false;
                         actualiza.des_id_guardado = list.resultado.gua_id;
 
-                        await Mensajes.Alerta("Guardado correctamente");
+                        await Mensajes.Alerta("Guardado con éxito");
 
                     }
                     else
@@ -121,12 +121,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia sesion para poder guardar este destacado");
+                    await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
             }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia sesion para poder este destacado");
+                await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
             }
 
         }
@@ -163,7 +163,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Alerta("Error al tratar de eliminar un guardados");
+                            await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
                             return;
                         }
 
@@ -177,7 +177,7 @@ namespace City_Center.ViewModels
 
                        // var list = (GuardadoGenerico)response.Result;
 
-                        await Mensajes.Alerta("Guardado eliminado correctamente");
+                        await Mensajes.Alerta("Guardado eliminado con éxito");
 
 
                     }
@@ -190,12 +190,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia sesion para poder eliminar guardados");
+                    await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia sesion para poder eliminar guardados");
+                await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
             }
         }
 

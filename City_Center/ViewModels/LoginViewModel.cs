@@ -348,7 +348,7 @@ namespace City_Center.ViewModels
 			catch (Exception)
 			{
 				await Mensajes.Alerta("Error al acceder a los servicios de google, intente de nuevo");
-
+                UserDialogs.Instance.HideLoading();
                 return;
 			}
 
@@ -451,7 +451,7 @@ namespace City_Center.ViewModels
                 {
 
                     await Mensajes.Alerta("Error al acceder a los servicios de Facebook, intente de nuevo");
-
+                    UserDialogs.Instance.HideLoading();
                     return;
 
                 }
@@ -459,7 +459,7 @@ namespace City_Center.ViewModels
 			catch (Exception)
 			{
 				await Mensajes.Alerta("Error al acceder a los servicios de Facebook, intente de nuevo");
-
+                UserDialogs.Instance.HideLoading();
                 return;
 
 			}

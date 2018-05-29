@@ -158,7 +158,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Alerta("Error al eliminar Guardados");
+                            await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
                             return;
                         }
 
@@ -175,7 +175,7 @@ namespace City_Center.ViewModels
 
                         var list = (GuardadoGenerico)response.Result;
 
-                        await Mensajes.Alerta("Guardado eliminado correctamente");
+                        await Mensajes.Alerta("Guardado eliminado con éxito");
 
 
                     }
@@ -188,12 +188,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                    await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesion para eliminar Guardados");
+                await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
             }
         }
 
@@ -219,7 +219,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Alerta("Error al guardar Guardados");
+                            await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
                             return;
                         }
 
@@ -237,7 +237,7 @@ namespace City_Center.ViewModels
 
                        // Inicito.TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
-                        await Mensajes.Alerta("Guardado Correctamente");  
+                        await Mensajes.Alerta("Tu selección fue guardada con éxito");
                     }
                     else
                     {
@@ -247,12 +247,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Inicia Sesion para guardar este torneo");
+                    await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Alerta("Inicia Sesion para guardar este torneo");
+                await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
             }
 
         }
@@ -336,11 +336,11 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
+                await Mensajes.Alerta("Verificá tu conexión a Internet");
 				return;
             }
 
-            await Mensajes.Alerta("Correo enviado exitosamente");
+            await Mensajes.Alerta("La información ha sido enviada correctamente");
 
 			Correo = string.Empty;
             Nombre=string.Empty;         

@@ -6,6 +6,7 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:view="clr-namespace:City_Center.Vista"
+             xmlns:naxam="clr-namespace:Naxam.Controls.Forms;assembly=Naxam.CarouselView.Forms"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.InicioContent">
     <ContentPage.ToolbarItems>
@@ -606,14 +607,14 @@
                            <Button.FontFamily><OnPlatform x:TypeArguments="x:String"><On Platform="iOS" Value="Oswald-Medium" /><On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" /></OnPlatform></Button.FontFamily></Button>
                     </StackLayout>
                     <StackLayout x:Name="SL4" IsVisible="false">
-                        <Button Margin="30,10,30,10" FontSize="14" TextColor="White" BackgroundColor="#250c4b" Clicked="Handle_Clicked_1" HeightRequest="40" Text="VER TIENDA">
+                        <!--<Button Margin="30,10,30,10" FontSize="14" TextColor="White" BackgroundColor="#250c4b" Clicked="Handle_Clicked_1" HeightRequest="40" Text="VER TIENDA">
                             <Button.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Medium" />
                                     <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" />
                                 </OnPlatform>
                             </Button.FontFamily>
-                        </Button>
+                        </Button>-->
                     </StackLayout>
                     <StackLayout Orientation="Vertical" 
                                  BackgroundColor="#FFFFFF"
@@ -667,9 +668,9 @@
                                                     ShowArrows="{Binding MuestraFlechas, Mode=TwoWay}"
                                                     ArrowsTintColor="White"
                                                     ArrowsBackgroundColor="Black"
+                                                  
                                                     PositionSelected="PositionSelected_CT"
-                                                    Scrolled="Scrolled_CT"
->
+                                                    Scrolled="Scrolled_CT">
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
                                         <Grid BackgroundColor="White">
@@ -824,7 +825,10 @@
                                     </DataTemplate>
                                 </cv:CarouselViewControl.ItemTemplate>
                             </cv:CarouselViewControl>
-                        </Frame>
+
+                         
+
+                            </Frame>
 
                             
                             <!--<RelativeLayout HeightRequest="200" VerticalOptions="Start">

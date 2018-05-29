@@ -28,7 +28,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Spacing="0" BindingContext="{Binding Perfil}">
-            <Grid HeightRequest="130" BackgroundColor="#8A7C9E" VerticalOptions="Center">
+            <Grid HeightRequest="120" BackgroundColor="#8A7C9E" VerticalOptions="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60">
                     </ColumnDefinition>
@@ -38,22 +38,16 @@
                     </ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
                 <AbsoluteLayout HorizontalOptions="Center" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
                     <Image x:Name="ImageCircle" Source="circulo_blanco.png" VerticalOptions="Center" Aspect="Fill" HeightRequest="120" WidthRequest="120" />
-                    <!--  <ffimageloading:CachedImage
-                                    HeightRequest="50"
-                                    WidthRequest="50"
-                                    Aspect="AspectFill"
-                                    DownsampleUseDipUnits="false" 
-                                    LoadingPlaceholder="image_loading.png"
-                                    ErrorPlaceholder = "image_error.png"
-                                    AbsoluteLayout.LayoutFlags="PositionProportional" 
-                                    AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"
-                                    Source="{Binding Imagen, Mode=TwoWay}" />-->
-                    <controls:CircleImage x:Name="imagen1" Source="{Binding Imagen, Mode=TwoWay}" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                  
+                    <controls:CircleImage x:Name="imagen1" Source="{Binding Imagen, Mode=TwoWay}"
+                                          Aspect="AspectFill"
+                                          AbsoluteLayout.LayoutFlags="PositionProportional"
+                                          AbsoluteLayout.LayoutBounds="0.5,0.3,-1,-1">
                         <controls:CircleImage.WidthRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="Android, iOS">70</On>
@@ -66,7 +60,13 @@
                         </controls:CircleImage.HeightRequest>
                     </controls:CircleImage>
                 </AbsoluteLayout>
-                <Label TextColor="White" Grid.Column="2" Grid.Row="0" Margin="-10,10,0,0" FontSize="Small" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End" Text="HOLA">
+                <Label TextColor="White"
+                       Grid.Column="2"
+                       Grid.Row="0" Margin="-15,-15,0,0"
+                       FontSize="Small"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start" 
+                       VerticalTextAlignment="Center" VerticalOptions="Center" Text="HOLA">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
                             <On Platform="iOS" Value="Oswald-Regular" />
@@ -78,8 +78,8 @@
                        FontAttributes="Bold" Grid.Column="2"
                        Grid.Row="1" HorizontalOptions="Start"
                        HorizontalTextAlignment="Start"
-                       VerticalOptions="StartAndExpand"
-                       VerticalTextAlignment="Start" Margin="-10,0,0,0"
+                       VerticalOptions="Start"
+                       VerticalTextAlignment="Start" Margin="-15,-50,0,0"
                        Text="{Binding Nombre, Mode=TwoWay}"
                        WidthRequest="70"
                        LineBreakMode="WordWrap">
@@ -368,21 +368,25 @@
                     </ScrollView>
                 </StackLayout>
                 <StackLayout x:Name="SL2" IsVisible="false">
-                     <StackLayout Spacing="0" Margin="10,10,0,10" BackgroundColor="White">
+                     
                          <ScrollView>
-                        <view:VistaPerfilConfiguracion>
+                        <StackLayout Spacing="0" Margin="10,10,0,10" BackgroundColor="White">
+                       <view:VistaPerfilConfiguracion>
                         </view:VistaPerfilConfiguracion>
+                            </StackLayout>
                     </ScrollView>
-                     </StackLayout>
+                     
                    
                 </StackLayout>
                 <StackLayout x:Name="SL3" IsVisible="false">
-                     <StackLayout Spacing="0" Margin="10,10,0,10" BackgroundColor="White">
+                    
                     <ScrollView>
-                        <view:VistaPerfilNotificaciones>
+                         <StackLayout Spacing="0" Margin="10,10,0,10" BackgroundColor="White">
+                       <view:VistaPerfilNotificaciones>
                         </view:VistaPerfilNotificaciones>
+                         </StackLayout>
                     </ScrollView>
-                          </StackLayout>
+                         
                 </StackLayout>
             </StackLayout>
         </StackLayout>

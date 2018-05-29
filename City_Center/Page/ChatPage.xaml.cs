@@ -29,9 +29,9 @@
 
         async void Handle_Clicked(object sender, System.EventArgs e)
             {
-            var chatOBJ = new Chat { UserMessage = _etMessage.Text, UserName = Application.Current.Properties["NombreCompleto"].ToString(), UserFecha =Convert.ToString(DateTime.Now) };
-                _etMessage.Text = "";
-                await dB.saveMessage(chatOBJ, rm.Key);
+            //var chatOBJ = new Chat { UserMessage = _etMessage.Text, UserName = Application.Current.Properties["NombreCompleto"].ToString(), UserFecha =Convert.ToString(DateTime.Now) };
+                //_etMessage.Text = "";
+                //await dB.saveMessage(chatOBJ, rm.Key);
 
             //_listChat.ScrollTo(dB.subChat(rm.Key).Last(), ScrollToPosition.End,true);
             }

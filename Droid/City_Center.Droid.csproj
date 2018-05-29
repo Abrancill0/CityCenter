@@ -344,6 +344,12 @@
     <Reference Include="System.Reactive.PlatformServices">
       <HintPath>..\packages\Firebase.Xamarin.0.3.6\lib\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
+    <Reference Include="Naxam.CarouselView.Forms">
+      <HintPath>..\packages\Naxam.CarouselView.0.0.1\lib\MonoAndroid10\Naxam.CarouselView.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Naxam.CarouselView.Platform.Droid">
+      <HintPath>..\packages\Naxam.CarouselView.0.0.1\lib\MonoAndroid10\Naxam.CarouselView.Platform.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />
@@ -387,7 +393,7 @@
     <AndroidResource Include="Resources\drawable\Lavanderia.png" />
     <AndroidResource Include="Resources\drawable\RoomServices.png" />
     <AndroidResource Include="Resources\drawable\ValetParking.png" />
-    <AndroidResource Include="Resources\drawable\splashscreen.png" />
+    <AndroidResource Include="Resources\drawable\splashscreen1.png" />
     <AndroidResource Include="Resources\drawable-hdpi\btn_close.png" />
     <AndroidResource Include="Resources\drawable-hdpi\btn_face.png" />
     <AndroidResource Include="Resources\drawable-hdpi\btn_google.png" />
@@ -524,6 +530,8 @@
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\drawable\iconoappccr.png" />
     <AndroidResource Include="Resources\drawable\ImageInstitucional.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ReservaPromoDown2.png" />
+    <AndroidResource Include="Resources\drawable\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />

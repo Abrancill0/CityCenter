@@ -207,7 +207,7 @@
                                             </OnPlatform>
                                         </Label.FontFamily>
                                     </Label>
-                                    <xfx:XfxEntry x:Name="NoPersona" Text="1" Margin="8,-20,5,-12" Keyboard="Numeric">
+                                    <xfx:XfxEntry x:Name="NoPersona" Text="2" Margin="8,-20,5,-12" Keyboard="Numeric">
                                         <Entry.HeightRequest>
                                             <OnPlatform x:TypeArguments="x:Double">
                                                 <On Platform="iOS">60</On>

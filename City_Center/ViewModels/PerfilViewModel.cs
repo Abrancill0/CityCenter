@@ -11,6 +11,7 @@ using static City_Center.Models.RegistroUsuario;
 using static City_Center.Models.TarjetaUsuarioResultado;
 using System.Threading.Tasks;
 using static City_Center.Models.TarjetaValidaResultado;
+using Acr.UserDialogs;
 
 namespace City_Center.ViewModels
 {
@@ -121,15 +122,78 @@ namespace City_Center.ViewModels
         private async void ActualizaPerfil()
         {
 
+            UserDialogs.Instance.ShowLoading("Procesando...", MaskType.Black);
+
+            if (string.IsNullOrEmpty(this.Nombre))
+            {
+                await Mensajes.Alerta("Nombre y apellido es requerida");
+
+                UserDialogs.Instance.HideLoading();
+
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(this.Email))
+            {
+                await Mensajes.Alerta("Correo electrónico es requerido");
+
+                UserDialogs.Instance.HideLoading();
+
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(this.Contraseña))
+            {
+                await Mensajes.Alerta("Contraseña es requerida");
+
+                UserDialogs.Instance.HideLoading();
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Contraseña2))
+            {
+                await Mensajes.Alerta("Contraseña es requerida");
+
+                UserDialogs.Instance.HideLoading();
+
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(this.Ciudad))
+            {
+                await Mensajes.Alerta("Ciudad es requerida");
+
+                UserDialogs.Instance.HideLoading();
+
+                return;
+            }
+
+
+            if (this.Fecha == "00/00/0000")
+            {
+                await Mensajes.Alerta("La fecha de nacimiento es obligatoria");
+
+                UserDialogs.Instance.HideLoading();
+
+                return;
+            }
+
+
+
             if (Contraseña != Contraseña2)
             {
                 await Mensajes.Alerta("Las contraseñas no coinciden, verificar los campos");  
+                UserDialogs.Instance.HideLoading();
             }
 
 
             if (string.IsNullOrEmpty(NumeroSocio))
             {
-                await Mensajes.Alerta("Usuario actual no cuenta con tarjeta Win");
+              //  await Mensajes.Alerta("Usuario actual no cuenta con tarjeta Win");
             }
             else
             {
@@ -166,7 +230,7 @@ namespace City_Center.ViewModels
                 new KeyValuePair<string, string>("usu_telefono", ""),
                 new KeyValuePair<string, string>("usu_celular", ""),
                 new KeyValuePair<string, string>("usu_id_tarjeta_socio", this.NumeroSocio),
-                new KeyValuePair<string, string>("usu_ciudad", ""),
+                new KeyValuePair<string, string>("usu_ciudad", this.Ciudad),
                 new KeyValuePair<string, string>("usu_id_rol", "6"),
                 new KeyValuePair<string, string>("usu_estatus", "1"),
                 new KeyValuePair<string, string>("usu_tipo_documento", this.TipoDocumento),
@@ -179,7 +243,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Ocurrió un error al actualizar el usuario, intente de nuevo");
+                await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
 
                 return;
             }
@@ -266,7 +330,7 @@ namespace City_Center.ViewModels
 
                 string fotoPerfil = Application.Current.Properties["FotoPerfil"].ToString();
 
-                if (fotoPerfil=="http://cc.comprogapp.com/")
+                if (string.IsNullOrEmpty(fotoPerfil))
                 {
                     Imagen = "user"; 
                 }
@@ -309,7 +373,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
+                    await Mensajes.Alerta("Verificá tu conexión a Internet");
 
                     return "No se tiene conexion a internet";
                 }

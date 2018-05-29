@@ -175,7 +175,12 @@
                             </OnPlatform>
                        </Label.FontFamily>
                     </Label>
-                    <Image Source="campana.png" Grid.Row="0" Grid.Column="2" HeightRequest="20" >
+                    <Image Source="campana.png"
+                           Grid.Row="0"
+                           Grid.Column="2"
+                           HeightRequest="20"
+                           HorizontalOptions="Center"
+                           Margin="5">
                     </Image>
                     <Label  Text="Cerrar Sesión"
                             TextColor="White"

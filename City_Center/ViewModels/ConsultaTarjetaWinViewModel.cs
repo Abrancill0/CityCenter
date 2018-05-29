@@ -108,7 +108,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error(connection.Message);
+                    await Mensajes.Error("Verificá tu conexión a Internet");
 
                     return;
                 }
@@ -125,7 +125,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                    await Mensajes.Alerta("Ocurrió un error al consultar tarjeta win");
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
 
                     return;
                 }

@@ -46,7 +46,7 @@ namespace City_Center.ViewModels
             if (!connection.IsSuccess)
             {
                 
-                await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
+                await Mensajes.Alerta("Verificá tu conexión a Internet");
 
                 return;
             }
@@ -62,7 +62,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Alerta("Error al cargar Recompensas Win, intenta de nuevo");
+                await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
                 return;
             }
 

@@ -158,16 +158,16 @@ namespace City_Center.ViewModels
 
             UserDialogs.Instance.ShowLoading("Procesando...", MaskType.Black);
 
-            if (string.IsNullOrEmpty(this.Ciudad))
+            if (string.IsNullOrEmpty(this.Nombre))
             {
-               await Mensajes.Alerta("Ciudad es requerida");
+                await Mensajes.Alerta("Nombre y apellido son requeridos");
 
                 UserDialogs.Instance.HideLoading();
 
                 return;
             }
 
-         
+
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Mensajes.Alerta("Correo electrónico es requerido");
@@ -176,6 +176,7 @@ namespace City_Center.ViewModels
 
                 return;
             }
+
 
             if (string.IsNullOrEmpty(this.Password))
             {
@@ -190,12 +191,15 @@ namespace City_Center.ViewModels
             {
                 await Mensajes.Alerta("Contraseña es requerida");
 
+                UserDialogs.Instance.HideLoading();
+
                 return;
             }
 
-            if (this.Password != this.Password2)
+
+            if (string.IsNullOrEmpty(this.Ciudad))
             {
-                await Mensajes.Alerta("Las contraseñas no coiciden, verificar de nuevo");
+               await Mensajes.Alerta("Ciudad es requerida");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -205,13 +209,23 @@ namespace City_Center.ViewModels
 
             if (this.Fecha == "00/00/0000")
             {
-                await Mensajes.Alerta("La fecha de nacimiento es obligatoria");
+                await Mensajes.Alerta("Fecha de nacimiento es requerida");
 
                 UserDialogs.Instance.HideLoading();
 
                 return;
             }
 
+         
+
+            if (this.Password != this.Password2)
+            {
+                await Mensajes.Alerta("Las contraseñas no coiciden, verificar de nuevo");
+
+                UserDialogs.Instance.HideLoading();
+
+                return;
+            }
 
             string Dia = this.Fecha.Substring(0, 2);
             string Mes = this.Fecha.Substring(3, 2);
@@ -252,7 +266,17 @@ namespace City_Center.ViewModels
 
             listRegistro = (RegistroReturn)response.Result;
 
-            string RutaImagen = await GuardaImagen(listRegistro.resultado.usu_id);
+            string RutaImagen;
+
+            if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
+            {
+                RutaImagen = ""; 
+            }
+            else
+            {
+                RutaImagen   = await GuardaImagen(listRegistro.resultado.usu_id);   
+            } 
+
 
             Application.Current.Properties["IsLoggedIn"] = true;
             Application.Current.Properties["IdUsuario"] = listRegistro.resultado.usu_id;
@@ -281,7 +305,7 @@ namespace City_Center.ViewModels
 
             MainViewModel.GetInstance().VincularTarjeta = new VincularTarjetaViewModel();
 
-            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new VincularTarjetaWin());
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushModalAsync(new VincularTarjetaWin());
 
             UserDialogs.Instance.HideLoading();
 
@@ -329,7 +353,7 @@ namespace City_Center.ViewModels
                     string TipoDocumento = "";
                     string NumeroDocumento = "";
                     string NumeroSocio = "";
-                    string Ciudad = "";
+                  
                     string FechaNacimiento = "";
 
                     if (ValUsu == null)
@@ -385,7 +409,7 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    //await Mensajes.Error(message);
+                    await Mensajes.Alerta("Error al acceder a los servicios de Google");
                     UserDialogs.Instance.HideLoading();
 
                     return;
@@ -394,7 +418,7 @@ namespace City_Center.ViewModels
 			catch (Exception ex)
 			{
 				await Mensajes.Alerta("Error al acceder a los servicios de Google");
-
+                UserDialogs.Instance.HideLoading();
                 return; 
 			}
             
@@ -441,7 +465,7 @@ namespace City_Center.ViewModels
                     string TipoDocumento = "";
                     string NumeroDocumento = "";
                     string NumeroSocio = "";
-                    string Ciudad = "";
+                   
                     string FechaNacimiento = "";
 
                     if (ValUsu == null)
@@ -495,7 +519,7 @@ namespace City_Center.ViewModels
                 {
 
                     await Mensajes.Alerta("Error al acceder a los servicios de Facebook, intente de nuevo");
-
+                    UserDialogs.Instance.HideLoading();
                     return;
 
                 }
@@ -503,7 +527,7 @@ namespace City_Center.ViewModels
 			catch (Exception)
 			{
 				await Mensajes.Alerta("Error al acceder a los servicios de Facebook, intente de nuevo");
-
+                UserDialogs.Instance.HideLoading();
                 return;
 			}
             
