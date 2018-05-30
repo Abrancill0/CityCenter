@@ -668,7 +668,7 @@
                                                     ShowArrows="{Binding MuestraFlechas, Mode=TwoWay}"
                                                     ArrowsTintColor="White"
                                                     ArrowsBackgroundColor="Black"
-                                                  
+                                                    Position="1"
                                                     PositionSelected="PositionSelected_CT"
                                                     Scrolled="Scrolled_CT">
                                 <cv:CarouselViewControl.ItemTemplate>
@@ -777,14 +777,17 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                          <cv:CarouselViewControl ItemsSource="{Binding PromocionesDetalle}"
+                          <cv:CarouselViewControl x:Name="CarruselPromociones"
+                                                    ItemsSource="{Binding PromocionesDetalle}"
                                                     HeightRequest="300"
                                                     HorizontalOptions="FillAndExpand"
                                                     AnimateTransition="true"
                                                     ShowArrows="{Binding MuestraFlechasPromo, Mode=TwoWay}"
                                                     ArrowsTintColor="White"
                                                     ArrowsBackgroundColor="Black"
-                                                   >
+                                                    Position="1"
+                                                  Scrolled="Scrolled_HP"
+                                                   PositionSelected="PositionSelected_HP">
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
                                           <Grid Padding="3" >

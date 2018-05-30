@@ -6,7 +6,7 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              x:Class="City_Center.Page.SlideMenu.Promociones">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat" />
+        <ToolbarItem Icon="Chat" Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>

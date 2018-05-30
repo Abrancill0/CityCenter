@@ -145,6 +145,13 @@ namespace City_Center.ViewModels
                         Application.Current.Properties["NumeroDocumento"] = list.resultado.usu_no_documento;
                         Application.Current.Properties["NumeroSocio"] = list.resultado.usu_id_tarjeta_socio;
 
+                        Application.Current.Properties["RutaChatCasino"] = "";
+                        Application.Current.Properties["VariableChatHotel"] = "";
+                        Application.Current.Properties["VariableChatCasino"] = "";
+                        Application.Current.Properties["RutaChatHotel"] = "";
+                        Application.Current.Properties["Casino"] = 1;
+                        Application.Current.Properties["Hotel"] = 1;
+
                         await Application.Current.SavePropertiesAsync();
 
                         this.Email = string.Empty;
@@ -314,6 +321,14 @@ namespace City_Center.ViewModels
                     Application.Current.Properties["NumeroDocumento"] = NumeroDocumento;
                     Application.Current.Properties["NumeroSocio"] = NumeroSocio;
 
+                    Application.Current.Properties["RutaChatCasino"] = "";
+                    Application.Current.Properties["VariableChatHotel"] = "";
+                    Application.Current.Properties["VariableChatCasino"] = "";
+                    Application.Current.Properties["RutaChatHotel"] = "";
+                    Application.Current.Properties["Casino"] = 1;
+                    Application.Current.Properties["Hotel"] = 1;
+
+
                     await Application.Current.SavePropertiesAsync();
 
                    // MainViewModel.GetInstance().Master = new MasterViewModel();
@@ -424,6 +439,14 @@ namespace City_Center.ViewModels
                     Application.Current.Properties["TipoDocumento"] = TipoDocumento;
                     Application.Current.Properties["NumeroDocumento"] = NumeroDocumento;
                     Application.Current.Properties["NumeroSocio"] = NumeroSocio;
+
+                    Application.Current.Properties["RutaChatCasino"] = "";
+                    Application.Current.Properties["VariableChatHotel"] = "";
+                    Application.Current.Properties["VariableChatCasino"] = "";
+                    Application.Current.Properties["RutaChatHotel"] = "";
+                    Application.Current.Properties["Casino"] = 1;
+                    Application.Current.Properties["Hotel"] = 1;
+
 
                     await Application.Current.SavePropertiesAsync();
 

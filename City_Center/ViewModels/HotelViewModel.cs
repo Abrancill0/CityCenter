@@ -159,7 +159,7 @@ namespace City_Center.ViewModels
 
                 var content = new FormUrlEncodedContent(new[]
                 {
-                new KeyValuePair<string, string>("", ""),
+                    new KeyValuePair<string, string>("", ""),
                 });
 
 
@@ -337,11 +337,11 @@ namespace City_Center.ViewModels
 
                 var content = new FormUrlEncodedContent(new[]
                 {
-                new KeyValuePair<string, string>("", ""),
+                    new KeyValuePair<string, string>("pro_tipo", "hopa"),
                 });
 
 
-                var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
+                var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexTipoApp", content);
 
                 if (!response.IsSuccess)
                 {
@@ -352,16 +352,23 @@ namespace City_Center.ViewModels
 
                 this.listPromociones = (PromocionesReturn)response.Result;
 
-                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "hopa"));
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
 
                 if (PromocionesDetalle.Count > 0)
                 {
                     MuestraFlechasPromo = true;
+
+                    VariablesGlobales.RegistrosHotelPromociones = promocionesDetalle.Count - 2;
+                }
+                else
+                {
+                    MuestraFlechasPromo = false;
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                MuestraFlechasPromo = false;
                // await Mensajes.Al("Hotel - Promociones" + ex.ToString());
             }
         }

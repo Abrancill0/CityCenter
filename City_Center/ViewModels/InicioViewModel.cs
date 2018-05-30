@@ -394,35 +394,12 @@ namespace City_Center.ViewModels
 
                 MainViewModel.GetInstance().listTorneo = (TorneoReturn)response.Result;
 
-                //foreach (var l in MainViewModel.GetInstance().listTorneo.resultado)
-                //{
-                    //TorneoDetalle.Add(new TorneoItemViewModel()
-                    //{
-                    //    tor_id = 0,
-                    //    tor_nombre = "",
-                    //    tor_descripcion = "",
-                    //    tor_imagen = "",
-                    //    tor_fecha_hora_inicio = "",
-                    //    tor_fecha_hora_fin = "",
-                    //    tor_destacado = 0,
-                    //    tor_id_usuario_creo = 0,
-                    //    tor_fecha_hora_creo = "",
-                    //    tor_id_usuario_modifico = 0,
-                    //    tor_fecha_hora_modifico = "",
-                    //    tor_estatus = 0,
-                    //    tor_guardado = false,
-                    //    tor_id_guardado = 0,
-                    //    oculta = false
-                    //});
-                //}
-
-
                 TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
                 if (TorneoDetalle.Count>0)
                 {
                     MuestraFlechas = true;
-                    VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count;
+                    VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count-2;
 
                    
                 }
@@ -561,6 +538,7 @@ namespace City_Center.ViewModels
                 if (PromocionesDetalle.Count > 0)
                 {
                     MuestraFlechasPromo = true;
+                    VariablesGlobales.RegistrosPromociones = PromocionesDetalle.Count - 2;
                 }
                 else
                 {

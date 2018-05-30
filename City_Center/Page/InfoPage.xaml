@@ -5,7 +5,7 @@
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"             
              x:Class="City_Center.Page.InfoPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="Chat"/>
+        <ToolbarItem  Icon="Chat" Clicked="Chat_click"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>

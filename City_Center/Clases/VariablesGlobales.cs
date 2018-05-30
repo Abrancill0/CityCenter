@@ -26,14 +26,20 @@ namespace City_Center.Clases
         public static string Mensaje;
 
         public static int indice;
-        public static int RegistrosTorneo;
-
-
+        public static int indicePromociones;
         public static int IndiceCasinoTorneo;
         public static int IndiceCasinoDestacados;
+        public static int IndiceCasinoPromociones;
+        public static int IndiceHotelPromociones;
+        public static int IndiceGastronomiaPromociones;
 
+        public static int RegistrosTorneo;
+        public static int RegistrosPromociones;
         public static int RegistrosCasinoTorneo;
         public static int RegistrosCasinoDestacados;
+        public static int RegistrosCasinoPromociones;
+        public static int RegistrosHotelPromociones;
+        public static int RegistrosGastronomiaPromociones;
 
         //public static int IndicePromocionesHome;
         //public static int IndicePromocionesC;

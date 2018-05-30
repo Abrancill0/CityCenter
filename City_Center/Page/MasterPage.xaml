@@ -175,13 +175,18 @@
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <NavigationPage x:Name="Pruebita">
-            <NavigationPage.ToolbarItems>
-                 <ToolbarItem Icon="Chat" Clicked="Chat_click" />
+           <!-- <NavigationPage.ToolbarItems >
+                 <ToolbarItem Icon="Chat" Clicked="Chat_click" x:Name="Toolbar" />
             </NavigationPage.ToolbarItems>
-
+-->
             <x:Arguments>
                 
              <ContentPage>
+
+             <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="Chat" Clicked="Chat_click"/>
+    </ContentPage.ToolbarItems>
+                    
                 <Grid CompressedLayout.IsHeadless="true">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />

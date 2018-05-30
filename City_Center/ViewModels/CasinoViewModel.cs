@@ -323,7 +323,6 @@ namespace City_Center.ViewModels
 				if (!connection.IsSuccess)
 				{
 					await Mensajes.Alerta("Verificá tu conexión a Internet");
-
 				}
 
 
@@ -361,7 +360,7 @@ namespace City_Center.ViewModels
                 if (DestacadosDetalle.Count>0)
                 {
                     MuestraFlechaDestacado = true;
-                    VariablesGlobales.RegistrosCasinoDestacados = DestacadosDetalle.Count-1;
+                    VariablesGlobales.RegistrosCasinoDestacados = DestacadosDetalle.Count-2;
                 }
                 else
                 {
@@ -479,7 +478,7 @@ namespace City_Center.ViewModels
             
 
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				//await Mensajes.Error("Casino - Pozos" + ex.ToString());
 			}
@@ -767,7 +766,7 @@ namespace City_Center.ViewModels
 			});
 		}
 
-		private async void LoadTorneo()
+		private  void LoadTorneo()
 		{         
 			try
 			{
@@ -776,7 +775,7 @@ namespace City_Center.ViewModels
 
                 if (TorneoDetalle.Count > 0)
                 {
-                    VariablesGlobales.RegistrosCasinoTorneo = TorneoDetalle.Count;
+                    VariablesGlobales.RegistrosCasinoTorneo = TorneoDetalle.Count-2;
                     MuestraFlechas = true;
                 }
                 else
@@ -785,7 +784,7 @@ namespace City_Center.ViewModels
                 }
 
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
                 MuestraFlechas = false;
 
@@ -831,11 +830,11 @@ namespace City_Center.ViewModels
 
                 var content = new FormUrlEncodedContent(new[]
                 {
-                new KeyValuePair<string, string>("", ""),
+                    new KeyValuePair<string, string>("pro_tipo", "cas"),
                 });
 
 
-                var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexApp", content);
+                var response = await this.apiService.Get<PromocionesReturn>("/promociones", "/indexTipoApp", content);
 
                 if (!response.IsSuccess)
                 {
@@ -847,12 +846,14 @@ namespace City_Center.ViewModels
                 this.listPromociones = (PromocionesReturn)response.Result;
 
 
-				PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel().Where(a => a.pro_tipo == "cas"));
+				PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
 			
             
                 if (PromocionesDetalle.Count > 0)
                 {
                     MuestraFlechasPromo = true;
+
+                    VariablesGlobales.RegistrosCasinoPromociones = PromocionesDetalle.Count - 2;
                 }
                 else
                 {
@@ -863,7 +864,6 @@ namespace City_Center.ViewModels
 			catch (Exception)
 			{
                 MuestraFlechasPromo = false;
-				//await Mensajes.Error("Casino - Promociones" + ex.ToString());
 			}
 
 		}

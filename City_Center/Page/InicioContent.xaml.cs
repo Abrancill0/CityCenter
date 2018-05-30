@@ -97,7 +97,7 @@ namespace City_Center.Page
                     await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(_webHotel);
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 				//await DisplayAlert("oj", ex.ToString(), "ok");
 				await Mensajes.Info("No se pudo acceder a las reservaciones, intente mas tarde.");
@@ -474,7 +474,7 @@ namespace City_Center.Page
            
         }
 
-         void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+        void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
             try
             {
@@ -482,29 +482,59 @@ namespace City_Center.Page
 
                 if (VariablesGlobales.indice >= VariablesGlobales.RegistrosTorneo && Direccion =="Right")
                 {
-
-                    CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
-                    //await Task.Delay(10);
                     CarruselTorneos.AnimateTransition = false;
                     CarruselTorneos.Position = 0;
-                   // CarruselTorneos.AnimateTransition = true;
-                    // CarruselTorneos.ItemsSource.GetCount;
+                   
                 }
-                //else if (VariablesGlobales.indice <= 1 && Direccion == "Left")
-                //{
-                //    CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
-                ////   // await Task.Delay(10);
-                //    CarruselTorneos.AnimateTransition = false;
-                //    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo;
-                //}
+                else if (VariablesGlobales.indice <= 1 && Direccion == "Left")
+                {
+                    CarruselTorneos.AnimateTransition = false;
+                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo+1;
+                }
             }
             catch (Exception ex)
             {
-                //DisplayAlert("","","");
+                DisplayAlert("Error",ex.ToString(),"OK");
             }
 
         }
     
+        void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+        {
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.indicePromociones >= VariablesGlobales.RegistrosPromociones && Direccion == "Right")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    CarruselPromociones.Position = 0;
+
+                }
+                else if (VariablesGlobales.indicePromociones <= 1 && Direccion == "Left")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }  
+        }
+
+        void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+        {
+
+            try
+            {
+                VariablesGlobales.indicePromociones = e.NewValue;
+            }
+            catch (Exception)
+            {
+
+            } 
+        }
     }
 
 }

@@ -8,7 +8,7 @@
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              x:Class="City_Center.Page.Perfil">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat" />
+        <ToolbarItem Icon="Chat" Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>

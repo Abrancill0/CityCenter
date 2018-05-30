@@ -1,51 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="City_Center.Page.SeleccionTipoChat"
-           
-             BackgroundColor="#74648c">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="City_Center.Page.SeleccionTipoChat" BackgroundColor="#74648c">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-            <Label Text="SELECCIONÁ EL SERVICIO A CLIENTE QUE NECESITÁS" TextColor="White"></Label>
-
-            <StackLayout HorizontalOptions="FillAndExpand">
-
-                  <StackLayout Orientation="Vertical">
-             
-                    <Image  Margin="8,0,0,5"
-                                         HeightRequest="50"
-                                         Aspect="AspectFit"
-                            Source="casino">
-                          <Image.GestureRecognizers>
-                            <TapGestureRecognizer  Tapped="ChatCasino"  />
-                     </Image.GestureRecognizers>
+        <StackLayout Orientation="Vertical" Margin="35">
+            <Label Text="SELECCIONÁ EL SERVICIO A CLIENTE QUE NECESITÁS"
+                   FontSize="23"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center">
+                <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular" />
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+            </Label>
+            <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="FillAndExpand" Margin="10,30,10,10">
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Image HeightRequest="60"
+                           Aspect="AspectFit"
+                           Source="CasinoChat"
+                           Margin="-20,0,0,0"
+                           HorizontalOptions="End">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ChatCasino" />
+                        </Image.GestureRecognizers>
                     </Image>
-                    
-            <Label Text="Casino" TextColor="White"/>
-            </StackLayout>
-           
-           <StackLayout Orientation="Vertical">
-
-                     <Image  Margin="8,0,0,5"
-                                         HeightRequest="50"
-                                         Aspect="AspectFit"
-                            Source="hotel">
-                          <Image.GestureRecognizers>
-                            <TapGestureRecognizer  Tapped="ChatHotel"  />
-                     </Image.GestureRecognizers>
+                    <Label Text="CASINO"
+                           FontSize="Small"
+                           TextColor="White"
+                           Margin="40,0,-20,0"
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="Center"
+                           >
+                          <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular" />
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                        </Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                    <Image HeightRequest="60"
+                           Aspect="AspectFit"
+                           Source="HotelChat"
+                           Margin="20,0,0,0"
+                           HorizontalOptions="Start">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ChatHotel" />
+                        </Image.GestureRecognizers>
                     </Image>
-                    
-           
-                    
-
-            <Label Text="HOTEL Y SPA" TextColor="White"/>
-                
+                    <Label Text="HOTEL Y SPA"
+                           FontSize="Small"
+                           TextColor="White"
+                           Margin="20,0,0,0"
+                           HorizontalOptions="Start">
+                          <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular" />
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                        </Label>
+                </StackLayout>
             </StackLayout>
-            </StackLayout>
-          
-             
-
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

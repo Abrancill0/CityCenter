@@ -235,5 +235,42 @@ namespace City_Center.Page
 
         }
 	
+
+        void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+        {
+            try
+            {
+                VariablesGlobales.IndiceHotelPromociones = e.NewValue;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+        {
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.IndiceHotelPromociones >= VariablesGlobales.RegistrosHotelPromociones && Direccion == "Right")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    CarruselPromociones.Position = 0;
+
+                }
+                else if (VariablesGlobales.IndiceHotelPromociones <= 1 && Direccion == "Left")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+        }
+
 	}
 }

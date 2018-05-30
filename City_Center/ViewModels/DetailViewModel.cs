@@ -152,11 +152,11 @@ namespace City_Center.ViewModels
                     _googleManager.Logout();
                   
                     MasterPage fpm = new MasterPage();
-                    fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
+                    //fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 
-					App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+					//App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
 
-					fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
+					//fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
                     Application.Current.MainPage = fpm;
 
                     UserDialogs.Instance.HideLoading();

@@ -297,13 +297,17 @@
                                     </Label.FontFamily>
                                 </Label>
 
-                                <cv:CarouselViewControl ItemsSource="{Binding PromocionesDetalle}"
+                                <cv:CarouselViewControl x:Name="CarruselPromociones" 
+                                                    ItemsSource="{Binding PromocionesDetalle}"
                                                     HeightRequest="300"
                                                     HorizontalOptions="FillAndExpand"
                                                     AnimateTransition="true"
                                                     ShowArrows="{Binding MuestraFlechasPromo, Mode=TwoWay}"
                                                     ArrowsTintColor="White"
-                                                    ArrowsBackgroundColor="Black">
+                                                    ArrowsBackgroundColor="Black"
+                                                    Scrolled="Scrolled_HP"
+                                                    PositionSelected="PositionSelected_HP"
+                                                    Position="1">
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
                                           <Grid CompressedLayout.IsHeadless="true">

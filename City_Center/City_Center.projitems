@@ -424,6 +424,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Page\SeleccionTipoChat.xaml.cs">
       <DependentUpon>SeleccionTipoChat.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChatviewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

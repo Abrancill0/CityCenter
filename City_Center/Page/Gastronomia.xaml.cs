@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using City_Center.Clases;
 using City_Center.ViewModels;
 using Xamarin.Forms;
 
@@ -19,9 +20,6 @@ namespace City_Center.Page
             base.OnAppearing();
 
         }
-
-
-        // M
 
         protected override void OnDisappearing()
         {
@@ -65,6 +63,43 @@ namespace City_Center.Page
             BV3.IsVisible = true;
 
 
+        }
+
+
+        void PositionSelected_GP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+        {
+            try
+            {
+                VariablesGlobales.IndiceGastronomiaPromociones = e.NewValue;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        void Scrolled_GP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+        {
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.IndiceGastronomiaPromociones >= VariablesGlobales.RegistrosGastronomiaPromociones && Direccion == "Right")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    CarruselPromociones.Position = 0;
+
+                }
+                else if (VariablesGlobales.IndiceGastronomiaPromociones <= 1 && Direccion == "Left")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosGastronomiaPromociones + 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
         }
 
     }

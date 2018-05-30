@@ -532,6 +532,8 @@
     <AndroidResource Include="Resources\drawable\ImageInstitucional.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ReservaPromoDown2.png" />
     <AndroidResource Include="Resources\drawable\splash.png" />
+    <AndroidResource Include="Resources\drawable\CasinoChat.png" />
+    <AndroidResource Include="Resources\drawable\HotelChat.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />

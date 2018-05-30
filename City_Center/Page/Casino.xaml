@@ -26,7 +26,7 @@
                      BackgroundColor="#EFEFEF"
                      BindingContext="{Binding Casino}"
                      CompressedLayout.IsHeadless="true">
-            <Grid >
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*">
                     </ColumnDefinition>
@@ -176,6 +176,7 @@
                                             ItemsSource="{Binding DestacadosDetalle}"
                                             HorizontalOptions="FillAndExpand"
                                             HeightRequest="300"
+                                            Position="1"
                                             AnimateTransition="true"
                                             ShowArrows="{Binding MuestraFlechaDestacado, Mode=TwoWay}"
                                             ArrowsTintColor="White"
@@ -395,12 +396,16 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                          <cv:CarouselViewControl ItemsSource="{Binding PromocionesDetalle}"
+                          <cv:CarouselViewControl x:Name="CarruselPromociones"
+                                                    ItemsSource="{Binding PromocionesDetalle}"
                                                     HeightRequest="300"
                                                     HorizontalOptions="FillAndExpand"
                                                     AnimateTransition="true"
                                                     ShowArrows="{Binding MuestraFlechasPromo, Mode=TwoWay}"
                                                     ArrowsTintColor="White"
+                                                    Position="1"
+                                                    Scrolled="Scrolled_CP"
+                                                  PositionSelected="PositionSelected_CP"
                                                     ArrowsBackgroundColor="Black">
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
@@ -546,6 +551,7 @@
                                                         ArrowsBackgroundColor="Black"
                                                         x:Name="CarruselTorneos"
                                                         Scrolled="Scrolled_CT"
+                                                        Position="1"
                                                         PositionSelected="PositionSelected_CT">
                                        <!--  ShowArrows="true"
                                                         ArrowsTintColor="Black"

@@ -57,6 +57,7 @@ namespace City_Center.ViewModels
 		public CambiaPassViewModel CambiaContrasena { get; set; }
         public VincularTarjetaViewModel VincularTarjeta { get; set; }
         public TabPageViewModel TabPage { get; set; }
+        public ChatviewModel Chat { get; set; }
         #endregion
 
         #region Contructors

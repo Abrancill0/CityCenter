@@ -39,7 +39,6 @@ namespace City_Center.Page
             base.OnAppearing(); 	         
         }
 
-
         protected override void OnDisappearing()
         {         
             base.OnDisappearing();
@@ -227,12 +226,11 @@ namespace City_Center.Page
             }
         }
     
-
         void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
             try
             {
-                VariablesGlobales.indice = e.NewValue;
+                VariablesGlobales.IndiceCasinoTorneo = e.NewValue;
             }
             catch (Exception)
             {
@@ -241,33 +239,31 @@ namespace City_Center.Page
 
         }
 
-        async void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+        void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
             try
             {
                 string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.indice >= VariablesGlobales.RegistrosCasinoTorneo && Direccion == "Right")
+                if (VariablesGlobales.IndiceCasinoTorneo >= VariablesGlobales.RegistrosCasinoTorneo && Direccion == "Right")
                 {
-                    
-
-                    CarruselTorneos.ItemsSource = Casinito.TorneoDetalle;
-                    await Task.Delay(100);
                     CarruselTorneos.AnimateTransition = false;
                     CarruselTorneos.Position = 0;
-                    CarruselTorneos.AnimateTransition = true;
-                   //  CarruselTorneos.ItemsSource.GetCount;
+
+                }
+                else if (VariablesGlobales.IndiceCasinoTorneo <= 1 && Direccion == "Left")
+                {
+                    CarruselTorneos.AnimateTransition = false;
+                    CarruselTorneos.Position = VariablesGlobales.RegistrosCasinoTorneo + 1;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                DisplayAlert("Error", ex.ToString(), "OK");
             }
 
+
         }
-
-
-
 
         void PositionSelected_DT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
@@ -282,7 +278,7 @@ namespace City_Center.Page
 
         }
 
-        async void Scrolled_DT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+        void Scrolled_DT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
             try
             {
@@ -290,22 +286,57 @@ namespace City_Center.Page
 
                 if (VariablesGlobales.IndiceCasinoDestacados >= VariablesGlobales.RegistrosCasinoDestacados && Direccion == "Right")
                 {
-                    CarruselDestacados.ShowArrows = false;
-
-                    CarruselDestacados.ItemsSource = Casinito.DestacadosDetalle;
-                    await Task.Delay(100);
                     CarruselDestacados.AnimateTransition = false;
                     CarruselDestacados.Position = 0;
-                    CarruselDestacados.AnimateTransition = true;
-                    //  CarruselTorneos.ItemsSource.GetCount;
+
+                }
+                else if (VariablesGlobales.IndiceCasinoDestacados <= 1 && Direccion == "Left")
+                {
+                    CarruselDestacados.AnimateTransition = false;
+                    CarruselDestacados.Position = VariablesGlobales.RegistrosCasinoDestacados + 1;
                 }
             }
             catch (Exception)
             {
-
+                
             }
 
         }
 
+        void PositionSelected_CP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+        {
+            try
+            {
+                VariablesGlobales.IndiceCasinoPromociones = e.NewValue;
+            }
+            catch (Exception)
+            {
+
+            } 
+        }
+
+        void Scrolled_CP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+        {
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.IndiceCasinoPromociones >= VariablesGlobales.RegistrosCasinoPromociones && Direccion == "Right")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    CarruselPromociones.Position = 0;
+
+                }
+                else if (VariablesGlobales.IndiceCasinoPromociones <= 1 && Direccion == "Left")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones + 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+        }
     }
 }

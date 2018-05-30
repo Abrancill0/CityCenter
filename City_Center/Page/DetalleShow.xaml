@@ -5,7 +5,7 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              x:Class="City_Center.Page.DetalleShow">
     <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="Chat"/>
+        <ToolbarItem  Icon="Chat" Clicked="Chat_click"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
             <ScrollView BindingContext="{Binding DetalleShow}">

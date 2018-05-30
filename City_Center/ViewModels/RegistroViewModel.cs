@@ -216,8 +216,6 @@ namespace City_Center.ViewModels
                 return;
             }
 
-         
-
             if (this.Password != this.Password2)
             {
                 await Mensajes.Alerta("Las contraseñas no coiciden, verificar de nuevo");
@@ -287,6 +285,13 @@ namespace City_Center.ViewModels
             Application.Current.Properties["FechaNacimiento"] = Convert.ToString(Año + "-" + Mes + "-" + Dia);
             Application.Current.Properties["FotoPerfil"] = RutaImagen;
 			Application.Current.Properties["TipoCuenta"] = "CityCenter";
+
+            Application.Current.Properties["RutaChatCasino"] = "";
+            Application.Current.Properties["VariableChatHotel"] = "";
+            Application.Current.Properties["VariableChatCasino"] = "";
+            Application.Current.Properties["RutaChatHotel"] = "";
+            Application.Current.Properties["Casino"] = 1;
+            Application.Current.Properties["Hotel"] = 1;
 
             Application.Current.Properties["TipoDocumento"] = "";
             Application.Current.Properties["NumeroDocumento"] = "";
@@ -384,6 +389,13 @@ namespace City_Center.ViewModels
                     Application.Current.Properties["TipoDocumento"] = TipoDocumento;
                     Application.Current.Properties["NumeroDocumento"] = NumeroDocumento;
                     Application.Current.Properties["NumeroSocio"] = NumeroSocio;
+
+                    Application.Current.Properties["RutaChatCasino"] = "";
+                    Application.Current.Properties["VariableChatHotel"] = "";
+                    Application.Current.Properties["VariableChatCasino"] = "";
+                    Application.Current.Properties["RutaChatHotel"] = "";
+                    Application.Current.Properties["Casino"] = 1;
+                    Application.Current.Properties["Hotel"] = 1;
 
                     await Application.Current.SavePropertiesAsync();
 
@@ -494,6 +506,13 @@ namespace City_Center.ViewModels
                     Application.Current.Properties["TipoDocumento"] = TipoDocumento;
                     Application.Current.Properties["NumeroDocumento"] = NumeroDocumento;
                     Application.Current.Properties["NumeroSocio"] = NumeroSocio;
+
+                    Application.Current.Properties["RutaChatCasino"] = "";
+                    Application.Current.Properties["VariableChatHotel"] = "";
+                    Application.Current.Properties["VariableChatCasino"] = "";
+                    Application.Current.Properties["RutaChatHotel"] = "";
+                    Application.Current.Properties["Casino"] = 1;
+                    Application.Current.Properties["Hotel"] = 1;
 
                     await Application.Current.SavePropertiesAsync();
 

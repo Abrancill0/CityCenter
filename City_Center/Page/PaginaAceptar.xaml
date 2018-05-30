@@ -11,7 +11,10 @@
                        VerticalOptions="Center"/>
             </StackLayout>
         <StackLayout Margin="15,50,15,50">
-                  <Label Text="GRACIAS" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="18" TextColor="#250C4B">
+                  <Label Text="GRACIAS" HorizontalOptions="Center"
+                         HorizontalTextAlignment="Center"
+                         FontSize="18"
+                         TextColor="#250C4B">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
                         <On Platform="iOS" Value="Oswald-Regular" />
@@ -19,7 +22,10 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <Label HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="16" Margin="35,25" Text="Revisá tu correo electrónico y confirmá tu cuenta. Ya estas listo para navegar nuestra app sin limites" TextColor="Black" />
+            <Label HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   FontSize="16" Margin="35,25"
+                   Text="Revisá tu correo electrónico y confirmá tu cuenta. Ya estas listo para navegar nuestra app sin limites" TextColor="Black" />
             <Button Text="LISTO" BackgroundColor="#250c4b" TextColor="White" FontAttributes="Bold" Margin="30,30,30,30" HeightRequest="40" Clicked="Handle_Clicked">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">

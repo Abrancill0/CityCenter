@@ -21,7 +21,7 @@ namespace City_Center.Clases
                 client.BaseAddress = new Uri("http://cc.comprogapp.com");
                 // client.Timeout = TimeSpan.FromSeconds(7);
 
-                HttpResponseMessage response = await client.PostAsync(string.Format(Url), Content);
+                HttpResponseMessage response = await client.GetAsync(string.Format(Url));
                
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {

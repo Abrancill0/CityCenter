@@ -4,9 +4,10 @@
              xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              x:Class="City_Center.PopUp.AlertaConfirmacion">
 
-      <Frame HorizontalOptions="FillAndExpand"
-             VerticalOptions="FillAndExpand"
-             Margin="60,160,60,230"
+      <Frame HorizontalOptions="Center"
+             VerticalOptions="Center"
+            HeightRequest="220"
+             WidthRequest="220"
              HasShadow="true"
              BackgroundColor="White">
         <StackLayout Padding="2"

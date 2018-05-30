@@ -6,7 +6,7 @@
               xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              x:Class="City_Center.Page.DetalleHotel">
      <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="Chat"/>
+        <ToolbarItem  Icon="Chat" Clicked="Chat_click"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
     <ScrollView BindingContext="{Binding DetalleHotel}">
