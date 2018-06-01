@@ -465,7 +465,16 @@ namespace City_Center.Page
         {
             try
             {
-                VariablesGlobales.indice = e.NewValue;
+                //if (e.NewValue >VariablesGlobales.indice)
+                //{
+                //    VariablesGlobales.indice = 0;  
+                //}
+                //else
+                //{
+
+                    VariablesGlobales.indice = e.NewValue;  
+                //}
+
             }
             catch (Exception )
             {
@@ -480,16 +489,17 @@ namespace City_Center.Page
             {
                 string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.indice >= VariablesGlobales.RegistrosTorneo && Direccion =="Right")
+                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion =="Right")
                 {
                     CarruselTorneos.AnimateTransition = false;
                     CarruselTorneos.Position = 0;
-                   
+                 
+
                 }
-                else if (VariablesGlobales.indice <= 1 && Direccion == "Left")
+                else if (VariablesGlobales.indice == 1 && Direccion == "Left")
                 {
                     CarruselTorneos.AnimateTransition = false;
-                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo+1;
+                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
                 }
             }
             catch (Exception ex)

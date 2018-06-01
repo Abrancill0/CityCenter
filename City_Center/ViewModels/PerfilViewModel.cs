@@ -12,6 +12,8 @@ using static City_Center.Models.TarjetaUsuarioResultado;
 using System.Threading.Tasks;
 using static City_Center.Models.TarjetaValidaResultado;
 using Acr.UserDialogs;
+using System.IO;
+using static City_Center.Models.ImagenResultado;
 
 namespace City_Center.ViewModels
 {
@@ -34,6 +36,8 @@ namespace City_Center.ViewModels
         private string numeroDocumento;
         private string numeroSocio;
         private bool hC;
+
+        private ImagenReturn ListImagen;
 
         private ActualizaUsuarioReturn list;
 
@@ -250,7 +254,22 @@ namespace City_Center.ViewModels
 
             list = (ActualizaUsuarioReturn)response.Result;
 
-           // string RutaImagen = await GuardaImagen(list.resultado.);
+
+            string RutaImagen;
+
+            if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
+            {
+                RutaImagen = ""; 
+            }
+            else
+            {
+                RutaImagen  = await GuardaImagen(Convert.ToInt32(Application.Current.Properties["IdUsuario"].ToString())); 
+
+                Application.Current.Properties["FotoPerfil"] = RutaImagen;
+            } 
+
+
+            //string RutaImagen = await GuardaImagen(list.resultado.);
 
             Application.Current.Properties["Email"] = Email;
             Application.Current.Properties["NombreCompleto"]= Nombre ;
@@ -258,7 +277,7 @@ namespace City_Center.ViewModels
             Application.Current.Properties["Pass"] = Contraseña ;
             Application.Current.Properties["Pass"] = Contraseña2;
             Application.Current.Properties["FechaNacimiento"] = Fecha;
-            Application.Current.Properties["FotoPerfil"] = Imagen;
+
 
             Application.Current.Properties["TipoDocumento"] =TipoDocumento;
             Application.Current.Properties["NumeroDocumento"] =NumeroDocumento;
@@ -267,53 +286,59 @@ namespace City_Center.ViewModels
 			await Application.Current.SavePropertiesAsync();
 
             await Mensajes.Alerta("Usuario actualizadó con éxito");
+
+            UserDialogs.Instance.HideLoading();
         }
 
+        private async Task<string> GuardaImagen(int IDusuario)
+        {
 
-        //private async Task<string> GuardaImagen(int UsuarioID)
-        //{
+            var dirotro = "";
 
-        //    var dirotro = "";
+            if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
+            {
+                await Mensajes.Alerta("Ninguna foto subida");
 
-        //    if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
-        //    {
-        //        await Mensajes.Error("No se subio ninguna foto");
+                return "Error";
+            }
+            else
+            {
+                byte[] ImagenSubir = File.ReadAllBytes(VariablesGlobales.RutaImagene);
 
-        //        return "Error";
-        //    }
-        //    else
-        //    {
-        //        byte[] ImagenSubir = File.ReadAllBytes(VariablesGlobales.RutaImagene);
+                dirotro = Convert.ToBase64String(ImagenSubir);
+            }
 
-        //        dirotro = Convert.ToBase64String(ImagenSubir);
-        //    }
+            var content = new FormUrlEncodedContent(new[]
+           {
+                new KeyValuePair<string, string>("usu_id", Convert.ToString(IDusuario)),
+                new KeyValuePair<string, string>("usu_imagenstr", dirotro)
 
-        //    var content = new FormUrlEncodedContent(new[]
-        //   {
-        //        new KeyValuePair<string, string>("usu_id", Convert.ToString(UsuarioID)),
-        //        new KeyValuePair<string, string>("usu_imagenstr", dirotro)
-
-        //    });
-
-
-        //    var response = await this.apiService.Get<ImagenReturn>("/usuarios", "/carga_foto", content);
+            });
 
 
-        //    if (!response.IsSuccess)
-        //    {
-        //        await Mensajes.Error("Error al cargar la foto");
-
-        //        UserDialogs.Instance.HideLoading();
-
-        //        return "Error";
-        //    }
-
-        //    ListImagen = (ImagenReturn)response.Result;
+            var response = await this.apiService.Get<ImagenReturn>("/usuarios", "/carga_foto", content);
 
 
-        //    return VariablesGlobales.RutaServidor + ListImagen.resultado;
+            if (!response.IsSuccess)
+            {
+                await Mensajes.Alerta("Error al cargar la foto, intenta de nuevo");
 
-        //}
+                UserDialogs.Instance.HideLoading();
+
+                return "Error";
+            }
+
+            ListImagen = (ImagenReturn)response.Result;
+
+            await Mensajes.Alerta("Imagen actualizada correctamente");
+
+            Application.Current.Properties["FotoPerfil"] = VariablesGlobales.RutaServidor + ListImagen.resultado;
+
+             await Application.Current.SavePropertiesAsync();
+
+            return "OK";
+           
+        }
 
         #endregion
 

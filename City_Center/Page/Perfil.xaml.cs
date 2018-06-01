@@ -118,59 +118,58 @@ namespace City_Center.Page
            
 		}
 	
-        //public async Task Camara()
-        //{
+        public async Task Camara()
+        {
 
-        //    try
-        //    {
-        //        await CrossMedia.Current.Initialize();
+            try
+            {
+                await CrossMedia.Current.Initialize();
 
-        //        if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-        //        {
-        //            await DisplayAlert("Error", "Camara no ascesible", "OK");
-        //        }
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    await DisplayAlert("Error", "Camara no ascesible", "OK");
+                }
 
-        //        //obtenemos fecha actual
-        //        long n = Int64.Parse(DateTime.Now.ToString("yyyyMMddHHmmss"));
+                //obtenemos fecha actual
+                long n = Int64.Parse(DateTime.Now.ToString("yyyyMMddHHmmss"));
 
-        //        var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-        //        {
-        //            SaveToAlbum = true,
-        //            Directory = "CityCenter",
-        //            PhotoSize = PhotoSize.Custom,
-        //            CustomPhotoSize = 15,
-        //            CompressionQuality = 10,
-        //            Name = Convert.ToString(n)
-        //        });
+                var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                {
+                    SaveToAlbum = true,
+                    Directory = "CityCenter",
+                    PhotoSize = PhotoSize.Custom,
+                    CustomPhotoSize = 15,
+                    CompressionQuality = 10,
+                    Name = Convert.ToString(n)
+                });
 
-        //        VariablesGlobales.RutaImagene = file.Path;
+                VariablesGlobales.RutaImagene = file.Path;
 
-        //        Image1.Source = ImageSource.FromStream(() =>
-        //        {
-        //            var stream = file.GetStream();
-        //            file.Dispose();
+                imagen1.Source = ImageSource.FromStream(() =>
+                {
+                    var stream = file.GetStream();
+                    file.Dispose();
 
-        //            return stream;
-        //        });
-
-
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        await DisplayAlert("Error", ex.ToString(), "OK");
-
-        //    }
+                    return stream;
+                });
 
 
-        //}
+
+            }
+            catch (Exception ex)
+            {
+                //await DisplayAlert("Error", ex.ToString(), "OK");
+
+            }
 
 
-        //async void Handle_Tapped(object sender, System.EventArgs e)
-        //{
-        //    await Camara();
-        //}
+        }
 
+
+        async void Handle_Tapped(object sender, System.EventArgs e)
+        {
+            await Camara();
+        }
     
     
         async void Chat_click(object sender, System.EventArgs e)

@@ -30,8 +30,6 @@ namespace City_Center.Page
 
             Task.Delay(1000);
 
-
-
             string Nombre = Application.Current.Properties["NombreCompleto"].ToString();
             string Email = Application.Current.Properties["Email"].ToString();
             string TipoChat = VariablesGlobales.TipoChat;

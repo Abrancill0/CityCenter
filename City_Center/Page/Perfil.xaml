@@ -57,7 +57,13 @@
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="Android, iOS">70</On>
                             </OnPlatform>
+
                         </controls:CircleImage.HeightRequest>
+                        <controls:CircleImage.GestureRecognizers>
+                                <TapGestureRecognizer
+                                Tapped="Handle_Tapped"
+                                NumberOfTapsRequired="1" />
+                            </controls:CircleImage.GestureRecognizers>
                     </controls:CircleImage>
                 </AbsoluteLayout>
                 <Label TextColor="White"

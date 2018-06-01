@@ -78,7 +78,6 @@ namespace City_Center.Page
             await Camara();
         }
 
-
 		async void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig

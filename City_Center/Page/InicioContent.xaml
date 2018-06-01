@@ -670,7 +670,8 @@
                                                     ArrowsBackgroundColor="Black"
                                                     Position="1"
                                                     PositionSelected="PositionSelected_CT"
-                                                    Scrolled="Scrolled_CT">
+                                                    Scrolled="Scrolled_CT"
+                                                    >
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
                                         <Grid BackgroundColor="White">
@@ -690,7 +691,15 @@
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                             </ffimageloading:CachedImage>
-                                            <Label Margin="7,4,0,0" TextColor="#5D5D5D" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}" HorizontalTextAlignment="Start" HorizontalOptions="Start" FontSize="15" VerticalOptions="End"
+                                            <Label Margin="7,4,0,0" TextColor="#5D5D5D"
+                                                   Grid.Row="1"
+                                                   Grid.Column="0"
+                                                   Grid.ColumnSpan="2"
+                                                   Text="{Binding tor_nombre}"
+                                                   HorizontalTextAlignment="Start"
+                                                   HorizontalOptions="Start"
+                                                   FontSize="15"
+                                                   VerticalOptions="End"
                                                 FontFamily="Oswald-Regular">
                                                 <Label.FontFamily>
                                                     <OnPlatform x:TypeArguments="x:String">
@@ -699,7 +708,14 @@
                                                     </OnPlatform>
                                                 </Label.FontFamily>
                                             </Label>
-                                            <Label Margin="6,0,0,0" TextColor="#5D5D5D" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="{Binding tor_fecha_hora_inicio}" VerticalOptions="Start" FontSize="12"
+                                            <Label Margin="6,0,0,0"
+                                                   TextColor="#5D5D5D"
+                                                   Grid.Row="2"
+                                                   Grid.Column="0"
+                                                   Grid.ColumnSpan="2"
+                                                   HorizontalTextAlignment="Start"
+                                                   HorizontalOptions="Start"
+                                                   Text="{Binding tor_fecha_hora_inicio, StringFormat='{0:dd MMMM yyyy h:mm tt}'}" VerticalOptions="Start" FontSize="12"
                                                 FontFamily="Oswald-Regular">
                                                 <Label.FontFamily>
                                                     <OnPlatform x:TypeArguments="x:String">

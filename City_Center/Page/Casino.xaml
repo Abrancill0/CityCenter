@@ -231,7 +231,7 @@
                                                            Grid.ColumnSpan="2"
                                                            HorizontalTextAlignment="Start"
                                                            HorizontalOptions="Start"
-                                                           Text="{Binding des_fecha_hora_inicio}"
+                                                           Text="{Binding des_fecha_hora_inicio, StringFormat='{0:dd MMMM yyyy h:mm tt}'}"
                                                            VerticalOptions = "Start"
                                                            FontSize="12" >
                                                         <Label.FontFamily>
@@ -607,7 +607,7 @@
                                                            Grid.ColumnSpan="2"
                                                            HorizontalTextAlignment="Start"
                                                            HorizontalOptions="Start"
-                                                           Text="{Binding tor_fecha_hora_inicio}"
+                                                           Text="{Binding tor_fecha_hora_inicio, StringFormat='{0:dd MMMM yyyy h:mm tt}'}"
                                                            VerticalOptions = "Start"
                                                            FontSize="12"
                                                            FontFamily="Oswald-Regular" >

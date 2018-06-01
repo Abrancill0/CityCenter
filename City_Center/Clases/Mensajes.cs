@@ -37,8 +37,16 @@ namespace City_Center.Clases
 
         public static async Task<string> Alerta(string Mensaje)
         {
-            VariablesGlobales.Mensaje = Mensaje;
-            await Application.Current.MainPage.Navigation.PushPopupAsync(new AlertaConfirmacion());
+            try
+            {
+                VariablesGlobales.Mensaje = Mensaje;
+                await Application.Current.MainPage.Navigation.PushPopupAsync(new AlertaConfirmacion());
+                }
+            catch (Exception)
+            {
+
+            }
+           
 
             return "OK";
         }
