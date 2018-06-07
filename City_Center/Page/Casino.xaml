@@ -420,7 +420,7 @@
                                                                         Aspect="AspectFill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
-                                                                        Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
+                                                                        Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
                                                                        >
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
@@ -574,7 +574,7 @@
                                                                             Aspect="AspectFill"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
-                                                                            Source="{Binding tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
+                                                                            Source="{Binding tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
                                                                             Grid.Row="0" Grid.ColumnSpan="4"
                                                                             DownsampleToViewSize="true">
                                                   <ffimageloading:CachedImage.GestureRecognizers>

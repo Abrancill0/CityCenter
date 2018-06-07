@@ -109,31 +109,71 @@ namespace City_Center.Page
 
         async void HoraR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            var result = await UserDialogs.Instance.TimePromptAsync(new TimePromptConfig
+            
+            if (VariablesGlobales.HorarioPIU == true)
             {
-                IsCancellable = true
-            });
+                var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "12:30","20:30","21:00","23:00");
+             
+                if (result != "CANCELAR")
+                {
+                    HoraR1.Text = result.ToString();
 
-
-            if (result.Ok)
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+                else
+                {
+                    HoraR1.Text = "12:30";
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }  
+            }
+            else if (VariablesGlobales.HorarioLEGULA == true    )
             {
-                HoraR1.Text = Convert.ToString(result.SelectedTime);
-                HoraR1.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "21:00","23:00");
+             
+                if (result != "CANCELAR")
+                {
+                    HoraR1.Text = result.ToString();
+
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+                else
+                {
+                    HoraR1.Text = "21:00";
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }   
             }
             else
             {
-                HoraR1.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                var result = await UserDialogs.Instance.TimePromptAsync(new TimePromptConfig
+             {
+                 IsCancellable = true
+             });
+
+
+                if (result.Ok)
+                {
+                    HoraR1.Text = Convert.ToString(result.SelectedTime);
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+                else
+                {
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }   
             }
 
         }
         
         async void SillaNinos_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            var result = await UserDialogs.Instance.ActionSheetAsync("Sillas niños", "Cancel", null, null, "No", "Si");
+            var result = await UserDialogs.Instance.ActionSheetAsync("Sillas niños", "CANCELAR", null, null, "No", "Si");
 
-            if (result != "Cancel")
+            if (result != "CANCELAR")
             {
                 SillaNiño.Text = result.ToString();
 

@@ -91,7 +91,7 @@ namespace City_Center.ViewModels
                   gua_fecha_hora_modifico = l.gua_fecha_hora_modifico,
                   nombre = l.nombre,
                   descripcion = l.descripcion,
-                  imagen = "http://cc.comprogapp.com/" + l.imagen,
+                  imagen = "http://wpage.citycenter-rosario.com.ar/" + l.imagen,
                   imagen_2 = l.imagen_2,
                   link = l.link,
                   fecha = l.fecha,

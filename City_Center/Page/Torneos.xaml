@@ -49,7 +49,7 @@
                                                                         Aspect="AspectFill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
-                                                                        Source="{Binding tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
+                                                                        Source="{Binding tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
                                                                         Grid.Row="0"
                                                                         Grid.ColumnSpan="4">
                                                 <ffimageloading:CachedImage.GestureRecognizers>

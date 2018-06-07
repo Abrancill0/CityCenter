@@ -55,7 +55,7 @@ namespace City_Center.ViewModels
 
             Compartir.Text = this.tor_descripcion;
             Compartir.Title = this.tor_nombre;
-            Compartir.Url = "http://cc.comprogapp.com/es/casino/torneo-detail/"+ this.tor_id +"/" + this.tor_nombre;
+            Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/casino/torneo-detail/"+ this.tor_id +"/" + this.tor_nombre;
 
             await CrossShare.Current.Share(Compartir);
 

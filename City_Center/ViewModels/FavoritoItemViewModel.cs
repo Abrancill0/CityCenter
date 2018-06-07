@@ -12,6 +12,7 @@ using City_Center.Clases;
 using Plugin.Messaging;
 using City_Center.Page;
 using System.Linq;
+using City_Center.PopUp;
 
 namespace City_Center.ViewModels
 {
@@ -42,22 +43,22 @@ namespace City_Center.ViewModels
          
             if (this.gua_id_evento>0)
             {
-                Compartir.Url = "http://cc.comprogapp.com/es/es/show-detail/" + this.gua_id_evento + "/" + this.nombre;
+                Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/es/show-detail/" + this.gua_id_evento + "/" + this.nombre;
             }
 
             if (this.gua_id_promocion > 0)
             {
-                Compartir.Url = "http://cc.comprogapp.com/es/promocion-detail/" + this.gua_id_promocion + "/" + this.nombre;
+                Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/promocion-detail/" + this.gua_id_promocion + "/" + this.nombre;
             }
 
             if (this.gua_id_torneo > 0)
             {
-                Compartir.Url = "http://cc.comprogapp.com/es/casino/torneo-detail/" + this.gua_id_torneo + "/" + this.nombre;
+                Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/casino/torneo-detail/" + this.gua_id_torneo + "/" + this.nombre;
             }
 
             if (this.gua_id_destacado > 0)
             {
-                Compartir.Url = "http://cc.comprogapp.com/es/promocion-detail/" + this.gua_id_destacado + "/" + this.nombre;
+                Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/promocion-detail/" + this.gua_id_destacado + "/" + this.nombre;
             }
 
 
@@ -150,9 +151,14 @@ namespace City_Center.ViewModels
             }
         }
 
-        private void CompraOnline()
+        private async void CompraOnline()
         {
-            Device.OpenUri(new Uri(link));
+
+            //Device.OpenUri(new Uri(link));
+
+            VariablesGlobales.RutaTiendaGuardados = link;
+
+            await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda2());
 
         }
         

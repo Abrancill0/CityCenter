@@ -118,7 +118,7 @@ namespace City_Center.ViewModels
         {
             try
             {
-                var result = await Application.Current.MainPage.DisplayAlert("City Center Rosario", "¿ESTÁ SEGURO QUE DESEA SALIR DE LA APLICACACIÓN?", "OK", "Cancelar");
+                var result = await Application.Current.MainPage.DisplayAlert("City Center Rosario", "¿ESTÁ SEGURO QUE DESEA CERRAR SESIÓN?", "OK", "Cancelar");
 
                 string Mensajevalida = string.Format("Result {0}", result);
 
@@ -258,7 +258,7 @@ namespace City_Center.ViewModels
 
                     string fotoPerfil = Application.Current.Properties["FotoPerfil"].ToString();
 
-                    if (fotoPerfil == "http://cc.comprogapp.com/")
+                    if (fotoPerfil == "http://wpage.citycenter-rosario.com.ar/" || string.IsNullOrEmpty(fotoPerfil))
                     {
                         Imagen = "user";
                     }

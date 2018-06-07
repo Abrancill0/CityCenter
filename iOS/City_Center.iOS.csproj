@@ -487,6 +487,9 @@
     <BundleResource Include="Resources\image_loading.png" />
     <BundleResource Include="Resources\logowhite.png" />
     <BundleResource Include="Resources\ImageInstitucional.png" />
+    <BundleResource Include="Resources\CasinoChat.png" />
+    <BundleResource Include="Resources\HotelChat.png" />
+    <BundleResource Include="Resources\tiendamobile.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

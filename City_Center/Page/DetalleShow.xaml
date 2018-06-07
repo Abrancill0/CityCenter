@@ -15,7 +15,7 @@
                                             Aspect="AspectFill"
                                             LoadingPlaceholder="image_loading.png"
                                             ErrorPlaceholder="image_error.png"
-                                            Source="{Binding ds.eve_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" />
+                                            Source="{Binding ds.eve_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" />
             </StackLayout>
 
             <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="15">

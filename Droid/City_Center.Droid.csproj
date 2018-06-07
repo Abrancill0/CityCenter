@@ -362,6 +362,7 @@
     </Compile>
     <Compile Include="MainApplication.cs" />
     <Compile Include="AndroidForceKeyboardDismissalService.cs" />
+    <Compile Include="FirebaseService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -534,6 +535,7 @@
     <AndroidResource Include="Resources\drawable\splash.png" />
     <AndroidResource Include="Resources\drawable\CasinoChat.png" />
     <AndroidResource Include="Resources\drawable\HotelChat.png" />
+    <AndroidResource Include="Resources\drawable\tiendamobile.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />

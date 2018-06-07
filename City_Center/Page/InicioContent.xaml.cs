@@ -149,16 +149,17 @@ namespace City_Center.Page
        async private void Btn4_Clicked(object sender, System.EventArgs e)
         {
 
-            //SL1.IsVisible = false;
-            //SL2.IsVisible = false;
-            //SL3.IsVisible = false;
-            //SL4.IsVisible = true;
+            SL1.IsVisible = false;
+            SL2.IsVisible = false;
+            SL3.IsVisible = false;
+            SL4.IsVisible = true;
 
-            //reservarHotel.Source = "RESERVAHOTEL";
-            //tickets.Source = "TICKETSHOWS";
-            //reservarMesa.Source = "RESERVATUMESA";
-            //tienda.Source = "TIENDAONLINE_S";
-            await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda());
+            reservarHotel.Source = "RESERVAHOTEL";
+            tickets.Source = "TICKETSHOWS";
+            reservarMesa.Source = "RESERVATUMESA";
+            tienda.Source = "TIENDAONLINE_S";
+
+            //await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda());
         }
 
         void CambiaIcono(object sender, System.EventArgs e)
@@ -366,24 +367,82 @@ namespace City_Center.Page
 
 		async void HoraR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
-			var result = await UserDialogs.Instance.TimePromptAsync(new TimePromptConfig
+            if (Restaurante.Text == "PIU")
             {
-                 IsCancellable=true
-            });
-            
+                var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "12:30", "20:30", "21:00", "23:00");
 
-			if (result.Ok)
+                if (result != "CANCELAR")
+                {
+                    HoraR1.Text = result.ToString();
+
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+                else
+                {
+                    HoraR1.Text = "12:30";
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+            }
+            else if (Restaurante.Text == "LE GULA")
             {
-                string hora = Convert.ToString(result.SelectedTime);
-                HoraR1.Text = hora.Substring(0,5);
-				HoraR1.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "21:00", "23:00");
+
+                if (result != "CANCELAR")
+                {
+                    HoraR1.Text = result.ToString();
+
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+                else
+                {
+                    HoraR1.Text = "21:00";
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
             }
             else
             {
-				HoraR1.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                var result = await UserDialogs.Instance.TimePromptAsync(new TimePromptConfig
+                {
+                    IsCancellable = true
+                });
+
+
+                if (result.Ok)
+                {
+                    HoraR1.Text = Convert.ToString(result.SelectedTime);
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+                else
+                {
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
             }
+
+
+			//var result = await UserDialogs.Instance.TimePromptAsync(new TimePromptConfig
+   //         {
+   //              IsCancellable=true
+   //         });
+            
+
+			//if (result.Ok)
+    //        {
+    //            string hora = Convert.ToString(result.SelectedTime);
+    //            HoraR1.Text = hora.Substring(0,5);
+				//HoraR1.Unfocus();
+    //            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+    //        }
+    //        else
+    //        {
+				//HoraR1.Unfocus();
+            //    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            //}
             
 		}
 
@@ -394,12 +453,22 @@ namespace City_Center.Page
             if (result !="CANCELAR")
 			{
 				Restaurante.Text = result.ToString();
+                if (Restaurante.Text =="PIU")
+                {
+                    HoraR1.Text = "12:30";  
+                }
+                else if (Restaurante.Text == "LE GULA")
+                {
+                    HoraR1.Text = "21:00";  
+                }
+
 
 				Restaurante.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 			}
 			else
 			{
+                HoraR1.Text = "00:00";  
 				Restaurante.Unfocus();	
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 			}

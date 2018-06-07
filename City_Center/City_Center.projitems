@@ -187,6 +187,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopUp\WebViewTienda2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\HttpClientPostMethod.cs" />
@@ -425,6 +429,9 @@
       <DependentUpon>SeleccionTipoChat.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChatviewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PopUp\WebViewTienda2.xaml.cs">
+      <DependentUpon>WebViewTienda2.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

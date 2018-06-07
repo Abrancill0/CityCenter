@@ -606,15 +606,16 @@
                         <Button Margin="30,20,30,7" FontSize="14" TextColor="White" BackgroundColor="#250c4b" HeightRequest="40" Text="RESERVAR" Command="{Binding ReservarCommand}">&gt;
                            <Button.FontFamily><OnPlatform x:TypeArguments="x:String"><On Platform="iOS" Value="Oswald-Medium" /><On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" /></OnPlatform></Button.FontFamily></Button>
                     </StackLayout>
-                    <StackLayout x:Name="SL4" IsVisible="false">
-                        <!--<Button Margin="30,10,30,10" FontSize="14" TextColor="White" BackgroundColor="#250c4b" Clicked="Handle_Clicked_1" HeightRequest="40" Text="VER TIENDA">
-                            <Button.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String">
-                                    <On Platform="iOS" Value="Oswald-Medium" />
-                                    <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" />
-                                </OnPlatform>
-                            </Button.FontFamily>
-                        </Button>-->
+                    <StackLayout x:Name="SL4" IsVisible="false" Margin="10,-10,10,0" BackgroundColor="White">
+                     
+                           <ffimageloading:CachedImage 
+                                                       HeightRequest="500"
+                                                       HorizontalOptions="FillAndExpand"
+                                                       VerticalOptions="FillAndExpand"
+                                                       LoadingPlaceholder="image_loading.png"
+                                                       ErrorPlaceholder="image_error.png"
+                                                       Source="tiendamobile"/>
+                        <!--tiendamobile-->
                     </StackLayout>
                     <StackLayout Orientation="Vertical" 
                                  BackgroundColor="#FFFFFF"
@@ -686,7 +687,7 @@
                                                 <RowDefinition Height="Auto" />
                                                 <RowDefinition Height="0.5*" />
                                             </Grid.RowDefinitions>
-                                            <ffimageloading:CachedImage HeightRequest="150" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
+                                            <ffimageloading:CachedImage HeightRequest="150" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                 </ffimageloading:CachedImage.GestureRecognizers>
@@ -817,7 +818,7 @@
                                                                         Aspect="AspectFill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
-                                                                        Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
+                                                                        Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
                                                                         
                                                                        >
                                                 <ffimageloading:CachedImage.GestureRecognizers>

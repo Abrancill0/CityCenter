@@ -66,7 +66,7 @@ namespace City_Center.ViewModels
 
             Shared.Text = this.pd.pro_descripcion;
             Shared.Title = this.pd.pro_nombre;
-            Shared.Url = "http://cc.comprogapp.com/es/promocion-detail/" + this.pd.pro_id + "/" + this.pd.pro_nombre;
+            Shared.Url = "http://wpage.citycenter-rosario.com.ar/es/promocion-detail/" + this.pd.pro_id + "/" + this.pd.pro_nombre;
 
             await CrossShare.Current.Share(Shared);
 

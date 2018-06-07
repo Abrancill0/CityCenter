@@ -2,25 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="City_Center.Page.SeleccionTipoChat" BackgroundColor="#74648c">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Margin="35">
-            <Label Text="SELECCIONÁ EL SERVICIO A CLIENTE QUE NECESITÁS"
-                   FontSize="23"
-                   TextColor="White"
-                   HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center">
+            <Label Text="SELECCIONÁ EL SERVICIO A CLIENTE QUE NECESITÁS" FontSize="23" TextColor="White" HorizontalOptions="Center" HorizontalTextAlignment="Center">
                 <Label.FontFamily>
-                        <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Oswald-Regular" />
-                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                        </OnPlatform>
-                    </Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Oswald-Regular" />
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                    </OnPlatform>
+                </Label.FontFamily>
             </Label>
             <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="FillAndExpand" Margin="10,30,10,10">
-                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <Image HeightRequest="60"
-                           Aspect="AspectFit"
-                           Source="CasinoChat"
-                           Margin="-20,0,0,0"
-                           HorizontalOptions="End">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*" />
+                         <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                          <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image HeightRequest="80" Aspect="AspectFit"
+                           Source="CasinoChat" HorizontalOptions="End"
+                         Grid.Row="0" Grid.Column="0">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="ChatCasino" />
                         </Image.GestureRecognizers>
@@ -28,41 +31,43 @@
                     <Label Text="CASINO"
                            FontSize="Small"
                            TextColor="White"
-                           Margin="40,0,-20,0"
-                           HorizontalTextAlignment="Center"
-                           HorizontalOptions="Center"
-                           >
-                          <Label.FontFamily>
-                        <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Oswald-Regular" />
-                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                        </OnPlatform>
-                    </Label.FontFamily>
-                        </Label>
-                </StackLayout>
-                <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
-                    <Image HeightRequest="60"
-                           Aspect="AspectFit"
-                           Source="HotelChat"
-                           Margin="20,0,0,0"
-                           HorizontalOptions="Start">
+                           Grid.Row="1" Grid.Column="0"
+                           HorizontalTextAlignment="End"
+                           HorizontalOptions="End"
+                            Margin="0,0,20,0">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    
+                     <Image HeightRequest="90" Aspect="AspectFit" Source="HotelChat"
+                            Grid.Row="0" Grid.Column="1"
+                            HorizontalOptions="Start">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="ChatHotel" />
                         </Image.GestureRecognizers>
                     </Image>
                     <Label Text="HOTEL Y SPA"
                            FontSize="Small"
-                           TextColor="White"
-                           Margin="20,0,0,0"
-                           HorizontalOptions="Start">
-                          <Label.FontFamily>
-                        <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Oswald-Regular" />
-                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                        </OnPlatform>
-                    </Label.FontFamily>
-                        </Label>
-                </StackLayout>
+                           TextColor="White" 
+                           Grid.Row="1" Grid.Column="1"
+                           HorizontalOptions="Start"
+                           HorizontalTextAlignment="Start"
+                           Margin="15,0,0,0">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+
+                    
+                </Grid>
+               
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

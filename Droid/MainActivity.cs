@@ -16,6 +16,8 @@ using Plugin.CurrentActivity;
 using Plugin.Permissions;
 using ImageCircle.Forms.Plugin.Droid;
 //using FFImageLoading.Forms.Droid;
+using Android.Widget;
+using Android.Gms.Common;
 
 namespace City_Center.Droid
 {
@@ -37,11 +39,7 @@ namespace City_Center.Droid
 
 			ImageCircleRenderer.Init();
 
-			//CrossCurrentActivity.Current.Activity.Init(this, bundle);
-
             Forms.SetFlags("FastRenderers_Experimental");
-
-            //CachedImageRenderer.Init(true);
 
             FacebookSdk.SdkInitialize(this);
             Rg.Plugins.Popup.Popup.Init(this, bundle);
@@ -58,16 +56,36 @@ namespace City_Center.Droid
             FormsMaps.Init(this, bundle);
             LoadApplication(new App());
 
-            FirebasePushNotificationManager.ProcessIntent(this, Intent);
-            //Aqui hiba ImageCircle
-            //LoadApplication(new App(new AndroidInitializer()));
+            ////FirebasePushNotificationManager.ProcessIntent(this, Intent);
+            CheckForGoogleServices();
         }
 
-        protected override void OnNewIntent(Intent intent)
+        //protected override void OnNewIntent(Intent intent)
+        //{
+        //    base.OnNewIntent(intent);
+        //    FirebasePushNotificationManager.ProcessIntent(this, intent);
+        //}
+
+
+        public bool CheckForGoogleServices()
         {
-            base.OnNewIntent(intent);
-            FirebasePushNotificationManager.ProcessIntent(this, intent);
+            int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
+            if (resultCode != ConnectionResult.Success)
+            {
+                if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
+                {
+                    Toast.MakeText(this, GoogleApiAvailability.Instance.GetErrorString(resultCode), ToastLength.Long);
+                }
+                else
+                {
+                    Toast.MakeText(this, "This device does not support Google Play Services", ToastLength.Long);
+                }
+                return false;
+            }
+            return true;
         }
+
+
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Android.Content.Intent data)
         {

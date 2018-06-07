@@ -275,7 +275,7 @@ namespace City_Center.ViewModels
             Application.Current.Properties["NombreCompleto"]= Nombre ;
             Application.Current.Properties["Ciudad"] = Ciudad;
             Application.Current.Properties["Pass"] = Contraseña ;
-            Application.Current.Properties["Pass"] = Contraseña2;
+          //  Application.Current.Properties["Pass"] = Contraseña2;
             Application.Current.Properties["FechaNacimiento"] = Fecha;
 
 

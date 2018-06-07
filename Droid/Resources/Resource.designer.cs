@@ -5126,26 +5126,26 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f02005b
 			public const int avd_hide_password = 2130837595;
 			
-			// aapt resource value: 0x7f0201ea
-			public const int avd_hide_password_1 = 2130837994;
-			
 			// aapt resource value: 0x7f0201eb
-			public const int avd_hide_password_2 = 2130837995;
+			public const int avd_hide_password_1 = 2130837995;
 			
 			// aapt resource value: 0x7f0201ec
-			public const int avd_hide_password_3 = 2130837996;
+			public const int avd_hide_password_2 = 2130837996;
+			
+			// aapt resource value: 0x7f0201ed
+			public const int avd_hide_password_3 = 2130837997;
 			
 			// aapt resource value: 0x7f02005c
 			public const int avd_show_password = 2130837596;
 			
-			// aapt resource value: 0x7f0201ed
-			public const int avd_show_password_1 = 2130837997;
-			
 			// aapt resource value: 0x7f0201ee
-			public const int avd_show_password_2 = 2130837998;
+			public const int avd_show_password_1 = 2130837998;
 			
 			// aapt resource value: 0x7f0201ef
-			public const int avd_show_password_3 = 2130837999;
+			public const int avd_show_password_2 = 2130837999;
+			
+			// aapt resource value: 0x7f0201f0
+			public const int avd_show_password_3 = 2130838000;
 			
 			// aapt resource value: 0x7f02005d
 			public const int B = 2130837597;
@@ -6185,11 +6185,11 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0201b6
 			public const int notification_icon_background = 2130837942;
 			
-			// aapt resource value: 0x7f0201e8
-			public const int notification_template_icon_bg = 2130837992;
-			
 			// aapt resource value: 0x7f0201e9
-			public const int notification_template_icon_low_bg = 2130837993;
+			public const int notification_template_icon_bg = 2130837993;
+			
+			// aapt resource value: 0x7f0201ea
+			public const int notification_template_icon_low_bg = 2130837994;
 			
 			// aapt resource value: 0x7f0201b7
 			public const int notification_tile_bg = 2130837943;
@@ -6297,46 +6297,49 @@ namespace City_Center.Droid
 			public const int Tienda = 2130837977;
 			
 			// aapt resource value: 0x7f0201da
-			public const int TIENDAONLINE = 2130837978;
+			public const int tiendamobile = 2130837978;
 			
 			// aapt resource value: 0x7f0201db
-			public const int TIENDAONLINE_S = 2130837979;
+			public const int TIENDAONLINE = 2130837979;
 			
 			// aapt resource value: 0x7f0201dc
-			public const int tooltip_frame_dark = 2130837980;
+			public const int TIENDAONLINE_S = 2130837980;
 			
 			// aapt resource value: 0x7f0201dd
-			public const int tooltip_frame_light = 2130837981;
+			public const int tooltip_frame_dark = 2130837981;
 			
 			// aapt resource value: 0x7f0201de
-			public const int Up = 2130837982;
+			public const int tooltip_frame_light = 2130837982;
 			
 			// aapt resource value: 0x7f0201df
-			public const int user = 2130837983;
+			public const int Up = 2130837983;
 			
 			// aapt resource value: 0x7f0201e0
-			public const int ValetParking = 2130837984;
+			public const int user = 2130837984;
 			
 			// aapt resource value: 0x7f0201e1
-			public const int VariedadGastronomica = 2130837985;
+			public const int ValetParking = 2130837985;
 			
 			// aapt resource value: 0x7f0201e2
-			public const int VideoConferencia = 2130837986;
+			public const int VariedadGastronomica = 2130837986;
 			
 			// aapt resource value: 0x7f0201e3
-			public const int vip1 = 2130837987;
+			public const int VideoConferencia = 2130837987;
 			
 			// aapt resource value: 0x7f0201e4
-			public const int vip2 = 2130837988;
+			public const int vip1 = 2130837988;
 			
 			// aapt resource value: 0x7f0201e5
-			public const int warning = 2130837989;
+			public const int vip2 = 2130837989;
 			
 			// aapt resource value: 0x7f0201e6
-			public const int Wifi = 2130837990;
+			public const int warning = 2130837990;
 			
 			// aapt resource value: 0x7f0201e7
-			public const int WifiLibre = 2130837991;
+			public const int Wifi = 2130837991;
+			
+			// aapt resource value: 0x7f0201e8
+			public const int WifiLibre = 2130837992;
 			
 			static Drawable()
 			{

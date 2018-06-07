@@ -102,8 +102,8 @@ namespace City_Center.ViewModels
             }
 
             VariablesGlobales.Img1 = hd.hab_imagen;
-            VariablesGlobales.Img2 = "http://cc.comprogapp.com/" + hd.hab_imagen_1;
-            VariablesGlobales.Img3 = "http://cc.comprogapp.com/" + hd.hab_imagen_2;
+            VariablesGlobales.Img2 = "http://wpage.citycenter-rosario.com.ar/" + hd.hab_imagen_1;
+            VariablesGlobales.Img3 = "http://wpage.citycenter-rosario.com.ar/" + hd.hab_imagen_2;
           
         }
 

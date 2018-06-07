@@ -146,21 +146,21 @@ namespace City_Center.ViewModels
         {
             if (string.IsNullOrEmpty(this.Nombre))
             {
-                await Mensajes.Error("Nombre requerido");
+                await Mensajes.Alerta("Nombre requerido");
 
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Correo))
             {
-                await Mensajes.Error("Correo requerido");
+                await Mensajes.Alerta("Correo requerido");
 
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Telefono))
             {
-                await Mensajes.Error("Telefono requerido");
+                await Mensajes.Alerta("Telefono requerido");
 
                 return;
             }
@@ -189,24 +189,43 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error(response.Message);
+                await Mensajes.Alerta(response.Message);
             }
 
             await Mensajes.Alerta("La información ha sido enviada correctamente");
 
             //this.FechaInicio
             //this.HoraInicio 
-            this.NoPersonas = string.Empty;
+            this.NoPersonas = "1";
             this.NombreRestaurante = string.Empty;
-            this.SillaNiños = string.Empty;
+            this.SillaNiños = "No";
             this.Correo = string.Empty;
             this.Telefono = string.Empty;
-
+            this.Nombre=string.Empty;
 
             this.FechaInicio = "00/00/0000";
-            this.HoraInicio = "00:00";
 
 
+            if (rd.reb_nombre == "PIU")
+            {
+               
+                this.HoraInicio = "12:30";
+              
+            }
+            else if (rd.reb_nombre == "LE GULA")
+            {
+               
+                this.HoraInicio = "21:00";
+               
+            }
+            else
+            {
+               
+                this.HoraInicio = "00:00";
+              
+            }
+
+          
         }
 
 
@@ -254,15 +273,15 @@ namespace City_Center.ViewModels
 
             if (!connection.IsSuccess)
             {
-                await Mensajes.Error(connection.Message);
+                await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                 return;
             }
 
-            VariablesGlobales.Img1 = "http://cc.comprogapp.com/" + rd.reb_imagen_1;
-            VariablesGlobales.Img2 = "http://cc.comprogapp.com/" + rd.reb_imagen_2;
-            VariablesGlobales.Img3 = "http://cc.comprogapp.com/" + rd.reb_imagen_2;
-            VariablesGlobales.Img4 = "http://cc.comprogapp.com/" + rd.reb_imagen_3;
+            VariablesGlobales.Img1 = "http://wpage.citycenter-rosario.com.ar/" + rd.reb_imagen_1;
+            VariablesGlobales.Img2 = "http://wpage.citycenter-rosario.com.ar/" + rd.reb_imagen_2;
+            VariablesGlobales.Img3 = "http://wpage.citycenter-rosario.com.ar/" + rd.reb_imagen_2;
+            VariablesGlobales.Img4 = "http://wpage.citycenter-rosario.com.ar/" + rd.reb_imagen_3;
 
             var content = new FormUrlEncodedContent(new[]
             {
@@ -273,7 +292,7 @@ namespace City_Center.ViewModels
 
             if (!response.IsSuccess)
             {
-                await Mensajes.Error("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
 
                 return;
             }
@@ -406,20 +425,29 @@ namespace City_Center.ViewModels
             this.rd = rd;
 
             this.FechaInicio = "00/00/0000";
-			this.HoraInicio = "00:00";
+			
 			this.SillaNiños = "No";
 
             if (rd.reb_nombre=="PIU")
             {
                 RR = true;
+                this.HoraInicio = "12:30";
+                VariablesGlobales.HorarioPIU = true;
+                VariablesGlobales.HorarioLEGULA = false;
             }
             else if(rd.reb_nombre == "LE GULA")
             {
                 RR = true;
+                this.HoraInicio = "21:00";
+                VariablesGlobales.HorarioPIU = false;
+                VariablesGlobales.HorarioLEGULA = true;
             }
             else
             {
                 RR = false;
+                this.HoraInicio = "00:00";
+                VariablesGlobales.HorarioPIU = false;
+                VariablesGlobales.HorarioLEGULA = false;
             }
 				
             LoadDetalleRestaurante();

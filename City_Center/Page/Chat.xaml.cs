@@ -16,12 +16,12 @@ namespace City_Center.Page
 
             if (VariablesGlobales.TipoChat == "casino")
             {
-                WebViewChat1.Source = "http://cc.comprogapp.com/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatCasino"].ToString();
+                WebViewChat1.Source = "http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatCasino"].ToString();
                 Application.Current.Properties["VariableChatCasino"] = "";
             }
             else if (VariablesGlobales.TipoChat == "hotel")
             {
-                WebViewChat1.Source = "http://cc.comprogapp.com/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatHotel"].ToString();
+                WebViewChat1.Source = "http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatHotel"].ToString();
                 Application.Current.Properties["VariableChatHotel"] = "";
             }
 
@@ -44,9 +44,9 @@ namespace City_Center.Page
                    
                     Application.Current.Properties["VariableChatCasino"] = VariableChat;
 
-                    WebViewChat.Source = "http://cc.comprogapp.com/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + Application.Current.Properties["Casino"].ToString();   
+                    WebViewChat.Source = "http://wpage.citycenter-rosario.com.ar//chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + Application.Current.Properties["Casino"].ToString();   
 
-                    Application.Current.Properties["RutaChatCasino"]= "http://cc.comprogapp.com/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + "0";   
+                    Application.Current.Properties["RutaChatCasino"]= "http://wpage.citycenter-rosario.com.ar//chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + "0";   
 
                     Application.Current.Properties["Casino"] = "0";
                 }
@@ -65,9 +65,9 @@ namespace City_Center.Page
                    
                     Application.Current.Properties["VariableChatHotel"] = VariableChat;
 
-                    WebViewChat.Source = "http://cc.comprogapp.com/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + Application.Current.Properties["Hotel"].ToString();   
+                    WebViewChat.Source = "http://wpage.citycenter-rosario.com.ar//chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + Application.Current.Properties["Hotel"].ToString();   
                 
-                    Application.Current.Properties["RutaChatHotel"]= "http://cc.comprogapp.com/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + "0";   
+                    Application.Current.Properties["RutaChatHotel"]= "http://wpage.citycenter-rosario.com.ar//chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + "0";   
 
 
                     Application.Current.Properties["Hotel"] = "0";
@@ -87,7 +87,7 @@ namespace City_Center.Page
         {
             if (VariablesGlobales.TipoChat == "casino")
             {
-                WebViewChat1.Source = "http://cc.comprogapp.com/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatCasino"].ToString();
+                WebViewChat1.Source = "http://wpage.citycenter-rosario.com.ar//chat/terminar_chat_app/" + Application.Current.Properties["VariableChatCasino"].ToString();
 
                 Application.Current.Properties["RutaChatCasino"] = "";
                 //Application.Current.Properties["VariableChatCasino"] = "";
@@ -96,7 +96,7 @@ namespace City_Center.Page
             }
             else if (VariablesGlobales.TipoChat == "hotel")
             {
-                WebViewChat1.Source = "http://cc.comprogapp.com/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatHotel"].ToString();
+                WebViewChat1.Source = "http://wpage.citycenter-rosario.com.ar//chat/terminar_chat_app/" + Application.Current.Properties["VariableChatHotel"].ToString();
   
               
                 //Application.Current.Properties["VariableChatHotel"] = "";

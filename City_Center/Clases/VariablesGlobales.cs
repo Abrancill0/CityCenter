@@ -3,7 +3,7 @@ namespace City_Center.Clases
 {
     public class VariablesGlobales
     {
-        public static string RutaServidor = "http://cc.comprogapp.com/";
+        public static string RutaServidor = "http://wpage.citycenter-rosario.com.ar/"; //"http://cc.comprogapp.com/";
         public static string RutaImagene;
 
 		public static string IDUsuario;
@@ -33,12 +33,18 @@ namespace City_Center.Clases
         public static int IndiceHotelPromociones;
         public static int IndiceGastronomiaPromociones;
 
+
+        public static int IndiceHotelPromociones2;
+       
+
         public static int RegistrosTorneo;
         public static int RegistrosPromociones;
         public static int RegistrosCasinoTorneo;
         public static int RegistrosCasinoDestacados;
         public static int RegistrosCasinoPromociones;
         public static int RegistrosHotelPromociones;
+
+        public static int RegistrosHotelPromociones2;
         public static int RegistrosGastronomiaPromociones;
 
         //public static int IndicePromocionesHome;
@@ -46,5 +52,11 @@ namespace City_Center.Clases
         //public static int IndicePromocionesHome;
 
         public static string TipoChat;
+
+        public static string RutaTiendaGuardados;
+
+
+        public static bool HorarioPIU;
+        public static bool HorarioLEGULA;
     }
 }

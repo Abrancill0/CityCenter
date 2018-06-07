@@ -117,7 +117,7 @@
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
-                                                                                Source="{Binding reb_imagen_1,StringFormat='http://cc.comprogapp.com/{0}'}">
+                                                                                Source="{Binding reb_imagen_1,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
                                                         <ffimageloading:CachedImage.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding DetalleCommand}" />
                                                         </ffimageloading:CachedImage.GestureRecognizers>
@@ -194,7 +194,7 @@
                                                                         Aspect="AspectFill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
-                                                                        Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
+                                                                        Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
                                                                        >
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />

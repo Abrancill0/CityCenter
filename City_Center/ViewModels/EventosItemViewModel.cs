@@ -40,7 +40,7 @@ namespace City_Center.ViewModels
 
             Compartir.Text = this.eve_descripcion;
             Compartir.Title = this.eve_nombre;
-            Compartir.Url = "http://cc.comprogapp.com/es/show-detail/" + this.eve_id + "/" + this.eve_nombre;
+            Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/show-detail/" + this.eve_id + "/" + this.eve_nombre;
 
             await CrossShare.Current.Share(Compartir);
 

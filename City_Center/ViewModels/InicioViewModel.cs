@@ -16,7 +16,6 @@ using City_Center.Clases;
 using static City_Center.Models.TarjetaUsuarioResultado;
 using Acr.UserDialogs;
 using static City_Center.Models.PromocionesResultado;
-using Android.Views;
 
 namespace City_Center.ViewModels
 {
