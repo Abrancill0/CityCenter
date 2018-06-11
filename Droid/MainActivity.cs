@@ -18,6 +18,7 @@ using ImageCircle.Forms.Plugin.Droid;
 //using FFImageLoading.Forms.Droid;
 using Android.Widget;
 using Android.Gms.Common;
+using Firebase.Xamarin.Auth;
 
 namespace City_Center.Droid
 {
@@ -25,6 +26,8 @@ namespace City_Center.Droid
 
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        //FirebaseAuth mAuth = FirebaseAuth.getInstance(); 
+
         protected override void OnCreate(Bundle bundle)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -57,6 +60,9 @@ namespace City_Center.Droid
             LoadApplication(new App());
 
             ////FirebasePushNotificationManager.ProcessIntent(this, Intent);
+
+          
+
             CheckForGoogleServices();
         }
 

@@ -275,9 +275,6 @@
     <Reference Include="Xamarin.Android.Support.v7.MediaRouter">
       <HintPath>..\packages\Xamarin.Android.Support.v7.MediaRouter.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.CurrentActivity">
-      <HintPath>..\packages\Plugin.CurrentActivity.2.0.1.4\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Permissions.Abstractions">
       <HintPath>..\packages\Plugin.Permissions.2.2.1\lib\MonoAndroid10\Plugin.Permissions.Abstractions.dll</HintPath>
     </Reference>
@@ -349,6 +346,12 @@
     </Reference>
     <Reference Include="Naxam.CarouselView.Platform.Droid">
       <HintPath>..\packages\Naxam.CarouselView.0.0.1\lib\MonoAndroid10\Naxam.CarouselView.Platform.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.CurrentActivity">
+      <HintPath>..\packages\Plugin.CurrentActivity.2.1.0.2\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.DeviceInfo">
+      <HintPath>..\packages\Xam.Plugin.DeviceInfo.4.0.0.13\lib\monoandroid71\Plugin.DeviceInfo.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -536,6 +539,7 @@
     <AndroidResource Include="Resources\drawable\CasinoChat.png" />
     <AndroidResource Include="Resources\drawable\HotelChat.png" />
     <AndroidResource Include="Resources\drawable\tiendamobile.jpg" />
+    <AndroidResource Include="Resources\drawable\IconNotification.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
