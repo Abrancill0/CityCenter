@@ -20,6 +20,9 @@ namespace City_Center.Models
             public string hab_titulo_3 { get; set; }
             public string hab_descripcion_3 { get; set; }
             public string hab_imagen_3 { get; set; }
+            public string hab_imagen_4 { get; set; }
+            public string hab_imagen_5 { get; set; }
+            public string hab_imagen_6 { get; set; }
             public int hab_id_usuario_creo { get; set; }
             public string hab_fecha_hora_creo { get; set; }
             public int hab_id_usuario_modifico { get; set; }

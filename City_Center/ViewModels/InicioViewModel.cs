@@ -593,11 +593,11 @@ namespace City_Center.ViewModels
             this.LoadPromociones();
             this.LoadTorneo();
 
-			this.FechaInicio = "00/00/0000";
+            this.FechaInicio = String.Format("{0:dd/MM/yyyy}", DateTime.Today);// "00/00/0000";
 			this.HoraInicio = "00:00";
 
-            this.FechaShowInicio = "00/00/0000";
-            this.fechaShowFin = "00/00/0000";
+            this.FechaShowInicio = String.Format("{0:dd/MM/yyyy}", DateTime.Today);
+            this.fechaShowFin = String.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(1));
 			this.NombreRestaurante = "Seleccionar";
 			this.SillaNiños = "No";
             

@@ -32,6 +32,9 @@ namespace City_Center.Page
 
             _AlertaConfirmacion = new AlertaConfirmacion();
 
+            FechaInicio.Text= String.Format("{0:dd/MM/yyyy}", DateTime.Today);
+            FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(1));
+
         }
 
         protected override void OnDisappearing()

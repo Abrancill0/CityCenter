@@ -24,15 +24,9 @@ namespace City_Center.Page
 
             MainViewModel.GetInstance().Hotel = new HotelViewModel();
 
-            //var images = new List<String>
-            //{
-            //    "Hab_1",
-            //    "Hab_2",
-            //    "Hab_3",
-            //    "Hab_4",
-            //    "Hab_5",
-            //    "Hab_6"
-            //};
+            FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Today);
+            FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(1));
+
             _webHotel = new WebViewHotel();
             NavigationPage.SetTitleIcon(this, "logo.png");
             

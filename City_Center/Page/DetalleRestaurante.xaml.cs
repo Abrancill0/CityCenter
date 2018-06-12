@@ -16,6 +16,8 @@ namespace City_Center.Page
         {
             InitializeComponent();
             NavigationPage.SetTitleIcon(this, "logo.png");
+
+            FechaR1.Text=String.Format("{0:dd/MM/yyyy}", DateTime.Today);
         }
 
         protected override void OnAppearing()
@@ -25,6 +27,7 @@ namespace City_Center.Page
             ListaOpciones = new string[] { VariablesGlobales.Img1, VariablesGlobales.Img2, VariablesGlobales.Img3, VariablesGlobales.Img4 };
             
 			listaDetalleRestaurante.ItemsSource = ListaOpciones;
+
 
             
         }

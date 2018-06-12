@@ -31,10 +31,12 @@ namespace City_Center.Droid
 
        async void SendRegistrationToServer(string token)
         {
-            Restcliente Cliente = new Restcliente();
-
-            var content = new FormUrlEncodedContent(new[]
+            try
             {
+                Restcliente Cliente = new Restcliente();
+
+                var content = new FormUrlEncodedContent(new[]
+                {
                 new KeyValuePair<string, string>("neq_equipo", token),
                 new KeyValuePair<string, string>("neq_id_usuario", "0"),
                 new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
@@ -42,14 +44,21 @@ namespace City_Center.Droid
             });
 
 
-            var LoginReturn = await Cliente.Get<GuardadoGenerico>("/notificaciones/guardar_equipo", content);
+                var LoginReturn = await Cliente.Get<GuardadoGenerico>("/notificaciones/guardar_equipo", content);
 
-            if (LoginReturn != null)
-            {
-            //await Mensajes.success("OK");
+                if (LoginReturn != null)
+                {
+                    //await Mensajes.success("OK");
+                }
+                // Mensajes.Alerta(token);
+                // Mensajes.success(token);
             }
-           // Mensajes.Alerta(token);
-           // Mensajes.success(token);
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+            
         }
     }
 }

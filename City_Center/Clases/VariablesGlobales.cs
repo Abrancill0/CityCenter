@@ -12,6 +12,8 @@ namespace City_Center.Clases
         public static string Img2;
         public static string Img3;
         public static string Img4;
+        public static string Img5;
+        public static string Img6;
 
         public static DateTime FechaInicio;
         public static DateTime FechaFin;
