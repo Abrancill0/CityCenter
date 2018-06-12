@@ -24,8 +24,12 @@ namespace City_Center.Droid
                 var refreshedToken = FirebaseInstanceId.Instance.Token;
          
                 Log.Debug(TAG, "Refreshed token: " + refreshedToken);
-           
-                SendRegistrationToServer(refreshedToken);
+
+                App.Current.Properties["Token"] = refreshedToken;
+
+                 App.Current.SavePropertiesAsync();
+
+            SendRegistrationToServer(refreshedToken);
 
         }
 
@@ -56,7 +60,7 @@ namespace City_Center.Droid
             catch (System.Exception)
             {
 
-                throw;
+                
             }
             
         }

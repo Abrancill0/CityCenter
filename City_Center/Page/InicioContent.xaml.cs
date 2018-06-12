@@ -80,8 +80,6 @@ namespace City_Center.Page
 				string Mes2 = FechaFinal.Text.Substring(3, 2);
 				string Año2 = FechaFinal.Text.Substring(6, 4);
 
-
-
 				DateTime Fecha1 = Convert.ToDateTime(Año + "-" + Mes + "-" + Dia);
 				DateTime Fecha2 = Convert.ToDateTime(Año2 + "-" + Mes2 + "-" + Dia2);
 
@@ -370,7 +368,7 @@ namespace City_Center.Page
 
 		async void HoraR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
-            if (Restaurante.Text == "PIU")
+            if (Restaurante.Text.Contains("PIÚ"))
             {
                 var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "12:30", "20:30", "21:00", "23:00");
 
@@ -388,7 +386,7 @@ namespace City_Center.Page
                     DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
                 }
             }
-            else if (Restaurante.Text == "LE GULA")
+            else if (Restaurante.Text.Contains("LE GULÁ"))
             {
                 var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "21:00", "23:00");
 
@@ -451,20 +449,19 @@ namespace City_Center.Page
 
         async void Restaurant_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
-            var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "CANCELAR", null, null, "LE GULA", "PIU");
+            var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "CANCELAR", null, null, "LE GULÁ", "PIÚ! EXPRESS");
             
             if (result !="CANCELAR")
 			{
 				Restaurante.Text = result.ToString();
-                if (Restaurante.Text =="PIU")
+                if (Restaurante.Text.Contains("PIÚ"))
                 {
                     HoraR1.Text = "12:30";  
                 }
-                else if (Restaurante.Text == "LE GULA")
+                else if (Restaurante.Text.Contains("LE GULÁ"))
                 {
                     HoraR1.Text = "21:00";  
                 }
-
 
 				Restaurante.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();

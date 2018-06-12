@@ -19,6 +19,7 @@ using Acr.UserDialogs;
 using static City_Center.Models.ValidaUsuarioResultado;
 using City_Center.Database;
 using Rg.Plugins.Popup.Extensions;
+using Plugin.DeviceInfo;
 
 namespace City_Center.ViewModels
 {
@@ -154,6 +155,35 @@ namespace City_Center.ViewModels
 
                         await Application.Current.SavePropertiesAsync();
 
+
+                        //try
+                        //{
+                        //    Restcliente Cliente = new Restcliente();
+
+                        //    var contentenido = new FormUrlEncodedContent(new[]
+                        //    {
+                        //        new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
+                        //        new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(list.resultado.usu_id)),
+                        //        new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
+                        //        new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
+                        //    });
+
+
+                        //    var LoginReturn = await Cliente.Get<GuardadoGenerico>("/notificaciones/guardar_equipo", contentenido);
+
+                        //    if (LoginReturn != null)
+                        //    {
+                        //        //await Mensajes.success("OK");
+                        //    }
+                        //    // Mensajes.Alerta(token);
+                        //    // Mensajes.success(token);
+                        //}
+                        //catch (System.Exception)
+                        //{
+
+
+                        //}
+                        
                         this.Email = string.Empty;
                         this.Password = string.Empty;
 

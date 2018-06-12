@@ -206,13 +206,13 @@ namespace City_Center.ViewModels
             this.FechaInicio = "00/00/0000";
 
 
-            if (rd.reb_nombre == "PIU")
+            if (rd.reb_nombre == "PIÚ")
             {
                
                 this.HoraInicio = "12:30";
               
             }
-            else if (rd.reb_nombre == "LE GULA")
+            else if (rd.reb_nombre == "LE GULÁ")
             {
                
                 this.HoraInicio = "21:00";
@@ -428,14 +428,14 @@ namespace City_Center.ViewModels
 			
 			this.SillaNiños = "No";
 
-            if (rd.reb_nombre=="PIU")
+            if (rd.reb_nombre.Contains("PIÚ"))
             {
                 RR = true;
                 this.HoraInicio = "12:30";
                 VariablesGlobales.HorarioPIU = true;
                 VariablesGlobales.HorarioLEGULA = false;
             }
-            else if(rd.reb_nombre == "LE GULA")
+            else if(rd.reb_nombre.Contains("LE GULÁ"))
             {
                 RR = true;
                 this.HoraInicio = "21:00";

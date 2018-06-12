@@ -27,9 +27,7 @@ namespace City_Center.Page
             ListaOpciones = new string[] { VariablesGlobales.Img1, VariablesGlobales.Img2, VariablesGlobales.Img3, VariablesGlobales.Img4 };
             
 			listaDetalleRestaurante.ItemsSource = ListaOpciones;
-
-
-            
+ 
         }
 
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
@@ -131,7 +129,7 @@ namespace City_Center.Page
                     DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
                 }  
             }
-            else if (VariablesGlobales.HorarioLEGULA == true    )
+            else if (VariablesGlobales.HorarioLEGULA == true )
             {
                 var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "21:00","23:00");
              

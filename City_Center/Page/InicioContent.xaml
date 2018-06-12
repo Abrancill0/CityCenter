@@ -435,7 +435,12 @@
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
                                     <StackLayout>
-                                        <Label Text="Restaurantes" TextColor="Gray" Margin="8,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" FontSize="Medium">
+                                        <Label Text="Restaurantes"
+                                               TextColor="Gray"
+                                               Margin="8,5,0,0"
+                                               HorizontalOptions="Start"
+                                               HorizontalTextAlignment="Start"
+                                               FontSize="Medium">
                                             <Label.FontFamily>
                                                 <OnPlatform x:TypeArguments="x:String">
                                                     <On Platform="iOS" Value="Oswald-Regular" />
@@ -445,7 +450,13 @@
                                         </Label>
                                         <Grid Padding="5, 0">
                                             <!-- <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  -->
-                                            <xfx:XfxEntry x:Name="Restaurante" Text="{Binding NombreRestaurante,Mode=TwoWay}" Margin="2,-20,5,-5" PlaceholderColor="Transparent" Keyboard="Text" HorizontalOptions="Start" HorizontalTextAlignment="Start" Focused="Restaurant_Focused">
+                                            <xfx:XfxEntry x:Name="Restaurante"
+                                                          Text="{Binding NombreRestaurante,Mode=TwoWay}"
+                                                          Margin="2,-20,5,-5"
+                                                          PlaceholderColor="Transparent"
+                                                          Keyboard="Text"
+                                                          HorizontalOptions="Start" 
+                                                          HorizontalTextAlignment="Start" Focused="Restaurant_Focused" WidthRequest="200">
                                                 <Entry.HeightRequest>
                                                     <OnPlatform x:TypeArguments="x:Double">
                                                         <On Platform="iOS">60</On>
