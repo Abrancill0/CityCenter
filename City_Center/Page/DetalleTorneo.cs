@@ -98,8 +98,6 @@ namespace City_Center.Page
             }
         }
     
-
-
         async void Fecha_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
@@ -149,7 +147,11 @@ namespace City_Center.Page
 
             if (isLoggedIn)
             {
+
+                #if __ANDROID__
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
+                #endif
+
             }
             else
             {

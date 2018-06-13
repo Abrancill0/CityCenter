@@ -287,7 +287,11 @@
                                     </flv:FlowListView.FlowColumnTemplate>
                                 </flv:FlowListView>
                             </StackLayout>
-                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="White" Padding="0,10,0,0">
+                            <StackLayout HorizontalOptions="FillAndExpand"
+                                         Spacing="0"
+                                         BackgroundColor="White"
+                                         Padding="0,10,0,0"
+                                         IsVisible="{Binding MuestraFlechasPromo}">
                                 <Label Margin="20,5,0,5" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
@@ -519,7 +523,11 @@
                                 </Label.FontFamily>
                             </Label>
                         </StackLayout>
-                        <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" BackgroundColor="White" Padding="0,0,0,10">
+                        <StackLayout HorizontalOptions="FillAndExpand"
+                                     Spacing="0"
+                                     BackgroundColor="White"
+                                     Padding="0,0,0,10"
+                                     IsVisible="{Binding MuestraFlechasPromo}">
                             <Label Margin="20,5,0,-3" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
@@ -528,8 +536,7 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                                 </Label>
-
-                                <cv:CarouselViewControl x:Name="CarruselPromociones2" 
+                            <cv:CarouselViewControl x:Name="CarruselPromociones2" 
                                                     ItemsSource="{Binding PromocionesDetalle}"
                                                     HeightRequest="300"
                                                     HorizontalOptions="FillAndExpand"

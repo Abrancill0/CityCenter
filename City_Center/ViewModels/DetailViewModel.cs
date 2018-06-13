@@ -6,10 +6,12 @@ using System.Net.Http;
 using System.Windows.Input;
 using Acr.UserDialogs;
 using City_Center.Clases;
+using City_Center.Models;
 using City_Center.Page;
 using City_Center.Services;
 using City_Center.Services.Contracts;
 using GalaSoft.MvvmLight.Command;
+using Plugin.DeviceInfo;
 using Xamarin.Forms;
 using static City_Center.Models.TarjetaUsuarioResultado;
 
@@ -150,6 +152,36 @@ namespace City_Center.ViewModels
 
                     _googleManager = DependencyService.Get<IGoogleManager>();
                     _googleManager.Logout();
+
+
+
+                    try
+                    {
+                        var Contenido = new FormUrlEncodedContent(new[]
+                      {
+
+                            new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
+                            new KeyValuePair<string, string>("neq_id_usuario", "0"),
+                            new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
+                            new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
+                        });
+
+
+                        var response2 = await this.apiService.Get<GuardadoGenerico>("/notificaciones", "/guardar_equipo", Contenido);
+
+                        if (!response2.IsSuccess)
+                        {
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+
+
+
                   
                     MasterPage fpm = new MasterPage();
                     //fpm.Master = new DetailPage(); // You have to create a Master ContentPage()

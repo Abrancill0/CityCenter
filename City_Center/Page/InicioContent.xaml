@@ -103,7 +103,7 @@
                 </Grid>
             </StackLayout>
             <ScrollView>
-                <StackLayout>
+                <StackLayout BackgroundColor="#EFEFEF">
                     <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" Margin="5,18,5,5">
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
@@ -781,7 +781,10 @@
                                 </cv:CarouselViewControl.ItemTemplate>
                             </cv:CarouselViewControl>
                         </Frame>
-                        <StackLayout  HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,30,0,0">
+                        <StackLayout HorizontalOptions="FillAndExpand"
+                                     Spacing="0"
+                                     Margin="0,30,0,0"
+                                     IsVisible="{Binding MuestraFlechasPromo}">
                             <Label Margin="20,3,0,0"
                                    
                                    HorizontalOptions="Start"

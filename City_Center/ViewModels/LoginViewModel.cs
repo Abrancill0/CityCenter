@@ -168,12 +168,10 @@ namespace City_Center.ViewModels
 
                         var response2 = await this.apiService.Get<GuardadoGenerico>("/notificaciones", "/guardar_equipo", Contenido);
 
-                        if (!response.IsSuccess)
+                        if (!response2.IsSuccess)
                         {
 
                         }
-
-
 
 
                             //try
@@ -381,6 +379,33 @@ namespace City_Center.ViewModels
 
                     await Application.Current.SavePropertiesAsync();
 
+                    try
+                    {
+                        var Contenido = new FormUrlEncodedContent(new[]
+                       {
+
+                            new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
+                            new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(IDUsuario)),
+                            new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
+                            new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
+                        });
+
+
+                        var response2 = await this.apiService.Get<GuardadoGenerico>("/notificaciones", "/guardar_equipo", Contenido);
+
+                        if (!response2.IsSuccess)
+                        {
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                   
+
+
+
                    // MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
@@ -499,6 +524,24 @@ namespace City_Center.ViewModels
 
 
                     await Application.Current.SavePropertiesAsync();
+
+
+                    var Contenido = new FormUrlEncodedContent(new[]
+                        {
+
+                            new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
+                            new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(IDUsuario)),
+                            new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
+                            new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
+                        });
+
+
+                    var response2 = await this.apiService.Get<GuardadoGenerico>("/notificaciones", "/guardar_equipo", Contenido);
+
+                    if (!response2.IsSuccess)
+                    {
+
+                    }
 
                    // MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();

@@ -12,7 +12,9 @@
                        WidthRequest="140"
                        Margin="20,10,0,-10"
                       ></Image>
-                <ListView x:Name="listviewMenu" ItemsSource="{Binding ListaOpciones}" ItemSelected="Handle_ItemSelected" BackgroundColor="#250c4b" SeparatorVisibility="Default" HasUnevenRows="True" RowHeight="55">
+                <ListView x:Name="listviewMenu" ItemsSource="{Binding ListaOpciones}"
+                          ItemSelected="Handle_ItemSelected"
+                          BackgroundColor="#250c4b" SeparatorVisibility="None" HasUnevenRows="True" RowHeight="55">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -174,18 +176,18 @@
         <!-- <local:DetailPage></local:DetailPage>-->
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage x:Name="Pruebita">
+        <NavigationPage x:Name="Pruebita" Icon="logo_hdpi">
            <!-- <NavigationPage.ToolbarItems >
                  <ToolbarItem Icon="Chat" Clicked="Chat_click" x:Name="Toolbar" />
             </NavigationPage.ToolbarItems>
 -->
             <x:Arguments>
                 
-             <ContentPage>
+             <ContentPage Icon="logo_hdpi">
 
              <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat" Clicked="Chat_click"/>
-    </ContentPage.ToolbarItems>
+                <ToolbarItem Icon="Chat" Clicked="Chat_click"/>
+            </ContentPage.ToolbarItems>
                     
                 <Grid CompressedLayout.IsHeadless="true">
                     <Grid.RowDefinitions>

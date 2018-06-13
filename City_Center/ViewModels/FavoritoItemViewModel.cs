@@ -16,7 +16,7 @@ using City_Center.PopUp;
 
 namespace City_Center.ViewModels
 {
-    public class FavoritoItemViewModel:FavoritoDetalle
+    public class FavoritoItemViewModel : FavoritoDetalle
     {
 
         #region Services
@@ -40,8 +40,8 @@ namespace City_Center.ViewModels
 
             Compartir.Text = this.descripcion;
             Compartir.Title = this.nombre;
-         
-            if (this.gua_id_evento>0)
+
+            if (this.gua_id_evento > 0)
             {
                 Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/es/show-detail/" + this.gua_id_evento + "/" + this.nombre;
             }
@@ -66,7 +66,7 @@ namespace City_Center.ViewModels
 
         }
 
-       
+
         public ICommand EliminaFavoritosCommand
         {
             get
@@ -88,7 +88,7 @@ namespace City_Center.ViewModels
                     var content = new FormUrlEncodedContent(new[]
                     {
                         new KeyValuePair<string, string>("gua_id",Convert.ToString(this.gua_id)),
-                    
+
                     });
 
                     var response = await this.apiService.Get<GuardadoGenerico>("/guardados", "/destroy", content);
@@ -108,7 +108,7 @@ namespace City_Center.ViewModels
 
                     //actualiza.Remove(Item);
 
-                 
+
                     await Mensajes.Alerta("Eliminado con éxito");
 
                 }
@@ -122,8 +122,8 @@ namespace City_Center.ViewModels
                 await Mensajes.Info("Es necesario que te registres para completar esta acción");
             }
         }
-      
-        
+
+
         public ICommand LlamarCommand
         {
             get
@@ -138,7 +138,7 @@ namespace City_Center.ViewModels
 
             if (phoneCallTask.CanMakePhoneCall)
             {
-                phoneCallTask.MakePhoneCall("12345678", nombre);
+                phoneCallTask.MakePhoneCall(this.telefono, this.nombre);
             }
 
         }
@@ -157,9 +157,9 @@ namespace City_Center.ViewModels
             //Device.OpenUri(new Uri(link));
 
             VariablesGlobales.RutaTiendaGuardados = link;
-
+            #if __ANDROID__
             await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda2());
-
+            #endif
         }
         
         
@@ -180,7 +180,7 @@ namespace City_Center.ViewModels
             
         }
 
-        #endregion
+#endregion
 
 
         #region Contructors

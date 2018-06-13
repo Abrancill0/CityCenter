@@ -257,7 +257,10 @@ namespace City_Center.ViewModels
 
 
         // await  Application.Current.MainPage.Navigation.PushAsync(new WebViewCompraOnline());
+           
+            #if __ANDROID__
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewCompraOnline());
+            #endif
             //Device.OpenUri(new Uri(ds.eve_link));
 
         }

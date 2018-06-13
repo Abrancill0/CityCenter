@@ -18,6 +18,7 @@ using static City_Center.Models.ImagenResultado;
 using static City_Center.Models.ValidaUsuarioResultado;
 using City_Center.Database;
 using Org.BouncyCastle.Crypto.Tls;
+using Plugin.DeviceInfo;
 
 namespace City_Center.ViewModels
 {
@@ -264,6 +265,30 @@ namespace City_Center.ViewModels
 
             listRegistro = (RegistroReturn)response.Result;
 
+            try
+            {
+                var Contenido = new FormUrlEncodedContent(new[]
+                     {
+                            new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
+                            new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(listRegistro.resultado.usu_id)),
+                            new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
+                            new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
+                        });
+
+
+                var response2 = await this.apiService.Get<GuardadoGenerico>("/notificaciones", "/guardar_equipo", Contenido);
+
+                if (!response2.IsSuccess)
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+          
+
             string RutaImagen;
 
             if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
@@ -399,6 +424,23 @@ namespace City_Center.ViewModels
 
                     await Application.Current.SavePropertiesAsync();
 
+
+                    var Contenido = new FormUrlEncodedContent(new[]
+                       {
+                            new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
+                        new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(IDUsuario)),
+                            new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
+                            new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
+                        });
+
+
+                    var response2 = await this.apiService.Get<GuardadoGenerico>("/notificaciones", "/guardar_equipo", Contenido);
+
+                    if (!response2.IsSuccess)
+                    {
+
+                    }
+
                    // MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
@@ -515,6 +557,22 @@ namespace City_Center.ViewModels
                     Application.Current.Properties["Hotel"] = 1;
 
                     await Application.Current.SavePropertiesAsync();
+
+                    var Contenido = new FormUrlEncodedContent(new[]
+                      {
+                            new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
+                        new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(IDUsuario)),
+                            new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
+                            new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
+                        });
+
+
+                    var response2 = await this.apiService.Get<GuardadoGenerico>("/notificaciones", "/guardar_equipo", Contenido);
+
+                    if (!response2.IsSuccess)
+                    {
+
+                    }
 
                     //MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();

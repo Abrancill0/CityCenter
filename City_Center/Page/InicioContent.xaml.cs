@@ -95,7 +95,9 @@ namespace City_Center.Page
                     VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
                     //await Navigation.PushPopupAsync(_webHotel);
+                    #if __ANDROID__
                     await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(_webHotel);
+                    #endif
                 }
             }
             catch (Exception )

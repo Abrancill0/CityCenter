@@ -377,7 +377,10 @@
                                     </flv:FlowListView.FlowColumnTemplate>
                                 </flv:FlowListView>
                             </StackLayout>
-                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,30,0,0">
+                            <StackLayout HorizontalOptions="FillAndExpand"
+                                         Spacing="0"
+                                         Margin="0,30,0,0"
+                                         IsVisible="{Binding MuestraFlechasPromo}">
                                  <Label Margin="20,3,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
                                          <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
@@ -386,7 +389,7 @@
                                 </OnPlatform>
                             </Label.FontFamily>
                                         </Label>  
-                                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                 <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.OutlineColor>
                                 <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
                             </Frame.OutlineColor>

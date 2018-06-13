@@ -161,7 +161,8 @@
                         <StackLayout HorizontalOptions="FillAndExpand"
                                      VerticalOptions="EndAndExpand"
                                      Padding="0,15,0,0"
-                                     Spacing="0">
+                                     Spacing="0"
+                                     IsVisible="{Binding MuestraFlechasPromo}">
                                 <Label Margin="20,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
                                          <Label.FontFamily>
                                                 <OnPlatform x:TypeArguments="x:String">

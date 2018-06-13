@@ -18,7 +18,7 @@ namespace City_Center.Page.SlideMenu
         {
             InitializeComponent();
 
-            NavigationPage.SetTitleIcon(this, "logowhite.png");
+            NavigationPage.SetTitleIcon(this, "logo_hdpi");
         }
 
         protected override void OnAppearing()
@@ -240,7 +240,9 @@ namespace City_Center.Page.SlideMenu
 
             if (isLoggedIn)
             {
+                #if __ANDROID__
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
+#endif
             }
             else
             {

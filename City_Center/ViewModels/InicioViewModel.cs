@@ -500,7 +500,6 @@ namespace City_Center.ViewModels
 
         }
 
-
         private async void LoadPromociones()
         {
             try
@@ -534,10 +533,11 @@ namespace City_Center.ViewModels
                 PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
 
 
-                if (PromocionesDetalle.Count > 0)
+                if (PromocionesDetalle.Count > 2)
                 {
                     MuestraFlechasPromo = true;
                     VariablesGlobales.RegistrosPromociones = PromocionesDetalle.Count - 2;
+
                 }
                 else
                 {

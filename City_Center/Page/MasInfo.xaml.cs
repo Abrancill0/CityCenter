@@ -236,7 +236,9 @@ namespace City_Center.Page
 
             if (isLoggedIn)
             {
+                #if __ANDROID__
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
+#endif
             }
             else
             {

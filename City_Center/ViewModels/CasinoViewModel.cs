@@ -476,6 +476,7 @@ namespace City_Center.ViewModels
                         break;
                 }
             
+                TamanoPozos = TamanoPozos + 20;
 
 			}
 			catch (Exception)
@@ -849,7 +850,7 @@ namespace City_Center.ViewModels
 				PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
 			
             
-                if (PromocionesDetalle.Count > 0)
+                if (PromocionesDetalle.Count > 2)
                 {
                     MuestraFlechasPromo = true;
 

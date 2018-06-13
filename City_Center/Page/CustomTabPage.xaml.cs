@@ -152,9 +152,8 @@ namespace City_Center.Page
         
         public CustomTabPage()
         {
-            
-                InitializeComponent();
-            NavigationPage.SetTitleIcon(this, "logowhite.png");
+            InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "logo_hdpi");
 
             MainView.Content = page1.Content;
             MainView2.Content = page2.Content;

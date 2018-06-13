@@ -90,7 +90,10 @@ namespace City_Center.Page
                     VariablesGlobales.FechaFin = Fecha2.Date;
                     VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
+                    #if __ANDROID__
                     await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(_webHotel);
+#endif
+
 
                     //await Navigation.PushPopupAsync(_webHotel);
                 }
