@@ -27,9 +27,9 @@ namespace City_Center.Droid
 
                 App.Current.Properties["Token"] = refreshedToken;
 
-                 App.Current.SavePropertiesAsync();
+                App.Current.SavePropertiesAsync();
 
-            SendRegistrationToServer(refreshedToken);
+                SendRegistrationToServer(refreshedToken);
 
         }
 
@@ -54,8 +54,7 @@ namespace City_Center.Droid
                 {
                     //await Mensajes.success("OK");
                 }
-                // Mensajes.Alerta(token);
-                // Mensajes.success(token);
+              
             }
             catch (System.Exception)
             {

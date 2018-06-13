@@ -37,7 +37,7 @@ namespace City_Center.ViewModels
 
             if (!connection.IsSuccess)
             {
-                await Mensajes.Error("Verificá tu conexión a Internet");
+                await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                 return;
             }

@@ -34,7 +34,7 @@ namespace City_Center.Clases
                 }
                 catch (Exception ex)
                 {
-				    await Mensajes.Info("No se pudo acceder a la ubicacion");
+				    await Mensajes.Alerta("No se pudo acceder a la ubicacion");
                 }
 
                 if (position == null)

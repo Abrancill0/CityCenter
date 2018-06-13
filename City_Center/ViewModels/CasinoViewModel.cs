@@ -400,7 +400,7 @@ namespace City_Center.ViewModels
 
 				if (!connection.IsSuccess)
 				{
-                    await Mensajes.Error("Verificá tu conexión a Internet");
+                    await Mensajes.Alerta("Verificá tu conexión a Internet");
 
 					return;
 				}
@@ -506,7 +506,7 @@ namespace City_Center.ViewModels
 				if (!connection.IsSuccess)
 				{
 
-                    await Mensajes.Error("Verificá tu conexión a Internet");
+                    await Mensajes.Alerta("Verificá tu conexión a Internet");
 
 					return;
 				}
@@ -568,7 +568,7 @@ namespace City_Center.ViewModels
 
 				if (!connection.IsSuccess)
 				{
-                    await Mensajes.Error("Verificá tu conexión a Internet");
+                    await Mensajes.Alerta("Verificá tu conexión a Internet");
 
 					return;
 				}
@@ -679,7 +679,7 @@ namespace City_Center.ViewModels
 
 				if (!connection.IsSuccess)
 				{
-                    await Mensajes.Error("Verificá tu conexión a Internet");
+                    await Mensajes.Alerta("Verificá tu conexión a Internet");
 
 					return;
 				}
@@ -823,7 +823,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Error("Verificá tu conexión a Internet");
+                    await Mensajes.Alerta("Verificá tu conexión a Internet");
 
                     return;
                 }

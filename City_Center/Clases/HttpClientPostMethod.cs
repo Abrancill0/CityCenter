@@ -18,7 +18,7 @@ namespace City_Center.Clases
 
             try
             {
-                client.BaseAddress = new Uri("http://cc.comprogapp.com");
+                client.BaseAddress = new Uri("http://wpage.citycenter-rosario.com.ar");
                 // client.Timeout = TimeSpan.FromSeconds(7);
                 //http://wpage.citycenter-rosario.com.ar
                 HttpResponseMessage response = await client.PostAsync(string.Format(Url), Content);

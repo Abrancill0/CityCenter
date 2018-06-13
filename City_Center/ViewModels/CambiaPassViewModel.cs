@@ -71,7 +71,7 @@ namespace City_Center.ViewModels
 
             if (!connection.IsSuccess)
             {
-                await Mensajes.Error(connection.Message);
+                await Mensajes.Alerta(connection.Message);
 
                 return;
             }

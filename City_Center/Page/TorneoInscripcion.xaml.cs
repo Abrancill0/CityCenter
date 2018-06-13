@@ -26,44 +26,44 @@ namespace City_Center.Page
 		{
 			if (string.IsNullOrEmpty(Nombre.Text))
             {
-                await Mensajes.Info("Nombre Requerido");
+                await Mensajes.Alerta("Nombre Requerido");
                 return;
             }
 
 			if (string.IsNullOrEmpty(Correo.Text))
             {
-                await Mensajes.Info("Correo Requerido");
+                await Mensajes.Alerta("Correo Requerido");
                 return;
             }
 
 			if (string.IsNullOrEmpty(NumeroDocumento.Text))
             {
-                await Mensajes.Info("Numero de documento Requerido");
+                await Mensajes.Alerta("Numero de documento Requerido");
                 return;
             }
 
 			if (string.IsNullOrEmpty(Nacionalidad.Text))
             {
-                await Mensajes.Info("Nacionalidad Requerido");
+                await Mensajes.Alerta("Nacionalidad Requerido");
                 return;
             }
 
 			if (string.IsNullOrEmpty(Provincia.Text))
             {
-                await Mensajes.Info("Provincia Requerido");
+                await Mensajes.Alerta("Provincia Requerido");
                 return;
             }
 
                     
 			if (string.IsNullOrEmpty(Pais.Text))
             {
-                await Mensajes.Info("Pais Requerido");
+                await Mensajes.Alerta("Pais Requerido");
                 return;
             }
 
 			if (string.IsNullOrEmpty(Ciudad.Text))
             {
-                await Mensajes.Info("Ciudad Requerido");
+                await Mensajes.Alerta("Ciudad Requerido");
                 return;
             }
 
@@ -89,11 +89,11 @@ namespace City_Center.Page
          
             if (response.estatus == 0 )
             {
-                await Mensajes.Error("Error al enviar el correo");
+                await Mensajes.Alerta("Error al enviar el correo");
                 return;
             }
 
-            await Mensajes.success("Correo enviado exitosamente");
+            await Mensajes.Alerta("Correo enviado exitosamente");
 
 
 			Correo.Text = string.Empty;

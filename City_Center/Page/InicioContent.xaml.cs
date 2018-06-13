@@ -59,13 +59,13 @@ namespace City_Center.Page
                
 				if (FechaInicio.Text == "00/00/0000")
                 {
-					await Mensajes.Info("Fecha inicial requerida.");
+					await Mensajes.Alerta("Fecha inicial requerida.");
 					return;
                 }
 
 				if (FechaFinal.Text == "00/00/0000")
 				{
-					await Mensajes.Info("Fecha inicial requerida.");
+					await Mensajes.Alerta("Fecha inicial requerida.");
 					return;
 				}
 
@@ -85,7 +85,7 @@ namespace City_Center.Page
 
 				if (Fecha2.Date < Fecha1.Date)
                 {
-                    await Mensajes.Info("La fecha final no puede ser menor a la fecha inicial");
+                    await Mensajes.Alerta("La fecha final no puede ser menor a la fecha inicial");
                 }
                 else
                 {
@@ -101,7 +101,7 @@ namespace City_Center.Page
             catch (Exception )
             {
 				//await DisplayAlert("oj", ex.ToString(), "ok");
-				await Mensajes.Info("No se pudo acceder a las reservaciones, intente mas tarde.");
+				await Mensajes.Alerta("No se pudo acceder a las reservaciones, intente mas tarde.");
             }
            
         }

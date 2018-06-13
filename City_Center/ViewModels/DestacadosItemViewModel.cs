@@ -93,7 +93,7 @@ namespace City_Center.ViewModels
 
                         if (!response.IsSuccess)
                         {
-                            await Mensajes.Error("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                            await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
                             return;
                         }
 

@@ -156,35 +156,55 @@ namespace City_Center.ViewModels
                         await Application.Current.SavePropertiesAsync();
 
 
-                        //try
-                        //{
-                        //    Restcliente Cliente = new Restcliente();
-
-                        //    var contentenido = new FormUrlEncodedContent(new[]
-                        //    {
-                        //        new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
-                        //        new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(list.resultado.usu_id)),
-                        //        new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
-                        //        new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
-                        //    });
+                        var Contenido = new FormUrlEncodedContent(new[]
+                        {
+                            
+                            new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
+                            new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(list.resultado.usu_id)),
+                            new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
+                            new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
+                        });
 
 
-                        //    var LoginReturn = await Cliente.Get<GuardadoGenerico>("/notificaciones/guardar_equipo", contentenido);
+                        var response2 = await this.apiService.Get<GuardadoGenerico>("/notificaciones", "/guardar_equipo", Contenido);
 
-                        //    if (LoginReturn != null)
-                        //    {
-                        //        //await Mensajes.success("OK");
-                        //    }
-                        //    // Mensajes.Alerta(token);
-                        //    // Mensajes.success(token);
-                        //}
-                        //catch (System.Exception)
-                        //{
+                        if (!response.IsSuccess)
+                        {
+
+                        }
 
 
-                        //}
-                        
-                        this.Email = string.Empty;
+
+
+                            //try
+                            //{
+                            //    Restcliente Cliente = new Restcliente();
+
+                            //    var contentenido = new FormUrlEncodedContent(new[]
+                            //    {
+                            //        new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
+                            //        new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(list.resultado.usu_id)),
+                            //        new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
+                            //        new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
+                            //    });
+
+
+                            //    var LoginReturn = await Cliente.Get<GuardadoGenerico>("/notificaciones/guardar_equipo", contentenido);
+
+                            //    if (LoginReturn != null)
+                            //    {
+                            //        //await Mensajes.success("OK");
+                            //    }
+                            //    // Mensajes.Alerta(token);
+                            //    // Mensajes.success(token);
+                            //}
+                            //catch (System.Exception)
+                            //{
+
+
+                            //}
+
+                            this.Email = string.Empty;
                         this.Password = string.Empty;
 
                        // MainViewModel.GetInstance().Master = new MasterViewModel();
@@ -326,7 +346,7 @@ namespace City_Center.ViewModels
                     {
                         IDUsuario = await GuardaUsuarioGF(googleUser.Name, googleUser.Email);
 
-                        await Mensajes.success("Usuario creado con éxito");
+                        await Mensajes.Alerta("Usuario creado con éxito");
                     }
                     else
                     {
