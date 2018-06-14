@@ -25,7 +25,7 @@ namespace City_Center.Page
 
             //Detail = App.NavPage; //new NavigationPage (new TabPage()){ BarBackgroundColor = Color.FromHex("#23144B")};
             App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
-            App.NavPage.Icon = "logo";
+            //App.NavPage.Icon = "logo";
             //NavigationPage.SetTitleIcon(this, "logowhite.png");
             //NavigationPage.SetTitleIcon(this, "logo_hdpi");
 

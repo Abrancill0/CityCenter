@@ -182,11 +182,11 @@
         <!-- <local:DetailPage></local:DetailPage>-->
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage x:Name="Pruebita" >
+        <NavigationPage  x:Name="Pruebita" >
 
             <x:Arguments >
                 
-             <ContentPage Icon="logo" NavigationPage.BackButtonTitle="volver">
+             <ContentPage NavigationPage.TitleIcon="logo" NavigationPage.BackButtonTitle="volver">
 
              <ContentPage.ToolbarItems>
                 <ToolbarItem Icon="Chat" Clicked="Chat_click"/>

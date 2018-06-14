@@ -359,7 +359,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Alerta("2Parece que no tenés conexión a internet, intentalo mas tarde");
+                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return;
                 }
@@ -446,9 +446,9 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Alerta("3Parece que no tenés conexión a internet, intentalo mas tarde");
-
-                    return;
+                    //await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
+                    //probar abrham
+                    //return;
                 }
 
                 string idusuario = Application.Current.Properties["IdUsuario"].ToString();
@@ -508,9 +508,9 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Alerta("4Parece que no tenés conexión a internet, intentalo mas tarde");
-
-                    return;
+                   // await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
+                    //probar abrham
+                  //  return;
                 }
 
                 var content = new FormUrlEncodedContent(new[]
