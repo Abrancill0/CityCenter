@@ -25,7 +25,7 @@ namespace City_Center.Services
                 };
             }
 
-            var isReachable = await CrossConnectivity.Current.IsRemoteReachable("google.com");
+            var isReachable = await CrossConnectivity.Current.IsRemoteReachable("https://www.google.com");
 
             if (!isReachable)
             {
