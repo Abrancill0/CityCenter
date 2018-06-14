@@ -13,7 +13,7 @@ namespace City_Center.Page
         {
             InitializeComponent();
 
-
+            NavigationPage.SetTitleIcon(this, "logo_hdpi.png");
             if (VariablesGlobales.TipoChat == "casino")
             {
                 WebViewChat1.Source = "http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatCasino"].ToString();

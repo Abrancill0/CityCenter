@@ -10,8 +10,7 @@ namespace City_Center.Page
         public DetalleDestacados()
         {
             InitializeComponent();
-
-            NavigationPage.SetTitleIcon(this, "logo.png");
+            NavigationPage.SetTitleIcon(this, "logo_hdpi.png");
         }
 
         void CambiaIcono(object sender, System.EventArgs e)

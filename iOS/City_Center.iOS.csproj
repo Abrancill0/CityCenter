@@ -37,13 +37,13 @@
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
+    <CodesignKey>iPhone Distribution: Danthop Mexico (S827V5EHE7)</CodesignKey>
     <MtouchFloat32>true</MtouchFloat32>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>CityCenterDev</CodesignProvision>
+    <CodesignProvision>CityCenterAppStore</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -448,7 +448,6 @@
     <BundleResource Include="Resources\Facebook.png" />
     <BundleResource Include="Resources\Favorito.png" />
     <BundleResource Include="Resources\favorito1.png" />
-    <BundleResource Include="Resources\FavoritoOk.png" />
     <BundleResource Include="Resources\food.png" />
     <BundleResource Include="Resources\foodgray.png" />
     <BundleResource Include="Resources\GASTRONOMIAmin.png" />
@@ -524,6 +523,7 @@
     <BundleResource Include="Resources\warning.png" />
     <BundleResource Include="Resources\Wifi.png" />
     <BundleResource Include="Resources\WifiLibre.png" />
+    <BundleResource Include="Resources\FavoritoOk.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

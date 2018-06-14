@@ -18,7 +18,7 @@ namespace City_Center.Page
             InitializeComponent();
             _webHotel = new WebViewHotel();
 
-            NavigationPage.SetTitleIcon(this, "logo.png");
+            NavigationPage.SetTitleIcon(this, "logo_hdpi.png");
               
         }
 

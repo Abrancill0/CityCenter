@@ -12,6 +12,7 @@ namespace City_Center.Page
         public SeleccionTipoChat()
         {
             InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "logo_hdpi.png");
         }
 
       async  void ChatCasino(object sender, System.EventArgs e)

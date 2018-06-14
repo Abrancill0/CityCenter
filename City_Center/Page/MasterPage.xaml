@@ -13,7 +13,7 @@
                      BindingContext="{Binding Detail}">
             <StackLayout BackgroundColor="#250c4b">
                 <Image HorizontalOptions="Start"
-                       Source="logowhite"
+                       Source="logo_hdpi"
                        HeightRequest="95"
                        WidthRequest="140"
                        Margin="20,10,0,-10"
@@ -186,7 +186,7 @@
 
             <x:Arguments >
                 
-             <ContentPage NavigationPage.TitleIcon="logo" NavigationPage.BackButtonTitle="volver">
+             <ContentPage NavigationPage.TitleIcon="logo_hdpi" NavigationPage.BackButtonTitle="volver">
 
              <ContentPage.ToolbarItems>
                 <ToolbarItem Icon="Chat" Clicked="Chat_click"/>
