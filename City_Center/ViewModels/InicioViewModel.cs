@@ -359,7 +359,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
+                    await Mensajes.Alerta("2Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return;
                 }
@@ -446,7 +446,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
+                    await Mensajes.Alerta("3Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return;
                 }
@@ -508,7 +508,7 @@ namespace City_Center.ViewModels
 
                 if (!connection.IsSuccess)
                 {
-                    await Mensajes.Alerta("Parece que no tenés conexión a internet, intentalo mas tarde");
+                    await Mensajes.Alerta("4Parece que no tenés conexión a internet, intentalo mas tarde");
 
                     return;
                 }
