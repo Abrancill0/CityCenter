@@ -182,7 +182,7 @@
         <!-- <local:DetailPage></local:DetailPage>-->
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage x:Name="Pruebita" >
+        <NavigationPage Icon="logo" x:Name="Pruebita" >
 
             <x:Arguments >
                 
