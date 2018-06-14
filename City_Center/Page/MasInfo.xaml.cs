@@ -144,6 +144,10 @@ namespace City_Center.Page
 
 		async void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
 			{
 				IsCancellable = true,
@@ -169,6 +173,10 @@ namespace City_Center.Page
 
 		async void Handle_Focused_1(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
 			{
 				IsCancellable = true,
@@ -193,6 +201,10 @@ namespace City_Center.Page
   
 		async void TipoEvento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
             var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "CANCELAR", null, null, "Congresos, Convenciones, Seminarios","Casamiento",  "Eventos Corporativos", "Eventos Sociales", "Otros");
 
             if (result != "CANCELAR")
@@ -212,6 +224,10 @@ namespace City_Center.Page
         
 		async void TipoEvento1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
             var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "CANCELAR", null, null,"Congresos, Convenciones, Seminarios", "Casamiento",  "Eventos Corporativos", "Eventos Sociales", "Otros");
 
             if (result != "CANCELAR")
@@ -236,9 +252,8 @@ namespace City_Center.Page
 
             if (isLoggedIn)
             {
-                #if __ANDROID__
+                
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
-#endif
             }
             else
             {
