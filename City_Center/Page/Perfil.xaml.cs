@@ -6,6 +6,8 @@ using City_Center.Clases;
 using City_Center.Helper;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using Xamarin.Forms;
 
 namespace City_Center.Page
@@ -78,6 +80,10 @@ namespace City_Center.Page
         
         async void Fecha_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
@@ -101,6 +107,10 @@ namespace City_Center.Page
 
 		async void TipoDocumento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             var result = await UserDialogs.Instance.ActionSheetAsync("Numero de socio Win", "CANCELAR", null, null, "DNI", "LE", "LC", "CI");
 
             if (result != "CANCELAR")
@@ -123,11 +133,28 @@ namespace City_Center.Page
 
             try
             {
+                var permissionStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+
+                if (permissionStatus == PermissionStatus.Denied)
+                {
+                    var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Camera);
+
+                    if (results.ContainsKey(Permission.Camera))
+                    {
+                        if (permissionStatus != PermissionStatus.Granted)
+                        {
+                            await Mensajes.Alerta("Camara no ascesible");
+
+                            return;
+                        }
+                    }
+                }
+               
                 await CrossMedia.Current.Initialize();
 
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
-                    await DisplayAlert("Error", "Camara no ascesible", "OK");
+                    await Mensajes.Alerta("Camara no ascesible");
                 }
 
                 //obtenemos fecha actual
@@ -138,8 +165,8 @@ namespace City_Center.Page
                     SaveToAlbum = true,
                     Directory = "CityCenter",
                     PhotoSize = PhotoSize.Custom,
-                    CustomPhotoSize = 15,
-                    CompressionQuality = 10,
+                    CustomPhotoSize = 18,
+                    CompressionQuality = 15,
                     Name = Convert.ToString(n)
                 });
 
@@ -179,9 +206,8 @@ namespace City_Center.Page
 
             if (isLoggedIn)
             {
-                #if __ANDROID__
+                
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
-#endif
             }
             else
             {

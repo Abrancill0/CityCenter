@@ -25,9 +25,9 @@ namespace City_Center.Page
 
             //Detail = App.NavPage; //new NavigationPage (new TabPage()){ BarBackgroundColor = Color.FromHex("#23144B")};
             App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
-            App.NavPage.Icon = "logo_hdpi";
+            App.NavPage.Icon = "logo";
             //NavigationPage.SetTitleIcon(this, "logowhite.png");
-            NavigationPage.SetTitleIcon(this, "logo_hdpi");
+            //NavigationPage.SetTitleIcon(this, "logo_hdpi");
 
             MainView.Content = page1.Content;
             MainView2.Content = page2.Content;
@@ -326,9 +326,8 @@ namespace City_Center.Page
 
             if (isLoggedIn)
             {
-                #if __ANDROID__
+                
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
-#endif
             }
             else
             {

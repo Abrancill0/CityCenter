@@ -31,8 +31,16 @@ namespace City_Center.Page
             MainViewModel.GetInstance().Chat = new ChatviewModel();
 
             VariablesGlobales.TipoChat = "casino";
+
+            #if __ANDROID__
             await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Chat());
-  
+            #endif
+
+           
+            #if __IOS__
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ChatIos());
+            #endif
+
         }
 
         async  void ChatHotel(object sender, System.EventArgs e)
@@ -50,8 +58,15 @@ namespace City_Center.Page
             await Application.Current.SavePropertiesAsync();
         
             VariablesGlobales.TipoChat = "hotel";
+            #if __ANDROID__
             await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Chat());
- 
+            #endif
+
+
+            #if __IOS__
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ChatIos());
+            #endif
+
         }
     }
 }

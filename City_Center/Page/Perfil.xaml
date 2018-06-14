@@ -50,12 +50,12 @@
                                           AbsoluteLayout.LayoutBounds="0.5,0.3,-1,-1">
                         <controls:CircleImage.WidthRequest>
                             <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="Android, iOS">70</On>
+                                <On Platform="Android, iOS">75</On>
                             </OnPlatform>
                         </controls:CircleImage.WidthRequest>
                         <controls:CircleImage.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="Android, iOS">70</On>
+                                <On Platform="Android, iOS">75</On>
                             </OnPlatform>
 
                         </controls:CircleImage.HeightRequest>
@@ -171,7 +171,8 @@
                                       FontSize="18"
                                       TextColor="Black"
                                       Placeholder="Correo electrónico"
-                                      Keyboard="Email">
+                                      Keyboard="Email"
+                                      IsEnabled="false">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>

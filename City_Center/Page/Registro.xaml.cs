@@ -34,7 +34,7 @@ namespace City_Center.Page
 
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
-                   await DisplayAlert("Error", "Camara no ascesible", "OK");
+                   await Mensajes.Alerta("Camara no ascesible");
                 }
 
                 //obtenemos fecha actual
@@ -80,6 +80,10 @@ namespace City_Center.Page
 
 		async void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,

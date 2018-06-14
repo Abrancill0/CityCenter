@@ -190,12 +190,6 @@ namespace City_Center.ViewModels
   
             }
 
-           
-            if (EventosDetalle.Count == 0)
-            {
-                await Mensajes.Alerta("No se encontro ningún evento");
-            }
-
         }
 
         private IEnumerable<EventosItemViewModel> ToEventosItemViewModel()

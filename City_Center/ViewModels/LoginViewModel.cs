@@ -155,10 +155,11 @@ namespace City_Center.ViewModels
 
                         await Application.Current.SavePropertiesAsync();
 
-
-                        var Contenido = new FormUrlEncodedContent(new[]
+                        try
                         {
-                            
+                            var Contenido = new FormUrlEncodedContent(new[]
+                       {
+
                             new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
                             new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(list.resultado.usu_id)),
                             new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
@@ -166,12 +167,18 @@ namespace City_Center.ViewModels
                         });
 
 
-                        var response2 = await this.apiService.Get<GuardadoGenerico>("/notificaciones", "/guardar_equipo", Contenido);
+                            var response2 = await this.apiService.Get<GuardadoGenerico>("/notificaciones", "/guardar_equipo", Contenido);
 
-                        if (!response2.IsSuccess)
+                            if (!response2.IsSuccess)
+                            {
+
+                            }
+                        }
+                        catch (Exception ex)
                         {
 
                         }
+                       
 
 
                             //try

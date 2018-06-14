@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             x:Class="City_Center.Page.ChatIos">
+   <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Terminar Chat" Clicked="Handle_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="White" BindingContext="{Binding Chat}">
+            <WebView x:Name="WebViewChat1" IsVisible="false"/>
+             <WebView x:Name="WebViewChat" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+        </WebView>
+
+            <StackLayout Margin="5" HorizontalOptions="FillAndExpand" VerticalOptions="End" Orientation="Horizontal">
+
+                 <xfx:XfxEntry x:Name="Mensajito"
+                               Placeholder="Escribe tu mensaje..."
+                               FloatingHintEnabled="false"
+                               ActivePlaceholderColor="#7A5BA5"
+                               HorizontalOptions="FillAndExpand"
+                               HorizontalTextAlignment="Start"
+                               FontSize="18"
+                               Keyboard="Chat">
+                                        <Entry.HeightRequest>
+                                            <OnPlatform x:TypeArguments="x:Double">
+                                                <On Platform="iOS">60</On>
+                                                <On Platform="Android,Windows">60</On>
+                                            </OnPlatform>
+                                        </Entry.HeightRequest>
+                                         <Entry.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="Roboto-Regular"/>
+                                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                                                </OnPlatform>
+                                            </Entry.FontFamily>
+                                    </xfx:XfxEntry>
+            <Button Text="Enviar"
+                    TextColor="White"
+                    HeightRequest="35"
+                    WidthRequest="70"
+                    BackgroundColor="#23144B"
+                    HorizontalOptions="End"
+                    FontSize="Micro"
+                    Clicked="Handle_Clicked_1"
+                    >
+                    <Button.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                 <On Platform="iOS" Value="Roboto-Regular"/>
+                                 <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                            </OnPlatform>
+                   </Button.FontFamily>
+                </Button>
+          
+            </StackLayout>
+
+
+
+            
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>
+

@@ -105,7 +105,6 @@ namespace City_Center.Page
             
 		}
 
-
         async void Chat_click(object sender, System.EventArgs e)
         {
             bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
@@ -113,9 +112,8 @@ namespace City_Center.Page
 
             if (isLoggedIn)
             {
-                #if __ANDROID__
+               
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
-#endif
             }
             else
             {

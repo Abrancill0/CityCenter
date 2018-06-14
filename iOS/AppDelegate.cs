@@ -25,10 +25,10 @@ namespace City_Center.iOS
         {
             XfxControls.Init();
             ButtonCircle.FormsPlugin.iOS.ButtonCircleRenderer.Init();
-   
-            global::Xamarin.Forms.Forms.Init();
 
             UINavigationBar.Appearance.TintColor = Color.White.ToUIColor();
+
+            global::Xamarin.Forms.Forms.Init();
 
             FFImageLoading.Forms.Touch.CachedImageRenderer.Init();
 

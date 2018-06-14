@@ -84,6 +84,10 @@ namespace City_Center.Page
        
 		async void FechaR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
@@ -110,6 +114,9 @@ namespace City_Center.Page
 
         async void HoraR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
             
             if (VariablesGlobales.HorarioPIU == true)
             {
@@ -172,6 +179,10 @@ namespace City_Center.Page
         
         async void SillaNinos_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             var result = await UserDialogs.Instance.ActionSheetAsync("Sillas niños", "CANCELAR", null, null, "No", "Si");
 
             if (result != "CANCELAR")
@@ -206,9 +217,9 @@ namespace City_Center.Page
 
             if (isLoggedIn)
             {
-                #if __ANDROID__
+               
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
-                #endif
+               
             }
             else
             {

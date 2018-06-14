@@ -100,6 +100,10 @@ namespace City_Center.Page
     
         async void Fecha_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
@@ -123,6 +127,10 @@ namespace City_Center.Page
 
         async void TipoDocumento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             var result = await UserDialogs.Instance.ActionSheetAsync("Numero de socio Win", "CANCELAR", null, null, "DNI", "LE", "LC", "CI");
 
             if (result != "CANCELAR")
@@ -148,10 +156,8 @@ namespace City_Center.Page
             if (isLoggedIn)
             {
 
-                #if __ANDROID__
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
-                #endif
-
+            
             }
             else
             {

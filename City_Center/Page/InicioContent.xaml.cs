@@ -95,9 +95,9 @@ namespace City_Center.Page
                     VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
                     //await Navigation.PushPopupAsync(_webHotel);
-                    #if __ANDROID__
+                   // #if __ANDROID__
                     await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(_webHotel);
-                    #endif
+                   // #endif
                 }
             }
             catch (Exception )
@@ -233,7 +233,10 @@ namespace City_Center.Page
 
 		async void FechaInicio_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		 {         
-			
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
 				Title = "Llegada",
@@ -261,7 +264,12 @@ namespace City_Center.Page
 		 }
 
 		async void FechaFin_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-        {         
+        {      
+
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
@@ -292,6 +300,10 @@ namespace City_Center.Page
 
 		async void FechaR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
@@ -318,6 +330,10 @@ namespace City_Center.Page
 
 		async void FechaRango1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
@@ -344,6 +360,10 @@ namespace City_Center.Page
 
 		async void FechaRango2_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
@@ -370,6 +390,10 @@ namespace City_Center.Page
 
 		async void HoraR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             if (Restaurante.Text.Contains("PIÚ"))
             {
                 var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "12:30", "20:30", "21:00", "23:00");
@@ -416,7 +440,8 @@ namespace City_Center.Page
 
                 if (result.Ok)
                 {
-                    HoraR1.Text = Convert.ToString(result.SelectedTime);
+                    HoraR1.Text =   FechaRango1.Text = String.Format("{0:HH:mm}",result.SelectedTime);
+
                     HoraR1.Unfocus();
                     DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
                 }
@@ -451,6 +476,9 @@ namespace City_Center.Page
 
         async void Restaurant_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
             var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "CANCELAR", null, null, "LE GULÁ", "PIÚ! EXPRESS");
             
             if (result !="CANCELAR")
@@ -479,6 +507,10 @@ namespace City_Center.Page
         
 		async void SillaNinos_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
             var result = await UserDialogs.Instance.ActionSheetAsync("Sillas niños", "CANCELAR", null, null, "No", "Si");
 
             if (result != "CANCELAR")

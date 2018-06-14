@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:City_Center.Page" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="City_Center.Page.MasterPage" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" BindingContext="{Binding Main, Source={StaticResource Locator}}" MasterBehavior="SplitOnPortrait" Title="CC">
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:local="clr-namespace:City_Center.Page"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="City_Center.Page.MasterPage"
+                  xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+                  BindingContext="{Binding Main, Source={StaticResource Locator}}"
+                  MasterBehavior="SplitOnPortrait" Icon="logo">
     <MasterDetailPage.Master>
         <ContentPage Title="City Center"
                      Icon="Menu.png"
@@ -176,14 +182,11 @@
         <!-- <local:DetailPage></local:DetailPage>-->
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage x:Name="Pruebita" Icon="logo_hdpi">
-           <!-- <NavigationPage.ToolbarItems >
-                 <ToolbarItem Icon="Chat" Clicked="Chat_click" x:Name="Toolbar" />
-            </NavigationPage.ToolbarItems>
--->
-            <x:Arguments>
+        <NavigationPage x:Name="Pruebita" >
+
+            <x:Arguments >
                 
-             <ContentPage Icon="logo_hdpi">
+             <ContentPage Icon="logo" NavigationPage.BackButtonTitle="volver">
 
              <ContentPage.ToolbarItems>
                 <ToolbarItem Icon="Chat" Clicked="Chat_click"/>

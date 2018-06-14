@@ -28,9 +28,13 @@ namespace City_Center.Page
 
 	    async void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
-			var result = await UserDialogs.Instance.ActionSheetAsync("Tipo Documento", "Cancel", null, null, "DNI", "LE", "LC", "CI");
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
 
-            if (result != "Cancel")
+			var result = await UserDialogs.Instance.ActionSheetAsync("Tipo Documento", "CANCELAR", null, null, "DNI", "LE", "LC", "CI");
+
+            if (result != "CANCELAR")
             {
 				TipoDocumento.Text = result.ToString();
 
@@ -51,9 +55,8 @@ namespace City_Center.Page
 
             if (isLoggedIn)
             {
-                #if __ANDROID__
+                
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
-#endif
             }
             else
             {

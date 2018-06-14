@@ -29,10 +29,13 @@ namespace City_Center.Page.SlideMenu
             {
                 
                 ListaShow.ItemsSource = null;
-                //this.BindingContext = showsito;
-                //ListaShow.ItemsSource = showsito.EventosDetalle;
-                //ListaShow.BindingContext = showsito.EventosDetalle;
+               
                 ListaShow.ItemsSource = showsito.EventosDetalle;
+
+                if (showsito.EventosDetalle.Count == 0)
+                {
+                     Mensajes.Alerta("No se encontro ningún evento");
+                }
 
             }
   
@@ -194,8 +197,6 @@ namespace City_Center.Page.SlideMenu
 
             }
         }
-
-
 
         private IEnumerable<EventosItemViewModel> ToEventosItemViewModel()
         {

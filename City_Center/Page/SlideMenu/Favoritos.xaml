@@ -4,7 +4,8 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             x:Class="City_Center.Page.SlideMenu.Favoritos">
+             x:Class="City_Center.Page.SlideMenu.Favoritos"
+             NavigationPage.BackButtonTitle="volver">
     <ContentPage.Content>
         <StackLayout Padding = "30,60" BindingContext="{Binding Favoritos}" BackgroundColor="#250C4B" >
             <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5">

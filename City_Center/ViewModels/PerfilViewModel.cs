@@ -126,6 +126,9 @@ namespace City_Center.ViewModels
         private async void ActualizaPerfil()
         {
 
+            try
+            {
+                
             UserDialogs.Instance.ShowLoading("Procesando...", MaskType.Black);
 
             if (string.IsNullOrEmpty(this.Nombre))
@@ -137,7 +140,6 @@ namespace City_Center.ViewModels
                 return;
             }
 
-
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Mensajes.Alerta("Correo electrónico es requerido");
@@ -147,26 +149,36 @@ namespace City_Center.ViewModels
                 return;
             }
 
-
-            if (string.IsNullOrEmpty(this.Contraseña))
+            if (Application.Current.Properties["TipoCuenta"].ToString() == "CityCenter")
             {
-                await Mensajes.Alerta("Contraseña es requerida");
+                if (string.IsNullOrEmpty(this.Contraseña))
+                {
+                    await Mensajes.Alerta("Contraseña es requerida");
 
-                UserDialogs.Instance.HideLoading();
+                    UserDialogs.Instance.HideLoading();
 
-                return;
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(this.Contraseña2))
+                {
+                    await Mensajes.Alerta("Contraseña es requerida");
+
+                    UserDialogs.Instance.HideLoading();
+
+                    return;
+                } 
+
+
+                if (Contraseña != Contraseña2)
+                {
+                    await Mensajes.Alerta("Las contraseñas no coinciden, verificar los campos");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }
+
             }
-
-            if (string.IsNullOrEmpty(this.Contraseña2))
-            {
-                await Mensajes.Alerta("Contraseña es requerida");
-
-                UserDialogs.Instance.HideLoading();
-
-                return;
-            }
-
-
+           
             if (string.IsNullOrEmpty(this.Ciudad))
             {
                 await Mensajes.Alerta("Ciudad es requerida");
@@ -176,8 +188,7 @@ namespace City_Center.ViewModels
                 return;
             }
 
-
-            if (this.Fecha == "00/00/0000")
+            if (this.Fecha == "00/00/0000" || string.IsNullOrEmpty(this.fecha))
             {
                 await Mensajes.Alerta("La fecha de nacimiento es obligatoria");
 
@@ -186,15 +197,7 @@ namespace City_Center.ViewModels
                 return;
             }
 
-
-
-            if (Contraseña != Contraseña2)
-            {
-                await Mensajes.Alerta("Las contraseñas no coinciden, verificar los campos");  
-                UserDialogs.Instance.HideLoading();
-            }
-
-
+           
             if (string.IsNullOrEmpty(NumeroSocio))
             {
               //  await Mensajes.Alerta("Usuario actual no cuenta con tarjeta Win");
@@ -206,7 +209,7 @@ namespace City_Center.ViewModels
 
                 if (MensajeTarjeta == "OK")
                 {
-                    await Mensajes.Alerta("Tarjeta vinculada correctamente");
+                 //   await Mensajes.Alerta("Tarjeta vinculada correctamente");
                 }
                 else
                 {
@@ -288,6 +291,15 @@ namespace City_Center.ViewModels
             await Mensajes.Alerta("Usuario actualizadó con éxito");
 
             UserDialogs.Instance.HideLoading();
+
+            }
+            catch (Exception ex)
+            {
+                await Mensajes.Alerta("Ocurrio un error al actualizar el usuario,favor de volver  aintentar mas tarde");
+
+                UserDialogs.Instance.HideLoading();
+            }
+
         }
 
         private async Task<string> GuardaImagen(int IDusuario)
@@ -297,7 +309,7 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
             {
-                await Mensajes.Alerta("Ninguna foto subida");
+              //  await Mensajes.Alerta("Ninguna foto subida");
 
                 return "Error";
             }
@@ -330,13 +342,13 @@ namespace City_Center.ViewModels
 
             ListImagen = (ImagenReturn)response.Result;
 
-            await Mensajes.Alerta("Imagen actualizada correctamente");
+            //await Mensajes.Alerta("Imagen actualizada correctamente");
 
-            Application.Current.Properties["FotoPerfil"] = VariablesGlobales.RutaServidor + ListImagen.resultado;
+           // Application.Current.Properties["FotoPerfil"] = VariablesGlobales.RutaServidor + ListImagen.resultado;
 
-             await Application.Current.SavePropertiesAsync();
+           //  await Application.Current.SavePropertiesAsync();
 
-            return "OK";
+            return VariablesGlobales.RutaServidor + ListImagen.resultado;
            
         }
 
