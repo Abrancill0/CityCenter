@@ -21,6 +21,7 @@ namespace City_Center.Page
         {
             InitializeComponent();
 
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
             if (VariablesGlobales.Notificaciones == true)
             {
                 LabelTab1.TextColor = Color.FromHex("#71628A");
