@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using City_Center.Clases;
 using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
-using Foundation;
 
 namespace City_Center.PopUp
 {
@@ -38,7 +37,7 @@ namespace City_Center.PopUp
             #if __IOS__
             var uri = new Uri("https://api.pxsol.com/search/insert?Pos=PullmanCityCenterRosario&ProductID=3176&Currency=ARS&Lng=es&Type=Hotel&Start=" + Fecha1 + "&End" + Fecha2 + "&Nights=" + dias + "&Groups=º&GroupsForm=1:" + VariablesGlobales.NumeroHuespedes + ",0,0t&Device=Mobile&tag=hotelesdon.com");
 
-            var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+            var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
             Browser.Source = nsurl.AbsoluteUrl.ToString();
              #endif

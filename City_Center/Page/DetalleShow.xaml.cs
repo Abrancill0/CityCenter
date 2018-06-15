@@ -11,7 +11,7 @@ namespace City_Center.Page
         public DetalleShow()
         {
             InitializeComponent();
-            NavigationPage.SetTitleIcon(this, "logo.png");
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
 		void CambiaIcono(object sender, System.EventArgs e)

@@ -20,8 +20,8 @@ namespace City_Center.Services
             {
                 return new Response
                 {
-                    IsSuccess = false,
-                    Message = "Verifica tu conexión a internet.",
+                    IsSuccess = true,
+                    //Message = "Verifica tu conexión a internet.",
                 };
             }
 
@@ -31,8 +31,8 @@ namespace City_Center.Services
             {
                 return new Response
                 {
-                    IsSuccess = false,
-                    Message = "Verifica tu conexión a internet.",
+                    IsSuccess = true
+                    //Message = "Verifica tu conexión a internet.",
                 };
 
             }

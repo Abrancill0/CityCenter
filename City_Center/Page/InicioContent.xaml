@@ -10,7 +10,7 @@
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.InicioContent">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat" />
+        <ToolbarItem Icon="chat@2x" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -816,9 +816,10 @@
                                                     ShowArrows="{Binding MuestraFlechasPromo, Mode=TwoWay}"
                                                     ArrowsTintColor="White"
                                                     ArrowsBackgroundColor="Black"
-                                                    Position="1"
-                                                  Scrolled="Scrolled_HP"
-                                                   PositionSelected="PositionSelected_HP">
+                                                    Position="0"
+                                                    Scrolled="Scrolled_HP"
+                                                    PositionSelected="PositionSelected_HP"
+                                                    InterPageSpacing="50">
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
                                           <Grid Padding="3" >

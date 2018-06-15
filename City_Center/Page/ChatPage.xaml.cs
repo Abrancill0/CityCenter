@@ -16,7 +16,7 @@
             {
                 InitializeComponent();
 
-                NavigationPage.SetTitleIcon(this, "logo.png");
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
 
                 MessagingCenter.Subscribe<DBFire, Room>(this, "RoomProp", (page, data) =>
                 {

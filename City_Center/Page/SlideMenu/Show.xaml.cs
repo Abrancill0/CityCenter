@@ -18,7 +18,7 @@ namespace City_Center.Page.SlideMenu
         {
             InitializeComponent();
 
-            NavigationPage.SetTitleIcon(this, "logo_hdpi");
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
         protected override void OnAppearing()

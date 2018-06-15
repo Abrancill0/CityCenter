@@ -15,7 +15,7 @@ namespace City_Center.Page
         public DetalleRestaurante()
         {
             InitializeComponent();
-            NavigationPage.SetTitleIcon(this, "logo.png");
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
 
             FechaR1.Text=String.Format("{0:dd/MM/yyyy}", DateTime.Today);
         }

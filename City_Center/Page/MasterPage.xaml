@@ -8,19 +8,23 @@
                   MasterBehavior="SplitOnPortrait" Icon="logo">
     <MasterDetailPage.Master>
         <ContentPage Title="City Center"
-                     Icon="Menu.png"
+                     Icon="menu@2x.png"
+                    
                      BackgroundColor="Transparent"
                      BindingContext="{Binding Detail}">
             <StackLayout BackgroundColor="#250c4b">
                 <Image HorizontalOptions="Start"
-                       Source="logowhite"
+                       Source="logo@2x.png"
                        HeightRequest="95"
                        WidthRequest="140"
                        Margin="20,10,0,-10"
                       ></Image>
                 <ListView x:Name="listviewMenu" ItemsSource="{Binding ListaOpciones}"
                           ItemSelected="Handle_ItemSelected"
-                          BackgroundColor="#250c4b" SeparatorVisibility="None" HasUnevenRows="True" RowHeight="55">
+                          BackgroundColor="#250c4b"
+                          SeparatorVisibility="None"
+                          HasUnevenRows="True"
+                          RowHeight="55">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -129,6 +133,9 @@
                                HorizontalOptions="Center"
                                Margin="5"
                             Grid.Row="0" Grid.Column="2" HeightRequest="20">
+                             <Image.GestureRecognizers>
+                                  <TapGestureRecognizer Command="{Binding NotificacionesCommand}" />
+                             </Image.GestureRecognizers>
                         </Image>
                         <Label Text="Cerrar Sesión" TextColor="White" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="End" Grid.Row="0" WidthRequest="80" Margin="10,0,5,0" Grid.Column="3" FontSize="Small">
                             <Label.FontFamily>
@@ -182,20 +189,15 @@
         <!-- <local:DetailPage></local:DetailPage>-->
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-<<<<<<< HEAD
 
         <NavigationPage  x:Name="Pruebita" >
-
-=======
-        <NavigationPage  x:Name="Pruebita" >
->>>>>>> 9ebe7c3d5c8d4686386d584ba8c53ec2bd7884fb
 
             <x:Arguments >
                 
-             <ContentPage NavigationPage.TitleIcon="logo_hdpi" NavigationPage.BackButtonTitle="volver">
+             <ContentPage NavigationPage.TitleIcon="logo@2x.png" NavigationPage.BackButtonTitle="volver">
 
              <ContentPage.ToolbarItems>
-                <ToolbarItem Icon="Chat" Clicked="Chat_click"/>
+                <ToolbarItem Icon="chat@2x" Clicked="Chat_click"/>
             </ContentPage.ToolbarItems>
                     
                 <Grid CompressedLayout.IsHeadless="true">

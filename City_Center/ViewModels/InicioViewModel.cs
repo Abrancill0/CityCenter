@@ -393,7 +393,7 @@ namespace City_Center.ViewModels
 
                 MainViewModel.GetInstance().listTorneo = (TorneoReturn)response.Result;
 
-                TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+                TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel2());
 
                 if (TorneoDetalle.Count>0)
                 {
@@ -437,6 +437,28 @@ namespace City_Center.ViewModels
             });
         }
        
+        private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel2()
+        {
+            return MainViewModel.GetInstance().listTorneo.resultado.Where(l =>l.tor_id>0).Select(l => new TorneoItemViewModel
+            {
+                tor_id = l.tor_id,
+                tor_nombre = l.tor_nombre,
+                tor_descripcion = l.tor_descripcion,
+                tor_imagen = l.tor_imagen,
+                tor_fecha_hora_inicio = l.tor_fecha_hora_inicio,
+                tor_fecha_hora_fin = l.tor_fecha_hora_fin,
+                tor_destacado = l.tor_destacado,
+                tor_id_usuario_creo = l.tor_id_usuario_creo,
+                tor_fecha_hora_creo = l.tor_fecha_hora_creo,
+                tor_id_usuario_modifico = l.tor_id_usuario_modifico,
+                tor_fecha_hora_modifico = l.tor_fecha_hora_modifico,
+                tor_estatus = l.tor_estatus,
+                tor_guardado = l.tor_guardado,
+                tor_id_guardado = l.tor_id_guardado,
+                oculta = !(bool)l.tor_guardado
+            });
+        }
+
         private async void LoadTarjetaUsuario()
         {
             try
@@ -530,8 +552,23 @@ namespace City_Center.ViewModels
 
                 this.listPromociones = (PromocionesReturn)response.Result;
 
-                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+#if __IOS__
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel2());
 
+                if (PromocionesDetalle.Count > 0)
+                {
+                    MuestraFlechasPromo = true;
+                    VariablesGlobales.RegistrosPromociones = PromocionesDetalle.Count;
+
+                }
+                else
+                {
+                    MuestraFlechasPromo = false;
+                }
+#endif
+
+                #if __ANDROID__
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
 
                 if (PromocionesDetalle.Count > 2)
                 {
@@ -543,6 +580,9 @@ namespace City_Center.ViewModels
                 {
                     MuestraFlechasPromo = false; 
                 }
+                #endif
+
+
 
                // MuestraFlechasPromo
             }
@@ -582,6 +622,33 @@ namespace City_Center.ViewModels
             });
         }
 
+        private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel2()
+        {
+            return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
+            {
+                pro_id = l.pro_id,
+                pro_id_evento = l.pro_id_evento,
+                pro_id_locacion = l.pro_id_locacion,
+                pro_nombre = l.pro_nombre.ToUpper(),
+                pro_descripcion = l.pro_descripcion,
+                pro_imagen = l.pro_imagen,
+                pro_tipo_promocion = l.pro_tipo_promocion,
+                pro_codigo = l.pro_codigo,
+                pro_compartidos_codigo = l.pro_compartidos_codigo,
+                pro_destacado = l.pro_destacado,
+                pro_fecha_duracion_ini = l.pro_fecha_duracion_ini,
+                pro_fecha_duracion_fin = l.pro_fecha_duracion_fin,
+                pro_importe_decuento = l.pro_importe_decuento,
+                pro_porcentaje_decuento = l.pro_porcentaje_decuento,
+                pro_id_usuario_creo = l.pro_id_usuario_creo,
+                pro_fecha_hora_creo = l.pro_fecha_hora_creo,
+                pro_id_usuario_modifico = l.pro_id_usuario_modifico,
+                pro_fecha_hora_modifico = l.pro_fecha_hora_modifico,
+                pro_tipo = l.pro_tipo,
+                pro_estatus = l.pro_estatus,
+                loc_nombre = l.loc_nombre
+            });
+        }
 
         #endregion
 

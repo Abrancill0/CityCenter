@@ -8,7 +8,7 @@
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              x:Class="City_Center.Page.Casino">
       <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat"/>
+        <ToolbarItem Icon="chat@2x"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>

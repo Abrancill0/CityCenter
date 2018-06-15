@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using City_Center.Clases;
-using Foundation;
 using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
 
@@ -28,7 +27,7 @@ namespace City_Center.PopUp
             #if __IOS__
             var uri = new Uri(VariablesGlobales.RutaCompraOnline);
 
-            var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+            var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
             Browser.Source = nsurl.AbsoluteUrl.ToString();
             #endif

@@ -6,7 +6,7 @@
              x:Class="City_Center.Page.SlideMenu.Show"
              NavigationPage.BackButtonTitle="volver">
     <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="Chat" Clicked="Chat_click"/>
+        <ToolbarItem  Icon="chat@2x" Clicked="Chat_click"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>

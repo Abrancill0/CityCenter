@@ -7,7 +7,7 @@
              xmlns:view="clr-namespace:City_Center.Vista"
              x:Class="City_Center.Page.Gastronomia">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat" />
+        <ToolbarItem Icon="chat@2x" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>

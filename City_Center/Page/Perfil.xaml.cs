@@ -20,6 +20,21 @@ namespace City_Center.Page
         public Perfil()
         {
             InitializeComponent();
+
+            if (VariablesGlobales.Notificaciones == true)
+            {
+                LabelTab1.TextColor = Color.FromHex("#71628A");
+                LabelTab2.TextColor = Color.FromHex("#71628A");
+                LabelTab3.TextColor = Color.FromHex("#FDFDFD");
+
+                BV1.IsVisible = false;
+                BV2.IsVisible = false;
+                BV3.IsVisible = true;
+
+                SL1.IsVisible = false;
+                SL2.IsVisible = false;
+                SL3.IsVisible = true;
+            }
         }
         
         protected override void OnAppearing()
@@ -27,6 +42,8 @@ namespace City_Center.Page
             base.OnAppearing();
 
             ListaOpciones = new string[] { "DNI", "LE", "LC", "CI" };
+
+          
    
         }
         

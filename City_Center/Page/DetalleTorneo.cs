@@ -14,7 +14,7 @@ namespace City_Center.Page
         public DetalleTorneo()
         {
             InitializeComponent();
-            NavigationPage.SetTitleIcon(this, "logo.png");
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
 
 			
          

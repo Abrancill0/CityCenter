@@ -9,7 +9,7 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.Hotel">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat" />
+        <ToolbarItem Icon="chat@2x" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>

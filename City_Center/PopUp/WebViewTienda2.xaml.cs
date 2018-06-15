@@ -1,6 +1,5 @@
 ﻿using System;
 using City_Center.Clases;
-using Foundation;
 using Xamarin.Forms;
 
 namespace City_Center.PopUp
@@ -21,7 +20,7 @@ namespace City_Center.PopUp
             #if __IOS__
             var uri = new Uri(VariablesGlobales.RutaTiendaGuardados);
 
-            var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+            var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
             Browser.Source = nsurl.AbsoluteUrl.ToString();
             #endif

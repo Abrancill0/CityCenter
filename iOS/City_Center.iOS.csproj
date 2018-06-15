@@ -37,13 +37,12 @@
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
+    <CodesignKey>iPhone Developer: Luis  Albor (G62L84WN3M)</CodesignKey>
     <MtouchFloat32>true</MtouchFloat32>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>CityCenterDev</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -431,7 +430,6 @@
     <BundleResource Include="Resources\CasinoChat.png" />
     <BundleResource Include="Resources\Casinogray.png" />
     <BundleResource Include="Resources\CASINOmin.png" />
-    <BundleResource Include="Resources\Chat.png" />
     <BundleResource Include="Resources\checkin_rosa.png" />
     <BundleResource Include="Resources\checkin_verde.png" />
     <BundleResource Include="Resources\ChekIn.png" />
@@ -440,7 +438,6 @@
     <BundleResource Include="Resources\close_circle_button.png" />
     <BundleResource Include="Resources\CloseG.png" />
     <BundleResource Include="Resources\Compartir.png" />
-    <BundleResource Include="Resources\ContactoUp.jpeg" />
     <BundleResource Include="Resources\CONVENCIONESmin.png" />
     <BundleResource Include="Resources\DummyCard.png" />
     <BundleResource Include="Resources\EquipoTecnico.png" />
@@ -448,19 +445,12 @@
     <BundleResource Include="Resources\Facebook.png" />
     <BundleResource Include="Resources\Favorito.png" />
     <BundleResource Include="Resources\favorito1.png" />
-    <BundleResource Include="Resources\FavoritoOk.png" />
+    <BundleResource Include="Resources\FavoritoOK.png" />
     <BundleResource Include="Resources\food.png" />
     <BundleResource Include="Resources\foodgray.png" />
     <BundleResource Include="Resources\GASTRONOMIAmin.png" />
-    <BundleResource Include="Resources\Hab_1.jpg" />
-    <BundleResource Include="Resources\Hab_2.jpg" />
-    <BundleResource Include="Resources\Hab_3.jpg" />
-    <BundleResource Include="Resources\Hab_4.jpg" />
-    <BundleResource Include="Resources\Hab_5.jpg" />
-    <BundleResource Include="Resources\Hab_6.jpg" />
     <BundleResource Include="Resources\home.png" />
     <BundleResource Include="Resources\homegray.png" />
-    <BundleResource Include="Resources\HOMEmin.jpg" />
     <BundleResource Include="Resources\hotel.png" />
     <BundleResource Include="Resources\HotelChat.png" />
     <BundleResource Include="Resources\Hotelgray.png" />
@@ -468,7 +458,6 @@
     <BundleResource Include="Resources\icon.png" />
     <BundleResource Include="Resources\Icono1.png" />
     <BundleResource Include="Resources\image_error.png" />
-    <BundleResource Include="Resources\image_loading.jpg" />
     <BundleResource Include="Resources\image_loading.png" />
     <BundleResource Include="Resources\ImageInstitucional.png" />
     <BundleResource Include="Resources\Info.png" />
@@ -476,11 +465,9 @@
     <BundleResource Include="Resources\InfoGray.png" />
     <BundleResource Include="Resources\informacion.png" />
     <BundleResource Include="Resources\Lavanderia.png" />
-    <BundleResource Include="Resources\logo_hdpi.png" />
     <BundleResource Include="Resources\logo.png" />
     <BundleResource Include="Resources\logout.png" />
     <BundleResource Include="Resources\logowhite.png" />
-    <BundleResource Include="Resources\Menu.png" />
     <BundleResource Include="Resources\MenuRestaurant.png" />
     <BundleResource Include="Resources\ojo.png" />
     <BundleResource Include="Resources\Parking.png" />
@@ -499,31 +486,36 @@
     <BundleResource Include="Resources\rowdown.png" />
     <BundleResource Include="Resources\showPass.png" />
     <BundleResource Include="Resources\SistemaCerrado.png" />
-    <BundleResource Include="Resources\SPAmin.jpg" />
-    <BundleResource Include="Resources\splashfinal.PNG" />
     <BundleResource Include="Resources\splashscreen.png" />
     <BundleResource Include="Resources\splashscreen1.png" />
     <BundleResource Include="Resources\success.png" />
-    <BundleResource Include="Resources\svip1.jpg" />
-    <BundleResource Include="Resources\svip2.jpg" />
-    <BundleResource Include="Resources\Tabbar.axml" />
     <BundleResource Include="Resources\tarjeta.png" />
     <BundleResource Include="Resources\TICKETSHOWS_S.png" />
     <BundleResource Include="Resources\TICKETSHOWS.png" />
     <BundleResource Include="Resources\TicketsShows.png" />
     <BundleResource Include="Resources\Tienda.png" />
-    <BundleResource Include="Resources\tiendamobile.jpg" />
     <BundleResource Include="Resources\TIENDAONLINE_S.png" />
     <BundleResource Include="Resources\TIENDAONLINE.png" />
     <BundleResource Include="Resources\user.png" />
     <BundleResource Include="Resources\ValetParking.png" />
     <BundleResource Include="Resources\VariedadGastronomica.png" />
     <BundleResource Include="Resources\VideoConferencia.png" />
-    <BundleResource Include="Resources\vip1.jpg" />
-    <BundleResource Include="Resources\vip2.jpg" />
     <BundleResource Include="Resources\warning.png" />
     <BundleResource Include="Resources\Wifi.png" />
     <BundleResource Include="Resources\WifiLibre.png" />
+    <BundleResource Include="Resources\ContactoUp.jpeg" />
+    <BundleResource Include="Resources\HOMEmin.jpg" />
+    <BundleResource Include="Resources\image_loading.jpg" />
+    <BundleResource Include="Resources\SPAmin.jpg" />
+    <BundleResource Include="Resources\svip1.jpg" />
+    <BundleResource Include="Resources\svip2.jpg" />
+    <BundleResource Include="Resources\tiendamobile.jpg" />
+    <BundleResource Include="Resources\vip1.jpg" />
+    <BundleResource Include="Resources\vip2.jpg" />
+    <BundleResource Include="Resources\menu%402x.png" />
+    <BundleResource Include="Resources\logo_hdpi%402x.png" />
+    <BundleResource Include="Resources\logo%402x.png" />
+    <BundleResource Include="Resources\chat%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />
@@ -532,6 +524,7 @@
     <Compile Include="GoogleManager.cs" />
     <Compile Include="Controls\TLScrollViewRenderer.cs" />
     <Compile Include="IosForceKeyboardDismissalService.cs" />
+    <Compile Include="CustomAllViewCellRendereriOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />

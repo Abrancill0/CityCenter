@@ -5,7 +5,7 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat" Clicked="Chat_click" />
+        <ToolbarItem Icon="chat@2x" Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>

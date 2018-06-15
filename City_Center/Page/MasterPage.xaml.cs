@@ -191,6 +191,8 @@ namespace City_Center.Page
                         //Application.Current.MainPage = new MasterPage();
                         listviewMenu.SelectedItem = null;
 
+
+
                         BV1.IsVisible = true;
                         BV2.IsVisible = false;
                         BV3.IsVisible = false;

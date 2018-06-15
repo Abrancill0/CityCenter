@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using City_Center.Clases;
-using Foundation;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 
@@ -13,11 +12,12 @@ namespace City_Center.Page
         {
             InitializeComponent();
 
+            #if __IOS__
             if (VariablesGlobales.TipoChat == "casino")
             {
                 var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatCasino"].ToString());
 
-                var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                 WebViewChat1.Source = nsurl.AbsoluteUrl.ToString();
 
@@ -27,7 +27,7 @@ namespace City_Center.Page
             {
                 var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatHotel"].ToString());
 
-                var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                 WebViewChat1.Source = nsurl.AbsoluteUrl.ToString();
 
@@ -53,13 +53,13 @@ namespace City_Center.Page
 
                     var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + Application.Current.Properties["Casino"].ToString());
 
-                    var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                    var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                     WebViewChat.Source = nsurl.ToString();
 
                     var uri1 = new Uri("http://wpage.citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + "0");
 
-                    var nsurl1 = new NSUrl(uri1.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                    var nsurl1 = new Foundation.NSUrl(uri1.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                     Application.Current.Properties["RutaChatCasino"] = nsurl1.ToString();
                         
@@ -69,7 +69,7 @@ namespace City_Center.Page
                 {
                     var uri = new Uri(Application.Current.Properties["RutaChatCasino"].ToString());
 
-                    var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                    var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                     WebViewChat.Source = nsurl.ToString();
                 }
@@ -86,14 +86,14 @@ namespace City_Center.Page
 
                     var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + Application.Current.Properties["Hotel"].ToString());
 
-                    var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                    var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                     WebViewChat.Source = nsurl.ToString();
 
 
                     var uri1 = new Uri("http://wpage.citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + "0");
 
-                    var nsurl1 = new NSUrl(uri1.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                    var nsurl1 = new Foundation.NSUrl(uri1.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
 
                     Application.Current.Properties["RutaChatHotel"] = nsurl1.ToString();
@@ -104,7 +104,7 @@ namespace City_Center.Page
                 {
                     var uri = new Uri(Application.Current.Properties["RutaChatHotel"].ToString());
 
-                    var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                    var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                     WebViewChat.Source = nsurl.ToString();
                 }
@@ -113,15 +113,19 @@ namespace City_Center.Page
             }
 
             Application.Current.SavePropertiesAsync();
+
+            #endif
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)
         {
+            #if __IOS__
+
             if (VariablesGlobales.TipoChat == "casino")
             {
                 var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatCasino"].ToString());
 
-                var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                 WebViewChat1.Source = nsurl.ToString();
                     
@@ -134,7 +138,7 @@ namespace City_Center.Page
             {
                 var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatHotel"].ToString());
 
-                var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                 WebViewChat1.Source = nsurl.ToString();
                     
@@ -151,16 +155,19 @@ namespace City_Center.Page
 
             Navigation.PopAsync();
 
+            #endif
         }
 
         void Handle_Clicked_1(object sender, System.EventArgs e)
         {
+            #if __IOS__
+
             if (VariablesGlobales.TipoChat == "casino")
             {
 
                 var uri = new Uri(Application.Current.Properties["RutaChatCasino"].ToString() + "/" + Mensajito.Text);
 
-                var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                 WebViewChat1.Source = nsurl.ToString();
 
@@ -172,12 +179,13 @@ namespace City_Center.Page
 
                 var uri = new Uri(Application.Current.Properties["RutaChatHotel"].ToString() + "/" + Mensajito.Text);
 
-                var nsurl = new NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+                var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                 WebViewChat1.Source = nsurl.ToString();
 
                 Mensajito.Text = string.Empty;
             }
+            #endif
         }
     }
 }

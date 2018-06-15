@@ -4,9 +4,9 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="City_Center.Page.Torneos">
-    <!-- <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat" />
-    </ContentPage.ToolbarItems>-->
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="chat@2x" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Torneo}" Spacing="0">
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">

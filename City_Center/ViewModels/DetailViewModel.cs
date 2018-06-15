@@ -225,9 +225,39 @@ namespace City_Center.ViewModels
 
 			App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
 
+            VariablesGlobales.Notificaciones = false;
+
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Perfil());
+
+
+           
+        }
+
+
+        public ICommand NotificacionesCommand
+        {
+            get
+            {
+                return new RelayCommand(Notificaciones);
+            }
+        }
+
+        private async void Notificaciones()
+        {
+            MainViewModel.GetInstance().Perfil = new PerfilViewModel();
+
+            ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+
+            VariablesGlobales.Notificaciones = true;
+
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Perfil());
 
         }
+
+
+
 
         public ICommand IniciarSesionCommand
         {

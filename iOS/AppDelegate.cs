@@ -27,7 +27,9 @@ namespace City_Center.iOS
             ButtonCircle.FormsPlugin.iOS.ButtonCircleRenderer.Init();
 
             UINavigationBar.Appearance.TintColor = Color.White.ToUIColor();
+            //UITableViewCell.UIViewAppearance.= UITableViewCellSelectionStyle.None;
 
+           
             global::Xamarin.Forms.Forms.Init();
 
             FFImageLoading.Forms.Touch.CachedImageRenderer.Init();

@@ -3,8 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="City_Center.Vista.VistaPerfilNotificaciones">
     <ContentView.Content>
-      <StackLayout >
-            <StackLayout Margin="10" >
+      <StackLayout>
+        <ListView>
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                   <StackLayout Margin="10" >
+                        <Label Text="{Binding Nombre}" HorizontalOptions="Start" TextColor="#250C4B" >
+                            <Label.FontFamily>
+                               <OnPlatform x:TypeArguments="x:String">
+                                  <On Platform="iOS" Value="Oswald-Regular"/>
+                                  <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                               </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                        <Label Text="{Binding Descripcion}"
+                               FontSize="Small"
+                               TextColor="Black"
+                               HorizontalOptions="Start"
+                               HorizontalTextAlignment="Start"/>
+                   </StackLayout>      
+                </ViewCell>
+              </DataTemplate>
+            </ListView.ItemTemplate>       
+        </ListView>
+
+           <!-- <StackLayout Margin="10" >
             <Label HorizontalOptions="Start" Text="PROMOCIÓN" TextColor="#250C4B" >
                     <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
@@ -28,7 +52,7 @@
                 <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Existen nuevos eventos cerca de tu ubicacion que tal vez te puedan interesar..." />
             </StackLayout>
 
-             <StackLayout Margin="10">
+            <StackLayout Margin="10">
               <Label HorizontalOptions="Start" Text="SHOW" TextColor="#250C4B">
                     <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
@@ -52,7 +76,7 @@
                  <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Ahora pudes realizar reservaciones a tus restaurantes favoritos desde la aplicacion movil" />
             </StackLayout>
 
-          <StackLayout Margin="10" >
+            <StackLayout Margin="10" >
             <Label HorizontalOptions="Start" Text="PROMOCIÓN" TextColor="#250C4B">
                     <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
@@ -62,7 +86,7 @@
                 </Label.FontFamily>
                 </Label>
                  <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Existen nuevas promociones que tal ve te puedan interesar..." />
-            </StackLayout>
+            </StackLayout>-->
 
         </StackLayout>
     </ContentView.Content>

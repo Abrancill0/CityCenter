@@ -10,7 +10,7 @@ namespace City_Center.Page
         public DetallePromocion()
         {
             InitializeComponent();
-            NavigationPage.SetTitleIcon(this, "logo.png");
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)

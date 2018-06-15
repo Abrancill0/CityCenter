@@ -22,23 +22,23 @@ namespace City_Center.Page
         public AlertaConfirmacion _AlertaConfirmacion;
 
         InicioViewModel Inicito = new InicioViewModel();
-        
+
         public InicioContent()
         {
             InitializeComponent();
-			//FechaInicio.ShowSoftInputOnFocus = false;
+            //FechaInicio.ShowSoftInputOnFocus = false;
 
             _webHotel = new WebViewHotel();
 
             _AlertaConfirmacion = new AlertaConfirmacion();
 
-            FechaInicio.Text= String.Format("{0:dd/MM/yyyy}", DateTime.Today);
+            FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Today);
             FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(1));
 
         }
 
         protected override void OnDisappearing()
-        {         
+        {
             base.OnDisappearing();
 
             GC.Collect();
@@ -49,63 +49,63 @@ namespace City_Center.Page
         {
             base.OnAppearing();
 
-   
+
         }
 
-		async void Handle_Clicked(object sender, System.EventArgs e)
+        async void Handle_Clicked(object sender, System.EventArgs e)
         {
             try
             {
-               
-				if (FechaInicio.Text == "00/00/0000")
+
+                if (FechaInicio.Text == "00/00/0000")
                 {
-					await Mensajes.Alerta("Fecha inicial requerida.");
-					return;
+                    await Mensajes.Alerta("Fecha inicial requerida.");
+                    return;
                 }
 
-				if (FechaFinal.Text == "00/00/0000")
-				{
-					await Mensajes.Alerta("Fecha inicial requerida.");
-					return;
-				}
+                if (FechaFinal.Text == "00/00/0000")
+                {
+                    await Mensajes.Alerta("Fecha inicial requerida.");
+                    return;
+                }
 
-				//DateTime fecha1 = Convert.ToDateTime(Application.Current.Properties["FechaNacimiento"].ToString());
+                //DateTime fecha1 = Convert.ToDateTime(Application.Current.Properties["FechaNacimiento"].ToString());
 
-				string Dia = FechaInicio.Text.Substring(0, 2);
-				string Mes = FechaInicio.Text.Substring(3, 2);
-				string Año = FechaInicio.Text.Substring(6, 4);
+                string Dia = FechaInicio.Text.Substring(0, 2);
+                string Mes = FechaInicio.Text.Substring(3, 2);
+                string Año = FechaInicio.Text.Substring(6, 4);
 
 
-				string Dia2 = FechaFinal.Text.Substring(0, 2);
-				string Mes2 = FechaFinal.Text.Substring(3, 2);
-				string Año2 = FechaFinal.Text.Substring(6, 4);
+                string Dia2 = FechaFinal.Text.Substring(0, 2);
+                string Mes2 = FechaFinal.Text.Substring(3, 2);
+                string Año2 = FechaFinal.Text.Substring(6, 4);
 
-				DateTime Fecha1 = Convert.ToDateTime(Año + "-" + Mes + "-" + Dia);
-				DateTime Fecha2 = Convert.ToDateTime(Año2 + "-" + Mes2 + "-" + Dia2);
+                DateTime Fecha1 = Convert.ToDateTime(Año + "-" + Mes + "-" + Dia);
+                DateTime Fecha2 = Convert.ToDateTime(Año2 + "-" + Mes2 + "-" + Dia2);
 
-				if (Fecha2.Date < Fecha1.Date)
+                if (Fecha2.Date < Fecha1.Date)
                 {
                     await Mensajes.Alerta("La fecha final no puede ser menor a la fecha inicial");
                 }
                 else
                 {
-					VariablesGlobales.FechaInicio = Fecha1.Date;
-					VariablesGlobales.FechaFin = Fecha2.Date;
-				
+                    VariablesGlobales.FechaInicio = Fecha1.Date;
+                    VariablesGlobales.FechaFin = Fecha2.Date;
+
                     VariablesGlobales.NumeroHuespedes = Convert.ToInt32(NoPersona.Text);
 
                     //await Navigation.PushPopupAsync(_webHotel);
-                   // #if __ANDROID__
+                    // #if __ANDROID__
                     await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(_webHotel);
-                   // #endif
+                    // #endif
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
-				//await DisplayAlert("oj", ex.ToString(), "ok");
-				await Mensajes.Alerta("No se pudo acceder a las reservaciones, intente mas tarde.");
+                //await DisplayAlert("oj", ex.ToString(), "ok");
+                await Mensajes.Alerta("No se pudo acceder a las reservaciones, intente mas tarde.");
             }
-           
+
         }
 
         private void Btn1_Clicked(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace City_Center.Page
             tienda.Source = "TIENDAONLINE";
         }
 
-       async private void Btn4_Clicked(object sender, System.EventArgs e)
+        async private void Btn4_Clicked(object sender, System.EventArgs e)
         {
 
             SL1.IsVisible = false;
@@ -231,83 +231,83 @@ namespace City_Center.Page
             }
         }
 
-		async void FechaInicio_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-		 {         
-            #if __IOS__
+        async void FechaInicio_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
-
-			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
-            {
-				Title = "Llegada",
-                CancelText="CANCELAR",
-				IsCancellable = true,
-				MinimumDate = DateTime.Now.AddDays(0)
-            });
-            
-
-			if (result.Ok)
-			{
-				FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-				FechaInicio.Unfocus();
-				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-
-			}
-			else
-			{
-				FechaInicio.Unfocus();
-				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-			}
-			         
-			//String.Format("{0:dd MMMM yyyy}"
-
-		 }
-
-		async void FechaFin_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-        {      
-
-            #if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
+#endif
 
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
+                Title = "Llegada",
+                CancelText = "CANCELAR",
                 IsCancellable = true,
-				CancelText = "CANCELAR",
-				MinimumDate = DateTime.Now.AddDays(0),
-                Title = "Salida"
-                
+                MinimumDate = DateTime.Now.AddDays(0)
             });
 
 
             if (result.Ok)
             {
-                FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-				FechaFinal.Unfocus();
-				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-                
+                FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                FechaInicio.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
             }
             else
             {
-				FechaFinal.Unfocus();
-				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-               
+                FechaInicio.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
 
             //String.Format("{0:dd MMMM yyyy}"
 
         }
 
-		async void FechaR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        async void FechaFin_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            #if __IOS__
+
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
+#endif
 
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
-				CancelText = "CANCELAR",
+                CancelText = "CANCELAR",
+                MinimumDate = DateTime.Now.AddDays(0),
+                Title = "Salida"
+
+            });
+
+
+            if (result.Ok)
+            {
+                FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                FechaFinal.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+            }
+            else
+            {
+                FechaFinal.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+            }
+
+            //String.Format("{0:dd MMMM yyyy}"
+
+        }
+
+        async void FechaR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+#if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                CancelText = "CANCELAR",
                 MinimumDate = DateTime.Now.AddDays(0)
             });
 
@@ -315,12 +315,12 @@ namespace City_Center.Page
             if (result.Ok)
             {
                 FechaR1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-				FechaR1.Unfocus();
+                FechaR1.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
-				FechaR1.Unfocus();
+                FechaR1.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
 
@@ -328,16 +328,16 @@ namespace City_Center.Page
 
         }
 
-		async void FechaRango1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        async void FechaRango1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            #if __IOS__
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
+#endif
 
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
-				CancelText = "CANCELAR",
+                CancelText = "CANCELAR",
                 MinimumDate = DateTime.Now.AddDays(0)
             });
 
@@ -345,12 +345,12 @@ namespace City_Center.Page
             if (result.Ok)
             {
                 FechaRango1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-				FechaRango1.Unfocus();
+                FechaRango1.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
-				FechaRango1.Unfocus();
+                FechaRango1.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
 
@@ -358,16 +358,16 @@ namespace City_Center.Page
 
         }
 
-		async void FechaRango2_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        async void FechaRango2_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            #if __IOS__
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
+#endif
 
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
-				CancelText = "CANCELAR",
+                CancelText = "CANCELAR",
                 MinimumDate = DateTime.Now.AddDays(0)
             });
 
@@ -375,12 +375,12 @@ namespace City_Center.Page
             if (result.Ok)
             {
                 FechaRango2.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-				FechaRango2.Unfocus();
+                FechaRango2.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
-				FechaRango2.Unfocus();
+                FechaRango2.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
 
@@ -388,11 +388,11 @@ namespace City_Center.Page
 
         }
 
-		async void HoraR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-		{
-            #if __IOS__
+        async void HoraR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
+#endif
 
             if (Restaurante.Text.Contains("PIÚ"))
             {
@@ -440,7 +440,7 @@ namespace City_Center.Page
 
                 if (result.Ok)
                 {
-                    HoraR1.Text =   FechaRango1.Text = (Convert.ToString(result.SelectedTime).Substring(0, 5));
+                    HoraR1.Text = FechaRango1.Text = (Convert.ToString(result.SelectedTime).Substring(0, 5));
 
                     HoraR1.Unfocus();
                     DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
@@ -453,63 +453,63 @@ namespace City_Center.Page
             }
 
 
-			//var result = await UserDialogs.Instance.TimePromptAsync(new TimePromptConfig
-   //         {
-   //              IsCancellable=true
-   //         });
-            
+            //var result = await UserDialogs.Instance.TimePromptAsync(new TimePromptConfig
+            //         {
+            //              IsCancellable=true
+            //         });
 
-			//if (result.Ok)
-    //        {
-    //            string hora = Convert.ToString(result.SelectedTime);
-    //            HoraR1.Text = hora.Substring(0,5);
-				//HoraR1.Unfocus();
-    //            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-    //        }
-    //        else
-    //        {
-				//HoraR1.Unfocus();
+
+            //if (result.Ok)
+            //        {
+            //            string hora = Convert.ToString(result.SelectedTime);
+            //            HoraR1.Text = hora.Substring(0,5);
+            //HoraR1.Unfocus();
+            //            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            //        }
+            //        else
+            //        {
+            //HoraR1.Unfocus();
             //    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             //}
-            
-		}
+
+        }
 
         async void Restaurant_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-		{
-            #if __IOS__
+        {
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
+#endif
             var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "CANCELAR", null, null, "LE GULÁ", "PIÚ! EXPRESS");
-            
-            if (result !="CANCELAR")
-			{
-				Restaurante.Text = result.ToString();
+
+            if (result != "CANCELAR")
+            {
+                Restaurante.Text = result.ToString();
                 if (Restaurante.Text.Contains("PIÚ"))
                 {
-                    HoraR1.Text = "12:30";  
+                    HoraR1.Text = "12:30";
                 }
                 else if (Restaurante.Text.Contains("LE GULÁ"))
                 {
-                    HoraR1.Text = "21:00";  
+                    HoraR1.Text = "21:00";
                 }
 
-				Restaurante.Unfocus();
+                Restaurante.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-			}
-			else
-			{
-                HoraR1.Text = "00:00";  
-				Restaurante.Unfocus();	
+            }
+            else
+            {
+                HoraR1.Text = "00:00";
+                Restaurante.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-			}
+            }
 
-		}
-        
-		async void SillaNinos_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        }
+
+        async void SillaNinos_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            #if __IOS__
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
+#endif
 
             var result = await UserDialogs.Instance.ActionSheetAsync("Sillas niños", "CANCELAR", null, null, "No", "Si");
 
@@ -517,47 +517,47 @@ namespace City_Center.Page
             {
                 SillaNiño.Text = result.ToString();
 
-				SillaNiño.Unfocus();
+                SillaNiño.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
-				SillaNiño.Unfocus();
+                SillaNiño.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
 
         }
 
         void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
-		{
-		   try
-			{
-				Entry entry = sender as Entry;
+        {
+            try
+            {
+                Entry entry = sender as Entry;
                 String val = entry.Text; //Get Current Text
 
-                
+
                 if (val.Length > 0)//If it is more than your character restriction
-                {               
-          
-					Match match = Regex.Match(val, @"([0-9\-]+)$",
+                {
+
+                    Match match = Regex.Match(val, @"([0-9\-]+)$",
                                     RegexOptions.IgnoreCase);
 
-					if (!match.Success)
+                    if (!match.Success)
                     {
-						val = val.Remove(val.Length - 1);
-						entry.Text = val;
-						return;
+                        val = val.Remove(val.Length - 1);
+                        entry.Text = val;
+                        return;
                     }
-     
-                     //Set the Old value
+
+                    //Set the Old value
                 }
-			}
-			catch (Exception)
-			{
+            }
+            catch (Exception)
+            {
 
-			}
+            }
 
-		}
+        }
 
         async void Handle_Clicked_1(object sender, System.EventArgs e)
         {
@@ -566,24 +566,20 @@ namespace City_Center.Page
 
         void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
+          
             try
             {
-                //if (e.NewValue >VariablesGlobales.indice)
-                //{
-                //    VariablesGlobales.indice = 0;  
-                //}
-                //else
-                //{
+                // VariablesGlobales.indice = e.NewValue;
 
-                    VariablesGlobales.indice = e.NewValue;  
-                //}
+               
+                    VariablesGlobales.indice = e.NewValue;
+               
 
             }
-            catch (Exception )
+            catch (Exception)
             {
 
             }
-           
         }
 
         void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
@@ -592,11 +588,11 @@ namespace City_Center.Page
             {
                 string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion =="Right")
+                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion == "Right")
                 {
                     CarruselTorneos.AnimateTransition = false;
-                    CarruselTorneos.Position = 0;
-                 
+                    CarruselTorneos.Position = 1;
+
 
                 }
                 else if (VariablesGlobales.indice == 1 && Direccion == "Left")
@@ -607,11 +603,12 @@ namespace City_Center.Page
             }
             catch (Exception ex)
             {
-                DisplayAlert("Error",ex.ToString(),"OK");
+                DisplayAlert("Error", ex.ToString(), "OK");
             }
 
+
         }
-    
+
         void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
             try
@@ -632,21 +629,26 @@ namespace City_Center.Page
             }
             catch (Exception ex)
             {
-                DisplayAlert("Error", ex.ToString(), "OK");
+               
             }  
+         
+
+
         }
 
         void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
 
-            try
-            {
-                VariablesGlobales.indicePromociones = e.NewValue;
-            }
-            catch (Exception)
-            {
 
-            } 
+                try
+                {
+                    VariablesGlobales.indicePromociones = e.NewValue;
+                }
+                catch (Exception)
+                {
+
+                } 
+
         }
     }
 
