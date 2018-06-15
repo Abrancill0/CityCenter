@@ -42,7 +42,7 @@
                         </Image>
                         <Image x:Name="Icono2"
                                Aspect="AspectFit"
-                               Source="FavoritoOK"
+                               Source="Fav"
                                IsVisible="{Binding td.tor_guardado}"
                                WidthRequest="25"
                                HeightRequest="25">

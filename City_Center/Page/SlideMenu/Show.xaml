@@ -173,7 +173,7 @@
                                                    Grid.Column="2"
                                                    Grid.RowSpan="2"
                                                   
-                                                   Source="FavoritoOK"
+                                                   Source="Fav"
                                                    WidthRequest="10"
                                                    HeightRequest="10"
                                                     IsVisible="{Binding eve_guardado,Mode=TwoWay}">

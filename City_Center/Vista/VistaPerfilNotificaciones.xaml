@@ -4,7 +4,7 @@
              x:Class="City_Center.Vista.VistaPerfilNotificaciones">
     <ContentView.Content>
       <StackLayout>
-        <ListView>
+       <!-- <ListView>
             <ListView.ItemTemplate>
               <DataTemplate>
                 <ViewCell>
@@ -26,9 +26,9 @@
                 </ViewCell>
               </DataTemplate>
             </ListView.ItemTemplate>       
-        </ListView>
+        </ListView> -->
 
-           <!-- <StackLayout Margin="10" >
+            <StackLayout Margin="10" >
             <Label HorizontalOptions="Start" Text="PROMOCIÓN" TextColor="#250C4B" >
                     <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
@@ -86,7 +86,7 @@
                 </Label.FontFamily>
                 </Label>
                  <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Existen nuevas promociones que tal ve te puedan interesar..." />
-            </StackLayout>-->
+            </StackLayout>
 
         </StackLayout>
     </ContentView.Content>

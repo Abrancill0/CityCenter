@@ -21,8 +21,7 @@
                                ActivePlaceholderColor="#7A5BA5"
                                HorizontalOptions="FillAndExpand"
                                HorizontalTextAlignment="Start"
-                               FontSize="18"
-                               Keyboard="Chat">
+                               FontSize="18">
                                         <Entry.HeightRequest>
                                             <OnPlatform x:TypeArguments="x:Double">
                                                 <On Platform="iOS">60</On>

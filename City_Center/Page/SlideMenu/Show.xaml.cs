@@ -147,7 +147,7 @@ namespace City_Center.Page.SlideMenu
                     if (image.BackgroundColor != Color.Transparent)
                     {
                         image.BackgroundColor = Color.Transparent;
-                        image.Source = "FavoritoOK";                        
+                        image.Source = "Fav";                        
                     }
                     else
                     {
@@ -185,7 +185,7 @@ namespace City_Center.Page.SlideMenu
                     else
                     {
                         image.BackgroundColor = Color.White;
-                        image.Source = "FavoritoOK";
+                        image.Source = "Fav";
                     }
 
                 }

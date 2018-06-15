@@ -47,7 +47,7 @@
                     <controls:CircleImage x:Name="imagen1" Source="{Binding Imagen, Mode=TwoWay}"
                                           Aspect="AspectFill"
                                           AbsoluteLayout.LayoutFlags="PositionProportional"
-                                          AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                                          AbsoluteLayout.LayoutBounds="0.5,0.3,-1,-1">
                         <controls:CircleImage.WidthRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="Android, iOS">75</On>
@@ -55,7 +55,11 @@
                         </controls:CircleImage.WidthRequest>
                         <controls:CircleImage.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
+<<<<<<< HEAD
                                 <On Platform="Android, iOS">80</On>
+=======
+                                <On Platform="Android, iOS">78</On>
+>>>>>>> 3db1439e21e8034c7c169f358972c261e9ecdeea
                             </OnPlatform>
 
                         </controls:CircleImage.HeightRequest>

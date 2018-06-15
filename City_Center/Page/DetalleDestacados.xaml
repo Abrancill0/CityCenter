@@ -41,7 +41,7 @@
                                                  WidthRequest="30"
                                                  LoadingPlaceholder="image_loading.png"
                                                  ErrorPlaceholder="image_error.png"
-                                                 Source="FavoritoOK"
+                                                 Source="Fav"
                                                  IsVisible="{Binding dd.des_guardado}">
                     <ffimageloading:CachedImage.GestureRecognizers>
                          <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono2" />
