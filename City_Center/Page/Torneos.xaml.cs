@@ -10,6 +10,7 @@ namespace City_Center.Page
         public Torneos()
         {
             InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "logo_hdpi.png");
         }
 
         void CambiaIcono(object sender, System.EventArgs e)

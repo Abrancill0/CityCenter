@@ -37,12 +37,20 @@
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+<<<<<<< HEAD
     <CodesignKey>iPhone Developer: Luis  Albor (G62L84WN3M)</CodesignKey>
+=======
+    <CodesignKey>iPhone Distribution: Danthop Mexico (S827V5EHE7)</CodesignKey>
+>>>>>>> 66a2e5f3c284a595e654f62d503db44111e45e87
     <MtouchFloat32>true</MtouchFloat32>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
+<<<<<<< HEAD
+=======
+    <CodesignProvision>CityCenterAppStore</CodesignProvision>
+>>>>>>> 66a2e5f3c284a595e654f62d503db44111e45e87
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -445,7 +453,10 @@
     <BundleResource Include="Resources\Facebook.png" />
     <BundleResource Include="Resources\Favorito.png" />
     <BundleResource Include="Resources\favorito1.png" />
+<<<<<<< HEAD
     <BundleResource Include="Resources\FavoritoOK.png" />
+=======
+>>>>>>> 66a2e5f3c284a595e654f62d503db44111e45e87
     <BundleResource Include="Resources\food.png" />
     <BundleResource Include="Resources\foodgray.png" />
     <BundleResource Include="Resources\GASTRONOMIAmin.png" />
@@ -503,6 +514,7 @@
     <BundleResource Include="Resources\warning.png" />
     <BundleResource Include="Resources\Wifi.png" />
     <BundleResource Include="Resources\WifiLibre.png" />
+<<<<<<< HEAD
     <BundleResource Include="Resources\ContactoUp.jpeg" />
     <BundleResource Include="Resources\HOMEmin.jpg" />
     <BundleResource Include="Resources\image_loading.jpg" />
@@ -516,6 +528,9 @@
     <BundleResource Include="Resources\logo_hdpi%402x.png" />
     <BundleResource Include="Resources\logo%402x.png" />
     <BundleResource Include="Resources\chat%402x.png" />
+=======
+    <BundleResource Include="Resources\FavoritoOk.png" />
+>>>>>>> 66a2e5f3c284a595e654f62d503db44111e45e87
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

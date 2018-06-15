@@ -14,7 +14,11 @@
                      BindingContext="{Binding Detail}">
             <StackLayout BackgroundColor="#250c4b">
                 <Image HorizontalOptions="Start"
+<<<<<<< HEAD
                        Source="logo@2x.png"
+=======
+                       Source="logo_hdpi"
+>>>>>>> 66a2e5f3c284a595e654f62d503db44111e45e87
                        HeightRequest="95"
                        WidthRequest="140"
                        Margin="20,10,0,-10"
