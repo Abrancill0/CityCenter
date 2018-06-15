@@ -38,7 +38,7 @@
                                                  WidthRequest="25"
                                                  LoadingPlaceholder="image_loading.png"
                                                  ErrorPlaceholder="image_error.png"
-                                                 Source="FavoritoOK"
+                                                 Source="Fav"
                                                  IsVisible="{Binding ds.eve_guardado, Mode=TwoWay}">
                         <ffimageloading:CachedImage.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2" />

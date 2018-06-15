@@ -755,7 +755,7 @@
                                                    Grid.Column="2" 
                                                    Grid.RowSpan="2"
                                                    Aspect="AspectFit"
-                                                   Source="FavoritoOK"
+                                                   Source="Fav"
                                                    IsVisible="{Binding tor_guardado}"
                                                    VerticalOptions="Start"
                                                    HorizontalOptions="Center"

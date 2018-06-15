@@ -26,7 +26,7 @@ namespace City_Center.Page
                     if (Icono1.BackgroundColor != Color.Transparent)
                     {
                         Icono1.BackgroundColor = Color.Transparent;
-                        Icono1.Source = "FavoritoOK";
+                        Icono1.Source = "Fav";
                     }
                     else
                     {
@@ -62,7 +62,7 @@ namespace City_Center.Page
                     else
                     {
                         Icono2.BackgroundColor = Color.White;
-                        Icono2.Source = "FavoritoOK";
+                        Icono2.Source = "Fav";
                     }
 
                 }

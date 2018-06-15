@@ -175,7 +175,7 @@ namespace City_Center.Page
                     if (image.BackgroundColor != Color.Transparent)
                     {
                         image.BackgroundColor = Color.Transparent;
-                        image.Source = "FavoritoOK";
+                        image.Source = "Fav";
                     }
                     else
                     {
@@ -213,7 +213,7 @@ namespace City_Center.Page
                     else
                     {
                         image.BackgroundColor = Color.White;
-                        image.Source = "FavoritoOK";
+                        image.Source = "Fav";
                     }
 
                 }
