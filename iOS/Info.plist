@@ -99,8 +99,6 @@
 	<string>City Center necesita uso de tu ubicación</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>XSLaunchImageAssets</key>
-	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
 	<key>NSCalendarsUsageDescription</key>
@@ -112,5 +110,7 @@
 	</dict>
 	<key>CFBundleVersion</key>
 	<string>2.3</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Assets.xcassets/LaunchImage.launchimage</string>
 </dict>
 </plist>
