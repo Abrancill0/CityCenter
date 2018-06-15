@@ -447,7 +447,6 @@
     <BundleResource Include="Resources\Facebook.png" />
     <BundleResource Include="Resources\Favorito.png" />
     <BundleResource Include="Resources\favorito1.png" />
-    <BundleResource Include="Resources\FavoritoOK.png" />
     <BundleResource Include="Resources\food.png" />
     <BundleResource Include="Resources\foodgray.png" />
     <BundleResource Include="Resources\GASTRONOMIAmin.png" />
@@ -518,7 +517,7 @@
     <BundleResource Include="Resources\logo_hdpi%402x.png" />
     <BundleResource Include="Resources\logo%402x.png" />
     <BundleResource Include="Resources\chat%402x.png" />
-    <BundleResource Include="Resources\FavoritoOk.png" />
+    <BundleResource Include="Resources\Fav.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />
