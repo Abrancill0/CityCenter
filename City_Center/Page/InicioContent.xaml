@@ -683,6 +683,7 @@
                                                     Position="1"
                                                     PositionSelected="PositionSelected_CT"
                                                     Scrolled="Scrolled_CT"
+                                                   
                                                     >
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
@@ -816,7 +817,7 @@
                                                     ShowArrows="{Binding MuestraFlechasPromo, Mode=TwoWay}"
                                                     ArrowsTintColor="White"
                                                     ArrowsBackgroundColor="Black"
-                                                    Position="0"
+                                                    Position="1"
                                                     Scrolled="Scrolled_HP"
                                                     PositionSelected="PositionSelected_HP"
                                                     InterPageSpacing="50">

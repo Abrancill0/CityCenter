@@ -194,12 +194,12 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Info("Es necesario que te registres para completar esta acción");
+                    await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
                 }
             }
             catch (Exception)
             {
-                await Mensajes.Info("Es necesario que te registres para completar esta acción");
+                await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
             }
         }
 

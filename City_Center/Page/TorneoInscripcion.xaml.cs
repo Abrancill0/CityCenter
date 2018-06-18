@@ -18,7 +18,7 @@ namespace City_Center.Page
 			ListaOpciones = new string[] { "DNI", "LE", "LC", "CI" };
 
             TipoDocumento.ItemsSource = ListaOpciones;
-            NavigationPage.SetTitleIcon(this, "logo_hdpi.png");
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
             TipoDocumento.SelectedIndex = 0;
         }
 

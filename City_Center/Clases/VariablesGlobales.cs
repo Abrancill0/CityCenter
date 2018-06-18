@@ -27,6 +27,15 @@ namespace City_Center.Clases
 
         public static string Mensaje;
 
+        public static int validacionIOS;
+
+        public static int validacionIOSPromociones;
+        public static int validacionIOSDestacados;
+        public static int validacionIOSCasinoTorneo;
+        public static int validacionIOSCasinoPromociones;
+
+
+
         public static int indice;
         public static int indicePromociones;
         public static int IndiceCasinoTorneo;

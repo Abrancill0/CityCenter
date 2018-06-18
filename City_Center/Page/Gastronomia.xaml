@@ -181,7 +181,8 @@
                                                     ArrowsBackgroundColor="Black"
                                                         Scrolled="Scrolled_GP"
                                                         PositionSelected="PositionSelected_GP"
-                                                        Position="1">
+                                                        Position="1"
+                                                        >
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
                                           <Grid Padding="3" CompressedLayout.IsHeadless="true">

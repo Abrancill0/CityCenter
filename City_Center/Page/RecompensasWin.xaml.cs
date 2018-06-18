@@ -10,6 +10,7 @@ namespace City_Center.Page
         public RecompensasWin()
         {
               InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
         async void Chat_click(object sender, System.EventArgs e)

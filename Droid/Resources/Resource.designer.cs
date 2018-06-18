@@ -5202,7 +5202,7 @@ namespace City_Center.Droid
 			public const int CASINOmin = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int Chat = 2130837615;
+			public const int chat = 2130837615;
 			
 			// aapt resource value: 0x7f020070
 			public const int checkin_rosa = 2130837616;
@@ -5409,16 +5409,16 @@ namespace City_Center.Droid
 			public const int Facebook = 2130837683;
 			
 			// aapt resource value: 0x7f0200b4
-			public const int Favorito = 2130837684;
+			public const int Fav = 2130837684;
 			
 			// aapt resource value: 0x7f0200b5
-			public const int favorito1 = 2130837685;
+			public const int Favorito = 2130837685;
 			
 			// aapt resource value: 0x7f0200b6
-			public const int favorito3 = 2130837686;
+			public const int favorito1 = 2130837686;
 			
 			// aapt resource value: 0x7f0200b7
-			public const int FavoritoOK = 2130837687;
+			public const int favorito3 = 2130837687;
 			
 			// aapt resource value: 0x7f0200b8
 			public const int food = 2130837688;

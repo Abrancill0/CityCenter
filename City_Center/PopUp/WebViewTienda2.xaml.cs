@@ -9,7 +9,7 @@ namespace City_Center.PopUp
         public WebViewTienda2()
         {
             InitializeComponent();
-
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
             #if __ANDROID__
 
             Browser.Source = VariablesGlobales.RutaTiendaGuardados;

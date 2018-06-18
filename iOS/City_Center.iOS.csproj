@@ -518,6 +518,7 @@
     <BundleResource Include="Resources\logo%402x.png" />
     <BundleResource Include="Resources\chat%402x.png" />
     <BundleResource Include="Resources\Fav.png" />
+    <BundleResource Include="Resources\ReservaPromoDown2.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

@@ -439,6 +439,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Page\ChatIos.xaml.cs">
       <DependentUpon>ChatIos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ConfigNotificacionesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NotificacionesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

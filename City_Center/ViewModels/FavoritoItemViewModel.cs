@@ -119,7 +119,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception)
             {
-                await Mensajes.Info("Es necesario que te registres para completar esta acción");
+                await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
             }
         }
 
@@ -154,12 +154,10 @@ namespace City_Center.ViewModels
         private async void CompraOnline()
         {
 
-            //Device.OpenUri(new Uri(link));
-
             VariablesGlobales.RutaTiendaGuardados = link;
-            #if __ANDROID__
+           
             await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda2());
-            #endif
+           
         }
         
         
