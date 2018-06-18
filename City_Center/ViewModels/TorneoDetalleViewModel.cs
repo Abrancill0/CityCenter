@@ -270,49 +270,49 @@ namespace City_Center.ViewModels
          
 			if (string.IsNullOrEmpty(Nombre))
 			{
-			await Mensajes.Info("Nombre Requerido");
+                await Mensajes.Alerta("Nombre Requerido");
 				return;
 			}
 
 			if (string.IsNullOrEmpty(Correo))
             {
-                await Mensajes.Info("Correo Requerido");
+                await Mensajes.Alerta("Correo Requerido");
                 return;
             }
 
 			if (string.IsNullOrEmpty(NumeroDocumento))
             {
-				await    Mensajes.Info("Numero de documento Requerido");
+                await    Mensajes.Alerta("Numero de documento Requerido");
                 return;
             }
 
 			if (string.IsNullOrEmpty(Nacionalidad))
             {
-				await  Mensajes.Info("Nacionalidad Requerido");
+                await  Mensajes.Alerta("Nacionalidad Requerido");
                 return;
             }
 
 			if (string.IsNullOrEmpty(Provincia))
             {
-				await  Mensajes.Info("Provincia Requerido");
+                await  Mensajes.Alerta("Provincia Requerido");
                 return;
             }
 
 			if (string.IsNullOrEmpty(TipoDocumento))
             {
-				await  Mensajes.Info("Tipo de documento Requerido");
+                await  Mensajes.Alerta("Tipo de documento Requerido");
                 return;
             }
 
 			if (string.IsNullOrEmpty(Pais))
             {
-				await  Mensajes.Info("Pais Requerido");
+                await  Mensajes.Alerta("Pais Requerido");
                 return;
             }
 
 			if (string.IsNullOrEmpty(Ciudad))
             {
-				await  Mensajes.Info("Ciudad Requerido");
+                await  Mensajes.Alerta("Ciudad Requerido");
                 return;
             }
 

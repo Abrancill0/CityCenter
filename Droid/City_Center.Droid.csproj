@@ -430,7 +430,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\showPass.png" />
     <AndroidResource Include="Resources\drawable\B.png" />
     <AndroidResource Include="Resources\drawable\R.png" />
-    <AndroidResource Include="Resources\drawable\Chat.png" />
+    <AndroidResource Include="Resources\drawable\chat.png" />
     <AndroidResource Include="Resources\drawable-hdpi\info2.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ojo.png" />
     <AndroidResource Include="Resources\drawable-hdpi\campana.png" />
@@ -505,7 +505,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\checkin_rosa.png" />
     <AndroidResource Include="Resources\drawable-hdpi\checkin_verde.png" />
     <AndroidResource Include="Resources\drawable-hdpi\favorito1.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\FavoritoOK.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Fav.png" />
     <AndroidResource Include="Resources\drawable-hdpi\favorito3.png" />
     <AndroidResource Include="Resources\drawable-hdpi\promodown.png" />
     <AndroidResource Include="Resources\drawable-hdpi\promoup.png" />

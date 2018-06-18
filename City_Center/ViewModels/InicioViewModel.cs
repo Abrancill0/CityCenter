@@ -393,13 +393,13 @@ namespace City_Center.ViewModels
 
                 MainViewModel.GetInstance().listTorneo = (TorneoReturn)response.Result;
 
-                TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel2());
+                TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
-                if (TorneoDetalle.Count>0)
+                if (TorneoDetalle.Count>2)
                 {
                     MuestraFlechas = true;
                     VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count-2;
-
+                    //VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count;
                    
                 }
                 else
@@ -552,22 +552,6 @@ namespace City_Center.ViewModels
 
                 this.listPromociones = (PromocionesReturn)response.Result;
 
-#if __IOS__
-                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel2());
-
-                if (PromocionesDetalle.Count > 0)
-                {
-                    MuestraFlechasPromo = true;
-                    VariablesGlobales.RegistrosPromociones = PromocionesDetalle.Count;
-
-                }
-                else
-                {
-                    MuestraFlechasPromo = false;
-                }
-#endif
-
-                #if __ANDROID__
                 PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
 
                 if (PromocionesDetalle.Count > 2)
@@ -580,7 +564,7 @@ namespace City_Center.ViewModels
                 {
                     MuestraFlechasPromo = false; 
                 }
-                #endif
+              
 
 
 

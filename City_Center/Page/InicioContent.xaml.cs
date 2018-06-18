@@ -566,24 +566,72 @@ namespace City_Center.Page
 
         void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
-          
+
+            VariablesGlobales.indice = e.NewValue;
+
+            #if __IOS__
             try
             {
-                // VariablesGlobales.indice = e.NewValue;
+                
+                if (VariablesGlobales.validacionIOS == 1)
+                {
+                    if (e.NewValue != 0)
+                    {
+                        CarruselTorneos.Position = 0;
+                        VariablesGlobales.indice = 1;
+                    }
+                }
+                else if (VariablesGlobales.validacionIOS == 2)
+                {
+                    //if (e.NewValue == 0)
+                    //{
+                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
+                    VariablesGlobales.indice = VariablesGlobales.RegistrosTorneo;
+                    //}
+                }
 
-               
-                    VariablesGlobales.indice = e.NewValue;
-               
 
             }
             catch (Exception)
             {
 
             }
+        #endif
         }
 
         void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
+#if __IOS__
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion == "Right")
+                {
+                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
+                    VariablesGlobales.validacionIOS = 1;
+                    CarruselTorneos.Position = 0;
+                    CarruselTorneos.AnimateTransition = false;
+
+                }
+                else if (VariablesGlobales.indice == 1 && Direccion == "Left")
+                {
+                    CarruselTorneos.AnimateTransition = false;
+                    VariablesGlobales.validacionIOS = 2;
+                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
+                }
+                else
+                {
+                    VariablesGlobales.validacionIOS = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+#endif
+
+#if __ANDROID__
             try
             {
                 string Direccion = Convert.ToString(e.Direction);
@@ -606,11 +654,45 @@ namespace City_Center.Page
                 DisplayAlert("Error", ex.ToString(), "OK");
             }
 
-
+#endif
         }
 
         void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
+
+        #if __IOS__
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.indicePromociones == VariablesGlobales.RegistrosPromociones && Direccion == "Right")
+                {
+                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
+                    VariablesGlobales.validacionIOSPromociones = 1;
+                    CarruselPromociones.Position = 0;
+                    CarruselPromociones.AnimateTransition = false;
+
+                }
+                else if (VariablesGlobales.indicePromociones == 1 && Direccion == "Left")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    VariablesGlobales.validacionIOSPromociones = 2;
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
+                }
+                else
+                {
+                    VariablesGlobales.validacionIOSPromociones = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+        #endif
+
+
+
+#if __ANDROID__
             try
             {
                 string Direccion = Convert.ToString(e.Direction);
@@ -632,22 +714,44 @@ namespace City_Center.Page
                
             }  
          
-
+#endif
 
         }
 
         void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
-
-
-                try
-                {
                     VariablesGlobales.indicePromociones = e.NewValue;
-                }
-                catch (Exception)
-                {
 
-                } 
+        #if __IOS__
+            try
+            {
+                
+                if (VariablesGlobales.validacionIOSPromociones == 1)
+                {
+                    if (e.NewValue != 0)
+                    {
+                       
+                        VariablesGlobales.indicePromociones = 1;
+                        CarruselPromociones.Position = 0;
+                    }
+                }
+                else if (VariablesGlobales.validacionIOSPromociones == 2)
+                {
+                    //if (e.NewValue == 0)
+                    //{
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
+                    VariablesGlobales.indicePromociones = VariablesGlobales.RegistrosPromociones;
+                    //}
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+        #endif
+
+
 
         }
     }

@@ -6,7 +6,7 @@
              x:Class="City_Center.Page.ConsultaTarjetaWin"
              BackgroundColor = "#250c4b">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Chat" Clicked="Chat_click" />
+        <ToolbarItem Icon="chat@2x" Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -38,7 +38,8 @@
                                 FontSize="16"
                                 Text="{Binding TipoDocumento,Mode=TwoWay}"
                                 Focused="Handle_Focused"
-                                IsEnabled="false">
+
+                                >
                     <Entry.HeightRequest>
                         <OnPlatform x:TypeArguments="x:Double">
                             <On Platform="iOS">70</On>
@@ -60,7 +61,7 @@
                               FontSize="16"
                               Keyboard="Numeric"
                               Text="{Binding NumeroDocumento,Mode=TwoWay}"
-                              IsEnabled="false">
+                              >
                     <Entry.HeightRequest>
                         <OnPlatform x:TypeArguments="x:Double">
                             <On Platform="iOS">70</On>

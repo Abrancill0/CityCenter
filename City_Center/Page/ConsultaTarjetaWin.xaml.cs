@@ -16,6 +16,7 @@ namespace City_Center.Page
         public ConsultaTarjetaWin()
         {
             InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
         protected override void OnAppearing()

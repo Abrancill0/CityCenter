@@ -14,38 +14,38 @@ namespace City_Center.Page
     public partial class Casino : ContentPage
     {
         string[] ListaOpciones;
-       
+
         CasinoViewModel Casinito = new CasinoViewModel();
 
         public Casino()
-        {   
-         
-			InitializeComponent();
+        {
+
+            InitializeComponent();
             //MainViewModel.GetInstance().Casino = new CasinoViewModel();
-         
+
             ListaOpciones = new string[] { "vip1", "vip2", "svip1", "svip2" };
 
             NavigationPage.SetTitleIcon(this, "logo@2x.png");
             Img2provisional.Source = "vip1";
             listaCasino.ItemsSource = ListaOpciones;
 
-          //  MainViewModel.GetInstance().Casino = new CasinoViewModel();
-           // loadTarjet();
+            //  MainViewModel.GetInstance().Casino = new CasinoViewModel();
+            // loadTarjet();
 
         }
 
         protected override void OnAppearing()
-		{         
-            base.OnAppearing(); 	         
+        {
+            base.OnAppearing();
         }
 
         protected override void OnDisappearing()
-        {         
+        {
             base.OnDisappearing();
 
             GC.Collect();
         }
-       
+
         void Tab1_Tapped(object sender, System.EventArgs e)
         {
             LabelTab1.TextColor = Color.FromHex("#FDE7EE");
@@ -159,7 +159,7 @@ namespace City_Center.Page
 
             }
         }
-    
+
         void CambiaIcono(object sender, System.EventArgs e)
         {
             try
@@ -225,7 +225,7 @@ namespace City_Center.Page
 
             }
         }
-    
+
         void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
             try
@@ -237,10 +237,74 @@ namespace City_Center.Page
 
             }
 
+
+#if __IOS__
+            try
+            {
+
+                if (VariablesGlobales.validacionIOSCasinoTorneo == 1)
+                {
+                    
+                        CarruselTorneos.Position = 0;
+                        VariablesGlobales.RegistrosCasinoTorneo = 1;
+                }
+                else if (VariablesGlobales.validacionIOSCasinoTorneo == 2)
+                {
+                    //if (e.NewValue == 0)
+                    //{
+                    CarruselTorneos.Position = VariablesGlobales.RegistrosCasinoTorneo + 1;
+                    VariablesGlobales.IndiceCasinoTorneo = VariablesGlobales.RegistrosCasinoTorneo;
+                    //}
+                }
+
+
+            }
+            catch (Exception)
+            {
+
+            }
+#endif
+
         }
 
         void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
+
+#if __IOS__
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.IndiceCasinoTorneo == VariablesGlobales.RegistrosCasinoTorneo && Direccion == "Right")
+                {
+                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
+                    VariablesGlobales.validacionIOSCasinoTorneo = 1;
+                    CarruselTorneos.Position = 0;
+                    CarruselTorneos.AnimateTransition = false;
+
+                }
+                else if (VariablesGlobales.IndiceCasinoTorneo == 1 && Direccion == "Left")
+                {
+                    CarruselTorneos.AnimateTransition = false;
+                    VariablesGlobales.validacionIOSCasinoTorneo = 2;
+                    CarruselTorneos.Position = VariablesGlobales.RegistrosCasinoTorneo + 1;
+                }
+                else
+                {
+                    VariablesGlobales.validacionIOSCasinoTorneo = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+#endif
+
+
+
+
+#if __ANDROID__
+
             try
             {
                 string Direccion = Convert.ToString(e.Direction);
@@ -262,7 +326,7 @@ namespace City_Center.Page
                 DisplayAlert("Error", ex.ToString(), "OK");
             }
 
-
+#endif
         }
 
         void PositionSelected_DT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
@@ -276,10 +340,79 @@ namespace City_Center.Page
 
             }
 
+#if __IOS__
+            try
+            {
+
+                if (VariablesGlobales.validacionIOSDestacados == 1)
+                {
+                    if (e.NewValue != 0)
+                    {
+
+                        VariablesGlobales.IndiceCasinoDestacados = 1;
+                        CarruselDestacados.Position = 0;
+                    }
+                }
+                else if (VariablesGlobales.validacionIOSDestacados == 2)
+                {
+                    //if (e.NewValue == 0)
+                    //{
+                    CarruselDestacados.Position = VariablesGlobales.RegistrosCasinoDestacados + 1;
+                    VariablesGlobales.IndiceCasinoDestacados = VariablesGlobales.RegistrosCasinoDestacados;
+                    //}
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+#endif
+
+
+
+
         }
 
         void Scrolled_DT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
+
+
+
+#if __IOS__
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.IndiceCasinoDestacados == VariablesGlobales.RegistrosCasinoDestacados && Direccion == "Right")
+                {
+                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
+                    VariablesGlobales.validacionIOSDestacados = 1;
+                    CarruselDestacados.Position = 0;
+                    CarruselDestacados.AnimateTransition = false;
+
+                }
+                else if (VariablesGlobales.IndiceCasinoDestacados == 1 && Direccion == "Left")
+                {
+                    CarruselDestacados.AnimateTransition = false;
+                    VariablesGlobales.validacionIOSDestacados = 2;
+                    CarruselDestacados.Position = VariablesGlobales.RegistrosCasinoDestacados + 1;
+                }
+                else
+                {
+                    VariablesGlobales.validacionIOSDestacados = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+#endif
+
+
+
+#if __ANDROID__
+
             try
             {
                 string Direccion = Convert.ToString(e.Direction);
@@ -300,7 +433,7 @@ namespace City_Center.Page
             {
                 
             }
-
+#endif
         }
 
         void PositionSelected_CP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
@@ -312,11 +445,79 @@ namespace City_Center.Page
             catch (Exception)
             {
 
-            } 
+            }
+
+
+
+        #if __IOS__
+            try
+            {
+
+                if (VariablesGlobales.validacionIOSCasinoPromociones == 1)
+                {
+                    if (e.NewValue != 0)
+                    {
+
+                        VariablesGlobales.IndiceCasinoPromociones = 1;
+                        CarruselPromociones.Position = 0;
+                    }
+                }
+                else if (VariablesGlobales.validacionIOSCasinoPromociones == 2)
+                {
+                    //if (e.NewValue == 0)
+                    //{
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones + 1;
+                    VariablesGlobales.IndiceCasinoPromociones = VariablesGlobales.RegistrosCasinoPromociones;
+                    //}
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+#endif
+
+
+
+
         }
 
         void Scrolled_CP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
+
+#if __IOS__
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.IndiceCasinoPromociones == VariablesGlobales.RegistrosCasinoPromociones && Direccion == "Right")
+                {
+                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
+                    VariablesGlobales.validacionIOSCasinoPromociones = 1;
+                    CarruselPromociones.Position = 0;
+                    CarruselPromociones.AnimateTransition = false;
+
+                }
+                else if (VariablesGlobales.IndiceCasinoPromociones == 1 && Direccion == "Left")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    VariablesGlobales.validacionIOSCasinoPromociones = 2;
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones + 1;
+                }
+                else
+                {
+                    VariablesGlobales.validacionIOSCasinoPromociones = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+#endif
+
+
+#if __ANDROID__
             try
             {
                 string Direccion = Convert.ToString(e.Direction);
@@ -337,6 +538,7 @@ namespace City_Center.Page
             {
                 DisplayAlert("Error", ex.ToString(), "OK");
             }
+#endif
         }
     }
 }

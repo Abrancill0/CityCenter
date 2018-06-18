@@ -76,7 +76,7 @@ namespace City_Center.ViewModels
 
         private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel()
         {
-            return this.listTorneo.resultado.Select(l => new TorneoItemViewModel
+            return this.listTorneo.resultado.Where(l => l.tor_id>0).Select(l => new TorneoItemViewModel
             {  
                 tor_id = l.tor_id,
                 tor_nombre = l.tor_nombre,

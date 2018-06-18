@@ -8,7 +8,7 @@
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              x:Class="City_Center.Page.Perfil">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="chat@2x" Clicked="Chat_click" />
+        <ToolbarItem x:Name="ToolbarChat" Icon="chat@2x" Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -47,19 +47,17 @@
                     <controls:CircleImage x:Name="imagen1" Source="{Binding Imagen, Mode=TwoWay}"
                                           Aspect="AspectFill"
                                           AbsoluteLayout.LayoutFlags="PositionProportional"
-                                          AbsoluteLayout.LayoutBounds="0.5,0.3,-1,-1">
+                                          AbsoluteLayout.LayoutBounds="0.51,0.26,-1,-1">
                         <controls:CircleImage.WidthRequest>
                             <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="Android, iOS">75</On>
+                                <On Platform="iOS">77</On>
+                                <On Platform="Android">78</On>
                             </OnPlatform>
                         </controls:CircleImage.WidthRequest>
                         <controls:CircleImage.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
-<<<<<<< HEAD
-                                <On Platform="Android, iOS">80</On>
-=======
-                                <On Platform="Android, iOS">78</On>
->>>>>>> 3db1439e21e8034c7c169f358972c261e9ecdeea
+                                <On Platform="iOS">80</On>
+                                <On Platform="Android">85</On>
                             </OnPlatform>
 
                         </controls:CircleImage.HeightRequest>

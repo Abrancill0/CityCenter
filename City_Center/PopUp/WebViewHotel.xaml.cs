@@ -11,7 +11,7 @@ namespace City_Center.PopUp
     public WebViewHotel()
         {
             InitializeComponent();
-           
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
         protected override void OnAppearing()
