@@ -8,23 +8,30 @@ namespace City_Center.PopUp
         public WebViewTienda()
         {
             InitializeComponent();
+
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
+#if __ANDROID__
+
+            Browser.Source = "https://www.tienda.citycenter-rosario.com.ar/";
+
+#endif
+
+
+#if __IOS__
+            var uri = new Uri("https://www.tienda.citycenter-rosario.com.ar/");
+
+            var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+
+            Browser.Source = nsurl.AbsoluteUrl.ToString();
+#endif
+
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-
-            //string fileName = "http://cc.comprogapp.com/es/tienda";
-            //string localHtmlUrl = Path.Combine(NSBundle.MainBundle.BundlePath, fileName);
-            //NSUrl finalUrl = new NSUrl("#anchorname", new NSUrl(localHtmlUrl, false));
-            //Browser.Source=new NSUrlRequest(finalUrl));
-
-
-           // NSUrl.FromFilename("http://cc.comprogapp.com/es/tienda");
-
-            Browser.Source = "http://wpage.citycenter-rosario.com.ar/es/tienda";
-
+   
         }
 
     }
