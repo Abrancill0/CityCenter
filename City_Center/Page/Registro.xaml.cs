@@ -21,7 +21,8 @@ namespace City_Center.Page
         public Registro()
         {
             InitializeComponent();
-   
+        
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
 
@@ -106,5 +107,18 @@ namespace City_Center.Page
 
         }
 
+        void Handle_Unfocused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif   
+        }
+
+void Handle_FocusChangeRequested(object sender, Xamarin.Forms.VisualElement.FocusRequestArgs e)
+        {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+        }
     }
 }

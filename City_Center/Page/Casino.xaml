@@ -553,9 +553,10 @@
                                                         ArrowsTintColor="White"
                                                         ArrowsBackgroundColor="Black"
                                                         x:Name="CarruselTorneos"
+                                                        PositionSelected="PositionSelected_CT"
                                                         Scrolled="Scrolled_CT"
                                                         Position="1"
-                                                        PositionSelected="PositionSelected_CT">
+                                                        >
                                        <!--  ShowArrows="true"
                                                         ArrowsTintColor="Black"
                                                         ArrowsBackgroundColor="Silver"-->
@@ -863,6 +864,7 @@
                                  HasUnevenRows="true"
                                  RowHeight="85"
                                  SeparatorVisibility="None"
+                                 IsVisible="{Binding  MuestraTarjetasAndroid}"
                                  HeightRequest="{Binding TamanoTarjeta}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
@@ -934,7 +936,84 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-
+                        <ListView ItemsSource="{Binding TarjetasDetalle}"
+                                 HasUnevenRows="true"
+                                 RowHeight="120"
+                                  IsVisible="{Binding MuestraTarjetasIOS}"
+                                 SeparatorVisibility="None"
+                                 HeightRequest="{Binding TamanoTarjeta}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <Frame IsClippedToBounds="True"
+                                                   HasShadow="True"
+                                                   BackgroundColor="White">
+                                                <Frame.OutlineColor>
+                                                    <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
+                                                </Frame.OutlineColor>
+                                                <Frame.Margin>
+                                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="2" />
+                                                </Frame.Margin>
+                                                <Frame.Padding>
+                                                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                                </Frame.Padding>
+                                                <StackLayout Orientation="Horizontal" Spacing="0" > 
+                                                    <Grid HorizontalOptions="FillAndExpand">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1.5*" />
+                                                            <ColumnDefinition Width="2*" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="1*" />
+                                                            <RowDefinition Height="1*" />
+                                                        </Grid.RowDefinitions>
+                                                        <ffimageloading:CachedImage
+                                                            HeightRequest="120"
+                                                                WidthRequest="120"
+                                                            HorizontalOptions="StartAndExpand"
+                                                                VerticalOptions="FillAndExpand"
+                                                            Aspect="Fill"
+                                                            LoadingPlaceholder="image_loading.png"
+                                                            ErrorPlaceholder="image_error.png"
+                                                            Source="{Binding tar_imagen}"
+                                                            Grid.Row="0" Grid.Column="0"
+                                                            Grid.RowSpan="2"
+                                                                >
+                                                                 <ffimageloading:CachedImage.Transformations>
+                                                                    <fftransformations:RoundedTransformation Radius="10"/>
+                                                                 </ffimageloading:CachedImage.Transformations>
+                                                        </ffimageloading:CachedImage>
+                                                            <Label TextColor="#2B124F" Grid.Row="0" Margin="-7, 15, -10, 0" Grid.Column="1" Text="{Binding tar_nombre}" HorizontalTextAlignment="Start" FontSize="Medium" HorizontalOptions="Start" FontFamily="Oswald-Regular">
+                                                                <Label.FontFamily>
+                                                                        <OnPlatform x:TypeArguments="x:String">
+                                                                            <On Platform="iOS" Value="Oswald-Regular"/>
+                                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                                                        </OnPlatform>
+                                                                </Label.FontFamily>
+                                                        </Label>
+                                                        <Label TextColor="#6C6C6C"
+                                                               Margin="-7, -15, 5, 0"
+                                                               Grid.Row="1"
+                                                               Grid.Column="1"
+                                                               HorizontalTextAlignment="Start"
+                                                               Text="{Binding tar_descripcion}"
+                                                               FontSize="12">
+                                                                <Label.FontFamily>
+                                                                        <OnPlatform x:TypeArguments="x:String">
+                                                                            <On Platform="iOS" Value="Roboto-Regular"/>
+                                                                            <On Platform="Android" Value="Roboto-Regular.ttf#Oswald-Regular"/>
+                                                                        </OnPlatform>
+                                                                </Label.FontFamily>
+                                                        </Label>
+                                                    </Grid>
+                                                </StackLayout>
+                                            </Frame>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                         </StackLayout>
                     
                     </StackLayout>

@@ -20,7 +20,7 @@
 
     <ScrollView>
          <StackLayout Margin="10">
-            <xfx:XfxEntry Placeholder="Nombre y apellido*" Style="{DynamicResource EntryStyle}" x:Name="Nombre">
+            <xfx:XfxEntry Placeholder="Nombre y Apellido*" Style="{DynamicResource EntryStyle}" x:Name="Nombre">
                 <Entry.HeightRequest>
                     <OnPlatform x:TypeArguments="x:Double">
                         <On Platform="iOS">60</On>

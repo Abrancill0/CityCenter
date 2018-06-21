@@ -7,6 +7,7 @@ using FFImageLoading;
 using FFImageLoading.Transformations;
 using Foundation;
 using Google.SignIn;
+using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using Plugin.FirebasePushNotification;
 using Plugin.FirebasePushNotification.Abstractions;
 using UIKit;
@@ -27,10 +28,10 @@ namespace City_Center.iOS
             ButtonCircle.FormsPlugin.iOS.ButtonCircleRenderer.Init();
 
             UINavigationBar.Appearance.TintColor = Color.White.ToUIColor();
-            //UITableViewCell.UIViewAppearance.= UITableViewCellSelectionStyle.None;
-
            
             global::Xamarin.Forms.Forms.Init();
+
+            KeyboardOverlapRenderer.Init();
 
             FFImageLoading.Forms.Touch.CachedImageRenderer.Init();
 
@@ -50,6 +51,14 @@ namespace City_Center.iOS
 
             LoadApplication(new App());
                      
+            var statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
+            if (statusBar.RespondsToSelector(new ObjCRuntime.Selector("setBackgroundColor:")))
+            {
+                statusBar.BackgroundColor = UIColor.White;
+                statusBar.TintColor = UIColor.White;
+            }
+
+
 			ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
 
             FirebasePushNotificationManager.Initialize(options, new NotificationUserCategory[]
@@ -63,18 +72,6 @@ namespace City_Center.iOS
                 })
 
             });
-
-
-			//var config = new FFImageLoading.Config.Configuration()
-            //{
-            //    VerboseLogging = false,
-            //    VerbosePerformanceLogging = false,
-            //    VerboseMemoryCacheLogging = false,
-            //    VerboseLoadingCancelledLogging = false,
-            //    Logger = new CustomLogger(),
-            //};
-            //ImageService.Instance.Initialize(config);
-
 
 
             return base.FinishedLaunching(app, options);

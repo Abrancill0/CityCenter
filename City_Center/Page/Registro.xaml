@@ -49,7 +49,8 @@
                                       FontSize="18"
                                       TextColor="Black"
                                       Placeholder="Nombre y Apellido *" 
-                                      Keyboard="Email">
+                                      Keyboard="Email"
+                    >
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -74,7 +75,8 @@
                                       FontSize="18"
                                       TextColor="Black"
                                       Placeholder="Correo electrónico*"
-                                      Keyboard="Email">
+                                      Keyboard="Email"
+                    Unfocused="Handle_Unfocused">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -97,7 +99,8 @@
                                       TextColor="Black"
                                       Placeholder="Contraseña *"
                                       Keyboard="Default"
-                                      IsPassword="true">
+                                      IsPassword="true"
+                    Unfocused="Handle_Unfocused">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -120,7 +123,8 @@
                                       TextColor="Black"
                                       Placeholder="Confirma Contraseña *"
                                       Keyboard="Default"
-                                      IsPassword="true">
+                                      IsPassword="true"
+                                    Unfocused="Handle_Unfocused">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -142,6 +146,8 @@
                                       TextColor="Black"
                                       Placeholder="Ciudad *"
                                       Keyboard="Default"
+                                      Unfocused="Handle_Unfocused"
+                                       FocusChangeRequested="Handle_FocusChangeRequested"
                                       >
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">

@@ -195,6 +195,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\DetalleTorneo2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\HttpClientPostMethod.cs" />
@@ -441,6 +445,12 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ConfigNotificacionesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NotificacionesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NotificacionesResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NotificacionesRecibidasResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\DetalleTorneo2.xaml.cs">
+      <DependentUpon>DetalleTorneo2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Clases\ContendPageOv.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

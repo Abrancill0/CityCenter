@@ -239,8 +239,6 @@ namespace City_Center.ViewModels
         }
 
 
-       
-
         public ICommand CompraOnlineCommand
         {
             get

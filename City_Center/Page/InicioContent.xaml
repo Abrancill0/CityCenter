@@ -61,8 +61,15 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Image Aspect="AspectFit" Source="TICKETSHOWS" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
-                    </Image>
+                    <!--<Image Aspect="AspectFit"
+                           Source="TICKETSHOWS"
+                           VerticalOptions="Start"
+                           HorizontalOptions="End"
+                           WidthRequest="80"
+                           HeightRequest="80"
+                           Grid.Column="0"
+                           Grid.Row="0">
+                    </Image>-->
                     <Image x:Name="tickets" Aspect="AspectFit" Source="TICKETSHOWS" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Btn2_Clicked" />
@@ -104,6 +111,7 @@
             </StackLayout>
             <ScrollView>
                 <StackLayout BackgroundColor="#EFEFEF">
+                    
                     <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" Margin="5,18,5,5">
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
@@ -520,7 +528,7 @@
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
                                     <StackLayout Orientation="Vertical">
-                                        <Label Text="Nombre y apellido*" FontSize="Medium" TextColor="Gray" Margin="8,3,0,0">
+                                        <Label Text="Nombre y Apellido*" FontSize="Medium" TextColor="Gray" Margin="8,3,0,0">
                                             <Label.FontFamily>
                                                 <OnPlatform x:TypeArguments="x:String">
                                                     <On Platform="iOS" Value="Oswald-Regular" />

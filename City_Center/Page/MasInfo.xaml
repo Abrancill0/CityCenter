@@ -206,7 +206,7 @@
                                           Text="{Binding Nombre, Mode=TwoWay}"
                                           FontSize="14" 
                                           TextColor="Black"
-                                          Placeholder="Nombre y apellido*" Keyboard="Default">
+                                          Placeholder="Nombre y Apellido*" Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>

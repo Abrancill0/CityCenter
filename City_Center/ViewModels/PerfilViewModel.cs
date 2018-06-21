@@ -7,13 +7,16 @@ using City_Center.Services;
 using GalaSoft.MvvmLight.Command;
 using Xamarin.Forms;
 using static City_Center.Models.ActualizaUsuarioResultado;
-using static City_Center.Models.RegistroUsuario;
-using static City_Center.Models.TarjetaUsuarioResultado;
 using System.Threading.Tasks;
 using static City_Center.Models.TarjetaValidaResultado;
 using Acr.UserDialogs;
 using System.IO;
 using static City_Center.Models.ImagenResultado;
+using static City_Center.Models.NotificacionesRecibidasResultado;
+using static City_Center.Models.NotificacionesResultado;
+using System.Collections.ObjectModel;
+using System.Linq;
+using City_Center.Page.SlideMenu;
 
 namespace City_Center.ViewModels
 {
@@ -22,7 +25,6 @@ namespace City_Center.ViewModels
         #region Services
         private ApiService apiService;
         #endregion
-
 
         #region Attributes
         private string email;
@@ -41,9 +43,78 @@ namespace City_Center.ViewModels
 
         private ActualizaUsuarioReturn list;
 
+        private NotificacionesRecibidasReturn listNotificaciones;
+        private ObservableCollection<NotificacionesRecibidasDetalle> notificacionesDetalle;
+
+        private NotificacionesReturn listConfigNotificaciones;
+        private ObservableCollection<NotificacionesDetalle> configNotificacionesDetalle;
+
+        private bool promociones;
+        private bool show;
+        private bool reservaciones;
+        private bool chat;
+        private bool eventos;
+        private bool avisos;
+        private bool geolocalizacion;
+
         #endregion
 
         #region Properties
+
+        public bool Promociones
+        {
+            get { return this.promociones; }
+            set { SetValue(ref this.promociones, value); }
+        }
+
+        public bool Show
+        {
+            get { return this.show; }
+            set { SetValue(ref this.show, value); }
+        }
+
+        public bool Reservaciones
+        {
+            get { return this.reservaciones; }
+            set { SetValue(ref this.reservaciones, value); }
+        }
+
+        public bool Chat
+        {
+            get { return this.chat; }
+            set { SetValue(ref this.chat, value); }
+        }
+
+        public bool Eventos
+        {
+            get { return this.eventos; }
+            set { SetValue(ref this.eventos, value); }
+        }
+
+        public bool Avisos
+        {
+            get { return this.avisos; }
+            set { SetValue(ref this.avisos, value); }
+        }
+
+        public bool Geolocalizacion
+        {
+            get { return this.geolocalizacion; }
+            set { SetValue(ref this.geolocalizacion, value); }
+        }
+
+        public ObservableCollection<NotificacionesRecibidasDetalle> NotificacionesDetalle
+        {
+            get { return this.notificacionesDetalle; }
+            set { SetValue(ref this.notificacionesDetalle, value); }
+        }
+
+        public ObservableCollection<NotificacionesDetalle> ConfigNotificacionesDetalle
+        {
+            get { return this.configNotificacionesDetalle; }
+            set { SetValue(ref this.configNotificacionesDetalle, value); }
+        }
+
         public string Email
         {
             get { return this.email; }
@@ -133,7 +204,7 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.Nombre))
             {
-                await Mensajes.Alerta("Nombre y apellido es requerida");
+                await Mensajes.Alerta("Nombre y Apellido es requerida");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -268,7 +339,23 @@ namespace City_Center.ViewModels
             {
                 RutaImagen  = await GuardaImagen(Convert.ToInt32(Application.Current.Properties["IdUsuario"].ToString())); 
 
-                Application.Current.Properties["FotoPerfil"] = RutaImagen;
+                    if (RutaImagen =="Error")
+                    {
+                        try
+                        {
+                            RutaImagen = Application.Current.Properties["FotoPerfil"].ToString();
+                        }
+                        catch (Exception ex)
+                        {
+                            RutaImagen = "";
+                        }
+                         
+                    }
+                    else
+                    {
+                        Application.Current.Properties["FotoPerfil"] = RutaImagen;   
+                    }
+               
             } 
 
 
@@ -288,14 +375,14 @@ namespace City_Center.ViewModels
 
 			await Application.Current.SavePropertiesAsync();
 
-            await Mensajes.Alerta("Usuario actualizadó con éxito");
-
+            await Mensajes.Alerta("Perfil actualizado con éxito");
+                VariablesGlobales.ActualizaDatos = true;
             UserDialogs.Instance.HideLoading();
 
             }
             catch (Exception ex)
             {
-                await Mensajes.Alerta("Ocurrio un error al actualizar el usuario,favor de volver  aintentar mas tarde");
+                await Mensajes.Alerta("Ocurrio un error al actualizar el perfil,favor de volve a intentar mas tarde");
 
                 UserDialogs.Instance.HideLoading();
             }
@@ -351,6 +438,58 @@ namespace City_Center.ViewModels
             return VariablesGlobales.RutaServidor + ListImagen.resultado;
            
         }
+
+
+        public ICommand GuardaConfiguracionCommand
+        {
+            get
+            {
+                return new RelayCommand(GuardaConfiguracion);
+            }
+        }
+
+        private async void GuardaConfiguracion()
+        {
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("nus_id_usuario", ""),
+                    new KeyValuePair<string, string>("nus_id_notificacion",""),
+                
+                });
+
+
+                var response = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/cancelar_notificacion", content);
+
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+
+                    return;
+                }
+
+
+                var content2 = new FormUrlEncodedContent(new[]
+                               {
+                    new KeyValuePair<string, string>("nus_id_usuario", ""),
+                    new KeyValuePair<string, string>("nus_id_notificacion",""),
+
+                });
+
+
+                var response2 = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/activar_notificacion", content2);
+
+                if (!response2.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+
+                    return;
+                }
+
+
+
+        }
+
 
         #endregion
 
@@ -449,6 +588,111 @@ namespace City_Center.ViewModels
 
         }
 
+        private async void LoadNotificaciones()
+        {
+            var content = new FormUrlEncodedContent(new[]
+               {
+                new KeyValuePair<string, string>("nus_id_usuario",Application.Current.Properties["IdUsuario"].ToString())
+               });
+
+
+            var response = await this.apiService.Get<NotificacionesRecibidasReturn>("/notificaciones/", "NotificacionesRecibidas", content);
+
+            if (!response.IsSuccess)
+            {
+
+                return;
+            }
+            this.listNotificaciones = (NotificacionesRecibidasReturn)response.Result;
+
+            NotificacionesDetalle = new ObservableCollection<NotificacionesRecibidasDetalle>(this.ToPromocionesItemViewModel());
+
+        }
+
+        private IEnumerable<NotificacionesRecibidasDetalle> ToPromocionesItemViewModel()
+        {
+            return this.listNotificaciones.respuesta.Select(l => new NotificacionesRecibidasDetalle
+            {
+                nen_id = l.nen_id,
+                nen_equipo = l.nen_equipo,
+                nen_id_usuario = l.nen_id_usuario,
+                nen_titulo = l.nen_titulo,
+                nen_mensaje = l.nen_mensaje,
+
+            });
+        }
+
+      
+        private async void LoadConfiguracionNotificaciones()
+        {
+            var content = new FormUrlEncodedContent(new[]
+               {
+                new KeyValuePair<string, string>("nus_id_usuario",Application.Current.Properties["IdUsuario"].ToString())
+               });
+
+
+            var response = await this.apiService.Get<NotificacionesReturn>("/notificaciones/", "usuarioNotificaciones", content);
+
+            if (!response.IsSuccess)
+            {
+
+            }
+            this.listConfigNotificaciones = (NotificacionesReturn)response.Result;
+
+            this.ConfigNotificacionesDetalle = new ObservableCollection<NotificacionesDetalle>(this.ToNotificacionesItemViewModel());
+
+            // Promociones;
+        // Show;
+        // Reservaciones;
+        // Chat;
+        // Eventos;
+        // Avisos;
+        // Geolocalizacion;
+
+            foreach (var item in ConfigNotificacionesDetalle)
+            {
+                switch (item.not_nombre)
+                {
+                    case "Avisos":
+                        this.Avisos = Convert.ToBoolean(item.nus_activa);
+                        break;
+                    case "Chat":
+                        this.Chat = Convert.ToBoolean(item.nus_activa);
+                        break;
+                    case "Eventos":
+                        this.Eventos = Convert.ToBoolean(item.nus_activa);
+                        break;
+                    case "Promociones":
+                        this.Promociones = Convert.ToBoolean(item.nus_activa);
+                        break;
+                    case "Rservaciones":
+                        this.Reservaciones=Convert.ToBoolean(item.nus_activa);
+                        break;
+                    case "Shows":
+                        this.Show = Convert.ToBoolean(item.nus_activa);
+                        break;
+
+                }
+            }
+
+        }
+
+        private IEnumerable<NotificacionesDetalle> ToNotificacionesItemViewModel()
+        {
+            return this.listConfigNotificaciones.respuesta.Select(l => new NotificacionesDetalle
+            {
+                nus_id = l.nus_id,
+                nus_id_usuario = l.nus_id_usuario,
+                nus_id_notificacion = l.nus_id_notificacion,
+                nus_fecha_hora_creo = l.nus_fecha_hora_creo,
+                nus_fecha_hora_modifico = l.nus_fecha_hora_modifico,
+                nus_activa = l.nus_activa,
+                not_nombre = l.not_nombre,
+                not_decripcion = l.not_decripcion,
+            });
+        }
+
+
         #endregion
 
         #region Contructors
@@ -456,6 +700,9 @@ namespace City_Center.ViewModels
         {
             this.apiService = new ApiService();
             LoadCampos();
+            LoadNotificaciones();
+            LoadConfiguracionNotificaciones();
+
         }
         #endregion
     }

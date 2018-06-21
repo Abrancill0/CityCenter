@@ -3,13 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+              NavigationPage.BackButtonTitle="volver"
              x:Class="City_Center.Page.Torneos">
      <ContentPage.ToolbarItems>
         <ToolbarItem Icon="chat@2x" Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Torneo}" Spacing="0">
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout HorizontalOptions="FillAndExpand" >
                      <Image  Aspect="AspectFill"  Source="CASINOmin"/>
             </StackLayout>
             
@@ -17,7 +18,7 @@
                       RowHeight="250"
                       HasUnevenRows="false"
                       HeightRequest="400"
-                      Margin="10">
+                      Margin="10,10,10,10">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

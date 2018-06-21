@@ -228,25 +228,22 @@ namespace City_Center.Page
 
         void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
-            try
-            {
-                VariablesGlobales.IndiceCasinoTorneo = e.NewValue;
-            }
-            catch (Exception)
-            {
 
-            }
+            VariablesGlobales.IndiceCasinoTorneo = e.NewValue;
 
-
-#if __IOS__
+        #if __IOS__
             try
             {
 
                 if (VariablesGlobales.validacionIOSCasinoTorneo == 1)
                 {
-                    
+                    //if (e.NewValue != 0)
+                    //{
+                        //CarruselTorneos.Position = 0;
+                        VariablesGlobales.IndiceCasinoTorneo = 1;
+                        e.NewValue = 0;
                         CarruselTorneos.Position = 0;
-                        VariablesGlobales.RegistrosCasinoTorneo = 1;
+                    //}
                 }
                 else if (VariablesGlobales.validacionIOSCasinoTorneo == 2)
                 {
@@ -263,14 +260,13 @@ namespace City_Center.Page
             {
 
             }
-#endif
-
+    #endif
         }
 
         void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
 
-#if __IOS__
+            #if __IOS__
             try
             {
                 string Direccion = Convert.ToString(e.Direction);
@@ -279,7 +275,7 @@ namespace City_Center.Page
                 {
                     //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
                     VariablesGlobales.validacionIOSCasinoTorneo = 1;
-                    CarruselTorneos.Position = 0;
+                    CarruselTorneos.Position = 3;
                     CarruselTorneos.AnimateTransition = false;
 
                 }
@@ -331,14 +327,9 @@ namespace City_Center.Page
 
         void PositionSelected_DT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
-            try
-            {
+            
                 VariablesGlobales.IndiceCasinoDestacados = e.NewValue;
-            }
-            catch (Exception)
-            {
-
-            }
+            
 
 #if __IOS__
             try
@@ -457,9 +448,9 @@ namespace City_Center.Page
                 {
                     if (e.NewValue != 0)
                     {
-
-                        VariablesGlobales.IndiceCasinoPromociones = 1;
                         CarruselPromociones.Position = 0;
+                        VariablesGlobales.IndiceCasinoPromociones = 1;
+
                     }
                 }
                 else if (VariablesGlobales.validacionIOSCasinoPromociones == 2)
@@ -489,6 +480,7 @@ namespace City_Center.Page
 #if __IOS__
             try
             {
+                
                 string Direccion = Convert.ToString(e.Direction);
 
                 if (VariablesGlobales.IndiceCasinoPromociones == VariablesGlobales.RegistrosCasinoPromociones && Direccion == "Right")

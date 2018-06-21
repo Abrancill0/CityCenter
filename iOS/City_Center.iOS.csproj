@@ -332,6 +332,9 @@
     <Reference Include="Plugin.DeviceInfo">
       <HintPath>..\packages\Xam.Plugin.DeviceInfo.4.0.0.13\lib\xamarinios10\Plugin.DeviceInfo.dll</HintPath>
     </Reference>
+    <Reference Include="KeyboardOverlap.Forms.Plugin.iOSUnified">
+      <HintPath>..\packages\Xam.Plugins.Forms.KeyboardOverlap.1.0.0.4\lib\Xamarin.iOS10\KeyboardOverlap.Forms.Plugin.iOSUnified.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -491,7 +494,7 @@
     <BundleResource Include="Resources\splashscreen1.png" />
     <BundleResource Include="Resources\success.png" />
     <BundleResource Include="Resources\tarjeta.png" />
-    <BundleResource Include="Resources\TICKETSHOWS_S.png" />
+    <BundleResource Include="Resources\TS_BOLD.png" />
     <BundleResource Include="Resources\TICKETSHOWS.png" />
     <BundleResource Include="Resources\TicketsShows.png" />
     <BundleResource Include="Resources\Tienda.png" />
@@ -513,12 +516,13 @@
     <BundleResource Include="Resources\tiendamobile.jpg" />
     <BundleResource Include="Resources\vip1.jpg" />
     <BundleResource Include="Resources\vip2.jpg" />
-    <BundleResource Include="Resources\menu%402x.png" />
     <BundleResource Include="Resources\logo_hdpi%402x.png" />
     <BundleResource Include="Resources\logo%402x.png" />
     <BundleResource Include="Resources\chat%402x.png" />
     <BundleResource Include="Resources\Fav.png" />
     <BundleResource Include="Resources\ReservaPromoDown2.png" />
+    <BundleResource Include="Resources\menu%403x.png" />
+    <BundleResource Include="Resources\Pantalla_2.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

@@ -56,12 +56,12 @@
                         </controls:CircleImage.WidthRequest>
                         <controls:CircleImage.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
-<<<<<<< HEAD
+
                                 <On Platform="Android, iOS">75</On>
-=======
+
                                 <On Platform="iOS">80</On>
                                 <On Platform="Android">85</On>
->>>>>>> 5bbb39db92f3f3893acdcdc6b682f982dd6add09
+
                             </OnPlatform>
 
                         </controls:CircleImage.HeightRequest>
@@ -93,7 +93,7 @@
                        VerticalOptions="Start"
                        VerticalTextAlignment="Start" Margin="-15,-50,0,0"
                        Text="{Binding Nombre, Mode=TwoWay}"
-                       WidthRequest="70"
+
                        LineBreakMode="WordWrap">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
@@ -383,23 +383,109 @@
                 <StackLayout x:Name="SL2" IsVisible="false">
                      
                          <ScrollView>
-                        <StackLayout Spacing="0" Margin="10,10,0,10" BackgroundColor="White">
-                       <view:VistaPerfilConfiguracion>
-                        </view:VistaPerfilConfiguracion>
-                            </StackLayout>
+                      <StackLayout>
+            <Label Margin = "10,0" Text="ENVÍO DE NOTIFICACIONES" HorizontalOptions="Start" HorizontalTextAlignment="Start" TextColor="#250C4B" FontSize="Medium" >
+                 <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Oswald-Regular"/>
+                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+
+            <StackLayout Margin="10" Orientation="Horizontal">
+                <Switch IsToggled="{Binding Promociones}"/>
+            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Promociones" TextColor="#250C4B" FontSize="Small" FontFamily="Oswald-Regular"></Label>
+            </StackLayout>
+
+            <StackLayout Margin="10" Orientation="Horizontal">
+                <Switch IsToggled="{Binding Show}" />
+            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Shows" TextColor="#250C4B" FontSize="Small" FontFamily="Oswald-Regular"></Label>
+            </StackLayout>
+
+             <StackLayout Margin="10" Orientation="Horizontal">
+                <Switch IsToggled="{Binding Reservaciones}" />
+              <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Reservaciones" TextColor="#250C4B" FontSize="Small" FontFamily="Oswald-Regular"></Label>
+            </StackLayout>
+
+          
+            <StackLayout Margin="10" Orientation="Horizontal">
+                  <Switch IsToggled="{Binding Chat}"/>
+            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Chat" TextColor="#250C4B" FontSize="Small" FontFamily="Oswald-Regular"></Label>
+            </StackLayout>
+
+          <StackLayout Margin="10" Orientation="Horizontal">
+                 <Switch IsToggled="{Binding Eventos}"/>
+            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Eventos" TextColor="#250C4B" FontSize="Small" FontFamily="Oswald-Regular"></Label>
+            </StackLayout>
+
+            <StackLayout Margin="10" Orientation="Horizontal">
+                 <Switch IsToggled="{Binding Avisos}"/>
+            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Avisos" TextColor="#250C4B" FontSize="Small" FontFamily="Oswald-Regular"></Label>
+            </StackLayout>
+           
+           <StackLayout Margin="10" Orientation="Horizontal">
+                 <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="ACTIVAR GEOLOCALIZACIÓN" TextColor="#250C4B" FontFamily="Oswald-Regular"></Label>
+            <Switch IsToggled="true"></Switch>
+            </StackLayout>
+           
+
+            <Button Text="GUARDAR"
+                    BackgroundColor="#250c4b"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Margin = "30,30,30,30"
+                    HeightRequest = "40">
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular"/>
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                        </OnPlatform>
+                    </Button.FontFamily>
+            </Button>
+        </StackLayout>
+                          
                     </ScrollView>
                      
                    
                 </StackLayout>
                 <StackLayout x:Name="SL3" IsVisible="false">
-                    
-                    <ScrollView>
-                         <StackLayout Spacing="0" Margin="10,10,0,10" BackgroundColor="White">
-                       <view:VistaPerfilNotificaciones>
-                        </view:VistaPerfilNotificaciones>
-                         </StackLayout>
-                    </ScrollView>
-                         
+                  
+                        <ListView ItemsSource="{Binding NotificacionesDetalle}"
+                               
+                                  HasUnevenRows="true"
+                                  SeparatorVisibility="None">
+                            <ListView.ItemTemplate>
+                              <DataTemplate>
+                                <ViewCell>
+                                   <StackLayout Margin="10">
+                                        <Label Text="{Binding nen_titulo}" HorizontalOptions="Start" TextColor="#250C4B" >
+                                            <Label.FontFamily>
+                                               <OnPlatform x:TypeArguments="x:String">
+                                                  <On Platform="iOS" Value="Oswald-Regular"/>
+                                                  <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                               </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+                                        <Label Text="{Binding nen_mensaje}"
+                                               FontSize="Small"
+                                               TextColor="Black"
+                                               HorizontalOptions="Start"
+                                               HorizontalTextAlignment="Start">
+                                            <Label.FontFamily>
+                                               <OnPlatform x:TypeArguments="x:String">
+                                                  <On Platform="iOS" Value="Oswald-Regular"/>
+                                                  <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                               </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+                                   </StackLayout>      
+                                </ViewCell>
+                              </DataTemplate>
+                            </ListView.ItemTemplate>       
+                        </ListView> 
+                            
+                      
                 </StackLayout>
             </StackLayout>
         </StackLayout>

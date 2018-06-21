@@ -348,10 +348,10 @@ namespace City_Center.ViewModels
 			Nacionalidad=string.Empty;
 			Provincia = string.Empty;
 			TipoDocumento =string.Empty;
-			pais =string.Empty;
+			Pais =string.Empty;
 			Ciudad =string.Empty;
             Fecha = "00/00/0000";
-            pais = string.Empty;
+           
 		}
            
 
