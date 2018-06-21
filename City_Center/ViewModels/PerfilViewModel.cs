@@ -558,8 +558,8 @@ namespace City_Center.ViewModels
 
                 var content = new FormUrlEncodedContent(new[]
                 {
-					new KeyValuePair<string, string>("tarjeta",Application.Current.Properties["IdUsuario"].ToString()),
-					new KeyValuePair<string, string>("usu",NoTarjeta )
+                    new KeyValuePair<string, string>("usu",Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("tarjeta",NoTarjeta )
                 });
 
 

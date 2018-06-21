@@ -113,8 +113,8 @@ namespace City_Center.ViewModels
                 new KeyValuePair<string, string>("usu_no_documento", this.NumeroDocumento),
                 new KeyValuePair<string, string>("passUpdate","1" ),
             });
-
-
+            //
+            //
             var response = await this.apiService.Get<ActualizaUsuarioReturn>("/usuarios", "/update", content);
 
             if (!response.IsSuccess)
@@ -253,12 +253,13 @@ namespace City_Center.ViewModels
                     return "No se tiene conexion a internet";
                 }
 
+
                 //string idusuario = Application.Current.Properties["IdUsuario"].ToString();
 
                 var content = new FormUrlEncodedContent(new[]
                 {
-                    new KeyValuePair<string, string>("tarjeta",Application.Current.Properties["IdUsuario"].ToString()),
-                    new KeyValuePair<string, string>("usu",NoTarjeta )
+                    new KeyValuePair<string, string>("usu",Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("tarjeta",NoTarjeta )
                 });
 
 
