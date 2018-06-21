@@ -9,14 +9,7 @@
              <StackLayout  BindingContext="{Binding ReiniciaPass}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
               <Frame  AbsoluteLayout.LayoutBounds="0,0,1,330" AbsoluteLayout.LayoutFlags="WidthProportional"  Margin="15" HorizontalOptions="FillAndExpand"  BackgroundColor="White">
                 <StackLayout IsClippedToBounds="True"  Padding="10, 5" Spacing="3">
-                    <Image Source="CloseG"
-                           HorizontalOptions="End"
-                           VerticalOptions="Start">
-                        <Image.GestureRecognizers>
-                             <TapGestureRecognizer Tapped="Cerrar"/>
-                        </Image.GestureRecognizers>
-                        </Image>
-
+                   
                   <Label Text="Proporcionanos tu correo electrónico para enviarte una nueva contraseña"
                    FontSize="Small"
                    HorizontalTextAlignment="Center"

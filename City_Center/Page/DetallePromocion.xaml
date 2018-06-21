@@ -162,7 +162,7 @@
                      <xfx:XfxEntry  ActivePlaceholderColor="#7A5BA5"
                                     Style="{DynamicResource EntryStyle}"
                                     Text="{Binding Nombre, Mode=TwoWay}"
-                                    Placeholder="Nombre y apellido*"
+                                    Placeholder="Nombre y Apellido*"
                                     TextColor="Black"
                                     FontSize="18"
                                     Keyboard="Default">

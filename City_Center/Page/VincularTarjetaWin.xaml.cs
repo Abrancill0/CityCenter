@@ -11,7 +11,7 @@ namespace City_Center.Page
         public VincularTarjetaWin()
         {
             InitializeComponent();
-            NavigationPage.SetTitleIcon(this, "logo_hdpi.png");
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
         async void TipoDocumento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)

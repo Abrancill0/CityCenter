@@ -7,24 +7,97 @@
                   BindingContext="{Binding Main, Source={StaticResource Locator}}"
                   MasterBehavior="SplitOnPortrait" Icon="logo">
     <MasterDetailPage.Master>
-        <ContentPage Title="City Center"
-                     Icon="menu@2x.png"
-                    
-                     BackgroundColor="Transparent"
-                     BindingContext="{Binding Detail}">
+        <ContentPage Title="City Center" Icon="menu@3x.png" BackgroundColor="Transparent" BindingContext="{Binding Detail}">
             <StackLayout BackgroundColor="#250c4b">
-                <Image HorizontalOptions="Start"
-                       Source="logo@2x.png"
-                       HeightRequest="95"
-                       WidthRequest="140"
-                       Margin="20,10,0,-10"
-                      ></Image>
-                <ListView x:Name="listviewMenu" ItemsSource="{Binding ListaOpciones}"
-                          ItemSelected="Handle_ItemSelected"
-                          BackgroundColor="#250c4b"
-                          SeparatorVisibility="None"
-                          HasUnevenRows="True"
-                          RowHeight="55">
+                <Image HorizontalOptions="Start" Source="logo@2x.png" HeightRequest="95" WidthRequest="140" Margin="20,10,0,-10">
+                </Image>
+                <StackLayout Margin="10,5,0,5">
+                    <Label Text="INICIO" TextColor="White">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Inicio_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Margin="10,5,0,5">
+                    <Label Text="SHOWS" TextColor="White">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Shows_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+
+                <StackLayout Margin="10,5,0,5">
+                    <Label Text="PROMOCIONES" TextColor="White">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Promociones_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                 <StackLayout Margin="10,5,0,5">
+                    <Label Text="GUARDADOS" TextColor="White">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Guardados_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Margin="10,5,0,5">
+                    <Label Text="MÁS INFORMACIÓN" TextColor="White">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="MasInfo_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+              
+               <StackLayout Margin="10,5,0,5">
+                    <Label Text="TÉRMINOS Y CONDICIONES GENERALES DE USO" TextColor="White">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Terminos_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+              
+                <!--                <ListView x:Name="listviewMenu" ItemsSource="{Binding ListaOpciones}" ItemSelected="Handle_ItemSelected" BackgroundColor="#250c4b" SeparatorVisibility="None" HasUnevenRows="True" RowHeight="55">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -49,7 +122,7 @@
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>
+                </ListView>-->
                 <StackLayout VerticalOptions="EndAndExpand">
                     <AbsoluteLayout IsVisible="{Binding VerTarjeta}" Padding="5,20,5,0" Margin="0,0,0,-45" HeightRequest="230" WidthRequest="280" HorizontalOptions="Center">
                         <Image Source="{Binding ImagenTarjeta}" Aspect="Fill" HeightRequest="230" WidthRequest="280" IsVisible="{Binding VerTarjeta}" />
@@ -129,13 +202,10 @@
                                 </OnPlatform>
                             </Label.FontFamily>
                         </Label>
-                        <Image Source="campana.png"
-                               HorizontalOptions="Center"
-                               Margin="5"
-                            Grid.Row="0" Grid.Column="2" HeightRequest="20">
-                             <Image.GestureRecognizers>
-                                  <TapGestureRecognizer Command="{Binding NotificacionesCommand}" />
-                             </Image.GestureRecognizers>
+                        <Image Source="campana.png" HorizontalOptions="Center" Margin="5" Grid.Row="0" Grid.Column="2" HeightRequest="20">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NotificacionesCommand}" />
+                            </Image.GestureRecognizers>
                         </Image>
                         <Label Text="Cerrar Sesión" TextColor="White" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="End" Grid.Row="0" WidthRequest="80" Margin="10,0,5,0" Grid.Column="3" FontSize="Small">
                             <Label.FontFamily>
@@ -189,86 +259,79 @@
         <!-- <local:DetailPage></local:DetailPage>-->
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-
-        <NavigationPage  x:Name="Pruebita" >
-
-            <x:Arguments >
-                
-             <ContentPage NavigationPage.TitleIcon="logo@2x.png" NavigationPage.BackButtonTitle="volver">
-
-             <ContentPage.ToolbarItems>
-                <ToolbarItem Icon="chat@2x" Clicked="Chat_click"/>
-            </ContentPage.ToolbarItems>
-                    
-                <Grid CompressedLayout.IsHeadless="true">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <ContentView Grid.Row="0" IsVisible="True" x:Name="MainView">
-                    </ContentView>
-                    <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView2">
-                    </ContentView>
-                    <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView3">
-                    </ContentView>
-                    <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView4">
-                    </ContentView>
-                    <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView5">
-                    </ContentView>
-                    <Grid x:Name="Barra" ColumnSpacing="0" RowSpacing="0" Grid.Row="1" BackgroundColor="#645877">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="0">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ClickTap1" NumberOfTapsRequired="1" />
-                            </StackLayout.GestureRecognizers>
-                            <Image x:Name="tab_home_icon_selected" IsVisible="True" Source="home" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
-                            <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
-                            </BoxView>
-                        </StackLayout>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="1">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ClickTap2" NumberOfTapsRequired="1" />
-                            </StackLayout.GestureRecognizers>
-                            <Image x:Name="tab_Casino_icon_selected" Source="casino" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
-                            <BoxView x:Name="BV2" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
-                            </BoxView>
-                        </StackLayout>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="2">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ClickTap3" NumberOfTapsRequired="1" Command="{Binding CargaHotelCommand}" />
-                            </StackLayout.GestureRecognizers>
-                            <Image x:Name="tab_hotel_icon_selected" Source="hotel" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
-                            <BoxView x:Name="BV3" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
-                            </BoxView>
-                        </StackLayout>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="3">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ClickTap4" NumberOfTapsRequired="1" Command="{Binding CargaGastronomiaCommand}" />
-                            </StackLayout.GestureRecognizers>
-                            <Image x:Name="tab_food_icon_selected" Source="food" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
-                            <BoxView x:Name="BV4" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
-                            </BoxView>
-                        </StackLayout>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="4">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ClickTap5" NumberOfTapsRequired="1" />
-                            </StackLayout.GestureRecognizers>
-                            <Image x:Name="tab_info_icon_selected" Source="info2" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
-                            <BoxView x:Name="BV5" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
-                            </BoxView>
-                        </StackLayout>
+        <NavigationPage x:Name="Pruebita">
+            <x:Arguments>
+                <ContentPage NavigationPage.TitleIcon="logo@2x.png" NavigationPage.BackButtonTitle="volver">
+                    <ContentPage.ToolbarItems>
+                        <ToolbarItem Icon="chat@2x" Clicked="Chat_click" />
+                    </ContentPage.ToolbarItems>
+                    <Grid CompressedLayout.IsHeadless="true">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ContentView Grid.Row="0" IsVisible="True" x:Name="MainView">
+                        </ContentView>
+                        <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView2">
+                        </ContentView>
+                        <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView3">
+                        </ContentView>
+                        <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView4">
+                        </ContentView>
+                        <ContentView Grid.Row="0" IsVisible="false" x:Name="MainView5">
+                        </ContentView>
+                        <Grid x:Name="Barra" ColumnSpacing="0" RowSpacing="0" Grid.Row="1" BackgroundColor="#645877">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="0">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ClickTap1" NumberOfTapsRequired="1" />
+                                </StackLayout.GestureRecognizers>
+                                <Image x:Name="tab_home_icon_selected" IsVisible="True" Source="home" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                                <BoxView x:Name="BV1" BackgroundColor="#EBEBEB" IsVisible="true" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
+                                </BoxView>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="1">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ClickTap2" NumberOfTapsRequired="1" />
+                                </StackLayout.GestureRecognizers>
+                                <Image x:Name="tab_Casino_icon_selected" Source="casino" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                                <BoxView x:Name="BV2" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
+                                </BoxView>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="2">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ClickTap3" NumberOfTapsRequired="1" Command="{Binding CargaHotelCommand}" />
+                                </StackLayout.GestureRecognizers>
+                                <Image x:Name="tab_hotel_icon_selected" Source="hotel" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                                <BoxView x:Name="BV3" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
+                                </BoxView>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="3">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ClickTap4" NumberOfTapsRequired="1" Command="{Binding CargaGastronomiaCommand}" />
+                                </StackLayout.GestureRecognizers>
+                                <Image x:Name="tab_food_icon_selected" Source="food" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                                <BoxView x:Name="BV4" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
+                                </BoxView>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="25" Margin="-20,-10,-20,-17" Grid.Column="4">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ClickTap5" NumberOfTapsRequired="1" />
+                                </StackLayout.GestureRecognizers>
+                                <Image x:Name="tab_info_icon_selected" Source="info2" HeightRequest="22" WidthRequest="22" Margin="0,0,0,6" />
+                                <BoxView x:Name="BV5" BackgroundColor="#EBEBEB" IsVisible="false" HeightRequest="2" WidthRequest="50" Margin="0,0,0,-5" VerticalOptions="End">
+                                </BoxView>
+                            </StackLayout>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </ContentPage>
-                
+                </ContentPage>
             </x:Arguments>
-            
         </NavigationPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>

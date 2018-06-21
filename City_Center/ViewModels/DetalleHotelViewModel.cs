@@ -165,6 +165,9 @@ namespace City_Center.ViewModels
                 hab_estatus = l.hab_estatus,
                 hab_descripcion_3 = l.hab_descripcion_3,
                 hab_imagen_3 = l.hab_imagen_3,
+                hab_imagen_4 = l.hab_imagen_4,
+                hab_imagen_5 = l.hab_imagen_5,
+                hab_imagen_6 = l.hab_imagen_6,
             });
         }
 

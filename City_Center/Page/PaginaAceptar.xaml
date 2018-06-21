@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="City_Center.Page.PaginaAceptar" BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding VincularTarjeta}" BackgroundColor="White">
-            <StackLayout BackgroundColor="#23144B"
-                         VerticalOptions="Start"
+        <StackLayout BindingContext="{Binding VincularTarjeta}" BackgroundColor="White" VerticalOptions="FillAndExpand">
+           <StackLayout BackgroundColor="#23144B"
                          HorizontalOptions="FillAndExpand"
-                         HeightRequest="50">
-                <Image Source="logowhite" Aspect="AspectFit"
+                         HeightRequest="60"
+                        >
+                <Image Source="logo@2x"
+                        Margin="0,20,0,0"
+                       Aspect="AspectFit"
                        HorizontalOptions="Center" 
                        VerticalOptions="Center"/>
             </StackLayout>
-        <StackLayout Margin="15,50,15,50">
+        <StackLayout Margin="15,150,15,50" HorizontalOptions="Center" VerticalOptions="Center">
                   <Label Text="GRACIAS" HorizontalOptions="Center"
                          HorizontalTextAlignment="Center"
                          FontSize="18"
@@ -24,7 +26,7 @@
             </Label>
             <Label HorizontalTextAlignment="Center"
                    HorizontalOptions="Center"
-                   FontSize="16" Margin="35,25"
+                   FontSize="16" Margin="30,25"
                    Text="Revisá tu correo electrónico y confirmá tu cuenta. Ya estas listo para navegar nuestra app sin límites" TextColor="Black" />
             <Button Text="LISTO" BackgroundColor="#250c4b" TextColor="White" FontAttributes="Bold" Margin="30,30,30,30" HeightRequest="40" Clicked="Handle_Clicked">
                 <Button.FontFamily>

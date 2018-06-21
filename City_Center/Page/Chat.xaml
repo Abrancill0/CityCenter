@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
                BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             x:Class="City_Center.Page.Chat">
+             x:Class="City_Center.Page.Chat"
+             BackgroundColor="White">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Terminar Chat" Clicked="Handle_Clicked"/>
     </ContentPage.ToolbarItems>

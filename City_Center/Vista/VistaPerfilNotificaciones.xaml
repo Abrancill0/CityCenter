@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
              x:Class="City_Center.Vista.VistaPerfilNotificaciones">
     <ContentView.Content>
-      <StackLayout>
-       <!-- <ListView>
+      <StackLayout BindingContext="{Binding NotificacionesRecibidas}">
+        <ListView ItemsSource="{Binding NotificacionesDetalle}" >
             <ListView.ItemTemplate>
               <DataTemplate>
                 <ViewCell>
                    <StackLayout Margin="10" >
-                        <Label Text="{Binding Nombre}" HorizontalOptions="Start" TextColor="#250C4B" >
+                        <Label Text="{Binding nen_titulo}" HorizontalOptions="Start" TextColor="#250C4B" >
                             <Label.FontFamily>
                                <OnPlatform x:TypeArguments="x:String">
                                   <On Platform="iOS" Value="Oswald-Regular"/>
@@ -17,7 +18,7 @@
                                </OnPlatform>
                             </Label.FontFamily>
                         </Label>
-                        <Label Text="{Binding Descripcion}"
+                        <Label Text="{Binding nen_mensaje}"
                                FontSize="Small"
                                TextColor="Black"
                                HorizontalOptions="Start"
@@ -26,9 +27,12 @@
                 </ViewCell>
               </DataTemplate>
             </ListView.ItemTemplate>       
-        </ListView> -->
+        </ListView> 
 
-            <StackLayout Margin="10" >
+
+            
+
+         <!--   <StackLayout Margin="10" >
             <Label HorizontalOptions="Start" Text="PROMOCIÓN" TextColor="#250C4B" >
                     <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
@@ -86,7 +90,7 @@
                 </Label.FontFamily>
                 </Label>
                  <Label FontSize="Small" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="Existen nuevas promociones que tal ve te puedan interesar..." />
-            </StackLayout>
+            </StackLayout>-->
 
         </StackLayout>
     </ContentView.Content>

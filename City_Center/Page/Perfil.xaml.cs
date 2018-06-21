@@ -9,6 +9,7 @@ using Plugin.Media.Abstractions;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Xamarin.Forms;
+using City_Center.ViewModels;
 
 namespace City_Center.Page
 {
@@ -22,6 +23,7 @@ namespace City_Center.Page
             InitializeComponent();
 
             NavigationPage.SetTitleIcon(this, "logo@2x.png");
+
             if (VariablesGlobales.Notificaciones == true)
             {
                 LabelTab1.TextColor = Color.FromHex("#71628A");
@@ -42,12 +44,24 @@ namespace City_Center.Page
         {
             base.OnAppearing();
 
-            ListaOpciones = new string[] { "DNI", "LE", "LC", "CI" };
-
-          
-   
         }
-        
+
+        protected override void OnDisappearing()
+        {
+             //MainViewModel.GetInstance().Detail = new DetailViewModel();
+            if  (VariablesGlobales.ActualizaDatos == true)
+            {
+                VariablesGlobales.ActualizaDatos = false;
+                MasterPage fpm = new MasterPage();
+         
+            Application.Current.MainPage = fpm;
+            
+            }
+
+            base.OnDisappearing();
+
+        }
+
         void Tab1_Tapped(object sender, System.EventArgs e)
         {
             LabelTab1.TextColor = Color.FromHex("#FDFDFD");
@@ -148,7 +162,6 @@ namespace City_Center.Page
 	
         public async Task Camara()
         {
-
             try
             {
                 var permissionStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
@@ -170,6 +183,7 @@ namespace City_Center.Page
                
                 await CrossMedia.Current.Initialize();
 
+
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
                     await Mensajes.Alerta("Camara no ascesible");
@@ -181,6 +195,7 @@ namespace City_Center.Page
                 var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
                 {
                     SaveToAlbum = true,
+
                     Directory = "CityCenter",
                     PhotoSize = PhotoSize.Custom,
                     CustomPhotoSize = 18,
@@ -210,12 +225,10 @@ namespace City_Center.Page
 
         }
 
-
         async void Handle_Tapped(object sender, System.EventArgs e)
         {
             await Camara();
         }
-    
     
         async void Chat_click(object sender, System.EventArgs e)
         {

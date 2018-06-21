@@ -16,18 +16,13 @@ namespace City_Center.Page
         private Gastronomia page4 = new Gastronomia();
         private MasInfo page5 = new MasInfo();
 
-
         public MasterPage()
         {
             InitializeComponent();
 
-            App.NavPage =  Pruebita;//() { BarBackgroundColor = Color.FromHex("#23144B") };; //new NavigationPage(new Prueba()) { BarBackgroundColor = Color.FromHex("#23144B") };
+            App.NavPage = Pruebita;
 
-            //Detail = App.NavPage; //new NavigationPage (new TabPage()){ BarBackgroundColor = Color.FromHex("#23144B")};
             App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
-            //App.NavPage.Icon = "logo";
-            //NavigationPage.SetTitleIcon(this, "logowhite.png");
-            //NavigationPage.SetTitleIcon(this, "logo_hdpi");
 
             MainView.Content = page1.Content;
             MainView2.Content = page2.Content;
@@ -42,20 +37,33 @@ namespace City_Center.Page
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
             VariablesGlobales.FechaShowInicio = string.Empty;
             VariablesGlobales.FechaShowFinal = string.Empty;
+
+            try
+            {
+                Image1.Source = Application.Current.Properties["FotoPerfil"].ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
+           
         }
+
+        //protected override void OnPropertyChanged(string cosa)
+        //{
+        //    if (VariablesGlobales.ActualizaDatos == true)
+        //   {
+        //        VariablesGlobales.ActualizaDatos = false;
+
+        //       this.OnAppearing();
+        //    }
+        //}
 
         #region Botones
         public void ClickTap1(object sender, EventArgs e)
         {
-            //tab_home_icon_selected.Source = "home";
-            //tab_Casino_icon_selected.Source = "Casinogray";
-            //tab_hotel_icon_selected.Source = "Hotelgray";
-            //tab_food_icon_selected.Source = "foodgray";
-            //tab_info_icon_selected.Source = "InfoGray";
-
             BV1.IsVisible = true;
             BV2.IsVisible = false;
             BV3.IsVisible = false;
@@ -75,12 +83,6 @@ namespace City_Center.Page
 
         public void ClickTap2(object sender, EventArgs e)
         {
-            //tab_home_icon_selected.Source = "homegray";
-            //tab_Casino_icon_selected.Source = "casino";
-            //tab_hotel_icon_selected.Source = "Hotelgray";
-            //tab_food_icon_selected.Source = "foodgray";
-            //tab_info_icon_selected.Source = "InfoGray";
-
             BV1.IsVisible = false;
             BV2.IsVisible = true;
             BV3.IsVisible = false;
@@ -100,12 +102,6 @@ namespace City_Center.Page
 
         public void ClickTap3(object sender, EventArgs e)
         {
-            //tab_home_icon_selected.Source = "homegray";
-            //tab_Casino_icon_selected.Source = "Casinogray";
-            //tab_hotel_icon_selected.Source = "hotel";
-            //tab_food_icon_selected.Source = "foodgray";
-            //tab_info_icon_selected.Source = "InfoGray";
-
             BV1.IsVisible = false;
             BV2.IsVisible = false;
             BV3.IsVisible = true;
@@ -125,12 +121,6 @@ namespace City_Center.Page
 
         public void ClickTap4(object sender, EventArgs e)
         {
-            //tab_home_icon_selected.Source = "homegray";
-            //tab_Casino_icon_selected.Source = "Casinogray";
-            //tab_hotel_icon_selected.Source = "Hotelgray";
-            //tab_food_icon_selected.Source = "food";
-            //tab_info_icon_selected.Source = "InfoGray";
-
             BV1.IsVisible = false;
             BV2.IsVisible = false;
             BV3.IsVisible = false;
@@ -152,12 +142,6 @@ namespace City_Center.Page
 
         public void ClickTap5(object sender, EventArgs e)
         {
-            //tab_home_icon_selected.Source = "homegray";
-            //tab_Casino_icon_selected.Source = "Casinogray";
-            //tab_hotel_icon_selected.Source = "Hotelgray";
-            //tab_food_icon_selected.Source = "foodgray";
-            //tab_info_icon_selected.Source = "info2";
-
             BV1.IsVisible = false;
             BV2.IsVisible = false;
             BV3.IsVisible = false;
@@ -177,164 +161,114 @@ namespace City_Center.Page
         }
         #endregion
 
-        async void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
-        {
-            var Seleccion = e.SelectedItem;
-
-            if (Seleccion != null)
-            {
-                var nameItem = e.SelectedItem.ToString();
-
-                switch (nameItem)
-                {
-                    case "INICIO":
-                        //Application.Current.MainPage = new MasterPage();
-                        listviewMenu.SelectedItem = null;
-
-
-
-                        BV1.IsVisible = true;
-                        BV2.IsVisible = false;
-                        BV3.IsVisible = false;
-                        BV4.IsVisible = false;
-                        BV5.IsVisible = false;
-
-                        MainView.IsVisible = true;
-                        MainView2.IsVisible = false;
-                        MainView3.IsVisible = false;
-                        MainView4.IsVisible = false;
-                        MainView5.IsVisible = false;
-
-                        Barra.BackgroundColor = Color.FromHex("#877BA1");
-
-                        App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
-
-                        ((MasterPage)Application.Current.MainPage).IsPresented = false;
-
-                        break;
-                    case "SHOWS":
-
-                        //Application.Current.MainPage = new MasterPage();
-                        listviewMenu.SelectedItem = null;
-
-                        App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
-
-                        ((MasterPage)Application.Current.MainPage).IsPresented = false;
-
-                        //if (MainViewModel.GetInstance().Shows == null)
-                        //{
-                        MainViewModel.GetInstance().Shows = new ShowsViewModel();
-                        MainViewModel.GetInstance().EventosItem = new EventosItemViewModel();
-
-                        await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Show());
-
-
-                        //}
-                        //else
-                        //{
-
-                        //    await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Show());
-                        //}
-
-                        break;
-                    case "PROMOCIONES":
-                        //Application.Current.MainPage = new MasterPage();
-
-                        listviewMenu.SelectedItem = null;
-
-                        App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
-
-                        ((MasterPage)Application.Current.MainPage).IsPresented = false;
-
-                        //if (MainViewModel.GetInstance().Favoritos == null)
-                        //{
-                        MainViewModel.GetInstance().Promociones = new PromocionesViewModel();
-
-                        await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Promociones());
-
-                        //}
-                        //else
-                        //{
-                        //    await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Favoritos());
-                        //}
-
-
-
-                        break;
-                    case "GUARDADOS":
-
-                        bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
-                             (bool)Application.Current.Properties["IsLoggedIn"] : false;
-
-                        ((MasterPage)Application.Current.MainPage).IsPresented = false;
-
-                        listviewMenu.SelectedItem = null;
-
-                        if (isLoggedIn)
-                        {
-                            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
-
-                            MainViewModel.GetInstance().Favoritos = new FavoritosViewModel();
-                            MainViewModel.GetInstance().FavoritoItem = new FavoritoItemViewModel();
-
-                            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Favoritos());
-                        }
-                        else
-                        {
-                            listviewMenu.SelectedItem = null;
-                            await Mensajes.Alerta("Debes de estar logeado para acceder a esta opcion");
-                        }
-
-
-                        break;
-                    case "MÁS INFORMACIÓN":
-
-                        //Application.Current.MainPage = new MasterPage();
-                        listviewMenu.SelectedItem = null;
-
-                        App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
-
-                        ((MasterPage)Application.Current.MainPage).IsPresented = false;
-
-                        await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new InfoPage());
-
-
-                        break;
-                    case "TÉRMINOS Y CONDICIONES GENERALES DE USO":
-
-                        listviewMenu.SelectedItem = null;
-
-                        ((MasterPage)Application.Current.MainPage).IsPresented = false;
-
-                        App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
-
-                        await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new TerminosCondiciones());
-
-
-                        break;
-                    default:
-                        Console.WriteLine("Default case");
-                        break;
-                }
-                return;
-            }
-
-        }
-
-       async void Chat_click(object sender, System.EventArgs e)
+        async void Chat_click(object sender, System.EventArgs e)
         {
             bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
 
             if (isLoggedIn)
             {
-                
+
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
             }
             else
             {
                 await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
             }
+        }
+
+        void Inicio_Clicked(object sender, System.EventArgs e)
+        {
+
+            BV1.IsVisible = true;
+            BV2.IsVisible = false;
+            BV3.IsVisible = false;
+            BV4.IsVisible = false;
+            BV5.IsVisible = false;
+
+            MainView.IsVisible = true;
+            MainView2.IsVisible = false;
+            MainView3.IsVisible = false;
+            MainView4.IsVisible = false;
+            MainView5.IsVisible = false;
+
+            Barra.BackgroundColor = Color.FromHex("#877BA1");
+
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+
+            ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+        }
+
+        async void Shows_Clicked(object sender, System.EventArgs e)
+        {
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+
+           // ((MasterPage)Application.Current.MainPage).IsPresented = false;
+            this.IsPresented = false;
+
+            MainViewModel.GetInstance().Shows = new ShowsViewModel();
+            MainViewModel.GetInstance().EventosItem = new EventosItemViewModel();
+
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Show());
+
+        }
+
+        async void Promociones_Clicked(object sender, System.EventArgs e)
+        {
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+
+            ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+            MainViewModel.GetInstance().Promociones = new PromocionesViewModel();
+
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Promociones());
+
+
+        }
+
+        async void Guardados_Clicked(object sender, System.EventArgs e)
+        {
+            bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                           (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+            ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+            if (isLoggedIn)
+            {
+                App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+
+                MainViewModel.GetInstance().Favoritos = new FavoritosViewModel();
+                MainViewModel.GetInstance().FavoritoItem = new FavoritoItemViewModel();
+
+                await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Favoritos());
+            }
+            else
+            {
+                await Mensajes.Alerta("Debes de estar registrado para acceder a esta opción");
+            }
+        }
+
+        async void MasInfo_Clicked(object sender, System.EventArgs e)
+        {
+
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+
+            ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new InfoPage());
+
+
+        }
+
+        async void Terminos_Clicked(object sender, System.EventArgs e)
+        {
+            ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new TerminosCondiciones());
+
         }
     }
 }

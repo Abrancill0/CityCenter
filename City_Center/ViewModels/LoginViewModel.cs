@@ -107,13 +107,12 @@ namespace City_Center.ViewModels
                 var content = new FormUrlEncodedContent(new[]
                {
                 new KeyValuePair<string, string>("usu_usuario", this.Email),
-                new KeyValuePair<string, string>("usu_contrasena", this.Password),
-                new KeyValuePair<string, string>("usu_token", "")
+                new KeyValuePair<string, string>("usu_contrasena", this.Password)
 
                 });
 
 
-                var response = await this.apiService.Get<LoginReturn>("/usuarios", "/login", content);
+                var response = await this.apiService.Get<LoginReturn>("/usuarios", "/loginApp", content);
 
                 if (!response.IsSuccess)
                 {

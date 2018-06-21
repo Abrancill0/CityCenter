@@ -220,6 +220,7 @@ namespace City_Center.ViewModels
         private async void VerPerfil()
         {
             MainViewModel.GetInstance().Perfil = new PerfilViewModel();
+            MainViewModel.GetInstance().NotificacionesRecibidas = new NotificacionesViewModel();
 
             ((MasterPage)Application.Current.MainPage).IsPresented = false;
 

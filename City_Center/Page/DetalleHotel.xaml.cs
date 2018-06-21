@@ -4,6 +4,7 @@ using City_Center.Clases;
 using Xamarin.Forms;
 using City_Center.PopUp;
 using Rg.Plugins.Popup.Extensions;
+using static City_Center.Models.HabitacionesResultado;
 
 namespace City_Center.Page
 {
@@ -84,13 +85,45 @@ namespace City_Center.Page
 
             if (isLoggedIn)
             {
-                #if __ANDROID__
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
-                #endif
+               
             }
             else
             {
                 await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
+            }
+        }
+
+        void Handle_ItemSelected_1(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            try
+            {
+                var selection = e.SelectedItem as HabitacionesDetalle;
+
+
+                if (selection != null)
+                {
+                   
+                    NombreHabitacion.Text = selection.hab_nombre;
+                    DescripcionHabitacion.Text = selection.hab_descripcion;
+                    Img1provisional.Source = selection.hab_imagen;
+                    VariablesGlobales.Img1 = VariablesGlobales.RutaServidor + selection.hab_imagen_1;
+                    VariablesGlobales.Img2 = VariablesGlobales.RutaServidor + selection.hab_imagen_2;
+                    VariablesGlobales.Img3 = VariablesGlobales.RutaServidor + selection.hab_imagen_3;
+                    VariablesGlobales.Img4 = VariablesGlobales.RutaServidor + selection.hab_imagen_4;
+                    VariablesGlobales.Img5 = VariablesGlobales.RutaServidor + selection.hab_imagen_5;
+                    VariablesGlobales.Img6 = VariablesGlobales.RutaServidor + selection.hab_imagen_6;
+
+                    ListaOpciones = new string[] { VariablesGlobales.Img1, VariablesGlobales.Img2, VariablesGlobales.Img3, VariablesGlobales.Img4, VariablesGlobales.Img5, VariablesGlobales.Img6 };
+
+                    listaDetalleHabitacion.ItemsSource = ListaOpciones;
+                   
+                }
+
+            }
+            catch (Exception ex)
+            {
+
             }
         }
     }

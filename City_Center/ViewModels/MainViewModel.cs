@@ -58,6 +58,7 @@ namespace City_Center.ViewModels
         public VincularTarjetaViewModel VincularTarjeta { get; set; }
         public TabPageViewModel TabPage { get; set; }
         public ChatviewModel Chat { get; set; }
+        public NotificacionesViewModel NotificacionesRecibidas { get; set; }
         #endregion
 
         #region Contructors

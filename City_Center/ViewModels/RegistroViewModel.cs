@@ -161,7 +161,7 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.Nombre))
             {
-                await Mensajes.Alerta("Nombre y apellido son requeridos");
+                await Mensajes.Alerta("Nombre y Apellido son requeridos");
 
                 UserDialogs.Instance.HideLoading();
 

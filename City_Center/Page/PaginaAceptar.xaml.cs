@@ -11,6 +11,7 @@ namespace City_Center.Page
         public PaginaAceptar()
         {
             InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
        async void Handle_Clicked(object sender, System.EventArgs e)

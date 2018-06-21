@@ -26,8 +26,7 @@ namespace City_Center.Page
         public InicioContent()
         {
             InitializeComponent();
-            //FechaInicio.ShowSoftInputOnFocus = false;
-
+           
             _webHotel = new WebViewHotel();
 
             _AlertaConfirmacion = new AlertaConfirmacion();
@@ -149,7 +148,7 @@ namespace City_Center.Page
             tienda.Source = "TIENDAONLINE";
         }
 
-        async private void Btn4_Clicked(object sender, System.EventArgs e)
+        private void Btn4_Clicked(object sender, System.EventArgs e)
         {
 
             SL1.IsVisible = false;
@@ -601,7 +600,7 @@ namespace City_Center.Page
 
         void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
-#if __IOS__
+        #if __IOS__
             try
             {
                 string Direccion = Convert.ToString(e.Direction);
@@ -665,7 +664,7 @@ namespace City_Center.Page
             {
                 string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.indicePromociones == VariablesGlobales.RegistrosPromociones && Direccion == "Right")
+                if (VariablesGlobales.IndicePromociones == VariablesGlobales.RegistrosPromociones && Direccion == "Right")
                 {
                     //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
                     VariablesGlobales.validacionIOSPromociones = 1;
@@ -673,7 +672,7 @@ namespace City_Center.Page
                     CarruselPromociones.AnimateTransition = false;
 
                 }
-                else if (VariablesGlobales.indicePromociones == 1 && Direccion == "Left")
+                else if (VariablesGlobales.IndicePromociones == 1 && Direccion == "Left")
                 {
                     CarruselPromociones.AnimateTransition = false;
                     VariablesGlobales.validacionIOSPromociones = 2;
@@ -692,66 +691,63 @@ namespace City_Center.Page
 
 
 
-#if __ANDROID__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+        #if __ANDROID__
+                    try
+                    {
+                        string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.indicePromociones >= VariablesGlobales.RegistrosPromociones && Direccion == "Right")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    CarruselPromociones.Position = 0;
+                if (VariablesGlobales.IndicePromociones >= VariablesGlobales.RegistrosPromociones && Direccion == "Right")
+                        {
+                            CarruselPromociones.AnimateTransition = false;
+                            CarruselPromociones.Position = 0;
 
-                }
-                else if (VariablesGlobales.indicePromociones <= 1 && Direccion == "Left")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
-                }
-            }
-            catch (Exception ex)
-            {
-               
-            }  
-         
-#endif
+                        }
+                else if (VariablesGlobales.IndicePromociones <= 1 && Direccion == "Left")
+                        {
+                            CarruselPromociones.AnimateTransition = false;
+                            CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                       
+                    }  
+                 
+        #endif
 
         }
 
         void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
-                    VariablesGlobales.indicePromociones = e.NewValue;
+            VariablesGlobales.IndicePromociones = e.NewValue;
 
-        #if __IOS__
-            try
-            {
-                
-                if (VariablesGlobales.validacionIOSPromociones == 1)
+            #if __IOS__
+                try
                 {
-                    if (e.NewValue != 0)
+                    
+                    if (VariablesGlobales.validacionIOSPromociones == 1)
                     {
-                       
-                        VariablesGlobales.indicePromociones = 1;
-                        CarruselPromociones.Position = 0;
+                        if (e.NewValue != 0)
+                        {
+                            CarruselPromociones.Position = 0;
+                            VariablesGlobales.IndicePromociones = 1;
+                        }
                     }
+                    else if (VariablesGlobales.validacionIOSPromociones == 2)
+                    {
+                        //if (e.NewValue == 0)
+                        //{
+                        CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
+                        VariablesGlobales.IndicePromociones = VariablesGlobales.RegistrosPromociones;
+                        //}
+                    }
+
                 }
-                else if (VariablesGlobales.validacionIOSPromociones == 2)
+                catch (Exception)
                 {
-                    //if (e.NewValue == 0)
-                    //{
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
-                    VariablesGlobales.indicePromociones = VariablesGlobales.RegistrosPromociones;
-                    //}
+
                 }
-
-            }
-            catch (Exception)
-            {
-
-            }
-        #endif
-
-
+            #endif
 
         }
     }

@@ -13,7 +13,7 @@
          <StackLayout Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout Spacing="0">
                     <StackLayout HorizontalOptions="Start" Padding="30,13">
-                        <Label Text="{Binding hd.hab_nombre}" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
+                        <Label x:Name="NombreHabitacion" Text="{Binding hd.hab_nombre}" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular"/>
@@ -59,7 +59,7 @@
                             </ListView>
                         </RelativeLayout>
                  <StackLayout >
-                <Label Text="{Binding hd.hab_descripcion}" Margin="10,30,10,0"></Label>
+                <Label x:Name="DescripcionHabitacion" Text="{Binding hd.hab_descripcion}" Margin="10,30,10,0"></Label>
                 </StackLayout>
               <Button Margin="40,20,40,20"
                       TextColor="White"
@@ -93,6 +93,7 @@
                     </Label>
                  <RelativeLayout HeightRequest="100" VerticalOptions="Start">
                             <ListView Rotation="270" ItemsSource="{Binding HabitacionesDetalle}"
+                                      ItemSelected="Handle_ItemSelected_1"
                                       RowHeight="100" SeparatorVisibility="None"
                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"

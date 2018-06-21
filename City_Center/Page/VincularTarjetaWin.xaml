@@ -6,13 +6,14 @@
              x:Class="City_Center.Page.VincularTarjetaWin">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding VincularTarjeta}">
-        <StackLayout BackgroundColor="#23144B"
-                         VerticalOptions="Start"
+         <StackLayout BackgroundColor="#23144B"
+                      
                          HorizontalOptions="FillAndExpand"
-                         HeightRequest="50">
-                <Image Source="logowhite" Aspect="AspectFit"
+                         HeightRequest="60">
+                <Image Source="logo@2x" Aspect="AspectFit"
                        HorizontalOptions="Center" 
-                       VerticalOptions="Center"/>
+                       VerticalOptions="Center"
+                        Margin="0,25,0,0"/>
             </StackLayout>
 
             <StackLayout Margin="15">

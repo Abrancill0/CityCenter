@@ -413,7 +413,7 @@
                                             <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                         </Frame.Padding>
                                         <StackLayout Orientation="Vertical">
-                                            <Label Text="Nombre y apellido*"
+                                            <Label Text="Nombre y Apellido*"
                                                 FontSize = "Medium"
                                                 TextColor="Gray"
                                                 Margin="8,3,0,0">

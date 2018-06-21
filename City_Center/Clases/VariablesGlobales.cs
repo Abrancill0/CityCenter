@@ -37,7 +37,7 @@ namespace City_Center.Clases
 
 
         public static int indice;
-        public static int indicePromociones;
+        public static int IndicePromociones;
         public static int IndiceCasinoTorneo;
         public static int IndiceCasinoDestacados;
         public static int IndiceCasinoPromociones;
@@ -71,5 +71,7 @@ namespace City_Center.Clases
         public static bool HorarioLEGULA;
 
         public static bool Notificaciones;
+
+        public static bool ActualizaDatos;
     }
 }

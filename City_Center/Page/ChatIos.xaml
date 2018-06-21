@@ -2,15 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-             x:Class="City_Center.Page.ChatIos">
+             x:Class="City_Center.Page.ChatIos"
+             BackgroundColor="White">
    <ContentPage.ToolbarItems>
         <ToolbarItem Text="Terminar Chat" Clicked="Handle_Clicked"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" BackgroundColor="White" BindingContext="{Binding Chat}">
-            <WebView x:Name="WebViewChat1" IsVisible="false"/>
-             <WebView x:Name="WebViewChat" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+        <StackLayout Orientation="Vertical"
+                     BackgroundColor="White"
+                     BindingContext="{Binding Chat}">
+            <WebView x:Name="WebViewChat1" IsVisible="false" BackgroundColor="White"/>
+             <WebView x:Name="WebViewChat" 
+                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                      BackgroundColor="White" >
         </WebView>
 
             <StackLayout Margin="5" HorizontalOptions="FillAndExpand" VerticalOptions="End" Orientation="Horizontal">
@@ -54,9 +59,6 @@
           
             </StackLayout>
 
-
-
-            
         </StackLayout>
        
     </ContentPage.Content>

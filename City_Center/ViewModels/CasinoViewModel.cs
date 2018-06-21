@@ -23,7 +23,8 @@ using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using Plugin.Permissions.Abstractions;
 using System.Globalization;
-
+using Plugin.Permissions;
+using static City_Center.Models.TarjetaValidaResultado;
 
 namespace City_Center.ViewModels
 {
@@ -70,9 +71,25 @@ namespace City_Center.ViewModels
 
         bool muestraFlechaDestacado = false;
 
+        bool muestraTarjetasIOS;
+        bool muestraTarjetasAndroid;
+
 		#endregion
 
 		#region Properties
+
+        public bool MuestraTarjetasIOS
+        {
+            get { return this.muestraTarjetasIOS; }
+            set { SetValue(ref this.muestraTarjetasIOS, value); }
+        }
+        public bool MuestraTarjetasAndroid
+        {
+            get { return this.muestraTarjetasAndroid; }
+            set { SetValue(ref this.muestraTarjetasAndroid, value); }
+        }
+
+
 
 		public ObservableCollection<DestacadosItemViewModel> DestacadosDetalle
 		{
@@ -189,9 +206,28 @@ namespace City_Center.ViewModels
 			{
 				Plugin.Share.Abstractions.ShareMessage Compartir = new Plugin.Share.Abstractions.ShareMessage();
 
-				var hasPermission = await Utils.CheckPermissions(Permission.Location);
-                if (!hasPermission)
-                    return;
+
+                var permissionStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
+
+                if (permissionStatus == PermissionStatus.Denied)
+                {
+                    var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Location);
+
+                    if (results.ContainsKey(Permission.Location))
+                    {
+                        if (permissionStatus != PermissionStatus.Granted)
+                        {
+                            await Mensajes.Alerta("Ubicación denegeada, por favor activa el GPS de tu dispositivo");
+
+                            return;
+                        }
+                    }
+                }
+
+
+				//var hasPermission = await Utils.CheckPermissions(Permission.Location);
+                //if (!hasPermission)
+                    //return;
 
 
 				var Posicion = await Ubicacion.GetCurrentPosition();
@@ -290,12 +326,21 @@ namespace City_Center.ViewModels
 
 				string Nosocio = Application.Current.Properties["NumeroSocio"].ToString();
 
-				if (Nosocio == "0")
-				{
-					await Mensajes.Alerta("No se cuenta con ninguna tarjeta asociada");
+                var content = new FormUrlEncodedContent(new[]
+               {
+                    new KeyValuePair<string, string>("tarjeta",Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("usu",Nosocio )
+                });
 
-					return;
-				}
+
+                var response = await this.apiService.Get<TarjetaValidaReturn>("/es/register", "/valida_tarjeta_socio", content);
+
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Alerta("No se cuenta con ninguna tarjeta asociada, pódes vincular tu tarjeta desde tu perfil");
+                    return;
+                }
+
 
 				App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
                 
@@ -674,39 +719,39 @@ namespace City_Center.ViewModels
 		private async void LoadTarjetas()
 		{
 
-			try
-			{
-				var connection = await this.apiService.CheckConnection();
+            try
+            {
+                var connection = await this.apiService.CheckConnection();
 
-				if (!connection.IsSuccess)
-				{
+                if (!connection.IsSuccess)
+                {
                     await Mensajes.Alerta("Verificá tu conexión a Internet");
 
-					return;
-				}
+                    return;
+                }
 
 
-				var content = new FormUrlEncodedContent(new[]
-				{
-				new KeyValuePair<string, string>("", ""),
-			    });
+                var content = new FormUrlEncodedContent(new[]
+                {
+                new KeyValuePair<string, string>("", ""),
+                });
 
 
-				var response = await this.apiService.Get<TarjetasReturn>("/tarjetas", "/indexApp", content);
+                var response = await this.apiService.Get<TarjetasReturn>("/tarjetas", "/indexApp", content);
 
-				if (!response.IsSuccess)
-				{
+                if (!response.IsSuccess)
+                {
 
-					//await Mensajes.Error("Error al cargar Tarjetas");
+                    //await Mensajes.Error("Error al cargar Tarjetas");
 
-					return;
-				}
+                    return;
+                }
 
-				this.listTarjetas = (TarjetasReturn)response.Result;
+                this.listTarjetas = (TarjetasReturn)response.Result;
 
-				TarjetasDetalle = new ObservableCollection<TarjetasDetalle>(this.ToTarjetasViewModel());
+                TarjetasDetalle = new ObservableCollection<TarjetasDetalle>(this.ToTarjetasViewModel());
 
-				int contador = TarjetasDetalle.Count;
+                int contador = TarjetasDetalle.Count;
 
                 switch (contador)
                 {
@@ -714,36 +759,48 @@ namespace City_Center.ViewModels
                         TamanoTarjeta = 145;
                         break;
                     case 2:
-						TamanoTarjeta = 290;
+                        TamanoTarjeta = 290;
                         break;
-                        
+
                     case 3:
-						TamanoTarjeta = 435;
+                        TamanoTarjeta = 435;
                         break;
 
                     case 4:
-						TamanoTarjeta = 580;
+                        TamanoTarjeta = 580;
                         break;
 
                     case 5:
-						TamanoTarjeta = 725;
+                        TamanoTarjeta = 725;
                         break;
 
                     case 6:
-						TamanoTarjeta = 850;
+                        TamanoTarjeta = 850;
                         break;
 
                     case 7:
-						TamanoTarjeta = 995;
+                        TamanoTarjeta = 995;
                         break;
 
                     case 8:
-						TamanoTarjeta = 1140;
+                        TamanoTarjeta = 1140;
                         break;
-      
+
                 }
 
-			}
+               
+                this.MuestraTarjetasAndroid = false;
+                this.MuestraTarjetasIOS = false;
+
+                #if __IOS__
+                this.MuestraTarjetasIOS = true;
+                #endif
+
+                #if __ANDROID__
+                this.MuestraTarjetasAndroid = true;
+                #endif
+
+            }
 			catch (Exception ex)
 			{
 				//await Mensajes.Error("Casino - Tarjetas" + ex.ToString());
@@ -774,7 +831,7 @@ namespace City_Center.ViewModels
 				TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
 
-                if (TorneoDetalle.Count > 0)
+                if (TorneoDetalle.Count > 2)
                 {
                     VariablesGlobales.RegistrosCasinoTorneo = TorneoDetalle.Count-2;
                     MuestraFlechas = true;
