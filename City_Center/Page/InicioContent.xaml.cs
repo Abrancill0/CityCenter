@@ -151,17 +151,17 @@ namespace City_Center.Page
         private void Btn4_Clicked(object sender, System.EventArgs e)
         {
 
-            SL1.IsVisible = false;
-            SL2.IsVisible = false;
-            SL3.IsVisible = false;
-            SL4.IsVisible = true;
+            //SL1.IsVisible = false;
+            //SL2.IsVisible = false;
+            //SL3.IsVisible = false;
+            //SL4.IsVisible = true;
 
-            reservarHotel.Source = "RESERVAHOTEL";
-            tickets.Source = "TICKETSHOWS";
-            reservarMesa.Source = "RESERVATUMESA";
-            tienda.Source = "TIENDAONLINE_S";
+            //reservarHotel.Source = "RESERVAHOTEL";
+            //tickets.Source = "TICKETSHOWS";
+            //reservarMesa.Source = "RESERVATUMESA";
+            //tienda.Source = "TIENDAONLINE_S";
 
-            //await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda());
+            await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda());
         }
 
         void CambiaIcono(object sender, System.EventArgs e)
