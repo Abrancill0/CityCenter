@@ -326,20 +326,26 @@ namespace City_Center.ViewModels
 
 				string Nosocio = Application.Current.Properties["NumeroSocio"].ToString();
 
-                var content = new FormUrlEncodedContent(new[]
-               {
-                    new KeyValuePair<string, string>("tarjeta",Application.Current.Properties["IdUsuario"].ToString()),
-                    new KeyValuePair<string, string>("usu",Nosocio )
-                });
 
-
-                var response = await this.apiService.Get<TarjetaValidaReturn>("/es/register", "/valida_tarjeta_socio", content);
-
-                if (!response.IsSuccess)
+                if (Nosocio == "" || Nosocio == "0")
                 {
-                    await Mensajes.Alerta("No se cuenta con ninguna tarjeta asociada, pódes vincular tu tarjeta desde tu perfil");
+                    await Mensajes.Alerta("No cuenta con una tarjeta asociada, pódes vincularla desde tu perfil");
                     return;
                 }
+
+               // var content = new FormUrlEncodedContent(new[]
+               //{
+                //    new KeyValuePair<string, string>("usu",Application.Current.Properties["IdUsuario"].ToString()),
+                //   new KeyValuePair<string, string>("tarjeta",Nosocio )
+                //});
+
+                //var response = await this.apiService.Get<TarjetaValidaReturn>("/es/register", "/valida_tarjeta_socio", content);
+
+                //if (!response.IsSuccess)
+                //{
+                //    await Mensajes.Alerta("No se cuenta con ninguna tarjeta asociada, pódes vincular tu tarjeta desde tu perfil");
+                //    return;
+                //}
 
 
 				App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
