@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:view="clr-namespace:City_Center.Vista" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.MasInfo">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:City_Center.Vista"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             xmlns:local1="clr-namespace:City_Center.Clases"
+             x:Class="City_Center.Page.MasInfo">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="chat@2x" Clicked="Chat_click" />
+        <ToolbarItem  Icon="{Binding ImagenChat, Source={x:Static local1:GlobalResources.Current}}"  Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>

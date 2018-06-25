@@ -540,6 +540,7 @@
     <AndroidResource Include="Resources\drawable\HotelChat.png" />
     <AndroidResource Include="Resources\drawable\tiendamobile.jpg" />
     <AndroidResource Include="Resources\drawable\IconNotification.png" />
+    <AndroidResource Include="Resources\drawable\ChatNotificacion.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />

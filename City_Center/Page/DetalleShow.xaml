@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
+               xmlns:local1="clr-namespace:City_Center.Clases"
              NavigationPage.BackButtonTitle="volver"
              x:Class="City_Center.Page.DetalleShow">
     <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="chat@2x" Clicked="Chat_click"/>
+        <ToolbarItem  Icon="{Binding ImagenChat, Source={x:Static local1:GlobalResources.Current}}"  Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
             <ScrollView BindingContext="{Binding DetalleShow}">

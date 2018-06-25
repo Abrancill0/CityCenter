@@ -15,14 +15,17 @@ namespace City_Center.Page
 {
     public partial class Perfil : ContentPage
     {
-        
-		private string[] ListaOpciones;
+
+        private string[] ListaOpciones;
 
         public Perfil()
         {
             InitializeComponent();
 
+#if __IOS__
             NavigationPage.SetTitleIcon(this, "logo@2x.png");
+#endif
+          
 
             if (VariablesGlobales.Notificaciones == true)
             {
@@ -112,9 +115,9 @@ namespace City_Center.Page
         
         async void Fecha_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
-            #if __IOS__
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
+#endif
 
 			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
@@ -139,9 +142,9 @@ namespace City_Center.Page
 
 		async void TipoDocumento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
-            #if __IOS__
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
+#endif
 
             var result = await UserDialogs.Instance.ActionSheetAsync("Numero de socio Win", "CANCELAR", null, null, "DNI", "LE", "LC", "CI");
 

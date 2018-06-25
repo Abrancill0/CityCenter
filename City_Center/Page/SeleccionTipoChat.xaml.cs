@@ -17,7 +17,6 @@ namespace City_Center.Page
 
       async  void ChatCasino(object sender, System.EventArgs e)
         {
-
             if (string.IsNullOrEmpty(Application.Current.Properties["RutaChatCasino"].ToString()))
             {
                 Application.Current.Properties["Casino"] = 1;
@@ -33,6 +32,17 @@ namespace City_Center.Page
 
             VariablesGlobales.TipoChat = "casino";
 
+            base.OnDisappearing();
+
+            string ValorHotel = Application.Current.Properties["Hotel"].ToString();
+
+            if (ValorHotel == "0")
+            {
+                await Mensajes.Alerta("Ya se encuentra un chat abierto en hotel");
+                return;
+            }
+
+           
             #if __ANDROID__
             await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Chat());
             #endif
@@ -58,6 +68,15 @@ namespace City_Center.Page
 
             await Application.Current.SavePropertiesAsync();
         
+            string ValorCasino = Application.Current.Properties["Casino"].ToString();
+
+            if (ValorCasino == "0")
+            {
+                await Mensajes.Alerta("Ya se encuentra un chat abierto en casino");
+                return;
+            }
+
+
             VariablesGlobales.TipoChat = "hotel";
             #if __ANDROID__
             await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Chat());

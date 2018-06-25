@@ -4,9 +4,10 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              NavigationPage.BackButtonTitle="volver"
+               xmlns:local1="clr-namespace:City_Center.Clases"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.DetalleTorneo">
       <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="chat@2x" Clicked="Chat_click"/>
+       <ToolbarItem  Icon="{Binding ImagenChat, Source={x:Static local1:GlobalResources.Current}}"  Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>

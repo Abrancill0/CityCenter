@@ -1,7 +1,7 @@
 ﻿using System;
 namespace City_Center.Clases
 {
-    public class VariablesGlobales
+    public static class VariablesGlobales
     {
         public static string RutaServidor = "http://wpage.citycenter-rosario.com.ar/"; //"http://cc.comprogapp.com/";
         public static string RutaImagene;
@@ -73,5 +73,7 @@ namespace City_Center.Clases
         public static bool Notificaciones;
 
         public static bool ActualizaDatos;
+
+        public static string ImagenChat = "B.png";
     }
 }

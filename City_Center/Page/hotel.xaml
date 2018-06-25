@@ -8,9 +8,7 @@
               xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.Hotel">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="chat@2x" />
-    </ContentPage.ToolbarItems>
+   
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Name="TabTopLabel" TargetType="Label">
@@ -536,8 +534,12 @@
                                         </OnPlatform>
                                     </Label.FontFamily>
                                 </Label>
+
+
+                            
+                            
                             <cv:CarouselViewControl x:Name="CarruselPromociones2" 
-                                                    ItemsSource="{Binding PromocionesDetalle}"
+                                                    ItemsSource="{Binding PromocionesDetalle2}"
                                                     HeightRequest="300"
                                                     HorizontalOptions="FillAndExpand"
                                                     AnimateTransition="true"
@@ -581,8 +583,6 @@
                                                 </Label.FontFamily>
                                             </Label>  
                                          </Grid>
-                                       
-                                        
                                     </DataTemplate>
                                 </cv:CarouselViewControl.ItemTemplate>
                             </cv:CarouselViewControl>

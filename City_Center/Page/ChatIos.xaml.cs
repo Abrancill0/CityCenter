@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using City_Center.Clases;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using System.Net.Http;
+using static City_Center.Models.MensajesPendientesResultado;
 
 namespace City_Center.Page
 {
@@ -14,30 +16,8 @@ namespace City_Center.Page
 
             #if __IOS__
             NavigationPage.SetTitleIcon(this, "logo@x2.png");
-            if (VariablesGlobales.TipoChat == "casino")
-            {
-                var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatCasino"].ToString());
 
-                var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
-
-                WebViewChat1.Source = nsurl.AbsoluteUrl.ToString();
-
-                Application.Current.Properties["VariableChatCasino"] = "";
-            }
-            else if (VariablesGlobales.TipoChat == "hotel")
-            {
-                var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatHotel"].ToString());
-
-                var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
-
-                WebViewChat1.Source = nsurl.AbsoluteUrl.ToString();
-
-                Application.Current.Properties["VariableChatHotel"] = "";
-            }
-
-            Application.Current.SavePropertiesAsync();
-
-            Task.Delay(1000);
+            Task.Delay(800);
 
             string Nombre = Application.Current.Properties["NombreCompleto"].ToString();
             string Email = Application.Current.Properties["Email"].ToString();
@@ -188,5 +168,53 @@ namespace City_Center.Page
             }
             #endif
         }
+    
+        protected async override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            if (VariablesGlobales.TipoChat == "casino" == true)
+            {
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("ccn_chat", Application.Current.Properties["VariableChatCasino"].ToString()),
+                    new KeyValuePair<string, string>("ccn_email", Application.Current.Properties["Email"].ToString())
+                 });
+
+
+                Restcliente Mensajitos = new Restcliente();
+
+                var response = await Mensajitos.Get<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web", content);
+
+                if (response != null)
+                {
+                    GlobalResources.Current.ImagenChat = "chat@2x";
+
+                }
+            }
+            else if (VariablesGlobales.TipoChat == "hotel")
+            {
+
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("ccn_chat", Application.Current.Properties["VariableChatHotel"].ToString()),
+                    new KeyValuePair<string, string>("ccn_email", Application.Current.Properties["Email"].ToString())
+                });
+
+
+                Restcliente Mensajitos = new Restcliente();
+
+                var response = await Mensajitos.GetReal<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web/", content);
+                if (response != null)
+                {
+
+                    GlobalResources.Current.ImagenChat = "chat@2x";
+                }
+            }
+
+        }
+    
     }
 }

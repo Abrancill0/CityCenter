@@ -28,9 +28,7 @@ namespace City_Center.ViewModels
         #region Attributes
 
         private PromocionesReturn listPromociones;
-        private EventosReturn list;
-        private ObservableCollection<EventosItemViewModel> eventosDetalle;
-  
+       
         private ObservableCollection<TorneoItemViewModel> torneoDetalle;
 
         private TarjetaUsuarioReturn listaTarjetausuario;
@@ -73,12 +71,6 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.fechaShowFin, value); }
         }
 
-
-        public ObservableCollection<EventosItemViewModel> EventosDetalle
-        {
-            get { return this.eventosDetalle; }
-            set { SetValue(ref this.eventosDetalle, value); }
-        }
 
         public ObservableCollection<TorneoItemViewModel> TorneoDetalle
         {
@@ -247,14 +239,20 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.Correo))
             {
-                await Mensajes.Alerta("Correo requerido");
+                await Mensajes.Alerta("Correo electronico requerido");
 
+                return;
+            }
+
+            if (!ValidaEmailMethod.ValidateEMail(this.Correo))
+            {
+                await Mensajes.Alerta("Correo electronico mal estructurado");
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Telefono))
             {
-                await Mensajes.Alerta("Telefono requerido");
+                await Mensajes.Alerta("Numero telefonico requerido");
 
                 return;
             }
@@ -286,9 +284,11 @@ namespace City_Center.ViewModels
             if (!response.IsSuccess)
             {
                 await Mensajes.Alerta("Ocurrio un error al enviar el correo");
+
+                return;
             }
 
-            await Mensajes.Alerta("Correo enviado exitosamente");
+            await Mensajes.Alerta("La información ha sido enviada correctamente");
 
 			this.FechaInicio = "00/00/0000";
 			this.HoraInicio = "00:00";

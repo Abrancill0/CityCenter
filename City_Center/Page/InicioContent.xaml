@@ -9,9 +9,7 @@
              xmlns:naxam="clr-namespace:Naxam.Controls.Forms;assembly=Naxam.CarouselView.Forms"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.InicioContent">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="chat@2x" />
-    </ContentPage.ToolbarItems>
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Name="StyleButton" TargetType="Button">
@@ -61,7 +59,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <!--<Image Aspect="AspectFit"
+                    <Image Aspect="AspectFit"
                            Source="TICKETSHOWS"
                            VerticalOptions="Start"
                            HorizontalOptions="End"
@@ -69,7 +67,7 @@
                            HeightRequest="80"
                            Grid.Column="0"
                            Grid.Row="0">
-                    </Image>-->
+                    </Image>
                     <Image x:Name="tickets" Aspect="AspectFit" Source="TICKETSHOWS" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Btn2_Clicked" />
@@ -380,7 +378,12 @@
                                                         </OnPlatform>
                                                     </Label.FontFamily>
                                                 </Label>
-                                                <xfx:XfxEntry x:Name="HoraR1" Text="{Binding HoraInicio,Mode = TwoWay}" Margin="5,-20,5,-12" PlaceholderColor="Transparent" Focused="HoraR1_Focused">
+                                                <xfx:XfxEntry x:Name="HoraR1"
+                                                              Text="{Binding HoraInicio,Mode = TwoWay}"
+                                                              Margin="5,-20,5,-12"
+                                                              PlaceholderColor="Transparent"
+                                                              Focused="HoraR1_Focused"
+                                                              ActivePlaceholderColor="#7A5BA5">
                                                     <Entry.HeightRequest>
                                                         <OnPlatform x:TypeArguments="x:Double">
                                                             <On Platform="iOS">60</On>
@@ -417,7 +420,12 @@
                                                 </OnPlatform>
                                             </Label.FontFamily>
                                         </Label>
-                                        <xfx:XfxEntry x:Name="NoPersona1" Text="1" Margin="5,-20,5,-5" PlaceholderColor="Transparent" Keyboard="Numeric">
+                                        <xfx:XfxEntry x:Name="NoPersona1"
+                                                      Text="1"
+                                                      Margin="5,-20,5,-5"
+                                                      PlaceholderColor="Transparent"
+                                                      Keyboard="Numeric"
+                                                      ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -464,7 +472,10 @@
                                                           PlaceholderColor="Transparent"
                                                           Keyboard="Text"
                                                           HorizontalOptions="Start" 
-                                                          HorizontalTextAlignment="Start" Focused="Restaurant_Focused" WidthRequest="200">
+                                                          HorizontalTextAlignment="Start"
+                                                          Focused="Restaurant_Focused"
+                                                          WidthRequest="200"
+                                                          ActivePlaceholderColor="#7A5BA5">
                                                 <Entry.HeightRequest>
                                                     <OnPlatform x:TypeArguments="x:Double">
                                                         <On Platform="iOS">60</On>
@@ -501,7 +512,15 @@
                                         </Label>
                                         <Grid Padding="5, 0">
                                             <!--  <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  -->
-                                            <xfx:XfxEntry x:Name="SillaNiño" Text="{Binding SillaNiños,Mode=TwoWay}" Margin="2,-20,5,-5" PlaceholderColor="Transparent" Keyboard="Text" HorizontalOptions="Start" HorizontalTextAlignment="Start" Focused="SillaNinos_Focused">
+                                            <xfx:XfxEntry x:Name="SillaNiño"
+                                                          Text="{Binding SillaNiños,Mode=TwoWay}"
+                                                          Margin="2,-20,5,-5"
+                                                          PlaceholderColor="Transparent"
+                                                          Keyboard="Text"
+                                                          HorizontalOptions="Start"
+                                                          HorizontalTextAlignment="Start"
+                                                          Focused="SillaNinos_Focused"
+                                                          ActivePlaceholderColor="#7A5BA5">
                                                 <Entry.HeightRequest>
                                                     <OnPlatform x:TypeArguments="x:Double">
                                                         <On Platform="iOS">60</On>
@@ -536,7 +555,10 @@
                                                 </OnPlatform>
                                             </Label.FontFamily>
                                         </Label>
-                                        <xfx:XfxEntry PlaceholderColor="Transparent" Text="{Binding Nombre, Mode=TwoWay}" Margin="5,-20,5,-5">
+                                        <xfx:XfxEntry PlaceholderColor="Transparent"
+                                                      Text="{Binding Nombre, Mode=TwoWay}"
+                                                      Margin="5,-20,5,-5"
+                                                      ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -570,7 +592,10 @@
                                                 </OnPlatform>
                                             </Label.FontFamily>
                                         </Label>
-                                        <xfx:XfxEntry PlaceholderColor="Transparent" Text="{Binding Correo, Mode=TwoWay}" Margin="5,-20,5,-5">
+                                        <xfx:XfxEntry PlaceholderColor="Transparent"
+                                                      Text="{Binding Correo, Mode=TwoWay}"
+                                                      Margin="5,-20,5,-5"
+                                                      ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -604,7 +629,11 @@
                                                 </OnPlatform>
                                             </Label.FontFamily>
                                         </Label>
-                                        <xfx:XfxEntry PlaceholderColor="Transparent" Text="{Binding Telefono, Mode=TwoWay}" Keyboard="Numeric" Margin="2,-20,5,-5">
+                                        <xfx:XfxEntry PlaceholderColor="Transparent"
+                                                      Text="{Binding Telefono, Mode=TwoWay}"
+                                                      Keyboard="Telephone"
+                                                      Margin="2,-20,5,-5"
+                                                      ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>

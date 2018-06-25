@@ -57,6 +57,13 @@ namespace City_Center.ViewModels
         private bool avisos;
         private bool geolocalizacion;
 
+        private int PromocionesID;
+        private int ShowID;
+        private int ReservacionesID;
+        private int ChatID;
+        private int EventosID;
+        private int AvisosID;
+
         #endregion
 
         #region Properties
@@ -451,28 +458,14 @@ namespace City_Center.ViewModels
         private async void GuardaConfiguracion()
         {
 
-                var content = new FormUrlEncodedContent(new[]
-                {
-                    new KeyValuePair<string, string>("nus_id_usuario", ""),
-                    new KeyValuePair<string, string>("nus_id_notificacion",""),
-                
-                });
+            UserDialogs.Instance.ShowLoading("Guardando...", MaskType.Black);
 
-
-                var response = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/cancelar_notificacion", content);
-
-                if (!response.IsSuccess)
-                {
-                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
-
-                    return;
-                }
-
-
+            if (Promociones == true)
+            {
                 var content2 = new FormUrlEncodedContent(new[]
-                               {
-                    new KeyValuePair<string, string>("nus_id_usuario", ""),
-                    new KeyValuePair<string, string>("nus_id_notificacion",""),
+                {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(PromocionesID)),
 
                 });
 
@@ -482,12 +475,226 @@ namespace City_Center.ViewModels
                 if (!response2.IsSuccess)
                 {
                     await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                } 
+            }
+            else
+            {
+                var content = new FormUrlEncodedContent(new[]
+                 {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(PromocionesID)),
 
+                });
+
+                var response = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/cancelar_notificacion", content);
+
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }     
+            }
+
+            if (Show == true)
+            {
+                var content2 = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(ShowID)),
+
+                });
+
+
+                var response2 = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/activar_notificacion", content2);
+
+                if (!response2.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }   
+            }
+            else
+            {
+                var content = new FormUrlEncodedContent(new[]
+                 {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(ShowID)),
+
+                });
+
+                var response = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/cancelar_notificacion", content);
+
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }     
+            }
+
+
+            if (Reservaciones == true)
+            {
+                var content2 = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(ReservacionesID)),
+
+                });
+
+
+                var response2 = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/activar_notificacion", content2);
+
+                if (!response2.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }   
+            }
+            else
+            {
+                var content = new FormUrlEncodedContent(new[]
+                 {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(ReservacionesID)),
+
+                });
+
+                var response = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/cancelar_notificacion", content);
+
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }     
+            }
+       
+
+            if (Chat == true)
+            {
+                var content2 = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(ChatID)),
+
+                });
+
+
+                var response2 = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/activar_notificacion", content2);
+
+                if (!response2.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }   
+            }
+            else
+            {
+                var content = new FormUrlEncodedContent(new[]
+                 {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(ChatID)),
+
+                });
+
+                var response = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/cancelar_notificacion", content);
+
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                } 
+            }
+
+            if (Eventos == true)
+            {
+                var content2 = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(EventosID)),
+
+                });
+
+
+                var response2 = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/activar_notificacion", content2);
+
+                if (!response2.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }   
+            }
+            else
+            {
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(EventosID)),
+
+                });
+
+                var response = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/cancelar_notificacion", content);
+
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
                     return;
                 }
+            }
+
+      
+            if (Avisos == true)
+            {
+                var content2 = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(AvisosID)),
+
+                });
 
 
+                var response2 = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/activar_notificacion", content2);
 
+                if (!response2.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }   
+            }
+            else
+            {
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("nus_id_usuario", Application.Current.Properties["IdUsuario"].ToString()),
+                    new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(AvisosID)),
+
+                });
+
+                var response = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/cancelar_notificacion", content);
+
+                if (!response.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }
+            }
+
+            UserDialogs.Instance.HideLoading();
+
+            Mensajes.Alerta("Configuracion guardada correctamente");
+            return;
         }
 
 
@@ -625,73 +832,86 @@ namespace City_Center.ViewModels
       
         private async void LoadConfiguracionNotificaciones()
         {
-            var content = new FormUrlEncodedContent(new[]
-               {
+            try
+            {
+                var content = new FormUrlEncodedContent(new[]
+              {
                 new KeyValuePair<string, string>("nus_id_usuario",Application.Current.Properties["IdUsuario"].ToString())
                });
 
 
-            var response = await this.apiService.Get<NotificacionesReturn>("/notificaciones/", "usuarioNotificaciones", content);
+                var response = await this.apiService.Get<NotificacionesReturn>("/notificaciones/", "usuarioNotificaciones", content);
 
-            if (!response.IsSuccess)
-            {
-
-            }
-            this.listConfigNotificaciones = (NotificacionesReturn)response.Result;
-
-            this.ConfigNotificacionesDetalle = new ObservableCollection<NotificacionesDetalle>(this.ToNotificacionesItemViewModel());
-
-            // Promociones;
-        // Show;
-        // Reservaciones;
-        // Chat;
-        // Eventos;
-        // Avisos;
-        // Geolocalizacion;
-
-            foreach (var item in ConfigNotificacionesDetalle)
-            {
-                switch (item.not_nombre)
+                if (!response.IsSuccess)
                 {
-                    case "Avisos":
-                        this.Avisos = Convert.ToBoolean(item.nus_activa);
-                        break;
-                    case "Chat":
-                        this.Chat = Convert.ToBoolean(item.nus_activa);
-                        break;
-                    case "Eventos":
-                        this.Eventos = Convert.ToBoolean(item.nus_activa);
-                        break;
-                    case "Promociones":
-                        this.Promociones = Convert.ToBoolean(item.nus_activa);
-                        break;
-                    case "Rservaciones":
-                        this.Reservaciones=Convert.ToBoolean(item.nus_activa);
-                        break;
-                    case "Shows":
-                        this.Show = Convert.ToBoolean(item.nus_activa);
-                        break;
 
                 }
-            }
+                this.listConfigNotificaciones = (NotificacionesReturn)response.Result;
 
+                this.ConfigNotificacionesDetalle = new ObservableCollection<NotificacionesDetalle>(this.ToNotificacionesItemViewModel());
+
+
+                foreach (var item in ConfigNotificacionesDetalle)
+                {
+
+
+                    switch (item.not_nombre)
+                    {
+                        case "Avisos":
+                            this.Avisos = Convert.ToBoolean(item.nus_activa);
+                            AvisosID = item.nus_id_notificacion;
+                            break;
+                        case "Chat":
+                            this.Chat = Convert.ToBoolean(item.nus_activa);
+                            ChatID = item.nus_id_notificacion;
+                            break;
+                        case "Eventos":
+                            this.Eventos = Convert.ToBoolean(item.nus_activa);
+                            EventosID = item.nus_id_notificacion;
+                            break;
+                        case "Promociones":
+                            this.Promociones = Convert.ToBoolean(item.nus_activa);
+
+                            PromocionesID = item.nus_id_notificacion;
+                            break;
+                        case "Rservaciones":
+                            this.Reservaciones = Convert.ToBoolean(item.nus_activa);
+
+                            ReservacionesID = item.nus_id_notificacion;
+                            break;
+                        case "Shows":
+                            this.Show = Convert.ToBoolean(item.nus_activa);
+                            ShowID = item.nus_id_notificacion;
+                            break;
+
+                    }
+                }
+
+
+                }
+            catch (Exception ex)
+            {
+
+            }
+           
         }
 
         private IEnumerable<NotificacionesDetalle> ToNotificacionesItemViewModel()
         {
-            return this.listConfigNotificaciones.respuesta.Select(l => new NotificacionesDetalle
-            {
-                nus_id = l.nus_id,
-                nus_id_usuario = l.nus_id_usuario,
-                nus_id_notificacion = l.nus_id_notificacion,
-                nus_fecha_hora_creo = l.nus_fecha_hora_creo,
-                nus_fecha_hora_modifico = l.nus_fecha_hora_modifico,
-                nus_activa = l.nus_activa,
-                not_nombre = l.not_nombre,
-                not_decripcion = l.not_decripcion,
-            });
+            
+                return this.listConfigNotificaciones.respuesta.Select(l => new NotificacionesDetalle
+                {
+                    nus_id = l.nus_id,
+                    nus_id_usuario = l.nus_id_usuario,
+                    nus_id_notificacion = l.nus_id_notificacion,
+                    nus_fecha_hora_creo = l.nus_fecha_hora_creo,
+                    nus_fecha_hora_modifico = l.nus_fecha_hora_modifico,
+                    nus_activa = l.nus_activa,
+                    not_nombre = l.not_nombre,
+                    not_decripcion = l.not_decripcion,
+                });
+           
         }
-
 
         #endregion
 

@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
+              xmlns:local1="clr-namespace:City_Center.Clases"
              x:Class="City_Center.Page.DetalleDestacados">
  <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="chat@2x" Clicked="Chat_click"/>
+        <ToolbarItem  Icon="{Binding ImagenChat, Source={x:Static local1:GlobalResources.Current}}"  Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
@@ -97,6 +98,8 @@
                      <Button Text="COMPRA ONLINE"
                              TextColor="White"
                              Margin="20,10"
+                             Command="{Binding CompraOnlineCommand}"
+                             IsVisible="{Binding OcultaLink,Mode=TwoWay}"
                              BackgroundColor="#250C4B">
                         <Button.FontFamily>
                                  <OnPlatform x:TypeArguments="x:String">
@@ -109,7 +112,9 @@
                 <Button Text="COMPRA TELÉFONICA"
                         TextColor="White"
                         Margin="20,5"
-                        BackgroundColor="#250C4B">
+                        BackgroundColor="#250C4B"
+                        Command="{Binding LlamarCommand}"
+                         IsVisible="{Binding OcultaLlamada,Mode=TwoWay}">
                          <Button.FontFamily>
                                  <OnPlatform x:TypeArguments="x:String">
                                        <On Platform="iOS" Value="Oswald-Regular"/>

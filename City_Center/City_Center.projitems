@@ -252,9 +252,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Vista\VistaSpa.xaml.cs">
       <DependentUpon>VistaSpa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Page\SlideMenu\Show.xaml.cs">
       <DependentUpon>Show.xaml</DependentUpon>
     </Compile>
@@ -451,6 +448,9 @@
       <DependentUpon>DetalleTorneo2.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\ContendPageOv.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Clases\ClaseGlobal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MensajesPendientesResultado.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

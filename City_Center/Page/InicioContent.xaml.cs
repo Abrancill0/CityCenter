@@ -148,7 +148,7 @@ namespace City_Center.Page
             tienda.Source = "TIENDAONLINE";
         }
 
-        private void Btn4_Clicked(object sender, System.EventArgs e)
+        private async void Btn4_Clicked(object sender, System.EventArgs e)
         {
 
             //SL1.IsVisible = false;

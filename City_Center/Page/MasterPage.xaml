@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
                   xmlns:local="clr-namespace:City_Center.Page"
+                  xmlns:local1="clr-namespace:City_Center.Clases"
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   x:Class="City_Center.Page.MasterPage"
                   xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
@@ -9,10 +10,11 @@
     <MasterDetailPage.Master>
         <ContentPage Title="City Center" Icon="menu@3x.png" BackgroundColor="Transparent" BindingContext="{Binding Detail}">
             <StackLayout BackgroundColor="#250c4b">
-                <Image HorizontalOptions="Start" Source="logo@2x.png" HeightRequest="95" WidthRequest="140" Margin="20,10,0,-10">
+                <Image HorizontalOptions="Start" Source="logowhite.png" HeightRequest="90" WidthRequest="130" Margin="20,10,0,-10">
                 </Image>
+                <!--cambiar en ios logo@2x.png-->
                 <StackLayout Margin="10,5,0,5">
-                    <Label Text="INICIO" TextColor="White">
+                    <Label Text="INICIO" TextColor="White" FontSize="Small">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
                                 <On Platform="iOS" Value="Oswald-Regular" />
@@ -26,7 +28,7 @@
                 </StackLayout>
 
                 <StackLayout Margin="10,5,0,5">
-                    <Label Text="SHOWS" TextColor="White">
+                    <Label Text="SHOWS" TextColor="White" FontSize="Small">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
                                 <On Platform="iOS" Value="Oswald-Regular" />
@@ -41,7 +43,7 @@
 
 
                 <StackLayout Margin="10,5,0,5">
-                    <Label Text="PROMOCIONES" TextColor="White">
+                    <Label Text="PROMOCIONES" TextColor="White" FontSize="Small">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
                                 <On Platform="iOS" Value="Oswald-Regular" />
@@ -54,8 +56,8 @@
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
 
-                 <StackLayout Margin="10,5,0,5">
-                    <Label Text="GUARDADOS" TextColor="White">
+                <StackLayout Margin="10,5,0,5">
+                    <Label Text="GUARDADOS" TextColor="White" FontSize="Small">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
                                 <On Platform="iOS" Value="Oswald-Regular" />
@@ -69,7 +71,7 @@
                 </StackLayout>
 
                 <StackLayout Margin="10,5,0,5">
-                    <Label Text="MÁS INFORMACIÓN" TextColor="White">
+                    <Label Text="MÁS INFORMACIÓN" TextColor="White" FontSize="Small">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
                                 <On Platform="iOS" Value="Oswald-Regular" />
@@ -83,7 +85,7 @@
                 </StackLayout>
               
                <StackLayout Margin="10,5,0,5">
-                    <Label Text="TÉRMINOS Y CONDICIONES GENERALES DE USO" TextColor="White">
+                    <Label Text="TÉRMINOS Y CONDICIONES GENERALES DE USO" TextColor="White" FontSize="Small">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
                                 <On Platform="iOS" Value="Oswald-Regular" />
@@ -263,7 +265,8 @@
             <x:Arguments>
                 <ContentPage NavigationPage.TitleIcon="logo@2x.png" NavigationPage.BackButtonTitle="volver">
                     <ContentPage.ToolbarItems>
-                        <ToolbarItem Icon="chat@2x" Clicked="Chat_click" />
+                        <ToolbarItem  Icon="{Binding ImagenChat, Source={x:Static local1:GlobalResources.Current}}"  Clicked="Chat_click" />
+                   
                     </ContentPage.ToolbarItems>
                     <Grid CompressedLayout.IsHeadless="true">
                         <Grid.RowDefinitions>

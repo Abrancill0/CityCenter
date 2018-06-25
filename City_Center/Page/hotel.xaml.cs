@@ -28,7 +28,7 @@ namespace City_Center.Page
             FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(1));
 
             _webHotel = new WebViewHotel();
-            NavigationPage.SetTitleIcon(this, "logo.png");
+           
             
         }
 

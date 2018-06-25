@@ -25,7 +25,10 @@ namespace City_Center.Models
             public bool oculta { get; set; }
             public bool des_guardado { get; set; }
             public int des_id_guardado { get; set; }
-           
+            public string des_link { get; set; }
+            public string des_telefono { get; set; }
+            public bool ocultallamada { get; set; }
+            public bool ocultaonline { get; set; }
         }
 
         public class DestacadosReturn

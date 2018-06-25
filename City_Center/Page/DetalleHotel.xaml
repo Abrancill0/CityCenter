@@ -4,9 +4,10 @@
               BindingContext="{Binding Main, Source={StaticResource Locator}}"
               xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
               xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+              xmlns:local1="clr-namespace:City_Center.Clases"
              x:Class="City_Center.Page.DetalleHotel">
      <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="chat@2x" Clicked="Chat_click"/>
+       <ToolbarItem  Icon="{Binding ImagenChat, Source={x:Static local1:GlobalResources.Current}}"  Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
     <ScrollView BindingContext="{Binding DetalleHotel}">
@@ -93,7 +94,7 @@
                     </Label>
                  <RelativeLayout HeightRequest="100" VerticalOptions="Start">
                             <ListView Rotation="270" ItemsSource="{Binding HabitacionesDetalle}"
-                                      ItemSelected="Handle_ItemSelected_1"
+                                     ItemSelected="Handle_ItemSelected_1"
                                       RowHeight="100" SeparatorVisibility="None"
                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
@@ -112,9 +113,7 @@
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
                                              <ffimageloading:CachedImage HeightRequest="120" WidthRequest="115" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding hab_imagen}" DownsampleToViewSize="true">
-                                                    <ffimageloading:CachedImage.GestureRecognizers>
-                                                        <TapGestureRecognizer Command="{Binding DetalleCommand}" />
-                                                    </ffimageloading:CachedImage.GestureRecognizers>
+                                                   
                                                     <ffimageloading:CachedImage.Transformations>
                                                         <fftransformations:RoundedTransformation Radius="15" />
                                                     </ffimageloading:CachedImage.Transformations>

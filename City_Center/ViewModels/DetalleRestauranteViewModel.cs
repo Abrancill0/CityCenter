@@ -146,21 +146,28 @@ namespace City_Center.ViewModels
         {
             if (string.IsNullOrEmpty(this.Nombre))
             {
-                await Mensajes.Alerta("Nombre requerido");
+                await Mensajes.Alerta("Nombre y Apellido requerido");
 
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Correo))
             {
-                await Mensajes.Alerta("Correo requerido");
+                await Mensajes.Alerta("correo electrónico requerido");
 
                 return;
             }
 
+            if (!ValidaEmailMethod.ValidateEMail(this.Correo))
+            {
+                await Mensajes.Alerta("Correo electronico mal estructurado");
+                return;
+            }
+
+
             if (string.IsNullOrEmpty(this.Telefono))
             {
-                await Mensajes.Alerta("Telefono requerido");
+                await Mensajes.Alerta("Número de teléfono requerido");
 
                 return;
             }
@@ -190,13 +197,14 @@ namespace City_Center.ViewModels
             if (!response.IsSuccess)
             {
                 await Mensajes.Alerta(response.Message);
+                return;
             }
 
             await Mensajes.Alerta("La información ha sido enviada correctamente");
 
             //this.FechaInicio
             //this.HoraInicio 
-            this.NoPersonas = "1";
+            this.NoPersonas = "2";
             this.NombreRestaurante = string.Empty;
             this.SillaNiños = "No";
             this.Correo = string.Empty;

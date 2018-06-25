@@ -5,8 +5,11 @@ using System.Net.Http;
 using System.Windows.Input;
 using City_Center.Clases;
 using City_Center.Models;
+using City_Center.Page;
+using City_Center.PopUp;
 using City_Center.Services;
 using GalaSoft.MvvmLight.Command;
+using Plugin.Messaging;
 using Plugin.Share;
 using Xamarin.Forms;
 using static City_Center.Models.DestacadosResultado;
@@ -14,17 +17,30 @@ using static City_Center.Models.GuardaFavoritosResultado;
 
 namespace City_Center.ViewModels
 {
-    public class DetalleDestacadosViewModel
+    public class DetalleDestacadosViewModel:BaseViewModel
     {
         #region Services
         private ApiService apiService;
         #endregion
 
         #region Attributes
-
+        bool ocultaLlamada;
+        bool ocultaLink;
         #endregion
 
         #region Properties
+        public bool OcultaLlamada
+        {
+            get { return this.ocultaLlamada; }
+            set { SetValue(ref this.ocultaLlamada, value); }
+        }
+
+        public bool OcultaLink
+        {
+            get { return this.ocultaLink; }
+            set { SetValue(ref this.ocultaLink, value); }
+        }
+
         public DestacadosDetalle dd
         {
             get;
@@ -193,6 +209,47 @@ namespace City_Center.ViewModels
         }
 
 
+        public ICommand LlamarCommand
+        {
+            get
+            {
+                return new RelayCommand(Llamar);
+            }
+        }
+
+        private void Llamar()
+        {
+            var phoneCallTask = CrossMessaging.Current.PhoneDialer;
+
+            if (phoneCallTask.CanMakePhoneCall)
+            {
+                phoneCallTask.MakePhoneCall(dd.des_telefono, dd.des_nombre);
+            }
+
+        }
+
+        public ICommand CompraOnlineCommand
+        {
+            get
+            {
+                return new RelayCommand(CompraOnline);
+            }
+        }
+
+        async private void CompraOnline()
+        {
+            VariablesGlobales.RutaCompraOnline = this.dd.des_link;
+
+            // await app.cur.PushPopupAsync(new WebViewTienda);
+
+
+            // await  Application.Current.MainPage.Navigation.PushAsync(new WebViewCompraOnline());
+
+
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewCompraOnline());
+            //Device.OpenUri(new Uri(ds.eve_link));
+
+        }
 
 
         #endregion
@@ -207,6 +264,11 @@ namespace City_Center.ViewModels
             this.apiService = new ApiService();
 
             this.dd = dd;
+
+           this.OcultaLlamada = this.dd.ocultallamada;
+           this.OcultaLink = this.dd.ocultaonline;
+
+         
 
         }
         #endregion

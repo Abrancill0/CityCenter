@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" BindingContext="{Binding Main, Source={StaticResource Locator}}" x:Class="City_Center.Page.DetalleRestaurante">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:local1="clr-namespace:City_Center.Clases"
+             x:Class="City_Center.Page.DetalleRestaurante">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="chat@2x" Clicked="Chat_click" />
+         <ToolbarItem  Icon="{Binding ImagenChat, Source={x:Static local1:GlobalResources.Current}}"  Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding DetalleRestaurante}" BackgroundColor="White">
@@ -255,7 +261,8 @@
                                                       Text ="{Binding FechaInicio, Mode=TwoWay}"
                                                       Margin="5,-20,5,-12"
                                                       PlaceholderColor="Transparent"
-                                                      Focused="FechaR1_Focused">
+                                                      Focused="FechaR1_Focused"
+                                                      ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -287,7 +294,8 @@
                                                       Text ="{Binding HoraInicio,Mode = TwoWay}"
                                                       Margin="5,-20,5,-12"
                                                       PlaceholderColor="Transparent"
-                                                      Focused="HoraR1_Focused">
+                                                      Focused="HoraR1_Focused"
+                                                      ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -338,7 +346,8 @@
                                                       Text ="1"
                                                       Margin="5,-20,5,-5"
                                                       PlaceholderColor="Transparent"
-                                                      Keyboard="Numeric">
+                                                      Keyboard="Numeric"
+                                                      ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -377,8 +386,8 @@
                                                     </OnPlatform>
                                                 </Label.FontFamily>
                                                 </Label>
-                                           <Grid Padding="5, 0">
-                                                <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  
+                                          
+                                             
                                              <xfx:XfxEntry x:Name="SillaNiño"
                                                       Text ="{Binding SillaNiños,Mode=TwoWay}"
                                                       Margin="2,-20,5,-5"
@@ -386,7 +395,8 @@
                                                       Keyboard="Text"
                                                       HorizontalOptions="Start"
                                                       HorizontalTextAlignment="Start"
-                                                      Focused="SillaNinos_Focused">
+                                                      Focused="SillaNinos_Focused"
+                                                      ActivePlaceholderColor="#7A5BA5" >
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -400,7 +410,7 @@
                                                     </OnPlatform>
                                                 </Entry.FontFamily>
                                             </xfx:XfxEntry>
-                                            </Grid>
+                                           
                                          </StackLayout>
                                     </Frame>   
                                 </StackLayout>
@@ -426,7 +436,8 @@
                                               </Label>
                                             <xfx:XfxEntry PlaceholderColor="Transparent"
                                                       Text ="{Binding Nombre, Mode=TwoWay}"
-                                                      Margin="2,-20,5,-5">
+                                                      Margin="2,-20,5,-5"
+                                                      ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -465,7 +476,8 @@
                                                   </Label>
                                              <xfx:XfxEntry PlaceholderColor="Transparent"
                                                           Text ="{Binding Correo, Mode=TwoWay}"
-                                                          Margin="2,-20,5,-5">
+                                                          Margin="2,-20,5,-5"
+                                                          ActivePlaceholderColor="#7A5BA5">
                                                 <Entry.HeightRequest>
                                                     <OnPlatform x:TypeArguments="x:Double">
                                                         <On Platform="iOS">60</On>
@@ -505,7 +517,8 @@
                                              <xfx:XfxEntry PlaceholderColor="Transparent"
                                                            Text ="{Binding Telefono, Mode=TwoWay}"
                                                            Keyboard="Telephone"
-                                                           Margin="2,-20,5,-5">
+                                                           Margin="2,-20,5,-5"
+                                                           ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>

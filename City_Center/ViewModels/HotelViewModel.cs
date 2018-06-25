@@ -34,6 +34,8 @@ namespace City_Center.ViewModels
 
         private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
 
+        private ObservableCollection<PromocionesItemViewModel> promocionesDetalle2;
+
         private PromocionesReturn listPromociones;
 
         private string imagen_Selected;
@@ -61,6 +63,12 @@ namespace City_Center.ViewModels
         {
             get { return this.promocionesDetalle; }
             set { SetValue(ref this.promocionesDetalle, value); }
+        }
+
+        public ObservableCollection<PromocionesItemViewModel> PromocionesDetalle2
+        {
+            get { return this.promocionesDetalle2; }
+            set { SetValue(ref this.promocionesDetalle2, value); }
         }
 
         public string Imagen_Selected
@@ -357,6 +365,8 @@ namespace City_Center.ViewModels
                 this.listPromociones = (PromocionesReturn)response.Result;
 
                 PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+
+                PromocionesDetalle2 = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
 
                 if (PromocionesDetalle.Count > 2)
                 {

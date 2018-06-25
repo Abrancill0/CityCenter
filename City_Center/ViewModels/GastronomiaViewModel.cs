@@ -181,7 +181,7 @@ namespace City_Center.ViewModels
 
 				int Contador = RestaurantDetalle.Count;
 
-				TamanoRestaurant = (Contador * 235) + 220;
+				TamanoRestaurant = (Contador * 235) + 320;
 
             }
             catch (Exception ex)

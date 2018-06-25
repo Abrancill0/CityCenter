@@ -439,7 +439,11 @@ namespace City_Center.ViewModels
 				des_id = l.des_id,
 				des_guardado = l.des_guardado,
 				des_id_guardado = l.des_id_guardado,
-				oculta = !(bool)l.des_guardado
+                des_link=l.des_link,
+                des_telefono=l.des_telefono,
+				oculta = !(bool)l.des_guardado,
+                ocultallamada = (string.IsNullOrEmpty(l.des_telefono) ? false : true),
+                ocultaonline = (string.IsNullOrEmpty(l.des_link) ? false : true),
 			});
 		}
 
@@ -759,42 +763,15 @@ namespace City_Center.ViewModels
 
                 int contador = TarjetasDetalle.Count;
 
-                switch (contador)
-                {
-                    case 1:
-                        TamanoTarjeta = 145;
-                        break;
-                    case 2:
-                        TamanoTarjeta = 290;
-                        break;
+                #if __IOS__
+                TamanoTarjeta = contador * 120;
+                #endif
 
-                    case 3:
-                        TamanoTarjeta = 435;
-                        break;
+                #if __ANDROID__
+                TamanoTarjeta = contador * 135;
+                #endif
 
-                    case 4:
-                        TamanoTarjeta = 580;
-                        break;
 
-                    case 5:
-                        TamanoTarjeta = 725;
-                        break;
-
-                    case 6:
-                        TamanoTarjeta = 850;
-                        break;
-
-                    case 7:
-                        TamanoTarjeta = 995;
-                        break;
-
-                    case 8:
-                        TamanoTarjeta = 1140;
-                        break;
-
-                }
-
-               
                 this.MuestraTarjetasAndroid = false;
                 this.MuestraTarjetasIOS = false;
 

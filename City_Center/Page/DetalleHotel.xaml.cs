@@ -103,7 +103,7 @@ namespace City_Center.Page
 
                 if (selection != null)
                 {
-                   
+
                     NombreHabitacion.Text = selection.hab_nombre;
                     DescripcionHabitacion.Text = selection.hab_descripcion;
                     Img1provisional.Source = selection.hab_imagen;
@@ -117,7 +117,7 @@ namespace City_Center.Page
                     ListaOpciones = new string[] { VariablesGlobales.Img1, VariablesGlobales.Img2, VariablesGlobales.Img3, VariablesGlobales.Img4, VariablesGlobales.Img5, VariablesGlobales.Img6 };
 
                     listaDetalleHabitacion.ItemsSource = ListaOpciones;
-                   
+
                 }
 
             }
