@@ -59,7 +59,11 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
+<<<<<<< HEAD
                     <Image Aspect="AspectFit"
+=======
+                   <!-- <Image Aspect="AspectFit"
+>>>>>>> 2555e935ba167575725c51be7cc5a21e581e6847
                            Source="TICKETSHOWS"
                            VerticalOptions="Start"
                            HorizontalOptions="End"
@@ -67,7 +71,11 @@
                            HeightRequest="80"
                            Grid.Column="0"
                            Grid.Row="0">
+<<<<<<< HEAD
                     </Image>
+=======
+                    </Image> -->
+>>>>>>> 2555e935ba167575725c51be7cc5a21e581e6847
                     <Image x:Name="tickets" Aspect="AspectFit" Source="TICKETSHOWS" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Btn2_Clicked" />

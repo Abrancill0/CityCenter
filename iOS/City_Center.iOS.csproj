@@ -37,14 +37,14 @@
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
+    <CodesignKey>iPhone Distribution: Danthop Mexico (S827V5EHE7)</CodesignKey>
     <CodesignKey>iPhone Distribution: Danthop Mexico (S827V5EHE7)</CodesignKey>
     <MtouchFloat32>true</MtouchFloat32>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>CityCenterDev</CodesignProvision>
+    <CodesignProvision>CityCenterAppStore</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -523,7 +523,11 @@
     <BundleResource Include="Resources\menu%403x.png" />
     <BundleResource Include="Resources\Pantalla_2.png" />
     <BundleResource Include="Resources\promoup.png" />
+<<<<<<< HEAD
     <BundleResource Include="Resources\chatnotificaciones%402x.png" />
+=======
+    <BundleResource Include="Resources\TICKETSHOWS_S.png" />
+>>>>>>> 2555e935ba167575725c51be7cc5a21e581e6847
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />
