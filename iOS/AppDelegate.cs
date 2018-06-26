@@ -5,6 +5,7 @@ using City_Center.Services.Contracts;
 using Facebook.CoreKit;
 using FFImageLoading;
 using FFImageLoading.Transformations;
+using Firebase.CloudMessaging;
 using Foundation;
 using Google.SignIn;
 using KeyboardOverlap.Forms.Plugin.iOSUnified;
@@ -12,6 +13,7 @@ using Plugin.FirebasePushNotification;
 using Plugin.FirebasePushNotification.Abstractions;
 using Plugin.Toasts;
 using UIKit;
+using UserNotifications;
 using Xamarin;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -22,7 +24,11 @@ namespace City_Center.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate //UIApplicationDelegate
     {
-       
+        public void DidRefreshRegistrationToken(Messaging messaging, string fcmToken)
+        {
+            System.Diagnostics.Debug.WriteLine($"FCM Token: {fcmToken}");
+        }
+
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             XfxControls.Init();
@@ -31,6 +37,8 @@ namespace City_Center.iOS
             UINavigationBar.Appearance.TintColor = Color.White.ToUIColor();
            
             global::Xamarin.Forms.Forms.Init();
+
+            Firebase.Core.App.Configure();
 
             KeyboardOverlapRenderer.Init();
 
@@ -62,20 +70,46 @@ namespace City_Center.iOS
                 statusBar.TintColor = UIColor.White;
             }
 
-
 			ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
 
-            FirebasePushNotificationManager.Initialize(options, new NotificationUserCategory[]
-            {
-                new NotificationUserCategory("message",new List<NotificationUserAction> {
-                    new NotificationUserAction("Reply","Reply",NotificationActionType.Foreground)
-                }),
-                new NotificationUserCategory("request",new List<NotificationUserAction> {
-                    new NotificationUserAction("Accept","Accept"),
-                    new NotificationUserAction("Reject","Reject",NotificationActionType.Destructive)
-                })
+            //FirebasePushNotificationManager.Initialize(options, new NotificationUserCategory[]
+            //{
+            //    new NotificationUserCategory("message",new List<NotificationUserAction> {
+            //        new NotificationUserAction("Reply","Reply",NotificationActionType.Foreground)
+            //    }),
+            //    new NotificationUserCategory("request",new List<NotificationUserAction> {
+            //        new NotificationUserAction("Accept","Accept"),
+            //        new NotificationUserAction("Reject","Reject",NotificationActionType.Destructive)
+            //    })
 
-            });
+            //});
+
+            // Register your app for remote notifications.
+            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
+            {
+                // iOS 10 or later
+                var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
+                UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) => {
+                    Console.WriteLine(granted);
+                });
+
+                // For iOS 10 display notification (sent via APNS)
+                //AppDelegate appDelegate = this;
+                //UNUserNotificationCenter.Current.Delegate = appDelegate;
+
+                // For iOS 10 data message (sent via FCM)
+               // Messaging.SharedInstance.RemoteMessageDelegate = this;
+            }
+            else
+            {
+                // iOS 9 or before
+                var allNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound;
+                var settings = UIUserNotificationSettings.GetSettingsForTypes(allNotificationTypes, null);
+                UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
+            }
+
+            UIApplication.SharedApplication.RegisterForRemoteNotifications();
+
 
 
             return base.FinishedLaunching(app, options);
@@ -131,24 +165,7 @@ namespace City_Center.iOS
         }
 
 
-		//public class CustomLogger : FFImageLoading.Helpers.IMiniLogger
-        //{
-        //    public void Debug(string message)
-        //    {
-        //        Console.WriteLine(message);
-        //    }
-
-        //    public void Error(string errorMessage)
-        //    {
-        //        Console.WriteLine(errorMessage);
-        //    }
-
-        //    public void Error(string errorMessage, Exception ex)
-        //    {
-        //        Error(errorMessage + System.Environment.NewLine + ex.ToString());
-        //    }
-        //}
-
+		
     }
 
    
