@@ -10,6 +10,7 @@ using Google.SignIn;
 using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using Plugin.FirebasePushNotification;
 using Plugin.FirebasePushNotification.Abstractions;
+using Plugin.Toasts;
 using UIKit;
 using Xamarin;
 using Xamarin.Forms;
@@ -32,6 +33,9 @@ namespace City_Center.iOS
             global::Xamarin.Forms.Forms.Init();
 
             KeyboardOverlapRenderer.Init();
+
+            DependencyService.Register<ToastNotification>(); // Register your dependency
+            ToastNotification.Init();
 
             FFImageLoading.Forms.Touch.CachedImageRenderer.Init();
 

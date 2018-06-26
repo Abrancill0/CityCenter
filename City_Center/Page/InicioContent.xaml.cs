@@ -232,9 +232,9 @@ namespace City_Center.Page
 
         async void FechaInicio_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-#if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
+            #if __IOS__
+               DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
 
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
@@ -265,9 +265,9 @@ namespace City_Center.Page
         async void FechaFin_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
 
-#if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
+            #if __IOS__
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
 
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
@@ -595,7 +595,7 @@ namespace City_Center.Page
             {
 
             }
-        #endif
+            #endif
         }
 
         void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)

@@ -139,7 +139,7 @@ namespace City_Center.Page
         {
             base.OnDisappearing();
 
-            if (VariablesGlobales.TipoChat == "casino" == true)
+            if (VariablesGlobales.TipoChat == "casino")
             {
 
                 var content = new FormUrlEncodedContent(new[]
@@ -172,7 +172,7 @@ namespace City_Center.Page
 
                 Restcliente Mensajitos = new Restcliente();
 
-                var response = await Mensajitos.GetReal<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web/", content);
+                var response = await Mensajitos.Get<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web", content);
                 if (response != null)
                 {
                     

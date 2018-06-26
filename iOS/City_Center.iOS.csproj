@@ -335,6 +335,12 @@
     <Reference Include="KeyboardOverlap.Forms.Plugin.iOSUnified">
       <HintPath>..\packages\Xam.Plugins.Forms.KeyboardOverlap.1.0.0.4\lib\Xamarin.iOS10\KeyboardOverlap.Forms.Plugin.iOSUnified.dll</HintPath>
     </Reference>
+    <Reference Include="Toasts.Forms.Plugin.Abstractions">
+      <HintPath>..\packages\Toasts.Forms.Plugin.3.3.2\lib\Xamarin.iOS10\Toasts.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Toasts.Forms.Plugin.iOS">
+      <HintPath>..\packages\Toasts.Forms.Plugin.3.3.2\lib\Xamarin.iOS10\Toasts.Forms.Plugin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -523,11 +529,7 @@
     <BundleResource Include="Resources\menu%403x.png" />
     <BundleResource Include="Resources\Pantalla_2.png" />
     <BundleResource Include="Resources\promoup.png" />
-<<<<<<< HEAD
     <BundleResource Include="Resources\chatnotificaciones%402x.png" />
-=======
-    <BundleResource Include="Resources\TICKETSHOWS_S.png" />
->>>>>>> 2555e935ba167575725c51be7cc5a21e581e6847
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

@@ -408,7 +408,7 @@ namespace City_Center.ViewModels
 
 				DestacadosDetalle = new ObservableCollection<DestacadosItemViewModel>(this.ToDestacadosItemViewModel());
 
-                if (DestacadosDetalle.Count>0)
+                if (DestacadosDetalle.Count > 2)
                 {
                     MuestraFlechaDestacado = true;
                     VariablesGlobales.RegistrosCasinoDestacados = DestacadosDetalle.Count-2;

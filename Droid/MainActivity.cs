@@ -19,6 +19,7 @@ using ImageCircle.Forms.Plugin.Droid;
 using Android.Widget;
 using Android.Gms.Common;
 using Firebase.Xamarin.Auth;
+using Plugin.Toasts;
 
 namespace City_Center.Droid
 {
@@ -47,6 +48,9 @@ namespace City_Center.Droid
             FacebookSdk.SdkInitialize(this);
             Rg.Plugins.Popup.Popup.Init(this, bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            DependencyService.Register<ToastNotification>(); // Register your dependency
+            ToastNotification.Init(this);
 
             CachedImageRenderer.Init(enableFastRenderer:true);
 

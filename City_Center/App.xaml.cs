@@ -12,12 +12,15 @@ using System.Net.Http;
 using System.Collections.Generic;
 using City_Center.Models;
 using static City_Center.Models.MensajesPendientesResultado;
+using Plugin.Toasts;
 
 namespace City_Center
 {
     public partial class App : Application
     {
         public static NavigationPage NavPage { get; set; }
+        public static int NumMsnCasino { get; set; }
+        public static int NumMsnHotel { get; set; }
 
         public App()
         {
@@ -28,13 +31,13 @@ namespace City_Center
             bool isLoggedIn = Properties.ContainsKey("IsLoggedIn") ?
                      (bool)Properties["IsLoggedIn"] : false;
 
-#if __ANDROID__
-            GlobalResources.Current.ImagenChat = "chat";
-#endif
+            #if __ANDROID__
+                 GlobalResources.Current.ImagenChat = "chat";
+            #endif
 
-#if __IOS__
-                            GlobalResources.Current.ImagenChat = "chat@2x";
-#endif
+            #if __IOS__
+                 GlobalResources.Current.ImagenChat = "chat@2x";
+            #endif
 
 
             //if (isLoggedIn)
@@ -201,6 +204,20 @@ namespace City_Center
                                         GlobalResources.Current.ImagenChat = "chatnotificaciones@2x";
                                     #endif
 
+                                    if (response.msn.Count > NumMsnHotel)
+                                    {
+                                        var notificator = DependencyService.Get<IToastNotificator>();
+
+                                        var options = new NotificationOptions()
+                                        {
+                                            Title = "Notificacion Chat Casino",
+                                            Description = "Tienes una notificacion del chat de casino"
+                                        };
+
+                                        var result = await notificator.Notify(options);
+                                    }
+
+                                    NumMsnHotel = response.msn.Count;
                                 }
                                 else
                                 {
@@ -220,9 +237,9 @@ namespace City_Center
 
 
                             var content = new FormUrlEncodedContent(new[]
-                        {
+                            {
                             new KeyValuePair<string, string>("", "")
-                                });
+                            });
 
 
                             Restcliente Mensajitos = new Restcliente();
@@ -239,6 +256,21 @@ namespace City_Center
                                     #if __IOS__
                                       GlobalResources.Current.ImagenChat = "chatnotificaciones@2x";
                                     #endif
+
+                                    if (response.msn.Count > NumMsnCasino)
+                                    {
+                                        var notificator = DependencyService.Get<IToastNotificator>();
+
+                                        var options = new NotificationOptions()
+                                        {
+                                            Title = "Notificacion Chat Casino",
+                                            Description = "Tienes una notificacion del chat de casino"
+                                        };
+
+                                        var result = await notificator.Notify(options);  
+                                    }
+
+                                    NumMsnCasino = response.msn.Count;
 
                                 }
                                 else

@@ -15,11 +15,10 @@ namespace City_Center.Page
     public partial class Hotel : ContentPage
     {
         public WebViewHotel _webHotel;
-       
+
 
         public Hotel()
         {
-            //Resources = new App().Resources;
             InitializeComponent();
 
             MainViewModel.GetInstance().Hotel = new HotelViewModel();
@@ -28,19 +27,14 @@ namespace City_Center.Page
             FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(1));
 
             _webHotel = new WebViewHotel();
-           
-            
-        }
 
+        }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-
         }
-
-
 
         protected override void OnDisappearing()
         {
@@ -51,7 +45,7 @@ namespace City_Center.Page
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
-			try
+            try
             {
                 if (FechaInicio.Text == "00/00/0000")
                 {
@@ -100,7 +94,7 @@ namespace City_Center.Page
                 //await DisplayAlert("oj", ex.ToString(), "ok");
                 await Mensajes.Alerta("No se pudo acceder a las reservaciones, intente mas tarde.");
             }
-           
+
         }
 
         void Tab1_Tapped(object sender, System.EventArgs e)
@@ -147,7 +141,7 @@ namespace City_Center.Page
             SL2.IsVisible = false;
             SL3.IsVisible = true;
         }
-        
+
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             try
@@ -170,18 +164,18 @@ namespace City_Center.Page
 
 
         }
-    
-		async void FechaInicio_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+
+        async void FechaInicio_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            #if __IOS__
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 #endif
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
-				MinimumDate = DateTime.Now.AddDays(0),
-				CancelText = "CANCELAR",
-                Title="Llegada"
+                MinimumDate = DateTime.Now.AddDays(0),
+                CancelText = "CANCELAR",
+                Title = "Llegada"
             });
 
 
@@ -204,14 +198,14 @@ namespace City_Center.Page
 
         async void FechaFin_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            #if __IOS__
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 #endif
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
-				MinimumDate = DateTime.Now.AddDays(0),
-				CancelText = "CANCELAR",
+                MinimumDate = DateTime.Now.AddDays(0),
+                CancelText = "CANCELAR",
                 Title = "Salida"
             });
 
@@ -233,22 +227,72 @@ namespace City_Center.Page
             //String.Format("{0:dd MMMM yyyy}"
 
         }
-	
 
         void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
+
+            VariablesGlobales.IndiceHotelPromociones = e.NewValue;
+
+#if __IOS__
             try
             {
-                VariablesGlobales.IndiceHotelPromociones = e.NewValue;
+                if (VariablesGlobales.validacionIOSHotel == 1)
+                {
+                    if (e.NewValue != 0)
+                    {
+                        CarruselPromociones.Position = 0;
+                    }
+                    VariablesGlobales.IndiceHotelPromociones = 1;
+                }
+                else if (VariablesGlobales.validacionIOSHotel == 2)
+                {
+
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
+                    VariablesGlobales.IndiceHotelPromociones = VariablesGlobales.RegistrosHotelPromociones;
+                }
+
             }
             catch (Exception)
             {
 
             }
+#endif
+
+
         }
 
         void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
+#if __IOS__
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.IndiceHotelPromociones == VariablesGlobales.RegistrosHotelPromociones && Direccion == "Right" && e.NewValue == 100)
+                {
+                    VariablesGlobales.validacionIOSHotel = 1;
+                    CarruselPromociones.Position = 1;
+                    CarruselPromociones.AnimateTransition = false;
+
+                }
+                else if (VariablesGlobales.IndiceHotelPromociones == 1 && Direccion == "Left" && e.NewValue == 100)
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    VariablesGlobales.validacionIOSHotel = 2;
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
+                }
+                else if (e.NewValue != 100)
+                {
+                    VariablesGlobales.validacionIOSHotel = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+#endif
+
+#if __ANDROID__
             try
             {
                 string Direccion = Convert.ToString(e.Direction);
@@ -269,23 +313,76 @@ namespace City_Center.Page
             {
                 DisplayAlert("Error", ex.ToString(), "OK");
             }
+#endif
         }
-
 
         void PositionSelected_HP2(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
         {
+
+            VariablesGlobales.IndiceHotelPromociones2 = e.NewValue;
+
+#if __IOS__
             try
             {
-                VariablesGlobales.IndiceHotelPromociones2 = e.NewValue;
+                if (VariablesGlobales.validacionIOSHotel2 == 1)
+                {
+                    if (e.NewValue != 0)
+                    {
+                        CarruselPromociones2.Position = 0;
+                    }
+                    VariablesGlobales.IndiceHotelPromociones2 = 1;
+                }
+                else if (VariablesGlobales.validacionIOSHotel2 == 2)
+                {
+
+                    CarruselPromociones2.Position = VariablesGlobales.RegistrosHotelPromociones2 + 1;
+                    VariablesGlobales.IndiceHotelPromociones2 = VariablesGlobales.RegistrosHotelPromociones2;
+                }
+
             }
             catch (Exception)
             {
 
             }
+#endif
         }
 
         void Scrolled_HP2(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
+            
+#if __IOS__
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.IndiceHotelPromociones2 == VariablesGlobales.RegistrosHotelPromociones2 && Direccion == "Right" && e.NewValue == 100)
+                {
+                    VariablesGlobales.validacionIOSHotel2 = 1;
+                    CarruselPromociones2.Position = 1;
+                    CarruselPromociones2.AnimateTransition = false;
+
+                }
+                else if (VariablesGlobales.IndiceHotelPromociones2 == 1 && Direccion == "Left" && e.NewValue == 100)
+                {
+                    CarruselPromociones2.AnimateTransition = false;
+                    VariablesGlobales.validacionIOSHotel2 = 2;
+                    CarruselPromociones2.Position = VariablesGlobales.RegistrosHotelPromociones2 + 1;
+                }
+                else if (e.NewValue != 100)
+                {
+                    VariablesGlobales.validacionIOSHotel2 = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+#endif
+
+
+
+
+#if __ANDROID__
             try
             {
                 string Direccion = Convert.ToString(e.Direction);
@@ -306,6 +403,9 @@ namespace City_Center.Page
             {
                 DisplayAlert("Error", ex.ToString(), "OK");
             }
+#endif
+
+
         }
 
 	}
