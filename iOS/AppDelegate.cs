@@ -95,10 +95,12 @@ namespace City_Center.iOS
 
                 // For iOS 10 display notification (sent via APNS)
                 //AppDelegate appDelegate = this;
-                //UNUserNotificationCenter.Current.Delegate = appDelegate;
+                //UNUserNotificationCenter.Current.Delegate = this;
 
                 // For iOS 10 data message (sent via FCM)
-               // Messaging.SharedInstance.RemoteMessageDelegate = this;
+#pragma warning disable CS0618 // Type or member is obsolete
+              //  Messaging.SharedInstance.RemoteMessageDelegate = this;
+#pragma warning restore CS0618 // Type or member is obsolete
             }
             else
             {
