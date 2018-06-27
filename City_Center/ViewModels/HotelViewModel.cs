@@ -373,6 +373,7 @@ namespace City_Center.ViewModels
                     MuestraFlechasPromo = true;
 
                     VariablesGlobales.RegistrosHotelPromociones = promocionesDetalle.Count - 2;
+                    VariablesGlobales.RegistrosHotelPromociones2 = promocionesDetalle.Count - 2;
                 }
                 else
                 {

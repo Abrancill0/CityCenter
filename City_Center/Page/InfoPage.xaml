@@ -19,7 +19,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical">
+       
         <StackLayout Spacing="0">
                 
             <StackLayout HorizontalOptions="Start" Padding="30,30">
@@ -80,7 +80,8 @@
                 </ContentView>
                
             </Grid>
-                <StackLayout x:Name="SL1" HorizontalOptions="FillAndExpand" IsVisible="true">
+            <StackLayout x:Name="SL1" HorizontalOptions="FillAndExpand" IsVisible="true">
+               <ScrollView Orientation="Vertical">
                 <StackLayout Spacing="0">
                      <ffimageloading:CachedImage HeightRequest="240" Aspect="Fill" Source="ImageInstitucional" />
                    <Label FontSize="15"
@@ -320,9 +321,11 @@
                            HorizontalTextAlignment="Start"
                            Text="encuentra presente en 70 países."></Label>
                  </StackLayout>
+               </ScrollView>
             </StackLayout>
                 <StackLayout x:Name="SL2" HorizontalOptions="FillAndExpand" IsVisible="false" Spacing="0">
-              <StackLayout>
+                <ScrollView Orientation="Vertical">
+                    <StackLayout>
                      <maps:Map x:Name="MyMap" MapType="Street" HeightRequest="240" HorizontalOptions="FillAndExpand"/>
                      <Label TextColor="#474747"
                             Font="Bold"
@@ -431,8 +434,9 @@
                            HorizontalOptions="Start"
                            HorizontalTextAlignment="Start"/>
                 </StackLayout>
+                </ScrollView>
             </StackLayout>
          </StackLayout>
-       </ScrollView>
+      
     </ContentPage.Content>
 </ContentPage>

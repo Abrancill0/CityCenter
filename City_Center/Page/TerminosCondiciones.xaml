@@ -17,7 +17,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical">
+        
         <StackLayout Spacing="0">
                 
             <StackLayout HorizontalOptions="Start" Padding="30,30">
@@ -228,8 +228,6 @@ personales.-" />
                     </StackLayout>
 
                     </StackLayout>
-        </ScrollView>
-
-
+       
     </ContentPage.Content>
 </ContentPage>

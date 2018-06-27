@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using City_Center.Clases;
 using City_Center.ViewModels;
+using System.Net.Http;
+using static City_Center.Models.MensajesPendientesResultado;
 
 namespace City_Center.Page
 {
@@ -54,7 +56,7 @@ namespace City_Center.Page
 
         }
 
-        async  void ChatHotel(object sender, System.EventArgs e)
+      async  void ChatHotel(object sender, System.EventArgs e)
         {
 
             if  (string.IsNullOrEmpty(Application.Current.Properties["RutaChatHotel"].ToString()))
@@ -88,5 +90,53 @@ namespace City_Center.Page
             #endif
 
         }
+    
+        protected async override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            if (VariablesGlobales.TipoChat == "casino")
+            {
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("ccn_chat", Application.Current.Properties["VariableChatCasino"].ToString()),
+                    new KeyValuePair<string, string>("ccn_email", Application.Current.Properties["Email"].ToString())
+                 });
+
+
+                Restcliente Mensajitos = new Restcliente();
+
+                var response = await Mensajitos.Get<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web", content);
+
+                if (response != null)
+                {
+                    GlobalResources.Current.ImagenChat = "chat";
+
+                }
+            }
+            else if (VariablesGlobales.TipoChat == "hotel")
+            {
+
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("ccn_chat", Application.Current.Properties["VariableChatHotel"].ToString()),
+                    new KeyValuePair<string, string>("ccn_email", Application.Current.Properties["Email"].ToString())
+                });
+
+
+                Restcliente Mensajitos = new Restcliente();
+
+                var response = await Mensajitos.Get<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web", content);
+                if (response != null)
+                {
+
+                    GlobalResources.Current.ImagenChat = "chat";
+                }
+            }
+
+        }
+
     }
 }

@@ -207,6 +207,13 @@ namespace City_Center.ViewModels
 
         private async void Reservar()
         {
+            if (this.NombreRestaurante == "Seleccionar...")
+            {
+                await Mensajes.Alerta("Campo restaurante es requerida");
+
+                return;
+            }
+
             if (this.FechaInicio=="00/00/0000")
             {
                 await Mensajes.Alerta("Campo fecha es requerida");
@@ -222,31 +229,24 @@ namespace City_Center.ViewModels
                 return;
             }
 
-            if (this.NombreRestaurante == "Seleccionar...")
-            {
-                await Mensajes.Alerta("Campo restaurante es requerida");
-
-                return;
-            }
-
-
+          
             if (string.IsNullOrEmpty(this.Nombre))
             {
-                await Mensajes.Alerta("Nombre requerido");
+                await Mensajes.Alerta("Nombre y Apellido requerido");
 
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Correo))
             {
-                await Mensajes.Alerta("Correo electronico requerido");
+                await Mensajes.Alerta("correo electrónico requerido");
 
                 return;
             }
 
             if (!ValidaEmailMethod.ValidateEMail(this.Correo))
             {
-                await Mensajes.Alerta("Correo electronico mal estructurado");
+                await Mensajes.Alerta("Correo electrónico mal estructurado");
                 return;
             }
 

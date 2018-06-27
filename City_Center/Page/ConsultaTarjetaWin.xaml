@@ -31,7 +31,7 @@
             </Label>
             <StackLayout HorizontalOptions = "Center" Margin="15,5">
                 <Grid>
-                    <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End" />
+                    
                     <xfx:XfxEntry x:Name="TipoDocumento" TextColor = "White"
                                 Style="{DynamicResource EntryStyle}"
                                 Placeholder="Tipo de documento"

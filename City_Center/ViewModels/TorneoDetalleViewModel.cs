@@ -270,13 +270,26 @@ namespace City_Center.ViewModels
          
 			if (string.IsNullOrEmpty(Nombre))
 			{
-                await Mensajes.Alerta("Nombre Requerido");
+                await Mensajes.Alerta("Nombre y Apellido Requerido");
 				return;
 			}
 
 			if (string.IsNullOrEmpty(Correo))
             {
-                await Mensajes.Alerta("Correo Requerido");
+                await Mensajes.Alerta("correo electrónico Requerido");
+                return;
+            }
+
+
+            if (!ValidaEmailMethod.ValidateEMail(this.Correo))
+            {
+                await Mensajes.Alerta("Correo electronico mal estructurado");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(TipoDocumento))
+            {
+                await Mensajes.Alerta("Tipo de documento Requerido");
                 return;
             }
 
@@ -286,9 +299,23 @@ namespace City_Center.ViewModels
                 return;
             }
 
+            if (this.Fecha == "00/00/0000")
+            {
+                await Mensajes.Alerta("Campo fecha es requerida");
+
+                return;
+            }
+
 			if (string.IsNullOrEmpty(Nacionalidad))
             {
                 await  Mensajes.Alerta("Nacionalidad Requerido");
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(Pais))
+            {
+                await Mensajes.Alerta("Pais Requerido");
                 return;
             }
 
@@ -298,17 +325,6 @@ namespace City_Center.ViewModels
                 return;
             }
 
-			if (string.IsNullOrEmpty(TipoDocumento))
-            {
-                await  Mensajes.Alerta("Tipo de documento Requerido");
-                return;
-            }
-
-			if (string.IsNullOrEmpty(Pais))
-            {
-                await  Mensajes.Alerta("Pais Requerido");
-                return;
-            }
 
 			if (string.IsNullOrEmpty(Ciudad))
             {

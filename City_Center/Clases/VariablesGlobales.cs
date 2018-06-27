@@ -35,6 +35,7 @@ namespace City_Center.Clases
         public static int validacionIOSCasinoPromociones;
         public static int validacionIOSHotel;
         public static int validacionIOSHotel2;
+        public static int validacionIORestaurante;
 
         public static int indice;
         public static int IndicePromociones;

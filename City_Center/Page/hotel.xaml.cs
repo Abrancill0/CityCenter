@@ -224,7 +224,7 @@ namespace City_Center.Page
 
             }
 
-            //String.Format("{0:dd MMMM yyyy}"
+           
 
         }
 
@@ -233,7 +233,7 @@ namespace City_Center.Page
 
             VariablesGlobales.IndiceHotelPromociones = e.NewValue;
 
-#if __IOS__
+    #if __IOS__
             try
             {
                 if (VariablesGlobales.validacionIOSHotel == 1)
@@ -246,7 +246,6 @@ namespace City_Center.Page
                 }
                 else if (VariablesGlobales.validacionIOSHotel == 2)
                 {
-
                     CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
                     VariablesGlobales.IndiceHotelPromociones = VariablesGlobales.RegistrosHotelPromociones;
                 }
@@ -256,64 +255,64 @@ namespace City_Center.Page
             {
 
             }
-#endif
+    #endif
 
 
         }
 
         void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
         {
-#if __IOS__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+            #if __IOS__
+                        try
+                        {
+                            string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndiceHotelPromociones == VariablesGlobales.RegistrosHotelPromociones && Direccion == "Right" && e.NewValue == 100)
-                {
-                    VariablesGlobales.validacionIOSHotel = 1;
-                    CarruselPromociones.Position = 1;
-                    CarruselPromociones.AnimateTransition = false;
+                            if (VariablesGlobales.IndiceHotelPromociones == VariablesGlobales.RegistrosHotelPromociones && Direccion == "Right" && e.NewValue == 100)
+                            {
+                                VariablesGlobales.validacionIOSHotel = 1;
+                                CarruselPromociones.Position = 0;
+                                CarruselPromociones.AnimateTransition = false;
 
-                }
-                else if (VariablesGlobales.IndiceHotelPromociones == 1 && Direccion == "Left" && e.NewValue == 100)
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    VariablesGlobales.validacionIOSHotel = 2;
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
-                }
-                else if (e.NewValue != 100)
-                {
-                    VariablesGlobales.validacionIOSHotel = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-#endif
+                            }
+                            else if (VariablesGlobales.IndiceHotelPromociones == 1 && Direccion == "Left" && e.NewValue == 100)
+                            {
+                                CarruselPromociones.AnimateTransition = false;
+                                VariablesGlobales.validacionIOSHotel = 2;
+                                CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
+                            }
+                            else if (e.NewValue != 100)
+                            {
+                                VariablesGlobales.validacionIOSHotel = 0;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            DisplayAlert("Error", ex.ToString(), "OK");
+                        }
+            #endif
 
-#if __ANDROID__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+            #if __ANDROID__
+                        try
+                        {
+                            string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndiceHotelPromociones >= VariablesGlobales.RegistrosHotelPromociones && Direccion == "Right")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    CarruselPromociones.Position = 0;
+                            if (VariablesGlobales.IndiceHotelPromociones >= VariablesGlobales.RegistrosHotelPromociones && Direccion == "Right")
+                            {
+                                CarruselPromociones.AnimateTransition = false;
+                                CarruselPromociones.Position = 0;
 
-                }
-                else if (VariablesGlobales.IndiceHotelPromociones <= 1 && Direccion == "Left")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-#endif
+                            }
+                            else if (VariablesGlobales.IndiceHotelPromociones <= 1 && Direccion == "Left")
+                            {
+                                CarruselPromociones.AnimateTransition = false;
+                                CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            DisplayAlert("Error", ex.ToString(), "OK");
+                        }
+            #endif
         }
 
         void PositionSelected_HP2(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
@@ -358,7 +357,7 @@ namespace City_Center.Page
                 if (VariablesGlobales.IndiceHotelPromociones2 == VariablesGlobales.RegistrosHotelPromociones2 && Direccion == "Right" && e.NewValue == 100)
                 {
                     VariablesGlobales.validacionIOSHotel2 = 1;
-                    CarruselPromociones2.Position = 1;
+                    CarruselPromociones2.Position = 0;
                     CarruselPromociones2.AnimateTransition = false;
 
                 }
