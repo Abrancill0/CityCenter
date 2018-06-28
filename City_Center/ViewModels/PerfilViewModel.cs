@@ -351,16 +351,19 @@ namespace City_Center.ViewModels
                         try
                         {
                             RutaImagen = Application.Current.Properties["FotoPerfil"].ToString();
+                            GlobalResources.Current.ImagenPerfil=Application.Current.Properties["FotoPerfil"].ToString();
                         }
                         catch (Exception ex)
                         {
                             RutaImagen = "";
+                            GlobalResources.Current.ImagenPerfil = "";
                         }
                          
                     }
                     else
                     {
-                        Application.Current.Properties["FotoPerfil"] = RutaImagen;   
+                        Application.Current.Properties["FotoPerfil"] = RutaImagen;
+                        GlobalResources.Current.ImagenPerfil = RutaImagen;
                     }
                
             } 
@@ -383,6 +386,7 @@ namespace City_Center.ViewModels
 			await Application.Current.SavePropertiesAsync();
 
             await Mensajes.Alerta("Perfil actualizado con éxito");
+
                 VariablesGlobales.ActualizaDatos = true;
             UserDialogs.Instance.HideLoading();
 
@@ -779,7 +783,6 @@ namespace City_Center.ViewModels
                     return "No Existe tarjeta Ingresada";
                 }
 
-               
                 //if (NoTarjeta != NoSocio)
                 //{
                 //await  Mensajes.Info("La tarjeta ingresada es diferente a la que tiene asiganda el usuario");
@@ -829,7 +832,6 @@ namespace City_Center.ViewModels
             });
         }
 
-      
         private async void LoadConfiguracionNotificaciones()
         {
             try

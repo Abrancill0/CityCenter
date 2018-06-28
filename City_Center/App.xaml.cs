@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using City_Center.Models;
 using static City_Center.Models.MensajesPendientesResultado;
 using Plugin.Toasts;
+using Android.Graphics.Drawables;
 
 namespace City_Center
 {
@@ -22,11 +23,13 @@ namespace City_Center
         public static int NumMsnCasino { get; set; }
         public static int NumMsnHotel { get; set; }
 
+
         public App()
         {
             InitializeComponent();
 
             FlowListView.Init();
+            VariablesGlobales.ChatPresente = 0;
 
 #if __ANDROID__
                  GlobalResources.Current.ImagenChat = "chat";
@@ -153,7 +156,7 @@ namespace City_Center
             {
                 Task.Run(() =>
                 {
-                    var minutes = TimeSpan.FromMinutes(1);
+                    var minutes = TimeSpan.FromSeconds(25);
 
                     Device.StartTimer(minutes, () =>
                     {
@@ -164,7 +167,6 @@ namespace City_Center
                         {
                             Task.Factory.StartNew(async () =>
                             {
-
                                 bool Casino = false;
                                 bool Hotel = false;
 
@@ -186,8 +188,8 @@ namespace City_Center
 
                                     var content = new FormUrlEncodedContent(new[]
                                     {
-                            new KeyValuePair<string, string>("", "")
-                            });
+                                        new KeyValuePair<string, string>("", "")
+                                    });
 
 
                                     Restcliente Mensajitos = new Restcliente();
@@ -198,39 +200,54 @@ namespace City_Center
                                     {
                                         if (response.msn.Count > 0)
                                         {
-#if __ANDROID__
-                                           GlobalResources.Current.ImagenChat = "ChatNotificacion";
-#endif
+                                            #if __ANDROID__
+                                                GlobalResources.Current.ImagenChat = "ChatNotificacion";
+                                                
+                                                var options = new NotificationOptions()
+                                                {
+                                                    Title = "Notificacion Chat Hotel",
+                                                    Description = "Tienes una notificacion del chat de hotel",
+                                                    AndroidOptions = new AndroidOptions(){SmallDrawableIcon = 2130837891}
+                                                };
 
-#if __IOS__
-                                            GlobalResources.Current.ImagenChat = "chatnotificaciones@2x";
-#endif
+                                            #endif
 
-                                            if (response.msn.Count > NumMsnHotel)
-                                            {
-                                                var notificator = DependencyService.Get<IToastNotificator>();
+                                            #if __IOS__
+                                                GlobalResources.Current.ImagenChat = "chatnotificaciones@2x";
 
                                                 var options = new NotificationOptions()
                                                 {
-                                                    Title = "Notificacion Chat Casino",
-                                                    Description = "Tienes una notificacion del chat de casino"
+                                            Title = "Notificacion Chat Hotel",
+                                            Description = "Tienes una notificacion del chat de Hotel"
+                                                    
                                                 };
+                                            #endif
 
-                                                var result = await notificator.Notify(options);
+                                            if (response.msn.Count > NumMsnHotel)
+                                            {
+                                                if (VariablesGlobales.ChatPresente == 0)
+                                                {
+                                                    var notificator = DependencyService.Get<IToastNotificator>();
+
+                                                    var result = await notificator.Notify(options);
+                                                }
+                                              
                                             }
 
                                             NumMsnHotel = response.msn.Count;
                                         }
                                         else
                                         {
-#if __ANDROID__
-                                           GlobalResources.Current.ImagenChat = "chat";
-#endif
-
-#if __IOS__
+                                            
+                                        #if __ANDROID__
+                                            GlobalResources.Current.ImagenChat = "chat";
+                                        #endif
+                                                                                    
+                                        #if __IOS__
                                             GlobalResources.Current.ImagenChat = "chat@2x";
-#endif
+                                        #endif
 
+                                            NumMsnHotel = 0;
                                         }
                                     }
                                 }
@@ -240,8 +257,8 @@ namespace City_Center
 
                                     var content = new FormUrlEncodedContent(new[]
                                     {
-                            new KeyValuePair<string, string>("", "")
-                            });
+                                        new KeyValuePair<string, string>("", "")
+                                    });
 
 
                                     Restcliente Mensajitos = new Restcliente();
@@ -251,25 +268,38 @@ namespace City_Center
                                     {
                                         if (response.msn.Count > 0)
                                         {
-#if __ANDROID__
-                                      GlobalResources.Current.ImagenChat = "ChatNotificacion";
-#endif
+                                        #if __ANDROID__
+                                            GlobalResources.Current.ImagenChat = "ChatNotificacion";
 
-#if __IOS__
-                                            GlobalResources.Current.ImagenChat = "chatnotificaciones@2x";
-#endif
-
-                                            if (response.msn.Count > NumMsnCasino)
+                                                var options = new NotificationOptions()
                                             {
-                                                var notificator = DependencyService.Get<IToastNotificator>();
+                                                Title = "Notificacion Chat Casino",
+                                                Description = "Tienes una notificacion del chat de casino",
+                                                AndroidOptions = new AndroidOptions() { SmallDrawableIcon = 2130837891 }
+                                            };
+
+                                        #endif
+
+                                        #if __IOS__
+                                           GlobalResources.Current.ImagenChat = "chatnotificaciones@2x";
 
                                                 var options = new NotificationOptions()
                                                 {
                                                     Title = "Notificacion Chat Casino",
                                                     Description = "Tienes una notificacion del chat de casino"
+                                                
                                                 };
 
-                                                var result = await notificator.Notify(options);
+                                        #endif
+
+                                            if (response.msn.Count > NumMsnCasino)
+                                            {
+                                                if (VariablesGlobales.ChatPresente == 0)
+                                                {
+                                                    var notificator = DependencyService.Get<IToastNotificator>();
+
+                                                    var result = await notificator.Notify(options);
+                                                }
                                             }
 
                                             NumMsnCasino = response.msn.Count;
@@ -277,24 +307,21 @@ namespace City_Center
                                         }
                                         else
                                         {
-#if __ANDROID__
-                                       GlobalResources.Current.ImagenChat = "chat";
-#endif
+                                            #if __ANDROID__
+                                                GlobalResources.Current.ImagenChat = "chat";
+                                            #endif
+                                                                                        
+                                            #if __IOS__
+                                                GlobalResources.Current.ImagenChat = "chat@2x";
+                                            #endif
 
-#if __IOS__
-                                            GlobalResources.Current.ImagenChat = "chat@2x";
-#endif
-
+                                            NumMsnCasino = 0;
                                         }
                                     }
                                 }
 
                             });
                         }
-
-
-
-
 
                         return true;
                     });
@@ -312,162 +339,162 @@ namespace City_Center
         protected override void OnSleep()
         {
             // Handle when your app sleeps
-            try
-            {
-                Task.Run(() =>
-                {
-                    var minutes = TimeSpan.FromMinutes(1);
+//            try
+//            {
+//                Task.Run(() =>
+//                {
+//                    var minutes = TimeSpan.FromMinutes(1);
 
-                    Device.StartTimer(minutes, () =>
-                    {
-                        bool isLoggedIn = Properties.ContainsKey("IsLoggedIn") ?
-                         (bool)Properties["IsLoggedIn"] : false;
+//                    Device.StartTimer(minutes, () =>
+//                    {
+//                        bool isLoggedIn = Properties.ContainsKey("IsLoggedIn") ?
+//                         (bool)Properties["IsLoggedIn"] : false;
 
-                        if (isLoggedIn)
-                        {
-                            Task.Factory.StartNew(async () =>
-                            {
+//                        if (isLoggedIn)
+//                        {
+//                            Task.Factory.StartNew(async () =>
+//                            {
 
-                                bool Casino = false;
-                                bool Hotel = false;
+//                                bool Casino = false;
+//                                bool Hotel = false;
 
-                                string ValorCasino = Application.Current.Properties["Casino"].ToString();
-                                string ValorHotel = Application.Current.Properties["Hotel"].ToString();
+//                                string ValorCasino = Application.Current.Properties["Casino"].ToString();
+//                                string ValorHotel = Application.Current.Properties["Hotel"].ToString();
 
-                                if (ValorHotel == "0")
-                                {
-                                    Hotel = true;
-                                }
+//                                if (ValorHotel == "0")
+//                                {
+//                                    Hotel = true;
+//                                }
 
-                                if (ValorCasino == "0")
-                                {
-                                    Casino = true;
-                                }
+//                                if (ValorCasino == "0")
+//                                {
+//                                    Casino = true;
+//                                }
 
-                                if (Hotel == true)
-                                {
+//                                if (Hotel == true)
+//                                {
 
-                                    var content = new FormUrlEncodedContent(new[]
-                                    {
-                                        new KeyValuePair<string, string>("", "")
-                                    });
-
-
-                                    Restcliente Mensajitos = new Restcliente();
-
-                                    var response = await Mensajitos.GetReal<MensajesPendientesReturn>("/chat/VerificaChatApp/" + Application.Current.Properties["VariableChatHotel"].ToString() + "/" + Application.Current.Properties["Email"].ToString(), content);
-
-                                    if (response != null)
-                                    {
-                                        if (response.msn.Count > 0)
-                                        {
-#if __ANDROID__
-                                           GlobalResources.Current.ImagenChat = "ChatNotificacion";
-#endif
-
-#if __IOS__
-                                            GlobalResources.Current.ImagenChat = "chatnotificaciones@2x";
-#endif
-
-                                            if (response.msn.Count > NumMsnHotel)
-                                            {
-                                                var notificator = DependencyService.Get<IToastNotificator>();
-
-                                                var options = new NotificationOptions()
-                                                {
-                                                    Title = "Notificacion Chat Casino",
-                                                    Description = "Tienes una notificacion del chat de casino"
-                                                };
-
-                                                var result = await notificator.Notify(options);
-                                            }
-
-                                            NumMsnHotel = response.msn.Count;
-                                        }
-                                        else
-                                        {
-#if __ANDROID__
-                                           GlobalResources.Current.ImagenChat = "chat";
-#endif
-
-#if __IOS__
-                                            GlobalResources.Current.ImagenChat = "chat@2x";
-#endif
-
-                                        }
-                                    }
-                                }
-                                else if (Casino == true)
-                                {
+//                                    var content = new FormUrlEncodedContent(new[]
+//                                    {
+//                                        new KeyValuePair<string, string>("", "")
+//                                    });
 
 
-                                    var content = new FormUrlEncodedContent(new[]
-                                    {
-                                        new KeyValuePair<string, string>("", "")
-                                    });
+//                                    Restcliente Mensajitos = new Restcliente();
+
+//                                    var response = await Mensajitos.GetReal<MensajesPendientesReturn>("/chat/VerificaChatApp/" + Application.Current.Properties["VariableChatHotel"].ToString() + "/" + Application.Current.Properties["Email"].ToString(), content);
+
+//                                    if (response != null)
+//                                    {
+//                                        if (response.msn.Count > 0)
+//                                        {
+//#if __ANDROID__
+//                                           GlobalResources.Current.ImagenChat = "ChatNotificacion";
+//#endif
+
+//#if __IOS__
+//                                            GlobalResources.Current.ImagenChat = "chatnotificaciones@2x";
+//#endif
+
+//                                            if (response.msn.Count > NumMsnHotel)
+//                                            {
+//                                                var notificator = DependencyService.Get<IToastNotificator>();
+
+//                                                var options = new NotificationOptions()
+//                                                {
+//                                                    Title = "Notificacion Chat Casino",
+//                                                    Description = "Tienes una notificacion del chat de casino"
+//                                                };
+
+//                                                var result = await notificator.Notify(options);
+//                                            }
+
+//                                            NumMsnHotel = response.msn.Count;
+//                                        }
+//                                        else
+//                                        {
+//#if __ANDROID__
+//                                           GlobalResources.Current.ImagenChat = "chat";
+//#endif
+
+//#if __IOS__
+//                                            GlobalResources.Current.ImagenChat = "chat@2x";
+//#endif
+
+//                                        }
+//                                    }
+//                                }
+//                                else if (Casino == true)
+//                                {
 
 
-                                    Restcliente Mensajitos = new Restcliente();
-
-                                    var response = await Mensajitos.GetReal<MensajesPendientesReturn>("/chat/VerificaChatApp/" + Application.Current.Properties["VariableChatCasino"].ToString() + "/" + Application.Current.Properties["Email"].ToString(), content);
-                                    if (response != null)
-                                    {
-                                        if (response.msn.Count > 0)
-                                        {
-#if __ANDROID__
-                                      GlobalResources.Current.ImagenChat = "ChatNotificacion";
-#endif
-
-#if __IOS__
-                                            GlobalResources.Current.ImagenChat = "chatnotificaciones@2x";
-#endif
-
-                                            if (response.msn.Count > NumMsnCasino)
-                                            {
-                                                var notificator = DependencyService.Get<IToastNotificator>();
-
-                                                var options = new NotificationOptions()
-                                                {
-                                                    Title = "Notificacion Chat Casino",
-                                                    Description = "Tienes una notificacion del chat de casino"
-                                                };
-
-                                                var result = await notificator.Notify(options);
-                                            }
-
-                                            NumMsnCasino = response.msn.Count;
-
-                                        }
-                                        else
-                                        {
-#if __ANDROID__
-                                       GlobalResources.Current.ImagenChat = "chat";
-#endif
-
-#if __IOS__
-                                        GlobalResources.Current.ImagenChat = "chat@2x";
-#endif
-
-                                        }
-                                    }
-                                }
-
-                            });
-                        }
+//                                    var content = new FormUrlEncodedContent(new[]
+//                                    {
+//                                        new KeyValuePair<string, string>("", "")
+//                                    });
 
 
+//                                    Restcliente Mensajitos = new Restcliente();
+
+//                                    var response = await Mensajitos.GetReal<MensajesPendientesReturn>("/chat/VerificaChatApp/" + Application.Current.Properties["VariableChatCasino"].ToString() + "/" + Application.Current.Properties["Email"].ToString(), content);
+//                                    if (response != null)
+//                                    {
+//                                        if (response.msn.Count > 0)
+//                                        {
+//#if __ANDROID__
+//                                      GlobalResources.Current.ImagenChat = "ChatNotificacion";
+//#endif
+
+//#if __IOS__
+//                                            GlobalResources.Current.ImagenChat = "chatnotificaciones@2x";
+//#endif
+
+//                                            if (response.msn.Count > NumMsnCasino)
+//                                            {
+//                                                var notificator = DependencyService.Get<IToastNotificator>();
+
+//                                                var options = new NotificationOptions()
+//                                                {
+//                                                    Title = "Notificacion Chat Casino",
+//                                                    Description = "Tienes una notificacion del chat de casino"
+//                                                };
+
+//                                                var result = await notificator.Notify(options);
+//                                            }
+
+//                                            NumMsnCasino = response.msn.Count;
+
+//                                        }
+//                                        else
+//                                        {
+//#if __ANDROID__
+//                                       GlobalResources.Current.ImagenChat = "chat";
+//#endif
+
+//#if __IOS__
+//                                        GlobalResources.Current.ImagenChat = "chat@2x";
+//#endif
+
+            //                            }
+            //                        }
+            //                    }
+
+            //                });
+            //            }
 
 
 
-                        return true;
-                    });
 
-                });
-            }
-            catch (Exception ex)
-            {
 
-            }
+            //            return true;
+            //        });
+
+            //    });
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
         }
 
         protected override void OnResume()

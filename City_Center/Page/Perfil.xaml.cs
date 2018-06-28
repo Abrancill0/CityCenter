@@ -52,13 +52,18 @@ namespace City_Center.Page
         protected override void OnDisappearing()
         {
              //MainViewModel.GetInstance().Detail = new DetailViewModel();
-            if  (VariablesGlobales.ActualizaDatos == true)
+            //if  (VariablesGlobales.ActualizaDatos == true)
+            //{
+            //    VariablesGlobales.ActualizaDatos = false;
+            //    MasterPage fpm = new MasterPage();
+         
+            if (VariablesGlobales.ActualizaDatos == true)
             {
                 VariablesGlobales.ActualizaDatos = false;
                 MasterPage fpm = new MasterPage();
-         
-            Application.Current.MainPage = fpm;
-            
+
+                Application.Current.MainPage = fpm;
+
             }
 
             base.OnDisappearing();

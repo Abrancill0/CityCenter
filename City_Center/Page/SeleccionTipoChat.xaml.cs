@@ -17,7 +17,7 @@ namespace City_Center.Page
             NavigationPage.SetTitleIcon(this, "logo@2x.png.png");
         }
 
-      async  void ChatCasino(object sender, System.EventArgs e)
+        async void ChatCasino(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(Application.Current.Properties["RutaChatCasino"].ToString()))
             {
@@ -25,7 +25,7 @@ namespace City_Center.Page
             }
             else
             {
-                Application.Current.Properties["Casino"] = 0;  
+                Application.Current.Properties["Casino"] = 0;
             }
 
             await Application.Current.SavePropertiesAsync();
@@ -44,24 +44,24 @@ namespace City_Center.Page
                 return;
             }
 
-           
-            #if __ANDROID__
-            await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Chat());
-            #endif
 
-           
-            #if __IOS__
+#if __ANDROID__
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Chat());
+#endif
+
+
+#if __IOS__
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ChatIos());
-            #endif
+#endif
 
         }
 
-      async  void ChatHotel(object sender, System.EventArgs e)
+        async void ChatHotel(object sender, System.EventArgs e)
         {
 
-            if  (string.IsNullOrEmpty(Application.Current.Properties["RutaChatHotel"].ToString()))
+            if (string.IsNullOrEmpty(Application.Current.Properties["RutaChatHotel"].ToString()))
             {
-                Application.Current.Properties["Hotel"] = 1;  
+                Application.Current.Properties["Hotel"] = 1;
             }
             else
             {
@@ -69,7 +69,7 @@ namespace City_Center.Page
             }
 
             await Application.Current.SavePropertiesAsync();
-        
+
             string ValorCasino = Application.Current.Properties["Casino"].ToString();
 
             if (ValorCasino == "0")
@@ -80,17 +80,17 @@ namespace City_Center.Page
 
 
             VariablesGlobales.TipoChat = "hotel";
-            #if __ANDROID__
-            await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Chat());
-            #endif
+#if __ANDROID__
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Chat());
+#endif
 
 
-            #if __IOS__
+#if __IOS__
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ChatIos());
-            #endif
+#endif
 
         }
-    
+
         protected async override void OnDisappearing()
         {
             base.OnDisappearing();
@@ -109,9 +109,17 @@ namespace City_Center.Page
 
                 var response = await Mensajitos.Get<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web", content);
 
-                if (response != null)
+                if (VariablesGlobales.MensajeVisto == 1)
                 {
+
+                    #if __IOS__
+                    GlobalResources.Current.ImagenChat = "chat@2x";
+#endif
+
+#if __ANDROID__
                     GlobalResources.Current.ImagenChat = "chat";
+
+#endif
 
                 }
             }
@@ -129,10 +137,18 @@ namespace City_Center.Page
                 Restcliente Mensajitos = new Restcliente();
 
                 var response = await Mensajitos.Get<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web", content);
-                if (response != null)
+                if (VariablesGlobales.MensajeVisto == 1)
                 {
+                    #if __IOS__
+                    GlobalResources.Current.ImagenChat = "chat@2x";
+#endif
 
+#if __ANDROID__
                     GlobalResources.Current.ImagenChat = "chat";
+
+#endif
+                   
+                  
                 }
             }
 

@@ -162,14 +162,15 @@
                                     <ContentView>
                                         <StackLayout Spacing="0">
                                           
-                                                 <Label Margin="{Binding Margen,Mode=TwoWay}" 
+                                         <Label Margin="{Binding Margen,Mode=TwoWay}" 
                                                 Text="{Binding NombreMenu}"
                                                 FontSize="20"
                                                 TextColor="#2C1350" 
                                                 HorizontalTextAlignment="Center"
                                                 VerticalTextAlignment="Start"
                                                 HorizontalOptions="Center"
-                                                VerticalOptions="Start">
+                                                VerticalOptions="Start"
+                                               >
                                                 <Label.FontFamily>
                                                     <OnPlatform x:TypeArguments="x:String">
                                                         <On Platform="iOS" Value="Oswald-Regular" />
@@ -177,12 +178,11 @@
                                                     </OnPlatform>
                                                 </Label.FontFamily>
                                             </Label>
-                                           
-                                           
                                             <Label Text="{Binding mde_nombre}"
                                                    TextColor="#2F1753"
                                                    FontSize="14"
-                                                   Margin="15,0,15,0">
+                                                   Margin="15,0,15,0"
+                                                  >
                                                 <Label.FontFamily>
                                                     <OnPlatform x:TypeArguments="x:String">
                                                         <On Platform="iOS" Value="Oswald-Regular" />
@@ -193,7 +193,8 @@
                                             <Label Text="{Binding mde_descripcion}"
                                                    TextColor="#646464"
                                                    FontSize="12"
-                                                   Margin="15,0,15,0"/>
+                                                   Margin="15,0,15,0"
+                                                  />
                                         </StackLayout>
                                     </ContentView>
                                 </ViewCell>

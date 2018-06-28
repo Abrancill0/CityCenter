@@ -27,7 +27,21 @@ namespace City_Center.Clases
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
 
-                    return JsonConvert.DeserializeObject<T>(result);
+                    if (result == "mensajes vistos")
+                    {
+                        VariablesGlobales.MensajeVisto = 1;
+                        return JsonConvert.DeserializeObject<T>(result);
+
+                    }
+                    else
+                    {
+                        VariablesGlobales.MensajeVisto = 0;
+
+                        return JsonConvert.DeserializeObject<T>(result);
+                       
+                    }
+
+
                 }
 
                 client.Dispose();
