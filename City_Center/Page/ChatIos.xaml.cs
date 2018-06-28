@@ -14,6 +14,8 @@ namespace City_Center.Page
         {
             InitializeComponent();
 
+            VariablesGlobales.ChatPresente = 1;
+
             #if __IOS__
             NavigationPage.SetTitleIcon(this, "logo@x2.png");
 
@@ -173,6 +175,8 @@ namespace City_Center.Page
         {
             base.OnDisappearing();
 
+            VariablesGlobales.ChatPresente = 0;
+
             if (VariablesGlobales.TipoChat == "casino" == true)
             {
 
@@ -187,7 +191,7 @@ namespace City_Center.Page
 
                 var response = await Mensajitos.Get<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web", content);
 
-                if (response != null)
+                if (VariablesGlobales.MensajeVisto == 1)
                 {
                     GlobalResources.Current.ImagenChat = "chat@2x";
 
@@ -207,7 +211,7 @@ namespace City_Center.Page
                 Restcliente Mensajitos = new Restcliente();
 
                 var response = await Mensajitos.GetReal<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web/", content);
-                if (response != null)
+                if (VariablesGlobales.MensajeVisto == 1)
                 {
 
                     GlobalResources.Current.ImagenChat = "chat@2x";

@@ -321,13 +321,15 @@ namespace City_Center.ViewModels
 
                     string fotoPerfil = Application.Current.Properties["FotoPerfil"].ToString();
 
-                    if (fotoPerfil == "http://wpage.citycenter-rosario.com.ar/" || string.IsNullOrEmpty(fotoPerfil))
+                    if (string.IsNullOrEmpty(fotoPerfil))
                     {
                         Imagen = "user";
+                        GlobalResources.Current.ImagenPerfil = "user";
                     }
                     else
                     {
                         Imagen = Application.Current.Properties["FotoPerfil"].ToString();
+                        GlobalResources.Current.ImagenPerfil = Application.Current.Properties["FotoPerfil"].ToString();
                     }
 
                    // Imagen = Application.Current.Properties["FotoPerfil"].ToString();
@@ -385,7 +387,7 @@ namespace City_Center.ViewModels
             this.listaTarjetausuario = (TarjetaUsuarioReturn)response.Result;
 
                 ImagenTarjeta = VariablesGlobales.RutaServidor + listaTarjetausuario.resultado.tar_imagen;
-
+                GlobalResources.Current.ImagenTarjeta=VariablesGlobales.RutaServidor + listaTarjetausuario.resultado.tar_imagen;
                 PuntosWin = listaTarjetausuario.resultado.tar_puntos;
                 NoSocio = listaTarjetausuario.resultado.tar_id;
 

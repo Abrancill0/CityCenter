@@ -16,6 +16,8 @@ namespace City_Center.Page
             InitializeComponent();
 
             NavigationPage.SetTitleIcon(this, "logo_hdpi.png");
+            VariablesGlobales.ChatPresente = 1;
+
             //if (VariablesGlobales.TipoChat == "casino")
             //{
             //    WebViewChat1.Source = "http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatCasino"].ToString();
@@ -139,6 +141,8 @@ namespace City_Center.Page
         {
             base.OnDisappearing();
 
+            VariablesGlobales.ChatPresente = 0;
+
             if (VariablesGlobales.TipoChat == "casino")
             {
 
@@ -153,7 +157,7 @@ namespace City_Center.Page
 
                 var response = await Mensajitos.Get<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web", content);
 
-                if (response != null)
+                if (VariablesGlobales.MensajeVisto ==1)
                 {
                     GlobalResources.Current.ImagenChat = "chat";
 
@@ -173,7 +177,7 @@ namespace City_Center.Page
                 Restcliente Mensajitos = new Restcliente();
 
                 var response = await Mensajitos.Get<MensajesPendientesReturn>("/chat/marcar_visto_mensaje_web", content);
-                if (response != null)
+                if (VariablesGlobales.MensajeVisto == 1)
                 {
                     
                         GlobalResources.Current.ImagenChat = "chat";

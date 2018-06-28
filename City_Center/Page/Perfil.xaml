@@ -248,8 +248,7 @@
                                       TextColor="Black" 
                                       Placeholder="Ciudad *"
                                       FontSize="18"
-                                      Keyboard="Default"
-                                      IsEnabled="{Binding HC, Mode=TwoWay}">
+                                      Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>

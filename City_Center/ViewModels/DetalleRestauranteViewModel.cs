@@ -318,7 +318,7 @@ namespace City_Center.ViewModels
 
                 if (NombreViejo == Nombrenuevo)
                 {
-                    NombreMenu = "";
+                    NombreMenu = "_";
 					
                     if (Device.OS == TargetPlatform.iOS)
                     {
@@ -351,7 +351,7 @@ namespace City_Center.ViewModels
                     mde_id = l.mde_id,
                     mde_id_menu = l.mde_id_menu,
                     mde_id_restaurant = l.mde_id_restaurant,
-                    mde_nombre = l.mde_nombre,
+                    mde_nombre = (Convert.ToString(l.mde_nombre)).ToUpper(),
                     mde_descripcion = l.mde_descripcion,
                     mde_imagen = l.mde_imagen,
                     mde_precio = l.mde_precio,

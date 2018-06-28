@@ -76,5 +76,11 @@ namespace City_Center.Clases
         public static bool ActualizaDatos;
 
         public static string ImagenChat = "B.png";
+
+
+        public static int MensajeVisto;
+
+
+        public static int ChatPresente = 0;
     }
 }

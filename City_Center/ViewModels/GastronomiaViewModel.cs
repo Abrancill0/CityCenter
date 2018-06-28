@@ -79,7 +79,13 @@ namespace City_Center.ViewModels
             
 				int Contador = RestaurantDetalle.Count;
 
-				TamanoRestaurant = (Contador * 235) + 220;
+                #if __IOS__
+                    TamanoRestaurant = (Contador * 230);
+                #endif
+
+                #if __ANDROID__
+                    TamanoRestaurant = (Contador * 235);
+                #endif
 			
 			}
             catch (Exception)
@@ -105,7 +111,13 @@ namespace City_Center.ViewModels
             
 				int Contador = RestaurantDetalle.Count;
 
-				TamanoRestaurant = (Contador * 235) + 220;
+                #if __IOS__
+                    TamanoRestaurant = (Contador * 230);
+                #endif
+
+                #if __ANDROID__
+                    TamanoRestaurant = (Contador * 235);
+                #endif
 					
 			}
             catch (Exception)
@@ -132,7 +144,13 @@ namespace City_Center.ViewModels
             
 				int Contador = restaurantDetalle.Count;
 
-				TamanoRestaurant = (Contador * 235) + 250;
+                #if __IOS__
+                    TamanoRestaurant = (Contador * 230);
+                #endif
+
+                #if __ANDROID__
+                    TamanoRestaurant = (Contador * 235);
+                #endif
 			
 			
 			}
@@ -179,9 +197,16 @@ namespace City_Center.ViewModels
 
                 RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel());
 
-				int Contador = RestaurantDetalle.Count;
+                int Contador = RestaurantDetalle.Count;
 
-				TamanoRestaurant = (Contador * 235) + 320;
+                #if __IOS__
+                    TamanoRestaurant = (Contador * 230);
+                #endif
+
+                #if __ANDROID__
+                    TamanoRestaurant = (Contador * 235);
+                #endif
+
 
             }
             catch (Exception ex)
