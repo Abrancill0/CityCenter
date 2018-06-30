@@ -13,7 +13,6 @@ using System.Collections.Generic;
 using City_Center.Models;
 using static City_Center.Models.MensajesPendientesResultado;
 using Plugin.Toasts;
-using Android.Graphics.Drawables;
 
 namespace City_Center
 {
