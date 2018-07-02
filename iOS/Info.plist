@@ -82,6 +82,7 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
+		<string>audio</string>
 	</array>
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<false/>
@@ -109,12 +110,14 @@
 		<true/>
 	</dict>
 	<key>CFBundleVersion</key>
-	<string>2.6</string>
+	<string>2.9</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>es</string>
 	</array>
+	<key>Custom Property</key>
+	<string></string>
 </dict>
 </plist>
