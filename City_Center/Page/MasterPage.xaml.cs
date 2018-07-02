@@ -5,6 +5,7 @@ using City_Center.Clases;
 using Acr.UserDialogs;
 using City_Center.ViewModels;
 using City_Center.Page.SlideMenu;
+using City_Center.PopUp;
 
 namespace City_Center.Page
 {
@@ -15,6 +16,8 @@ namespace City_Center.Page
         private Hotel page3 = new Hotel();
         private Gastronomia page4 = new Gastronomia();
         private MasInfo page5 = new MasInfo();
+
+        private WebViewTienda pageweb = new WebViewTienda();
 
         public MasterPage()
         {
@@ -29,6 +32,8 @@ namespace City_Center.Page
             MainView3.Content = page3.Content;
             MainView4.Content = page4.Content;
             MainView5.Content = page5.Content;
+
+
 
             Barra.BackgroundColor = Color.FromHex("#877BA1");
 

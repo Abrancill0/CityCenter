@@ -318,11 +318,11 @@ namespace City_Center.ViewModels
 
                 if (NombreViejo == Nombrenuevo)
                 {
-                    NombreMenu = "_";
+                    NombreMenu = "";
 					
                     if (Device.OS == TargetPlatform.iOS)
                     {
-                        Margen = new Thickness(0, 0, 0, 0);
+                        Margen = new Thickness(0, 6, 0, 10);
                     }
                     else if (Device.OS == TargetPlatform.Android)
                     {
@@ -337,7 +337,7 @@ namespace City_Center.ViewModels
 
                     if (Device.OS == TargetPlatform.iOS)
                     {
-                        Margen = new Thickness(0, 0, 0, 10);
+                        Margen = new Thickness(0, 18, 0, 18);
                     }
                     else if (Device.OS == TargetPlatform.Android)
                     {

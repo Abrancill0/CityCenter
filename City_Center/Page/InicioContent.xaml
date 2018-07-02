@@ -59,7 +59,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Image Aspect="AspectFit"
+                   <!-- <Image Aspect="AspectFit"
                            Source="TICKETSHOWS"
                            VerticalOptions="Start"
                            HorizontalOptions="End"
@@ -67,7 +67,7 @@
                            HeightRequest="80"
                            Grid.Column="0"
                            Grid.Row="0">
-                    </Image>
+                    </Image>-->
 
                     <Image x:Name="tickets" Aspect="AspectFit" Source="TICKETSHOWS" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
                         <Image.GestureRecognizers>
@@ -112,6 +112,9 @@
                 <StackLayout BackgroundColor="#EFEFEF">
                     
                     <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" Margin="5,18,5,5">
+
+
+                          
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
                                 <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
@@ -138,20 +141,33 @@
                                                 </OnPlatform>
                                             </Label.FontFamily>
                                         </Label>
-                                        <xfx:XfxEntry x:Name="FechaInicio" Text="00/00/0000" Margin="5,-20,5,-12" PlaceholderColor="Transparent" Focused="FechaInicio_Focused">
-                                            <Entry.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double">
-                                                    <On Platform="iOS">60</On>
-                                                    <On Platform="Android,Windows">60</On>
-                                                </OnPlatform>
-                                            </Entry.HeightRequest>
-                                            <Entry.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular" />
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                </OnPlatform>
-                                            </Entry.FontFamily>
-                                        </xfx:XfxEntry>
+                                        <StackLayout>
+                                                <xfx:XfxEntry x:Name="FechaInicio"
+                                                              Text="00/00/0000"
+                                                              Margin="5,-20,5,-12"
+                                                              PlaceholderColor="Transparent"
+                                                              IsEnabled="false">
+                                                    <Entry.HeightRequest>
+                                                        <OnPlatform x:TypeArguments="x:Double">
+                                                            <On Platform="iOS">60</On>
+                                                            <On Platform="Android,Windows">60</On>
+                                                        </OnPlatform>
+                                                    </Entry.HeightRequest>
+                                                    <Entry.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                        </OnPlatform>
+                                                    </Entry.FontFamily>
+                                                </xfx:XfxEntry>
+                                             <StackLayout.GestureRecognizers>
+                                   
+                                                    <TapGestureRecognizer
+                                                    Tapped="Fecha_Tapped"
+                                                    NumberOfTapsRequired="1" />
+                    
+                                     </StackLayout.GestureRecognizers>
+                                    </StackLayout>
                                     </StackLayout>
                                     <BoxView Color="Silver" Grid.Column="1" Grid.Row="0" Margin="0,5,0,5" />
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
@@ -163,7 +179,12 @@
                                                 </OnPlatform>
                                             </Label.FontFamily>
                                         </Label>
-                                        <xfx:XfxEntry x:Name="FechaFinal" Text="00/00/0000" PlaceholderColor="Transparent" Margin="5,-20,5,-12" Focused="FechaFin_Focused">
+                                        <StackLayout>
+                                        <xfx:XfxEntry x:Name="FechaFinal"
+                                                      Text="00/00/0000"
+                                                      PlaceholderColor="Transparent"
+                                                      Margin="5,-20,5,-12"
+                                                      IsEnabled="false">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -177,6 +198,17 @@
                                                 </OnPlatform>
                                             </Entry.FontFamily>
                                         </xfx:XfxEntry>
+                                         <StackLayout.GestureRecognizers>
+                                   
+                                                    <TapGestureRecognizer
+                                                    Tapped="Fecha2_Tapped"
+                                                    NumberOfTapsRequired="1" />
+                    
+                                     </StackLayout.GestureRecognizers>
+                                    </StackLayout>
+                                        
+
+                                        
                                     </StackLayout>
                                 </Grid>
                             </StackLayout>
@@ -349,7 +381,7 @@
                                             </Label.FontFamily>
                                         </Label>
                                         <Grid Padding="5, 0">
-                                            <!-- <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  -->
+                                            <StackLayout>
                                             <xfx:XfxEntry x:Name="Restaurante"
                                                           Text="{Binding NombreRestaurante,Mode=TwoWay}"
                                                           Margin="2,-20,5,-5"
@@ -357,7 +389,8 @@
                                                           Keyboard="Text"
                                                           HorizontalOptions="Start" 
                                                           HorizontalTextAlignment="Start"
-                                                          Focused="Restaurant_Focused"
+
+                                                          IsEnabled="false"
                                                           WidthRequest="200"
                                                           ActivePlaceholderColor="#7A5BA5">
                                                 <Entry.HeightRequest>
@@ -373,6 +406,12 @@
                                                     </OnPlatform>
                                                 </Entry.FontFamily>
                                             </xfx:XfxEntry>
+                                            <StackLayout.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                Tapped="Restaurante_Tapped"
+                                                                NumberOfTapsRequired="1" />
+                                                    </StackLayout.GestureRecognizers>
+                                                </StackLayout>
                                         </Grid>
                                     </StackLayout>
                                 </Frame>
@@ -444,20 +483,33 @@
                                                         </OnPlatform>
                                                     </Label.FontFamily>
                                                 </Label>
-                                                <xfx:XfxEntry x:Name="FechaR1" Text="{Binding FechaInicio, Mode=TwoWay}" Margin="5,-20,5,-12" PlaceholderColor="Transparent" Focused="FechaR1_Focused">
-                                                    <Entry.HeightRequest>
-                                                        <OnPlatform x:TypeArguments="x:Double">
-                                                            <On Platform="iOS">60</On>
-                                                            <On Platform="Android,Windows">60</On>
-                                                        </OnPlatform>
-                                                    </Entry.HeightRequest>
-                                                    <Entry.FontFamily>
-                                                        <OnPlatform x:TypeArguments="x:String">
-                                                            <On Platform="iOS" Value="Oswald-Regular" />
-                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                        </OnPlatform>
-                                                    </Entry.FontFamily>
-                                                </xfx:XfxEntry>
+                                                <StackLayout>
+                                                    <xfx:XfxEntry x:Name="FechaR1"
+                                                                  Text="{Binding FechaInicio, Mode=TwoWay}"
+                                                                  Margin="5,-20,5,-12"
+                                                                  PlaceholderColor="Transparent"
+                                                                  IsEnabled="false">
+                                                        <Entry.HeightRequest>
+                                                            <OnPlatform x:TypeArguments="x:Double">
+                                                                <On Platform="iOS">60</On>
+                                                                <On Platform="Android,Windows">60</On>
+                                                            </OnPlatform>
+                                                        </Entry.HeightRequest>
+                                                        <Entry.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="iOS" Value="Oswald-Regular" />
+                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                            </OnPlatform>
+                                                        </Entry.FontFamily>
+                                                    </xfx:XfxEntry>
+                                                     <StackLayout.GestureRecognizers>
+                                                       
+                                                                <TapGestureRecognizer
+                                                                Tapped="FechaR1_Tapped"
+                                                                NumberOfTapsRequired="1" />
+                                                    
+                                                    </StackLayout.GestureRecognizers>
+                                                    </StackLayout>
                                                 <!--"{Binding FechaInicio, Mode=TwoWay}"-->
                                             </StackLayout>
                                             <BoxView Color="Silver" Grid.Column="1" Grid.Row="0" Margin="0,5,0,5" />
@@ -470,11 +522,12 @@
                                                         </OnPlatform>
                                                     </Label.FontFamily>
                                                 </Label>
+                                                <StackLayout>
                                                 <xfx:XfxEntry x:Name="HoraR1"
                                                               Text="{Binding HoraInicio,Mode = TwoWay}"
                                                               Margin="5,-20,5,-12"
                                                               PlaceholderColor="Transparent"
-                                                              Focused="HoraR1_Focused"
+                                                             IsEnabled="false"
                                                               ActivePlaceholderColor="#7A5BA5">
                                                     <Entry.HeightRequest>
                                                         <OnPlatform x:TypeArguments="x:Double">
@@ -489,7 +542,14 @@
                                                         </OnPlatform>
                                                     </Entry.FontFamily>
                                                 </xfx:XfxEntry>
-                                                <!--Time="{Binding HoraInicio, Mode=TwoWay}"-->
+                                                     <StackLayout.GestureRecognizers>
+                                                       
+                                                                <TapGestureRecognizer
+                                                                Tapped="Hora_Tapped"
+                                                                NumberOfTapsRequired="1" />
+                                                    
+                                                    </StackLayout.GestureRecognizers>
+                                              </StackLayout>
                                             </StackLayout>
                                         </Grid>
                                     </StackLayout>
@@ -513,29 +573,35 @@
                                             </Label.FontFamily>
                                         </Label>
                                         <Grid Padding="5, 0">
-                                            <!--  <Image Source="rowdown" WidthRequest="15" HorizontalOptions="End"/>  -->
-                                            <xfx:XfxEntry x:Name="SillaNiño"
-                                                          Text="{Binding SillaNiños,Mode=TwoWay}"
-                                                          Margin="2,-20,5,-5"
-                                                          PlaceholderColor="Transparent"
-                                                          Keyboard="Text"
-                                                          HorizontalOptions="Start"
-                                                          HorizontalTextAlignment="Start"
-                                                          Focused="SillaNinos_Focused"
-                                                          ActivePlaceholderColor="#7A5BA5">
-                                                <Entry.HeightRequest>
-                                                    <OnPlatform x:TypeArguments="x:Double">
-                                                        <On Platform="iOS">60</On>
-                                                        <On Platform="Android,Windows">60</On>
-                                                    </OnPlatform>
-                                                </Entry.HeightRequest>
-                                                <Entry.FontFamily>
-                                                    <OnPlatform x:TypeArguments="x:String">
-                                                        <On Platform="iOS" Value="Oswald-Regular" />
-                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                    </OnPlatform>
-                                                </Entry.FontFamily>
-                                            </xfx:XfxEntry>
+                                            <StackLayout>
+                                                <xfx:XfxEntry x:Name="SillaNiño"
+                                                              Text="{Binding SillaNiños,Mode=TwoWay}"
+                                                              Margin="2,-20,5,-5"
+                                                              PlaceholderColor="Transparent"
+                                                              Keyboard="Text"
+                                                              HorizontalOptions="Start"
+                                                              HorizontalTextAlignment="Start"
+                                                              IsEnabled="false"
+                                                              ActivePlaceholderColor="#7A5BA5">
+                                                    <Entry.HeightRequest>
+                                                        <OnPlatform x:TypeArguments="x:Double">
+                                                            <On Platform="iOS">60</On>
+                                                            <On Platform="Android,Windows">60</On>
+                                                        </OnPlatform>
+                                                    </Entry.HeightRequest>
+                                                    <Entry.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                        </OnPlatform>
+                                                    </Entry.FontFamily>
+                                                </xfx:XfxEntry>
+                                                 <StackLayout.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                Tapped="Silla_Tapped"
+                                                                NumberOfTapsRequired="1" />
+                                                    </StackLayout.GestureRecognizers>
+                                            </StackLayout>
                                         </Grid>
                                     </StackLayout>
                                 </Frame>
@@ -656,16 +722,13 @@
                         <Button Margin="30,20,30,7" FontSize="14" TextColor="White" BackgroundColor="#250c4b" HeightRequest="40" Text="RESERVAR" Command="{Binding ReservarCommand}">&gt;
                            <Button.FontFamily><OnPlatform x:TypeArguments="x:String"><On Platform="iOS" Value="Oswald-Medium" /><On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" /></OnPlatform></Button.FontFamily></Button>
                     </StackLayout>
-                    <StackLayout x:Name="SL4" IsVisible="false" Margin="10,-10,10,0" BackgroundColor="White">
-                     
-                           <ffimageloading:CachedImage 
-                                                       HeightRequest="500"
-                                                       HorizontalOptions="FillAndExpand"
-                                                       VerticalOptions="FillAndExpand"
-                                                       LoadingPlaceholder="image_loading.png"
-                                                       ErrorPlaceholder="image_error.png"
-                                                       Source="tiendamobile"/>
-                        <!--tiendamobile-->
+                    <StackLayout x:Name="SL4" IsVisible="false"
+                                 HorizontalOptions="FillAndExpand"
+                                 VerticalOptions="FillAndExpand">
+                               
+                        <WebView x:Name="paginitaweb1"
+                                 Source="https://www.tienda.citycenter-rosario.com.ar/"/>
+                       
                     </StackLayout>
                     <StackLayout Orientation="Vertical" 
                                  BackgroundColor="#FFFFFF"
@@ -988,6 +1051,7 @@
                         </AbsoluteLayout>
                     </StackLayout>
                 </StackLayout>
+
             </ScrollView>
         </StackLayout>
     </ContentPage.Content>

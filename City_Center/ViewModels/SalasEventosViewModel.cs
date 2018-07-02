@@ -117,7 +117,7 @@ namespace City_Center.ViewModels
         {
 			if (string.IsNullOrEmpty(this.Nombre))
             {
-                await Mensajes.Alerta("Nombre requerido");
+                await Mensajes.Alerta("Nombre y Apellido requerido");
 
                 return;
             }

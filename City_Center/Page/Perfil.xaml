@@ -263,7 +263,7 @@
                             </Entry.FontFamily>
                             </xfx:XfxEntry>
 
-
+                            <StackLayout>
                              <xfx:XfxEntry x:Name="Fecha"
                                       ActivePlaceholderColor="#7A5BA5"
                                       Style="{DynamicResource EntryStyle}"
@@ -272,7 +272,7 @@
                                       TextColor="Black"
                                       FontSize="18"
                                       Keyboard="Default"
-                                      Focused="Fecha_Focused">
+                                      IsEnabled="false">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -287,16 +287,20 @@
                             </Entry.FontFamily>
                             </xfx:XfxEntry>
                             
-                           
+                            <StackLayout.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                Tapped="Fecha_Tapped"
+                                                                NumberOfTapsRequired="1" />
+                                                    </StackLayout.GestureRecognizers>
                             
-                       
+                       </StackLayout>
                             <Label HorizontalTextAlignment="Center"
                                    HorizontalOptions="Center"
                                    FontSize="16"
                                    Margin="50,25"
                                    Text="¿Sos socio Win? Vinculá tu tarjeta ahora y obtené todos los beneficios" TextColor="Black" />
                           
-
+                          <StackLayout>
                                 <xfx:XfxEntry x:Name="TipoDocumento"
                                       ActivePlaceholderColor="#7A5BA5"
                                       Style="{DynamicResource EntryStyle}"
@@ -305,7 +309,7 @@
                                       TextColor="Black"
                                       FontSize="18"
                                       Keyboard="Default"
-                                      Focused="TipoDocumento_Focused">
+                                      IsEnabled="false">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -321,7 +325,12 @@
                             </xfx:XfxEntry>
 
 
-
+                            <StackLayout.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                Tapped="TD_Tapped"
+                                                                NumberOfTapsRequired="1" />
+                                                    </StackLayout.GestureRecognizers>
+                            </StackLayout>
                             <xfx:XfxEntry
                                       ActivePlaceholderColor="#7A5BA5"
                                       Style="{DynamicResource EntryStyle}"

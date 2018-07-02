@@ -11,20 +11,20 @@ namespace City_Center.PopUp
             InitializeComponent();
 
             NavigationPage.SetTitleIcon(this, "logo@2x.png");
-#if __ANDROID__
+//#if __ANDROID__
 
-            Browser.Source = "https://www.tienda.citycenter-rosario.com.ar/";
+//            Browser.Source = "https://www.tienda.citycenter-rosario.com.ar/";
 
-#endif
+//#endif
 
 
-#if __IOS__
-            var uri = new Uri("https://www.tienda.citycenter-rosario.com.ar/");
+//#if __IOS__
+//            var uri = new Uri("https://www.tienda.citycenter-rosario.com.ar/");
 
-            var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
+//            var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
-            Browser.Source = nsurl.AbsoluteUrl.ToString();
-#endif
+//            Browser.Source = nsurl.AbsoluteUrl.ToString();
+//#endif
 
         }
 
@@ -35,5 +35,9 @@ namespace City_Center.PopUp
    
         }
 
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Browser.Source = "https://www.tienda.citycenter-rosario.com.ar/";
+        }
     }
 }

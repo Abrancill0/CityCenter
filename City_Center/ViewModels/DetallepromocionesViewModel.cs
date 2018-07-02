@@ -90,10 +90,16 @@ namespace City_Center.ViewModels
                 return;
             }
 
-            if (string.IsNullOrEmpty(this.Telefono))
+            if (string.IsNullOrEmpty(this.Correo))
             {
                 await Mensajes.Alerta("Correo electrónico requerido");
 
+                return;
+            }
+
+            if (!ValidaEmailMethod.ValidateEMail(this.Correo))
+            {
+                await Mensajes.Alerta("Correo electrónico mal estructurado");
                 return;
             }
 

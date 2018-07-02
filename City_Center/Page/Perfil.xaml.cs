@@ -117,34 +117,7 @@ namespace City_Center.Page
             SL3.IsVisible = true;
 
         }
-        
-        async void Fecha_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-		{
-#if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
-
-			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
-            {
-                IsCancellable = true,
-				CancelText = "CANCELAR",
-                Title="Fecha Nacimiento"
-            });
-
-
-            if (result.Ok)
-            {
-                Fecha.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-                Fecha.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }
-            else
-            {
-                Fecha.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }
-		}
-
+       
 		async void TipoDocumento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
 		{
 #if __IOS__
@@ -251,6 +224,56 @@ namespace City_Center.Page
             else
             {
                 await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
+            }
+        }
+
+           async void Fecha_Tapped(object sender, System.EventArgs e)
+                    {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                CancelText = "CANCELAR",
+                Title = "Fecha Nacimiento"
+            });
+
+
+            if (result.Ok)
+            {
+                Fecha.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                Fecha.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+            else
+            {
+                Fecha.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+   
+                    }
+
+async void TD_Tapped(object sender, System.EventArgs e)
+        {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
+            var result = await UserDialogs.Instance.ActionSheetAsync("Numero de socio Win", "CANCELAR", null, null, "DNI", "LE", "LC", "CI");
+
+            if (result != "CANCELAR")
+            {
+                TipoDocumento.Text = result.ToString();
+
+                TipoDocumento.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+            else
+            {
+                TipoDocumento.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
         }
     }

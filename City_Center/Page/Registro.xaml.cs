@@ -79,16 +79,19 @@ namespace City_Center.Page
             await Camara();
         }
 
-		async void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+		
+
+        async void Handle_Tapped2(object sender, System.EventArgs e)
         {
             #if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
             #endif
 
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
                 IsCancellable = true,
-				CancelText = "CANCELAR"
+                CancelText = "CANCELAR"
             });
 
 
@@ -104,21 +107,8 @@ namespace City_Center.Page
                 Fecha1.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
-
         }
 
-        void Handle_Unfocused(object sender, Xamarin.Forms.FocusEventArgs e)
-        {
-            #if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif   
-        }
-
-void Handle_FocusChangeRequested(object sender, Xamarin.Forms.VisualElement.FocusRequestArgs e)
-        {
-            #if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
-        }
+       
     }
 }

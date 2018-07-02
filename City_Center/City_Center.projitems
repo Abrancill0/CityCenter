@@ -199,6 +199,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopUp\MensajeCarga.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\HttpClientPostMethod.cs" />
@@ -451,6 +455,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Clases\ClaseGlobal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MensajesPendientesResultado.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PopUp\MensajeCarga.xaml.cs">
+      <DependentUpon>MensajeCarga.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

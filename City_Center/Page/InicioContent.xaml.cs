@@ -23,16 +23,19 @@ namespace City_Center.Page
 
         InicioViewModel Inicito = new InicioViewModel();
 
+        private WebViewTienda pageweb = new WebViewTienda();
+
         public InicioContent()
         {
             InitializeComponent();
-           
-            _webHotel = new WebViewHotel();
 
+            _webHotel = new WebViewHotel();
             _AlertaConfirmacion = new AlertaConfirmacion();
 
             FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Today);
             FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(1));
+
+
 
         }
 
@@ -47,12 +50,13 @@ namespace City_Center.Page
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-
         }
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
+
+            // Navigation.PushPopupAsync(new MensajeCarga());
+            //Mensajes.Cargando("Iniciando Sesion");
             try
             {
 
@@ -148,20 +152,18 @@ namespace City_Center.Page
             tienda.Source = "TIENDAONLINE";
         }
 
-        private async void Btn4_Clicked(object sender, System.EventArgs e)
+        private void Btn4_Clicked(object sender, System.EventArgs e)
         {
+            SL1.IsVisible = false;
+            SL2.IsVisible = false;
+            SL3.IsVisible = false;
+            SL4.IsVisible = true;
 
-            //SL1.IsVisible = false;
-            //SL2.IsVisible = false;
-            //SL3.IsVisible = false;
-            //SL4.IsVisible = true;
+            reservarHotel.Source = "RESERVAHOTEL";
+            tickets.Source = "TICKETSHOWS";
+            reservarMesa.Source = "RESERVATUMESA";
+            tienda.Source = "TIENDAONLINE_S";
 
-            //reservarHotel.Source = "RESERVAHOTEL";
-            //tickets.Source = "TICKETSHOWS";
-            //reservarMesa.Source = "RESERVATUMESA";
-            //tienda.Source = "TIENDAONLINE_S";
-
-            await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda());
         }
 
         void CambiaIcono(object sender, System.EventArgs e)
@@ -230,44 +232,12 @@ namespace City_Center.Page
             }
         }
 
-        async void FechaInicio_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-        {
-            #if __IOS__
-               DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
-
-            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
-            {
-                Title = "Llegada",
-                CancelText = "CANCELAR",
-                IsCancellable = true,
-                MinimumDate = DateTime.Now.AddDays(0)
-            });
-
-
-            if (result.Ok)
-            {
-                FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-                FechaInicio.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-
-            }
-            else
-            {
-                FechaInicio.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }
-
-            //String.Format("{0:dd MMMM yyyy}"
-
-        }
-
         async void FechaFin_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
 
-            #if __IOS__
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            #endif
+#if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
 
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
@@ -291,36 +261,6 @@ namespace City_Center.Page
                 FechaFinal.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 
-            }
-
-            //String.Format("{0:dd MMMM yyyy}"
-
-        }
-
-        async void FechaR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-        {
-#if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
-
-            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
-            {
-                IsCancellable = true,
-                CancelText = "CANCELAR",
-                MinimumDate = DateTime.Now.AddDays(0)
-            });
-
-
-            if (result.Ok)
-            {
-                FechaR1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-                FechaR1.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }
-            else
-            {
-                FechaR1.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
 
             //String.Format("{0:dd MMMM yyyy}"
@@ -387,7 +327,296 @@ namespace City_Center.Page
 
         }
 
-        async void HoraR1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        async void Restaurant_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+
+        }
+
+        void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            try
+            {
+                Entry entry = sender as Entry;
+                String val = entry.Text; //Get Current Text
+
+
+                if (val.Length > 0)//If it is more than your character restriction
+                {
+
+                    Match match = Regex.Match(val, @"([0-9\-]+)$",
+                                    RegexOptions.IgnoreCase);
+
+                    if (!match.Success)
+                    {
+                        val = val.Remove(val.Length - 1);
+                        entry.Text = val;
+                        return;
+                    }
+
+                    //Set the Old value
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+
+        async void Handle_Clicked_1(object sender, System.EventArgs e)
+        {
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda());
+        }
+
+        void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+        {
+
+            VariablesGlobales.indice = e.NewValue;
+
+#if __IOS__
+            try
+            {
+
+                if (VariablesGlobales.validacionIOS == 1)
+                {
+                    if (e.NewValue != 0)
+                    {
+                        CarruselTorneos.Position = 0;
+                        VariablesGlobales.indice = 1;
+                    }
+                }
+                else if (VariablesGlobales.validacionIOS == 2)
+                {
+                    //if (e.NewValue == 0)
+                    //{
+                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
+                    VariablesGlobales.indice = VariablesGlobales.RegistrosTorneo;
+                    //}
+                }
+
+
+            }
+            catch (Exception)
+            {
+
+            }
+#endif
+        }
+
+        void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+        {
+#if __IOS__
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion == "Right")
+                {
+                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
+                    VariablesGlobales.validacionIOS = 1;
+                    CarruselTorneos.Position = 0;
+                    CarruselTorneos.AnimateTransition = false;
+
+                }
+                else if (VariablesGlobales.indice == 1 && Direccion == "Left")
+                {
+                    CarruselTorneos.AnimateTransition = false;
+                    VariablesGlobales.validacionIOS = 2;
+                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
+                }
+                else
+                {
+                    VariablesGlobales.validacionIOS = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+#endif
+
+#if __ANDROID__
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion == "Right")
+                {
+                    CarruselTorneos.AnimateTransition = false;
+                    CarruselTorneos.Position = 1;
+
+
+                }
+                else if (VariablesGlobales.indice == 1 && Direccion == "Left")
+                {
+                    CarruselTorneos.AnimateTransition = false;
+                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+
+#endif
+        }
+
+        void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+        {
+
+#if __IOS__
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.IndicePromociones == VariablesGlobales.RegistrosPromociones && Direccion == "Right")
+                {
+                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
+                    VariablesGlobales.validacionIOSPromociones = 1;
+                    CarruselPromociones.Position = 0;
+                    CarruselPromociones.AnimateTransition = false;
+
+                }
+                else if (VariablesGlobales.IndicePromociones == 1 && Direccion == "Left")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    VariablesGlobales.validacionIOSPromociones = 2;
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
+                }
+                else
+                {
+                    VariablesGlobales.validacionIOSPromociones = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", ex.ToString(), "OK");
+            }
+#endif
+
+
+
+#if __ANDROID__
+            try
+            {
+                string Direccion = Convert.ToString(e.Direction);
+
+                if (VariablesGlobales.IndicePromociones >= VariablesGlobales.RegistrosPromociones && Direccion == "Right")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    CarruselPromociones.Position = 0;
+
+                }
+                else if (VariablesGlobales.IndicePromociones <= 1 && Direccion == "Left")
+                {
+                    CarruselPromociones.AnimateTransition = false;
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+#endif
+
+        }
+
+        void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+        {
+            VariablesGlobales.IndicePromociones = e.NewValue;
+
+#if __IOS__
+            try
+            {
+
+                if (VariablesGlobales.validacionIOSPromociones == 1)
+                {
+                    if (e.NewValue != 0)
+                    {
+                        CarruselPromociones.Position = 0;
+                        VariablesGlobales.IndicePromociones = 1;
+                    }
+                }
+                else if (VariablesGlobales.validacionIOSPromociones == 2)
+                {
+                    //if (e.NewValue == 0)
+                    //{
+                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
+                    VariablesGlobales.IndicePromociones = VariablesGlobales.RegistrosPromociones;
+                    //}
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+#endif
+
+        }
+
+        async void Fecha_Tapped(object sender, System.EventArgs e)
+        {
+#if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                Title = "Llegada",
+                CancelText = "CANCELAR",
+                IsCancellable = true,
+                MinimumDate = DateTime.Now.AddDays(0)
+            });
+
+
+            if (result.Ok)
+            {
+                FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                FechaInicio.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+            }
+            else
+            {
+                FechaInicio.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+        }
+
+        async void Fecha2_Tapped(object sender, System.EventArgs e)
+        {
+#if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                CancelText = "CANCELAR",
+                MinimumDate = DateTime.Now.AddDays(0),
+                Title = "Salida"
+
+            });
+
+
+            if (result.Ok)
+            {
+                FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                FechaFinal.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+            }
+            else
+            {
+                FechaFinal.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+            }
+        }
+
+        async void Hora_Tapped(object sender, System.EventArgs e)
         {
 #if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
@@ -450,30 +679,62 @@ namespace City_Center.Page
                     DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
                 }
             }
+        }
+
+        async void FechaR1_Tapped(object sender, System.EventArgs e)
+        {
+#if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                CancelText = "CANCELAR",
+                MinimumDate = DateTime.Now.AddDays(0)
+            });
 
 
-            //var result = await UserDialogs.Instance.TimePromptAsync(new TimePromptConfig
-            //         {
-            //              IsCancellable=true
-            //         });
+            if (result.Ok)
+            {
+                FechaR1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                FechaR1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+            else
+            {
+                FechaR1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
 
-
-            //if (result.Ok)
-            //        {
-            //            string hora = Convert.ToString(result.SelectedTime);
-            //            HoraR1.Text = hora.Substring(0,5);
-            //HoraR1.Unfocus();
-            //            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            //        }
-            //        else
-            //        {
-            //HoraR1.Unfocus();
-            //    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            //}
+            //String.Format("{0:dd MMMM yyyy}"
 
         }
 
-        async void Restaurant_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        async void Silla_Tapped(object sender, System.EventArgs e)
+        {
+
+#if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
+            var result = await UserDialogs.Instance.ActionSheetAsync("Sillas niños", "CANCELAR", null, null, "No", "Si");
+
+            if (result != "CANCELAR")
+            {
+                SillaNiño.Text = result.ToString();
+
+                SillaNiño.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+            else
+            {
+                SillaNiño.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+        }
+
+        async void Restaurante_Tapped(object sender, System.EventArgs e)
         {
 #if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
@@ -503,253 +764,5 @@ namespace City_Center.Page
             }
 
         }
-
-        async void SillaNinos_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-        {
-#if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
-
-            var result = await UserDialogs.Instance.ActionSheetAsync("Sillas niños", "CANCELAR", null, null, "No", "Si");
-
-            if (result != "CANCELAR")
-            {
-                SillaNiño.Text = result.ToString();
-
-                SillaNiño.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }
-            else
-            {
-                SillaNiño.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }
-
-        }
-
-        void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
-        {
-            try
-            {
-                Entry entry = sender as Entry;
-                String val = entry.Text; //Get Current Text
-
-
-                if (val.Length > 0)//If it is more than your character restriction
-                {
-
-                    Match match = Regex.Match(val, @"([0-9\-]+)$",
-                                    RegexOptions.IgnoreCase);
-
-                    if (!match.Success)
-                    {
-                        val = val.Remove(val.Length - 1);
-                        entry.Text = val;
-                        return;
-                    }
-
-                    //Set the Old value
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-
-        }
-
-        async void Handle_Clicked_1(object sender, System.EventArgs e)
-        {
-            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda());
-        }
-
-        void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-        {
-
-            VariablesGlobales.indice = e.NewValue;
-
-            #if __IOS__
-            try
-            {
-                
-                if (VariablesGlobales.validacionIOS == 1)
-                {
-                    if (e.NewValue != 0)
-                    {
-                        CarruselTorneos.Position = 0;
-                        VariablesGlobales.indice = 1;
-                    }
-                }
-                else if (VariablesGlobales.validacionIOS == 2)
-                {
-                    //if (e.NewValue == 0)
-                    //{
-                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
-                    VariablesGlobales.indice = VariablesGlobales.RegistrosTorneo;
-                    //}
-                }
-
-
-            }
-            catch (Exception)
-            {
-
-            }
-            #endif
-        }
-
-        void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
-        {
-        #if __IOS__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
-
-                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion == "Right")
-                {
-                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
-                    VariablesGlobales.validacionIOS = 1;
-                    CarruselTorneos.Position = 0;
-                    CarruselTorneos.AnimateTransition = false;
-
-                }
-                else if (VariablesGlobales.indice == 1 && Direccion == "Left")
-                {
-                    CarruselTorneos.AnimateTransition = false;
-                    VariablesGlobales.validacionIOS = 2;
-                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
-                }
-                else
-                {
-                    VariablesGlobales.validacionIOS = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-#endif
-
-#if __ANDROID__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
-
-                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion == "Right")
-                {
-                    CarruselTorneos.AnimateTransition = false;
-                    CarruselTorneos.Position = 1;
-
-
-                }
-                else if (VariablesGlobales.indice == 1 && Direccion == "Left")
-                {
-                    CarruselTorneos.AnimateTransition = false;
-                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-
-#endif
-        }
-
-        void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
-        {
-
-        #if __IOS__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
-
-                if (VariablesGlobales.IndicePromociones == VariablesGlobales.RegistrosPromociones && Direccion == "Right")
-                {
-                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
-                    VariablesGlobales.validacionIOSPromociones = 1;
-                    CarruselPromociones.Position = 0;
-                    CarruselPromociones.AnimateTransition = false;
-
-                }
-                else if (VariablesGlobales.IndicePromociones == 1 && Direccion == "Left")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    VariablesGlobales.validacionIOSPromociones = 2;
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
-                }
-                else
-                {
-                    VariablesGlobales.validacionIOSPromociones = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-        #endif
-
-
-
-        #if __ANDROID__
-                    try
-                    {
-                        string Direccion = Convert.ToString(e.Direction);
-
-                if (VariablesGlobales.IndicePromociones >= VariablesGlobales.RegistrosPromociones && Direccion == "Right")
-                        {
-                            CarruselPromociones.AnimateTransition = false;
-                            CarruselPromociones.Position = 0;
-
-                        }
-                else if (VariablesGlobales.IndicePromociones <= 1 && Direccion == "Left")
-                        {
-                            CarruselPromociones.AnimateTransition = false;
-                            CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                       
-                    }  
-                 
-        #endif
-
-        }
-
-        void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-        {
-            VariablesGlobales.IndicePromociones = e.NewValue;
-
-            #if __IOS__
-                try
-                {
-                    
-                    if (VariablesGlobales.validacionIOSPromociones == 1)
-                    {
-                        if (e.NewValue != 0)
-                        {
-                            CarruselPromociones.Position = 0;
-                            VariablesGlobales.IndicePromociones = 1;
-                        }
-                    }
-                    else if (VariablesGlobales.validacionIOSPromociones == 2)
-                    {
-                        //if (e.NewValue == 0)
-                        //{
-                        CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
-                        VariablesGlobales.IndicePromociones = VariablesGlobales.RegistrosPromociones;
-                        //}
-                    }
-
-                }
-                catch (Exception)
-                {
-
-                }
-            #endif
-
-        }
     }
-
 }
