@@ -152,10 +152,10 @@
                         </Image.GestureRecognizers>
                     </Image>
                     <!--RowHeight="105"-->
-                    <ListView ItemsSource="{Binding RestaurantMenuDetalle}" SeparatorVisibility="None"
+                    <ListView ItemsSource="{Binding RestaurantMenuDetalle}"
+                              SeparatorVisibility="None"
                               BackgroundColor="#EBEBEB"
-                             RowHeight="105"
-                              CachingStrategy="RecycleElement">
+                              HasUnevenRows="true">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -169,8 +169,7 @@
                                                 HorizontalTextAlignment="Center"
                                                 VerticalTextAlignment="Start"
                                                 HorizontalOptions="Center"
-                                                VerticalOptions="Start"
-                                               >
+                                                VerticalOptions="Start">
                                                 <Label.FontFamily>
                                                     <OnPlatform x:TypeArguments="x:String">
                                                         <On Platform="iOS" Value="Oswald-Regular" />
@@ -181,8 +180,7 @@
                                             <Label Text="{Binding mde_nombre}"
                                                    TextColor="#2F1753"
                                                    FontSize="14"
-                                                   Margin="15,0,15,0"
-                                                  >
+                                                   Margin="15,0,15,0">
                                                 <Label.FontFamily>
                                                     <OnPlatform x:TypeArguments="x:String">
                                                         <On Platform="iOS" Value="Oswald-Regular" />
@@ -258,11 +256,12 @@
                                                     </OnPlatform>
                                                 </Label.FontFamily>
                                             </Label>
+                                            <StackLayout>
                                                  <xfx:XfxEntry x:Name="FechaR1"
                                                       Text ="{Binding FechaInicio, Mode=TwoWay}"
                                                       Margin="5,-20,5,-12"
                                                       PlaceholderColor="Transparent"
-                                                      Focused="FechaR1_Focused"
+                                                      IsEnabled="false"
                                                       ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
@@ -277,6 +276,12 @@
                                                     </OnPlatform>
                                                 </Entry.FontFamily>
                                         </xfx:XfxEntry>
+                                                <StackLayout.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                Tapped="FechaR1_Tapped"
+                                                                NumberOfTapsRequired="1" />
+                                                    </StackLayout.GestureRecognizers>
+                                                </StackLayout>
                                         </StackLayout>
                                               <BoxView Color="Silver" Grid.Column="1" Grid.Row="0" Margin="0,5,0,5" />
                                         <StackLayout Margin="4" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
@@ -291,11 +296,12 @@
                                                     </OnPlatform>
                                                 </Label.FontFamily>
                                             </Label>
+                                            <StackLayout>
                                              <xfx:XfxEntry x:Name="HoraR1"
                                                       Text ="{Binding HoraInicio,Mode = TwoWay}"
                                                       Margin="5,-20,5,-12"
                                                       PlaceholderColor="Transparent"
-                                                      Focused="HoraR1_Focused"
+                                                      IsEnabled="false"
                                                       ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
@@ -310,6 +316,12 @@
                                                     </OnPlatform>
                                                 </Entry.FontFamily>
                                         </xfx:XfxEntry>
+                                             <StackLayout.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                Tapped="HoraR1_Tapped"
+                                                                NumberOfTapsRequired="1" />
+                                                    </StackLayout.GestureRecognizers>
+                                                 </StackLayout>
                                             <!--Time="{Binding HoraInicio, Mode=TwoWay}"-->
                                         </StackLayout>
                                     </Grid>
@@ -373,7 +385,7 @@
                                         <Frame.Padding>
                                             <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                         </Frame.Padding>
-                                        <StackLayout>
+                                        <StackLayout Margin="8,3,0,0">
                                            <Label Text="Silla para niños"
                                                   TextColor="Gray"
                                                   Margin="8,3,0,0"
@@ -388,7 +400,7 @@
                                                 </Label.FontFamily>
                                                 </Label>
                                           
-                                             
+                                             <StackLayout>
                                              <xfx:XfxEntry x:Name="SillaNiño"
                                                       Text ="{Binding SillaNiños,Mode=TwoWay}"
                                                       Margin="2,-20,5,-5"
@@ -396,7 +408,7 @@
                                                       Keyboard="Text"
                                                       HorizontalOptions="Start"
                                                       HorizontalTextAlignment="Start"
-                                                      Focused="SillaNinos_Focused"
+                                                      IsEnabled="false"
                                                       ActivePlaceholderColor="#7A5BA5" >
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
@@ -411,7 +423,12 @@
                                                     </OnPlatform>
                                                 </Entry.FontFamily>
                                             </xfx:XfxEntry>
-                                           
+                                         <StackLayout.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                Tapped="Silla_Tapped"
+                                                                NumberOfTapsRequired="1" />
+                                                    </StackLayout.GestureRecognizers>
+                                           </StackLayout>
                                          </StackLayout>
                                     </Frame>   
                                 </StackLayout>
@@ -554,9 +571,13 @@
                              </Button>
                 </StackLayout>
                 <StackLayout Margin="10">
-                    <Label TextColor="Black" Text="{Binding rd.reb_descripcion_horario}">
+                    <Label TextColor="#4e423a"
+                           Text="{Binding rd.reb_descripcion_horario}"
+                           FontSize="Small">
                     </Label>
-                    <Label TextColor="Black" Text="{Binding rd.reb_descripcion}">
+                    <Label TextColor="#4e423a"
+                           Text="{Binding rd.reb_descripcion}"
+                           FontSize="Small">
                     </Label>
                 </StackLayout>
             </StackLayout>

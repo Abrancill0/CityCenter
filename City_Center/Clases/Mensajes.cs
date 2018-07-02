@@ -52,6 +52,23 @@ namespace City_Center.Clases
         }
 
 
+        public static async Task<string> Cargando(string Mensaje)
+        {
+            try
+            {
+                VariablesGlobales.Mensaje = Mensaje;
+                await Application.Current.MainPage.Navigation.PushPopupAsync(new MensajeCarga());
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+            return "OK";
+        }
+
+
     //public static async Task<IDisposable> warning(string Mensaje)
    
     }

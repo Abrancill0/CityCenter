@@ -75,8 +75,7 @@
                                       FontSize="18"
                                       TextColor="Black"
                                       Placeholder="Correo electrónico*"
-                                      Keyboard="Email"
-                    Unfocused="Handle_Unfocused">
+                                      Keyboard="Email">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -99,8 +98,7 @@
                                       TextColor="Black"
                                       Placeholder="Contraseña *"
                                       Keyboard="Default"
-                                      IsPassword="true"
-                    Unfocused="Handle_Unfocused">
+                                      IsPassword="true">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -123,8 +121,7 @@
                                       TextColor="Black"
                                       Placeholder="Confirma Contraseña *"
                                       Keyboard="Default"
-                                      IsPassword="true"
-                                    Unfocused="Handle_Unfocused">
+                                      IsPassword="true">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -139,15 +136,17 @@
                     </Entry.FontFamily>
                     </xfx:XfxEntry>
 
-                         <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                         <xfx:XfxEntry x:Name="TextCiudad"
+
+                                        ActivePlaceholderColor="#7A5BA5"
                                       Style="{DynamicResource EntryStyle}"
                                       Text="{Binding Ciudad, Mode=TwoWay}"
                                       FontSize="18"
                                       TextColor="Black"
                                       Placeholder="Ciudad *"
                                       Keyboard="Default"
-                                      Unfocused="Handle_Unfocused"
-                                       FocusChangeRequested="Handle_FocusChangeRequested"
+
+
                                       >
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
@@ -163,17 +162,16 @@
                     </Entry.FontFamily>
                     </xfx:XfxEntry>
 
-
-
-
-                     <xfx:XfxEntry x:Name="Fecha1" ActivePlaceholderColor="#7A5BA5"
+                
+                <StackLayout>
+                    <xfx:XfxEntry x:Name="Fecha1" ActivePlaceholderColor="#7A5BA5"
                                       Style="{DynamicResource EntryStyle}"
                                       Text="{Binding Fecha, Mode=TwoWay}"
                                       FontSize="18"
                                       TextColor="Black"
                                       Placeholder="Fecha Nacimiento *"
-                                      Focused="Handle_Focused"
-                                      Keyboard="Default"
+                                     
+                                  IsEnabled="false"
                                       >
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
@@ -188,9 +186,15 @@
                             </OnPlatform>
                     </Entry.FontFamily>
                     </xfx:XfxEntry>
+                    <StackLayout.GestureRecognizers>
+                       
+                                <TapGestureRecognizer
+                                Tapped="Handle_Tapped2"
+                                NumberOfTapsRequired="1" />
                     
-
-
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                     
               
 
                 <Grid Padding="20,0">
@@ -245,7 +249,7 @@
                     </Label>
                 </Grid>
                 <StackLayout Margin = "10,10" HorizontalOptions = "Center">
-                    <Button Text="" Command="{Binding RegistroCommand}" IsEnabled="{Binding IsEnabled,Mode=TwoWay}" Style="{DynamicResource StyleButton}" BackgroundColor="Transparent" Image="btn_registrarme.png" ContentLayout="Left,0">
+                       <Button Text="" Command="{Binding RegistroCommand}" IsEnabled="{Binding IsEnabled,Mode=TwoWay}" Style="{DynamicResource StyleButton}" BackgroundColor="Transparent" Image="btn_registrarme.png" ContentLayout="Left,0">
                     </Button>
                     <Label Text="Ó" HorizontalTextAlignment="Center">
                     </Label>

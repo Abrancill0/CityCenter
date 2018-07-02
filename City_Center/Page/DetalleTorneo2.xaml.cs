@@ -15,9 +15,26 @@ namespace City_Center.Page
             NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
-        async void Fecha_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        async void Chat_click(object sender, System.EventArgs e)
         {
-#if __IOS__
+            bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+                                    (bool)Application.Current.Properties["IsLoggedIn"] : false;
+
+            if (isLoggedIn)
+            {
+
+                await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
+
+            }
+            else
+            {
+                await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
+            }
+        }
+
+      async  void Fecha_Tapped(object sender, System.EventArgs e)
+        {
+            #if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 #endif
 
@@ -39,14 +56,14 @@ namespace City_Center.Page
             {
                 Fecha.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }
+            }   
         }
-
-        async void TipoDocumento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+    
+        async  void TipoDocumento_Tapped(object sender, System.EventArgs e)
         {
-#if __IOS__
+            #if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
+            #endif
 
             var result = await UserDialogs.Instance.ActionSheetAsync("Numero de socio Win", "CANCELAR", null, null, "DNI", "LE", "LC", "CI");
 
@@ -62,24 +79,8 @@ namespace City_Center.Page
                 TipoDocumento.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
-
         }
 
-        async void Chat_click(object sender, System.EventArgs e)
-        {
-            bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
-                                    (bool)Application.Current.Properties["IsLoggedIn"] : false;
-
-            if (isLoggedIn)
-            {
-
-                await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
-
-            }
-            else
-            {
-                await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
-            }
-        }
+        //NoDocumento_Tapped
     }
 }

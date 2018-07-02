@@ -21,6 +21,8 @@ namespace City_Center.iOS
                 }
 
                 vc.View.EndEditing(true);
+
+                //UIApplication.SharedApplication.KeyWindow.EndEditing(true);
             });
 
         }

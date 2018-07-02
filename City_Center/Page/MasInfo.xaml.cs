@@ -142,106 +142,16 @@ namespace City_Center.Page
 
 		}
 
-		async void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-		{
-            #if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
-
-			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
-			{
-				IsCancellable = true,
-				CancelText = "CANCELAR",
-				MinimumDate = DateTime.Now.AddDays(0)
-			});
-
-
-			if (result.Ok)
-			{
-				Fecha1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-				Fecha1.Unfocus();
-				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-
-			}
-			else
-			{
-				Fecha1.Unfocus();
-				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-			}
-
-		}
-
-		async void Handle_Focused_1(object sender, Xamarin.Forms.FocusEventArgs e)
-		{
-            #if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
-
-			var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
-			{
-				IsCancellable = true,
-				CancelText = "CANCELAR",
-				MinimumDate = DateTime.Now.AddDays(0)
-			});
-
-
-			if (result.Ok)
-			{
-				Fecha2.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
-				Fecha2.Unfocus();
-				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-
-			}
-			else
-			{
-				Fecha2.Unfocus();
-				DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-			}
-		}
-  
+		
+		
 		async void TipoEvento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            #if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
-
-            var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "CANCELAR", null, null, "Congresos, Convenciones, Seminarios","Casamiento",  "Eventos Corporativos", "Eventos Sociales", "Otros");
-
-            if (result != "CANCELAR")
-            {
-				TipoEvento.Text = result.ToString();
-
-				TipoEvento.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }
-            else
-            {
-				TipoEvento.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }
-
+           
         }
         
 		async void TipoEvento1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            #if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
-
-            var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "CANCELAR", null, null,"Congresos, Convenciones, Seminarios", "Casamiento",  "Eventos Corporativos", "Eventos Sociales", "Otros");
-
-            if (result != "CANCELAR")
-            {
-                TipoEvento1.Text = result.ToString();
-
-                TipoEvento1.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }
-            else
-            {
-                TipoEvento1.Unfocus();
-                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-            }
+           
 
         }
 
@@ -259,6 +169,108 @@ namespace City_Center.Page
             {
                 await Mensajes.Alerta("Es necesario que te registres para completar esta acción");
             }
+        }
+
+
+          async void Fecha1_Tapped(object sender, System.EventArgs e)
+            {
+                #if __IOS__
+                            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                #endif
+
+                var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+                {
+                    IsCancellable = true,
+                    CancelText = "CANCELAR",
+                    MinimumDate = DateTime.Now.AddDays(0)
+                });
+
+
+                if (result.Ok)
+                {
+                    Fecha1.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                    Fecha1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+                }
+                else
+                {
+                    Fecha1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+            }
+
+          async  void Fecha2_Tapped(object sender, System.EventArgs e)
+        {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
+
+            var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+            {
+                IsCancellable = true,
+                CancelText = "CANCELAR",
+                MinimumDate = DateTime.Now.AddDays(0)
+            });
+
+
+            if (result.Ok)
+            {
+                Fecha2.Text = String.Format("{0:dd/MM/yyyy}", result.SelectedDate);
+                Fecha2.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+
+            }
+            else
+            {
+                Fecha2.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+        }
+
+        async void TipoEvento_Tapped(object sender, System.EventArgs e)
+        {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
+            var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "CANCELAR", null, null, "Congresos, Convenciones, Seminarios", "Casamiento", "Eventos Corporativos", "Eventos Sociales", "Otros");
+
+            if (result != "CANCELAR")
+            {
+                TipoEvento.Text = result.ToString();
+
+                TipoEvento.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+            else
+            {
+                TipoEvento.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+
+        }
+
+        async void TipoEvento2_Tapped(object sender, System.EventArgs e)
+        {
+            #if __IOS__
+            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+#endif
+
+            var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "CANCELAR", null, null, "Congresos, Convenciones, Seminarios", "Casamiento", "Eventos Corporativos", "Eventos Sociales", "Otros");
+
+            if (result != "CANCELAR")
+            {
+                TipoEvento1.Text = result.ToString();
+
+                TipoEvento1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }
+            else
+            {
+                TipoEvento1.Unfocus();
+                DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            }  
         }
 	}
 }

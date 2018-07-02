@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+
+             x:Class="City_Center.PopUp.MensajeCarga">
+    <Frame HorizontalOptions="Center"
+             VerticalOptions="Center"
+            HeightRequest="90"
+             WidthRequest="120"
+             HasShadow="true"
+             BackgroundColor="White"
+             IsEnabled="false">
+              <StackLayout HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           IsEnabled="false">
+        <!--
+            <forms:AnimationView 
+            x:Name="animationView"
+                Animation="loading.json" 
+                Loop="true" 
+                AutoPlay="true"
+               
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand" />-->
+
+            <Label Text="Iniciando Sesión" FontSize="Micro"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center">
+                 <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Oswald-Regular" />
+                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                        </OnPlatform>
+                 </Label.FontFamily>
+            </Label>
+            
+        </StackLayout>
+       
+         </Frame>
+</pages:PopupPage>

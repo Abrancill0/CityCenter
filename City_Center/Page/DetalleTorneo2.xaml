@@ -42,8 +42,8 @@
                     </xfx:XfxEntry>
 
 
-
-                                <xfx:XfxEntry x:Name="TipoDocumento"
+                    <StackLayout>
+                     <xfx:XfxEntry x:Name="TipoDocumento"
                                       ActivePlaceholderColor="#7A5BA5"
                                       Style="{DynamicResource EntryStyle}"
                                       Text="{Binding TipoDocumento, Mode=TwoWay}"
@@ -51,7 +51,8 @@
                                       TextColor="Black"
                                       FontSize="18"
                                       Keyboard="Default"
-                                      Focused="TipoDocumento_Focused">
+                                   IsEnabled="false"
+                                      >
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -65,10 +66,21 @@
                                     </OnPlatform>
                             </Entry.FontFamily>
                             </xfx:XfxEntry>
-                
+                     <StackLayout.GestureRecognizers>
+                                   
+                                                    <TapGestureRecognizer
+                                                    Tapped="TipoDocumento_Tapped"
+                                                    NumberOfTapsRequired="1" />
+                    
+                                     </StackLayout.GestureRecognizers>
+            
+                </StackLayout>
+                               
+               
                     <xfx:XfxEntry Placeholder="Numero de documento*"
                     FontSize="18" Keyboard="Numeric"
-                                  Style="{DynamicResource EntryStyle}" Text="{Binding NumeroDocumento, Mode=TwoWay}">
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding NumeroDocumento, Mode=TwoWay}">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>
@@ -82,8 +94,9 @@
                                     </OnPlatform>
                        </Entry.FontFamily>
                     </xfx:XfxEntry>
+                   
 
-
+                <StackLayout>
                     <xfx:XfxEntry x:Name="Fecha"
                                       ActivePlaceholderColor="#7A5BA5"
                                       Style="{DynamicResource EntryStyle}"
@@ -92,7 +105,7 @@
                                       TextColor="Black"
                                       FontSize="18"
                                       Keyboard="Default"
-                                      Focused="Fecha_Focused">
+                                      IsEnabled="false">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -106,6 +119,15 @@
                                     </OnPlatform>
                             </Entry.FontFamily>
                             </xfx:XfxEntry>
+                       <StackLayout.GestureRecognizers>
+                                   
+                                                    <TapGestureRecognizer
+                                                    Tapped="Fecha_Tapped"
+                                                    NumberOfTapsRequired="1" />
+                    
+                                     </StackLayout.GestureRecognizers>
+                </StackLayout>
+                    
                     
                     <xfx:XfxEntry Placeholder="Nacionalidad*"
                     FontSize="18"

@@ -269,12 +269,13 @@
                                     </OnPlatform>
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
+                            <StackLayout>
                             <xfx:XfxEntry x:Name="TipoEvento" 
                                           ActivePlaceholderColor="#7A5BA5"
                                           Style="{DynamicResource EntryStyle}"
                                           Text="{Binding TipoEvento, Mode=TwoWay}"
                                           FontSize="14" TextColor="Black" Placeholder="Tipo de evento *"
-                                          Focused="TipoEvento_Focused"
+                                          IsEnabled="false"
                                           Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
@@ -289,6 +290,12 @@
                                     </OnPlatform>
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
+                                  <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                        Tapped="TipoEvento_Tapped"
+                                        NumberOfTapsRequired="1" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
                             <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
                                           Style="{DynamicResource EntryStyle}"
                                           Text="{Binding Asistentes, Mode=TwoWay}"
@@ -308,7 +315,15 @@
                                     </OnPlatform>
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
-                            <xfx:XfxEntry x:Name="Fecha1" ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Fecha, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Fecha aproximada *" Keyboard="Default" Focused="Handle_Focused">
+                            <StackLayout>
+                            <xfx:XfxEntry x:Name="Fecha1"
+                                          ActivePlaceholderColor="#7A5BA5"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Fecha, Mode=TwoWay}"
+                                          FontSize="14" TextColor="Black"
+                                          Placeholder="Fecha aproximada *"
+
+                                          IsEnabled="false">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -322,6 +337,15 @@
                                     </OnPlatform>
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
+                             
+                            <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                        Tapped="Fecha1_Tapped"
+                                        NumberOfTapsRequired="1" />
+                               
+                    </StackLayout.GestureRecognizers>
+                                
+                                                                    </StackLayout>
                             <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Comentarios, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Comentarios" Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
@@ -539,13 +563,15 @@
                                     </OnPlatform>
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
+                            <StackLayout>
                             <xfx:XfxEntry x:Name="TipoEvento1"
                                           ActivePlaceholderColor="#7A5BA5"
                                           Style="{DynamicResource EntryStyle}"
                                           Text="{Binding TipoEvento, Mode=TwoWay}"
                                           FontSize="14" TextColor="Black"
                                           Placeholder="Tipo de evento *"
-                                          Focused="TipoEvento_Focused" Keyboard="Default">
+                                          IsEnabled="false"
+                                          Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -559,6 +585,12 @@
                                     </OnPlatform>
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
+                                 <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                        Tapped="TipoEvento2_Tapped"
+                                        NumberOfTapsRequired="1" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
                             <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" 
                                           Style="{DynamicResource EntryStyle}"
                                           Text="{Binding Asistentes, Mode=TwoWay}"
@@ -578,7 +610,15 @@
                                     </OnPlatform>
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
-                            <xfx:XfxEntry x:Name="Fecha2" ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Fecha, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Fecha aproximada *" Keyboard="Default" Focused="Handle_Focused">
+                            <StackLayout>
+                            <xfx:XfxEntry x:Name="Fecha2"
+                                          ActivePlaceholderColor="#7A5BA5"
+                                          Style="{DynamicResource EntryStyle}"
+                                          Text="{Binding Fecha, Mode=TwoWay}"
+                                          FontSize="14"
+                                          TextColor="Black"
+                                          Placeholder="Fecha aproximada *"
+                                          Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -592,6 +632,12 @@
                                     </OnPlatform>
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
+                                <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                        Tapped="Fecha2_Tapped"
+                                        NumberOfTapsRequired="1" />
+                                </StackLayout.GestureRecognizers>
+                                </StackLayout>
                             <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Comentarios, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Comentarios" Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
