@@ -44,12 +44,8 @@
     <MtouchLink>None</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    
-<<<<<<< HEAD
-    <CodesignProvision>CityCenterAdHoc</CodesignProvision>
-=======
+
     <CodesignProvision>CityCenterAppStore</CodesignProvision>
->>>>>>> 351a63189549401589be16fdcfe9c41f6c36563a
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -74,11 +70,8 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-<<<<<<< HEAD
-    <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
-=======
     <CodesignKey>iPhone Developer</CodesignKey>
->>>>>>> 351a63189549401589be16fdcfe9c41f6c36563a
+    <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -88,10 +81,6 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
 
-<<<<<<< HEAD
-    <CodesignProvision>CityCenterDev</CodesignProvision>
-=======
->>>>>>> 351a63189549401589be16fdcfe9c41f6c36563a
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
