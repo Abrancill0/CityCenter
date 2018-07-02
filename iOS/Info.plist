@@ -109,12 +109,22 @@
 		<true/>
 	</dict>
 	<key>CFBundleVersion</key>
-	<string>2.6</string>
+	<string>2.9</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>es</string>
 	</array>
+	<key>NSContactsUsageDescription</key>
+	<string>Se requiere de este permiso para poder continuar</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Se requiere de este permiso para poder continuar</string>
+	<key>kTCCServiceMediaLibrary</key>
+	<string>Se requiere de este permiso para poder continuar</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Se requiere de este permiso para poder continuar</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Se requiere de este permiso para poder continuar</string>
 </dict>
 </plist>
