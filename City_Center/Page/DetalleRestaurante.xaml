@@ -152,17 +152,25 @@
                         </Image.GestureRecognizers>
                     </Image>
                     <!--RowHeight="105"-->
+                    
+                 <!--asi queda para ios  
                     <ListView ItemsSource="{Binding RestaurantMenuDetalle}"
                               SeparatorVisibility="None"
                               BackgroundColor="#EBEBEB"
+                    HasUnevenRows="true"-->
+
                              
-                              HasUnevenRows="true">
+                    <ListView ItemsSource="{Binding RestaurantMenuDetalle}"
+                              SeparatorVisibility="None"
+                              BackgroundColor="#EBEBEB"
+                              RowHeight="105"
+                              >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
                                     <ContentView>
                                         <StackLayout Spacing="0">
-                                         <Label Margin="{Binding Margen,Mode=TwoWay}" 
+                                            <Label Margin="{Binding Margen,Mode=TwoWay}" 
                                                 Text="{Binding NombreMenu}"
                                                 FontSize="20"
                                                 TextColor="#2C1350" 
