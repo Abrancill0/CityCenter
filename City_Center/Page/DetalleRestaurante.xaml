@@ -163,7 +163,7 @@
                     <ListView ItemsSource="{Binding RestaurantMenuDetalle}"
                               SeparatorVisibility="None"
                               BackgroundColor="#EBEBEB"
-                              RowHeight="105"
+                               HasUnevenRows="true"
                               >
                         <ListView.ItemTemplate>
                             <DataTemplate>

@@ -119,16 +119,10 @@
 	<array>
 		<string>es</string>
 	</array>
-<<<<<<< HEAD
-=======
-	<key>NSExceptionDomains</key>
+	<key>citycenterapp-1524870051302.appspot.com</key>
 	<dict>
-		<key>citycenterapp-1524870051302.appspot.com</key>
-		<dict>
-			<key>NSExceptionAllowsInsecureHTTPLoads</key>
-			<true/>
-		</dict>
+		<key>NSExceptionAllowsInsecureHTTPLoads</key>
+		<true/>
 	</dict>
->>>>>>> 9fe954edc28410eb3fb449a2a59257d882493eda
 </dict>
 </plist>

@@ -10,7 +10,7 @@
     <MasterDetailPage.Master>
         <ContentPage Title="City Center" Icon="menu@3x.png" BackgroundColor="Transparent" BindingContext="{Binding Detail}">
             <StackLayout BackgroundColor="#250c4b">
-                <Image HorizontalOptions="Start" Source="logowhite.png" HeightRequest="90" WidthRequest="130" Margin="20,10,0,-10">
+                <Image HorizontalOptions="Start" Source="logo@2x.png" HeightRequest="80" WidthRequest="110" Margin="20,10,0,-10">
                 </Image>
                 <!--cambiar en ios logo@2x.png-->
                 <StackLayout Margin="10,5,0,5">

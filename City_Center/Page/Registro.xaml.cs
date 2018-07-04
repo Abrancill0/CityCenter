@@ -20,9 +20,9 @@ namespace City_Center.Page
 
         protected override void OnDisappearing()
         {
-
-            base.OnDisappearing();
             ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
+            base.OnDisappearing();
+
             GC.Collect();
 
         }

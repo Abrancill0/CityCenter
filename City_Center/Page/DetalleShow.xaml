@@ -121,7 +121,7 @@
 
                         <Label />
 
-                        <Label Text="Agregar a Calendario" HorizontalOptions="Center" FontSize="Small" TextColor="Gray">
+                       <!-- <Label Text="Agregar a Calendario" HorizontalOptions="Center" FontSize="Small" TextColor="Gray">
                         <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular"/>
@@ -131,7 +131,7 @@
                             <Label.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding AgregarCalendarioCommand}" />
                         </Label.GestureRecognizers>
-                        </Label>
+                        </Label>-->
                 </StackLayout>
             </StackLayout>
 

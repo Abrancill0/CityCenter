@@ -14,6 +14,16 @@ namespace City_Center.Page
             NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
+
+        protected override void OnDisappearing()
+        {
+           
+            base.OnDisappearing();
+            ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
+            GC.Collect();
+
+        }
+
        async void Handle_Clicked(object sender, System.EventArgs e)
         {
             UserDialogs.Instance.ShowLoading("Iniciando Sesion...", MaskType.Black);

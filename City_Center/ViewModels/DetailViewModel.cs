@@ -179,10 +179,6 @@ namespace City_Center.ViewModels
 
                     }
 
-
-
-
-                  
                     MasterPage fpm = new MasterPage();
                     //fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 
@@ -190,6 +186,8 @@ namespace City_Center.ViewModels
 
 					//fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
                     Application.Current.MainPage = fpm;
+
+                    ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
 
                     UserDialogs.Instance.HideLoading();
                 }
@@ -294,6 +292,8 @@ namespace City_Center.ViewModels
             MainViewModel.GetInstance().Registro = new RegistroViewModel();
 
             ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+            App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
 
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Registro());
 
