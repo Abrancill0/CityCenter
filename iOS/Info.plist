@@ -81,8 +81,8 @@
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>remote-notification</string>
 		<string>audio</string>
+		<string>remote-notification</string>
 	</array>
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<false/>
@@ -117,7 +117,5 @@
 	<array>
 		<string>es</string>
 	</array>
-	<key>Custom Property</key>
-	<string></string>
 </dict>
 </plist>

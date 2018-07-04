@@ -28,13 +28,12 @@ namespace City_Center.Page
 			//TipoEvento.SelectedIndex = 0;
    
 		}
-        
+
 		protected override void OnDisappearing()
 		{
-			base.OnDisappearing();
-
+            ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
 			GC.Collect();
-
+            base.OnDisappearing();
 		}
        
 		void Tab1_Tapped(object sender, System.EventArgs e)

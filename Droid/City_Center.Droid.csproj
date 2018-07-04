@@ -380,6 +380,12 @@
     <Reference Include="Xamarin.Facebook.Android">
       <HintPath>..\packages\Xamarin.Facebook.Android.4.33.0\lib\monoandroid81\Xamarin.Facebook.Android.dll</HintPath>
     </Reference>
+    <Reference Include="PanCardView">
+      <HintPath>..\packages\CardsView.1.4.7\lib\MonoAndroid10\PanCardView.dll</HintPath>
+    </Reference>
+    <Reference Include="PanCardView.Droid">
+      <HintPath>..\packages\CardsView.1.4.7\lib\MonoAndroid10\PanCardView.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

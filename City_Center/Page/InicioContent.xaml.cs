@@ -16,6 +16,7 @@ using System.Linq;
 
 namespace City_Center.Page
 {
+     
     public partial class InicioContent : ContentPage
     {
         public WebViewHotel _webHotel;
@@ -327,11 +328,6 @@ namespace City_Center.Page
 
         }
 
-        async void Restaurant_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-        {
-
-        }
-
         void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
             try
@@ -461,100 +457,101 @@ namespace City_Center.Page
 #endif
         }
 
-        void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
-        {
+//        void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+//        {
 
-#if __IOS__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+//#if __IOS__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndicePromociones == VariablesGlobales.RegistrosPromociones && Direccion == "Right")
-                {
-                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
-                    VariablesGlobales.validacionIOSPromociones = 1;
-                    CarruselPromociones.Position = 0;
-                    CarruselPromociones.AnimateTransition = false;
+//                if (VariablesGlobales.IndicePromociones == VariablesGlobales.RegistrosPromociones && Direccion == "Right")
+//                {
+//                    VariablesGlobales.validacionIOSPromociones = 1;
+//                    CarruselPromociones.Position = 0;
+//                    CarruselPromociones.AnimateTransition = false;
 
-                }
-                else if (VariablesGlobales.IndicePromociones == 1 && Direccion == "Left")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    VariablesGlobales.validacionIOSPromociones = 2;
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
-                }
-                else
-                {
-                    VariablesGlobales.validacionIOSPromociones = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-#endif
-
+//                }
+//                else if (VariablesGlobales.IndicePromociones == 1 && Direccion == "Left")
+//                {
+//                    CarruselPromociones.AnimateTransition = false;
+//                    VariablesGlobales.validacionIOSPromociones = 2;
+//                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
+//                }
+//                else
+//                {
+//                    VariablesGlobales.validacionIOSPromociones = 0;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                DisplayAlert("Error", ex.ToString(), "OK");
+//            }
+//#endif
 
 
-#if __ANDROID__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndicePromociones >= VariablesGlobales.RegistrosPromociones && Direccion == "Right")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    CarruselPromociones.Position = 0;
+//#if __ANDROID__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
 
-                }
-                else if (VariablesGlobales.IndicePromociones <= 1 && Direccion == "Left")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
-                }
-            }
-            catch (Exception ex)
-            {
+//                if (VariablesGlobales.IndicePromociones >= VariablesGlobales.RegistrosPromociones && Direccion == "Right")
+//                {
+//                    CarruselPromociones.AnimateTransition = false;
+//                    CarruselPromociones.Position = 0;
 
-            }
+//                }
+//                else if (VariablesGlobales.IndicePromociones <= 1 && Direccion == "Left")
+//                {
+//                    CarruselPromociones.AnimateTransition = false;
+//                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
 
-#endif
+//            }
 
-        }
+//#endif
 
-        void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-        {
-            VariablesGlobales.IndicePromociones = e.NewValue;
+//        }
 
-#if __IOS__
-            try
-            {
+//        void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+//        {
+//            VariablesGlobales.IndicePromociones = e.NewValue;
 
-                if (VariablesGlobales.validacionIOSPromociones == 1)
-                {
-                    if (e.NewValue != 0)
-                    {
-                        CarruselPromociones.Position = 0;
-                        VariablesGlobales.IndicePromociones = 1;
-                    }
-                }
-                else if (VariablesGlobales.validacionIOSPromociones == 2)
-                {
-                    //if (e.NewValue == 0)
-                    //{
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
-                    VariablesGlobales.IndicePromociones = VariablesGlobales.RegistrosPromociones;
-                    //}
-                }
+//#if __IOS__
+//            try
+//            {
 
-            }
-            catch (Exception)
-            {
+//                if (VariablesGlobales.validacionIOSPromociones == 1)
+//                {
+//                    if (e.NewValue != 0)
+//                    {
+//                        CarruselPromociones.Position = 0;
+//                        VariablesGlobales.IndicePromociones = 1;
+//                       // e.NewValue =1;
+//                    }
+//                }
+//                else if (VariablesGlobales.validacionIOSPromociones == 2)
+//                {
+//                    //if (e.NewValue == 0)
+//                    //{
+//                    CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones + 1;
+//                    VariablesGlobales.IndicePromociones = VariablesGlobales.RegistrosPromociones;
+//                    //}
+//                }
+               
 
-            }
-#endif
+//            }
+//            catch (Exception)
+//            {
 
-        }
+//            }
+//#endif
+
+        //}
 
         async void Fecha_Tapped(object sender, System.EventArgs e)
         {

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
 using City_Center.Clases;
-using Acr.UserDialogs;
 using City_Center.ViewModels;
 using City_Center.Page.SlideMenu;
 using City_Center.PopUp;
@@ -32,8 +30,6 @@ namespace City_Center.Page
             MainView3.Content = page3.Content;
             MainView4.Content = page4.Content;
             MainView5.Content = page5.Content;
-
-
 
             Barra.BackgroundColor = Color.FromHex("#877BA1");
 
@@ -82,8 +78,9 @@ namespace City_Center.Page
             MainView5.IsVisible = false;
 
             Barra.BackgroundColor = Color.FromHex("#877BA1");
-
             App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+
+            VariablesGlobales.VentanaActual = "Inicio";
         }
 
         public void ClickTap2(object sender, EventArgs e)
@@ -102,6 +99,8 @@ namespace City_Center.Page
 
             Barra.BackgroundColor = Color.FromHex("#F783A8");
             App.NavPage.BarBackgroundColor = Color.FromHex("#E91E63");
+
+            VariablesGlobales.VentanaActual = "Casino";
 
         }
 
@@ -122,6 +121,8 @@ namespace City_Center.Page
             Barra.BackgroundColor = Color.FromHex("#8DC7CB");
             App.NavPage.BarBackgroundColor = Color.FromHex("#2D97A3");
 
+            VariablesGlobales.VentanaActual = "Hotel";
+
         }
 
         public void ClickTap4(object sender, EventArgs e)
@@ -138,11 +139,10 @@ namespace City_Center.Page
             MainView4.IsVisible = true;
             MainView5.IsVisible = false;
 
-
             Barra.BackgroundColor = Color.FromHex("#F9A786");
-
             App.NavPage.BarBackgroundColor = Color.FromHex("#FF5722");
-            // MainView.ControlTemplate = page.ControlTemplate;
+           
+            VariablesGlobales.VentanaActual = "Gastronomia";
         }
 
         public void ClickTap5(object sender, EventArgs e)
@@ -160,8 +160,9 @@ namespace City_Center.Page
             MainView5.IsVisible = true;
 
             Barra.BackgroundColor = Color.FromHex("#97A1D2");
-
             App.NavPage.BarBackgroundColor = Color.FromHex("#3F51B5");
+
+            VariablesGlobales.VentanaActual = "Salon";
 
         }
         #endregion

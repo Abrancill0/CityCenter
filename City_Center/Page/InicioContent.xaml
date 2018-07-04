@@ -2,14 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:City_Center.View"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}" 
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:view="clr-namespace:City_Center.Vista"
-             xmlns:naxam="clr-namespace:Naxam.Controls.Forms;assembly=Naxam.CarouselView.Forms"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
-             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.InicioContent">
-    
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             xmlns:cards="clr-namespace:CardsView;assembly=CardsView"
+             xmlns:c=""
+             x:Class="City_Center.Page.InicioContent">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Name="StyleButton" TargetType="Button">
@@ -27,10 +28,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Spacing="0"
-                     BackgroundColor="#EFEFEF"
-                     BindingContext="{Binding Inicio}"
-                     CompressedLayout.IsHeadless="true">
+        
+        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Inicio}" CompressedLayout.IsHeadless="true">
             <StackLayout>
                 <ffimageloading:CachedImage Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="HOMEmin" HeightRequest="110" />
             </StackLayout>
@@ -59,7 +58,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                   <!-- <Image Aspect="AspectFit"
+                    <!-- <Image Aspect="AspectFit"
                            Source="TICKETSHOWS"
                            VerticalOptions="Start"
                            HorizontalOptions="End"
@@ -68,7 +67,6 @@
                            Grid.Column="0"
                            Grid.Row="0">
                     </Image>-->
-
                     <Image x:Name="tickets" Aspect="AspectFit" Source="TICKETSHOWS" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Btn2_Clicked" />
@@ -110,11 +108,7 @@
             </StackLayout>
             <ScrollView>
                 <StackLayout BackgroundColor="#EFEFEF">
-                    
                     <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" Margin="5,18,5,5">
-
-
-                          
                         <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                             <Frame.Margin>
                                 <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
@@ -123,7 +117,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             <StackLayout Orientation="Horizontal" BackgroundColor="#FFFFFF" HorizontalOptions="FillAndExpand">
-                                <Grid HorizontalOptions="FillAndExpand" >
+                                <Grid HorizontalOptions="FillAndExpand">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*" />
                                         <ColumnDefinition Width="2" />
@@ -142,32 +136,24 @@
                                             </Label.FontFamily>
                                         </Label>
                                         <StackLayout>
-                                                <xfx:XfxEntry x:Name="FechaInicio"
-                                                              Text="00/00/0000"
-                                                              Margin="5,-20,5,-12"
-                                                              PlaceholderColor="Transparent"
-                                                              IsEnabled="false">
-                                                    <Entry.HeightRequest>
-                                                        <OnPlatform x:TypeArguments="x:Double">
-                                                            <On Platform="iOS">60</On>
-                                                            <On Platform="Android,Windows">60</On>
-                                                        </OnPlatform>
-                                                    </Entry.HeightRequest>
-                                                    <Entry.FontFamily>
-                                                        <OnPlatform x:TypeArguments="x:String">
-                                                            <On Platform="iOS" Value="Oswald-Regular" />
-                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                        </OnPlatform>
-                                                    </Entry.FontFamily>
-                                                </xfx:XfxEntry>
-                                             <StackLayout.GestureRecognizers>
-                                   
-                                                    <TapGestureRecognizer
-                                                    Tapped="Fecha_Tapped"
-                                                    NumberOfTapsRequired="1" />
-                    
-                                     </StackLayout.GestureRecognizers>
-                                    </StackLayout>
+                                            <xfx:XfxEntry x:Name="FechaInicio" Text="00/00/0000" Margin="5,-20,5,-12" PlaceholderColor="Transparent" IsEnabled="false">
+                                                <Entry.HeightRequest>
+                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                        <On Platform="iOS">60</On>
+                                                        <On Platform="Android,Windows">60</On>
+                                                    </OnPlatform>
+                                                </Entry.HeightRequest>
+                                                <Entry.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                    </OnPlatform>
+                                                </Entry.FontFamily>
+                                            </xfx:XfxEntry>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="Fecha_Tapped" NumberOfTapsRequired="1" />
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
                                     </StackLayout>
                                     <BoxView Color="Silver" Grid.Column="1" Grid.Row="0" Margin="0,5,0,5" />
                                     <StackLayout Margin="4" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
@@ -180,35 +166,24 @@
                                             </Label.FontFamily>
                                         </Label>
                                         <StackLayout>
-                                        <xfx:XfxEntry x:Name="FechaFinal"
-                                                      Text="00/00/0000"
-                                                      PlaceholderColor="Transparent"
-                                                      Margin="5,-20,5,-12"
-                                                      IsEnabled="false">
-                                            <Entry.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double">
-                                                    <On Platform="iOS">60</On>
-                                                    <On Platform="Android,Windows">60</On>
-                                                </OnPlatform>
-                                            </Entry.HeightRequest>
-                                            <Entry.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Oswald-Regular" />
-                                                    <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                </OnPlatform>
-                                            </Entry.FontFamily>
-                                        </xfx:XfxEntry>
-                                         <StackLayout.GestureRecognizers>
-                                   
-                                                    <TapGestureRecognizer
-                                                    Tapped="Fecha2_Tapped"
-                                                    NumberOfTapsRequired="1" />
-                    
-                                     </StackLayout.GestureRecognizers>
-                                    </StackLayout>
-                                        
-
-                                        
+                                            <xfx:XfxEntry x:Name="FechaFinal" Text="00/00/0000" PlaceholderColor="Transparent" Margin="5,-20,5,-12" IsEnabled="false">
+                                                <Entry.HeightRequest>
+                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                        <On Platform="iOS">60</On>
+                                                        <On Platform="Android,Windows">60</On>
+                                                    </OnPlatform>
+                                                </Entry.HeightRequest>
+                                                <Entry.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                    </OnPlatform>
+                                                </Entry.FontFamily>
+                                            </xfx:XfxEntry>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="Fecha2_Tapped" NumberOfTapsRequired="1" />
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
                                     </StackLayout>
                                 </Grid>
                             </StackLayout>
@@ -358,7 +333,7 @@
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
-                             <StackLayout Orientation="Vertical" Margin="0,-5" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+                            <StackLayout Orientation="Vertical" Margin="0,-5" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
                                 <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                                     <Frame.Margin>
                                         <OnPlatform x:TypeArguments="Thickness" Android="4" iOS="4" />
@@ -367,12 +342,7 @@
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                     </Frame.Padding>
                                     <StackLayout>
-                                        <Label Text="Restaurantes"
-                                               TextColor="Gray"
-                                               Margin="8,5,0,0"
-                                               HorizontalOptions="Start"
-                                               HorizontalTextAlignment="Start"
-                                               FontSize="Medium">
+                                        <Label Text="Restaurantes" TextColor="Gray" Margin="8,5,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" FontSize="Medium">
                                             <Label.FontFamily>
                                                 <OnPlatform x:TypeArguments="x:String">
                                                     <On Platform="iOS" Value="Oswald-Regular" />
@@ -382,41 +352,28 @@
                                         </Label>
                                         <Grid Padding="5, 0">
                                             <StackLayout>
-                                            <xfx:XfxEntry x:Name="Restaurante"
-                                                          Text="{Binding NombreRestaurante,Mode=TwoWay}"
-                                                          Margin="2,-20,5,-5"
-                                                          PlaceholderColor="Transparent"
-                                                          Keyboard="Text"
-                                                          HorizontalOptions="Start" 
-                                                          HorizontalTextAlignment="Start"
-
-                                                          IsEnabled="false"
-                                                          WidthRequest="200"
-                                                          ActivePlaceholderColor="#7A5BA5">
-                                                <Entry.HeightRequest>
-                                                    <OnPlatform x:TypeArguments="x:Double">
-                                                        <On Platform="iOS">60</On>
-                                                        <On Platform="Android,Windows">60</On>
-                                                    </OnPlatform>
-                                                </Entry.HeightRequest>
-                                                <Entry.FontFamily>
-                                                    <OnPlatform x:TypeArguments="x:String">
-                                                        <On Platform="iOS" Value="Oswald-Regular" />
-                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                    </OnPlatform>
-                                                </Entry.FontFamily>
-                                            </xfx:XfxEntry>
-                                            <StackLayout.GestureRecognizers>
-                                                                <TapGestureRecognizer
-                                                                Tapped="Restaurante_Tapped"
-                                                                NumberOfTapsRequired="1" />
-                                                    </StackLayout.GestureRecognizers>
-                                                </StackLayout>
+                                                <xfx:XfxEntry x:Name="Restaurante" Text="{Binding NombreRestaurante,Mode=TwoWay}" Margin="2,-20,5,-5" PlaceholderColor="Transparent" Keyboard="Text" HorizontalOptions="Start" HorizontalTextAlignment="Start" IsEnabled="false" WidthRequest="200" ActivePlaceholderColor="#7A5BA5">
+                                                    <Entry.HeightRequest>
+                                                        <OnPlatform x:TypeArguments="x:Double">
+                                                            <On Platform="iOS">60</On>
+                                                            <On Platform="Android,Windows">60</On>
+                                                        </OnPlatform>
+                                                    </Entry.HeightRequest>
+                                                    <Entry.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                        </OnPlatform>
+                                                    </Entry.FontFamily>
+                                                </xfx:XfxEntry>
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="Restaurante_Tapped" NumberOfTapsRequired="1" />
+                                                </StackLayout.GestureRecognizers>
+                                            </StackLayout>
                                         </Grid>
                                     </StackLayout>
                                 </Frame>
                             </StackLayout>
-
                             <StackLayout Orientation="Vertical" Margin="0,-5" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
                                 <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                                     <Frame.Margin>
@@ -434,12 +391,7 @@
                                                 </OnPlatform>
                                             </Label.FontFamily>
                                         </Label>
-                                        <xfx:XfxEntry x:Name="NoPersona1"
-                                                      Text="1"
-                                                      Margin="5,-20,5,-5"
-                                                      PlaceholderColor="Transparent"
-                                                      Keyboard="Numeric"
-                                                      ActivePlaceholderColor="#7A5BA5">
+                                        <xfx:XfxEntry x:Name="NoPersona1" Text="1" Margin="5,-20,5,-5" PlaceholderColor="Transparent" Keyboard="Numeric" ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -484,11 +436,7 @@
                                                     </Label.FontFamily>
                                                 </Label>
                                                 <StackLayout>
-                                                    <xfx:XfxEntry x:Name="FechaR1"
-                                                                  Text="{Binding FechaInicio, Mode=TwoWay}"
-                                                                  Margin="5,-20,5,-12"
-                                                                  PlaceholderColor="Transparent"
-                                                                  IsEnabled="false">
+                                                    <xfx:XfxEntry x:Name="FechaR1" Text="{Binding FechaInicio, Mode=TwoWay}" Margin="5,-20,5,-12" PlaceholderColor="Transparent" IsEnabled="false">
                                                         <Entry.HeightRequest>
                                                             <OnPlatform x:TypeArguments="x:Double">
                                                                 <On Platform="iOS">60</On>
@@ -502,14 +450,10 @@
                                                             </OnPlatform>
                                                         </Entry.FontFamily>
                                                     </xfx:XfxEntry>
-                                                     <StackLayout.GestureRecognizers>
-                                                       
-                                                                <TapGestureRecognizer
-                                                                Tapped="FechaR1_Tapped"
-                                                                NumberOfTapsRequired="1" />
-                                                    
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="FechaR1_Tapped" NumberOfTapsRequired="1" />
                                                     </StackLayout.GestureRecognizers>
-                                                    </StackLayout>
+                                                </StackLayout>
                                                 <!--"{Binding FechaInicio, Mode=TwoWay}"-->
                                             </StackLayout>
                                             <BoxView Color="Silver" Grid.Column="1" Grid.Row="0" Margin="0,5,0,5" />
@@ -523,33 +467,24 @@
                                                     </Label.FontFamily>
                                                 </Label>
                                                 <StackLayout>
-                                                <xfx:XfxEntry x:Name="HoraR1"
-                                                              Text="{Binding HoraInicio,Mode = TwoWay}"
-                                                              Margin="5,-20,5,-12"
-                                                              PlaceholderColor="Transparent"
-                                                             IsEnabled="false"
-                                                              ActivePlaceholderColor="#7A5BA5">
-                                                    <Entry.HeightRequest>
-                                                        <OnPlatform x:TypeArguments="x:Double">
-                                                            <On Platform="iOS">60</On>
-                                                            <On Platform="Android,Windows">60</On>
-                                                        </OnPlatform>
-                                                    </Entry.HeightRequest>
-                                                    <Entry.FontFamily>
-                                                        <OnPlatform x:TypeArguments="x:String">
-                                                            <On Platform="iOS" Value="Oswald-Regular" />
-                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                        </OnPlatform>
-                                                    </Entry.FontFamily>
-                                                </xfx:XfxEntry>
-                                                     <StackLayout.GestureRecognizers>
-                                                       
-                                                                <TapGestureRecognizer
-                                                                Tapped="Hora_Tapped"
-                                                                NumberOfTapsRequired="1" />
-                                                    
+                                                    <xfx:XfxEntry x:Name="HoraR1" Text="{Binding HoraInicio,Mode = TwoWay}" Margin="5,-20,5,-12" PlaceholderColor="Transparent" IsEnabled="false" ActivePlaceholderColor="#7A5BA5">
+                                                        <Entry.HeightRequest>
+                                                            <OnPlatform x:TypeArguments="x:Double">
+                                                                <On Platform="iOS">60</On>
+                                                                <On Platform="Android,Windows">60</On>
+                                                            </OnPlatform>
+                                                        </Entry.HeightRequest>
+                                                        <Entry.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="iOS" Value="Oswald-Regular" />
+                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                            </OnPlatform>
+                                                        </Entry.FontFamily>
+                                                    </xfx:XfxEntry>
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="Hora_Tapped" NumberOfTapsRequired="1" />
                                                     </StackLayout.GestureRecognizers>
-                                              </StackLayout>
+                                                </StackLayout>
                                             </StackLayout>
                                         </Grid>
                                     </StackLayout>
@@ -574,15 +509,7 @@
                                         </Label>
                                         <Grid Padding="5, 0">
                                             <StackLayout>
-                                                <xfx:XfxEntry x:Name="SillaNiño"
-                                                              Text="{Binding SillaNiños,Mode=TwoWay}"
-                                                              Margin="2,-20,5,-5"
-                                                              PlaceholderColor="Transparent"
-                                                              Keyboard="Text"
-                                                              HorizontalOptions="Start"
-                                                              HorizontalTextAlignment="Start"
-                                                              IsEnabled="false"
-                                                              ActivePlaceholderColor="#7A5BA5">
+                                                <xfx:XfxEntry x:Name="SillaNiño" Text="{Binding SillaNiños,Mode=TwoWay}" Margin="2,-20,5,-5" PlaceholderColor="Transparent" Keyboard="Text" HorizontalOptions="Start" HorizontalTextAlignment="Start" IsEnabled="false" ActivePlaceholderColor="#7A5BA5">
                                                     <Entry.HeightRequest>
                                                         <OnPlatform x:TypeArguments="x:Double">
                                                             <On Platform="iOS">60</On>
@@ -596,11 +523,9 @@
                                                         </OnPlatform>
                                                     </Entry.FontFamily>
                                                 </xfx:XfxEntry>
-                                                 <StackLayout.GestureRecognizers>
-                                                                <TapGestureRecognizer
-                                                                Tapped="Silla_Tapped"
-                                                                NumberOfTapsRequired="1" />
-                                                    </StackLayout.GestureRecognizers>
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="Silla_Tapped" NumberOfTapsRequired="1" />
+                                                </StackLayout.GestureRecognizers>
                                             </StackLayout>
                                         </Grid>
                                     </StackLayout>
@@ -623,10 +548,7 @@
                                                 </OnPlatform>
                                             </Label.FontFamily>
                                         </Label>
-                                        <xfx:XfxEntry PlaceholderColor="Transparent"
-                                                      Text="{Binding Nombre, Mode=TwoWay}"
-                                                      Margin="5,-20,5,-5"
-                                                      ActivePlaceholderColor="#7A5BA5">
+                                        <xfx:XfxEntry PlaceholderColor="Transparent" Text="{Binding Nombre, Mode=TwoWay}" Margin="5,-20,5,-5" ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -660,10 +582,7 @@
                                                 </OnPlatform>
                                             </Label.FontFamily>
                                         </Label>
-                                        <xfx:XfxEntry PlaceholderColor="Transparent"
-                                                      Text="{Binding Correo, Mode=TwoWay}"
-                                                      Margin="5,-20,5,-5"
-                                                      ActivePlaceholderColor="#7A5BA5">
+                                        <xfx:XfxEntry PlaceholderColor="Transparent" Text="{Binding Correo, Mode=TwoWay}" Margin="5,-20,5,-5" ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -697,11 +616,7 @@
                                                 </OnPlatform>
                                             </Label.FontFamily>
                                         </Label>
-                                        <xfx:XfxEntry PlaceholderColor="Transparent"
-                                                      Text="{Binding Telefono, Mode=TwoWay}"
-                                                      Keyboard="Telephone"
-                                                      Margin="2,-20,5,-5"
-                                                      ActivePlaceholderColor="#7A5BA5">
+                                        <xfx:XfxEntry PlaceholderColor="Transparent" Text="{Binding Telefono, Mode=TwoWay}" Keyboard="Telephone" Margin="2,-20,5,-5" ActivePlaceholderColor="#7A5BA5">
                                             <Entry.HeightRequest>
                                                 <OnPlatform x:TypeArguments="x:Double">
                                                     <On Platform="iOS">60</On>
@@ -722,17 +637,10 @@
                         <Button Margin="30,20,30,7" FontSize="14" TextColor="White" BackgroundColor="#250c4b" HeightRequest="40" Text="RESERVAR" Command="{Binding ReservarCommand}">&gt;
                            <Button.FontFamily><OnPlatform x:TypeArguments="x:String"><On Platform="iOS" Value="Oswald-Medium" /><On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" /></OnPlatform></Button.FontFamily></Button>
                     </StackLayout>
-                    <StackLayout x:Name="SL4" IsVisible="false"
-                                 HorizontalOptions="FillAndExpand"
-                                 VerticalOptions="FillAndExpand">
-                               
-                        <WebView x:Name="paginitaweb1"
-                                 Source="https://www.tienda.citycenter-rosario.com.ar/"/>
-                       
+                    <StackLayout x:Name="SL4" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <WebView x:Name="paginitaweb1" Source="https://www.tienda.citycenter-rosario.com.ar/" />
                     </StackLayout>
-                    <StackLayout Orientation="Vertical" 
-                                 BackgroundColor="#FFFFFF"
-                                >
+                    <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF">
                         <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#FFFFFF">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*">
@@ -774,19 +682,8 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                            <cv:CarouselViewControl x:Name="CarruselTorneos"
-                                                    ItemsSource="{Binding TorneoDetalle}"
-                                                    HeightRequest="300"
-                                                    HorizontalOptions="FillAndExpand"
-                                                    AnimateTransition="true"
-                                                    ShowArrows="{Binding MuestraFlechas, Mode=TwoWay}"
-                                                    ArrowsTintColor="White"
-                                                    ArrowsBackgroundColor="Black"
-                                                    Position="1"
-                                                    PositionSelected="PositionSelected_CT"
-                                                    Scrolled="Scrolled_CT"
-                                                   
-                                                    >
+                            <cv:CarouselViewControl x:Name="CarruselTorneos" ItemsSource="{Binding TorneoDetalle}" HeightRequest="300" HorizontalOptions="FillAndExpand" AnimateTransition="true" ShowArrows="{Binding MuestraFlechas, Mode=TwoWay}" ArrowsTintColor="White" ArrowsBackgroundColor="Black" Position="1" PositionSelected="PositionSelected_CT"
+                                Scrolled="Scrolled_CT">
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
                                         <Grid BackgroundColor="White">
@@ -801,20 +698,12 @@
                                                 <RowDefinition Height="Auto" />
                                                 <RowDefinition Height="0.5*" />
                                             </Grid.RowDefinitions>
-                                            <ffimageloading:CachedImage HeightRequest="150" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
+                                            <ffimageloading:CachedImage HeightRequest="150" Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                             </ffimageloading:CachedImage>
-                                            <Label Margin="7,4,0,0" TextColor="#5D5D5D"
-                                                   Grid.Row="1"
-                                                   Grid.Column="0"
-                                                   Grid.ColumnSpan="2"
-                                                   Text="{Binding tor_nombre}"
-                                                   HorizontalTextAlignment="Start"
-                                                   HorizontalOptions="Start"
-                                                   FontSize="15"
-                                                   VerticalOptions="End"
+                                            <Label Margin="7,4,0,0" TextColor="#5D5D5D" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}" HorizontalTextAlignment="Start" HorizontalOptions="Start" FontSize="15" VerticalOptions="End"
                                                 FontFamily="Oswald-Regular">
                                                 <Label.FontFamily>
                                                     <OnPlatform x:TypeArguments="x:String">
@@ -823,14 +712,7 @@
                                                     </OnPlatform>
                                                 </Label.FontFamily>
                                             </Label>
-                                            <Label Margin="6,0,0,0"
-                                                   TextColor="#5D5D5D"
-                                                   Grid.Row="2"
-                                                   Grid.Column="0"
-                                                   Grid.ColumnSpan="2"
-                                                   HorizontalTextAlignment="Start"
-                                                   HorizontalOptions="Start"
-                                                   Text="{Binding tor_fecha_hora_inicio, StringFormat='{0:dd MMMM yyyy h:mm tt}'}" VerticalOptions="Start" FontSize="12"
+                                            <Label Margin="6,0,0,0" TextColor="#5D5D5D" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="{Binding tor_fecha_hora_inicio, StringFormat='{0:dd MMMM yyyy h:mm tt}'}" VerticalOptions="Start" FontSize="12"
                                                 FontFamily="Oswald-Regular">
                                                 <Label.FontFamily>
                                                     <OnPlatform x:TypeArguments="x:String">
@@ -839,42 +721,19 @@
                                                     </OnPlatform>
                                                 </Label.FontFamily>
                                             </Label>
-                                            <Image Margin="12"
-                                                   Grid.Row="1"
-                                                   Grid.Column="2"
-                                                   Grid.RowSpan="2"
-                                                   Aspect="AspectFit"
-                                                   Source="Favorito"
-                                                   IsVisible="{Binding oculta}"
-                                                   VerticalOptions="Start"
-                                                   HorizontalOptions="Center"
-                                                   WidthRequest="25"
+                                            <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" IsVisible="{Binding oculta}" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25"
                                                 HeightRequest="25">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
                                                 </Image.GestureRecognizers>
                                             </Image>
-                                            <Image Margin="12" Grid.Row="1"
-                                                   Grid.Column="2" 
-                                                   Grid.RowSpan="2"
-                                                   Aspect="AspectFit"
-                                                   Source="Fav"
-                                                   IsVisible="{Binding tor_guardado}"
-                                                   VerticalOptions="Start"
-                                                   HorizontalOptions="Center"
-                                                   WidthRequest="25"
+                                            <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Fav" IsVisible="{Binding tor_guardado}" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25"
                                                 HeightRequest="25">
-                                                 <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2" />
-                                                        </Image.GestureRecognizers>
-                                                    </Image>
-                                           
-                                            <Image Margin="10" Grid.Row="1"
-                                                   Grid.Column="3"
-                                                   Grid.RowSpan="2"
-                                                   Aspect="AspectFit"
-                                                   Source="Compartir"
-                                                   VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                            <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25" HeightRequest="25">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding CompartirCommand}" />
                                                 </Image.GestureRecognizers>
@@ -884,16 +743,8 @@
                                 </cv:CarouselViewControl.ItemTemplate>
                             </cv:CarouselViewControl>
                         </Frame>
-                        <StackLayout HorizontalOptions="FillAndExpand"
-                                     Spacing="0"
-                                     Margin="0,30,0,0"
-                                     IsVisible="{Binding MuestraFlechasPromo}">
-                            <Label Margin="20,3,0,0"
-                                   
-                                   HorizontalOptions="Start"
-                                   HorizontalTextAlignment="Start"
-                                   Text="PROMOCIONES"
-                                   TextColor="#250c4b">
+                        <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,30,0,0" IsVisible="{Binding MuestraFlechasPromo}">
+                            <Label Margin="20,3,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
                                 <Label.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Oswald-Regular" />
@@ -902,16 +753,16 @@
                                 </Label.FontFamily>
                             </Label>
                             <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
-                            <Frame.OutlineColor>
-                                <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
-                            </Frame.OutlineColor>
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                          <cv:CarouselViewControl x:Name="CarruselPromociones"
+                                <Frame.OutlineColor>
+                                    <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
+                                </Frame.OutlineColor>
+                                <Frame.Margin>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
+                                </Frame.Margin>
+                                <Frame.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                                </Frame.Padding>
+                                <!-- <cv:CarouselViewControl x:Name="CarruselPromociones"
                                                     ItemsSource="{Binding PromocionesDetalle}"
                                                     HeightRequest="300"
                                                     HorizontalOptions="FillAndExpand"
@@ -922,7 +773,7 @@
                                                     Position="1"
                                                     Scrolled="Scrolled_HP"
                                                     PositionSelected="PositionSelected_HP"
-                                                    InterPageSpacing="50">
+                                                    >
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
                                           <Grid Padding="3" >
@@ -933,11 +784,10 @@
                                                                 <ColumnDefinition Width="*" />
                                                             </Grid.ColumnDefinitions>
                                                <ffimageloading:CachedImage
-                                                                        Aspect="AspectFill"
+                                                                        Aspect="Fill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
                                                                         Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
-                                                                        
                                                                        >
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
@@ -958,61 +808,42 @@
                                                 </Label.FontFamily>
                                             </Label>  
                                          </Grid>
-                                       
-                                        
                                     </DataTemplate>
                                 </cv:CarouselViewControl.ItemTemplate>
-                            </cv:CarouselViewControl>
-
-                         
-
-                            </Frame>
-
-                            
-                            <!--<RelativeLayout HeightRequest="200" VerticalOptions="Start">
-                                <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}" RowHeight="200" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
-                                    <ListView.ItemTemplate>
+                            </cv:CarouselViewControl>-->
+                               <!--<cards:CarouselView
+                                    Items="{Binding PromocionesDetalle}"
+                                                    HorizontalOptions="FillAndExpand">
+                                    <cards:CarouselView.ItemTemplate>
                                         <DataTemplate>
-                                            <ViewCell>
-                                                <ContentView Rotation="90" BackgroundColor="Transparent">
-                                                    <StackLayout HeightRequest="250" WidthRequest="100" Margin="0,5,0,0">
-                                                        <Grid Padding="3" CompressedLayout.IsHeadless="true">
-                                                            <Grid.RowDefinitions>
-                                                                <RowDefinition Height="*" />
-                                                            </Grid.RowDefinitions>
-                                                            <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="*" />
-                                                            </Grid.ColumnDefinitions>
-                                                            <ffimageloading:CachedImage
-                                                                HeightRequest="190"
-                            WidthRequest="80" Aspect="AspectFill"
-                            LoadingPlaceholder="image_loading.png"
-                            ErrorPlaceholder="image_error.png"
-                            Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}"
-                            DownsampleToViewSize="true">
-                                                                <ffimageloading:CachedImage.GestureRecognizers>
-                                                                    <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
-                                                                </ffimageloading:CachedImage.GestureRecognizers>
-                                                                <ffimageloading:CachedImage.Transformations>
-                                                                    <fftransformations:RoundedTransformation Radius="15" />
-                                                                </ffimageloading:CachedImage.Transformations>
-                                                            </ffimageloading:CachedImage>
-                                                            <Label x:Name="Label" Margin="5" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" TextColor="White" FontSize="Small" Text="{Binding pro_nombre}">
-                                                                <Label.FontFamily>
-                                                                    <OnPlatform x:TypeArguments="x:String">
-                                                                        <On Platform="iOS" Value="Oswald-Regular" />
-                                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                                    </OnPlatform>
-                                                                </Label.FontFamily>
-                                                            </Label>
-                                                        </Grid>
-                                                    </StackLayout>
-                                                </ContentView>
-                                            </ViewCell>
+                                            <ContentView>
+                                                <Grid Padding="3">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <ffimageloading:CachedImage Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
+                                                        <ffimageloading:CachedImage.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
+                                                        </ffimageloading:CachedImage.GestureRecognizers>
+                                                    </ffimageloading:CachedImage>
+                                                    <Label Text="{Binding pro_nombre}" Margin="5" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" TextColor="White" FontSize="Small">
+                                                        <Label.FontFamily>
+                                                            <OnPlatform x:TypeArguments="x:String">
+                                                                <On Platform="iOS" Value="Oswald-Regular" />
+                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                            </OnPlatform>
+                                                        </Label.FontFamily>
+                                                    </Label>
+                                                </Grid>
+                                            </ContentView>
                                         </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </RelativeLayout>-->
+                                    </cards:CarouselView.ItemTemplate>
+                                </cards:CarouselView>-->
+                               
+                            </Frame>
                         </StackLayout>
                         <AbsoluteLayout Padding="5,20,5,0" Margin="0,0,0,-25" HeightRequest="200" WidthRequest="320" HorizontalOptions="Center" IsVisible="{Binding VerTarjeta}">
                             <Image Source="{Binding ImagenTarjeta}" Aspect="Fill" HeightRequest="200" WidthRequest="320" />
@@ -1051,7 +882,6 @@
                         </AbsoluteLayout>
                     </StackLayout>
                 </StackLayout>
-
             </ScrollView>
         </StackLayout>
     </ContentPage.Content>

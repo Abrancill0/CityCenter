@@ -14,6 +14,13 @@ namespace City_Center.Page
             NavigationPage.SetTitleIcon(this, "logo@2x.png");
         }
 
+        protected override void OnDisappearing()
+        {
+            ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
+            GC.Collect();
+            base.OnDisappearing();
+        }
+
         void Tab1_Tapped(object sender, System.EventArgs e)
         {
             LabelTab1.TextColor = Color.FromHex("#EAE8ED");

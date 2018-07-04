@@ -78,6 +78,7 @@ namespace City_Center.Page
                 {
                     if (e.NewValue != 0)
                     {
+                        e.NewValue = 0;
                         CarruselPromociones.Position = 0;
                     }
                     VariablesGlobales.IndiceGastronomiaPromociones = 1;
@@ -108,7 +109,7 @@ namespace City_Center.Page
                 if (VariablesGlobales.IndiceGastronomiaPromociones == VariablesGlobales.RegistrosGastronomiaPromociones && Direccion == "Right" && e.NewValue == 100)
                 {
                     VariablesGlobales.validacionIORestaurante = 1;
-                    CarruselPromociones.Position = 1;
+                    CarruselPromociones.Position = 0;
                     CarruselPromociones.AnimateTransition = false;
 
                 }

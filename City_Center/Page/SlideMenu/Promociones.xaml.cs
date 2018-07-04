@@ -18,7 +18,7 @@ namespace City_Center.Page.SlideMenu
         {
 
             base.OnDisappearing();
-
+            ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
             GC.Collect();
 
         }

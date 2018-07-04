@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using City_Center.Clases;
 using Xamarin.Forms;
 
 namespace City_Center.Page.SlideMenu
@@ -16,11 +16,9 @@ namespace City_Center.Page.SlideMenu
 
         protected override void OnDisappearing()
         {
-
-            base.OnDisappearing();
-
+            ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
             GC.Collect();
-
+            base.OnDisappearing();
         }
     
         void CambiaIcono(object sender, System.EventArgs e)

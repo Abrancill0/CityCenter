@@ -65,7 +65,7 @@ namespace City_Center.Page
                 Application.Current.MainPage = fpm;
 
             }
-
+            ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
             base.OnDisappearing();
 
         }

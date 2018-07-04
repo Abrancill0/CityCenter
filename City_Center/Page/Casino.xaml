@@ -198,7 +198,7 @@
                                                     <RowDefinition Height="0.5*" />
                                                 </Grid.RowDefinitions>
                                                 <ffimageloading:CachedImage HeightRequest="150"
-                                                                            Aspect="AspectFill"
+                                                                            Aspect="Fill"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding des_imagen}"
@@ -399,6 +399,8 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
+
+                                
                           <cv:CarouselViewControl x:Name="CarruselPromociones"
                                                     ItemsSource="{Binding PromocionesDetalle}"
                                                     HeightRequest="300"
@@ -420,7 +422,7 @@
                                                                 <ColumnDefinition Width="*" />
                                                             </Grid.ColumnDefinitions>
                                                <ffimageloading:CachedImage
-                                                                        Aspect="AspectFill"
+                                                                       Aspect="Fill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
                                                                         Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
@@ -575,7 +577,7 @@
                                                     <RowDefinition Height="0.5*" />
                                                 </Grid.RowDefinitions>
                                                 <ffimageloading:CachedImage HeightRequest="150"
-                                                                            Aspect="AspectFill"
+                                                                            Aspect="Fill"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"
                                                                             Source="{Binding tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"

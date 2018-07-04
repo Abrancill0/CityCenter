@@ -422,8 +422,9 @@ namespace City_Center.Page
                 if (VariablesGlobales.validacionIOSCasinoPromociones == 1)
                 {
                     if (e.NewValue != 0)
-                    {
+                     {
                         CarruselPromociones.Position = 0;
+                       
                     }
                     VariablesGlobales.IndiceCasinoPromociones = 1;
                 }
@@ -441,9 +442,6 @@ namespace City_Center.Page
             }
             #endif
 
-
-
-
         }
 
         void Scrolled_CP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
@@ -454,7 +452,7 @@ namespace City_Center.Page
             {
                 string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndiceCasinoPromociones == VariablesGlobales.RegistrosCasinoPromociones && Direccion == "Right" && e.NewValue == 100)
+                if (VariablesGlobales.IndiceCasinoPromociones == VariablesGlobales.RegistrosCasinoPromociones && Direccion == "Right" && e.NewValue==100)
                 {
                     VariablesGlobales.validacionIOSCasinoPromociones = 1;
                     CarruselPromociones.Position = 1;
@@ -467,7 +465,7 @@ namespace City_Center.Page
                     VariablesGlobales.validacionIOSCasinoPromociones = 2;
                     CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones + 1;
                 }
-                else if (e.NewValue != 100)
+                else if(e.NewValue != 100)
                 {
                     VariablesGlobales.validacionIOSCasinoPromociones = 0;
                 }

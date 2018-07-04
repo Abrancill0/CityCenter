@@ -41,11 +41,12 @@ namespace City_Center.Page.SlideMenu
   
         }
 
-
         protected override void OnDisappearing()
         {
             
             base.OnDisappearing();
+
+            ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
 
             GC.Collect();
 

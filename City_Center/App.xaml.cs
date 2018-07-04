@@ -1,16 +1,12 @@
 ﻿using City_Center.Page;
 using System;
 using Plugin.FirebasePushNotification;
-//using Prism.Unity;
 using Xamarin.Forms;
 using DLToolkit.Forms.Controls;
 using System.Threading.Tasks;
-//using FFImageLoading.Forms;
-using System.Threading;
 using City_Center.Clases;
 using System.Net.Http;
 using System.Collections.Generic;
-using City_Center.Models;
 using static City_Center.Models.MensajesPendientesResultado;
 using Plugin.Toasts;
 

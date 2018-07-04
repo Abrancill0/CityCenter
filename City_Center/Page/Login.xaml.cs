@@ -24,6 +24,16 @@ namespace City_Center.Page
         {
             TextContraseña.IsPassword = true;
         }
+    
+        protected override void OnDisappearing()
+        {
+
+            base.OnDisappearing();
+            ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
+            GC.Collect();
+
+        }
+    
     }
 }
 

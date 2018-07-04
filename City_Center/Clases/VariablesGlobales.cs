@@ -82,5 +82,7 @@ namespace City_Center.Clases
 
 
         public static int ChatPresente = 0;
+
+        public static string VentanaActual;
     }
 }

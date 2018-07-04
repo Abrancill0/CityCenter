@@ -228,34 +228,34 @@ namespace City_Center.Page
 
         }
 
-        void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-        {
-
-            VariablesGlobales.IndiceHotelPromociones = e.NewValue;
-
-    #if __IOS__
-            try
+            void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
             {
-                if (VariablesGlobales.validacionIOSHotel == 1)
+
+                VariablesGlobales.IndiceHotelPromociones = e.NewValue;
+
+        #if __IOS__
+                try
                 {
-                    if (e.NewValue != 0)
+                    if (VariablesGlobales.validacionIOSHotel == 1)
                     {
-                        CarruselPromociones.Position = 0;
+                        if (e.NewValue != 0)
+                        {
+                            CarruselPromociones.Position = 0;
+                        }
+                        VariablesGlobales.IndiceHotelPromociones = 1;
                     }
-                    VariablesGlobales.IndiceHotelPromociones = 1;
+                    else if (VariablesGlobales.validacionIOSHotel == 2)
+                    {
+                        CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
+                        VariablesGlobales.IndiceHotelPromociones = VariablesGlobales.RegistrosHotelPromociones;
+                    }
+
                 }
-                else if (VariablesGlobales.validacionIOSHotel == 2)
+                catch (Exception)
                 {
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
-                    VariablesGlobales.IndiceHotelPromociones = VariablesGlobales.RegistrosHotelPromociones;
+
                 }
-
-            }
-            catch (Exception)
-            {
-
-            }
-    #endif
+        #endif
 
 
         }
@@ -328,8 +328,9 @@ namespace City_Center.Page
                     if (e.NewValue != 0)
                     {
                         CarruselPromociones2.Position = 0;
+                        VariablesGlobales.IndiceHotelPromociones2 = 1;
                     }
-                    VariablesGlobales.IndiceHotelPromociones2 = 1;
+                   
                 }
                 else if (VariablesGlobales.validacionIOSHotel2 == 2)
                 {

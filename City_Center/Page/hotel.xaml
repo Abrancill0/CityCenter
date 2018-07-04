@@ -285,20 +285,34 @@
                                     </flv:FlowListView.FlowColumnTemplate>
                                 </flv:FlowListView>
                             </StackLayout>
-                            <StackLayout HorizontalOptions="FillAndExpand"
-                                         Spacing="0"
-                                         BackgroundColor="White"
-                                         Padding="0,10,0,0"
-                                         IsVisible="{Binding MuestraFlechasPromo}">
-                                <Label Margin="20,5,0,5" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular" />
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                                </Label>
 
+                             <StackLayout HorizontalOptions="FillAndExpand"
+                                     Spacing="0"
+                                     Margin="0,30,0,0"
+                                     IsVisible="{Binding MuestraFlechasPromo}">
+                            <Label Margin="20,3,0,0"
+                                   
+                                   HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="PROMOCIONES"
+                                   TextColor="#250c4b">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                            <Frame.OutlineColor>
+                                <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
+                            </Frame.OutlineColor>
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                            </Frame.Padding>
                                 <cv:CarouselViewControl x:Name="CarruselPromociones" 
                                                     ItemsSource="{Binding PromocionesDetalle}"
                                                     HeightRequest="300"
@@ -307,12 +321,13 @@
                                                     ShowArrows="{Binding MuestraFlechasPromo, Mode=TwoWay}"
                                                     ArrowsTintColor="White"
                                                     ArrowsBackgroundColor="Black"
-                                                    Scrolled="Scrolled_HP"
+                                                     Scrolled="Scrolled_HP"
                                                     PositionSelected="PositionSelected_HP"
-                                                    Position="1">
+                                                        Position="1"
+                                                        >
                                 <cv:CarouselViewControl.ItemTemplate>
                                     <DataTemplate>
-                                          <Grid CompressedLayout.IsHeadless="true">
+                                          <Grid Padding="3" CompressedLayout.IsHeadless="true">
                                                             <Grid.RowDefinitions>
                                                                 <RowDefinition Height="*" />
                                                             </Grid.RowDefinitions>
@@ -320,7 +335,7 @@
                                                                 <ColumnDefinition Width="*" />
                                                             </Grid.ColumnDefinitions>
                                                <ffimageloading:CachedImage
-                                                                        Aspect="AspectFill"
+                                                                        Aspect="Fill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
                                                                         Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
@@ -329,7 +344,7 @@
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                 </ffimageloading:CachedImage.GestureRecognizers>
                                             </ffimageloading:CachedImage>
-                                            <Label Text="{Binding pro_nombre}"
+                                            <Label Text="{Binding pro_nombre,Mode=TwoWay}"
                                                    Margin="5"
                                                    HorizontalOptions="Center"
                                                    HorizontalTextAlignment="Center"
@@ -349,46 +364,9 @@
                                     </DataTemplate>
                                 </cv:CarouselViewControl.ItemTemplate>
                             </cv:CarouselViewControl>
-                                
-                                <!--<RelativeLayout HeightRequest="200" VerticalOptions="Start">
-                                    <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}" RowHeight="200" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
-                                        <ListView.ItemTemplate>
-                                            <DataTemplate>
-                                                <ViewCell>
-                                                    <ContentView Rotation="90" BackgroundColor="Transparent">
-                                                        <StackLayout HeightRequest="250" WidthRequest="100" Margin="0,5,0,0">
-                                                            <Grid Padding="3" CompressedLayout.IsHeadless="true">
-                                                                <Grid.RowDefinitions>
-                                                                    <RowDefinition Height="*" />
-                                                                </Grid.RowDefinitions>
-                                                                <Grid.ColumnDefinitions>
-                                                                    <ColumnDefinition Width="*" />
-                                                                </Grid.ColumnDefinitions>
-                                                                <ffimageloading:CachedImage HeightRequest="190" WidthRequest="80" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pro_imagen,StringFormat='http://cc.comprogapp.com/{0}'}" DownsampleToViewSize="true">
-                                                                    <ffimageloading:CachedImage.GestureRecognizers>
-                                                                        <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
-                                                                    </ffimageloading:CachedImage.GestureRecognizers>
-                                                                    <ffimageloading:CachedImage.Transformations>
-                                                                        <fftransformations:RoundedTransformation Radius="15" />
-                                                                    </ffimageloading:CachedImage.Transformations>
-                                                                </ffimageloading:CachedImage>
-                                                                <Label x:Name="Label" Margin="5" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" TextColor="White" FontSize="Small" Text="{Binding pro_nombre}">
-                                                                    <Label.FontFamily>
-                                                                        <OnPlatform x:TypeArguments="x:String">
-                                                                            <On Platform="iOS" Value="Oswald-Regular" />
-                                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                                        </OnPlatform>
-                                                                    </Label.FontFamily>
-                                                                </Label>
-                                                            </Grid>
-                                                        </StackLayout>
-                                                    </ContentView>
-                                                </ViewCell>
-                                            </DataTemplate>
-                                        </ListView.ItemTemplate>
-                                    </ListView>
-                                </RelativeLayout>-->
+                                    </Frame>
                             </StackLayout>
+
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
@@ -523,21 +501,32 @@
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand"
                                      Spacing="0"
-                                     BackgroundColor="White"
-                                     Padding="0,0,0,10"
+                                     Margin="0,30,0,0"
                                      IsVisible="{Binding MuestraFlechasPromo}">
-                            <Label Margin="20,5,0,-3" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
-                                    <Label.FontFamily>
-                                        <OnPlatform x:TypeArguments="x:String">
-                                            <On Platform="iOS" Value="Oswald-Regular" />
-                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                        </OnPlatform>
-                                    </Label.FontFamily>
-                                </Label>
+                            <Label Margin="20,3,0,0"
+                                   
+                                   HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="PROMOCIONES"
+                                   TextColor="#250c4b">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>
+                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                            <Frame.OutlineColor>
+                                <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
+                            </Frame.OutlineColor>
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                            </Frame.Padding>
 
-
-                            
-                            
                             <cv:CarouselViewControl x:Name="CarruselPromociones2" 
                                                     ItemsSource="{Binding PromocionesDetalle2}"
                                                     HeightRequest="300"
@@ -559,7 +548,7 @@
                                                                 <ColumnDefinition Width="*" />
                                                             </Grid.ColumnDefinitions>
                                                <ffimageloading:CachedImage
-                                                                        Aspect="AspectFill"
+                                                                        Aspect="Fill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
                                                                         Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
@@ -586,45 +575,8 @@
                                     </DataTemplate>
                                 </cv:CarouselViewControl.ItemTemplate>
                             </cv:CarouselViewControl>
-                            
-                           <!-- <RelativeLayout HeightRequest="200" VerticalOptions="Start">
-                                    <ListView Rotation="270" ItemsSource="{Binding PromocionesDetalle}" RowHeight="200" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-100}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=100}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=200}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
-                                        <ListView.ItemTemplate>
-                                            <DataTemplate>
-                                                <ViewCell>
-                                                    <ContentView Rotation="90" BackgroundColor="Transparent">
-                                                        <StackLayout HeightRequest="250" WidthRequest="100" Margin="0,5,0,0">
-                                                            <Grid Padding="3" CompressedLayout.IsHeadless="true">
-                                                                <Grid.RowDefinitions>
-                                                                    <RowDefinition Height="*" />
-                                                                </Grid.RowDefinitions>
-                                                                <Grid.ColumnDefinitions>
-                                                                    <ColumnDefinition Width="*" />
-                                                                </Grid.ColumnDefinitions>
-                                                                <ffimageloading:CachedImage HeightRequest="190" WidthRequest="80" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" DownsampleToViewSize="true">
-                                                                    <ffimageloading:CachedImage.GestureRecognizers>
-                                                                        <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
-                                                                    </ffimageloading:CachedImage.GestureRecognizers>
-                                                                    <ffimageloading:CachedImage.Transformations>
-                                                                        <fftransformations:RoundedTransformation Radius="15" />
-                                                                    </ffimageloading:CachedImage.Transformations>
-                                                                </ffimageloading:CachedImage>
-                                                                <Label x:Name="Label" Margin="5" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" TextColor="White" FontSize="Small" Text="{Binding pro_nombre}">
-                                                                    <Label.FontFamily>
-                                                                        <OnPlatform x:TypeArguments="x:String">
-                                                                            <On Platform="iOS" Value="Oswald-Regular" />
-                                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                                        </OnPlatform>
-                                                                    </Label.FontFamily>
-                                                                </Label>
-                                                            </Grid>
-                                                        </StackLayout>
-                                                    </ContentView>
-                                                </ViewCell>
-                                            </DataTemplate>
-                                        </ListView.ItemTemplate>
-                                    </ListView>
-                                </RelativeLayout>-->
+                             </Frame>
+                          
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
@@ -749,6 +701,7 @@
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
