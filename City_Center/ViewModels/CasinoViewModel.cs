@@ -408,10 +408,10 @@ namespace City_Center.ViewModels
 
 				DestacadosDetalle = new ObservableCollection<DestacadosItemViewModel>(this.ToDestacadosItemViewModel());
 
-                if (DestacadosDetalle.Count > 2)
+                if (DestacadosDetalle.Count > 0)
                 {
                     MuestraFlechaDestacado = true;
-                    VariablesGlobales.RegistrosCasinoDestacados = DestacadosDetalle.Count-2;
+                    VariablesGlobales.RegistrosCasinoDestacados = DestacadosDetalle.Count;
                 }
                 else
                 {
@@ -430,7 +430,7 @@ namespace City_Center.ViewModels
 
 		private IEnumerable<DestacadosItemViewModel> ToDestacadosItemViewModel()
 		{
-            return MainViewModel.GetInstance().listDestacados.resultado.Select(l => new DestacadosItemViewModel
+            return MainViewModel.GetInstance().listDestacados.resultado.Where(l => l.des_id > 0).Select(l => new DestacadosItemViewModel
 			{
 				des_imagen = VariablesGlobales.RutaServidor + l.des_imagen,
 				des_descripcion = l.des_descripcion,
@@ -814,9 +814,9 @@ namespace City_Center.ViewModels
 				TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
 
-                if (TorneoDetalle.Count > 2)
+                if (TorneoDetalle.Count > 0)
                 {
-                    VariablesGlobales.RegistrosCasinoTorneo = TorneoDetalle.Count-2;
+                    VariablesGlobales.RegistrosCasinoTorneo = TorneoDetalle.Count;
                     MuestraFlechas = true;
                 }
                 else
@@ -836,7 +836,7 @@ namespace City_Center.ViewModels
 
 		private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel()
 		{
-			return MainViewModel.GetInstance().listTorneo.resultado.Select(l => new TorneoItemViewModel
+            return MainViewModel.GetInstance().listTorneo.resultado.Where(l => l.tor_id > 0).Select(l => new TorneoItemViewModel
 			{
 				tor_id = l.tor_id,
 				tor_nombre = l.tor_nombre,
@@ -890,11 +890,11 @@ namespace City_Center.ViewModels
 				PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
 			
             
-                if (PromocionesDetalle.Count > 2)
+                if (PromocionesDetalle.Count > 0)
                 {
                     MuestraFlechasPromo = true;
 
-                    VariablesGlobales.RegistrosCasinoPromociones = PromocionesDetalle.Count - 2;
+                    VariablesGlobales.RegistrosCasinoPromociones = PromocionesDetalle.Count;
                 }
                 else
                 {
@@ -911,7 +911,7 @@ namespace City_Center.ViewModels
 
 		private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()
 		{
-            return this.listPromociones.resultado.Select(l => new PromocionesItemViewModel
+            return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
 			{
 				pro_id = l.pro_id,
 				pro_id_evento = l.pro_id_evento,

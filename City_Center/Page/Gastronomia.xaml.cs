@@ -66,94 +66,94 @@ namespace City_Center.Page
         }
 
 
-        void PositionSelected_GP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-        {
+//        void PositionSelected_GP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+//        {
            
-                VariablesGlobales.IndiceGastronomiaPromociones = e.NewValue;
+//                VariablesGlobales.IndiceGastronomiaPromociones = e.NewValue;
            
-            #if __IOS__
-            try
-            {
-                if (VariablesGlobales.validacionIORestaurante == 1)
-                {
-                    if (e.NewValue != 0)
-                    {
-                        e.NewValue = 0;
-                        CarruselPromociones.Position = 0;
-                    }
-                    VariablesGlobales.IndiceGastronomiaPromociones = 1;
-                }
-                else if (VariablesGlobales.validacionIORestaurante == 2)
-                {
+//            #if __IOS__
+//            try
+//            {
+//                if (VariablesGlobales.validacionIORestaurante == 1)
+//                {
+//                    if (e.NewValue != 0)
+//                    {
+//                        e.NewValue = 0;
+//                        CarruselPromociones.Position = 0;
+//                    }
+//                    VariablesGlobales.IndiceGastronomiaPromociones = 1;
+//                }
+//                else if (VariablesGlobales.validacionIORestaurante == 2)
+//                {
 
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosGastronomiaPromociones + 1;
-                    VariablesGlobales.IndiceGastronomiaPromociones = VariablesGlobales.RegistrosGastronomiaPromociones;
-                }
+//                    CarruselPromociones.Position = VariablesGlobales.RegistrosGastronomiaPromociones + 1;
+//                    VariablesGlobales.IndiceGastronomiaPromociones = VariablesGlobales.RegistrosGastronomiaPromociones;
+//                }
 
-            }
-            catch (Exception)
-            {
+//            }
+//            catch (Exception)
+//            {
 
-            }
-#endif
+//            }
+//#endif
 
-        }
+//        }
 
-        void Scrolled_GP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
-        {
-#if __IOS__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+//        void Scrolled_GP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+//        {
+//#if __IOS__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndiceGastronomiaPromociones == VariablesGlobales.RegistrosGastronomiaPromociones && Direccion == "Right" && e.NewValue == 100)
-                {
-                    VariablesGlobales.validacionIORestaurante = 1;
-                    CarruselPromociones.Position = 0;
-                    CarruselPromociones.AnimateTransition = false;
+//                if (VariablesGlobales.IndiceGastronomiaPromociones == VariablesGlobales.RegistrosGastronomiaPromociones && Direccion == "Right" && e.NewValue == 100)
+//                {
+//                    VariablesGlobales.validacionIORestaurante = 1;
+//                    CarruselPromociones.Position = 0;
+//                    CarruselPromociones.AnimateTransition = false;
 
-                }
-                else if (VariablesGlobales.IndiceGastronomiaPromociones == 1 && Direccion == "Left" && e.NewValue == 100)
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    VariablesGlobales.validacionIORestaurante = 2;
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosGastronomiaPromociones + 1;
-                }
-                else if (e.NewValue != 100)
-                {
-                    VariablesGlobales.validacionIORestaurante = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-#endif
+//                }
+//                else if (VariablesGlobales.IndiceGastronomiaPromociones == 1 && Direccion == "Left" && e.NewValue == 100)
+//                {
+//                    CarruselPromociones.AnimateTransition = false;
+//                    VariablesGlobales.validacionIORestaurante = 2;
+//                    CarruselPromociones.Position = VariablesGlobales.RegistrosGastronomiaPromociones + 1;
+//                }
+//                else if (e.NewValue != 100)
+//                {
+//                    VariablesGlobales.validacionIORestaurante = 0;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                DisplayAlert("Error", ex.ToString(), "OK");
+//            }
+//#endif
 
 
-#if __ANDROID__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+//#if __ANDROID__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndiceGastronomiaPromociones >= VariablesGlobales.RegistrosGastronomiaPromociones && Direccion == "Right")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    CarruselPromociones.Position = 0;
+//                if (VariablesGlobales.IndiceGastronomiaPromociones >= VariablesGlobales.RegistrosGastronomiaPromociones && Direccion == "Right")
+//                {
+//                    CarruselPromociones.AnimateTransition = false;
+//                    CarruselPromociones.Position = 0;
 
-                }
-                else if (VariablesGlobales.IndiceGastronomiaPromociones <= 1 && Direccion == "Left")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosGastronomiaPromociones + 1;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-#endif
-        }
+//                }
+//                else if (VariablesGlobales.IndiceGastronomiaPromociones <= 1 && Direccion == "Left")
+//                {
+//                    CarruselPromociones.AnimateTransition = false;
+//                    CarruselPromociones.Position = VariablesGlobales.RegistrosGastronomiaPromociones + 1;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                DisplayAlert("Error", ex.ToString(), "OK");
+//            }
+//#endif
+        //}
 
     }
 }

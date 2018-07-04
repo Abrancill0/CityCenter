@@ -46,6 +46,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
+
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -521,6 +522,8 @@
     <BundleResource Include="Resources\promoup.png" />
     <BundleResource Include="Resources\chatnotificaciones%402x.png" />
     <BundleResource Include="Resources\TICKETSHOWS_S.png" />
+    <BundleResource Include="Resources\FlechaDerecha.png" />
+    <BundleResource Include="Resources\FlechaIzquierda.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

@@ -395,10 +395,10 @@ namespace City_Center.ViewModels
 
                 TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
 
-                if (TorneoDetalle.Count>2)
+                if (TorneoDetalle.Count>0)
                 {
                     MuestraFlechas = true;
-                    VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count-2;
+                    VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count;
                     //VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count;
                    
                 }
@@ -417,7 +417,7 @@ namespace City_Center.ViewModels
 
         private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel()
         {
-			return MainViewModel.GetInstance().listTorneo.resultado.Select(l => new TorneoItemViewModel
+            return MainViewModel.GetInstance().listTorneo.resultado.Where(l => l.tor_id > 0).Select(l => new TorneoItemViewModel
             {
                 tor_id = l.tor_id,
                 tor_nombre = l.tor_nombre,
@@ -554,10 +554,10 @@ namespace City_Center.ViewModels
 
                 PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
 
-                if (PromocionesDetalle.Count > 2)
+                if (PromocionesDetalle.Count > 0)
                 {
                     MuestraFlechasPromo = true;
-                    VariablesGlobales.RegistrosPromociones = PromocionesDetalle.Count - 2;
+                    VariablesGlobales.RegistrosPromociones = PromocionesDetalle.Count;
 
                 }
                 else
@@ -580,7 +580,7 @@ namespace City_Center.ViewModels
 
         private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()
         {
-            return this.listPromociones.resultado.Select(l => new PromocionesItemViewModel
+            return this.listPromociones.resultado.Where(l=> l.pro_id>0).Select(l => new PromocionesItemViewModel
             {
                 pro_id = l.pro_id,
                 pro_id_evento = l.pro_id_evento,

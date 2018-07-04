@@ -368,7 +368,7 @@ namespace City_Center.ViewModels
 
                 PromocionesDetalle2 = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
 
-                if (PromocionesDetalle.Count > 2)
+                if (PromocionesDetalle.Count > 0)
                 {
                     MuestraFlechasPromo = true;
 
@@ -390,7 +390,7 @@ namespace City_Center.ViewModels
 
         private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()
         {
-            return this.listPromociones.resultado.Select(l => new PromocionesItemViewModel
+            return this.listPromociones.resultado.Where(l => l.pro_id>0).Select(l => new PromocionesItemViewModel
             {
                 pro_id = l.pro_id,
                 pro_id_evento = l.pro_id_evento,

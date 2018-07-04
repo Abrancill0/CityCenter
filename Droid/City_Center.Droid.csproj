@@ -574,6 +574,8 @@
     <AndroidResource Include="Resources\drawable\tiendamobile.jpg" />
     <AndroidResource Include="Resources\drawable\IconNotification.png" />
     <AndroidResource Include="Resources\drawable\ChatNotificacion.png" />
+    <AndroidResource Include="Resources\drawable\FlechaDerecha.png" />
+    <AndroidResource Include="Resources\drawable\FlechaIzquierda.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />

@@ -364,98 +364,98 @@ namespace City_Center.Page
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewTienda());
         }
 
-        void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-        {
+//        void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+//        {
 
-            VariablesGlobales.indice = e.NewValue;
+//            VariablesGlobales.indice = e.NewValue;
 
-#if __IOS__
-            try
-            {
+//#if __IOS__
+//            try
+//            {
 
-                if (VariablesGlobales.validacionIOS == 1)
-                {
-                    if (e.NewValue != 0)
-                    {
-                        CarruselTorneos.Position = 0;
-                        VariablesGlobales.indice = 1;
-                    }
-                }
-                else if (VariablesGlobales.validacionIOS == 2)
-                {
-                    //if (e.NewValue == 0)
-                    //{
-                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
-                    VariablesGlobales.indice = VariablesGlobales.RegistrosTorneo;
-                    //}
-                }
-
-
-            }
-            catch (Exception)
-            {
-
-            }
-#endif
-        }
-
-        void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
-        {
-#if __IOS__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
-
-                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion == "Right")
-                {
-                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
-                    VariablesGlobales.validacionIOS = 1;
-                    CarruselTorneos.Position = 0;
-                    CarruselTorneos.AnimateTransition = false;
-
-                }
-                else if (VariablesGlobales.indice == 1 && Direccion == "Left")
-                {
-                    CarruselTorneos.AnimateTransition = false;
-                    VariablesGlobales.validacionIOS = 2;
-                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
-                }
-                else
-                {
-                    VariablesGlobales.validacionIOS = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-#endif
-
-#if __ANDROID__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
-
-                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion == "Right")
-                {
-                    CarruselTorneos.AnimateTransition = false;
-                    CarruselTorneos.Position = 1;
+//                if (VariablesGlobales.validacionIOS == 1)
+//                {
+//                    if (e.NewValue != 0)
+//                    {
+//                        CarruselTorneos.Position = 0;
+//                        VariablesGlobales.indice = 1;
+//                    }
+//                }
+//                else if (VariablesGlobales.validacionIOS == 2)
+//                {
+//                    //if (e.NewValue == 0)
+//                    //{
+//                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
+//                    VariablesGlobales.indice = VariablesGlobales.RegistrosTorneo;
+//                    //}
+//                }
 
 
-                }
-                else if (VariablesGlobales.indice == 1 && Direccion == "Left")
-                {
-                    CarruselTorneos.AnimateTransition = false;
-                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
+//            }
+//            catch (Exception)
+//            {
 
-#endif
-        }
+//            }
+//#endif
+//        }
+
+//        void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+//        {
+//#if __IOS__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
+
+//                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion == "Right")
+//                {
+//                    //CarruselTorneos.ItemsSource = Inicito.TorneoDetalle;
+//                    VariablesGlobales.validacionIOS = 1;
+//                    CarruselTorneos.Position = 0;
+//                    CarruselTorneos.AnimateTransition = false;
+
+//                }
+//                else if (VariablesGlobales.indice == 1 && Direccion == "Left")
+//                {
+//                    CarruselTorneos.AnimateTransition = false;
+//                    VariablesGlobales.validacionIOS = 2;
+//                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
+//                }
+//                else
+//                {
+//                    VariablesGlobales.validacionIOS = 0;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                DisplayAlert("Error", ex.ToString(), "OK");
+//            }
+//#endif
+
+//#if __ANDROID__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
+
+//                if (VariablesGlobales.indice == VariablesGlobales.RegistrosTorneo && Direccion == "Right")
+//                {
+//                    CarruselTorneos.AnimateTransition = false;
+//                    CarruselTorneos.Position = 1;
+
+
+//                }
+//                else if (VariablesGlobales.indice == 1 && Direccion == "Left")
+//                {
+//                    CarruselTorneos.AnimateTransition = false;
+//                    CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo + 1;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                DisplayAlert("Error", ex.ToString(), "OK");
+//            }
+
+//#endif
+        //}
 
 //        void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
 //        {

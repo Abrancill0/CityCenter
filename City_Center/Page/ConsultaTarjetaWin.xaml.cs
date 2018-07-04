@@ -23,7 +23,7 @@ namespace City_Center.Page
         {
             base.OnAppearing();
    
-			TarjetaPrueba.Source = "DummyCard";
+			//TarjetaPrueba.Source = "DummyCard";
 
         }
 

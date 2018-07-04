@@ -228,185 +228,185 @@ namespace City_Center.Page
 
         }
 
-            void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-            {
+//            void PositionSelected_HP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+//            {
 
-                VariablesGlobales.IndiceHotelPromociones = e.NewValue;
+//                VariablesGlobales.IndiceHotelPromociones = e.NewValue;
 
-        #if __IOS__
-                try
-                {
-                    if (VariablesGlobales.validacionIOSHotel == 1)
-                    {
-                        if (e.NewValue != 0)
-                        {
-                            CarruselPromociones.Position = 0;
-                        }
-                        VariablesGlobales.IndiceHotelPromociones = 1;
-                    }
-                    else if (VariablesGlobales.validacionIOSHotel == 2)
-                    {
-                        CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
-                        VariablesGlobales.IndiceHotelPromociones = VariablesGlobales.RegistrosHotelPromociones;
-                    }
+//        #if __IOS__
+//                try
+//                {
+//                    if (VariablesGlobales.validacionIOSHotel == 1)
+//                    {
+//                        if (e.NewValue != 0)
+//                        {
+//                            CarruselPromociones.Position = 0;
+//                        }
+//                        VariablesGlobales.IndiceHotelPromociones = 1;
+//                    }
+//                    else if (VariablesGlobales.validacionIOSHotel == 2)
+//                    {
+//                        CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
+//                        VariablesGlobales.IndiceHotelPromociones = VariablesGlobales.RegistrosHotelPromociones;
+//                    }
 
-                }
-                catch (Exception)
-                {
+//                }
+//                catch (Exception)
+//                {
 
-                }
-        #endif
+//                }
+//        #endif
 
 
-        }
+//        }
 
-        void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
-        {
-            #if __IOS__
-                        try
-                        {
-                            string Direccion = Convert.ToString(e.Direction);
+//        void Scrolled_HP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+//        {
+//            #if __IOS__
+//                        try
+//                        {
+//                            string Direccion = Convert.ToString(e.Direction);
 
-                            if (VariablesGlobales.IndiceHotelPromociones == VariablesGlobales.RegistrosHotelPromociones && Direccion == "Right" && e.NewValue == 100)
-                            {
-                                VariablesGlobales.validacionIOSHotel = 1;
-                                CarruselPromociones.Position = 0;
-                                CarruselPromociones.AnimateTransition = false;
+//                            if (VariablesGlobales.IndiceHotelPromociones == VariablesGlobales.RegistrosHotelPromociones && Direccion == "Right" && e.NewValue == 100)
+//                            {
+//                                VariablesGlobales.validacionIOSHotel = 1;
+//                                CarruselPromociones.Position = 0;
+//                                CarruselPromociones.AnimateTransition = false;
 
-                            }
-                            else if (VariablesGlobales.IndiceHotelPromociones == 1 && Direccion == "Left" && e.NewValue == 100)
-                            {
-                                CarruselPromociones.AnimateTransition = false;
-                                VariablesGlobales.validacionIOSHotel = 2;
-                                CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
-                            }
-                            else if (e.NewValue != 100)
-                            {
-                                VariablesGlobales.validacionIOSHotel = 0;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            DisplayAlert("Error", ex.ToString(), "OK");
-                        }
-            #endif
+//                            }
+//                            else if (VariablesGlobales.IndiceHotelPromociones == 1 && Direccion == "Left" && e.NewValue == 100)
+//                            {
+//                                CarruselPromociones.AnimateTransition = false;
+//                                VariablesGlobales.validacionIOSHotel = 2;
+//                                CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
+//                            }
+//                            else if (e.NewValue != 100)
+//                            {
+//                                VariablesGlobales.validacionIOSHotel = 0;
+//                            }
+//                        }
+//                        catch (Exception ex)
+//                        {
+//                            DisplayAlert("Error", ex.ToString(), "OK");
+//                        }
+//            #endif
 
-            #if __ANDROID__
-                        try
-                        {
-                            string Direccion = Convert.ToString(e.Direction);
+//            #if __ANDROID__
+//                        try
+//                        {
+//                            string Direccion = Convert.ToString(e.Direction);
 
-                            if (VariablesGlobales.IndiceHotelPromociones >= VariablesGlobales.RegistrosHotelPromociones && Direccion == "Right")
-                            {
-                                CarruselPromociones.AnimateTransition = false;
-                                CarruselPromociones.Position = 0;
+//                            if (VariablesGlobales.IndiceHotelPromociones >= VariablesGlobales.RegistrosHotelPromociones && Direccion == "Right")
+//                            {
+//                                CarruselPromociones.AnimateTransition = false;
+//                                CarruselPromociones.Position = 0;
 
-                            }
-                            else if (VariablesGlobales.IndiceHotelPromociones <= 1 && Direccion == "Left")
-                            {
-                                CarruselPromociones.AnimateTransition = false;
-                                CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            DisplayAlert("Error", ex.ToString(), "OK");
-                        }
-            #endif
-        }
+//                            }
+//                            else if (VariablesGlobales.IndiceHotelPromociones <= 1 && Direccion == "Left")
+//                            {
+//                                CarruselPromociones.AnimateTransition = false;
+//                                CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones + 1;
+//                            }
+//                        }
+//                        catch (Exception ex)
+//                        {
+//                            DisplayAlert("Error", ex.ToString(), "OK");
+//                        }
+//            #endif
+//        }
 
-        void PositionSelected_HP2(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-        {
+//        void PositionSelected_HP2(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+//        {
 
-            VariablesGlobales.IndiceHotelPromociones2 = e.NewValue;
+//            VariablesGlobales.IndiceHotelPromociones2 = e.NewValue;
 
-#if __IOS__
-            try
-            {
-                if (VariablesGlobales.validacionIOSHotel2 == 1)
-                {
-                    if (e.NewValue != 0)
-                    {
-                        CarruselPromociones2.Position = 0;
-                        VariablesGlobales.IndiceHotelPromociones2 = 1;
-                    }
+//#if __IOS__
+//            try
+//            {
+//                if (VariablesGlobales.validacionIOSHotel2 == 1)
+//                {
+//                    if (e.NewValue != 0)
+//                    {
+//                        CarruselPromociones2.Position = 0;
+//                        VariablesGlobales.IndiceHotelPromociones2 = 1;
+//                    }
                    
-                }
-                else if (VariablesGlobales.validacionIOSHotel2 == 2)
-                {
+//                }
+//                else if (VariablesGlobales.validacionIOSHotel2 == 2)
+//                {
 
-                    CarruselPromociones2.Position = VariablesGlobales.RegistrosHotelPromociones2 + 1;
-                    VariablesGlobales.IndiceHotelPromociones2 = VariablesGlobales.RegistrosHotelPromociones2;
-                }
+//                    CarruselPromociones2.Position = VariablesGlobales.RegistrosHotelPromociones2 + 1;
+//                    VariablesGlobales.IndiceHotelPromociones2 = VariablesGlobales.RegistrosHotelPromociones2;
+//                }
 
-            }
-            catch (Exception)
-            {
+//            }
+//            catch (Exception)
+//            {
 
-            }
-#endif
-        }
+//            }
+//#endif
+//        }
 
-        void Scrolled_HP2(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
-        {
+//        void Scrolled_HP2(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+//        {
             
-#if __IOS__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+//#if __IOS__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndiceHotelPromociones2 == VariablesGlobales.RegistrosHotelPromociones2 && Direccion == "Right" && e.NewValue == 100)
-                {
-                    VariablesGlobales.validacionIOSHotel2 = 1;
-                    CarruselPromociones2.Position = 0;
-                    CarruselPromociones2.AnimateTransition = false;
+//                if (VariablesGlobales.IndiceHotelPromociones2 == VariablesGlobales.RegistrosHotelPromociones2 && Direccion == "Right" && e.NewValue == 100)
+//                {
+//                    VariablesGlobales.validacionIOSHotel2 = 1;
+//                    CarruselPromociones2.Position = 0;
+//                    CarruselPromociones2.AnimateTransition = false;
 
-                }
-                else if (VariablesGlobales.IndiceHotelPromociones2 == 1 && Direccion == "Left" && e.NewValue == 100)
-                {
-                    CarruselPromociones2.AnimateTransition = false;
-                    VariablesGlobales.validacionIOSHotel2 = 2;
-                    CarruselPromociones2.Position = VariablesGlobales.RegistrosHotelPromociones2 + 1;
-                }
-                else if (e.NewValue != 100)
-                {
-                    VariablesGlobales.validacionIOSHotel2 = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-#endif
-
-
+//                }
+//                else if (VariablesGlobales.IndiceHotelPromociones2 == 1 && Direccion == "Left" && e.NewValue == 100)
+//                {
+//                    CarruselPromociones2.AnimateTransition = false;
+//                    VariablesGlobales.validacionIOSHotel2 = 2;
+//                    CarruselPromociones2.Position = VariablesGlobales.RegistrosHotelPromociones2 + 1;
+//                }
+//                else if (e.NewValue != 100)
+//                {
+//                    VariablesGlobales.validacionIOSHotel2 = 0;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                DisplayAlert("Error", ex.ToString(), "OK");
+//            }
+//#endif
 
 
-#if __ANDROID__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
-
-                if (VariablesGlobales.IndiceHotelPromociones2 >= VariablesGlobales.RegistrosHotelPromociones2 && Direccion == "Right")
-                {
-                    CarruselPromociones2.AnimateTransition = false;
-                    CarruselPromociones2.Position = 0;
-
-                }
-                else if (VariablesGlobales.IndiceHotelPromociones2 <= 1 && Direccion == "Left")
-                {
-                    CarruselPromociones2.AnimateTransition = false;
-                    CarruselPromociones2.Position = VariablesGlobales.RegistrosHotelPromociones2 + 1;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-#endif
 
 
-        }
+//#if __ANDROID__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
+
+//                if (VariablesGlobales.IndiceHotelPromociones2 >= VariablesGlobales.RegistrosHotelPromociones2 && Direccion == "Right")
+//                {
+//                    CarruselPromociones2.AnimateTransition = false;
+//                    CarruselPromociones2.Position = 0;
+
+//                }
+//                else if (VariablesGlobales.IndiceHotelPromociones2 <= 1 && Direccion == "Left")
+//                {
+//                    CarruselPromociones2.AnimateTransition = false;
+//                    CarruselPromociones2.Position = VariablesGlobales.RegistrosHotelPromociones2 + 1;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                DisplayAlert("Error", ex.ToString(), "OK");
+//            }
+//#endif
+
+
+        //}
 
 	}
 

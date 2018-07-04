@@ -79,7 +79,7 @@
 
             </StackLayout>
             <AbsoluteLayout HeightRequest="200" WidthRequest="300" HorizontalOptions="Center">
-                    <Image x:Name="TarjetaPrueba" Source="{Binding ImagenTarjeta,Mode=TwoWay}"
+                    <Image x:Name="TarjetaPrueba" Source="{Binding ImagenTarjeta, Mode=TwoWay}"
                            Aspect="Fill" 
                            HeightRequest="200" 
                            WidthRequest="300">

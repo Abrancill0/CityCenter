@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using City_Center.Clases;
 using System.Net.Http;
 using System.Collections.Generic;
+
+using City_Center.Models;  
 using static City_Center.Models.MensajesPendientesResultado;
 using Plugin.Toasts;
 

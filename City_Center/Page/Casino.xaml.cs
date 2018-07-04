@@ -226,279 +226,279 @@ namespace City_Center.Page
             }
         }
 
-        void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-        {
+//        void PositionSelected_CT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+//        {
 
-            VariablesGlobales.IndiceCasinoTorneo = e.NewValue;
+//            VariablesGlobales.IndiceCasinoTorneo = e.NewValue;
 
-            #if __IOS__
-                        try
-                        {
-                            if (VariablesGlobales.validacionIOSCasinoTorneo == 1)
-                            {
-                                if (e.NewValue != 0)
-                                {
-                                    CarruselTorneos.Position = 0;
-                                }
-                                VariablesGlobales.IndiceCasinoTorneo = 1;
-                            }
-                            else if (VariablesGlobales.validacionIOSCasinoTorneo == 2)
-                            {
+//            #if __IOS__
+//                        try
+//                        {
+//                            if (VariablesGlobales.validacionIOSCasinoTorneo == 1)
+//                            {
+//                                if (e.NewValue != 0)
+//                                {
+//                                    CarruselTorneos.Position = 0;
+//                                }
+//                                VariablesGlobales.IndiceCasinoTorneo = 1;
+//                            }
+//                            else if (VariablesGlobales.validacionIOSCasinoTorneo == 2)
+//                            {
                                 
-                                CarruselTorneos.Position = VariablesGlobales.RegistrosCasinoTorneo + 1;
-                                VariablesGlobales.IndiceCasinoTorneo = VariablesGlobales.RegistrosCasinoTorneo;
-                            }
+//                                CarruselTorneos.Position = VariablesGlobales.RegistrosCasinoTorneo + 1;
+//                                VariablesGlobales.IndiceCasinoTorneo = VariablesGlobales.RegistrosCasinoTorneo;
+//                            }
 
-                        }
-                        catch (Exception)
-                        {
+//                        }
+//                        catch (Exception)
+//                        {
 
-                        }
-            #endif
+//                        }
+//            #endif
 
-        }
+//        }
 
-        void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
-        {
-            #if __IOS__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+//        void Scrolled_CT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+//        {
+//            #if __IOS__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndiceCasinoTorneo == VariablesGlobales.RegistrosCasinoTorneo && Direccion == "Right" && e.NewValue == 100)
-                {
-                    VariablesGlobales.validacionIOSCasinoTorneo = 1;
-                    CarruselTorneos.Position = 1;
-                    CarruselTorneos.AnimateTransition = false;
+//                if (VariablesGlobales.IndiceCasinoTorneo == VariablesGlobales.RegistrosCasinoTorneo && Direccion == "Right" && e.NewValue == 100)
+//                {
+//                    VariablesGlobales.validacionIOSCasinoTorneo = 1;
+//                    CarruselTorneos.Position = 1;
+//                    CarruselTorneos.AnimateTransition = false;
 
-                }
-                else if (VariablesGlobales.IndiceCasinoTorneo == 1 && Direccion == "Left" && e.NewValue == 100)
-                {
-                    CarruselTorneos.AnimateTransition = false;
-                    VariablesGlobales.validacionIOSCasinoTorneo = 2;
-                    CarruselTorneos.Position = VariablesGlobales.RegistrosCasinoTorneo + 1;
-                }
-                else if (e.NewValue != 100)
-                {
-                    VariablesGlobales.validacionIOSCasinoTorneo = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-            #endif
-
-
+//                }
+//                else if (VariablesGlobales.IndiceCasinoTorneo == 1 && Direccion == "Left" && e.NewValue == 100)
+//                {
+//                    CarruselTorneos.AnimateTransition = false;
+//                    VariablesGlobales.validacionIOSCasinoTorneo = 2;
+//                    CarruselTorneos.Position = VariablesGlobales.RegistrosCasinoTorneo + 1;
+//                }
+//                else if (e.NewValue != 100)
+//                {
+//                    VariablesGlobales.validacionIOSCasinoTorneo = 0;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                DisplayAlert("Error", ex.ToString(), "OK");
+//            }
+//            #endif
 
 
-#if __ANDROID__
 
-                        try
-                        {
-                            string Direccion = Convert.ToString(e.Direction);
 
-                            if (VariablesGlobales.IndiceCasinoTorneo >= VariablesGlobales.RegistrosCasinoTorneo && Direccion == "Right")
-                            {
-                                CarruselTorneos.AnimateTransition = false;
-                                CarruselTorneos.Position = 0;
+//#if __ANDROID__
 
-                            }
-                            else if (VariablesGlobales.IndiceCasinoTorneo <= 1 && Direccion == "Left")
-                            {
-                                CarruselTorneos.AnimateTransition = false;
-                                CarruselTorneos.Position = VariablesGlobales.RegistrosCasinoTorneo + 1;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            DisplayAlert("Error", ex.ToString(), "OK");
-                        }
-#endif
-        }
+//                        try
+//                        {
+//                            string Direccion = Convert.ToString(e.Direction);
 
-        void PositionSelected_DT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-        {
+//                            if (VariablesGlobales.IndiceCasinoTorneo >= VariablesGlobales.RegistrosCasinoTorneo && Direccion == "Right")
+//                            {
+//                                CarruselTorneos.AnimateTransition = false;
+//                                CarruselTorneos.Position = 0;
+
+//                            }
+//                            else if (VariablesGlobales.IndiceCasinoTorneo <= 1 && Direccion == "Left")
+//                            {
+//                                CarruselTorneos.AnimateTransition = false;
+//                                CarruselTorneos.Position = VariablesGlobales.RegistrosCasinoTorneo + 1;
+//                            }
+//                        }
+//                        catch (Exception ex)
+//                        {
+//                            DisplayAlert("Error", ex.ToString(), "OK");
+//                        }
+//#endif
+//        }
+
+//        void PositionSelected_DT(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+//        {
             
-                VariablesGlobales.IndiceCasinoDestacados = e.NewValue;
+//                VariablesGlobales.IndiceCasinoDestacados = e.NewValue;
             
-            #if __IOS__
-            try
-            {
-                if (VariablesGlobales.validacionIOSDestacados == 1)
-                {
-                    if (e.NewValue != 0)
-                    {
-                        CarruselDestacados.Position = 0;
-                    }
-                    VariablesGlobales.IndiceCasinoDestacados = 1;
-                }
-                else if (VariablesGlobales.validacionIOSDestacados == 2)
-                {
+//            #if __IOS__
+//            try
+//            {
+//                if (VariablesGlobales.validacionIOSDestacados == 1)
+//                {
+//                    if (e.NewValue != 0)
+//                    {
+//                        CarruselDestacados.Position = 0;
+//                    }
+//                    VariablesGlobales.IndiceCasinoDestacados = 1;
+//                }
+//                else if (VariablesGlobales.validacionIOSDestacados == 2)
+//                {
 
-                    CarruselDestacados.Position = VariablesGlobales.RegistrosCasinoDestacados + 1;
-                    VariablesGlobales.IndiceCasinoDestacados = VariablesGlobales.RegistrosCasinoDestacados;
-                }
+//                    CarruselDestacados.Position = VariablesGlobales.RegistrosCasinoDestacados + 1;
+//                    VariablesGlobales.IndiceCasinoDestacados = VariablesGlobales.RegistrosCasinoDestacados;
+//                }
 
-            }
-            catch (Exception)
-            {
+//            }
+//            catch (Exception)
+//            {
 
-            }
-            #endif
-
-
+//            }
+//            #endif
 
 
-        }
 
-        void Scrolled_DT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
-        {
+
+//        }
+
+//        void Scrolled_DT(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+//        {
             
-        #if __IOS__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+//        #if __IOS__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndiceCasinoDestacados == VariablesGlobales.RegistrosCasinoDestacados && Direccion == "Right" && e.NewValue == 100)
-                {
-                    VariablesGlobales.validacionIOSDestacados = 1;
-                    CarruselDestacados.Position = 1;
-                    CarruselDestacados.AnimateTransition = false;
+//                if (VariablesGlobales.IndiceCasinoDestacados == VariablesGlobales.RegistrosCasinoDestacados && Direccion == "Right" && e.NewValue == 100)
+//                {
+//                    VariablesGlobales.validacionIOSDestacados = 1;
+//                    CarruselDestacados.Position = 1;
+//                    CarruselDestacados.AnimateTransition = false;
 
-                }
-                else if (VariablesGlobales.IndiceCasinoDestacados == 1 && Direccion == "Left" && e.NewValue == 100)
-                {
-                    CarruselDestacados.AnimateTransition = false;
-                    VariablesGlobales.validacionIOSDestacados = 2;
-                    CarruselDestacados.Position = VariablesGlobales.RegistrosCasinoDestacados + 1;
-                }
-                else if (e.NewValue != 100)
-                {
-                    VariablesGlobales.validacionIOSDestacados = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-        #endif
+//                }
+//                else if (VariablesGlobales.IndiceCasinoDestacados == 1 && Direccion == "Left" && e.NewValue == 100)
+//                {
+//                    CarruselDestacados.AnimateTransition = false;
+//                    VariablesGlobales.validacionIOSDestacados = 2;
+//                    CarruselDestacados.Position = VariablesGlobales.RegistrosCasinoDestacados + 1;
+//                }
+//                else if (e.NewValue != 100)
+//                {
+//                    VariablesGlobales.validacionIOSDestacados = 0;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                DisplayAlert("Error", ex.ToString(), "OK");
+//            }
+//        #endif
 
 
 
-#if __ANDROID__
+//#if __ANDROID__
 
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndiceCasinoDestacados >= VariablesGlobales.RegistrosCasinoDestacados && Direccion == "Right")
-                {
-                    CarruselDestacados.AnimateTransition = false;
-                    CarruselDestacados.Position = 0;
+//                if (VariablesGlobales.IndiceCasinoDestacados >= VariablesGlobales.RegistrosCasinoDestacados && Direccion == "Right")
+//                {
+//                    CarruselDestacados.AnimateTransition = false;
+//                    CarruselDestacados.Position = 0;
 
-                }
-                else if (VariablesGlobales.IndiceCasinoDestacados <= 1 && Direccion == "Left")
-                {
-                    CarruselDestacados.AnimateTransition = false;
-                    CarruselDestacados.Position = VariablesGlobales.RegistrosCasinoDestacados + 1;
-                }
-            }
-            catch (Exception)
-            {
+//                }
+//                else if (VariablesGlobales.IndiceCasinoDestacados <= 1 && Direccion == "Left")
+//                {
+//                    CarruselDestacados.AnimateTransition = false;
+//                    CarruselDestacados.Position = VariablesGlobales.RegistrosCasinoDestacados + 1;
+//                }
+//            }
+//            catch (Exception)
+//            {
                 
-            }
-#endif
-        }
+//            }
+//#endif
+//        }
 
-        void PositionSelected_CP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-        {
+//        void PositionSelected_CP(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+//        {
            
-                VariablesGlobales.IndiceCasinoPromociones = e.NewValue;
+//                VariablesGlobales.IndiceCasinoPromociones = e.NewValue;
 
-            #if __IOS__
-            try
-            {
-                if (VariablesGlobales.validacionIOSCasinoPromociones == 1)
-                {
-                    if (e.NewValue != 0)
-                     {
-                        CarruselPromociones.Position = 0;
+//            #if __IOS__
+//            try
+//            {
+//                if (VariablesGlobales.validacionIOSCasinoPromociones == 1)
+//                {
+//                    if (e.NewValue != 0)
+//                     {
+//                        CarruselPromociones.Position = 0;
                        
-                    }
-                    VariablesGlobales.IndiceCasinoPromociones = 1;
-                }
-                else if (VariablesGlobales.validacionIOSCasinoPromociones == 2)
-                {
+//                    }
+//                    VariablesGlobales.IndiceCasinoPromociones = 1;
+//                }
+//                else if (VariablesGlobales.validacionIOSCasinoPromociones == 2)
+//                {
 
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones + 1;
-                    VariablesGlobales.IndiceCasinoPromociones = VariablesGlobales.RegistrosCasinoPromociones;
-                }
+//                    CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones + 1;
+//                    VariablesGlobales.IndiceCasinoPromociones = VariablesGlobales.RegistrosCasinoPromociones;
+//                }
 
-            }
-            catch (Exception)
-            {
+//            }
+//            catch (Exception)
+//            {
 
-            }
-            #endif
+//            }
+//            #endif
 
-        }
+//        }
 
-        void Scrolled_CP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
-        {
+//        void Scrolled_CP(object sender, CarouselView.FormsPlugin.Abstractions.ScrolledEventArgs e)
+//        {
 
-            #if __IOS__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+//            #if __IOS__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndiceCasinoPromociones == VariablesGlobales.RegistrosCasinoPromociones && Direccion == "Right" && e.NewValue==100)
-                {
-                    VariablesGlobales.validacionIOSCasinoPromociones = 1;
-                    CarruselPromociones.Position = 1;
-                    CarruselPromociones.AnimateTransition = false;
+//                if (VariablesGlobales.IndiceCasinoPromociones == VariablesGlobales.RegistrosCasinoPromociones && Direccion == "Right" && e.NewValue==100)
+//                {
+//                    VariablesGlobales.validacionIOSCasinoPromociones = 1;
+//                    CarruselPromociones.Position = 1;
+//                    CarruselPromociones.AnimateTransition = false;
 
-                }
-                else if (VariablesGlobales.IndiceCasinoPromociones == 1 && Direccion == "Left" && e.NewValue == 100)
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    VariablesGlobales.validacionIOSCasinoPromociones = 2;
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones + 1;
-                }
-                else if(e.NewValue != 100)
-                {
-                    VariablesGlobales.validacionIOSCasinoPromociones = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-            #endif
+//                }
+//                else if (VariablesGlobales.IndiceCasinoPromociones == 1 && Direccion == "Left" && e.NewValue == 100)
+//                {
+//                    CarruselPromociones.AnimateTransition = false;
+//                    VariablesGlobales.validacionIOSCasinoPromociones = 2;
+//                    CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones + 1;
+//                }
+//                else if(e.NewValue != 100)
+//                {
+//                    VariablesGlobales.validacionIOSCasinoPromociones = 0;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                DisplayAlert("Error", ex.ToString(), "OK");
+//            }
+//            #endif
 
 
-#if __ANDROID__
-            try
-            {
-                string Direccion = Convert.ToString(e.Direction);
+//#if __ANDROID__
+//            try
+//            {
+//                string Direccion = Convert.ToString(e.Direction);
 
-                if (VariablesGlobales.IndiceCasinoPromociones >= VariablesGlobales.RegistrosCasinoPromociones && Direccion == "Right")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    CarruselPromociones.Position = 0;
+//                if (VariablesGlobales.IndiceCasinoPromociones >= VariablesGlobales.RegistrosCasinoPromociones && Direccion == "Right")
+//                {
+//                    CarruselPromociones.AnimateTransition = false;
+//                    CarruselPromociones.Position = 0;
 
-                }
-                else if (VariablesGlobales.IndiceCasinoPromociones <= 1 && Direccion == "Left")
-                {
-                    CarruselPromociones.AnimateTransition = false;
-                    CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones + 1;
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("Error", ex.ToString(), "OK");
-            }
-#endif
-        }
+//                }
+//                else if (VariablesGlobales.IndiceCasinoPromociones <= 1 && Direccion == "Left")
+//                {
+//                    CarruselPromociones.AnimateTransition = false;
+//                    CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones + 1;
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                DisplayAlert("Error", ex.ToString(), "OK");
+//            }
+//#endif
+        //}
     }
 }

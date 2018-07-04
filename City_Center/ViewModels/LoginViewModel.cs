@@ -97,6 +97,9 @@ namespace City_Center.ViewModels
                 if (!ValidaEmailMethod.ValidateEMail(this.Email))
                 {
                     await Mensajes.Alerta("Correo electronico mal estructurado");
+
+                    UserDialogs.Instance.HideLoading();
+
                     return;
                 }
 

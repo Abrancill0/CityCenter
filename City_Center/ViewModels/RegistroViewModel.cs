@@ -428,7 +428,7 @@ namespace City_Center.ViewModels
                     var Contenido = new FormUrlEncodedContent(new[]
                        {
                             new KeyValuePair<string, string>("neq_equipo", Application.Current.Properties["Token"].ToString()),
-                        new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(IDUsuario)),
+                            new KeyValuePair<string, string>("neq_id_usuario", Convert.ToString(IDUsuario)),
                             new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
                             new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
                         });
