@@ -92,8 +92,8 @@
 	<string>This app needs access to photos.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>New Entry</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>City Center necesita uso de tu gps</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>City Center necesita uso de tu ubicación</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>City Center necesita uso de tu ubicación</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
@@ -106,6 +106,12 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+		<key>NSTemporaryExceptionMinimumTLSVersion</key>
+		<string>TLSv1.2</string>
+		<key>NSIncludeSubdomains</key>
+		<true/>
+		<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+		<true/>
 	</dict>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
@@ -113,5 +119,16 @@
 	<array>
 		<string>es</string>
 	</array>
+<<<<<<< HEAD
+=======
+	<key>NSExceptionDomains</key>
+	<dict>
+		<key>citycenterapp-1524870051302.appspot.com</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+		</dict>
+	</dict>
+>>>>>>> 9fe954edc28410eb3fb449a2a59257d882493eda
 </dict>
 </plist>
