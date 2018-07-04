@@ -155,13 +155,13 @@
                     <ListView ItemsSource="{Binding RestaurantMenuDetalle}"
                               SeparatorVisibility="None"
                               BackgroundColor="#EBEBEB"
+                             
                               HasUnevenRows="true">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
                                     <ContentView>
                                         <StackLayout Spacing="0">
-                                          
                                          <Label Margin="{Binding Margen,Mode=TwoWay}" 
                                                 Text="{Binding NombreMenu}"
                                                 FontSize="20"

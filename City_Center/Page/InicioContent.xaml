@@ -639,7 +639,7 @@
                            <Button.FontFamily><OnPlatform x:TypeArguments="x:String"><On Platform="iOS" Value="Oswald-Medium" /><On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" /></OnPlatform></Button.FontFamily></Button>
                     </StackLayout>
                     <StackLayout x:Name="SL4" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                        <WebView x:Name="paginitaweb1" Source="https://www.tienda.citycenter-rosario.com.ar/" />
+                       <!-- <WebView x:Name="paginitaweb1" Source="https://www.tienda.citycenter-rosario.com.ar/" />-->
                     </StackLayout>
                     <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF">
                         <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#FFFFFF">

@@ -3,13 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             x:Class="City_Center.PopUp.WebViewTienda">
   <ContentPage.Content>
-        <StackLayout>
-            <Button Text="Prueba de web" Clicked="Handle_Clicked"/>
+       
              <WebView x:Name="Browser"
             
                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
        
-            </StackLayout>
+           
          
     </ContentPage.Content>     
 </ContentPage>
