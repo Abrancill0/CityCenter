@@ -124,5 +124,17 @@
 		<key>NSExceptionAllowsInsecureHTTPLoads</key>
 		<true/>
 	</dict>
+	<key>CFBundleShortVersionString</key>
+	<string>3.0</string>
+	<key>CFBundleVersion</key>
+	<string>3.3</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Se requiere de este permiso</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Se requiere de este permiso</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Se requiere de este permiso</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Se requiere de este permiso</string>
 </dict>
 </plist>
