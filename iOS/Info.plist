@@ -8,8 +8,6 @@
 	<string>CityCenter</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.Danthop.CityCenter</string>
-	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIDeviceFamily</key>
@@ -109,13 +107,30 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>CFBundleVersion</key>
-	<string>2.9</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>es</string>
 	</array>
+<<<<<<< HEAD
+=======
+	<key>NSContactsUsageDescription</key>
+	<string>Se requiere de este permiso para poder continuar</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Se requiere de este permiso para poder continuar</string>
+	<key>kTCCServiceMediaLibrary</key>
+	<string>Se requiere de este permiso para poder continuar</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Se requiere de este permiso para poder continuar</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Se requiere de este permiso para poder continuar</string>
+	<key>Custom Property</key>
+	<string></string>
+	<key>CFBundleShortVersionString</key>
+	<string>3.0</string>
+	<key>CFBundleVersion</key>
+	<string>3.1</string>
+>>>>>>> 971afbb0e8d8a8c757bc68c324d04bac5287cead
 </dict>
 </plist>
