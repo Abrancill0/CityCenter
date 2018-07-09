@@ -94,7 +94,8 @@
                     </Label>
                  <RelativeLayout HeightRequest="100" VerticalOptions="Start">
                             <ListView Rotation="270" ItemsSource="{Binding HabitacionesDetalle}"
-                                     ItemSelected="Handle_ItemSelected_1"
+                                      ItemSelected="Handle_ItemSelected_1"
+
                                       RowHeight="100" SeparatorVisibility="None"
                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
