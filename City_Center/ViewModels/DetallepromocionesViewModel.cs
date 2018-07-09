@@ -27,6 +27,7 @@ namespace City_Center.ViewModels
         private bool formularioCasino;
         private bool formularioHotel;
         private bool formularioGastronomia;
+        private bool formulario
 
         private bool llevaTelefono;
 
@@ -294,10 +295,19 @@ namespace City_Center.ViewModels
 
             var content = new FormUrlEncodedContent(new[]
             {
-				new KeyValuePair<string, string>("pro_id", Convert.ToString(this.pd.pro_id)),
-				
+                new KeyValuePair<string, string>("nombre", Convert.ToString(this.Nombrec)),
+                new KeyValuePair<string, string>("dni", Convert.ToString(this.Dni)),
+                new KeyValuePair<string, string>("celular", Convert.ToString(this.Celularc)),
+                new KeyValuePair<string, string>("fecha_nacimiento", Convert.ToString(this.Fechac))
             });
 
+            //* Casino
+            //nombre
+            //dni
+            //celular
+            //email
+            //fecha_nacimiento
+            //* en el caso de los show vamos a dejar el formulario que ya tenemos
 
 			var response = await this.apiService.Get<GuardadoGenerico>("/es/promocion-reserva", "/correo_reserva", content);
 
@@ -382,11 +392,24 @@ namespace City_Center.ViewModels
                 return;
             }
 
-
+            //* Hotel
+            //nombre
+            //email
+            //telefono
+            //fecha_check_in
+            //cantidad_noches
+            //cantidad_adultos
+            //cantidad_ninos
+           
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("pro_id", Convert.ToString(this.pd.pro_id)),
-
+                new KeyValuePair<string, string>("nombre", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("email", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("telefono", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("fecha_check_in", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("cantidad_noches", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("cantidad_adultos", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("cantidad_ninos", Convert.ToString(this.pd.pro_id)),
             });
 
 
@@ -456,10 +479,20 @@ namespace City_Center.ViewModels
             }
 
 
+            //*Gastronomia
+            //nombre
+            //email
+            //telefono
+            //fecha_solicitada
+
+
+
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("pro_id", Convert.ToString(this.pd.pro_id)),
-
+                new KeyValuePair<string, string>("nombre", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("email", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("telefono", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("fecha_solicitada", Convert.ToString(this.pd.pro_id)),
             });
 
 
@@ -497,6 +530,8 @@ namespace City_Center.ViewModels
                 FormularioCasino = false;
                 FormularioHotel = false;
                 FormularioGastronomia = false;
+                FormularioShow = false;
+
                 Landing = false;
 
                 switch (this.pd.pro_tipo)
@@ -508,6 +543,9 @@ namespace City_Center.ViewModels
                         FormularioHotel = true;
                         break;
                     case "gas":
+                        FormularioGastronomia = true; ;
+                        break;
+                    case "show":
                         FormularioGastronomia = true; ;
                         break;
                 }

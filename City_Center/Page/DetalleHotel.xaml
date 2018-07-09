@@ -93,9 +93,15 @@
                             </Label.FontFamily>
                     </Label>
                  <RelativeLayout HeightRequest="100" VerticalOptions="Start">
+<<<<<<< HEAD
                             <ListView Rotation="270" ItemsSource="{Binding HabitacionesDetalle}"
                                       ItemSelected="Handle_ItemSelected_1"
 
+=======
+                            <ListView x:Name="ListviewOtrasHabitaciones" Rotation="270" ItemsSource="{Binding HabitacionesDetalle}"
+                                     ItemSelected="Handle_ItemSelected_1"
+                                       ItemAppearing="Handle_ItemAppearing"
+>>>>>>> 183ccc430ef8da2dac7c39aaea62945868b8d129
                                       RowHeight="100" SeparatorVisibility="None"
                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
@@ -113,11 +119,16 @@
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
-                                             <ffimageloading:CachedImage HeightRequest="120" WidthRequest="115" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding hab_imagen}" DownsampleToViewSize="true">
-                                                   
+                                             <ffimageloading:CachedImage HeightRequest="120"
+                                                                         WidthRequest="115"
+                                                                         LoadingPlaceholder="image_loading.png"
+                                                                         ErrorPlaceholder="image_error.png"
+                                                                         Source="{Binding hab_imagen}"
+                                                                         DownsampleToViewSize="true">
                                                     <ffimageloading:CachedImage.Transformations>
                                                         <fftransformations:RoundedTransformation Radius="15" />
                                                     </ffimageloading:CachedImage.Transformations>
+                                                  
                                                 </ffimageloading:CachedImage>
                                                 <Label x:Name="Label" Margin="5" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="End" TextColor="White" FontFamily="Oswald-regular" FontSize="Small" LineBreakMode="WordWrap" WidthRequest="50"
                                                     Text="{Binding hab_nombre}">
