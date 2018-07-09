@@ -287,3 +287,4 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 Droid/Resources/Resource.designer.cs
+iOS/City_Center.iOS.csproj
