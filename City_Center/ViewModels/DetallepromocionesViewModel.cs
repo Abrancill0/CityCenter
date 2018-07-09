@@ -4,9 +4,13 @@ using System.Net.Http;
 using System.Windows.Input;
 using City_Center.Clases;
 using City_Center.Models;
+using City_Center.Page;
+using City_Center.PopUp;
 using City_Center.Services;
 using GalaSoft.MvvmLight.Command;
+using Plugin.Messaging;
 using Plugin.Share;
+using Xamarin.Forms;
 using static City_Center.Models.PromocionesResultado;
 
 namespace City_Center.ViewModels
@@ -18,9 +22,41 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Attributes
-        private string nombre;
-        private string correo;
-        private string telefono; 
+        private string nombreBoton;
+
+        private bool formularioCasino;
+        private bool formularioHotel;
+        private bool formularioGastronomia;
+
+        private bool llevaTelefono;
+
+        private bool ocultaBoton;
+        private bool ocultaBoton2;
+
+        //Campos Casino
+        private string nombrec;
+        private string dni;
+        private string celularc;
+        private string correoc;
+        private string fechac;
+
+        //Campos Hotel
+        private string nombreh;
+        private string correoh;
+        private string telefonoh;
+        private string fechah;
+        private string cantidadNoches;
+        private string cantidadAdulto;
+        private string cantidadNiños;
+
+        //Campos Gastronomia
+        private string nombreg;
+        private string correog;
+        private string telefonog;
+        private string fechag;
+
+        private bool landing;
+
         #endregion
 
         #region Properties
@@ -30,23 +66,155 @@ namespace City_Center.ViewModels
             set;
         }
 
-        public string Correo
+        public bool Landing
         {
-            get { return this.correo; }
-            set { SetValue(ref this.correo, value); }
+            get { return this.landing; }
+            set { SetValue(ref this.landing, value); }
         }
 
-        public string Nombre
+        public string NombreBoton
         {
-            get { return this.nombre; }
-            set { SetValue(ref this.nombre, value); }
+            get { return this.nombreBoton; }
+            set { SetValue(ref this.nombreBoton, value); }
         }
 
-        public string Telefono
+        public bool FormularioCasino
         {
-            get { return this.telefono; }
-            set { SetValue(ref this.telefono, value); }
+            get { return this.formularioCasino; }
+            set { SetValue(ref this.formularioCasino, value); }
         }
+
+        public bool FormularioGastronomia
+        {
+            get { return this.formularioGastronomia; }
+            set { SetValue(ref this.formularioGastronomia, value); }
+        }
+
+        public bool FormularioHotel
+        {
+            get { return this.formularioHotel; }
+            set { SetValue(ref this.formularioHotel, value); }
+        }
+
+
+        public bool LlevaTelefono
+        {
+            get { return this.llevaTelefono; }
+            set { SetValue(ref this.llevaTelefono, value); }
+        }
+
+        //Campos Casino
+        public string Nombrec
+        {
+            get { return this.nombrec; }
+            set { SetValue(ref this.nombrec, value); }
+        }
+
+        public string Dni
+        {
+            get { return this.dni; }
+            set { SetValue(ref this.dni, value); }
+        }
+
+        public string Celularc
+        {
+            get { return this.celularc; }
+            set { SetValue(ref this.celularc, value); }
+        }
+
+        public string Correoc
+        {
+            get { return this.correoc; }
+            set { SetValue(ref this.correoc, value); }
+        }
+       
+        public string Fechac
+        {
+            get { return this.fechac; }
+            set { SetValue(ref this.fechac, value); }
+        }
+      
+        //Campos Hotel
+        public string Nombreh
+        {
+            get { return this.nombreh; }
+            set { SetValue(ref this.nombreh, value); }
+        }
+
+        public string Correoh
+        {
+            get { return this.correoh; }
+            set { SetValue(ref this.correoh, value); }
+        }
+
+        public string Telefonoh
+        {
+            get { return this.telefonoh; }
+            set { SetValue(ref this.telefonoh, value); }
+        }
+
+        public string Fechah
+        {
+            get { return this.fechah; }
+            set { SetValue(ref this.fechah, value); }
+        }
+     
+        public string CantidadNoches
+        {
+            get { return this.cantidadNoches; }
+            set { SetValue(ref this.cantidadNoches, value); }
+        }
+
+        public string CantidadAdulto
+        {
+            get { return this.cantidadAdulto; }
+            set { SetValue(ref this.cantidadAdulto, value); }
+        }
+       
+        public string CantidadNiños
+        {
+            get { return this.cantidadNiños; }
+            set { SetValue(ref this.cantidadNiños, value); }
+        }
+
+
+        //Campos Gastronomia
+        public string Nombreg
+        {
+            get { return this.nombreg; }
+            set { SetValue(ref this.nombreg, value); }
+        }
+
+        public string Correog
+        {
+            get { return this.correog; }
+            set { SetValue(ref this.correog, value); }
+        }
+
+        public string Telefonog
+        {
+            get { return this.telefonog; }
+            set { SetValue(ref this.telefonog, value); }
+        }
+
+        public string Fechag
+        {
+            get { return this.fechag; }
+            set { SetValue(ref this.fechag, value); }
+        }
+       
+        public bool OcultaBoton
+        {
+            get { return this.ocultaBoton; }
+            set { SetValue(ref this.ocultaBoton, value); }
+        }
+
+        public bool OcultaBoton2
+        {
+            get { return this.ocultaBoton2; }
+            set { SetValue(ref this.ocultaBoton2, value); }
+        }
+
         #endregion
 
         #region Commands
@@ -72,57 +240,62 @@ namespace City_Center.ViewModels
 
         }
 
-
-        public ICommand EnviaCorreoCommand
+        public ICommand EnviaCorreoCasinoCommand
         {
             get
             {
-                return new RelayCommand(EnviaCorreo);
+                return new RelayCommand(EnviaCorreoCasino);
             }
         }
 
-        private async void EnviaCorreo()
+        private async void EnviaCorreoCasino()
         {
-            if (string.IsNullOrEmpty(this.Nombre))
+            if (string.IsNullOrEmpty(this.Nombrec))
             {
                 await Mensajes.Alerta("Nombre y Apellido requeridos");
 
                 return;
             }
 
-            if (string.IsNullOrEmpty(this.Correo))
+            if (string.IsNullOrEmpty(this.Dni))
+            {
+                await Mensajes.Alerta("Dni requerido");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Celularc))
+            {
+                await Mensajes.Alerta("Celular requerido");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Correoc))
             {
                 await Mensajes.Alerta("Correo electrónico requerido");
 
                 return;
             }
 
-            if (!ValidaEmailMethod.ValidateEMail(this.Correo))
+            if (!ValidaEmailMethod.ValidateEMail(this.Correoc))
             {
                 await Mensajes.Alerta("Correo electrónico mal estructurado");
                 return;
             }
 
 
-            if (string.IsNullOrEmpty(this.Telefono))
+            if (string.IsNullOrEmpty(this.Fechac))
             {
-                await Mensajes.Alerta("Teléfono requerido");
+                await Mensajes.Alerta("Fecha de nacimiento requerido");
 
                 return;
             }
 
-
-            //string CuerpoMensaje = "Nombre y apellido: " + this.Nombre + "\n" +
-                                   //"Correo electrónico: " + this.Correo + "\n" +
-                                   //"Teléfono: " + this.Telefono;
-
-                  
             var content = new FormUrlEncodedContent(new[]
             {
 				new KeyValuePair<string, string>("pro_id", Convert.ToString(this.pd.pro_id)),
-				new KeyValuePair<string, string>("nombre", this.Nombre),
-				new KeyValuePair<string, string>("email", this.Correo),
-				new KeyValuePair<string, string>("telefono", this.Telefono),
+				
             });
 
 
@@ -135,11 +308,261 @@ namespace City_Center.ViewModels
 
             await Mensajes.Alerta("La información ha sido enviada correctamente");
 
-        
-            this.Nombre = string.Empty;
-            this.Correo = string.Empty;
-            this.Telefono = string.Empty;
- 
+            this.Nombrec = string.Empty;
+            this.Dni = string.Empty;
+            this.Celularc = string.Empty;
+            this.Correoc = string.Empty;
+            this.Fechac = string.Empty;
+
+        }
+
+        public ICommand EnviaCorreoHotelCommand
+        {
+            get
+            {
+                return new RelayCommand(EnviaCorreoHotel);
+            }
+        }
+
+        private async void EnviaCorreoHotel()
+        {
+            if (string.IsNullOrEmpty(this.Nombreh))
+            {
+                await Mensajes.Alerta("Nombre y Apellido requeridos");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Correoh))
+            {
+                await Mensajes.Alerta("Correo electrónico requerido");
+
+                return;
+            }
+
+            if (!ValidaEmailMethod.ValidateEMail(this.Correoh))
+            {
+                await Mensajes.Alerta("Correo electrónico mal estructurado");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Telefonoh))
+            {
+                await Mensajes.Alerta("Teléfono requerido");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Fechah))
+            {
+                await Mensajes.Alerta("Fecha de nacimiento requerido");
+
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(Convert.ToString(this.CantidadNoches)))
+            {
+                await Mensajes.Alerta("Cantidad de noches requerido");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(Convert.ToString(this.CantidadAdulto)))
+            {
+                await Mensajes.Alerta("Cantidad de adultos requerido");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(Convert.ToString(this.CantidadNiños)))
+            {
+                await Mensajes.Alerta("Cantidad de niños requerido");
+
+                return;
+            }
+
+
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("pro_id", Convert.ToString(this.pd.pro_id)),
+
+            });
+
+
+            var response = await this.apiService.Get<GuardadoGenerico>("/es/promocion-reserva", "/correo_reserva", content);
+
+            if (!response.IsSuccess)
+            {
+                await Mensajes.Alerta(response.Message);
+            }
+
+
+            this.Nombreh = string.Empty;
+            this.Correoh = string.Empty;
+            this.Telefonoh = string.Empty;
+            this.Fechah = string.Empty;
+            this.CantidadNoches = string.Empty;
+            this.CantidadAdulto = string.Empty;
+            this.CantidadNiños = string.Empty;
+
+            await Mensajes.Alerta("La información ha sido enviada correctamente");
+
+        }
+
+
+        public ICommand EnviaCorreoGastronomiaCommand
+        {
+            get
+            {
+                return new RelayCommand(EnviaCorreoGastronomia);
+            }
+        }
+
+        private async void EnviaCorreoGastronomia()
+        {
+            if (string.IsNullOrEmpty(this.Nombreg))
+            {
+                await Mensajes.Alerta("Nombre y Apellido requeridos");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Correog))
+            {
+                await Mensajes.Alerta("Correo electrónico requerido");
+
+                return;
+            }
+
+            if (!ValidaEmailMethod.ValidateEMail(this.Correog))
+            {
+                await Mensajes.Alerta("Correo electrónico mal estructurado");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Telefonog))
+            {
+                await Mensajes.Alerta("Teléfono requerido");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Fechag))
+            {
+                await Mensajes.Alerta("Fecha solicitada requerido");
+
+                return;
+            }
+
+
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("pro_id", Convert.ToString(this.pd.pro_id)),
+
+            });
+
+
+            var response = await this.apiService.Get<GuardadoGenerico>("/es/promocion-reserva", "/correo_reserva", content);
+
+            if (!response.IsSuccess)
+            {
+                await Mensajes.Alerta(response.Message);
+            }
+
+            await Mensajes.Alerta("La información ha sido enviada correctamente");
+
+            this.Nombreg = string.Empty;
+            this.Correog = string.Empty;
+            this.Telefonog = string.Empty;
+            this.Fechag = string.Empty;
+
+
+        }
+
+
+        public ICommand FormulariosCommand
+        {
+            get
+            {
+                return new RelayCommand(Formularios);
+            }
+        }
+
+        private async void Formularios()
+        {
+            if (this.pd.pro_vinculo == "formulario")
+            {
+
+                FormularioCasino = false;
+                FormularioHotel = false;
+                FormularioGastronomia = false;
+                Landing = false;
+
+                switch (this.pd.pro_tipo)
+                {
+                    case "cas":
+                        FormularioCasino = true;
+                        break;
+                    case "hopa":
+                        FormularioHotel = true;
+                        break;
+                    case "gas":
+                        FormularioGastronomia = true; ;
+                        break;
+                }
+
+                OcultaBoton = false;
+                OcultaBoton2 = true;
+
+            }
+            else
+            {
+                VariablesGlobales.RutaCompraOnline = this.pd.pro_url;
+
+                await((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewCompraOnline());
+
+            }
+
+        }
+
+        public ICommand RegresarCommand
+        {
+            get
+            {
+                return new RelayCommand(Regresar);
+            }
+        }
+
+        private void Regresar()
+        {
+            FormularioCasino = false;
+            FormularioHotel = false;
+            FormularioGastronomia = false;
+
+            OcultaBoton = true;
+            OcultaBoton2 = false;
+
+            Landing = true;
+        }
+
+        public ICommand LlamarCommand
+        {
+            get
+            {
+                return new RelayCommand(Llamar);
+            }
+        }
+
+        private void Llamar()
+        {
+            var phoneCallTask = CrossMessaging.Current.PhoneDialer;
+
+            if (phoneCallTask.CanMakePhoneCall)
+            {
+                phoneCallTask.MakePhoneCall(this.pd.pro_telefono, this.pd.pro_nombre);
+            }
+
         }
 
         #endregion
@@ -149,6 +572,26 @@ namespace City_Center.ViewModels
             this.apiService = new ApiService();
             this.pd = pd;
 
+            if (this.pd.pro_vinculo == "formulario")
+             {
+                NombreBoton = "Reservar";          
+             }
+            else
+            {
+                NombreBoton = "Comprar";  
+            }
+
+            if (string.IsNullOrEmpty(this.pd.pro_telefono))
+            {
+                LlevaTelefono = false;
+            }
+            else
+            {
+                LlevaTelefono = true;
+            }
+
+            OcultaBoton = true;
+            Landing = true;
         }
     }
 }

@@ -28,6 +28,10 @@ namespace City_Center.Models
             public string pro_tipo { get; set; }
             public string pro_estatus { get; set; }
             public string loc_nombre { get; set; }
+            public string pro_vinculo { get; set; }
+            public string pro_telefono { get; set; }
+            public string pro_url { get; set; }
+
         }
 
         public class PromocionesReturn
