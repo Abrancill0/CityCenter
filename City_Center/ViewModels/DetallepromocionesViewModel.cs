@@ -27,12 +27,17 @@ namespace City_Center.ViewModels
         private bool formularioCasino;
         private bool formularioHotel;
         private bool formularioGastronomia;
-        private bool formulario
+        private bool formularioShow;
 
         private bool llevaTelefono;
 
         private bool ocultaBoton;
         private bool ocultaBoton2;
+
+        //Campos Shows
+        private string nombres;
+        private string telefonos;
+        private string correos;
 
         //Campos Casino
         private string nombrec;
@@ -95,6 +100,12 @@ namespace City_Center.ViewModels
         {
             get { return this.formularioHotel; }
             set { SetValue(ref this.formularioHotel, value); }
+        }
+
+        public bool FormularioShow
+        {
+            get { return this.formularioShow; }
+            set { SetValue(ref this.formularioShow, value); }
         }
 
 
@@ -216,6 +227,27 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.ocultaBoton2, value); }
         }
 
+
+
+
+        //Campos Shows
+        public string Nombres
+        {
+            get { return this.nombres; }
+            set { SetValue(ref this.nombres, value); }
+        }
+
+        public string Correos
+        {
+            get { return this.correos; }
+            set { SetValue(ref this.correos, value); }
+        }
+
+        public string Telefonos
+        {
+            get { return this.telefonos; }
+            set { SetValue(ref this.telefonos, value); }
+        }
         #endregion
 
         #region Commands
@@ -295,6 +327,7 @@ namespace City_Center.ViewModels
 
             var content = new FormUrlEncodedContent(new[]
             {
+                new KeyValuePair<string, string>("pro_id", Convert.ToString(this.pd.pro_id)),
                 new KeyValuePair<string, string>("nombre", Convert.ToString(this.Nombrec)),
                 new KeyValuePair<string, string>("dni", Convert.ToString(this.Dni)),
                 new KeyValuePair<string, string>("celular", Convert.ToString(this.Celularc)),
@@ -325,6 +358,71 @@ namespace City_Center.ViewModels
             this.Fechac = string.Empty;
 
         }
+
+
+        public ICommand EnviaCorreShowCommand
+        {
+            get
+            {
+                return new RelayCommand(EnviaCorreShow);
+            }
+        }
+
+        private async void EnviaCorreShow()
+        {
+            if (string.IsNullOrEmpty(this.Nombres))
+            {
+                await Mensajes.Alerta("Nombre y Apellido requeridos");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Correos))
+            {
+                await Mensajes.Alerta("Correo electrónico requerido");
+
+                return;
+            }
+
+            if (!ValidaEmailMethod.ValidateEMail(this.Correos))
+            {
+                await Mensajes.Alerta("Correo electrónico mal estructurado");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.Telefonos))
+            {
+                await Mensajes.Alerta("Teléfono requerido");
+
+                return;
+            }
+
+
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("pro_id", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("nombre", Convert.ToString(this.Nombres)),
+                new KeyValuePair<string, string>("email", Convert.ToString(this.correos)),
+                new KeyValuePair<string, string>("telefono", Convert.ToString(this.telefonos))
+            });
+
+
+            var response = await this.apiService.Get<GuardadoGenerico>("/es/promocion-reserva", "/correo_reserva", content);
+
+            if (!response.IsSuccess)
+            {
+                await Mensajes.Alerta(response.Message);
+            }
+
+
+            this.Nombres = string.Empty;
+            this.Correos = string.Empty;
+            this.Telefonos = string.Empty;
+           
+            await Mensajes.Alerta("La información ha sido enviada correctamente");
+
+        }
+
 
         public ICommand EnviaCorreoHotelCommand
         {
@@ -391,25 +489,17 @@ namespace City_Center.ViewModels
 
                 return;
             }
-
-            //* Hotel
-            //nombre
-            //email
-            //telefono
-            //fecha_check_in
-            //cantidad_noches
-            //cantidad_adultos
-            //cantidad_ninos
-           
+             
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("nombre", Convert.ToString(this.pd.pro_id)),
-                new KeyValuePair<string, string>("email", Convert.ToString(this.pd.pro_id)),
-                new KeyValuePair<string, string>("telefono", Convert.ToString(this.pd.pro_id)),
-                new KeyValuePair<string, string>("fecha_check_in", Convert.ToString(this.pd.pro_id)),
-                new KeyValuePair<string, string>("cantidad_noches", Convert.ToString(this.pd.pro_id)),
-                new KeyValuePair<string, string>("cantidad_adultos", Convert.ToString(this.pd.pro_id)),
-                new KeyValuePair<string, string>("cantidad_ninos", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("pro_id", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("nombre", Convert.ToString(this.Nombreh)),
+                new KeyValuePair<string, string>("email", Convert.ToString(this.Correoh)),
+                new KeyValuePair<string, string>("telefono", Convert.ToString(this.Telefonoh)),
+                new KeyValuePair<string, string>("fecha_check_in", Convert.ToString(this.Fechah)),
+                new KeyValuePair<string, string>("cantidad_noches", Convert.ToString(this.CantidadNoches)),
+                new KeyValuePair<string, string>("cantidad_adultos", Convert.ToString(this.CantidadAdulto)),
+                new KeyValuePair<string, string>("cantidad_ninos", Convert.ToString(this.CantidadNiños)),
             });
 
 
@@ -419,7 +509,6 @@ namespace City_Center.ViewModels
             {
                 await Mensajes.Alerta(response.Message);
             }
-
 
             this.Nombreh = string.Empty;
             this.Correoh = string.Empty;
@@ -489,10 +578,11 @@ namespace City_Center.ViewModels
 
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("nombre", Convert.ToString(this.pd.pro_id)),
-                new KeyValuePair<string, string>("email", Convert.ToString(this.pd.pro_id)),
-                new KeyValuePair<string, string>("telefono", Convert.ToString(this.pd.pro_id)),
-                new KeyValuePair<string, string>("fecha_solicitada", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("pro_id", Convert.ToString(this.pd.pro_id)),
+                new KeyValuePair<string, string>("nombre", Convert.ToString(this.Nombreg)),
+                new KeyValuePair<string, string>("email", Convert.ToString(this.Correog)),
+                new KeyValuePair<string, string>("telefono", Convert.ToString(this.Telefonog)),
+                new KeyValuePair<string, string>("fecha_solicitada", Convert.ToString(this.Fechag)),
             });
 
 
@@ -545,8 +635,8 @@ namespace City_Center.ViewModels
                     case "gas":
                         FormularioGastronomia = true; ;
                         break;
-                    case "show":
-                        FormularioGastronomia = true; ;
+                        case "show":
+                        FormularioShow = true; ;
                         break;
                 }
 

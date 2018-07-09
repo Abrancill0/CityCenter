@@ -13,6 +13,8 @@ namespace City_Center.Page
         {
             InitializeComponent();
             NavigationPage.SetTitleIcon(this, "logo@2x.png");
+
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
         }
 
         async void Chat_click(object sender, System.EventArgs e)

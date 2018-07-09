@@ -9,7 +9,7 @@ using City_Center.ViewModels;
 using System.Linq;
 using City_Center.Models;
 using System.Collections.ObjectModel;
-
+using System.Net.Http;
 
 namespace City_Center.Page
 {
@@ -19,14 +19,12 @@ namespace City_Center.Page
 
         public WebViewHotel _webHotel;
 
-        private ObservableCollection<HabitacionesDetalle> HabitacionesDetalle;
+        HotelViewModel HD = new HotelViewModel();
 
         public DetalleHotel()
         {
             InitializeComponent();
             _webHotel = new WebViewHotel();
-
-            NavigationPage.SetTitleIcon(this, "logo@2x.png");
 
         }
 
@@ -34,9 +32,21 @@ namespace City_Center.Page
         {
             base.OnAppearing();
 
-                ListaOpciones = new string[] { VariablesGlobales.Img1, VariablesGlobales.Img2, VariablesGlobales.Img3, VariablesGlobales.Img4, VariablesGlobales.Img5, VariablesGlobales.Img6 };
+            try
+            {
+                ListviewOtrasHabitaciones.ItemsSource = HD.HabitacionesDetalle.Where(l => l.hab_id != Convert.ToInt32(VariablesGlobales.IDHabitacion));
 
-                listaDetalleHabitacion.ItemsSource = ListaOpciones;
+                NavigationPage.SetTitleIcon(this, "logo@2x.png");
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+            ListaOpciones = new string[] { VariablesGlobales.Img1, VariablesGlobales.Img2, VariablesGlobales.Img3, VariablesGlobales.Img4, VariablesGlobales.Img5, VariablesGlobales.Img6 };
+
+            listaDetalleHabitacion.ItemsSource = ListaOpciones;
 
         }
 
@@ -74,7 +84,7 @@ namespace City_Center.Page
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(_webHotel);
 
 
-               // await Navigation.PushPopupAsync(_webHotel);
+                // await Navigation.PushPopupAsync(_webHotel);
             }
             catch (Exception ex)
             {
@@ -91,7 +101,7 @@ namespace City_Center.Page
             if (isLoggedIn)
             {
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
-               
+
             }
             else
             {
@@ -99,7 +109,7 @@ namespace City_Center.Page
             }
         }
 
-        void Handle_ItemSelected_1(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+       void Handle_ItemSelected_1(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             try
             {
@@ -108,7 +118,7 @@ namespace City_Center.Page
 
                 if (selection != null)
                 {
-
+                   
                     NombreHabitacion.Text = selection.hab_nombre;
                     DescripcionHabitacion.Text = selection.hab_descripcion;
                     Img1provisional.Source = selection.hab_imagen;
@@ -122,7 +132,8 @@ namespace City_Center.Page
                     ListaOpciones = new string[] { VariablesGlobales.Img1, VariablesGlobales.Img2, VariablesGlobales.Img3, VariablesGlobales.Img4, VariablesGlobales.Img5, VariablesGlobales.Img6 };
 
                     listaDetalleHabitacion.ItemsSource = ListaOpciones;
-                    //ListviewOtrasHabitaciones.ItemsSource = DTVM.HabitacionesDetalle.Where(l => l.hab_id != Convert.ToInt32(selection.hab_id));
+
+                    ListviewOtrasHabitaciones.ItemsSource = HD.HabitacionesDetalle.Where(l => l.hab_id != Convert.ToInt32(selection.hab_id));
 
                 }
 
@@ -133,31 +144,5 @@ namespace City_Center.Page
             }
         }
 
-        void Handle_ItemAppearing(object sender, Xamarin.Forms.ItemVisibilityEventArgs e)
-        {
-            var Item = e;
-
-            HabitacionesDetalle.Add(new HabitacionesDetalle()
-            {
-                 = l.mde_id,
-                mde_id_menu = l.mde_id_menu,
-                mde_id_restaurant = l.mde_id_restaurant,
-                mde_nombre = (Convert.ToString(l.mde_nombre)).ToUpper(),
-                mde_descripcion = l.mde_descripcion,
-                mde_imagen = l.mde_imagen,
-                mde_precio = l.mde_precio,
-                mde_id_usuario_creo = l.mde_id_usuario_creo,
-                mde_fecha_hora_creo = l.mde_fecha_hora_creo,
-                mde_id_usuario_modifico = l.mde_id_usuario_modifico,
-                mde_fecha_hora_modifico = l.mde_fecha_hora_modifico,
-                mde_estatus = l.mde_estatus,
-                NombreMenu = NombreMenu,
-                Margen = Margen
-
-            });
-
-
-
-        }
     }
 }

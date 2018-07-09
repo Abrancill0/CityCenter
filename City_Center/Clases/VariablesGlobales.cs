@@ -7,6 +7,7 @@ namespace City_Center.Clases
         public static string RutaImagene;
 
 		public static string IDUsuario;
+        public static int IDHabitacion;
 
         public static string Img1;
         public static string Img2;

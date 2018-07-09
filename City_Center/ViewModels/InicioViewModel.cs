@@ -270,7 +270,10 @@ namespace City_Center.ViewModels
 
 			var content = new FormUrlEncodedContent(new[]
             {
-				new KeyValuePair<string, string>("restaurant", this.NombreRestaurante),
+                new KeyValuePair<string, string>("nombre", this.Nombre), 
+                new KeyValuePair<string, string>("email", this.Correo), 
+                new KeyValuePair<string, string>("telefono", this.Telefono), 
+                new KeyValuePair<string, string>("restaurant", this.NombreRestaurante),
                 new KeyValuePair<string, string>("fecha", this.FechaInicio),
                 new KeyValuePair<string, string>("hora", this.HoraInicio),
                 new KeyValuePair<string, string>("personas", this.SillaNiños),

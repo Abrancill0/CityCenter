@@ -10,8 +10,6 @@ namespace City_Center.Page
 {
 	public partial class MasInfo : ContentPage
 	{
-		private string[] ListTipoEvento;
-
 		public MasInfo()
 		{
 			InitializeComponent();
@@ -20,13 +18,6 @@ namespace City_Center.Page
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-
-            ListTipoEvento = new string[] { "Congresos, Convenciones, Seminarios","Casamiento", "Eventos Corporativos", "Eventos Sociales", "Otros" };
-
-			//TipoEvento.ItemsSource = ListTipoEvento;
-
-			//TipoEvento.SelectedIndex = 0;
-   
 		}
 
 		protected override void OnDisappearing()
@@ -141,19 +132,6 @@ namespace City_Center.Page
 
 		}
 
-		
-		
-		async void TipoEvento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-        {
-           
-        }
-        
-		async void TipoEvento1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-        {
-           
-
-        }
-
         async void Chat_click(object sender, System.EventArgs e)
         {
             bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
@@ -170,8 +148,7 @@ namespace City_Center.Page
             }
         }
 
-
-          async void Fecha1_Tapped(object sender, System.EventArgs e)
+        async void Fecha1_Tapped(object sender, System.EventArgs e)
             {
                 #if __IOS__
                             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
@@ -199,7 +176,7 @@ namespace City_Center.Page
                 }
             }
 
-          async  void Fecha2_Tapped(object sender, System.EventArgs e)
+        async  void Fecha2_Tapped(object sender, System.EventArgs e)
         {
             #if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
@@ -231,9 +208,12 @@ namespace City_Center.Page
         {
             #if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
+            #endif
 
-            var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "CANCELAR", null, null, "Congresos, Convenciones, Seminarios", "Casamiento", "Eventos Corporativos", "Eventos Sociales", "Otros");
+            var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "CANCELAR", null, null, "Congresos," +
+                                                                     " Convenciones, Seminarios", "Casamiento",
+                                                                    "Eventos Corporativos","Fiesta de 15",
+                                                                    "Aniversario","Cumpleaños", "Otros");
 
             if (result != "CANCELAR")
             {
@@ -254,9 +234,11 @@ namespace City_Center.Page
         {
             #if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
+            #endif
 
-            var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "CANCELAR", null, null, "Congresos, Convenciones, Seminarios", "Casamiento", "Eventos Corporativos", "Eventos Sociales", "Otros");
+            var result = await UserDialogs.Instance.ActionSheetAsync("Convenciones y salas", "CANCELAR", null, null, "Congresos, Convenciones, Seminarios",
+                                                                     "Casamiento", "Eventos Corporativos",
+                                                                     "Fiesta de 15","Aniversario", "Cumpleaños","Otros");
 
             if (result != "CANCELAR")
             {

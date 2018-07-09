@@ -29,13 +29,13 @@ namespace City_Center.PopUp
 
             #if __ANDROID__
 
-            Browser.Source = "https://api.pxsol.com/search/insert?Pos=PullmanCityCenterRosario&ProductID=3176&Currency=ARS&Lng=es&Type=Hotel&Start=" + Fecha1 + "&End" + Fecha2 + "&Nights=" + dias + "&Groups=º&GroupsForm=1:" + VariablesGlobales.NumeroHuespedes + ",0,0t&Device=Mobile&tag=hotelesdon.com";
+            Browser.Source = "https://api.pxsol.com/search/insert?Pos=PullmanCityCenterRosario&ProductID=3176&Currency=ARS&Lng=es&Type=Hotel&Start=" + Fecha1 + "&End" + Fecha2 + "&Nights=" + dias + "&Groups=º&GroupsForm=1:" + VariablesGlobales.NumeroHuespedes + ",0,0&Device=Mobile&tag=hotelesdon.com";
 
             #endif
 
 
             #if __IOS__
-            var uri = new Uri("https://api.pxsol.com/search/insert?Pos=PullmanCityCenterRosario&ProductID=3176&Currency=ARS&Lng=es&Type=Hotel&Start=" + Fecha1 + "&End" + Fecha2 + "&Nights=" + dias + "&Groups=º&GroupsForm=1:" + VariablesGlobales.NumeroHuespedes + ",0,0t&Device=Mobile&tag=hotelesdon.com");
+            var uri = new Uri("https://api.pxsol.com/search/insert?Pos=PullmanCityCenterRosario&ProductID=3176&Currency=ARS&Lng=es&Type=Hotel&Start=" + Fecha1 + "&End" + Fecha2 + "&Nights=" + dias + "&Groups=º&GroupsForm=1:" + VariablesGlobales.NumeroHuespedes + ",0,0&Device=Mobile&tag=hotelesdon.com");
 
             var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 

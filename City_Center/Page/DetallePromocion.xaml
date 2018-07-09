@@ -122,7 +122,11 @@
                     </ffimageloading:CachedImage>
                 </StackLayout>
 
-              <!--  <StackLayout x:Name="SLR" IsVisible="false" Margin="15" Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="SLPromocionesShows"
+                             IsVisible="{Binding FormularioShow,Mode=TwoWay}"
+                             Margin="15"
+                             Orientation="Vertical"
+                             VerticalOptions="FillAndExpand">
                     <Label Text="PROMOCIÓN" TextColor="#250C4B" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,45">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
@@ -133,7 +137,7 @@
                     </Label>
                     <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
                                   Style="{DynamicResource EntryStyle}"
-                                  Text="{Binding NombreG, Mode=TwoWay}" 
+                                  Text="{Binding Nombres, Mode=TwoWay}" 
                                   Placeholder="Nombre y Apellido*"
                                   TextColor="Black"
                                   FontSize="18"
@@ -153,7 +157,7 @@
                     </xfx:XfxEntry>
                     <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
                                   Style="{DynamicResource EntryStyle}"
-                                  Text="{Binding CorreoG, Mode=TwoWay}"
+                                  Text="{Binding Correos, Mode=TwoWay}"
                                   Placeholder="Correo electrónico*"
                                   TextColor="Black"
                                   FontSize="18" Keyboard="Email">
@@ -172,7 +176,7 @@
                     </xfx:XfxEntry>
                     <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
                                   Style="{DynamicResource EntryStyle}"
-                                  Text="{Binding TelefonoG, Mode=TwoWay}"
+                                  Text="{Binding Telefonos, Mode=TwoWay}"
                                   Placeholder="Teléfono*"
                                   TextColor="Black"
                                   FontSize="18"
@@ -191,7 +195,12 @@
                         </Entry.FontFamily>
                     </xfx:XfxEntry>
                     <StackLayout VerticalOptions="EndAndExpand">
-                        <Button Margin="30,10,30,7" FontSize="14" TextColor="White" BackgroundColor="#250c4b" HeightRequest="40" Text="RESERVAR" Command="{Binding EnviaCorreoCommand}" VerticalOptions="End">
+                        <Button Margin="30,10,30,7"
+                                FontSize="14"
+                                TextColor="White"
+                                BackgroundColor="#250c4b"
+                                HeightRequest="40" 
+                                Text="RESERVAR" Command="{Binding EnviaCorreShowCommand}" VerticalOptions="End">
                             <Button.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Medium" />
@@ -200,7 +209,7 @@
                             </Button.FontFamily>
                         </Button>
                     </StackLayout>
-                </StackLayout>-->
+                </StackLayout>
                 <StackLayout x:Name="SLPromocionesCasino"
                              IsVisible="{Binding FormularioCasino, Mode=TwoWay}"
                              Margin="15"

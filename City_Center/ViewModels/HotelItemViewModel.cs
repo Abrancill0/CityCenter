@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight.Command;
 using static City_Center.Models.HabitacionesResultado;
 using City_Center.Page;
 using Xamarin.Forms;
+using City_Center.Clases;
 
 namespace City_Center.ViewModels
 {
@@ -28,6 +29,7 @@ namespace City_Center.ViewModels
         {
             MainViewModel.GetInstance().DetalleHotel = new DetalleHotelViewModel(this);
 
+            VariablesGlobales.IDHabitacion = this.hab_id;
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new DetalleHotel());
 
         }

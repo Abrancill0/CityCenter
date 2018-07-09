@@ -12,6 +12,8 @@ namespace City_Center.Page
         {
             InitializeComponent();
             NavigationPage.SetTitleIcon(this, "logo@2x.png");
+
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
         }
 
 		void CambiaIcono(object sender, System.EventArgs e)
