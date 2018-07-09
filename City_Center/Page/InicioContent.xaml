@@ -308,7 +308,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                         </Frame>
-                        <Button Margin="30,7,30,7" FontSize="14" TextColor="White" BackgroundColor="#250c4b" HeightRequest="40" Text="VER OPCIONES" Command="{Binding VerShowsFiltroCommand}">
+                        <Button Margin="30,7,30,7" FontSize="14" TextColor="White" BackgroundColor="#250c4b" HeightRequest="40" Text="ver disponibilidad" Command="{Binding VerShowsFiltroCommand}">
                             <Button.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Medium" />

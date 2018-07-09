@@ -222,7 +222,7 @@
                                     </xfx:XfxEntry>
                                 </StackLayout>
                             </Frame>
-                            <Button TextColor="White" BackgroundColor="#2D97A3" Clicked="Handle_Clicked" HeightRequest="40" Margin="30,10,30,10" FontSize="14" Text="VER OPCIONES">
+                            <Button TextColor="White" BackgroundColor="#2D97A3" Clicked="Handle_Clicked" HeightRequest="40" Margin="30,10,30,10" FontSize="14" Text="ver disponibilidad">
                                 <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Oswald-Regular" />

@@ -38,8 +38,6 @@ namespace City_Center.iOS
 
             Firebase.Core.App.Configure();
 
-
-
             KeyboardOverlapRenderer.Init();
 
             DependencyService.Register<ToastNotification>(); // Register your dependency

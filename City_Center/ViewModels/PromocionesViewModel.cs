@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using City_Center.Services;
-using Xamarin.Forms;
 using static City_Center.Models.PromocionesResultado;
-using City_Center.Models;
 using System.Linq;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
@@ -208,7 +206,10 @@ namespace City_Center.ViewModels
                 pro_fecha_hora_modifico = l.pro_fecha_hora_modifico,
                 pro_tipo = l.pro_tipo,
                 pro_estatus = l.pro_estatus,
-                loc_nombre = l.loc_nombre
+                loc_nombre = l.loc_nombre,
+                pro_vinculo=l.pro_vinculo,
+                pro_telefono=l.pro_telefono,
+                pro_url=l.pro_url
             });
         }
 

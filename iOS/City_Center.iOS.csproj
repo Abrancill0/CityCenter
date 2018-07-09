@@ -30,7 +30,6 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>VS: com.Danthop.CityCenter Development</CodesignProvision>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -39,7 +38,7 @@
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Distribution: Danthop Mexico (S827V5EHE7)</CodesignKey>
+    <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
     <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>

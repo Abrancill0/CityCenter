@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-              xmlns:local1="clr-namespace:City_Center.Clases"
-             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.DetallePromocion">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:local1="clr-namespace:City_Center.Clases" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.DetallePromocion">
     <ContentPage.ToolbarItems>
-          <ToolbarItem  Icon="{Binding ImagenChat, Source={x:Static local1:GlobalResources.Current}}"  Clicked="Chat_click" />
+        <ToolbarItem Icon="{Binding ImagenChat, Source={x:Static local1:GlobalResources.Current}}" Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -24,122 +19,190 @@
                        HasShadow="True"
                        BackgroundColor="White"
                        HorizontalOptions="FillAndExpand"
-                       Margin="20,0,20,0" x:Name="SLP">
-                            <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="20" iOS="20" />
-                            </Frame.Margin>
-                            <Frame.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                            </Frame.Padding>
-                            <StackLayout Orientation="Vertical" >
-                    <StackLayout>
-                      <ffimageloading:CachedImage
-                            HeightRequest="180"
-                            Aspect="AspectFill"
-                            LoadingPlaceholder="image_loading.png"
-                            ErrorPlaceholder="image_error.png"
-                            Source="{Binding pd.pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" />
-                    </StackLayout>
-                    <Grid HorizontalOptions="FillAndExpand" >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2*"/>
-                                        <ColumnDefinition Width="1*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                         <Label HorizontalOptions="Start"
-                               HorizontalTextAlignment="Start"
-                               Grid.Row ="0"
-                               Grid.Column ="0"
-                               Margin="10,0,0,0"
-                               TextColor="Gray"
-                               FontAttributes="Bold"
-                               Text="{Binding pd.pro_nombre}"
-                               FontSize="14">
+                       Margin="20,0,20,0"
+                       IsVisible="{Binding Landing,Mode=TwoWay}">
+                    <Frame.Margin>
+                        <OnPlatform x:TypeArguments="Thickness" Android="20" iOS="20" />
+                    </Frame.Margin>
+                    <Frame.Padding>
+                        <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
+                    </Frame.Padding>
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout>
+                            <ffimageloading:CachedImage HeightRequest="180" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pd.pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" />
+                        </StackLayout>
+                        <Grid HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" TextColor="Gray" FontAttributes="Bold" Text="{Binding pd.pro_nombre}" FontSize="14">
                                 <Label.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Oswald-Regular"/>
-                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                                     </OnPlatform>
                                 </Label.FontFamily>
-                        </Label>
-                         <Label HorizontalOptions="Start"
-                               HorizontalTextAlignment="Start"
-                               Grid.Row ="1"
-                               Grid.Column ="0"
-                               Margin="10,0,0,0"
-                               TextColor="#250C4B"
-                               FontAttributes="Bold"
-                               Text="{Binding pd.loc_nombre,StringFormat='LUGAR: {0}'}"
-                               FontSize="14">
+                            </Label>
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Grid.Row="1" Grid.Column="0" Margin="10,0,0,0" TextColor="#250C4B" FontAttributes="Bold" Text="{Binding pd.loc_nombre,StringFormat='LUGAR: {0}'}" FontSize="14">
                                 <Label.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Oswald-Regular"/>
-                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                                     </OnPlatform>
                                 </Label.FontFamily>
-                        </Label>
-
-                         <ffimageloading:CachedImage 
-                                            HeightRequest="30"
-                                            WidthRequest="30"
-                                            Aspect="AspectFit"
-                                            LoadingPlaceholder="image_loading.png"
-                                            ErrorPlaceholder="image_error.png"
-                                            Source="Compartir"
-                                            HorizontalOptions="End"
-                                            Margin="0,0,10,0"
-                                            Grid.Row ="0"
-                                            Grid.Column ="1">
-                    <ffimageloading:CachedImage.GestureRecognizers>
-                       <TapGestureRecognizer Command="{Binding CompartirCommand}"  />
-                    </ffimageloading:CachedImage.GestureRecognizers>
-                    </ffimageloading:CachedImage>
+                            </Label>
+                            <ffimageloading:CachedImage HeightRequest="30" WidthRequest="30" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="Compartir" HorizontalOptions="End" Margin="0,0,10,0" Grid.Row="0" Grid.Column="1">
+                                <ffimageloading:CachedImage.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CompartirCommand}" />
+                                </ffimageloading:CachedImage.GestureRecognizers>
+                            </ffimageloading:CachedImage>
                         </Grid>
-                    <Label Margin="5" HorizontalOptions="Start"
-                           HorizontalTextAlignment="Start"
-                           TextColor="Black"
-                           Text="{Binding pd.pro_descripcion}">
+                        <Label Margin="5" HorizontalOptions="Start" HorizontalTextAlignment="Start" TextColor="Black" Text="{Binding pd.pro_descripcion}">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Regular" />
+                                    <On Platform="Android" Value="Oswald-Regular.ttf#Roboto-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+                <StackLayout Margin="0,-18,0,0" Spacing="0">
+                    <!--<ffimageloading:CachedImage x:Name="FlechaArriba" IsVisible="false" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="promoup" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="50" Margin="20,12,20,0">
+                        <ffimageloading:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Handle_Clicked" />
+                        </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>-->
+
+                    <Button Text="{Binding NombreBoton,Mode=TwoWay}"
+                            FontSize="14"
+                            TextColor="White"
+                            Margin="20,0,20,0"
+                            BackgroundColor="#250c4b"
+                            Command="{Binding FormulariosCommand}"
+                            IsVisible="{Binding OcultaBoton,Mode=TwoWay}">
+                         <Button.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Medium" />
+                                    <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" />
+                                </OnPlatform>
+                            </Button.FontFamily>
+                        </Button>
+
+                    
+                    <Button Text="Llamar"
+                            FontSize="14"
+                            TextColor="White"
+                            Margin="20,0,20,0"
+                            BackgroundColor="#250c4b"
+                            IsVisible="{Binding LlevaTelefono,Mode=TwoWay}"
+                            Command="{Binding LlamarCommand}">
+                         <Button.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Medium" />
+                                    <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" />
+                                </OnPlatform>
+                            </Button.FontFamily>
+                        </Button>
+                    <ffimageloading:CachedImage Aspect="AspectFit"
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png"
+                                                Source="ReservaPromoDown2"
+                                                HorizontalOptions="Center"
+                                                Margin="20,0,20,5"
+                                                IsVisible="{Binding OcultaBoton2,Mode=TwoWay}"
+                                                VerticalOptions="Start">
+                        <ffimageloading:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RegresarCommand}"/>
+                        </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>
+                </StackLayout>
+
+              <!--  <StackLayout x:Name="SLR" IsVisible="false" Margin="15" Orientation="Vertical" VerticalOptions="FillAndExpand">
+                    <Label Text="PROMOCIÓN" TextColor="#250C4B" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,45">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
-                                <On Platform="iOS" Value="Oswald-Regular"/>
-                                <On Platform="Android" Value="Oswald-Regular.ttf#Roboto-Regular"/>
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                             </OnPlatform>
                         </Label.FontFamily>
                     </Label>
-                </StackLayout>
-                    </Frame>
-                <StackLayout Margin="0,-18,0,0" Spacing="0">
-                   <ffimageloading:CachedImage x:Name="FlechaArriba"
-                                               IsVisible="false"
-                                               Aspect="AspectFit"
-                                               LoadingPlaceholder="image_loading.png"
-                                               ErrorPlaceholder="image_error.png"
-                                               Source="promoup"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="End"
-                                               HeightRequest="50"
-                                               Margin="20,12,20,0">
-                       <ffimageloading:CachedImage.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Handle_Clicked" />
-                       </ffimageloading:CachedImage.GestureRecognizers>
-                       </ffimageloading:CachedImage>
-                       <ffimageloading:CachedImage x:Name="FlechaAbajo"
-                                            Aspect="AspectFit"
-                                            LoadingPlaceholder="image_loading.png"
-                                            ErrorPlaceholder="image_error.png"
-                                            Source="ReservaPromoDown2"
-                                            HorizontalOptions="Center"
-
-                                            Margin="20,0,20,5" VerticalOptions="Start">
-                       <ffimageloading:CachedImage.GestureRecognizers>
-                       <TapGestureRecognizer Tapped="Handle_Clicked" />
-                       </ffimageloading:CachedImage.GestureRecognizers>
-                       </ffimageloading:CachedImage>
-                </StackLayout>
-                <StackLayout x:Name="SLR"
-                             IsVisible="false"
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding NombreG, Mode=TwoWay}" 
+                                  Placeholder="Nombre y Apellido*"
+                                  TextColor="Black"
+                                  FontSize="18"
+                                  Keyboard="Default">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding CorreoG, Mode=TwoWay}"
+                                  Placeholder="Correo electrónico*"
+                                  TextColor="Black"
+                                  FontSize="18" Keyboard="Email">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding TelefonoG, Mode=TwoWay}"
+                                  Placeholder="Teléfono*"
+                                  TextColor="Black"
+                                  FontSize="18"
+                                  Keyboard="Telephone">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <StackLayout VerticalOptions="EndAndExpand">
+                        <Button Margin="30,10,30,7" FontSize="14" TextColor="White" BackgroundColor="#250c4b" HeightRequest="40" Text="RESERVAR" Command="{Binding EnviaCorreoCommand}" VerticalOptions="End">
+                            <Button.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Medium" />
+                                    <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" />
+                                </OnPlatform>
+                            </Button.FontFamily>
+                        </Button>
+                    </StackLayout>
+                </StackLayout>-->
+                <StackLayout x:Name="SLPromocionesCasino"
+                             IsVisible="{Binding FormularioCasino, Mode=TwoWay}"
                              Margin="15"
                              Orientation="Vertical"
                              VerticalOptions="FillAndExpand">
@@ -149,100 +212,423 @@
                            HorizontalOptions="Center"
                            HorizontalTextAlignment="Center"
                            Margin="0,0,0,45">
-                         <Label.FontFamily>
+                        <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
-                                <On Platform="iOS" Value="Oswald-Regular"/>
-                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                             </OnPlatform>
-                    </Label.FontFamily>
+                        </Label.FontFamily>
                     </Label>
-
-
-
-
-                     <xfx:XfxEntry  ActivePlaceholderColor="#7A5BA5"
-                                    Style="{DynamicResource EntryStyle}"
-                                    Text="{Binding Nombre, Mode=TwoWay}"
-                                    Placeholder="Nombre y Apellido*"
-                                    TextColor="Black"
-                                    FontSize="18"
-                                    Keyboard="Default">
-                                <Entry.HeightRequest>
-                                    <OnPlatform x:TypeArguments="x:Double">
-                                        <On Platform="iOS">60</On>
-                                        <On Platform="Android,Windows">50</On>
-                                    </OnPlatform>
-                                </Entry.HeightRequest>
-                                <Entry.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Roboto-Regular"/>
-                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                    </OnPlatform>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Nombrec, Mode=TwoWay}"
+                                  Placeholder="Nombre y Apellido*"
+                                  TextColor="Black" FontSize="18"
+                                  Keyboard="Default">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Dni, Mode=TwoWay}"
+                                  Placeholder="DNI*" TextColor="Black"
+                                  FontSize="18"
+                                  Keyboard="Numeric">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Celularc, Mode=TwoWay}"
+                                  Placeholder="Celular*" TextColor="Black" FontSize="18" Keyboard="Telephone">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Correoc, Mode=TwoWay}"
+                                  Placeholder="Correo electrónico*"
+                                  TextColor="Black"
+                                  FontSize="18"
+                                  Keyboard="Email">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <StackLayout>
+                        <xfx:XfxEntry x:Name="FechaNacimiento"
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding Fechac, Mode=TwoWay}"
+                                      Placeholder="Fecha Nacimiento *"
+                                      TextColor="Black" FontSize="18"
+                                      Keyboard="Default"
+                                      IsEnabled="false">
+                            <Entry.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <On Platform="iOS">60</On>
+                                    <On Platform="Android,Windows">50</On>
+                                </OnPlatform>
+                            </Entry.HeightRequest>
+                            <Entry.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Roboto-Regular" />
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                </OnPlatform>
                             </Entry.FontFamily>
-                            </xfx:XfxEntry>
-
-
-
-                             <xfx:XfxEntry  ActivePlaceholderColor="#7A5BA5"
-                                    Style="{DynamicResource EntryStyle}"
-                                    Text="{Binding Correo, Mode=TwoWay}"
-                                    Placeholder="Correo electrónico*"
-                                    TextColor="Black"
-                                    FontSize="18"
-                                    Keyboard="Email">
-                                <Entry.HeightRequest>
-                                    <OnPlatform x:TypeArguments="x:Double">
-                                        <On Platform="iOS">60</On>
-                                        <On Platform="Android,Windows">50</On>
-                                    </OnPlatform>
-                                </Entry.HeightRequest>
-                                <Entry.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Roboto-Regular"/>
-                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                    </OnPlatform>
-                            </Entry.FontFamily>
-                            </xfx:XfxEntry>
-
-                    
-
-                    <xfx:XfxEntry  ActivePlaceholderColor="#7A5BA5"
-                                    Style="{DynamicResource EntryStyle}"
-                                    Text="{Binding Telefono, Mode=TwoWay}"
-                                    Placeholder="Teléfono*"
-                                    TextColor="Black"
-                                    FontSize="18"
-                                    Keyboard="Telephone">
-                                <Entry.HeightRequest>
-                                    <OnPlatform x:TypeArguments="x:Double">
-                                        <On Platform="iOS">60</On>
-                                        <On Platform="Android,Windows">50</On>
-                                    </OnPlatform>
-                                </Entry.HeightRequest>
-                                <Entry.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Roboto-Regular"/>
-                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
-                                    </OnPlatform>
-                            </Entry.FontFamily>
-                            </xfx:XfxEntry>
-
+                        </xfx:XfxEntry>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="FechaNacimiento_Tapped" NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
                     <StackLayout VerticalOptions="EndAndExpand">
-                       <Button Margin="30,10,30,7"
+                        <Button Margin="30,10,30,7"
                                 FontSize="14"
                                 TextColor="White"
                                 BackgroundColor="#250c4b"
                                 HeightRequest="40" 
-                                Text="RESERVAR"
-                                Command="{Binding EnviaCorreoCommand}"
+                                Text="RESERVAR" Command="{Binding EnviaCorreoCasinoCommand}"
                                 VerticalOptions="End">
-                             <Button.FontFamily>
-                                   <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Oswald-Medium"/>
-                                        <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium"/>
-                                   </OnPlatform>
+                            <Button.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Medium" />
+                                    <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" />
+                                </OnPlatform>
                             </Button.FontFamily>
-                    </Button> 
+                        </Button>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout x:Name="SLPromocionesHotel"
+                             IsVisible="{Binding FormularioHotel, Mode=TwoWay}"
+                             Margin="15"
+                             Orientation="Vertical"
+                             VerticalOptions="FillAndExpand">
+                    <Label Text="PROMOCIÓN"
+                           TextColor="#250C4B"
+                           FontSize="18"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Margin="0,0,0,45">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Nombreh, Mode=TwoWay}"
+                                  Placeholder="Nombre y Apellido*"
+                                  TextColor="Black"
+                                  FontSize="18"
+                                  Keyboard="Default">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Correoh, Mode=TwoWay}"
+                                  Placeholder="Correo electrónico*"
+                                  TextColor="Black" FontSize="18" Keyboard="Email">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Telefonoh, Mode=TwoWay}"
+                                  Placeholder="Teléfono*" 
+                                  TextColor="Black"
+                                  FontSize="18"
+                                  Keyboard="Telephone">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <StackLayout>
+                        <xfx:XfxEntry x:Name="Fecha"
+                                      ActivePlaceholderColor="#7A5BA5" 
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding Fechah, Mode=TwoWay}"
+                                      Placeholder="Fecha aproximada de Check-In *"
+                                      TextColor="Black" FontSize="18"
+                                      Keyboard="Default"
+                                      IsEnabled="false">
+                            <Entry.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <On Platform="iOS">60</On>
+                                    <On Platform="Android,Windows">50</On>
+                                </OnPlatform>
+                            </Entry.HeightRequest>
+                            <Entry.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Roboto-Regular" />
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                </OnPlatform>
+                            </Entry.FontFamily>
+                        </xfx:XfxEntry>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Fecha_Tapped" NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <xfx:XfxEntry x:Name="CantidadNoches"
+                                  Placeholder="Cantidad de noches*"
+                                  Text="{Binding CantidadNoches, Mode=TwoWay}"
+                                  TextColor="Black"
+                                  FontSize="18" 
+                                  Keyboard="Numeric">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                         <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry x:Name="CantidadAdultos"
+                                  Placeholder="Cantidad de Adultos*"
+                                  TextColor="Black"
+                                  FontSize="18"
+                                  Keyboard="Numeric"
+                                  Text="{Binding CantidadAdulto, Mode=TwoWay}">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry x:Name="CantidadNiños"
+                                  Placeholder="Cantidad de Niños*"
+                                  TextColor="Black"
+                                  FontSize="18"
+                                  Keyboard="Numeric"
+                                  Text="{Binding CantidadNiños, Mode=TwoWay}">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                         <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <StackLayout VerticalOptions="EndAndExpand">
+                        <Button Margin="30,10,30,7"
+                                FontSize="14"
+                                TextColor="White"
+                                BackgroundColor="#250c4b"
+                                HeightRequest="40"
+                                Text="RESERVAR"
+                                Command="{Binding EnviaCorreoHotelCommand}" VerticalOptions="End">
+                            <Button.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Medium" />
+                                    <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" />
+                                </OnPlatform>
+                            </Button.FontFamily>
+                        </Button>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout x:Name="SLPromocionesGastronomia"
+                             IsVisible="{Binding FormularioGastronomia, Mode=TwoWay}"
+                             Margin="15"
+                             Orientation="Vertical"
+                             VerticalOptions="FillAndExpand">
+                    <Label Text="PROMOCIÓN" TextColor="#250C4B" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,0,45">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Oswald-Regular" />
+                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Nombreg, Mode=TwoWay}"
+                                  Placeholder="Nombre y Apellido*"
+                                  TextColor="Black"
+                                  FontSize="18"
+                                  Keyboard="Default">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Correog, Mode=TwoWay}"
+                                  Placeholder="Correo electrónico*"
+                                  TextColor="Black"
+                                  FontSize="18"
+                                  Keyboard="Email">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                    <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
+                                  Style="{DynamicResource EntryStyle}"
+                                  Text="{Binding Telefonog, Mode=TwoWay}"
+                                  Placeholder="Teléfono*"
+                                  TextColor="Black"
+                                  FontSize="18" Keyboard="Telephone">
+                        <Entry.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">60</On>
+                                <On Platform="Android,Windows">50</On>
+                            </OnPlatform>
+                        </Entry.HeightRequest>
+                        <Entry.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Roboto-Regular" />
+                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                            </OnPlatform>
+                        </Entry.FontFamily>
+                    </xfx:XfxEntry>
+                     <StackLayout>
+                        <xfx:XfxEntry x:Name="FechaSolicitada"
+                                      ActivePlaceholderColor="#7A5BA5"
+                                      Style="{DynamicResource EntryStyle}"
+                                      Text="{Binding Fechag, Mode=TwoWay}"
+                                      Placeholder="Fecha solicitada *" 
+                                      TextColor="Black" 
+                                      FontSize="18"
+                                      Keyboard="Default"
+                                      IsEnabled="false">
+                            <Entry.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <On Platform="iOS">60</On>
+                                    <On Platform="Android,Windows">50</On>
+                                </OnPlatform>
+                            </Entry.HeightRequest>
+                            <Entry.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Roboto-Regular" />
+                                    <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                </OnPlatform>
+                            </Entry.FontFamily>
+                        </xfx:XfxEntry>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="FechaSolicitada_Tapped" NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+
+                    <StackLayout VerticalOptions="EndAndExpand">
+                        <Button Margin="30,10,30,7"
+                                FontSize="14"
+                                TextColor="White"
+                                BackgroundColor="#250c4b" 
+                                HeightRequest="40"
+                                Text="RESERVAR"
+                                Command="{Binding EnviaCorreoGastronomiaCommand}" VerticalOptions="End">
+                            <Button.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="Oswald-Medium" />
+                                    <On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" />
+                                </OnPlatform>
+                            </Button.FontFamily>
+                        </Button>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
