@@ -399,6 +399,7 @@
     <Compile Include="MainApplication.cs" />
     <Compile Include="AndroidForceKeyboardDismissalService.cs" />
     <Compile Include="FirebaseService.cs" />
+    <Compile Include="SettingsServiceAndroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

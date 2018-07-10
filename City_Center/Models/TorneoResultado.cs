@@ -11,6 +11,7 @@ namespace City_Center.Models
             public string tor_nombre { get; set; }
             public string tor_descripcion { get; set; }
             public string tor_imagen { get; set; }
+            public string tor_imagen_2 { get; set; }
             public DateTime tor_fecha_hora_inicio { get; set; }
             public string tor_fecha_hora_fin { get; set; }
             public int tor_destacado { get; set; }

@@ -13,6 +13,7 @@ namespace City_Center.Models
             public string pro_nombre { get; set; }
             public string pro_descripcion { get; set; }
             public string pro_imagen { get; set; }
+            public string pro_imagen_2 { get; set; }
             public string pro_tipo_promocion { get; set; }
             public string pro_codigo { get; set; }
             public int pro_compartidos_codigo { get; set; }

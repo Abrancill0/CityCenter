@@ -434,7 +434,7 @@
            
            <StackLayout Margin="10" Orientation="Horizontal">
                  <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="ACTIVAR GEOLOCALIZACIÓN" TextColor="#250C4B" FontFamily="Oswald-Regular"></Label>
-            <Switch IsToggled="true"></Switch>
+            <Switch IsToggled="true" Toggled="Handle_Toggled"></Switch>
             </StackLayout>
            
 

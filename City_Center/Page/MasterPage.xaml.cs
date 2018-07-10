@@ -24,11 +24,11 @@ namespace City_Center.Page
             App.NavPage = Pruebita;
 
             #if __ANDROID__
-            LogoSlideMenu.Source = "logowhite";
+                        LogoSlideMenu.Source = "logowhite";
             #endif
 
             #if __IOS__
-                            LogoSlideMenu.Source ="logo@2x"
+                        LogoSlideMenu.Source = "logo@2x";
             #endif
 
             App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");

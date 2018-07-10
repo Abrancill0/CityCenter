@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
 using CarouselView.FormsPlugin.iOS;
+using City_Center.Clases;
+using City_Center.Models;
 using City_Center.Services.Contracts;
 using Facebook.CoreKit;
 using FFImageLoading;
@@ -8,6 +12,7 @@ using Firebase.CloudMessaging;
 using Foundation;
 using Google.SignIn;
 using KeyboardOverlap.Forms.Plugin.iOSUnified;
+using Plugin.DeviceInfo;
 //using Plugin.FirebasePushNotification;
 using Plugin.Toasts;
 using UIKit;
@@ -24,7 +29,44 @@ namespace City_Center.iOS
     {
         public void DidRefreshRegistrationToken(Messaging messaging, string fcmToken)
         {
-            System.Diagnostics.Debug.WriteLine($"FCM Token: {fcmToken}");
+            //System.Diagnostics.Debug.WriteLine($"FCM Token: {fcmToken}");
+
+            App.Current.Properties["Token"] = fcmToken;
+
+            App.Current.SavePropertiesAsync();
+
+            SendRegistrationToServer(fcmToken);
+        }
+
+        async void SendRegistrationToServer(string token)
+        {
+            try
+            {
+                Restcliente Cliente = new Restcliente();
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                new KeyValuePair<string, string>("neq_equipo", token),
+                new KeyValuePair<string, string>("neq_id_usuario", "0"),
+                new KeyValuePair<string, string>("neq_dispositivo", CrossDeviceInfo.Current.Platform.ToString()),
+                new KeyValuePair<string, string>("neq_app_id", CrossDeviceInfo.Current.Id)
+            });
+
+
+                var LoginReturn = await Cliente.Get<GuardadoGenerico>("/notificaciones/guardar_equipo", content);
+
+                if (LoginReturn != null)
+                {
+                    //await Mensajes.success("OK");
+                }
+
+            }
+            catch (System.Exception)
+            {
+
+
+            }
+
         }
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)

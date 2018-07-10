@@ -11,6 +11,7 @@ using Plugin.Permissions.Abstractions;
 using Xamarin.Forms;
 using City_Center.ViewModels;
 
+
 namespace City_Center.Page
 {
     public partial class Perfil : ContentPage
@@ -25,7 +26,7 @@ namespace City_Center.Page
 #if __IOS__
             NavigationPage.SetTitleIcon(this, "logo@2x.png");
 #endif
-          
+
 
             if (VariablesGlobales.Notificaciones == true)
             {
@@ -42,7 +43,7 @@ namespace City_Center.Page
                 SL3.IsVisible = true;
             }
         }
-        
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -51,12 +52,12 @@ namespace City_Center.Page
 
         protected override void OnDisappearing()
         {
-             //MainViewModel.GetInstance().Detail = new DetailViewModel();
+            //MainViewModel.GetInstance().Detail = new DetailViewModel();
             //if  (VariablesGlobales.ActualizaDatos == true)
             //{
             //    VariablesGlobales.ActualizaDatos = false;
             //    MasterPage fpm = new MasterPage();
-         
+
             if (VariablesGlobales.ActualizaDatos == true)
             {
                 VariablesGlobales.ActualizaDatos = false;
@@ -75,15 +76,15 @@ namespace City_Center.Page
             LabelTab1.TextColor = Color.FromHex("#FDFDFD");
             LabelTab2.TextColor = Color.FromHex("#71628A");
             LabelTab3.TextColor = Color.FromHex("#71628A");
-         
+
             BV1.IsVisible = true;
             BV2.IsVisible = false;
             BV3.IsVisible = false;
-           
+
             SL1.IsVisible = true;
             SL2.IsVisible = false;
             SL3.IsVisible = false;
-           
+
         }
 
         void Tab2_Tapped(object sender, System.EventArgs e)
@@ -95,11 +96,11 @@ namespace City_Center.Page
             BV1.IsVisible = false;
             BV2.IsVisible = true;
             BV3.IsVisible = false;
-           
+
             SL1.IsVisible = false;
             SL2.IsVisible = true;
             SL3.IsVisible = false;
-           
+
         }
 
         void Tab3_Tapped(object sender, System.EventArgs e)
@@ -107,19 +108,19 @@ namespace City_Center.Page
             LabelTab1.TextColor = Color.FromHex("#71628A");
             LabelTab2.TextColor = Color.FromHex("#71628A");
             LabelTab3.TextColor = Color.FromHex("#FDFDFD");
-           
+
             BV1.IsVisible = false;
             BV2.IsVisible = false;
             BV3.IsVisible = true;
-           
+
             SL1.IsVisible = false;
             SL2.IsVisible = false;
             SL3.IsVisible = true;
 
         }
-       
-		async void TipoDocumento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-		{
+
+        async void TipoDocumento_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
 #if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 #endif
@@ -128,19 +129,19 @@ namespace City_Center.Page
 
             if (result != "CANCELAR")
             {
-				TipoDocumento.Text = result.ToString();
+                TipoDocumento.Text = result.ToString();
 
-				TipoDocumento.Unfocus();
+                TipoDocumento.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
             else
             {
-				TipoDocumento.Unfocus();
+                TipoDocumento.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
-           
-		}
-	
+
+        }
+
         public async Task Camara()
         {
             try
@@ -161,7 +162,7 @@ namespace City_Center.Page
                         }
                     }
                 }
-               
+
                 await CrossMedia.Current.Initialize();
 
 
@@ -210,7 +211,7 @@ namespace City_Center.Page
         {
             await Camara();
         }
-    
+
         async void Chat_click(object sender, System.EventArgs e)
         {
             bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
@@ -218,7 +219,7 @@ namespace City_Center.Page
 
             if (isLoggedIn)
             {
-                
+
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new SeleccionTipoChat());
             }
             else
@@ -227,9 +228,9 @@ namespace City_Center.Page
             }
         }
 
-           async void Fecha_Tapped(object sender, System.EventArgs e)
-                    {
-            #if __IOS__
+        async void Fecha_Tapped(object sender, System.EventArgs e)
+        {
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 #endif
 
@@ -252,12 +253,12 @@ namespace City_Center.Page
                 Fecha.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
-   
-                    }
 
-async void TD_Tapped(object sender, System.EventArgs e)
+        }
+
+        async void TD_Tapped(object sender, System.EventArgs e)
         {
-            #if __IOS__
+#if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 #endif
 
@@ -275,6 +276,12 @@ async void TD_Tapped(object sender, System.EventArgs e)
                 TipoDocumento.Unfocus();
                 DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             }
+        }
+
+        void Handle_Toggled(object sender, Xamarin.Forms.ToggledEventArgs e)
+        {
+            DependencyService.Get<ISettingsService>().OpenSettings();
+
         }
     }
 }

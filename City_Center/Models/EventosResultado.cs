@@ -25,6 +25,7 @@ namespace City_Center.Models
             public int eve_id_locacion { get; set; }
             public object eve_descripcion_locacion { get; set; }
             public string eve_imagen { get; set; }
+            public string eve_imagen_2 { get; set; }
             public int eve_destacado { get; set; }
             public string updated_at { get; set; }
             public string created_at { get; set; }

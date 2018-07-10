@@ -459,6 +459,7 @@
       <DependentUpon>MensajeCarga.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\ActualizaBarra.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\ISettingsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

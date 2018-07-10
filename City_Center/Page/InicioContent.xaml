@@ -762,7 +762,7 @@
                                                 <RowDefinition Height="Auto" />
                                                 <RowDefinition Height="0.5*" />
                                             </Grid.RowDefinitions>
-                                            <ffimageloading:CachedImage HeightRequest="150" Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
+                                            <ffimageloading:CachedImage HeightRequest="150" Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
                                                                         Grid.Row="0"
                                                                         Grid.ColumnSpan="4"
                                                                         DownsampleToViewSize="true">
@@ -910,7 +910,10 @@
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
-                                                    <ffimageloading:CachedImage Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
+                                                    <ffimageloading:CachedImage Aspect="Fill"
+                                                                                LoadingPlaceholder="image_loading.png"
+                                                                                ErrorPlaceholder="image_error.png"
+                                                                                Source="{Binding pro_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
                                                         <ffimageloading:CachedImage.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                         </ffimageloading:CachedImage.GestureRecognizers>

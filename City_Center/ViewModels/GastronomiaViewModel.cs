@@ -303,6 +303,7 @@ namespace City_Center.ViewModels
 				pro_nombre = l.pro_nombre.ToUpper(),
                 pro_descripcion = l.pro_descripcion,
                 pro_imagen = l.pro_imagen,
+                pro_imagen_2 = l.pro_imagen_2,
                 pro_tipo_promocion = l.pro_tipo_promocion,
                 pro_codigo = l.pro_codigo,
                 pro_compartidos_codigo = l.pro_compartidos_codigo,

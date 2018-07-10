@@ -217,7 +217,7 @@ namespace City_Center.ViewModels
 
                             //}
 
-                            this.Email = string.Empty;
+                        this.Email = string.Empty;
                         this.Password = string.Empty;
 
                        // MainViewModel.GetInstance().Master = new MasterViewModel();

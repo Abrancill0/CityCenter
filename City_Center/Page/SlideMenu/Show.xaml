@@ -128,7 +128,7 @@
                                                 <RowDefinition Height="0.5*" />
                                             </Grid.RowDefinitions>
                                             <ffimageloading:CachedImage HeightRequest="100"
-                                                                        Aspect="AspectFill"
+                                                                        Aspect="Fill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
                                                                         Source="{Binding eve_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"

@@ -270,6 +270,7 @@ namespace City_Center.ViewModels
             return MainViewModel.GetInstance().listEventos.resultado.Select(l => new EventosItemViewModel
             {
                 eve_imagen = l.eve_imagen,
+                eve_imagen_2 = l.eve_imagen_2,
                 eve_descripcion = l.eve_descripcion,
                 eve_nombre = l.eve_nombre,
                 eve_fecha_hora_inicio = l.eve_fecha_hora_inicio,
