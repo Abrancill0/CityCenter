@@ -23,6 +23,14 @@ namespace City_Center.Page
 
             App.NavPage = Pruebita;
 
+            #if __ANDROID__
+            LogoSlideMenu.Source = "logowhite";
+            #endif
+
+            #if __IOS__
+                            LogoSlideMenu.Source ="logo@2x"
+            #endif
+
             App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
 
             MainView.Content = page1.Content;
@@ -62,7 +70,7 @@ namespace City_Center.Page
         //    }
         //}
 
-        #region Botones
+#region Botones
         public void ClickTap1(object sender, EventArgs e)
         {
             BV1.IsVisible = true;
@@ -165,7 +173,7 @@ namespace City_Center.Page
             VariablesGlobales.VentanaActual = "Salon";
 
         }
-        #endregion
+#endregion
 
         async void Chat_click(object sender, System.EventArgs e)
         {

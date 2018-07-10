@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Input;
+using City_Center.Clases;
 using City_Center.Models;
 using City_Center.Page;
+using City_Center.PopUp;
 using City_Center.Services;
 using GalaSoft.MvvmLight.Command;
 using Xamarin.Forms;
@@ -29,9 +31,22 @@ namespace City_Center.ViewModels
 
         private async void VerDetalle()
         {
-            MainViewModel.GetInstance().Detallepromociones = new DetallepromocionesViewModel(this);
 
-            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new DetallePromocion());  
+            //pro_ejecutar_url
+            if (this.pro_ejecutar_url == "1")
+            {
+                VariablesGlobales.RutaCompraOnline = this.pro_url;
+
+                await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new WebViewCompraOnline());
+  
+            }
+            else
+            {
+                MainViewModel.GetInstance().Detallepromociones = new DetallepromocionesViewModel(this);
+
+                await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new DetallePromocion()); 
+            }
+             
 
         }
 

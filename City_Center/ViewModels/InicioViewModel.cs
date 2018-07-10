@@ -583,7 +583,7 @@ namespace City_Center.ViewModels
 
         private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()
         {
-            return this.listPromociones.resultado.Where(l=> l.pro_id>0).Select(l => new PromocionesItemViewModel
+            return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
             {
                 pro_id = l.pro_id,
                 pro_id_evento = l.pro_id_evento,
@@ -605,7 +605,10 @@ namespace City_Center.ViewModels
                 pro_fecha_hora_modifico = l.pro_fecha_hora_modifico,
                 pro_tipo = l.pro_tipo,
                 pro_estatus = l.pro_estatus,
-                loc_nombre = l.loc_nombre
+                loc_nombre = l.loc_nombre,
+                pro_vinculo =l.pro_vinculo,
+                pro_url = l.pro_url,
+                pro_ejecutar_url =l.pro_ejecutar_url
             });
         }
 

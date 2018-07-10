@@ -317,7 +317,10 @@ namespace City_Center.ViewModels
                 pro_fecha_hora_modifico = l.pro_fecha_hora_modifico,
                 pro_tipo = l.pro_tipo,
                 pro_estatus = l.pro_estatus,
-                loc_nombre = l.loc_nombre
+                loc_nombre = l.loc_nombre,
+                pro_url = l.pro_url,
+                pro_vinculo = l.pro_vinculo,
+                pro_ejecutar_url = l.pro_ejecutar_url
             });
         }
 

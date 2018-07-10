@@ -34,11 +34,11 @@ namespace City_Center.ViewModels
         private string NombreViejo;
         private string Nombrenuevo;
         private string NombreMenu;
-		private Thickness Margen;
+        private Thickness Margen;
         private bool mM;
 
         private bool rR;
-        
+
         string fechaInicio;
         string horaInicio;
         string noPersonas;
@@ -47,6 +47,8 @@ namespace City_Center.ViewModels
         string nombre;
         string correo;
         string telefono;
+
+        int tamanoListview;
         #endregion
 
         #region Properties
@@ -74,6 +76,11 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.mM, value); }
         }
 
+        public int TamanoListview
+        {
+            get { return this.tamanoListview; }
+            set { SetValue(ref this.tamanoListview, value); }
+        }
 
         public bool RR
         {
@@ -130,7 +137,7 @@ namespace City_Center.ViewModels
         }
 
         #endregion
-      
+
 
         #region Command
 
@@ -184,8 +191,8 @@ namespace City_Center.ViewModels
 
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("nombre", this.Nombre), 
-                new KeyValuePair<string, string>("email", this.Correo), 
+                new KeyValuePair<string, string>("nombre", this.Nombre),
+                new KeyValuePair<string, string>("email", this.Correo),
                 new KeyValuePair<string, string>("telefono", this.Telefono),
                 new KeyValuePair<string, string>("restaurant", this.rd.reb_nombre),
                 new KeyValuePair<string, string>("fecha", this.FechaInicio),
@@ -212,45 +219,45 @@ namespace City_Center.ViewModels
             this.SillaNiños = "No";
             this.Correo = string.Empty;
             this.Telefono = string.Empty;
-            this.Nombre=string.Empty;
+            this.Nombre = string.Empty;
 
             this.FechaInicio = "00/00/0000";
 
 
             if (rd.reb_nombre == "PIÚ")
             {
-               
+
                 this.HoraInicio = "12:30";
-              
+
             }
             else if (rd.reb_nombre == "LE GULÁ")
             {
-               
+
                 this.HoraInicio = "21:00";
-               
+
             }
             else
             {
-               
+
                 this.HoraInicio = "00:00";
-              
+
             }
 
-          
+
         }
 
 
-		public ICommand CheckInReservaCommand
+        public ICommand CheckInReservaCommand
         {
             get
             {
-				return new RelayCommand(CheckInReserva);
+                return new RelayCommand(CheckInReserva);
             }
         }
 
-		private async void CheckInReserva()
+        private async void CheckInReserva()
         {
-			try
+            try
             {
                 Plugin.Share.Abstractions.ShareMessage Compartir = new Plugin.Share.Abstractions.ShareMessage();
 
@@ -270,7 +277,7 @@ namespace City_Center.ViewModels
             catch (Exception ex)
             {
                 await Mensajes.Alerta("Ubicación denegada, activa el GPS de tu dispositivo");
-            } 
+            }
 
         }
 
@@ -315,6 +322,10 @@ namespace City_Center.ViewModels
 
             RestaurantMenuDetalle = new ObservableCollection<MenuDetalle>();
 
+            double TamanoRegistro;
+            double NumeroRenglones;
+            int TamanoFinal = 0;
+
             foreach (var l in listRestaurantMenu.resultado.menu_detalle)
             {
                 NombreViejo = this.ToRestaurantMenuNombreItemViewModel().Where(p => p.men_id == l.mde_id_menu).Select(s => s.men_nombre).SingleOrDefault();
@@ -322,21 +333,21 @@ namespace City_Center.ViewModels
                 if (NombreViejo == Nombrenuevo)
                 {
                     NombreMenu = "";
-					
+
                     if (Device.OS == TargetPlatform.iOS)
                     {
                         Margen = new Thickness(0, 6, 0, 10);
                     }
                     else if (Device.OS == TargetPlatform.Android)
                     {
-                        Margen = new Thickness(0, -5, 0, -15);  
+                        Margen = new Thickness(0, -5, 0, -15);
                     }
-                   
+
                 }
                 else
                 {
-                    NombreMenu =  NombreViejo; 
-					//Margen = new Thickness(0, 5, 0, 23);
+                    NombreMenu = NombreViejo;
+                    //Margen = new Thickness(0, 5, 0, 23);
 
                     if (Device.OS == TargetPlatform.iOS)
                     {
@@ -364,9 +375,49 @@ namespace City_Center.ViewModels
                     mde_fecha_hora_modifico = l.mde_fecha_hora_modifico,
                     mde_estatus = l.mde_estatus,
                     NombreMenu = NombreMenu,
-					Margen = Margen
-                               
+                    Margen = Margen
+
                 });
+
+                //tamano del renglon
+                TamanoRegistro = (l.mde_descripcion.Length);
+                try
+                {
+                  
+                    if (TamanoRegistro > 45)
+                    {
+                        double NR = Convert.ToDouble(TamanoRegistro / Convert.ToDouble(45));
+                        NumeroRenglones = Convert.ToDouble(NR.ToString("#.0"));
+
+                        string[] arr = Convert.ToString(NumeroRenglones).Split('.');
+
+                        int entero = Convert.ToInt32(arr[0]);
+                        decimal dec = Convert.ToDecimal(arr[1]);
+
+
+                        if (dec > 0)
+                        {
+                            NumeroRenglones = entero + 1;
+
+                        }
+                        else
+                        {
+
+                            NumeroRenglones = entero;
+                        }
+                    }
+                    else
+                    {
+                        NumeroRenglones = 1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    NumeroRenglones = 1;
+                }
+              
+
+                TamanoFinal = TamanoFinal + ((Convert.ToInt32(NumeroRenglones)) + 2);
 
                 Nombrenuevo = this.ToRestaurantMenuNombreItemViewModel().Where(p => p.men_id == l.mde_id_menu).Select(s => s.men_nombre).SingleOrDefault();
 
@@ -381,11 +432,7 @@ namespace City_Center.ViewModels
                 MM = false;
             }
 
-           // if ()
-
-
-
-           // RestaurantMenuDetalle = new ObservableCollection<MenuDetalle>(this.ToRestaurantMenuDetalleItemViewModel());
+            TamanoListview = TamanoFinal * 16;
 
         }
 
@@ -422,7 +469,7 @@ namespace City_Center.ViewModels
                 mde_fecha_hora_modifico = l.mde_fecha_hora_modifico,
                 mde_estatus = l.mde_estatus,
                 NombreMenu = this.ToRestaurantMenuNombreItemViewModel().Where(p => p.men_id == l.mde_id_menu).Select(s => s.men_nombre).SingleOrDefault(),
-                 
+
             });
         }
 
@@ -436,8 +483,8 @@ namespace City_Center.ViewModels
             this.rd = rd;
 
             this.FechaInicio = "00/00/0000";
-			
-			this.SillaNiños = "No";
+
+            this.SillaNiños = "No";
 
             if (rd.reb_nombre.Contains("PIÚ"))
             {
@@ -446,7 +493,7 @@ namespace City_Center.ViewModels
                 VariablesGlobales.HorarioPIU = true;
                 VariablesGlobales.HorarioLEGULA = false;
             }
-            else if(rd.reb_nombre.Contains("LE GULÁ"))
+            else if (rd.reb_nombre.Contains("LE GULÁ"))
             {
                 RR = true;
                 this.HoraInicio = "21:00";
@@ -460,7 +507,7 @@ namespace City_Center.ViewModels
                 VariablesGlobales.HorarioPIU = false;
                 VariablesGlobales.HorarioLEGULA = false;
             }
-				
+
             LoadDetalleRestaurante();
         }
         #endregion
