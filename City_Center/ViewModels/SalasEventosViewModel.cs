@@ -11,6 +11,7 @@ using Xamarin.Forms;
 using static City_Center.Models.SalasEventosResultado;
 using System.Net.Http.Headers;
 using City_Center.Models;
+using Acr.UserDialogs;
 
 namespace City_Center.ViewModels
 {
@@ -129,12 +130,21 @@ namespace City_Center.ViewModels
                 return;
             }
 
-            if (string.IsNullOrEmpty(this.Empresa))
+            if (!ValidaEmailMethod.ValidateEMail(this.Correo))
             {
-                await Mensajes.Alerta("Empresa requerida");
+                await Mensajes.Alerta("Correo electronico mal estructurado");
+
+                UserDialogs.Instance.HideLoading();
 
                 return;
-            }   
+            }
+
+            //if (string.IsNullOrEmpty(this.Empresa))
+            //{
+            //    await Mensajes.Alerta("Empresa requerida");
+
+            //    return;
+            //}   
 
             if (string.IsNullOrEmpty(this.Asistentes))
             {
@@ -158,7 +168,7 @@ namespace City_Center.ViewModels
                 return;
             }
 
-			if (string.IsNullOrEmpty(this.Fecha))
+            if (this.Fecha=="00/00/0000")
             {
                 await Mensajes.Alerta("Fecha aproximada requerida");
 

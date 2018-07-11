@@ -74,7 +74,7 @@
                                       Text="{Binding Email, Mode=TwoWay}"
                                       FontSize="18"
                                       TextColor="Black"
-                                      Placeholder="Correo electrónico*"
+                                      Placeholder="Correo electrónico *"
                                       Keyboard="Email">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">

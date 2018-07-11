@@ -113,7 +113,7 @@
                                                 ErrorPlaceholder="image_error.png"
                                                 Source="ReservaPromoDown2"
                                                 HorizontalOptions="Center"
-                                                Margin="20,0,20,5"
+                                                Margin="20,5,20,5"
                                                 IsVisible="{Binding OcultaBoton2,Mode=TwoWay}"
                                                 VerticalOptions="Start">
                         <ffimageloading:CachedImage.GestureRecognizers>

@@ -241,7 +241,7 @@
                                     </OnPlatform>
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
-                            <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Empresa, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Empresa *" Keyboard="Default">
+                            <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Empresa, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Empresa" Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -535,7 +535,7 @@
                                     </OnPlatform>
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
-                            <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Empresa, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Empresa *" Keyboard="Default">
+                            <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Empresa, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Empresa" Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>

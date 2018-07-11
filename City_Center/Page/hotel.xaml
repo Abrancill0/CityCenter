@@ -709,7 +709,7 @@
                             </Label>
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <ffimageloading:CachedImage Margin="5,0,0,5" HeightRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="ValetParking" />
+                            <ffimageloading:CachedImage Margin="8,0,0,5" HeightRequest="50" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="ValetParking" />
                             <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="       VALET PARKING" TextColor="#8A7C9E" FontSize="Small">
                                 <Label.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
@@ -781,7 +781,7 @@
                                                         LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
                                                         Source="Almohada" />
-                            <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Vertical" Margin="0,5,0,0">
                                 <Label HorizontalOptions="Start"
                                    HorizontalTextAlignment="Start"
                                    Text="       ALMOHADAS ESPECIALES PARA "

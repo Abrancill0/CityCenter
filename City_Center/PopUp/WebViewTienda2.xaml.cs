@@ -27,5 +27,14 @@ namespace City_Center.PopUp
 
             //Browser.Source = VariablesGlobales.RutaTiendaGuardados;
         }
+    
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
+            GC.Collect();
+
+        }
+    
     }
 }

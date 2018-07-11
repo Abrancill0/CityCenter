@@ -178,6 +178,15 @@ namespace City_Center.ViewModels
                 return;
             }
 
+            if (!ValidaEmailMethod.ValidateEMail(this.Email))
+            {
+                await Mensajes.Alerta("Correo electronico mal estructurado");
+
+                UserDialogs.Instance.HideLoading();
+
+                return;
+            }
+
 
             if (string.IsNullOrEmpty(this.Password))
             {

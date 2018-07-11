@@ -50,12 +50,12 @@ namespace City_Center.ViewModels
             {
                 if (String.IsNullOrEmpty(VariablesGlobales.FechaShowInicio))
                 {
-                    EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 2 ));
+                    EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 152 ));
                 
                 }
                 else
                 {
-                    EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 2 && l.eve_fecha_hora_inicio >= Convert.ToDateTime(VariablesGlobales.FechaShowInicio) && l.eve_fecha_hora_inicio <= Convert.ToDateTime(VariablesGlobales.FechaShowFinal)));
+                    EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 152 && l.eve_fecha_hora_inicio >= Convert.ToDateTime(VariablesGlobales.FechaShowInicio) && l.eve_fecha_hora_inicio <= Convert.ToDateTime(VariablesGlobales.FechaShowFinal)));
                 
                 }
 
