@@ -120,7 +120,7 @@
                                     </ListView.ItemTemplate>
                                 </ListView>
                             </RelativeLayout>
-                            <StackLayout HorizontalOptions="FillAndExpand" Padding="10, 20, 0, 10" Spacing="0" BackgroundColor="White">
+                            <StackLayout HorizontalOptions="Center" Padding="10, 20, 0, 10" Spacing="0" BackgroundColor="White">
                                 <Label Text="La  multiplicidad  de  espacios  reflejada  en  los " TextColor="Black" HorizontalOptions="Start" Margin="15, 0,0,0" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" FontSize="14">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
@@ -205,8 +205,64 @@
                                 </Label>
                             </StackLayout>
                         </StackLayout>
-                        <Button x:Name="BtnContacto1" Text="" Image="btn_contacto.png" HeightRequest="50" ContentLayout="Left,0" Clicked="Handle_Clicked" BackgroundColor="#3F51B5" TextColor="White">
+                        <StackLayout x:Name="BtnContacto1" Spacing="0" HorizontalOptions="FillAndExpand">
+                            <Button 
+                                Text="CONTACTO"
+                                Clicked="Handle_Clicked"
+                                BackgroundColor="#3F51B5"
+                                TextColor="White"
+                                FontFamily="Oswald-Regular"
+                                HeightRequest="35"
+                                Margin="30,0,30,0">
+                            <Button.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Button.FontFamily>
                         </Button>
+                            <Image Source="ArrowDown"
+                               Aspect="AspectFit"
+                               VerticalOptions="Center"
+                               HeightRequest="8"
+                               WidthRequest="8"
+                               BackgroundColor="#3F51B5"
+                               Margin="30,0,30,0"/> 
+                            <BoxView HeightRequest="5"
+                                     Margin="30,0,30,0"
+                                     BackgroundColor="#3F51B5"/>
+                        </StackLayout>
+
+                         <StackLayout x:Name="BtnContacto1Regresa" IsVisible="false" Spacing="0" HorizontalOptions="FillAndExpand">
+                          <BoxView HeightRequest="5"
+                                     Margin="30,0,30,0"
+                                     BackgroundColor="#3F51B5"/>
+                              <Image Source="ArrowUp"
+                               Aspect="AspectFit"
+                               VerticalOptions="Center"
+                               HeightRequest="8"
+                               WidthRequest="8"
+                               BackgroundColor="#3F51B5"
+                               Margin="30,0,30,0"/> 
+                            <Button 
+                                Text="REGRESAR"
+                                Clicked="Handle_Clicked"
+                                BackgroundColor="#3F51B5"
+                                TextColor="White"
+                                FontFamily="Oswald-Regular"
+                                HeightRequest="35"
+                                Margin="30,0,30,0">
+                            <Button.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Button.FontFamily>
+                        </Button>
+                          
+                        </StackLayout>
+                        
+                        
                         <StackLayout Margin="10" x:Name="SLContacto1" IsVisible="false">
                             <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
                                           Style="{DynamicResource EntryStyle}"
@@ -342,10 +398,7 @@
                                         <TapGestureRecognizer
                                         Tapped="Fecha1_Tapped"
                                         NumberOfTapsRequired="1" />
-                               
-                    </StackLayout.GestureRecognizers>
-                                
-                                                                    </StackLayout>
+                                </StackLayout.GestureRecognizers></StackLayout>
                             <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Comentarios, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Comentarios" Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
@@ -446,7 +499,7 @@
                                     </ListView.ItemTemplate>
                                 </ListView>
                             </RelativeLayout>
-                            <StackLayout HorizontalOptions="FillAndExpand" Padding="10, 20, 0, 40" Spacing="0">
+                            <StackLayout HorizontalOptions="Center" Padding="10, 20, 0, 40" Spacing="0">
                                 <Label Text="El respaldo del equipamiento técnico más avanzado" TextColor="Black" HorizontalOptions="Start" Margin="15, 0" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" FontSize="13.5">
                                     <Label.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
@@ -497,15 +550,62 @@
                                 </Label>
                             </StackLayout>
                         </StackLayout>
-                        <Button Text="" 
-                                x:Name="BtnContacto2"
-                                Image="btn_contacto.png"
-                                HeightRequest="50" 
-                                ContentLayout="Left,0"
+                       <StackLayout x:Name="BtnContacto2" Spacing="0" HorizontalOptions="FillAndExpand">
+                            <Button 
+                                Text="CONTACTO"
                                 Clicked="Handle_Clicked2"
                                 BackgroundColor="#3F51B5"
-                                TextColor="White">
+                                TextColor="White"
+                                FontFamily="Oswald-Regular"
+                                HeightRequest="35"
+                                Margin="30,0,30,0">
+                            <Button.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Button.FontFamily>
                         </Button>
+                            <Image Source="ArrowDown"
+                               Aspect="AspectFit"
+                               VerticalOptions="Center"
+                               HeightRequest="8"
+                               WidthRequest="8"
+                               BackgroundColor="#3F51B5"
+                               Margin="30,0,30,0"/> 
+                            <BoxView HeightRequest="5"
+                                     Margin="30,0,30,0"
+                                     BackgroundColor="#3F51B5"/>
+                        </StackLayout>
+
+                         <StackLayout x:Name="BtnContacto2Regresa" IsVisible="false" Spacing="0" HorizontalOptions="FillAndExpand">
+                          <BoxView HeightRequest="5"
+                                     Margin="30,0,30,0"
+                                     BackgroundColor="#3F51B5"/>
+                              <Image Source="ArrowUp"
+                               Aspect="AspectFit"
+                               VerticalOptions="Center"
+                               HeightRequest="8"
+                               WidthRequest="8"
+                               BackgroundColor="#3F51B5"
+                               Margin="30,0,30,0"/> 
+                            <Button 
+                                Text="REGRESAR"
+                                Clicked="Handle_Clicked2"
+                                BackgroundColor="#3F51B5"
+                                TextColor="White"
+                                FontFamily="Oswald-Regular"
+                                HeightRequest="35"
+                                Margin="30,0,30,0">
+                            <Button.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Button.FontFamily>
+                        </Button>
+                          
+                        </StackLayout>
                         <StackLayout Margin="10" x:Name="SLContacto2" IsVisible="false">
                             <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Nombre, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Nombre y apellido*" Keyboard="Default">
                                 <Entry.HeightRequest>

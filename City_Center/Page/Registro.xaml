@@ -49,8 +49,7 @@
                                       FontSize="18"
                                       TextColor="Black"
                                       Placeholder="Nombre y Apellido *" 
-                                      Keyboard="Email"
-                    >
+                                      Keyboard="Email">
                         <Entry.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">60</On>

@@ -102,12 +102,14 @@ namespace City_Center.Page
 			{
 				Stack1.IsVisible = false;
 				SLContacto1.IsVisible = true;
-				BtnContacto1.Image = "ContactoUp.png";
+                BtnContacto1.IsVisible = false;
+                BtnContacto1Regresa.IsVisible = true;
 
 			}
 			else
 			{
-				BtnContacto1.Image = "btn_contacto.png";
+                BtnContacto1.IsVisible = true;
+                BtnContacto1Regresa.IsVisible = false;
 				Stack1.IsVisible = true;
 				SLContacto1.IsVisible = false;
 			}
@@ -120,14 +122,16 @@ namespace City_Center.Page
 			{
 				Stack2.IsVisible = false;
 				SLContacto2.IsVisible = true;
-                BtnContacto2.Image = "ContactoUp.png";
+                BtnContacto2.IsVisible = false;
+                BtnContacto2Regresa.IsVisible = true;
 			}
 			else
 			{
 
 				Stack2.IsVisible = true;
 				SLContacto2.IsVisible = false;
-                BtnContacto2.Image = "btn_contacto.png";
+                BtnContacto2.IsVisible = true;
+                BtnContacto2Regresa.IsVisible = false;
 			}
 
 		}

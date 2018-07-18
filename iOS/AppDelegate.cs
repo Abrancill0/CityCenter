@@ -29,11 +29,11 @@ namespace City_Center.iOS
     {
         public void DidRefreshRegistrationToken(Messaging messaging, string fcmToken)
         {
-            //System.Diagnostics.Debug.WriteLine($"FCM Token: {fcmToken}");
+            System.Diagnostics.Debug.WriteLine($"FCM Token: {fcmToken}");
 
-            App.Current.Properties["Token"] = fcmToken;
+           App.Current.Properties["Token"] = fcmToken;
 
-            App.Current.SavePropertiesAsync();
+           App.Current.SavePropertiesAsync();
 
             SendRegistrationToServer(fcmToken);
         }
@@ -151,8 +151,6 @@ namespace City_Center.iOS
 
             UIApplication.SharedApplication.RegisterForRemoteNotifications();
 
-
-
             return base.FinishedLaunching(app, options);
         }
 
@@ -167,7 +165,26 @@ namespace City_Center.iOS
             return ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
            
         }
-        
+
+
+        [Export("userNotificationCenter:willPresentNotification:withCompletionHandler:")]
+        public void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler)
+        {
+            var title = notification.Request.Content.Title;
+            var body = notification.Request.Content.Body;
+            debugAlert(title, body);
+        }
+
+        private void debugAlert(string title, string message)
+        {
+            var alert = new UIAlertView(title ?? "Title", message ?? "Message", null, "Cancel", "OK");
+            alert.Show();
+        }
+
+
+
+
+
 //        public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
 //        {
 //#if DEBUG

@@ -117,8 +117,8 @@
                                                     <Grid HeightRequest="230">
                                                     <ffimageloading:CachedImage 
                                                                                 Aspect="AspectFill"
-                                                                                LoadingPlaceholder="image_loading.png"
-                                                                                ErrorPlaceholder="image_error.png"
+                                                                                LoadingPlaceholder="image_loading_Large2.png"
+                                                                                ErrorPlaceholder="image_loading_Large2.png"
                                                                                 Source="{Binding reb_imagen_1,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
                                                         <ffimageloading:CachedImage.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding DetalleCommand}" />

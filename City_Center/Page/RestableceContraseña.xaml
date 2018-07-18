@@ -6,8 +6,8 @@
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              x:Class="City_Center.Page.RestableceContraseña">
 
-             <StackLayout  BindingContext="{Binding ReiniciaPass}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
-              <Frame  AbsoluteLayout.LayoutBounds="0,0,1,330" AbsoluteLayout.LayoutFlags="WidthProportional"  Margin="15" HorizontalOptions="FillAndExpand"  BackgroundColor="White">
+             <!--<StackLayout  BindingContext="{Binding ReiniciaPass}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+              <Frame AbsoluteLayout.LayoutBounds="0,0,1,330" AbsoluteLayout.LayoutFlags="WidthProportional"  Margin="15" HorizontalOptions="FillAndExpand"  BackgroundColor="White">
                 <StackLayout IsClippedToBounds="True"  Padding="10, 5" Spacing="3">
                    
                   <Label Text="Proporcionanos tu correo electrónico para enviarte una nueva contraseña"
@@ -25,7 +25,9 @@
             <xfx:XfxEntry Placeholder="Correo electrónico"
                           ActivePlaceholderColor="#7A5BA5"
                           TextColor="Black"
-                          Text="{Binding CorreoElectronico, Mode=TwoWay}">
+                          Text="{Binding CorreoElectronico, Mode=TwoWay}"
+                          Focused="Handle_Focused"
+                          Unfocused="Handle_Unfocused">
                 <Entry.HeightRequest>
                     <OnPlatform x:TypeArguments="x:Double">
                         <On Platform="iOS">60</On>
@@ -78,31 +80,21 @@
                     </StackLayout>
                 </Frame>
       
-    </StackLayout>
+    </StackLayout>-->
 
-    <!--<Frame HorizontalOptions="FillAndExpand"
-             VerticalOptions="FillAndExpand"
-             Margin="40,100,40,300"
 
-                Padding="50"
+      <Frame HorizontalOptions="Center"
+             VerticalOptions="Center"
+              WidthRequest="280"
+              BindingContext="{Binding ReiniciaPass}"
              HasShadow="true"
-             BackgroundColor="White"
-            >
-        <StackLayout Padding="2"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="FillAndExpand"
-                     Orientation="Vertical">
-            <Image Source="CloseG"
-                           HorizontalOptions="End"
-                           VerticalOptions="Start">
-                        <Image.GestureRecognizers>
-                             <TapGestureRecognizer Tapped="Cerrar"/>
-                        </Image.GestureRecognizers>
-            </Image>
-
-            <Label Text="Proporcionanos tu correo electrónico para enviarte una nueva contraseña"
+             BackgroundColor="White">
+             <StackLayout IsClippedToBounds="True" WidthRequest="280"  Padding="10, 5" Spacing="3">
+                   
+                  <Label Text="Proporcionanos tu correo electrónico para enviarte una nueva contraseña"
                    FontSize="Small"
-                   HorizontalTextAlignment="Center">
+                   HorizontalTextAlignment="Center"
+                         Margin="0,0,0,10">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
                         <On Platform="iOS" Value="Roboto-Regular" />
@@ -114,7 +106,9 @@
             <xfx:XfxEntry Placeholder="Correo electrónico"
                           ActivePlaceholderColor="#7A5BA5"
                           TextColor="Black"
-                          Text="{Binding CorreoElectronico, Mode=TwoWay}">
+                          Text="{Binding CorreoElectronico, Mode=TwoWay}"
+                          Focused="Handle_Focused"
+                          Unfocused="Handle_Unfocused">
                 <Entry.HeightRequest>
                     <OnPlatform x:TypeArguments="x:Double">
                         <On Platform="iOS">60</On>
@@ -142,7 +136,7 @@
                     </OnPlatform>
                   </Label.FontFamily>
                     <Label.GestureRecognizers>
-                             <TapGestureRecognizer Tapped="Cerrar"/>
+                             <TapGestureRecognizer Tapped="Cerrar" />
                         </Label.GestureRecognizers>
                 </Label> 
 
@@ -158,12 +152,16 @@
                   </Label.FontFamily>
                     
                      <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding RestableceCommand}" />
+                            <TapGestureRecognizer Command="{Binding RestableceCommand}" Tapped="EviarCorreo"  />
                       </Label.GestureRecognizers>
                 </Label>
+                
 
-            </StackLayout>
-            </StackLayout>
-    </Frame>-->
+                      </StackLayout>
 
+        </StackLayout>
+         </Frame>
+
+
+    
 </pages:PopupPage>

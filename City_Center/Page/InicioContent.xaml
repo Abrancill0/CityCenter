@@ -221,7 +221,8 @@
                                 </xfx:XfxEntry>
                             </StackLayout>
                         </Frame>
-                        <Button Margin="30,10,30,10" FontSize="14" TextColor="White" BackgroundColor="#250c4b" Clicked="Handle_Clicked" HeightRequest="40" Text="VER OPCIONES">
+                        <Button Margin="30,10,30,10" FontSize="14" TextColor="White" BackgroundColor="#250c4b" Clicked="Handle_Clicked" HeightRequest="40"
+                                Text="ver disponibilidad">
                             <Button.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Medium" />
@@ -308,7 +309,8 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                         </Frame>
-                        <Button Margin="30,7,30,7" FontSize="14" TextColor="White" BackgroundColor="#250c4b" HeightRequest="40" Text="ver disponibilidad" Command="{Binding VerShowsFiltroCommand}">
+                        <Button Margin="30,7,30,7" FontSize="14" TextColor="White" BackgroundColor="#250c4b" HeightRequest="40"
+                                Text="VER OPCIONES" Command="{Binding VerShowsFiltroCommand}">
                             <Button.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Medium" />
@@ -745,7 +747,7 @@
                             </cv:CarouselViewControl>-->
                              <cards:CarouselView x:Name="CarruselTorneos"
                                     Items="{Binding TorneoDetalle}" 
-                                    HeightRequest="280"
+                                    HeightRequest="350"
                                     HorizontalOptions="FillAndExpand">
                                      <cards:CarouselView.ItemTemplate>
                                         <DataTemplate>
@@ -758,11 +760,12 @@
                                                 <ColumnDefinition Width="0.5*" />
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="3*" />
-                                                <RowDefinition Height="Auto" />
-                                                <RowDefinition Height="0.5*" />
+                                               <RowDefinition Height="3.43*" />
+                                                <RowDefinition Height="0.31*" />
+                                                <RowDefinition Height="0.31*" />
                                             </Grid.RowDefinitions>
-                                            <ffimageloading:CachedImage HeightRequest="150" Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
+                                            <ffimageloading:CachedImage HeightRequest="275"
+                                                                        Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
                                                                         Grid.Row="0"
                                                                         Grid.ColumnSpan="4"
                                                                         DownsampleToViewSize="true">
@@ -911,7 +914,7 @@
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
                                                     <ffimageloading:CachedImage Aspect="Fill"
-                                                                                LoadingPlaceholder="image_loading.png"
+                                                                                HeightRequest="275"                                                                                LoadingPlaceholder="image_loading.png"
                                                                                 ErrorPlaceholder="image_error.png"
                                                                                 Source="{Binding pro_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
                                                         <ffimageloading:CachedImage.GestureRecognizers>

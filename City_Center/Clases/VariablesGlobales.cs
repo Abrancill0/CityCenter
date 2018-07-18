@@ -85,5 +85,8 @@ namespace City_Center.Clases
         public static int ChatPresente = 0;
 
         public static string VentanaActual;
+
+        public static string[] ArregloRestaurantes=new string[50];
+        public static int NumeroArreglo;
     }
 }

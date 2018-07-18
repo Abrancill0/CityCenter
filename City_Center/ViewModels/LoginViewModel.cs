@@ -254,20 +254,30 @@ namespace City_Center.ViewModels
 
 					else
 					{
-						MainViewModel.GetInstance().CambiaContrasena = new CambiaPassViewModel();
 
-						VariablesGlobales.IDUsuario = Convert.ToString(list.resultado.usu_id);
+                        if (list.resultado.usu_contrasena_temp == this.Password)
+                        {
+                            MainViewModel.GetInstance().CambiaContrasena = new CambiaPassViewModel();
 
-                        ((MasterPage)Application.Current.MainPage).IsPresented = false;
-      
-						await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new CambiaContraseña());
+                            VariablesGlobales.IDUsuario = Convert.ToString(list.resultado.usu_id);
 
-                         UserDialogs.Instance.HideLoading();
+                            ((MasterPage)Application.Current.MainPage).IsPresented = false;
+
+                            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new CambiaContraseña());
+
+                            UserDialogs.Instance.HideLoading();   
+                        }
+                        else
+                        {
+                            await Mensajes.Alerta("Usuario o Contraseña incorrectos");
+
+                            UserDialogs.Instance.HideLoading();
+
+                            return; 
+                        }
 
 					}
-
-                                   
-                   
+                     
                 }
                 else
                 {

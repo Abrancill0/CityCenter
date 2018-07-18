@@ -11,21 +11,34 @@ namespace City_Center.Page
         public RestableceContraseña()
         {
             InitializeComponent();
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
         }
   
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+        }
 
 		async void Cerrar(object sender, System.EventArgs e)
         {
             await Navigation.PopPopupAsync();
         }
 
-
         async void EviarCorreo(object sender, System.EventArgs e)
         {
             await Navigation.PopPopupAsync();
         }
 
+        void Handle_Focused(object sender, System.EventArgs e)
+        {
+         
+        }
 
+        void Handle_Unfocused(object sender, System.EventArgs e)
+        {
+           
+        }
 
     }
 }

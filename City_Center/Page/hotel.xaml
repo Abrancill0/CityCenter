@@ -432,7 +432,7 @@
                 <ScrollView>
                     <StackLayout Spacing="1" BackgroundColor="White">
                         <StackLayout HorizontalOptions="FillAndExpand">
-                            <ffimageloading:CachedImage x:Name="Img1provisional" HeightRequest="150" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding Imagen_Selected}" />
+                            <ffimageloading:CachedImage x:Name="Img1provisional" HeightRequest="150" Aspect="AspectFill" LoadingPlaceholder="image_loading_Large2.png" ErrorPlaceholder="image_loading_Large.png" Source="{Binding Imagen_Selected}" />
                         </StackLayout>
                         <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
                             <ListView Rotation="270" ItemsSource="{Binding MoaSpaDetalle}" ItemSelected="Handle_ItemSelected" RowHeight="100" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" CachingStrategy="RecycleElement">
@@ -441,7 +441,13 @@
                                         <ViewCell>
                                             <ContentView Rotation="90" BackgroundColor="Transparent">
                                                 <StackLayout HeightRequest="100" WidthRequest="100" Margin="0,5,0,0">
-                                                    <ffimageloading:CachedImage HeightRequest="100" WidthRequest="100" Aspect="AspectFill" DownsampleToViewSize="true" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding gal_imagen}">
+                                                    <ffimageloading:CachedImage HeightRequest="100"
+                                                                                WidthRequest="100"
+                                                                                Aspect="Fill"
+                                                                                DownsampleToViewSize="true"
+                                                                                LoadingPlaceholder="image_loading.png"
+                                                                                ErrorPlaceholder="image_loading.png"
+                                                                                Source="{Binding gal_imagen}">
                                                     </ffimageloading:CachedImage>
                                                 </StackLayout>
                                             </ContentView>
@@ -450,8 +456,18 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </RelativeLayout>
-                        <StackLayout Padding="10, 30" BackgroundColor="White" Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                            <Label Margin="15,0,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" Text="UN LUGAR EXCLUSIVO CREADO PARA EL" FontSize="Small">
+                        <StackLayout Padding="10, 30" BackgroundColor="White" Orientation="Vertical" HorizontalOptions="Center">
+                          <!--  <Label Margin="15,0,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" 
+                                   Text="UN LUGAR EXCLUSIVO CREADO PARA EL BIENESTAR Y CUIDADO DEL CUERPO QUE SE ENCUENTRA CON EL ESPIRITU A TRAVÉS DEL RELAX, MASAJES Y TÉCNICAS CORPORALES." FontSize="Small">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Roboto-Regular" />
+                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                    </OnPlatform>
+                                </Label.FontFamily>
+                            </Label>-->
+                             <Label Margin="5,0,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" 
+                                   Text="UN LUGAR EXCLUSIVO CREADO PARA EL" FontSize="16">
                                 <Label.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Roboto-Regular" />
@@ -459,7 +475,8 @@
                                     </OnPlatform>
                                 </Label.FontFamily>
                             </Label>
-                            <Label Margin="15,-8,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" Text="BIENESTAR Y CUIDADO DEL CUERPO QUE SE" FontSize="Small">
+                            <Label Margin="5,-8,0,0" HorizontalOptions="Start" TextColor="Black"
+                                   HorizontalTextAlignment="Start" Text="BIENESTAR Y CUIDADO DEL CUERPO QUE SE" FontSize="16">
                                 <Label.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Roboto-Regular" />
@@ -467,7 +484,7 @@
                                     </OnPlatform>
                                 </Label.FontFamily>
                             </Label>
-                            <Label Margin="15,-8,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" Text="ENCUENTRA CON EL ESPIRITU A TRAVÉS DEL" FontSize="Small">
+                            <Label Margin="5,-8,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" Text="ENCUENTRA CON EL ESPIRITU A TRAVÉS DEL" FontSize="16">
                                 <Label.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Roboto-Regular" />
@@ -475,7 +492,7 @@
                                     </OnPlatform>
                                 </Label.FontFamily>
                             </Label>
-                            <Label Margin="15,-8,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" Text="RELAX, MASAJES Y TÉCNICAS CORPORALES" FontSize="Small">
+                          <Label Margin="5,-8,0,0" HorizontalOptions="Start" TextColor="Black" HorizontalTextAlignment="Start" Text="RELAX, MASAJES Y TÉCNICAS CORPORALES" FontSize="16">
                                 <Label.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Roboto-Regular" />

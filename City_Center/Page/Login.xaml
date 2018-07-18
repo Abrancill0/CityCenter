@@ -145,7 +145,7 @@
                    FontSize="Small"
                    FontFamily="Oswald-Bold"
                    Margin="0,10,0,3"
-                   HorizontalTextAlignment="Center">
+                   HorizontalTextAlignment="End">
                 <Label.GestureRecognizers>
                      <TapGestureRecognizer Command="{Binding RestablecePassCommand}" />
                 </Label.GestureRecognizers>

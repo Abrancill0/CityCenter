@@ -10,6 +10,15 @@ namespace City_Center.Page
         public CambiaContraseña()
         {
             InitializeComponent();
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+
         }
     }
 }

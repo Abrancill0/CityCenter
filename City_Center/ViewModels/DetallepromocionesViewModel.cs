@@ -702,12 +702,39 @@ namespace City_Center.ViewModels
 
             if (this.pd.pro_vinculo == "formulario")
              {
-                NombreBoton = "Reservar";          
+                
+
+                switch (this.pd.pro_tipo)
+                {
+                    case "cas":
+                        NombreBoton = "PARTICIPAR";    
+                        break;
+                    case "hopa":
+                        NombreBoton = "CONSULTAR";    
+                        break;
+                    case "gas":
+                        NombreBoton = "PARTICIPAR";    
+                        break;
+                    case "show":
+                        NombreBoton = "PARTICIPAR";    
+                        break;
+                }
+
              }
-            else
+            else if (this.pd.pro_vinculo == "url")
             {
                 NombreBoton = "Comprar";  
             }
+           
+            OcultaBoton = true;
+            Landing = true;
+
+            if (this.pd.pro_vinculo == "telefono")
+            {
+                OcultaBoton2 = false;
+                OcultaBoton = false;
+            }
+
 
             if (string.IsNullOrEmpty(this.pd.pro_telefono))
             {
@@ -718,8 +745,7 @@ namespace City_Center.ViewModels
                 LlevaTelefono = true;
             }
 
-            OcultaBoton = true;
-            Landing = true;
+
         }
     }
 }

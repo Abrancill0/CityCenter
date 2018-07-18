@@ -19,7 +19,7 @@ namespace City_Center.Page
             #if __IOS__
             DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
             #endif
-            var result = await UserDialogs.Instance.ActionSheetAsync("Numero de socio Win", "CANCELAR", null, null, "DNI", "LE", "LC", "CI");
+            var result = await UserDialogs.Instance.ActionSheetAsync("Tipo de Documento", "CANCELAR", null, null, "DNI", "LE", "LC", "CI");
 
             if (result != "CANCELAR")
             {

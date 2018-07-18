@@ -432,7 +432,16 @@ namespace City_Center.ViewModels
                 MM = false;
             }
 
-            TamanoListview = TamanoFinal * 16;
+            //Piu
+            if (this.rd.reb_nombre=="LE GULÁ")
+            {
+                TamanoListview = (TamanoFinal * 15);
+            }
+            else
+            {
+                TamanoListview = (TamanoFinal * 15)+30;   
+            }
+           
 
         }
 
@@ -488,24 +497,31 @@ namespace City_Center.ViewModels
 
             if (rd.reb_nombre.Contains("PIÚ"))
             {
-                RR = true;
                 this.HoraInicio = "12:30";
                 VariablesGlobales.HorarioPIU = true;
                 VariablesGlobales.HorarioLEGULA = false;
             }
             else if (rd.reb_nombre.Contains("LE GULÁ"))
             {
-                RR = true;
                 this.HoraInicio = "21:00";
                 VariablesGlobales.HorarioPIU = false;
                 VariablesGlobales.HorarioLEGULA = true;
             }
             else
             {
-                RR = false;
                 this.HoraInicio = "00:00";
                 VariablesGlobales.HorarioPIU = false;
                 VariablesGlobales.HorarioLEGULA = false;
+            }
+
+
+            if (this.rd.reb_reservas==1)
+            {
+                RR = true;
+            }
+            else
+            {
+                RR = false;
             }
 
             LoadDetalleRestaurante();

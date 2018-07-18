@@ -186,8 +186,8 @@ namespace City_Center.ViewModels
 
 					//fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
                     Application.Current.MainPage = fpm;
-
-                    ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
+                    App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+                   // ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
 
                     UserDialogs.Instance.HideLoading();
                 }

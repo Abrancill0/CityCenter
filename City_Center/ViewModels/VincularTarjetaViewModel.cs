@@ -208,8 +208,8 @@ namespace City_Center.ViewModels
 
             var content1 = new FormUrlEncodedContent(new[]
            {
-                new KeyValuePair<string, string>("mensaje", "Gracias por registrarte a City Center Rosarios, Ahora podras disfrutar de los beneficios de utilizar la app."),
-                new KeyValuePair<string, string>("nombre","Bienvenido a City Center Rosario"),
+                new KeyValuePair<string, string>("mensaje", "Gracias por registrarte en nuestra App, ahora podras disfrutar de todos nuestros beneficios."),
+                new KeyValuePair<string, string>("nombre","Bienvenido a nuestra App Móvil"),
                 new KeyValuePair<string, string>("email", Application.Current.Properties["Email"].ToString()),
 
             });
@@ -225,7 +225,6 @@ namespace City_Center.ViewModels
             }
 
 
-           
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushModalAsync(new PaginaAceptar());
 
             UserDialogs.Instance.HideLoading();

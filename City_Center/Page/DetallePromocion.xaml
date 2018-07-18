@@ -29,7 +29,9 @@
                     </Frame.Padding>
                     <StackLayout Orientation="Vertical">
                         <StackLayout>
-                            <ffimageloading:CachedImage HeightRequest="180" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pd.pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" />
+                            <ffimageloading:CachedImage LoadingPlaceholder="image_loading.png"
+                                                        ErrorPlaceholder="image_error.png"
+                                                        Source="{Binding pd.pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" />
                         </StackLayout>
                         <Grid HorizontalOptions="FillAndExpand">
                             <Grid.ColumnDefinitions>
@@ -71,7 +73,7 @@
                         </Label>
                     </StackLayout>
                 </Frame>
-                <StackLayout Margin="0,-18,0,0" Spacing="0">
+                <StackLayout Margin="0,-18,0,0" Spacing="5">
                     <!--<ffimageloading:CachedImage x:Name="FlechaArriba" IsVisible="false" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="promoup" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="50" Margin="20,12,20,0">
                         <ffimageloading:CachedImage.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Handle_Clicked" />
@@ -121,7 +123,6 @@
                         </ffimageloading:CachedImage.GestureRecognizers>
                     </ffimageloading:CachedImage>
                 </StackLayout>
-
                 <StackLayout x:Name="SLPromocionesShows"
                              IsVisible="{Binding FormularioShow,Mode=TwoWay}"
                              Margin="15"
