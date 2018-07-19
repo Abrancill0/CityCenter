@@ -522,6 +522,7 @@
     <BundleResource Include="Resources\FlechaDerecha.png" />
     <BundleResource Include="Resources\FlechaIzquierda.png" />
     <BundleResource Include="Resources\image_loading_Large2.png" />
+    <BundleResource Include="Resources\Btn_Regresar.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

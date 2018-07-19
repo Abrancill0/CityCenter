@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:City_Center.View"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-             xmlns:view="clr-namespace:City_Center.Vista"
-             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
-             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
-            
-             x:Class="City_Center.Page.InicioContent">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:City_Center.View" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:view="clr-namespace:City_Center.Vista" xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+    x:Class="City_Center.Page.InicioContent">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Name="StyleButton" TargetType="Button">
@@ -28,10 +18,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        
         <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Inicio}" CompressedLayout.IsHeadless="true">
             <StackLayout>
-               
                 <ffimageloading:CachedImage Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="HOMEmin" HeightRequest="110" />
             </StackLayout>
             <StackLayout Padding="0,-30,0,0" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Margin="10">
@@ -59,7 +47,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                     <Image Aspect="AspectFit"
+                   <!-- <Image Aspect="AspectFit"
                            Source="TICKETSHOWS"
                            VerticalOptions="Start"
                            HorizontalOptions="End"
@@ -67,7 +55,7 @@
                            HeightRequest="80"
                            Grid.Column="0"
                            Grid.Row="0">
-                    </Image>
+                    </Image>-->
                     <Image x:Name="tickets" Aspect="AspectFit" Source="TICKETSHOWS" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Btn2_Clicked" />
@@ -221,8 +209,7 @@
                                 </xfx:XfxEntry>
                             </StackLayout>
                         </Frame>
-                        <Button Margin="30,10,30,10" FontSize="14" TextColor="White" BackgroundColor="#250c4b" Clicked="Handle_Clicked" HeightRequest="40"
-                                Text="ver disponibilidad">
+                        <Button Margin="30,10,30,10" FontSize="14" TextColor="White" BackgroundColor="#250c4b" Clicked="Handle_Clicked" HeightRequest="40" Text="VER DISPONIBILIDAD">
                             <Button.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Medium" />
@@ -309,8 +296,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                         </Frame>
-                        <Button Margin="30,7,30,7" FontSize="14" TextColor="White" BackgroundColor="#250c4b" HeightRequest="40"
-                                Text="VER OPCIONES" Command="{Binding VerShowsFiltroCommand}">
+                        <Button Margin="30,7,30,7" FontSize="14" TextColor="White" BackgroundColor="#250c4b" HeightRequest="40" Text="VER OPCIONES" Command="{Binding VerShowsFiltroCommand}">
                             <Button.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Medium" />
@@ -641,7 +627,7 @@
                            <Button.FontFamily><OnPlatform x:TypeArguments="x:String"><On Platform="iOS" Value="Oswald-Medium" /><On Platform="Android" Value="Oswald-Medium.ttf#Oswald-Medium" /></OnPlatform></Button.FontFamily></Button>
                     </StackLayout>
                     <StackLayout x:Name="SL4" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                       <!-- <WebView x:Name="paginitaweb1" Source="https://www.tienda.citycenter-rosario.com.ar/" />-->
+                        <!-- <WebView x:Name="paginitaweb1" Source="https://www.tienda.citycenter-rosario.com.ar/" />-->
                     </StackLayout>
                     <StackLayout Orientation="Vertical" BackgroundColor="#FFFFFF">
                         <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#FFFFFF">
@@ -745,91 +731,69 @@
                                     </DataTemplate>
                                 </cv:CarouselViewControl.ItemTemplate>
                             </cv:CarouselViewControl>-->
-                             <cards:CarouselView x:Name="CarruselTorneos"
-                                    Items="{Binding TorneoDetalle}" 
-                                    HeightRequest="350"
-                                    HorizontalOptions="FillAndExpand">
-                                     <cards:CarouselView.ItemTemplate>
-                                        <DataTemplate>
-                                            <ContentView>
-                                                <Grid BackgroundColor="White">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="1*" />
-                                                <ColumnDefinition Width="1*" />
-                                                <ColumnDefinition Width="0.5*" />
-                                                <ColumnDefinition Width="0.5*" />
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                               <RowDefinition Height="3.43*" />
-                                                <RowDefinition Height="0.31*" />
-                                                <RowDefinition Height="0.31*" />
-                                            </Grid.RowDefinitions>
-                                            <ffimageloading:CachedImage HeightRequest="275"
-                                                                        Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
-                                                                        Grid.Row="0"
-                                                                        Grid.ColumnSpan="4"
-                                                                        DownsampleToViewSize="true">
-                                                <ffimageloading:CachedImage.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
-                                                </ffimageloading:CachedImage.GestureRecognizers>
-                                            </ffimageloading:CachedImage>
-                                            <Image Aspect="Fill"
-                                                           Source="FlechaIzquierda"
-                                                           HorizontalOptions="Start"
-                                                           VerticalOptions="Center"
-                                                           Opacity="0.5"
-                                                            Grid.Row="0"
-                                                           BackgroundColor="Silver"/>
-                                            <Image Aspect="Fill"
-                                                           Source="FlechaDerecha"
-                                                           HorizontalOptions="End"
-                                                           VerticalOptions="Center" 
-                                                           Opacity="0.5"
-                                                           Grid.Row="0"
-                                                           Grid.ColumnSpan="4"
-                                                           BackgroundColor="Silver"/>
-
-                                            <Label Margin="7,4,0,0" TextColor="#5D5D5D" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}" HorizontalTextAlignment="Start" HorizontalOptions="Start" FontSize="15" VerticalOptions="End"
-                                                FontFamily="Oswald-Regular">
-                                                <Label.FontFamily>
-                                                    <OnPlatform x:TypeArguments="x:String">
-                                                        <On Platform="iOS" Value="Oswald-Regular" />
-                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                    </OnPlatform>
-                                                </Label.FontFamily>
-                                            </Label>
-                                            <Label Margin="6,0,0,0" TextColor="#5D5D5D" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="{Binding tor_fecha_hora_inicio, StringFormat='{0:dd MMMM yyyy h:mm tt}'}" VerticalOptions="Start" FontSize="12"
-                                                FontFamily="Oswald-Regular">
-                                                <Label.FontFamily>
-                                                    <OnPlatform x:TypeArguments="x:String">
-                                                        <On Platform="iOS" Value="Oswald-Regular" />
-                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                    </OnPlatform>
-                                                </Label.FontFamily>
-                                            </Label>
-                                            <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" IsVisible="{Binding oculta}" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25"
-                                                HeightRequest="25">
-                                                <Image.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
-                                                </Image.GestureRecognizers>
-                                            </Image>
-                                            <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Fav" IsVisible="{Binding tor_guardado}" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25"
-                                                HeightRequest="25">
-                                                <Image.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2" />
-                                                </Image.GestureRecognizers>
-                                            </Image>
-                                            <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25" HeightRequest="25">
-                                                <Image.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding CompartirCommand}" />
-                                                </Image.GestureRecognizers>
-                                            </Image>
-                                                 </Grid>
-                                          </ContentView>
-                                        </DataTemplate>
-                                    </cards:CarouselView.ItemTemplate>
-                                </cards:CarouselView>
-
+                            <cards:CarouselView x:Name="CarruselTorneos" Items="{Binding TorneoDetalle}" HeightRequest="350" HorizontalOptions="FillAndExpand">
+                                <cards:CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ContentView>
+                                            <Grid BackgroundColor="White">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="1*" />
+                                                    <ColumnDefinition Width="1*" />
+                                                    <ColumnDefinition Width="0.5*" />
+                                                    <ColumnDefinition Width="0.5*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="3.43*" />
+                                                    <RowDefinition Height="0.31*" />
+                                                    <RowDefinition Height="0.31*" />
+                                                </Grid.RowDefinitions>
+                                                <ffimageloading:CachedImage HeightRequest="275" Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
+                                                    <ffimageloading:CachedImage.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
+                                                    </ffimageloading:CachedImage.GestureRecognizers>
+                                                </ffimageloading:CachedImage>
+                                                <Image Aspect="Fill" Source="FlechaIzquierda" HorizontalOptions="Start" VerticalOptions="Center" Opacity="0.5" Grid.Row="0" BackgroundColor="Silver" />
+                                                <Image Aspect="Fill" Source="FlechaDerecha" HorizontalOptions="End" VerticalOptions="Center" Opacity="0.5" Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor="Silver" />
+                                                <Label Margin="7,4,0,0" TextColor="#5D5D5D" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding tor_nombre}" HorizontalTextAlignment="Start" HorizontalOptions="Start" FontSize="15" VerticalOptions="End"
+                                                    FontFamily="Oswald-Regular">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
+                                                <Label Margin="6,0,0,0" TextColor="#5D5D5D" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" HorizontalOptions="Start" Text="{Binding tor_fecha_hora_inicio, StringFormat='{0:dd MMMM yyyy h:mm tt}'}" VerticalOptions="Start" FontSize="12"
+                                                    FontFamily="Oswald-Regular">
+                                                    <Label.FontFamily>
+                                                        <OnPlatform x:TypeArguments="x:String">
+                                                            <On Platform="iOS" Value="Oswald-Regular" />
+                                                            <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                                        </OnPlatform>
+                                                    </Label.FontFamily>
+                                                </Label>
+                                                <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Favorito" IsVisible="{Binding oculta}" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25"
+                                                    HeightRequest="25">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                                <Image Margin="12" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Aspect="AspectFit" Source="Fav" IsVisible="{Binding tor_guardado}" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25"
+                                                    HeightRequest="25">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2" />
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                                <Image Margin="10" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Aspect="AspectFit" Source="Compartir" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="25" HeightRequest="25">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding CompartirCommand}" />
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </Grid>
+                                        </ContentView>
+                                    </DataTemplate>
+                                </cards:CarouselView.ItemTemplate>
+                            </cards:CarouselView>
                         </Frame>
                         <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,30,0,0" IsVisible="{Binding MuestraFlechasPromo}">
                             <Label Margin="20,3,0,0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="PROMOCIONES" TextColor="#250c4b">
@@ -899,10 +863,7 @@
                                     </DataTemplate>
                                 </cv:CarouselViewControl.ItemTemplate>
                             </cv:CarouselViewControl>-->
-                               <cards:CarouselView x:Name="CarruselPromociones"
-                                    Items="{Binding PromocionesDetalle}"
-                                                   HeightRequest="280"
-                                                    HorizontalOptions="FillAndExpand">
+                                <cards:CarouselView x:Name="CarruselPromociones" Items="{Binding PromocionesDetalle}" HeightRequest="280" HorizontalOptions="FillAndExpand">
                                     <cards:CarouselView.ItemTemplate>
                                         <DataTemplate>
                                             <ContentView>
@@ -913,21 +874,12 @@
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
-                                                    <ffimageloading:CachedImage Aspect="Fill"
-                                                                                HeightRequest="275"                                                                                LoadingPlaceholder="image_loading.png"
-                                                                                ErrorPlaceholder="image_error.png"
-                                                                                Source="{Binding pro_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
+                                                    <ffimageloading:CachedImage Aspect="Fill" HeightRequest="275" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pro_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
                                                         <ffimageloading:CachedImage.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                         </ffimageloading:CachedImage.GestureRecognizers>
                                                     </ffimageloading:CachedImage>
-                                                    <Label Text="{Binding pro_nombre}"
-                                                           Margin="5"
-                                                           HorizontalOptions="Center"
-                                                           HorizontalTextAlignment="Center"
-                                                           VerticalOptions="End"
-                                                           TextColor="White"
-                                                           FontSize="Small">
+                                                    <Label Text="{Binding pro_nombre}" Margin="5" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" TextColor="White" FontSize="Small">
                                                         <Label.FontFamily>
                                                             <OnPlatform x:TypeArguments="x:String">
                                                                 <On Platform="iOS" Value="Oswald-Regular" />
@@ -935,24 +887,13 @@
                                                             </OnPlatform>
                                                         </Label.FontFamily>
                                                     </Label>
-                                                    <Image Aspect="Fill"
-                                                           Source="FlechaIzquierda"
-                                                           HorizontalOptions="Start"
-                                                           VerticalOptions="Center"
-                                                           Opacity="0.5"
-                                                           BackgroundColor="Silver"/>
-                                                     <Image Aspect="Fill"
-                                                           Source="FlechaDerecha"
-                                                           HorizontalOptions="End"
-                                                           VerticalOptions="Center"
-                                                           Opacity="0.5"
-                                                           BackgroundColor="Silver"/>
+                                                    <Image Aspect="Fill" Source="FlechaIzquierda" HorizontalOptions="Start" VerticalOptions="Center" Opacity="0.5" BackgroundColor="Silver" />
+                                                    <Image Aspect="Fill" Source="FlechaDerecha" HorizontalOptions="End" VerticalOptions="Center" Opacity="0.5" BackgroundColor="Silver" />
                                                 </Grid>
                                             </ContentView>
                                         </DataTemplate>
                                     </cards:CarouselView.ItemTemplate>
                                 </cards:CarouselView>
-                               
                             </Frame>
                         </StackLayout>
                         <AbsoluteLayout Padding="5,20,5,0" Margin="0,0,0,-25" HeightRequest="200" WidthRequest="320" HorizontalOptions="Center" IsVisible="{Binding VerTarjeta}">

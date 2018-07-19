@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:City_Center.Vista"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-             xmlns:local1="clr-namespace:City_Center.Clases"
-             x:Class="City_Center.Page.MasInfo">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:view="clr-namespace:City_Center.Vista" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" xmlns:local1="clr-namespace:City_Center.Clases" x:Class="City_Center.Page.MasInfo">
     <ContentPage.ToolbarItems>
-        <ToolbarItem  Icon="{Binding ImagenChat, Source={x:Static local1:GlobalResources.Current}}"  Clicked="Chat_click" />
+        <ToolbarItem Icon="{Binding ImagenChat, Source={x:Static local1:GlobalResources.Current}}" Clicked="Chat_click" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -23,15 +16,11 @@
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontFamily" Value="Roboto-Regular" />
                 <Setter Property="ActivePlaceholderColor" Value="#7A5BA5" />
-
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Spacing="0"
-                     BackgroundColor="#EFEFEF"
-                     BindingContext="{Binding SalasEventos}"
-                     CompressedLayout.IsHeadless="true">
+        <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding SalasEventos}" CompressedLayout.IsHeadless="true">
             <StackLayout>
                 <ffimageloading:CachedImage HeightRequest="100" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="CONVENCIONESmin" />
             </StackLayout>
@@ -205,71 +194,52 @@
                                 </Label>
                             </StackLayout>
                         </StackLayout>
-                        <StackLayout x:Name="BtnContacto1" Spacing="0" HorizontalOptions="FillAndExpand">
-                            <Button 
-                                Text="CONTACTO"
-                                Clicked="Handle_Clicked"
-                                BackgroundColor="#3F51B5"
-                                TextColor="White"
-                                FontFamily="Oswald-Regular"
-                                HeightRequest="35"
-                                Margin="30,0,30,0">
-                            <Button.FontFamily>
+                      <!--  <StackLayout x:Name="BtnContacto1" Spacing="0" HorizontalOptions="FillAndExpand">
+                            <Button Text="CONTACTO" Clicked="Handle_Clicked"
+                                    BackgroundColor="#3F51B5"
+                                    TextColor="White" FontFamily="Oswald-Regular" HeightRequest="35" Margin="30,0,30,0">
+                                <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Oswald-Regular" />
                                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                                     </OnPlatform>
                                 </Button.FontFamily>
-                        </Button>
-                            <Image Source="ArrowDown"
-                               Aspect="AspectFit"
-                               VerticalOptions="Center"
-                               HeightRequest="8"
-                               WidthRequest="8"
-                               BackgroundColor="#3F51B5"
-                               Margin="30,0,30,0"/> 
-                            <BoxView HeightRequest="5"
-                                     Margin="30,0,30,0"
-                                     BackgroundColor="#3F51B5"/>
+                            </Button>
+                            <Image Source="ArrowDown" Aspect="AspectFit" VerticalOptions="Center" HeightRequest="8" WidthRequest="8" BackgroundColor="#3F51B5" Margin="30,0,30,0" />
+                            <BoxView HeightRequest="5" Margin="30,0,30,0" BackgroundColor="#3F51B5" />
                         </StackLayout>
+                        <StackLayout x:Name="BtnContacto1Regresa" IsVisible="false" Spacing="0" HorizontalOptions="FillAndExpand">
+                            <BoxView HeightRequest="5" Margin="30,0,30,0" BackgroundColor="#3F51B5" />
+                            <Image Source="ArrowUp" Aspect="AspectFit" VerticalOptions="Center" HeightRequest="8" WidthRequest="8" BackgroundColor="#3F51B5" Margin="30,0,30,0" />
+                            <Button Text="REGRESAR" Clicked="Handle_Clicked" BackgroundColor="#3F51B5" TextColor="White" FontFamily="Oswald-Regular" HeightRequest="35" Margin="30,0,30,0">
+                                <Button.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="Oswald-Regular" />
+                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
+                                    </OnPlatform>
+                                </Button.FontFamily>
+                            </Button>
+                        </StackLayout>-->
 
-                         <StackLayout x:Name="BtnContacto1Regresa" IsVisible="false" Spacing="0" HorizontalOptions="FillAndExpand">
-                          <BoxView HeightRequest="5"
-                                     Margin="30,0,30,0"
-                                     BackgroundColor="#3F51B5"/>
-                              <Image Source="ArrowUp"
-                               Aspect="AspectFit"
-                               VerticalOptions="Center"
-                               HeightRequest="8"
-                               WidthRequest="8"
-                               BackgroundColor="#3F51B5"
-                               Margin="30,0,30,0"/> 
-                            <Button 
-                                Text="REGRESAR"
-                                Clicked="Handle_Clicked"
-                                BackgroundColor="#3F51B5"
-                                TextColor="White"
-                                FontFamily="Oswald-Regular"
-                                HeightRequest="35"
-                                Margin="30,0,30,0">
-                            <Button.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Oswald-Regular" />
-                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                    </OnPlatform>
-                                </Button.FontFamily>
-                        </Button>
-                          
-                        </StackLayout>
+                        <Image x:Name="BtnContacto1"
+                               Source="btn_contacto"
+                              Margin="30,0,30,0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Handle_Clicked"/> 
+                            </Image.GestureRecognizers>
+                            </Image>
                         
-                        
+                        <Image x:Name="BtnContacto1Regresa"
+                               IsVisible="false"
+                               Source="Btn_Regresar"
+                              Margin="30,0,30,0">
+                            <Image.GestureRecognizers>
+                                 <TapGestureRecognizer Tapped="Handle_Clicked"/> 
+                            </Image.GestureRecognizers>
+                        </Image>
+
                         <StackLayout Margin="10" x:Name="SLContacto1" IsVisible="false">
-                            <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
-                                          Style="{DynamicResource EntryStyle}"
-                                          Text="{Binding Nombre, Mode=TwoWay}"
-                                          FontSize="14" 
-                                          TextColor="Black"
-                                          Placeholder="Nombre y Apellido*" Keyboard="Default">
+                            <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Nombre, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Nombre y Apellido*" Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -326,38 +296,25 @@
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
                             <StackLayout>
-                            <xfx:XfxEntry x:Name="TipoEvento" 
-                                          ActivePlaceholderColor="#7A5BA5"
-                                          Style="{DynamicResource EntryStyle}"
-                                          Text="{Binding TipoEvento, Mode=TwoWay}"
-                                          FontSize="14" TextColor="Black" Placeholder="Tipo de evento *"
-                                          IsEnabled="false"
-                                          Keyboard="Default">
-                                <Entry.HeightRequest>
-                                    <OnPlatform x:TypeArguments="x:Double">
-                                        <On Platform="iOS">60</On>
-                                        <On Platform="Android,Windows">50</On>
-                                    </OnPlatform>
-                                </Entry.HeightRequest>
-                                <Entry.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Roboto-Regular" />
-                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                    </OnPlatform>
-                                </Entry.FontFamily>
-                            </xfx:XfxEntry>
-                                  <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                        Tapped="TipoEvento_Tapped"
-                                        NumberOfTapsRequired="1" />
+                                <xfx:XfxEntry x:Name="TipoEvento" ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding TipoEvento, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Tipo de evento *" IsEnabled="false" Keyboard="Default">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TipoEvento_Tapped" NumberOfTapsRequired="1" />
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
-                            <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5"
-                                          Style="{DynamicResource EntryStyle}"
-                                          Text="{Binding Asistentes, Mode=TwoWay}"
-                                          FontSize="14" TextColor="Black"
-                                          Placeholder="Cantidad de asistentes *"
-                                          Keyboard="Numeric">
+                            <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Asistentes, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Cantidad de asistentes *" Keyboard="Numeric">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -372,33 +329,24 @@
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
                             <StackLayout>
-                            <xfx:XfxEntry x:Name="Fecha1"
-                                          ActivePlaceholderColor="#7A5BA5"
-                                          Style="{DynamicResource EntryStyle}"
-                                          Text="{Binding Fecha, Mode=TwoWay}"
-                                          FontSize="14" TextColor="Black"
-                                          Placeholder="Fecha aproximada *"
-
-                                          IsEnabled="false">
-                                <Entry.HeightRequest>
-                                    <OnPlatform x:TypeArguments="x:Double">
-                                        <On Platform="iOS">60</On>
-                                        <On Platform="Android,Windows">50</On>
-                                    </OnPlatform>
-                                </Entry.HeightRequest>
-                                <Entry.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Roboto-Regular" />
-                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                    </OnPlatform>
-                                </Entry.FontFamily>
-                            </xfx:XfxEntry>
-                             
-                            <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                        Tapped="Fecha1_Tapped"
-                                        NumberOfTapsRequired="1" />
-                                </StackLayout.GestureRecognizers></StackLayout>
+                                <xfx:XfxEntry x:Name="Fecha1" ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Fecha, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Fecha aproximada *" IsEnabled="false">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Fecha1_Tapped" NumberOfTapsRequired="1" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
                             <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Comentarios, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Comentarios" Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
@@ -425,7 +373,7 @@
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
-            <StackLayout x:Name="SL2" IsVisible="false" >
+            <StackLayout x:Name="SL2" IsVisible="false">
                 <ScrollView BackgroundColor="White">
                     <StackLayout Margin="10,20,0,0" BackgroundColor="White">
                         <StackLayout Orientation="Horizontal">
@@ -550,62 +498,47 @@
                                 </Label>
                             </StackLayout>
                         </StackLayout>
-                       <StackLayout x:Name="BtnContacto2" Spacing="0" HorizontalOptions="FillAndExpand">
-                            <Button 
-                                Text="CONTACTO"
-                                Clicked="Handle_Clicked2"
-                                BackgroundColor="#3F51B5"
-                                TextColor="White"
-                                FontFamily="Oswald-Regular"
-                                HeightRequest="35"
-                                Margin="30,0,30,0">
-                            <Button.FontFamily>
+                        <Image x:Name="BtnContacto2"
+                               Source="btn_contacto"
+                              Margin="30,0,30,0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Handle_Clicked2"/> 
+                            </Image.GestureRecognizers>
+                            </Image>
+                        
+                        <Image x:Name="BtnContacto2Regresa"
+                               IsVisible="false"
+                               Source="Btn_Regresar"
+                              Margin="30,0,30,0">
+                            <Image.GestureRecognizers>
+                                 <TapGestureRecognizer Tapped="Handle_Clicked2"/> 
+                            </Image.GestureRecognizers>
+                        </Image>
+                         
+                    <!--    <StackLayout x:Name="BtnContacto2" Spacing="0" HorizontalOptions="FillAndExpand">
+                            <Button Text="CONTACTO" Clicked="Handle_Clicked2" BackgroundColor="#3F51B5" TextColor="White" FontFamily="Oswald-Regular" HeightRequest="35" Margin="30,0,30,0">
+                                <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Oswald-Regular" />
                                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                                     </OnPlatform>
                                 </Button.FontFamily>
-                        </Button>
-                            <Image Source="ArrowDown"
-                               Aspect="AspectFit"
-                               VerticalOptions="Center"
-                               HeightRequest="8"
-                               WidthRequest="8"
-                               BackgroundColor="#3F51B5"
-                               Margin="30,0,30,0"/> 
-                            <BoxView HeightRequest="5"
-                                     Margin="30,0,30,0"
-                                     BackgroundColor="#3F51B5"/>
+                            </Button>
+                            <Image Source="ArrowDown" Aspect="AspectFit" VerticalOptions="Center" HeightRequest="8" WidthRequest="8" BackgroundColor="#3F51B5" Margin="30,0,30,0" />
+                            <BoxView HeightRequest="5" Margin="30,0,30,0" BackgroundColor="#3F51B5" />
                         </StackLayout>
-
-                         <StackLayout x:Name="BtnContacto2Regresa" IsVisible="false" Spacing="0" HorizontalOptions="FillAndExpand">
-                          <BoxView HeightRequest="5"
-                                     Margin="30,0,30,0"
-                                     BackgroundColor="#3F51B5"/>
-                              <Image Source="ArrowUp"
-                               Aspect="AspectFit"
-                               VerticalOptions="Center"
-                               HeightRequest="8"
-                               WidthRequest="8"
-                               BackgroundColor="#3F51B5"
-                               Margin="30,0,30,0"/> 
-                            <Button 
-                                Text="REGRESAR"
-                                Clicked="Handle_Clicked2"
-                                BackgroundColor="#3F51B5"
-                                TextColor="White"
-                                FontFamily="Oswald-Regular"
-                                HeightRequest="35"
-                                Margin="30,0,30,0">
-                            <Button.FontFamily>
+                        <StackLayout x:Name="BtnContacto2Regresa" IsVisible="false" Spacing="0" HorizontalOptions="FillAndExpand">
+                            <BoxView HeightRequest="5" Margin="30,0,30,0" BackgroundColor="#3F51B5" />
+                            <Image Source="ArrowUp" Aspect="AspectFit" VerticalOptions="Center" HeightRequest="8" WidthRequest="8" BackgroundColor="#3F51B5" Margin="30,0,30,0" />
+                            <Button Text="REGRESAR" Clicked="Handle_Clicked2" BackgroundColor="#3F51B5" TextColor="White" FontFamily="Oswald-Regular" HeightRequest="35" Margin="30,0,30,0">
+                                <Button.FontFamily>
                                     <OnPlatform x:TypeArguments="x:String">
                                         <On Platform="iOS" Value="Oswald-Regular" />
                                         <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
                                     </OnPlatform>
                                 </Button.FontFamily>
-                        </Button>
-                          
-                        </StackLayout>
+                            </Button>
+                        </StackLayout>-->
                         <StackLayout Margin="10" x:Name="SLContacto2" IsVisible="false">
                             <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Nombre, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Nombre y apellido*" Keyboard="Default">
                                 <Entry.HeightRequest>
@@ -664,39 +597,25 @@
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
                             <StackLayout>
-                            <xfx:XfxEntry x:Name="TipoEvento1"
-                                          ActivePlaceholderColor="#7A5BA5"
-                                          Style="{DynamicResource EntryStyle}"
-                                          Text="{Binding TipoEvento, Mode=TwoWay}"
-                                          FontSize="14" TextColor="Black"
-                                          Placeholder="Tipo de evento *"
-                                          IsEnabled="false"
-                                          Keyboard="Default">
-                                <Entry.HeightRequest>
-                                    <OnPlatform x:TypeArguments="x:Double">
-                                        <On Platform="iOS">60</On>
-                                        <On Platform="Android,Windows">50</On>
-                                    </OnPlatform>
-                                </Entry.HeightRequest>
-                                <Entry.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Roboto-Regular" />
-                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                    </OnPlatform>
-                                </Entry.FontFamily>
-                            </xfx:XfxEntry>
-                                 <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                        Tapped="TipoEvento2_Tapped"
-                                        NumberOfTapsRequired="1" />
+                                <xfx:XfxEntry x:Name="TipoEvento1" ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding TipoEvento, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Tipo de evento *" IsEnabled="false" Keyboard="Default">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TipoEvento2_Tapped" NumberOfTapsRequired="1" />
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
-                            <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" 
-                                          Style="{DynamicResource EntryStyle}"
-                                          Text="{Binding Asistentes, Mode=TwoWay}"
-                                          FontSize="14"
-                                          TextColor="Black" Placeholder="Cantidad de asistentes *" 
-                                          Keyboard="Numeric">
+                            <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Asistentes, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Cantidad de asistentes *" Keyboard="Numeric">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">60</On>
@@ -711,33 +630,24 @@
                                 </Entry.FontFamily>
                             </xfx:XfxEntry>
                             <StackLayout>
-                            <xfx:XfxEntry x:Name="Fecha2"
-                                          ActivePlaceholderColor="#7A5BA5"
-                                          Style="{DynamicResource EntryStyle}"
-                                          Text="{Binding Fecha, Mode=TwoWay}"
-                                          FontSize="14"
-                                          TextColor="Black"
-                                          Placeholder="Fecha aproximada *"
-                                          Keyboard="Default">
-                                <Entry.HeightRequest>
-                                    <OnPlatform x:TypeArguments="x:Double">
-                                        <On Platform="iOS">60</On>
-                                        <On Platform="Android,Windows">50</On>
-                                    </OnPlatform>
-                                </Entry.HeightRequest>
-                                <Entry.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Roboto-Regular" />
-                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                    </OnPlatform>
-                                </Entry.FontFamily>
-                            </xfx:XfxEntry>
+                                <xfx:XfxEntry x:Name="Fecha2" ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Fecha, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Fecha aproximada *" Keyboard="Default">
+                                    <Entry.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">60</On>
+                                            <On Platform="Android,Windows">50</On>
+                                        </OnPlatform>
+                                    </Entry.HeightRequest>
+                                    <Entry.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Roboto-Regular" />
+                                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                        </OnPlatform>
+                                    </Entry.FontFamily>
+                                </xfx:XfxEntry>
                                 <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                        Tapped="Fecha2_Tapped"
-                                        NumberOfTapsRequired="1" />
+                                    <TapGestureRecognizer Tapped="Fecha2_Tapped" NumberOfTapsRequired="1" />
                                 </StackLayout.GestureRecognizers>
-                                </StackLayout>
+                            </StackLayout>
                             <xfx:XfxEntry ActivePlaceholderColor="#7A5BA5" Style="{DynamicResource EntryStyle}" Text="{Binding Comentarios, Mode=TwoWay}" FontSize="14" TextColor="Black" Placeholder="Comentarios" Keyboard="Default">
                                 <Entry.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
