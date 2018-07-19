@@ -331,16 +331,17 @@ namespace City_Center.ViewModels
 
         private void GoogleLogin()
         {
-			try
-			{
-				_googleManager = DependencyService.Get<IGoogleManager>();
+            try
+            {
+                _googleManager = DependencyService.Get<IGoogleManager>();
 
                 UserDialogs.Instance.ShowLoading("Iniciando sesion...", MaskType.Black);
 
                 _googleManager.Login(OnLoginComplete);
-
-                //UserDialogs.Instance.HideLoading();
-			}
+#if __IOS__
+                UserDialogs.Instance.HideLoading();
+#endif
+            }
 			catch (Exception)
 			{
 				
@@ -454,7 +455,7 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    await Mensajes.Alerta("Eror al acceder a los servicios de google, intente de nuevo");
+                    await Mensajes.Alerta("Error al acceder a los servicios de google, intente de nuevo");
                     UserDialogs.Instance.HideLoading();
 
                     return;

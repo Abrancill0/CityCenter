@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Luis  Albor (G62L84WN3M)</CodesignKey>
+    <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
@@ -31,7 +31,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignProvision>VS: com.Danthop.CityCenter Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -53,13 +53,13 @@
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Luis  Albor (G62L84WN3M)</CodesignKey>
+    <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
      <MtouchLink>None</MtouchLink>
     <MtouchArch>i386</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignProvision>VS: com.Danthop.CityCenter Development</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
@@ -523,6 +523,7 @@
     <BundleResource Include="Resources\FlechaDerecha.png" />
     <BundleResource Include="Resources\FlechaIzquierda.png" />
     <BundleResource Include="Resources\image_loading_Large2.png" />
+    <BundleResource Include="Resources\Btn_Regresar.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacebookManager.cs" />

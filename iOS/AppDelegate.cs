@@ -166,7 +166,6 @@ namespace City_Center.iOS
            
         }
 
-
         [Export("userNotificationCenter:willPresentNotification:withCompletionHandler:")]
         public void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler)
         {
@@ -177,12 +176,22 @@ namespace City_Center.iOS
 
         private void debugAlert(string title, string message)
         {
-            var alert = new UIAlertView(title ?? "Title", message ?? "Message", null, "Cancel", "OK");
-            alert.Show();
+            
+            var options = new NotificationOptions()
+            {
+                Title = title,
+                Description = message
+
+            };
+
+            var notificator = DependencyService.Get<IToastNotificator>();
+
+            var result = notificator.Notify(options);
+
+            //var alert = new UIAlertView(title ?? "Title", message ?? "Message", null, "Cancel", "OK");
+            //alert.Show();
+
         }
-
-
-
 
 
 //        public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)

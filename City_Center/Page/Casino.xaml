@@ -614,7 +614,7 @@
                                         </DataTemplate>
                                     </cv:CarouselViewControl.ItemTemplate>
                                 </cv:CarouselViewControl>-->
-                            <cards:CarouselView x:Name="CarruselTorneos" Items="{Binding TorneoDetalle}" HeightRequest="280" HorizontalOptions="FillAndExpand">
+                            <cards:CarouselView x:Name="CarruselTorneos" Items="{Binding TorneoDetalle}" HeightRequest="300" HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
                                         <ContentView>

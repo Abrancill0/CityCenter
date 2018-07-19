@@ -96,7 +96,7 @@
             <!--ios 390
             android 375-->
             <ListView x:Name="ListaShow"
-                      ItemsSource="{Binding EventosDetalle}" RowHeight="375"
+                      ItemsSource="{Binding EventosDetalle}" RowHeight="390"
                       HasUnevenRows="false"
                       SeparatorVisibility="None"
                       Margin="10,7,10,10">
