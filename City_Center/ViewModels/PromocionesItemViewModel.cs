@@ -31,7 +31,7 @@ namespace City_Center.ViewModels
 
         private async void VerDetalle()
         {
-
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
             //pro_ejecutar_url
             if (this.pro_ejecutar_url == "1")
             {

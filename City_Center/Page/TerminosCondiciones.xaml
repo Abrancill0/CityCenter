@@ -81,7 +81,7 @@
 
              <StackLayout x:Name="SL1" HorizontalOptions="FillAndExpand" IsVisible="true">
                    <ScrollView>
-           <StackLayout Margin="15">
+           <StackLayout HorizontalOptions="Center" Margin="15">
                  <Label FontSize="Small" Text="TÉRMINOS Y CONDICIONES DE USO" TextColor="Black"
                         HorizontalOptions="Center" HorizontalTextAlignment="Center" FontFamily="Roboto-Regular"></Label>
             <Label  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontSize="Small"
@@ -183,12 +183,14 @@ los Usuarios.-">
         </StackLayout> 
                     </ScrollView>
               </StackLayout>
-
-
                       <StackLayout x:Name="SL2" HorizontalOptions="FillAndExpand" IsVisible="false" Spacing="0">
                       <ScrollView>
-                        <StackLayout Margin="15">
-                                <Label FontSize="Small" Text="POLITICA DE PRIVACIDAD" TextColor="Black"/>
+                        <StackLayout Margin="15" HorizontalOptions="Center">
+                                <Label FontSize="Small"
+                                       Text="POLITICA DE PRIVACIDAD"
+                                       TextColor="Black"
+                                       HorizontalOptions="Center"
+                                       HorizontalTextAlignment="Center"/>
                       
                     
                         <Label  HorizontalOptions="Start"

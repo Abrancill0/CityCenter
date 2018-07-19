@@ -35,7 +35,7 @@
                     HorizontalOptions="Center"
                     HorizontalTextAlignment="Center"
                     Grid.Column="1"
-                    FontSize="16"
+                    FontSize="15"
                     LineBreakMode="WordWrap"
                     Grid.Row="1"
                     TextColor="Black">

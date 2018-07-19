@@ -16,6 +16,7 @@ using City_Center.Clases;
 using static City_Center.Models.TarjetaUsuarioResultado;
 using Acr.UserDialogs;
 using static City_Center.Models.PromocionesResultado;
+using static City_Center.Models.RestaurantResultado;
 
 namespace City_Center.ViewModels
 {
@@ -26,6 +27,8 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Attributes
+        private RestaurantReturn listRestaruant;
+        private ObservableCollection<GastronomiaItemViewModel> restaurantDetalle;
 
         private PromocionesReturn listPromociones;
        
@@ -58,6 +61,12 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Properties
+
+        public ObservableCollection<GastronomiaItemViewModel> RestaurantDetalle
+        {
+            get { return this.restaurantDetalle; }
+            set { SetValue(ref this.restaurantDetalle, value); }
+        }
 
         public string FechaShowInicio
         {
@@ -643,6 +652,84 @@ namespace City_Center.ViewModels
             });
         }
 
+
+        private async void LoadRestaurantes()
+        {
+            try
+            {
+                var connection = await this.apiService.CheckConnection();
+
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Alerta("Verificá tu conexión a Internet");
+
+                    return;
+                }
+
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                new KeyValuePair<string, string>("", ""),
+                });
+
+
+                var response = await this.apiService.GetReal<RestaurantReturn>("/gastronomia", "/obtenerRestaurantBar", content);
+
+                if (!response.IsSuccess)
+                {
+                    //await Mensajes.Alerta("Error al cargar Restaurantes/Bar");
+
+                    return;
+                }
+
+                this.listRestaruant = (RestaurantReturn)response.Result;
+
+                RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel());
+
+                int contador = 0;
+
+              foreach (var item in RestaurantDetalle)
+                {
+                    VariablesGlobales.ArregloRestaurantes[contador] = item.reb_nombre;
+
+                    contador = contador + 1;
+                }
+                VariablesGlobales.NumeroArreglo = contador-1;
+
+
+            }
+            catch (Exception ex)
+            {
+             
+            }
+
+        }
+
+        private IEnumerable<GastronomiaItemViewModel> ToRestaurantItemViewModel()
+        {
+            return this.listRestaruant.resultado.Where(l => l.reb_reservas==1).Select(l => new GastronomiaItemViewModel
+            {
+                reb_id = l.reb_id,
+                reb_nombre = l.reb_nombre.ToUpper(),
+                reb_descripcion = l.reb_descripcion,
+                reb_descripcion_horario = l.reb_descripcion_horario,
+                reb_ver_hotel_spa = l.reb_ver_hotel_spa,
+                reb_reservas = l.reb_reservas,
+                reb_tipo = l.reb_tipo,
+                reb_imagen_1 = l.reb_imagen_1,
+                reb_imagen_2 = l.reb_imagen_2,
+                reb_imagen_3 = l.reb_imagen_3,
+                reb_imagen_4 = l.reb_imagen_4,
+                reb_id_usuario_creo = l.reb_id_usuario_creo,
+                reb_fecha_hora_creo = l.reb_fecha_hora_creo,
+                reb_id_usuario_modifico = l.reb_id_usuario_modifico,
+                reb_fecha_hora_modifico = l.reb_fecha_hora_modifico,
+                reb_estatus = l.reb_estatus,
+            });
+        }
+
+
+
         #endregion
 
         #region Contructors
@@ -652,6 +739,8 @@ namespace City_Center.ViewModels
             this.LoadTarjetaUsuario();
             this.LoadPromociones();
             this.LoadTorneo();
+
+            this.LoadRestaurantes();
 
             this.FechaInicio = String.Format("{0:dd/MM/yyyy}", DateTime.Today);// "00/00/0000";
 			this.HoraInicio = "00:00";

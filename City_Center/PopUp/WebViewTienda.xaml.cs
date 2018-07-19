@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using City_Center.Clases;
 using Xamarin.Forms;
 
 namespace City_Center.PopUp
@@ -32,7 +33,16 @@ namespace City_Center.PopUp
         {
             base.OnAppearing();
 
-   
+        }
+
+
+        protected override void OnDisappearing()
+        {
+
+            base.OnDisappearing();
+            ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
+            GC.Collect();
+
         }
 
     }

@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>966740090585-ss2ekmfo4rj4191m8bo8a9e69lmruapt.apps.googleusercontent.com</string>
+	<string>966740090585-pu2uas49d1d6rh7dd0e8a6eiru8kpksu.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.966740090585-ss2ekmfo4rj4191m8bo8a9e69lmruapt</string>
+	<string>com.googleusercontent.apps.966740090585-pu2uas49d1d6rh7dd0e8a6eiru8kpksu</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBtJ3fB6-k84wDfthYaphXSUcCnT5umGME</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.CityCenter.Danthop</string>
+	<string>com.Danthop.CityCenter</string>
 	<key>PROJECT_ID</key>
 	<string>citycenterapp-1524870051302</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:966740090585:ios:b49827149dd258e8</string>
+	<string>1:966740090585:ios:5a77a1234b8a136e</string>
 	<key>DATABASE_URL</key>
 	<string>https://citycenterapp-1524870051302.firebaseio.com</string>
 </dict>

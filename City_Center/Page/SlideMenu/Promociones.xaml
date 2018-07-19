@@ -145,11 +145,11 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <ffimageloading:CachedImage HeightRequest="230"
-                                                                Aspect="AspectFill"
+                                    <ffimageloading:CachedImage HeightRequest="170"
+                                                                Aspect="Fill"
                                                                 LoadingPlaceholder="image_loading.png"
                                                                 ErrorPlaceholder="image_error.png"
-                                                                Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
+                                                                Source="{Binding pro_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
                                         <ffimageloading:CachedImage.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                         </ffimageloading:CachedImage.GestureRecognizers>

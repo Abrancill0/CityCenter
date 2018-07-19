@@ -24,7 +24,7 @@
                 <StackLayout Margin="20" x:Name="SLT">
                      <StackLayout Spacing="0">
                     <ffimageloading:CachedImage HeightRequest="180"
-                                                Aspect="AspectFill"
+                                                Aspect="Fill"
                                                 LoadingPlaceholder="image_loading.png"
                                                 ErrorPlaceholder="image_error.png"
                                                 Source="{Binding td.tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" />

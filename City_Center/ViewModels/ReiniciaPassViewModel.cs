@@ -63,6 +63,14 @@ namespace City_Center.ViewModels
             }
 
 
+            if (!ValidaEmailMethod.ValidateEMail(this.CorreoElectronico))
+            {
+                await Mensajes.Alerta("Correo electronico mal estructurado");
+
+                return;
+            }
+
+
             var content = new FormUrlEncodedContent(new[]
             {
                 new KeyValuePair<string, string>("usu_email", this.CorreoElectronico),

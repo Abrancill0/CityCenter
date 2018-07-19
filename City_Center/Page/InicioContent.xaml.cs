@@ -237,9 +237,9 @@ namespace City_Center.Page
         async void FechaFin_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
 
-#if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
+        #if __IOS__
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+        #endif
 
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
@@ -271,9 +271,9 @@ namespace City_Center.Page
 
         async void FechaRango1_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-#if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
+            #if __IOS__
+                        DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
 
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
@@ -732,10 +732,71 @@ namespace City_Center.Page
         async void Restaurante_Tapped(object sender, System.EventArgs e)
         {
 #if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                        DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
 #endif
-            var result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "CANCELAR", null, null, "LE GULÁ", "PIÚ! EXPRESS");
 
+            // "LE GULÁ", "PIÚ! EXPRESS"
+
+            string result= "";
+
+
+            switch (VariablesGlobales.NumeroArreglo)
+            {
+                case 0:
+                    result = await UserDialogs.Instance.ActionSheetAsync("Restaurant", "CANCELAR", null, null, VariablesGlobales.ArregloRestaurantes[0], VariablesGlobales.ArregloRestaurantes[1]);
+
+                    break;
+                case 1:
+                     result = await UserDialogs.Instance.ActionSheetAsync("Restaurant",
+                                                                             "CANCELAR",
+                                                                             null,
+                                                                             null,
+                                                                             VariablesGlobales.ArregloRestaurantes[0],
+                                                                             VariablesGlobales.ArregloRestaurantes[1]);
+
+                    break;
+                case 2:
+                     result = await UserDialogs.Instance.ActionSheetAsync("Restaurant",
+                                                                            "CANCELAR",
+                                                                            null,
+                                                                            null,
+                                                                            VariablesGlobales.ArregloRestaurantes[0],
+                                                                            VariablesGlobales.ArregloRestaurantes[1],
+                                                                            VariablesGlobales.ArregloRestaurantes[2]);
+                    break;
+                case 3:
+                     result = await UserDialogs.Instance.ActionSheetAsync("Restaurant",
+                                                                           "CANCELAR",
+                                                                           null,
+                                                                           null,
+                                                                           VariablesGlobales.ArregloRestaurantes[0],
+                                                                           VariablesGlobales.ArregloRestaurantes[1],
+                                                                           VariablesGlobales.ArregloRestaurantes[2],
+                                                                           VariablesGlobales.ArregloRestaurantes[3]);
+                    break;
+                case 4:
+                     result = await UserDialogs.Instance.ActionSheetAsync("Restaurant",
+                                                                        "CANCELAR",
+                                                                        null,
+                                                                        null,
+                                                                        VariablesGlobales.ArregloRestaurantes[0],
+                                                                        VariablesGlobales.ArregloRestaurantes[1],
+                                                                        VariablesGlobales.ArregloRestaurantes[2],
+                                                                        VariablesGlobales.ArregloRestaurantes[3],
+                                                                        VariablesGlobales.ArregloRestaurantes[4]);
+                    break;
+         
+            }
+
+
+
+
+
+
+
+
+
+           
             if (result != "CANCELAR")
             {
                 Restaurante.Text = result.ToString();

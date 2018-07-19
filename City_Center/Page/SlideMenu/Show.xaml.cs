@@ -94,12 +94,12 @@ namespace City_Center.Page.SlideMenu
 
             if (String.IsNullOrEmpty(VariablesGlobales.FechaShowInicio))
             {
-                showsito.EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 2));
+                showsito.EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 152));
 
             }
             else
             {
-                showsito.EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 2 && l.eve_fecha_hora_inicio >= Convert.ToDateTime(VariablesGlobales.FechaShowInicio) && l.eve_fecha_hora_inicio <= Convert.ToDateTime(VariablesGlobales.FechaShowFinal)));
+                showsito.EventosDetalle = new ObservableCollection<EventosItemViewModel>(this.ToEventosItemViewModel().Where(l => l.eve_id_locacion == 152 && l.eve_fecha_hora_inicio >= Convert.ToDateTime(VariablesGlobales.FechaShowInicio) && l.eve_fecha_hora_inicio <= Convert.ToDateTime(VariablesGlobales.FechaShowFinal)));
 
             }
 

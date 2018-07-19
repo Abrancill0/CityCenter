@@ -46,7 +46,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.545217291802-p3vnre77gu0nrer2j3geekg5ttv5hqd8</string>
+				<string>com.googleusercontent.apps.966740090585-pu2uas49d1d6rh7dd0e8a6eiru8kpksu</string>
 			</array>
 			<key>CFBundleURLTypes</key>
 			<string>Editor</string>
@@ -54,7 +54,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.CityCenter.Danthop</string>
+				<string>com.Danthop.CityCenter</string>
 			</array>
 			<key>CFBundleURLTypes</key>
 			<string>Editor</string>
@@ -62,7 +62,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.CityCenter.Danthop</string>
+				<string>com.Danthop.CityCenter</string>
 			</array>
 		</dict>
 	</array>
@@ -79,17 +79,14 @@
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>audio</string>
 		<string>remote-notification</string>
 	</array>
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<false/>
 	<key>MinimumOSVersion</key>
 	<string>10.0</string>
 	<key>NSCameraUsageDescription</key>
-	<string>This app needs access to the camera to take photos.</string>
+	<string>City Center necesita uso de tu camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app needs access to photos.</string>
+	<string>City Center necesita uso de tu galeria.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>New Entry</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
@@ -127,6 +124,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>3.0</string>
 	<key>CFBundleVersion</key>
+<<<<<<< HEAD
 	<string>3.4</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Se requiere de este permiso</string>
@@ -136,5 +134,8 @@
 	<string>Se requiere de este permiso</string>
 	<key>NSSiriUsageDescription</key>
 	<string>Se requiere de este permiso</string>
+=======
+	<string>3.3</string>
+>>>>>>> b1bbb8ebe299a76ee68854df4cb7d3740437960e
 </dict>
 </plist>

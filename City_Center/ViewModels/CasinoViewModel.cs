@@ -25,6 +25,7 @@ using Plugin.Permissions.Abstractions;
 using System.Globalization;
 using Plugin.Permissions;
 using static City_Center.Models.TarjetaValidaResultado;
+using Plugin.DeviceInfo;
 
 namespace City_Center.ViewModels
 {
@@ -767,8 +768,9 @@ namespace City_Center.ViewModels
                 TamanoTarjeta = contador * 120;
                 #endif
 
+
                 #if __ANDROID__
-                TamanoTarjeta = contador * 135;
+                TamanoTarjeta = contador * 140;
                 #endif
 
 
@@ -937,6 +939,7 @@ namespace City_Center.ViewModels
 				pro_estatus = l.pro_estatus,
 				loc_nombre = l.loc_nombre,
                 pro_vinculo = l.pro_vinculo,
+                pro_telefono=l.pro_telefono,
                 pro_url = l.pro_url,
                 pro_ejecutar_url = l.pro_ejecutar_url
 			});

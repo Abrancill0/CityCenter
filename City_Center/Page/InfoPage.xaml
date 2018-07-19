@@ -84,7 +84,8 @@
                <ScrollView Orientation="Vertical">
                 <StackLayout Spacing="0">
                      <ffimageloading:CachedImage HeightRequest="240" Aspect="Fill" Source="ImageInstitucional" />
-                   <Label FontSize="15"
+                     <StackLayout HorizontalOptions="Center" Spacing="0">
+                        <Label FontSize="15"
                              TextColor="Black"
                              Margin="16,30,10,0"
                              HorizontalOptions="Start"
@@ -102,7 +103,7 @@
                              HorizontalOptions="Start"
                              HorizontalTextAlignment="Start"
                              Text="pensado y diseñado para brindar todo lo que se"/>
-                      <Label FontSize="15"
+                   <Label FontSize="15"
                              TextColor="Black"
                              Margin="16,-1,10,0"
                              HorizontalOptions="Start"
@@ -320,6 +321,7 @@
                            HorizontalOptions="Start"
                            HorizontalTextAlignment="Start"
                            Text="encuentra presente en 70 países."></Label>
+                            </StackLayout>
                  </StackLayout>
                </ScrollView>
             </StackLayout>
@@ -327,7 +329,8 @@
                 <ScrollView Orientation="Vertical">
                     <StackLayout>
                      <maps:Map x:Name="MyMap" MapType="Street" HeightRequest="240" HorizontalOptions="FillAndExpand"/>
-                     <Label TextColor="#474747"
+                     <StackLayout HorizontalOptions="Center">
+                        <Label TextColor="#474747"
                             Font="Bold"
                             Margin="16,20,10,0"
                             HorizontalOptions="Start"
@@ -433,6 +436,7 @@
                            Margin="16,-5,10,20"
                            HorizontalOptions="Start"
                            HorizontalTextAlignment="Start"/>
+                            </StackLayout>
                 </StackLayout>
                 </ScrollView>
             </StackLayout>

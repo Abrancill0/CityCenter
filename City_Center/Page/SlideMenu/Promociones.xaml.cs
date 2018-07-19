@@ -12,6 +12,15 @@ namespace City_Center.Page.SlideMenu
             InitializeComponent();
 
             NavigationPage.SetTitleIcon(this, "logo@2x.png.png");
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+
+        }
+
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
         }
 
         protected override void OnDisappearing()

@@ -17,6 +17,23 @@ namespace City_Center.Page
             App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
         }
 
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+        }
+
+
+        protected override void OnDisappearing()
+        {
+
+            base.OnDisappearing();
+            ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
+            GC.Collect();
+
+        }
+
         async void Chat_click(object sender, System.EventArgs e)
         {
             bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?

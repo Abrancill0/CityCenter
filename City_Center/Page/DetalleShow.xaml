@@ -13,8 +13,7 @@
             <ScrollView BindingContext="{Binding DetalleShow}">
              <StackLayout Spacing="0" BackgroundColor="White">
               <StackLayout Spacing="0">
-                <ffimageloading:CachedImage HeightRequest="200" 
-                                            Aspect="Fill"
+                <ffimageloading:CachedImage
                                             LoadingPlaceholder="image_loading.png"
                                             ErrorPlaceholder="image_error.png"
                                             Source="{Binding ds.eve_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" />

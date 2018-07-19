@@ -407,6 +407,7 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="packages.config" />
+    <None Include="Resources\image_loading_Large.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -577,6 +578,8 @@
     <AndroidResource Include="Resources\drawable\ChatNotificacion.png" />
     <AndroidResource Include="Resources\drawable\FlechaDerecha.png" />
     <AndroidResource Include="Resources\drawable\FlechaIzquierda.png" />
+    <AndroidResource Include="Resources\drawable\image_loading_Large.png" />
+    <AndroidResource Include="Resources\drawable\image_loading_Large2.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />

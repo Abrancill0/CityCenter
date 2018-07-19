@@ -120,7 +120,7 @@ namespace City_Center.ViewModels
         {
             try
             {
-                var result = await Application.Current.MainPage.DisplayAlert("City Center Rosario", "¿ESTÁ SEGURO QUE DESEA CERRAR SESIÓN?", "OK", "Cancelar");
+                var result = await Application.Current.MainPage.DisplayAlert("City Center Rosario", "¿Está seguro que desea salir de la aplicación?", "OK", "Cancelar");
 
                 string Mensajevalida = string.Format("Result {0}", result);
 
@@ -186,8 +186,8 @@ namespace City_Center.ViewModels
 
 					//fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
                     Application.Current.MainPage = fpm;
-
-                    ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
+                    App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+                   // ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
 
                     UserDialogs.Instance.HideLoading();
                 }
