@@ -122,9 +122,14 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0</string>
 	<key>CFBundleVersion</key>
+<<<<<<< HEAD
 	<string>3.5</string>
+=======
+	<string>3.4</string>
+<<<<<<< HEAD
+=======
+>>>>>>> 04543bf1f0e3a60dd0147fcb140955adb4337e04
 	<key>NSContactsUsageDescription</key>
 	<string>Se requiere de este permiso</string>
 	<key>NSMicrophoneUsageDescription</key>
@@ -133,5 +138,6 @@
 	<string>Se requiere de este permiso</string>
 	<key>NSSiriUsageDescription</key>
 	<string>Se requiere de este permiso</string>
+>>>>>>> 115c3dee10ff4020dc6b165a962c8dd3fa993e43
 </dict>
 </plist>
