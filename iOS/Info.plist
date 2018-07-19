@@ -127,7 +127,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>3.0</string>
 	<key>CFBundleVersion</key>
-	<string>3.3</string>
+	<string>3.4</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Se requiere de este permiso</string>
 	<key>NSMicrophoneUsageDescription</key>
