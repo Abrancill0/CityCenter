@@ -39,22 +39,12 @@
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-<<<<<<< HEAD
     <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
-    <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
-=======
     <CodesignKey>iPhone Developer: Luis  Albor (G62L84WN3M)</CodesignKey>
-    <CodesignKey>iPhone Developer: Luis  Albor (G62L84WN3M)</CodesignKey>
->>>>>>> b1bbb8ebe299a76ee68854df4cb7d3740437960e
     <MtouchLink>None</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    
     <CodesignProvision>VS: com.Danthop.CityCenter Development</CodesignProvision>
-<<<<<<< HEAD
-
-=======
->>>>>>> b1bbb8ebe299a76ee68854df4cb7d3740437960e
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -91,10 +81,7 @@
 
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: com.Danthop.CityCenter Development</CodesignProvision>
-<<<<<<< HEAD
-=======
     <MtouchFloat32>true</MtouchFloat32>
->>>>>>> b1bbb8ebe299a76ee68854df4cb7d3740437960e
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
