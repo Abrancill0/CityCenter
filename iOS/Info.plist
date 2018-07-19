@@ -124,6 +124,18 @@
 	<key>CFBundleShortVersionString</key>
 	<string>3.0</string>
 	<key>CFBundleVersion</key>
+<<<<<<< HEAD
+	<string>3.4</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Se requiere de este permiso</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Se requiere de este permiso</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Se requiere de este permiso</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Se requiere de este permiso</string>
+=======
 	<string>3.3</string>
+>>>>>>> b1bbb8ebe299a76ee68854df4cb7d3740437960e
 </dict>
 </plist>
