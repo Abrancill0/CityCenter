@@ -121,7 +121,6 @@
 		<key>NSExceptionAllowsInsecureHTTPLoads</key>
 		<true/>
 	</dict>
-	<key>CFBundleShortVersionString</key>
 	<key>CFBundleVersion</key>
 	<string>3.5</string>
 	<key>NSContactsUsageDescription</key>
