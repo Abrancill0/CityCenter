@@ -39,7 +39,7 @@
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Danthop Mexico (UP79MZ4TJ6)</CodesignKey>
+    <CodesignKey>iPhone Developer: Luis  Albor (G62L84WN3M)</CodesignKey>
     <CodesignKey>iPhone Developer: Luis  Albor (G62L84WN3M)</CodesignKey>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
@@ -60,6 +60,7 @@
     
     <CodesignProvision>VS: com.Danthop.CityCenter Development</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>

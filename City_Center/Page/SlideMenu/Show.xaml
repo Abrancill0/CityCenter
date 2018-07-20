@@ -96,7 +96,7 @@
             <!--ios 390
             android 375-->
             <ListView x:Name="ListaShow"
-                      ItemsSource="{Binding EventosDetalle}" RowHeight="390"
+                      ItemsSource="{Binding EventosDetalle}" RowHeight="375"
                       HasUnevenRows="false"
                       SeparatorVisibility="None"
                       Margin="10,7,10,10">
@@ -124,8 +124,8 @@
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="3.4*" />
-                                                <RowDefinition Height="0.31*" />
-                                                <RowDefinition Height="0.31*" />
+                                                <RowDefinition Height="0.29*" />
+                                                <RowDefinition Height="0.29*" />
                                             </Grid.RowDefinitions>
                                             <ffimageloading:CachedImage 
                                                                         LoadingPlaceholder="image_loading_Large2.png"

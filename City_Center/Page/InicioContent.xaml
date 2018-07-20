@@ -47,7 +47,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                   <!-- <Image Aspect="AspectFit"
+                    <Image Aspect="AspectFit"
                            Source="TICKETSHOWS"
                            VerticalOptions="Start"
                            HorizontalOptions="End"
@@ -55,7 +55,7 @@
                            HeightRequest="80"
                            Grid.Column="0"
                            Grid.Row="0">
-                    </Image>-->
+                    </Image>
                     <Image x:Name="tickets" Aspect="AspectFit" Source="TICKETSHOWS" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Btn2_Clicked" />
@@ -731,7 +731,10 @@
                                     </DataTemplate>
                                 </cv:CarouselViewControl.ItemTemplate>
                             </cv:CarouselViewControl>-->
-                            <cards:CarouselView x:Name="CarruselTorneos" Items="{Binding TorneoDetalle}" HeightRequest="350" HorizontalOptions="FillAndExpand">
+                            <cards:CarouselView x:Name="CarruselTorneos"
+                                                Items="{Binding TorneoDetalle}"
+                                                HeightRequest="300" 
+                                                HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
                                         <ContentView>

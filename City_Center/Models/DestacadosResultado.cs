@@ -16,6 +16,7 @@ namespace City_Center.Models
             public string des_nombre { get; set; }
             public string des_descripcion { get; set; }
             public string des_imagen { get; set; }
+            public string des_imagen_2 { get; set; }
             public DateTime des_fecha_hora_inicio { get; set; }
             public string des_fecha_hora_fin { get; set; }
             public int des_id_usuario_creo { get; set; }

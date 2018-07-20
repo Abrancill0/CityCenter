@@ -255,7 +255,10 @@
                                     </DataTemplate>
                                     </cv:CarouselViewControl.ItemTemplate>
                                 </cv:CarouselViewControl>-->
-                            <cards:CarouselView x:Name="CarruselDestacados" Items="{Binding DestacadosDetalle}" HeightRequest="280" HorizontalOptions="FillAndExpand">
+                            <cards:CarouselView x:Name="CarruselDestacados"
+                                                Items="{Binding DestacadosDetalle}"
+                                                HeightRequest="300"
+                                                HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
                                         <ContentView>
@@ -273,7 +276,9 @@
                                             </Grid.RowDefinitions>
                                             <ffimageloading:CachedImage Aspect="Fill"
                                                                         HeightRequest="275"
-                                                                            LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding des_imagen}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
+                                                                            LoadingPlaceholder="image_loading.png"
+                                                                        ErrorPlaceholder="image_error.png" 
+                                                                        Source="{Binding des_imagen_2}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
                                                     <ffimageloading:CachedImage.GestureRecognizers>
                                                         <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
@@ -492,134 +497,16 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                            <!--    <cv:CarouselViewControl ItemsSource="{Binding TorneoDetalle}"
-                                                        HeightRequest="300"
-                                                        HorizontalOptions="FillAndExpand"
-                                                        AnimateTransition="true"
-                                                        ShowArrows="{Binding MuestraFlechas, Mode=TwoWay}"
-                                                        ArrowsTintColor="White"
-                                                        ArrowsBackgroundColor="Black"
-                                                        x:Name="CarruselTorneos"
-                                                        PositionSelected="PositionSelected_CT"
-                                                        Scrolled="Scrolled_CT"
-                                                        Position="1">
-                                    <cv:CarouselViewControl.ItemTemplate >
-                                        <DataTemplate>
-                                            <Grid BackgroundColor = "White" >
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="1*" />
-                                                    <ColumnDefinition Width="1*" />
-                                                    <ColumnDefinition Width="0.5*" />
-                                                    <ColumnDefinition Width="0.5*" />
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="3*" />
-                                                    <RowDefinition Height="Auto" />
-                                                    <RowDefinition Height="0.5*" />
-                                                </Grid.RowDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="150"
-                                                                            Aspect="Fill"
-                                                                            LoadingPlaceholder="image_loading.png"
-                                                                            ErrorPlaceholder="image_error.png"
-                                                                            Source="{Binding tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
-                                                                            Grid.Row="0" Grid.ColumnSpan="4"
-                                                                            DownsampleToViewSize="true">
-                                                  <ffimageloading:CachedImage.GestureRecognizers>
-                                                        <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
-                                                    </ffimageloading:CachedImage.GestureRecognizers>
-                                                    </ffimageloading:CachedImage>
-                                                    <Label Margin="7,4,0,0"
-                                                           TextColor = "#5D5D5D"
-                                                           Grid.Row="1"
-                                                           Grid.Column="0"
-                                                           Grid.ColumnSpan="2"
-                                                           Text="{Binding tor_nombre}"
-                                                           HorizontalTextAlignment="Start"
-                                                           HorizontalOptions="Start"
-                                                           FontSize="15"
-                                                           VerticalOptions = "End"
-                                                           FontFamily="Oswald-Regular" >
-                                                         <Label.FontFamily>
-                                                            <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Oswald-Regular"/>
-                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                            </OnPlatform>
-                                                        </Label.FontFamily>
-                                                    </Label>
-                                                    
-                                                    <Label Margin="6,0,0,0"
-                                                           TextColor = "#5D5D5D"
-                                                           Grid.Row="2"
-                                                           Grid.Column="0"
-                                                           Grid.ColumnSpan="2"
-                                                           HorizontalTextAlignment="Start"
-                                                           HorizontalOptions="Start"
-                                                           Text="{Binding tor_fecha_hora_inicio, StringFormat='{0:dd MMMM yyyy h:mm tt}'}"
-                                                           VerticalOptions = "Start"
-                                                           FontSize="12"
-                                                           FontFamily="Oswald-Regular" >
-                                                         <Label.FontFamily>
-                                                            <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Oswald-Regular"/>
-                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                            </OnPlatform>
-                                                        </Label.FontFamily>
-                                                    </Label>
-                                                    <Image Margin="12"
-                                                           Grid.Row="1"
-                                                           Grid.Column="2"
-                                                           Grid.RowSpan="2"
-                                                           Aspect="AspectFit"
-                                                           Source="Favorito"
-                                                           IsVisible="{Binding oculta}"
-                                                           VerticalOptions = "Start"
-                                                           HorizontalOptions = "Center"
-                                                           WidthRequest="25"
-                                                           HeightRequest="25">
-                                                        <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono" />
-                                                        </Image.GestureRecognizers>
-                                                    </Image>
 
-                                                         <Image Margin="12"
-                                                            Grid.Row="1"
-                                                            Grid.Column="2"
-                                                            Grid.RowSpan="2"
-                                                            Aspect="AspectFit"
-                                                            Source="Fav"
-                                                            IsVisible="{Binding tor_guardado}"
-                                                            VerticalOptions="Start"
-                                                            HorizontalOptions="Center"
-                                                            WidthRequest="25"
-                                                            HeightRequest="25">
-                                                 <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2" />
-                                                        </Image.GestureRecognizers>
-                                                    </Image>
-                                                    <Image Margin="10"
-                                                           Grid.Row="1"
-                                                           Grid.Column="3"
-                                                           Grid.RowSpan="2"
-                                                           Aspect="AspectFit"
-                                                           Source="Compartir"
-                                                           VerticalOptions = "Start"
-                                                           HorizontalOptions = "Center"
-                                                           WidthRequest="25"
-                                                           HeightRequest="25">
-                                                        <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding CompartirCommand}" />
-                                                        </Image.GestureRecognizers>
-                                                    </Image>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </cv:CarouselViewControl.ItemTemplate>
-                                </cv:CarouselViewControl>-->
-                            <cards:CarouselView x:Name="CarruselTorneos" Items="{Binding TorneoDetalle}" HeightRequest="300" HorizontalOptions="FillAndExpand">
+                            <cards:CarouselView x:Name="CarruselTorneos"
+                                                Items="{Binding TorneoDetalle}"
+                                                HeightRequest="300"
+                                                 HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
                                         <ContentView>
-                                            <Grid BackgroundColor="White">
-                                                   <Grid.ColumnDefinitions>
+                                     <Grid BackgroundColor="#White">
+                                        <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="1*" />
                                                 <ColumnDefinition Width="1*" />
                                                 <ColumnDefinition Width="0.5*" />
@@ -631,7 +518,10 @@
                                                 <RowDefinition Height="0.31*" />
                                             </Grid.RowDefinitions>
                                             <ffimageloading:CachedImage Aspect="Fill"
-                                                                        HeightRequest="275" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
+                                                                        HeightRequest="275"
+                                                                        LoadingPlaceholder="image_loading.png"
+                                                                        ErrorPlaceholder="image_error.png" 
+                                                                        Source="{Binding tor_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
                                                     <ffimageloading:CachedImage.GestureRecognizers>
                                                         <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
@@ -676,11 +566,12 @@
                                                     </Image.GestureRecognizers>
                                                 </Image>
                                             </Grid>
+                                        
                                         </ContentView>
                                     </DataTemplate>
                                 </cards:CarouselView.ItemTemplate>
                             </cards:CarouselView>
-                        </Frame>
+                 </Frame>
                         <StackLayout Spacing="0" Margin="0,20,0,0">
                             <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Margin="20,0,0,7" Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular">
                                 <Label.FontFamily>

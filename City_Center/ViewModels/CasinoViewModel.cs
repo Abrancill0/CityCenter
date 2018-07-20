@@ -434,6 +434,7 @@ namespace City_Center.ViewModels
             return MainViewModel.GetInstance().listDestacados.resultado.Where(l => l.des_id > 0).Select(l => new DestacadosItemViewModel
 			{
 				des_imagen = VariablesGlobales.RutaServidor + l.des_imagen,
+                des_imagen_2 = VariablesGlobales.RutaServidor + l.des_imagen_2,
 				des_descripcion = l.des_descripcion,
 				des_fecha_hora_inicio = l.des_fecha_hora_inicio,
 				des_nombre = l.des_nombre,

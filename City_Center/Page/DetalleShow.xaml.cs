@@ -16,6 +16,14 @@ namespace City_Center.Page
             App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+        }
+
+
+
 		void CambiaIcono(object sender, System.EventArgs e)
         {
             try
