@@ -580,6 +580,9 @@
     <AndroidResource Include="Resources\drawable\FlechaIzquierda.png" />
     <AndroidResource Include="Resources\drawable\image_loading_Large.png" />
     <AndroidResource Include="Resources\drawable\image_loading_Large2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iconoappccr.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iconoappccr.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconoappccr.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />

@@ -489,11 +489,13 @@ namespace City_Center.ViewModels
 
                 _facebookManager.Login(OnLoginComplete);
 
-                _facebookManager.Logout();
-			}
-			catch (Exception)
-			{
+                //_facebookManager.Logout();
 
+                UserDialogs.Instance.HideLoading();
+			}
+			catch (Exception ex)
+			{
+                //Mensajes.Alerta(ex.ToString()); 
 			}
 
         }

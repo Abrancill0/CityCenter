@@ -62,12 +62,12 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.Danthop.CityCenter</string>
+				<string>fb2334937976732556</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string>190981911708650</string>
+	<string>2334937976732556</string>
 	<key>FacebookDisplayName</key>
 	<string>AuthenticationExample</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -88,7 +88,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>City Center necesita uso de tu galeria.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>New Entry</string>
+	<string>City Center necesita uso de tu galeria.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>City Center necesita uso de tu ubicación</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
