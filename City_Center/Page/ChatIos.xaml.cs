@@ -34,13 +34,13 @@ namespace City_Center.Page
                 {
                     Application.Current.Properties["VariableChatCasino"] = VariableChat;
 
-                    var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + Application.Current.Properties["Casino"].ToString());
+                    var uri = new Uri("https://citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + Application.Current.Properties["Casino"].ToString());
 
                     var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                     WebViewChat.Source = nsurl.ToString();
 
-                    var uri1 = new Uri("http://wpage.citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + "0");
+                    var uri1 = new Uri("https://citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + "0");
 
                     var nsurl1 = new Foundation.NSUrl(uri1.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
@@ -67,14 +67,14 @@ namespace City_Center.Page
 
                     Application.Current.Properties["VariableChatHotel"] = VariableChat;
 
-                    var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + Application.Current.Properties["Hotel"].ToString());
+                    var uri = new Uri("https://citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + Application.Current.Properties["Hotel"].ToString());
 
                     var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
                     WebViewChat.Source = nsurl.ToString();
 
 
-                    var uri1 = new Uri("http://wpage.citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + "0");
+                    var uri1 = new Uri("https://citycenter-rosario.com.ar/chat_app/" + TipoChat + "/" + VariableChat + "/" + Nombre + "/" + Email + "/" + "0");
 
                     var nsurl1 = new Foundation.NSUrl(uri1.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
@@ -106,7 +106,7 @@ namespace City_Center.Page
 
             if (VariablesGlobales.TipoChat == "casino")
             {
-                var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatCasino"].ToString());
+                var uri = new Uri("https://citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatCasino"].ToString());
 
                 var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 
@@ -119,7 +119,7 @@ namespace City_Center.Page
             }
             else if (VariablesGlobales.TipoChat == "hotel")
             {
-                var uri = new Uri("http://wpage.citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatHotel"].ToString());
+                var uri = new Uri("https://citycenter-rosario.com.ar/chat/terminar_chat_app/" + Application.Current.Properties["VariableChatHotel"].ToString());
 
                 var nsurl = new Foundation.NSUrl(uri.GetComponents(UriComponents.HttpRequestUrl, UriFormat.UriEscaped));
 

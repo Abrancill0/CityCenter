@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" BindingContext="{Binding Main, Source={StaticResource Locator}}" xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions" xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" x:Class="City_Center.Page.Casino">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" 
+             x:Class="City_Center.Page.Casino">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="chat@2x" />
     </ContentPage.ToolbarItems>
@@ -112,10 +120,14 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
             </Grid>
-            <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="3">
+            <StackLayout x:Name="SL1" IsVisible="true" HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="0">
                 <ScrollView>
                     <StackLayout>
-                        <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Margin="20,10,0,-5" Text="DESTACADOS" TextColor="#250c4b">
+                       <Label HorizontalOptions="Start"
+                              HorizontalTextAlignment="Start"
+                              Text="DESTACADOS"
+                              Margin="10,10,0,0"
+                              TextColor="#250c4b">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular" />
@@ -128,7 +140,7 @@
                                 <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
                             </Frame.OutlineColor>
                             <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
+                                <OnPlatform x:TypeArguments="Thickness" Android="35,5,35,6" iOS="20,20,20,20" />
                             </Frame.Margin>
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
@@ -257,7 +269,7 @@
                                 </cv:CarouselViewControl>-->
                             <cards:CarouselView x:Name="CarruselDestacados"
                                                 Items="{Binding DestacadosDetalle}"
-                                                HeightRequest="300"
+                                                HeightRequest="330"
                                                 HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
@@ -270,15 +282,15 @@
                                                 <ColumnDefinition Width="0.5*" />
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="3.43*" />
-                                                <RowDefinition Height="0.31*" />
-                                                <RowDefinition Height="0.31*" />
+                                               <RowDefinition Height="3*" />
+                                                <RowDefinition Height="0.29*" />
+                                                <RowDefinition Height="0.29*" />
                                             </Grid.RowDefinitions>
                                             <ffimageloading:CachedImage Aspect="Fill"
-                                                                        HeightRequest="275"
+                                                                        HeightRequest="330"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png" 
-                                                                        Source="{Binding des_imagen_2}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
+                                                                        Source="{Binding des_imagen_2}" Grid.Row="0" Grid.ColumnSpan="4">
                                                     <ffimageloading:CachedImage.GestureRecognizers>
                                                         <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
@@ -344,7 +356,9 @@
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
-                                            <ffimageloading:CachedImage Aspect="Fill" HeightRequest="120" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding poz_imagen}" DownsampleToViewSize="true">
+                                            <ffimageloading:CachedImage Aspect="Fill" HeightRequest="120"
+                                                                        LoadingPlaceholder="image_loading.png"
+                                                                        ErrorPlaceholder="image_error.png" Source="{Binding poz_imagen}" DownsampleToViewSize="true">
                                                 <ffimageloading:CachedImage.Transformations>
                                                     <fftransformations:RoundedTransformation Radius="10" />
                                                 </ffimageloading:CachedImage.Transformations>
@@ -414,7 +428,7 @@
                                                                        Aspect="Fill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
-                                                                        Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
+                                                                        Source="{Binding pro_imagen,StringFormat='https://citycenter-rosario.com.ar/{0}'}"
                                                                        >
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
@@ -451,7 +465,7 @@
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
-                                                    <ffimageloading:CachedImage Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pro_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
+                                                    <ffimageloading:CachedImage Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pro_imagen_2,StringFormat='https://citycenter-rosario.com.ar/{0}'}">
                                                         <ffimageloading:CachedImage.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                         </ffimageloading:CachedImage.GestureRecognizers>
@@ -479,7 +493,7 @@
             <StackLayout x:Name="SL2" IsVisible="false" BackgroundColor="White">
                 <ScrollView>
                     <StackLayout>
-                        <Label HorizontalOptions="Start" Margin="20,10,0,-5" HorizontalTextAlignment="Start" Text="TORNEOS" TextColor="#250c4b">
+                        <Label HorizontalOptions="Start" Margin="20,7,0,-5" HorizontalTextAlignment="Start" Text="TORNEOS" TextColor="#250c4b">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular" />
@@ -492,7 +506,7 @@
                                 <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
                             </Frame.OutlineColor>
                             <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
+                                <OnPlatform x:TypeArguments="Thickness" Android="35,5,35,6" iOS="12" />
                             </Frame.Margin>
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
@@ -500,7 +514,7 @@
 
                             <cards:CarouselView x:Name="CarruselTorneos"
                                                 Items="{Binding TorneoDetalle}"
-                                                HeightRequest="300"
+                                                HeightRequest="330"
                                                  HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
@@ -513,15 +527,15 @@
                                                 <ColumnDefinition Width="0.5*" />
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="3.43*" />
-                                                <RowDefinition Height="0.31*" />
-                                                <RowDefinition Height="0.31*" />
+                                                <RowDefinition Height="3*" />
+                                                <RowDefinition Height="0.29*" />
+                                                <RowDefinition Height="0.29*" />
                                             </Grid.RowDefinitions>
                                             <ffimageloading:CachedImage Aspect="Fill"
-                                                                        HeightRequest="275"
+                                                                        HeightRequest="330"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png" 
-                                                                        Source="{Binding tor_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
+                                                                        Source="{Binding tor_imagen_2,StringFormat='https://citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
                                                     <ffimageloading:CachedImage.GestureRecognizers>
                                                         <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                     </ffimageloading:CachedImage.GestureRecognizers>

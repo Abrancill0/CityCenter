@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using City_Center.Clases;
+using City_Center.ViewModels;
 using Xamarin.Forms;
 
 namespace City_Center.Page.SlideMenu
 {
     public partial class Favoritos : ContentPage
     {
+       // FavoritosViewModel FD = new FavoritosViewModel();
+
         public Favoritos()
         {
             InitializeComponent();
@@ -35,6 +39,10 @@ namespace City_Center.Page.SlideMenu
 
                     image.Source = "Favorito";
                    
+                   // CarruselFavoritos.ItemsSource = ListaOpciones;
+
+                    //CarruselFavoritos.Items = FD.FavoritoDetalle.Where(l=> l.gua_id>0);
+
                 }
 
             }

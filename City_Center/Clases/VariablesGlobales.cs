@@ -3,7 +3,7 @@ namespace City_Center.Clases
 {
     public static class VariablesGlobales
     {
-        public static string RutaServidor = "http://wpage.citycenter-rosario.com.ar/"; //"http://cc.comprogapp.com/";
+        public static string RutaServidor = "https://citycenter-rosario.com.ar/"; //"http://cc.comprogapp.com/";
         public static string RutaImagene;
 
 		public static string IDUsuario;

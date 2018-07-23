@@ -18,9 +18,9 @@ namespace City_Center.Clases
 
             try
             {
-                client.BaseAddress = new Uri("http://wpage.citycenter-rosario.com.ar");
+                client.BaseAddress = new Uri("https://citycenter-rosario.com.ar");
                 // client.Timeout = TimeSpan.FromSeconds(7);
-                //http://wpage.citycenter-rosario.com.ar
+                //https://citycenter-rosario.com.ar
                 HttpResponseMessage response = await client.PostAsync(string.Format(Url), Content);
                
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -70,9 +70,9 @@ namespace City_Center.Clases
 
             try
             {
-                client.BaseAddress = new Uri("http://wpage.citycenter-rosario.com.ar");
+                client.BaseAddress = new Uri("https://citycenter-rosario.com.ar");
                 // client.Timeout = TimeSpan.FromSeconds(7);
-                //http://wpage.citycenter-rosario.com.ar
+                //https://citycenter-rosario.com.ar
                 HttpResponseMessage response = await client.GetAsync(string.Format(Url));
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)

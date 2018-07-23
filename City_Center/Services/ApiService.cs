@@ -58,7 +58,7 @@ namespace City_Center.Services
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
 
 
-                client.BaseAddress = new Uri("http://wpage.citycenter-rosario.com.ar");
+                client.BaseAddress = new Uri("https://citycenter-rosario.com.ar");
                 //client.BaseAddress = new Uri("http://192.168.100.10:83/");
                 var url = string.Format("{0}{1}", servicePrefix, controller);
 
@@ -107,7 +107,7 @@ namespace City_Center.Services
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
 
-                client.BaseAddress = new Uri("http://wpage.citycenter-rosario.com.ar");
+                client.BaseAddress = new Uri("https://citycenter-rosario.com.ar");
 
                 var url = string.Format("{0}{1}", servicePrefix, controller);
 

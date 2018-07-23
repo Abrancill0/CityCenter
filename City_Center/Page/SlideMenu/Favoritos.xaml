@@ -6,11 +6,138 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="City_Center.Page.SlideMenu.Favoritos"
              xmlns:local1="clr-namespace:City_Center.Clases"
+             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" 
+             xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
              NavigationPage.BackButtonTitle="volver">
     <ContentPage.Content>
         <StackLayout Padding = "30,60" BindingContext="{Binding Favoritos}" BackgroundColor="#250C4B" >
             <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5">
-                <cv:CarouselViewControl BackgroundColor="White"
+            <cards:CarouselView x:Name="CarruselFavoritos"
+                                   BackgroundColor="White"
+                                    Items="{Binding FavoritoDetalle}"
+                                    HeightRequest="440"
+                                    HorizontalOptions="FillAndExpand">
+                                <cards:CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                            <Grid 
+                                  RowSpacing="0"
+                                  ColumnSpacing = "0" 
+                                  HorizontalOptions="FillAndExpand"
+                                  VerticalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1.5*">
+                                    </ColumnDefinition>
+                                    <ColumnDefinition Width="0.3*">
+                                    </ColumnDefinition>
+                                    <ColumnDefinition Width="0.3*">
+                                    </ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*" />
+                                    <RowDefinition Height="0.8*" />
+                                    <RowDefinition Height="1.8*" />
+                                </Grid.RowDefinitions>
+                                <ffimageloading:CachedImage Aspect="Fill"
+                                                                        HeightRequest="330"
+                                                            Grid.Row="0"
+                                                          
+                                                            Grid.ColumnSpan="3"
+                                                LoadingPlaceholder="image_loading.png"
+                                                ErrorPlaceholder="image_error.png"
+                                                Source="{Binding imagen_2}"/>
+                                <StackLayout Orientation="Vertical"
+                                             Grid.Row="1"
+                                             Grid.Column = "0"
+                                             BackgroundColor="#FFFFFF"
+                                             Padding = "25,10">
+                                    <Label Text="{Binding nombre}"
+                                           BackgroundColor = "White"
+                                           FontSize= "14"
+                                           HorizontalOptions="Start"
+                                           VerticalOptions="Start"
+                                           TextColor = "#5D5D5D">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="Oswald-Regular"/>
+                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                     </Label>
+                                    <Label Text="{Binding fecha}"
+                                           BackgroundColor = "White"
+                                           FontSize= "12"
+                                          TextColor = "#5D5D5D"
+                                           HorizontalOptions="Start"
+                                           VerticalOptions= "Start">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="Oswald-Regular"/>
+                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                     </Label>
+                                </StackLayout>
+                                <StackLayout Padding = "10,10" Orientation="Horizontal" Grid.Row="1" Grid.Column = "1" Grid.ColumnSpan="2" BackgroundColor = "White">
+                                    <Image Aspect="AspectFit"
+                                           Source="Fav"
+                                           VerticalOptions = "Start"
+                                           HorizontalOptions = "Center"
+                                           HeightRequest = "30"
+                                           WidthRequest = "30">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Image Aspect="AspectFit"
+                                           Source="Compartir"
+                                           VerticalOptions = "Start"
+                                           HorizontalOptions = "Center"
+                                           HeightRequest = "30"
+                                           WidthRequest = "30">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CompartirCommand}" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                 </StackLayout>
+                                <StackLayout  Orientation="Vertical"
+                                              Grid.Row="2"
+                                              Grid.ColumnSpan="3"
+                                              Margin="25,10"
+                                              BackgroundColor="#FFFFFF"
+                                              Spacing = "5"
+                                              VerticalOptions="Start">
+                                    <Button VerticalOptions = "Center"
+                                            Text="COMPRA ONLINE"
+                                            HeightRequest = "35"
+                                            TextColor="White"
+                                            BackgroundColor="#250C4B"
+                                            Command="{Binding CompraOnlineCommand}"
+                                            IsVisible="{Binding ocultaonline,Mode=TwoWay}"/>
+                                    <Button VerticalOptions = "Center"
+                                            Text="COMPRA TELEFÓNICA"
+                                            HeightRequest = "35"
+                                            TextColor="White"
+                                            BackgroundColor="#250C4B"
+                                            Command="{Binding LlamarCommand}"
+                                            IsVisible="{Binding ocultallamada,Mode=TwoWay}"/>
+                                    <Button VerticalOptions = "Center"
+                                            Text="INSCRIBIRSE"
+                                            HeightRequest = "35"
+                                            TextColor="White"
+                                            BackgroundColor="#250C4B"
+                                            Command="{Binding InscribirteTorneoCommand}"
+                                            IsVisible="{Binding ocultatorneo,Mode=TwoWay}"/>
+
+                                      <controls:IndicatorsControl ToFadeDuration="1500"/>
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                                </cards:CarouselView.ItemTemplate>
+                     <controls:IndicatorsControl ToFadeDuration="1500"/>
+                    
+                            </cards:CarouselView>
+
+            <!--    <cv:CarouselViewControl BackgroundColor="White"
                                         ItemsSource="{Binding FavoritoDetalle}"
                                         HorizontalOptions="FillAndExpand"
                                         VerticalOptions="FillAndExpand"
@@ -129,7 +256,7 @@
                             </Grid>
                         </DataTemplate>
                     </cv:CarouselViewControl.ItemTemplate>
-                </cv:CarouselViewControl>
+                </cv:CarouselViewControl>-->
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

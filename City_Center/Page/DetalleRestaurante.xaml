@@ -17,7 +17,7 @@
                     </Label>
                 </StackLayout>
                 <StackLayout HorizontalOptions="FillAndExpand">
-                    <ffimageloading:CachedImage x:Name="Img1provisional" HeightRequest="150" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding rd.reb_imagen_1 ,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" />
+                    <ffimageloading:CachedImage x:Name="Img1provisional" HeightRequest="150" Aspect="AspectFill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding rd.reb_imagen_1 ,StringFormat='https://citycenter-rosario.com.ar/{0}'}" />
                 </StackLayout>
                 <RelativeLayout Grid.Row="1" HeightRequest="100" VerticalOptions="Start">
                     <ListView x:Name="listaDetalleRestaurante" Rotation="270" ItemsSource="{Binding ListaOpciones}" ItemSelected="Handle_ItemSelected" RowHeight="100" SeparatorVisibility="None" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"

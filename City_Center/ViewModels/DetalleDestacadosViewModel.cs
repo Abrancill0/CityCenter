@@ -65,7 +65,7 @@ namespace City_Center.ViewModels
 
             Compartir.Text = dd.des_descripcion;
             Compartir.Title = dd.des_nombre;
-            Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/show-detail/" + dd.des_id + "/" + this.dd;
+            Compartir.Url = "https://citycenter-rosario.com.ar/es/show-detail/" + dd.des_id + "/" + this.dd;
 
             await CrossShare.Current.Share(Compartir);
             

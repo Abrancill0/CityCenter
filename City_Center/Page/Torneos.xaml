@@ -16,11 +16,10 @@
             </StackLayout>
             
             <ListView ItemsSource="{Binding TorneoDetalle}"
-                      RowHeight="250"
+                      RowHeight="375"
                       HasUnevenRows="false"
                       SeparatorVisibility="None"
-                      HeightRequest="400"
-                      Margin="10,10,10,10">
+                      Margin="10,7,10,10">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -30,7 +29,7 @@
                                         <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
                                     </Frame.OutlineColor>
                                     <Frame.Margin>
-                                        <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5" />
+                                        <OnPlatform x:TypeArguments="Thickness" Android="18" iOS="18" />
                                     </Frame.Margin>
                                     <Frame.Padding>
                                         <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
@@ -44,15 +43,14 @@
                                                 <ColumnDefinition Width="0.5*" />
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="3*" />
-                                                <RowDefinition Height="0.5*" />
-                                                <RowDefinition Height="0.5*" />
+                                              <RowDefinition Height="3.4*" />
+                                                <RowDefinition Height="0.29*" />
+                                                <RowDefinition Height="0.29*" />
                                             </Grid.RowDefinitions>
-                                            <ffimageloading:CachedImage HeightRequest="100"
-                                                                        Aspect="AspectFill"
+                                            <ffimageloading:CachedImage Aspect="Fill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
-                                                                        Source="{Binding tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
+                                                                        Source="{Binding tor_imagen_2,StringFormat='https://citycenter-rosario.com.ar/{0}'}"
                                                                         Grid.Row="0"
                                                                         Grid.ColumnSpan="4">
                                                 <ffimageloading:CachedImage.GestureRecognizers>

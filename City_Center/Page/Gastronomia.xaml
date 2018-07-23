@@ -119,7 +119,7 @@
                                                                                 Aspect="AspectFill"
                                                                                 LoadingPlaceholder="image_loading_Large2.png"
                                                                                 ErrorPlaceholder="image_loading_Large2.png"
-                                                                                Source="{Binding reb_imagen_1,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
+                                                                                Source="{Binding reb_imagen_1,StringFormat='https://citycenter-rosario.com.ar/{0}'}">
                                                         <ffimageloading:CachedImage.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding DetalleCommand}" />
                                                         </ffimageloading:CachedImage.GestureRecognizers>
@@ -212,7 +212,7 @@
                                                                         Aspect="Fill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
-                                                                        Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
+                                                                        Source="{Binding pro_imagen,StringFormat='https://citycenter-rosario.com.ar/{0}'}"
                                                                        >
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
@@ -256,7 +256,7 @@
                                                                         Aspect="Fill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
-                                                                        Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
+                                                                        Source="{Binding pro_imagen_2,StringFormat='https://citycenter-rosario.com.ar/{0}'}"
                                                                        >
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />

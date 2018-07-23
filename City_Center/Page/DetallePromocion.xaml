@@ -31,7 +31,7 @@
                         <StackLayout>
                             <ffimageloading:CachedImage LoadingPlaceholder="image_loading.png"
                                                         ErrorPlaceholder="image_error.png"
-                                                        Source="{Binding pd.pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" />
+                                                        Source="{Binding pd.pro_imagen,StringFormat='https://citycenter-rosario.com.ar/{0}'}" />
                         </StackLayout>
                         <Grid HorizontalOptions="FillAndExpand">
                             <Grid.ColumnDefinitions>

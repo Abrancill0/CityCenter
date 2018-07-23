@@ -102,11 +102,11 @@ namespace City_Center.ViewModels
             }
 
             VariablesGlobales.Img1 = hd.hab_imagen;
-            VariablesGlobales.Img2 = "http://wpage.citycenter-rosario.com.ar/" + hd.hab_imagen_1;
-            VariablesGlobales.Img3 = "http://wpage.citycenter-rosario.com.ar/" + hd.hab_imagen_2;
-            VariablesGlobales.Img4 = "http://wpage.citycenter-rosario.com.ar/" + hd.hab_imagen_3;
-            VariablesGlobales.Img5 = "http://wpage.citycenter-rosario.com.ar/" + hd.hab_imagen_4;
-            VariablesGlobales.Img6 = "http://wpage.citycenter-rosario.com.ar/" + hd.hab_imagen_5;
+            VariablesGlobales.Img2 = "https://citycenter-rosario.com.ar/" + hd.hab_imagen_1;
+            VariablesGlobales.Img3 = "https://citycenter-rosario.com.ar/" + hd.hab_imagen_2;
+            VariablesGlobales.Img4 = "https://citycenter-rosario.com.ar/" + hd.hab_imagen_3;
+            VariablesGlobales.Img5 = "https://citycenter-rosario.com.ar/" + hd.hab_imagen_4;
+            VariablesGlobales.Img6 = "https://citycenter-rosario.com.ar/" + hd.hab_imagen_5;
             
         }
 

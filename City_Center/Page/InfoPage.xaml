@@ -85,30 +85,51 @@
                 <StackLayout Spacing="0">
                      <ffimageloading:CachedImage HeightRequest="240" Aspect="Fill" Source="ImageInstitucional" />
                      <StackLayout HorizontalOptions="Center" Spacing="0">
+                            
                         <Label FontSize="15"
                              TextColor="Black"
                              Margin="16,30,10,0"
                              HorizontalOptions="Start"
                              HorizontalTextAlignment="Start"
-                             Text="City Center Rosario es el centro de"/>
-                   <Label FontSize="15"
+                             Text="City Center Rosario es el centro de entretenimientos más grande de Latinoamérica, pensado y diseñado para brindar todo lo que se desea en un solo lugar.
+Integrado por áreas que combinan diversión, placer y negocios para todas las edades con los más altos estándares de servicio y calidad, City Center Rosario cuenta con casino, centro de convenciones, hotel, espacios gastronómicos, bowling, locales comerciales y mucho más.
+Es un complejo creado para dejarse atrapar en un mundo mágico de esparcimiento, confort, relax y negocios, donde dejar fluir las emociones y divertirse es una propuesta obligada a la hora de visitar la ciudad."/>
+
+                            <Label FontSize="15"
                              TextColor="Black"
-                             Margin="16,-1,10,0"
+                             Margin="16,30,10,0"
                              HorizontalOptions="Start"
                              HorizontalTextAlignment="Start"
-                             Text="entretenimiento mas grande de Latinoamerica,"/>
-                   <Label FontSize="15"
+                             Text="City Center Rosario surgió de la sociedad comercial de dos empresas líderes en el sector: Inverclub y Casino Buenos Aires S.A., ésta última de Nortia Corporation. Hotel Pullman City Center Rosario es explotado por Casino de Rosario S.A."/>
+                            
+                            <Label FontSize="15"
                              TextColor="Black"
-                             Margin="16,-1,10,0"
+                             Margin="16,30,10,0"
                              HorizontalOptions="Start"
                              HorizontalTextAlignment="Start"
-                             Text="pensado y diseñado para brindar todo lo que se"/>
-                   <Label FontSize="15"
-                             TextColor="Black"
-                             Margin="16,-1,10,0"
-                             HorizontalOptions="Start"
-                             HorizontalTextAlignment="Start"
-                             Text="desea en un solo lugar."/>
+                             Text="Inverclub es una empresa de capitales argentinos nacidos en Comodoro Rivadavia en el año 1991 que inauguró su primer casino al año siguiente de su fundación. Desde entonces ha ido creciendo de manera constante incorporando permanentemente nuevos servicios, nuevas tecnologías y aplicando novedosas estrategias de marketing. En la actualidad posee la cadena más grande de casinos y salas de máquinas tragamonedas de Latinoamérica."/>
+                            
+
+
+                            
+                     <!--   <Label FontSize="15"
+                                     TextColor="Black"
+                                     Margin="16,-1,10,0"
+                                     HorizontalOptions="Start"
+                                     HorizontalTextAlignment="Start"
+                                     Text="entretenimiento mas grande de Latinoamerica,"/>
+                        <Label FontSize="15"
+                                     TextColor="Black"
+                                     Margin="16,-1,10,0"
+                                     HorizontalOptions="Start"
+                                     HorizontalTextAlignment="Start"
+                                     Text="pensado y diseñado para brindar todo lo que se"/>
+                        <Label FontSize="15"
+                                     TextColor="Black"
+                                     Margin="16,-1,10,0"
+                                     HorizontalOptions="Start"
+                                     HorizontalTextAlignment="Start"
+                                     Text="desea en un solo lugar."/>
                       <Label FontSize="15"
                              TextColor="Black"
                              Margin="16,-1,10,0"
@@ -320,7 +341,7 @@
                            Margin="16,-1,10,25"
                            HorizontalOptions="Start"
                            HorizontalTextAlignment="Start"
-                           Text="encuentra presente en 70 países."></Label>
+                           Text="encuentra presente en 70 países."></Label>-->
                             </StackLayout>
                  </StackLayout>
                </ScrollView>

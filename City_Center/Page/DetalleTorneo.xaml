@@ -23,11 +23,9 @@
             <StackLayout>
                 <StackLayout Margin="20" x:Name="SLT">
                      <StackLayout Spacing="0">
-                    <ffimageloading:CachedImage HeightRequest="180"
-                                                Aspect="Fill"
-                                                LoadingPlaceholder="image_loading.png"
+                    <ffimageloading:CachedImage LoadingPlaceholder="image_loading.png"
                                                 ErrorPlaceholder="image_error.png"
-                                                Source="{Binding td.tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" />
+                                                Source="{Binding td.tor_imagen,StringFormat='https://citycenter-rosario.com.ar/{0}'}" />
                                                 </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End" Margin="15">
                         <Image  x:Name="Icono1"

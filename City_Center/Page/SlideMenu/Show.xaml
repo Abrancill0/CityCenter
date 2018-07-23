@@ -127,10 +127,10 @@
                                                 <RowDefinition Height="0.29*" />
                                                 <RowDefinition Height="0.29*" />
                                             </Grid.RowDefinitions>
-                                            <ffimageloading:CachedImage 
+                                            <ffimageloading:CachedImage Aspect="Fill"
                                                                         LoadingPlaceholder="image_loading_Large2.png"
                                                                         ErrorPlaceholder="image_loading_Large2.png"
-                                                                        Source="{Binding eve_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
+                                                                        Source="{Binding eve_imagen_2,StringFormat='https://citycenter-rosario.com.ar/{0}'}"
                                                                         Grid.Row="0"
                                                                         HorizontalOptions="FillAndExpand"
                                                                         Grid.ColumnSpan="4">

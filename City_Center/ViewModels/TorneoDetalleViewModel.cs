@@ -112,7 +112,7 @@ namespace City_Center.ViewModels
 
             Compartir.Text = td.tor_descripcion;
             Compartir.Title = td.tor_nombre;
-            Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/casino/torneo-detail/" + td.tor_id+ "/" + td.tor_nombre;
+            Compartir.Url = "https://citycenter-rosario.com.ar/es/casino/torneo-detail/" + td.tor_id+ "/" + td.tor_nombre;
 
             await CrossShare.Current.Share(Compartir);
 
@@ -379,6 +379,7 @@ namespace City_Center.ViewModels
                 tor_nombre = l.tor_nombre,
                 tor_descripcion = l.tor_descripcion,
                 tor_imagen = l.tor_imagen,
+                tor_imagen_2 = l.tor_imagen_2,
                 tor_fecha_hora_inicio = l.tor_fecha_hora_inicio,
                 tor_fecha_hora_fin = l.tor_fecha_hora_fin,
                 tor_destacado = l.tor_destacado,

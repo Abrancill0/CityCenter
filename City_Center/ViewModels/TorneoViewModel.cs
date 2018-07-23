@@ -82,6 +82,7 @@ namespace City_Center.ViewModels
                 tor_nombre = l.tor_nombre,
                 tor_descripcion = l.tor_descripcion,
                 tor_imagen = l.tor_imagen,
+                tor_imagen_2 = l.tor_imagen_2,
                 tor_fecha_hora_inicio = l.tor_fecha_hora_inicio,
                 tor_fecha_hora_fin = l.tor_fecha_hora_fin,
                 tor_destacado = l.tor_destacado,

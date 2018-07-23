@@ -43,22 +43,22 @@ namespace City_Center.ViewModels
 
             if (this.gua_id_evento > 0)
             {
-                Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/es/show-detail/" + this.gua_id_evento + "/" + this.nombre;
+                Compartir.Url = "https://citycenter-rosario.com.ar/es/es/show-detail/" + this.gua_id_evento + "/" + this.nombre;
             }
 
             if (this.gua_id_promocion > 0)
             {
-                Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/promocion-detail/" + this.gua_id_promocion + "/" + this.nombre;
+                Compartir.Url = "https://citycenter-rosario.com.ar/es/promocion-detail/" + this.gua_id_promocion + "/" + this.nombre;
             }
 
             if (this.gua_id_torneo > 0)
             {
-                Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/casino/torneo-detail/" + this.gua_id_torneo + "/" + this.nombre;
+                Compartir.Url = "https://citycenter-rosario.com.ar/es/casino/torneo-detail/" + this.gua_id_torneo + "/" + this.nombre;
             }
 
             if (this.gua_id_destacado > 0)
             {
-                Compartir.Url = "http://wpage.citycenter-rosario.com.ar/es/promocion-detail/" + this.gua_id_destacado + "/" + this.nombre;
+                Compartir.Url = "https://citycenter-rosario.com.ar/es/promocion-detail/" + this.gua_id_destacado + "/" + this.nombre;
             }
 
 

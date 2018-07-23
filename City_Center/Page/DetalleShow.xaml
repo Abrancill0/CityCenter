@@ -16,7 +16,7 @@
                 <ffimageloading:CachedImage
                                             LoadingPlaceholder="image_loading.png"
                                             ErrorPlaceholder="image_error.png"
-                                            Source="{Binding ds.eve_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" />
+                                            Source="{Binding ds.eve_imagen,StringFormat='https://citycenter-rosario.com.ar/{0}'}" />
             </StackLayout>
 
             <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="15">

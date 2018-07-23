@@ -666,7 +666,7 @@
                                 <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray" />
                             </Frame.OutlineColor>
                             <Frame.Margin>
-                                <OnPlatform x:TypeArguments="Thickness" Android="12" iOS="12" />
+                                <OnPlatform x:TypeArguments="Thickness" Android="35,5,35,6" iOS="12" />
                             </Frame.Margin>
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
@@ -687,7 +687,7 @@
                                                 <RowDefinition Height="Auto" />
                                                 <RowDefinition Height="0.5*" />
                                             </Grid.RowDefinitions>
-                                            <ffimageloading:CachedImage HeightRequest="150" Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
+                                            <ffimageloading:CachedImage HeightRequest="150" Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen,StringFormat='https://citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                 </ffimageloading:CachedImage.GestureRecognizers>
@@ -733,7 +733,7 @@
                             </cv:CarouselViewControl>-->
                             <cards:CarouselView x:Name="CarruselTorneos"
                                                 Items="{Binding TorneoDetalle}"
-                                                HeightRequest="300" 
+                                                HeightRequest="330" 
                                                 HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
@@ -746,11 +746,16 @@
                                                     <ColumnDefinition Width="0.5*" />
                                                 </Grid.ColumnDefinitions>
                                                 <Grid.RowDefinitions>
-                                                    <RowDefinition Height="3.43*" />
-                                                    <RowDefinition Height="0.31*" />
-                                                    <RowDefinition Height="0.31*" />
+                                                    <RowDefinition Height="3*" />
+                                                <RowDefinition Height="0.29*" />
+                                                <RowDefinition Height="0.29*" />
                                                 </Grid.RowDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="275" Aspect="Fill" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding tor_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">
+                                                <ffimageloading:CachedImage HeightRequest="330"
+                                                                            Aspect="Fill"
+                                                                            LoadingPlaceholder="image_loading.png"
+                                                                            ErrorPlaceholder="image_error.png"
+                                                                            Source="{Binding tor_imagen_2,StringFormat='https://citycenter-rosario.com.ar/{0}'}"
+                                                                            Grid.Row="0" Grid.ColumnSpan="4" >
                                                     <ffimageloading:CachedImage.GestureRecognizers>
                                                         <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                     </ffimageloading:CachedImage.GestureRecognizers>
@@ -842,7 +847,7 @@
                                                                         Aspect="Fill"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png"
-                                                                        Source="{Binding pro_imagen,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}"
+                                                                        Source="{Binding pro_imagen,StringFormat='https://citycenter-rosario.com.ar/{0}'}"
                                                                        >
                                                 <ffimageloading:CachedImage.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
@@ -866,7 +871,9 @@
                                     </DataTemplate>
                                 </cv:CarouselViewControl.ItemTemplate>
                             </cv:CarouselViewControl>-->
-                                <cards:CarouselView x:Name="CarruselPromociones" Items="{Binding PromocionesDetalle}" HeightRequest="280" HorizontalOptions="FillAndExpand">
+                                <cards:CarouselView x:Name="CarruselPromociones"
+                                                    Items="{Binding PromocionesDetalle}"
+                                                    HeightRequest="280" HorizontalOptions="FillAndExpand">
                                     <cards:CarouselView.ItemTemplate>
                                         <DataTemplate>
                                             <ContentView>
@@ -877,7 +884,11 @@
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
-                                                    <ffimageloading:CachedImage Aspect="Fill" HeightRequest="275" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="{Binding pro_imagen_2,StringFormat='http://wpage.citycenter-rosario.com.ar/{0}'}">
+                                                    <ffimageloading:CachedImage Aspect="Fill"
+                                                                                HeightRequest="275"
+                                                                                LoadingPlaceholder="image_loading.png"
+                                                                                ErrorPlaceholder="image_error.png"
+                                                                                Source="{Binding pro_imagen_2,StringFormat='https://citycenter-rosario.com.ar/{0}'}">
                                                         <ffimageloading:CachedImage.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
                                                         </ffimageloading:CachedImage.GestureRecognizers>

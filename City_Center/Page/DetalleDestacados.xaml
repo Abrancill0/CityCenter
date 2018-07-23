@@ -15,7 +15,7 @@
                       BindingContext="{Binding DestacadosDetalle}">
             <StackLayout>
                 <ffimageloading:CachedImage HeightRequest="200" 
-                                            Aspect="AspectFill"
+                                            Aspect="Fill"
                                             LoadingPlaceholder="image_loading.png"
                                             ErrorPlaceholder="image_error.png"
                                             Source="{Binding dd.des_imagen}" />
