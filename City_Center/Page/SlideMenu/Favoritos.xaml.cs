@@ -38,7 +38,9 @@ namespace City_Center.Page.SlideMenu
                     Image image = sender as Image;
 
                     image.Source = "Favorito";
-                   
+
+                    CarruselFavoritos.Items.RemoveAt(CarruselFavoritos.CurrentIndex);
+
                    // CarruselFavoritos.ItemsSource = ListaOpciones;
 
                     //CarruselFavoritos.Items = FD.FavoritoDetalle.Where(l=> l.gua_id>0);

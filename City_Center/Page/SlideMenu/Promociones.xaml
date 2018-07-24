@@ -23,7 +23,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Spacing="0" BackgroundColor="#EFEFEF" BindingContext="{Binding Promociones}">
-            <StackLayout HorizontalOptions="Start" Padding="30,30">
+            <StackLayout HorizontalOptions="Start" Padding="30,30" BackgroundColor="White">
                 <Label Text="PROMOCIONES" FontSize="20" HorizontalTextAlignment="Start" TextColor="#23144B">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">

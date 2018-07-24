@@ -395,7 +395,7 @@ namespace City_Center.ViewModels
                 pro_id = l.pro_id,
                 pro_id_evento = l.pro_id_evento,
                 pro_id_locacion = l.pro_id_locacion,
-				pro_nombre = l.pro_nombre.ToUpper(),
+                pro_nombre = l.pro_nombre,
                 pro_descripcion = l.pro_descripcion,
                 pro_imagen = l.pro_imagen,
                 pro_imagen_2 = l.pro_imagen_2,
@@ -414,8 +414,10 @@ namespace City_Center.ViewModels
                 pro_tipo = l.pro_tipo,
                 pro_estatus = l.pro_estatus,
                 loc_nombre = l.loc_nombre,
-                pro_url = l.pro_url,
                 pro_vinculo = l.pro_vinculo,
+                pro_telefono = l.pro_telefono,
+                pro_url = l.pro_url,
+                pro_nombre_btn = l.pro_nombre_btn,
                 pro_ejecutar_url = l.pro_ejecutar_url
             });
         }

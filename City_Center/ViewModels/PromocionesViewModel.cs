@@ -209,6 +209,7 @@ namespace City_Center.ViewModels
                 pro_vinculo=l.pro_vinculo,
                 pro_telefono=l.pro_telefono,
                 pro_url=l.pro_url,
+                pro_nombre_btn=l.pro_nombre_btn,
                 pro_ejecutar_url = l.pro_ejecutar_url
             });
         }

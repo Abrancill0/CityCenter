@@ -11,16 +11,15 @@
              NavigationPage.BackButtonTitle="volver">
     <ContentPage.Content>
         <StackLayout Padding = "30,60" BindingContext="{Binding Favoritos}" BackgroundColor="#250C4B" >
-            <StackLayout BackgroundColor = "#F4F3F3" Padding = "5,5">
+            <StackLayout BackgroundColor = "#250C4B" Padding = "5,5">
             <cards:CarouselView x:Name="CarruselFavoritos"
-                                   BackgroundColor="White"
+                                    BackgroundColor = "#250C4B"
                                     Items="{Binding FavoritoDetalle}"
                                     HeightRequest="440"
                                     HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
-                            <Grid 
-                                  RowSpacing="0"
+                            <Grid RowSpacing="0"
                                   ColumnSpacing = "0" 
                                   HorizontalOptions="FillAndExpand"
                                   VerticalOptions="FillAndExpand">
@@ -38,9 +37,8 @@
                                     <RowDefinition Height="1.8*" />
                                 </Grid.RowDefinitions>
                                 <ffimageloading:CachedImage Aspect="Fill"
-                                                                        HeightRequest="330"
+                                                            HeightRequest="330"
                                                             Grid.Row="0"
-                                                          
                                                             Grid.ColumnSpan="3"
                                                 LoadingPlaceholder="image_loading.png"
                                                 ErrorPlaceholder="image_error.png"
@@ -77,7 +75,12 @@
                                         </Label.FontFamily>
                                      </Label>
                                 </StackLayout>
-                                <StackLayout Padding = "10,10" Orientation="Horizontal" Grid.Row="1" Grid.Column = "1" Grid.ColumnSpan="2" BackgroundColor = "White">
+                                <StackLayout Padding = "10,10"
+                                             Orientation="Horizontal"
+                                             Grid.Row="1" 
+                                             Grid.Column = "1"
+                                             Grid.ColumnSpan="2"
+                                             BackgroundColor = "White">
                                     <Image Aspect="AspectFit"
                                            Source="Fav"
                                            VerticalOptions = "Start"
@@ -101,14 +104,16 @@
                                  </StackLayout>
                                 <StackLayout  Orientation="Vertical"
                                               Grid.Row="2"
+                                              Grid.Column = "0"
                                               Grid.ColumnSpan="3"
-                                              Margin="25,10"
-                                              BackgroundColor="#FFFFFF"
+                                              BackgroundColor="White"
                                               Spacing = "5"
-                                              VerticalOptions="Start">
+                                              VerticalOptions="Start"
+                                              Padding = "10,10">
                                     <Button VerticalOptions = "Center"
                                             Text="COMPRA ONLINE"
                                             HeightRequest = "35"
+                                            Margin="25,10"
                                             TextColor="White"
                                             BackgroundColor="#250C4B"
                                             Command="{Binding CompraOnlineCommand}"
@@ -116,6 +121,7 @@
                                     <Button VerticalOptions = "Center"
                                             Text="COMPRA TELEFÓNICA"
                                             HeightRequest = "35"
+                                            Margin="25,10"
                                             TextColor="White"
                                             BackgroundColor="#250C4B"
                                             Command="{Binding LlamarCommand}"
@@ -123,17 +129,17 @@
                                     <Button VerticalOptions = "Center"
                                             Text="INSCRIBIRSE"
                                             HeightRequest = "35"
+                                            Margin="25,10"
                                             TextColor="White"
                                             BackgroundColor="#250C4B"
                                             Command="{Binding InscribirteTorneoCommand}"
                                             IsVisible="{Binding ocultatorneo,Mode=TwoWay}"/>
 
-                                      <controls:IndicatorsControl ToFadeDuration="1500"/>
                                 </StackLayout>
                             </Grid>
                         </DataTemplate>
                                 </cards:CarouselView.ItemTemplate>
-                     <controls:IndicatorsControl ToFadeDuration="1500"/>
+                     <controls:IndicatorsControl />
                     
                             </cards:CarouselView>
 

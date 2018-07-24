@@ -703,27 +703,44 @@ namespace City_Center.ViewModels
             if (this.pd.pro_vinculo == "formulario")
              {
                 
-
-                switch (this.pd.pro_tipo)
+                if (string.IsNullOrEmpty(pd.pro_nombre_btn))
                 {
-                    case "cas":
-                        NombreBoton = "PARTICIPAR";    
-                        break;
-                    case "hopa":
-                        NombreBoton = "CONSULTAR";    
-                        break;
-                    case "gas":
-                        NombreBoton = "PARTICIPAR";    
-                        break;
-                    case "show":
-                        NombreBoton = "PARTICIPAR";    
-                        break;
+                    switch (this.pd.pro_tipo)
+                    {
+                        case "cas":
+                            NombreBoton = "PARTICIPAR";    
+                            break;
+                        case "hopa":
+                            NombreBoton = "CONSULTAR";    
+                            break;
+                        case "gas":
+                            NombreBoton = "PARTICIPAR";    
+                            break;
+                        case "show":
+                            NombreBoton = "PARTICIPAR";    
+                            break;
+                    }
+                }
+                else
+                {
+                    NombreBoton = pd.pro_nombre_btn;
+
                 }
 
              }
             else if (this.pd.pro_vinculo == "url")
             {
-                NombreBoton = "Comprar";  
+
+                if  (string.IsNullOrEmpty(pd.pro_nombre_btn))
+                {
+                    NombreBoton = "Comprar";  
+                }
+                else
+                {
+                    NombreBoton = pd.pro_nombre_btn; 
+                     
+                }
+               
             }
            
             OcultaBoton = true;
