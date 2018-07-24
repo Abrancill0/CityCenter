@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "966740090585-e0uts2cvl343hm5o7k33ntq1dvsuv2sa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.CityCenter.Danthop",
+            "certificate_hash": "4911a725d5f158a4da962dc42689488a1b302b43"
+          }
+        },
+        {
           "client_id": "966740090585-q7qbmdp71cedrjrhi32k71thh2r6ik4k.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -42,6 +50,13 @@
             {
               "client_id": "966740090585-q7qbmdp71cedrjrhi32k71thh2r6ik4k.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "966740090585-pu2uas49d1d6rh7dd0e8a6eiru8kpksu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Danthop.CityCenter"
+              }
             }
           ]
         },

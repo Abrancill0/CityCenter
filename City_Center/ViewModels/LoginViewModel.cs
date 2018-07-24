@@ -342,7 +342,7 @@ namespace City_Center.ViewModels
                 UserDialogs.Instance.HideLoading();
 #endif
             }
-			catch (Exception)
+			catch (Exception ex)
 			{
 				
 			}
@@ -461,7 +461,7 @@ namespace City_Center.ViewModels
                     return;
                 }
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
 				await Mensajes.Alerta("Error al acceder a los servicios de google, intente de nuevo");
                 UserDialogs.Instance.HideLoading();

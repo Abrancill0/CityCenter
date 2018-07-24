@@ -107,13 +107,13 @@
                                               Grid.Column = "0"
                                               Grid.ColumnSpan="3"
                                               BackgroundColor="White"
-                                              Spacing = "5"
+                                              Spacing = "3"
                                               VerticalOptions="Start"
-                                              Padding = "10,10">
+                                              Padding = "10,5">
                                     <Button VerticalOptions = "Center"
                                             Text="COMPRA ONLINE"
                                             HeightRequest = "35"
-                                            Margin="25,10"
+                                            Margin="25,5"
                                             TextColor="White"
                                             BackgroundColor="#250C4B"
                                             Command="{Binding CompraOnlineCommand}"
@@ -121,7 +121,7 @@
                                     <Button VerticalOptions = "Center"
                                             Text="COMPRA TELEFÓNICA"
                                             HeightRequest = "35"
-                                            Margin="25,10"
+                                            Margin="25,5"
                                             TextColor="White"
                                             BackgroundColor="#250C4B"
                                             Command="{Binding LlamarCommand}"
@@ -129,7 +129,7 @@
                                     <Button VerticalOptions = "Center"
                                             Text="INSCRIBIRSE"
                                             HeightRequest = "35"
-                                            Margin="25,10"
+                                            Margin="25,5"
                                             TextColor="White"
                                             BackgroundColor="#250C4B"
                                             Command="{Binding InscribirteTorneoCommand}"
@@ -139,7 +139,7 @@
                             </Grid>
                         </DataTemplate>
                                 </cards:CarouselView.ItemTemplate>
-                     <controls:IndicatorsControl />
+                     <controls:IndicatorsControl Margin="0,-15,0,0" />
                     
                             </cards:CarouselView>
 
