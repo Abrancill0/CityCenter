@@ -28,13 +28,13 @@ namespace City_Center
             FlowListView.Init();
             VariablesGlobales.ChatPresente = 0;
 
-#if __ANDROID__
-                 GlobalResources.Current.ImagenChat = "chat";
-#endif
+            #if __ANDROID__
+                             GlobalResources.Current.ImagenChat = "chat";
+            #endif
 
-#if __IOS__
-            GlobalResources.Current.ImagenChat = "chat@2x";
-#endif
+            #if __IOS__
+                        GlobalResources.Current.ImagenChat = "chat@2x";
+            #endif
 
 
             //if (isLoggedIn)

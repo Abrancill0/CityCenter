@@ -162,14 +162,24 @@ namespace City_Center.iOS
 
         //public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
         //{
-          //  return ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
-           
+        //    return ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
         //}
 
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         {
-            var openUrlOptions = new UIApplicationOpenUrlOptions(options);
-            return SignIn.SharedInstance.HandleUrl(url, openUrlOptions.SourceApplication, openUrlOptions.Annotation);
+            string ValidaUrl = Convert.ToString(url);
+                
+            if (ValidaUrl.Contains("fb2334937976732556"))
+            {
+                var openUrlOptions = new UIApplicationOpenUrlOptions(options);
+                return ApplicationDelegate.SharedInstance.OpenUrl(app, url, openUrlOptions.SourceApplication, openUrlOptions.Annotation);
+            }
+            else
+            {
+                var openUrlOptions = new UIApplicationOpenUrlOptions(options);
+                return SignIn.SharedInstance.HandleUrl(url, openUrlOptions.SourceApplication, openUrlOptions.Annotation);
+            }
+             
         }
 
 
