@@ -481,18 +481,17 @@ namespace City_Center.ViewModels
 
         private void FacebookLogin()
         {
-			try
-			{
-				_facebookManager = DependencyService.Get<IFacebookManager>();
+            try
+            {
+                _facebookManager = DependencyService.Get<IFacebookManager>();
 
                 UserDialogs.Instance.ShowLoading("Iniciando sesion...", MaskType.Black);
 
                 _facebookManager.Login(OnLoginComplete);
-
-                //_facebookManager.Logout();
-
+#if __IOS__
                 UserDialogs.Instance.HideLoading();
-			}
+#endif
+            }
 			catch (Exception ex)
 			{
                 //Mensajes.Alerta(ex.ToString()); 
@@ -506,6 +505,7 @@ namespace City_Center.ViewModels
 			{
 				if (facebookUser != null)
                 {
+                    UserDialogs.Instance.ShowLoading("Iniciando sesion...", MaskType.Black);
 
                     ValidaUsuarioReturn ValUsu = await ValidaUsuario(facebookUser.Email);
 

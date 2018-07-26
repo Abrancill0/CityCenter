@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0" package="com.CityCenter.Danthop" android:installLocation="auto" android:versionCode="24">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0" package="com.CityCenter.Danthop" android:installLocation="auto" android:versionCode="25">
 	<uses-sdk android:minSdkVersion="21" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<application android:label="City Center Rosario" android:icon="@drawable/iconoappccr" android:hardwareAccelerated="true" android:largeHeap="true">

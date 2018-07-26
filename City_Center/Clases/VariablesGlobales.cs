@@ -71,6 +71,7 @@ namespace City_Center.Clases
 
         public static bool HorarioPIU;
         public static bool HorarioLEGULA;
+        public static bool HorarioCityCenter;
 
         public static bool Notificaciones;
 

@@ -47,7 +47,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Image Aspect="AspectFit"
+                   <!-- <Image Aspect="AspectFit"
                            Source="TICKETSHOWS"
                            VerticalOptions="Start"
                            HorizontalOptions="End"
@@ -55,7 +55,7 @@
                            HeightRequest="80"
                            Grid.Column="0"
                            Grid.Row="0">
-                    </Image>
+                    </Image>-->
                     <Image x:Name="tickets" Aspect="AspectFit" Source="TICKETSHOWS" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Btn2_Clicked" />
@@ -731,9 +731,11 @@
                                     </DataTemplate>
                                 </cv:CarouselViewControl.ItemTemplate>
                             </cv:CarouselViewControl>-->
+                          <!--  Android 330
+                            IOS 360-->
                             <cards:CarouselView x:Name="CarruselTorneos"
                                                 Items="{Binding TorneoDetalle}"
-                                                HeightRequest="330" 
+                                                HeightRequest="360" 
                                                 HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
@@ -750,7 +752,7 @@
                                                 <RowDefinition Height="0.29*" />
                                                 <RowDefinition Height="0.29*" />
                                                 </Grid.RowDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="330"
+                                                <ffimageloading:CachedImage HeightRequest="360"
                                                                             Aspect="Fill"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                             ErrorPlaceholder="image_error.png"

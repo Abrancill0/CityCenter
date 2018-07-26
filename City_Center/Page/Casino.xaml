@@ -267,9 +267,11 @@
                                     </DataTemplate>
                                     </cv:CarouselViewControl.ItemTemplate>
                                 </cv:CarouselViewControl>-->
+                             <!--  Android 330
+                            IOS 360-->
                             <cards:CarouselView x:Name="CarruselDestacados"
                                                 Items="{Binding DestacadosDetalle}"
-                                                HeightRequest="330"
+                                                HeightRequest="360"
                                                 HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
@@ -287,7 +289,7 @@
                                                 <RowDefinition Height="0.29*" />
                                             </Grid.RowDefinitions>
                                             <ffimageloading:CachedImage Aspect="Fill"
-                                                                        HeightRequest="330"
+                                                                        HeightRequest="360"
                                                                             LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png" 
                                                                         Source="{Binding des_imagen_2}" Grid.Row="0" Grid.ColumnSpan="4">
@@ -511,10 +513,11 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-
+                             <!--  Android 330
+                            IOS 360-->
                             <cards:CarouselView x:Name="CarruselTorneos"
                                                 Items="{Binding TorneoDetalle}"
-                                                HeightRequest="330"
+                                                HeightRequest="360"
                                                  HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
@@ -532,7 +535,7 @@
                                                 <RowDefinition Height="0.29*" />
                                             </Grid.RowDefinitions>
                                             <ffimageloading:CachedImage Aspect="Fill"
-                                                                        HeightRequest="330"
+                                                                        HeightRequest="360"
                                                                         LoadingPlaceholder="image_loading.png"
                                                                         ErrorPlaceholder="image_error.png" 
                                                                         Source="{Binding tor_imagen_2,StringFormat='https://citycenter-rosario.com.ar/{0}'}" Grid.Row="0" Grid.ColumnSpan="4" DownsampleToViewSize="true">

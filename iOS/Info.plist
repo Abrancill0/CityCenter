@@ -5,9 +5,9 @@
 	<key>CFBundleDisplayName</key>
 	<string>CityCenter</string>
 	<key>CFBundleName</key>
-	<string>CityCenter</string>
+	<string>City Center Rosario</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Danthop.CityCenter</string>
+	<string>com.GuorkingMobile.CityCenter</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIDeviceFamily</key>
@@ -46,7 +46,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.966740090585-pu2uas49d1d6rh7dd0e8a6eiru8kpksu</string>
+				<string>com.googleusercontent.apps.966740090585-efk8p85m2rja5bi9ps395ppfi5cegqic</string>
 			</array>
 			<key>CFBundleURLTypes</key>
 			<string>Editor</string>
@@ -54,7 +54,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.Danthop.CityCenter</string>
+				<string>com.GuorkingMobile.CityCenter</string>
 			</array>
 			<key>CFBundleURLTypes</key>
 			<string>Editor</string>
@@ -121,8 +121,6 @@
 		<key>NSExceptionAllowsInsecureHTTPLoads</key>
 		<true/>
 	</dict>
-	<key>CFBundleVersion</key>
-	<string>3.5</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Se requiere de este permiso</string>
 	<key>NSMicrophoneUsageDescription</key>
@@ -131,5 +129,7 @@
 	<string>Se requiere de este permiso</string>
 	<key>NSSiriUsageDescription</key>
 	<string>Se requiere de este permiso</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
 </dict>
 </plist>

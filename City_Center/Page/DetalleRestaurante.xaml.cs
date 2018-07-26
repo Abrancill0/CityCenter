@@ -179,6 +179,25 @@ namespace City_Center.Page
                     DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
                 }
             }
+            else if (VariablesGlobales.HorarioCityCenter == true)
+            {
+                var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "20:30", "21:00", "22:00", "23:00");
+
+                if (result != "CANCELAR")
+                {
+                    HoraR1.Text = result.ToString();
+
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+                else
+                {
+                    HoraR1.Text = "20:30";
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+
+            }
             else
             {
                 var result = await UserDialogs.Instance.TimePromptAsync(new TimePromptConfig

@@ -160,11 +160,18 @@ namespace City_Center.iOS
             AppEvents.ActivateApp();
         }
 
-        public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
-        {
-            return ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
+        //public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
+        //{
+          //  return ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
            
+        //}
+
+        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
+            var openUrlOptions = new UIApplicationOpenUrlOptions(options);
+            return SignIn.SharedInstance.HandleUrl(url, openUrlOptions.SourceApplication, openUrlOptions.Annotation);
         }
+
 
         [Export("userNotificationCenter:willPresentNotification:withCompletionHandler:")]
         public void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler)

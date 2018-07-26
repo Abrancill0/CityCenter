@@ -652,6 +652,26 @@ namespace City_Center.Page
                     HoraR1.Unfocus();
                     DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
                 }
+
+            }
+            else if (Restaurante.Text.Contains("CITY ROCK"))
+            {
+                var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "20:30","21:00","22:00", "23:00");
+
+                if (result != "CANCELAR")
+                {
+                    HoraR1.Text = result.ToString();
+
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+                else
+                {
+                    HoraR1.Text = "20:30";
+                    HoraR1.Unfocus();
+                    DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+                }
+
             }
             else
             {
@@ -786,17 +806,21 @@ namespace City_Center.Page
                                                                         VariablesGlobales.ArregloRestaurantes[4]);
                     break;
          
+                case 5:
+                    result = await UserDialogs.Instance.ActionSheetAsync("Restaurant",
+                                                                       "CANCELAR",
+                                                                       null,
+                                                                       null,
+                                                                       VariablesGlobales.ArregloRestaurantes[0],
+                                                                       VariablesGlobales.ArregloRestaurantes[1],
+                                                                       VariablesGlobales.ArregloRestaurantes[2],
+                                                                       VariablesGlobales.ArregloRestaurantes[3],
+                                                                       VariablesGlobales.ArregloRestaurantes[4],
+                                                                       VariablesGlobales.ArregloRestaurantes[5]);
+                    break;
             }
 
 
-
-
-
-
-
-
-
-           
             if (result != "CANCELAR")
             {
                 Restaurante.Text = result.ToString();
@@ -807,6 +831,10 @@ namespace City_Center.Page
                 else if (Restaurante.Text.Contains("LE GULÁ"))
                 {
                     HoraR1.Text = "21:00";
+                }
+                else if (Restaurante.Text.Contains("CITY ROCK"))
+                {
+                    HoraR1.Text = "20:30";
                 }
 
                 Restaurante.Unfocus();

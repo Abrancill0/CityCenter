@@ -22,7 +22,7 @@ using Plugin.DeviceInfo;
 
 namespace City_Center.ViewModels
 {
-    public class RegistroViewModel:BaseViewModel
+    public class RegistroViewModel : BaseViewModel
     {
         #region Services
         private ApiService apiService;
@@ -39,7 +39,7 @@ namespace City_Center.ViewModels
 
         private RegistroReturn listRegistro;
         private ObservableCollection<RegistroDetalle> registroDetalle;
-		private ValidaUsuarioReturn listValidaUsuario;
+        private ValidaUsuarioReturn listValidaUsuario;
 
         private ImagenReturn ListImagen;
 
@@ -108,17 +108,17 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
             {
-               await Mensajes.Alerta("Ninguna foto subida");
+                await Mensajes.Alerta("Ninguna foto subida");
 
-               return "Error";
+                return "Error";
             }
             else
             {
                 byte[] ImagenSubir = File.ReadAllBytes(VariablesGlobales.RutaImagene);
 
-                dirotro = Convert.ToBase64String(ImagenSubir);    
+                dirotro = Convert.ToBase64String(ImagenSubir);
             }
-                
+
             var content = new FormUrlEncodedContent(new[]
            {
                 new KeyValuePair<string, string>("usu_id", Convert.ToString(UsuarioID)),
@@ -209,7 +209,7 @@ namespace City_Center.ViewModels
 
             if (string.IsNullOrEmpty(this.Ciudad))
             {
-               await Mensajes.Alerta("Ciudad es requerida");
+                await Mensajes.Alerta("Ciudad es requerida");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -263,9 +263,9 @@ namespace City_Center.ViewModels
 
             var response = await this.apiService.Get<RegistroReturn>("/usuarios", "/store", content);
 
-           if (!response.IsSuccess)
+            if (!response.IsSuccess)
             {
-               await Mensajes.Alerta("Error al registra usuario, intenta de nuevo");
+                await Mensajes.Alerta("Error al registra usuario, intenta de nuevo");
 
                 UserDialogs.Instance.HideLoading();
 
@@ -296,18 +296,18 @@ namespace City_Center.ViewModels
             {
 
             }
-          
+
 
             string RutaImagen;
 
             if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
             {
-                RutaImagen = ""; 
+                RutaImagen = "";
             }
             else
             {
-                RutaImagen   = await GuardaImagen(listRegistro.resultado.usu_id);   
-            } 
+                RutaImagen = await GuardaImagen(listRegistro.resultado.usu_id);
+            }
 
 
             Application.Current.Properties["IsLoggedIn"] = true;
@@ -318,7 +318,7 @@ namespace City_Center.ViewModels
             Application.Current.Properties["Pass"] = this.Password;
             Application.Current.Properties["FechaNacimiento"] = Convert.ToString(Año + "-" + Mes + "-" + Dia);
             Application.Current.Properties["FotoPerfil"] = RutaImagen;
-			Application.Current.Properties["TipoCuenta"] = "CityCenter";
+            Application.Current.Properties["TipoCuenta"] = "CityCenter";
 
             Application.Current.Properties["RutaChatCasino"] = "";
             Application.Current.Properties["VariableChatHotel"] = "";
@@ -350,8 +350,8 @@ namespace City_Center.ViewModels
 
         }
 
-       
-		public ICommand GoogleCommand
+
+        public ICommand GoogleCommand
         {
             get
             {
@@ -362,37 +362,41 @@ namespace City_Center.ViewModels
         private void GoogleLogin()
         {
             try
-			{
-				_googleManager = DependencyService.Get<IGoogleManager>();
+            {
+                _googleManager = DependencyService.Get<IGoogleManager>();
 
                 UserDialogs.Instance.ShowLoading("Iniciando sesion...", MaskType.Black);
 
                 _googleManager.Login(OnLoginComplete);
 
-                //UserDialogs.Instance.HideLoading();
-			}
-			catch (Exception)
-			{
+                #if __IOS__
+                UserDialogs.Instance.HideLoading();
+                #endif
 
-			}
+                _googleManager.Logout();
+            }
+            catch (Exception)
+            {
 
-
+            }
 
         }
 
         private async void OnLoginComplete(GoogleUser googleUser, string message)
         {
             try
-			{
-				if (googleUser != null)
+            {
+                if (googleUser != null)
                 {
+                    UserDialogs.Instance.ShowLoading("Iniciando sesion...", MaskType.Black);
+
                     ValidaUsuarioReturn ValUsu = await ValidaUsuario(googleUser.Email);
 
                     string IDUsuario;
                     string TipoDocumento = "";
                     string NumeroDocumento = "";
                     string NumeroSocio = "";
-                  
+
                     string FechaNacimiento = "";
 
                     if (ValUsu == null)
@@ -450,7 +454,7 @@ namespace City_Center.ViewModels
 
                     }
 
-                   // MainViewModel.GetInstance().Master = new MasterViewModel();
+                    // MainViewModel.GetInstance().Master = new MasterViewModel();
                     MainViewModel.GetInstance().Inicio = new InicioViewModel();
                     MainViewModel.GetInstance().Detail = new DetailViewModel();
                     MainViewModel.GetInstance().Casino = new CasinoViewModel();
@@ -477,14 +481,14 @@ namespace City_Center.ViewModels
 
                     return;
                 }
-			}
-			catch (Exception ex)
-			{
-				await Mensajes.Alerta("Error al acceder a los servicios de Google");
+            }
+            catch (Exception ex)
+            {
+                await Mensajes.Alerta("Error al acceder a los servicios de Google");
                 UserDialogs.Instance.HideLoading();
-                return; 
-			}
-            
+                return;
+            }
+
         }
 
         public ICommand FacebookCommand
@@ -498,12 +502,16 @@ namespace City_Center.ViewModels
         private void FacebookLogin()
         {
             try
-			{
-				_facebookManager = DependencyService.Get<IFacebookManager>();
+            {
+                _facebookManager = DependencyService.Get<IFacebookManager>();
 
                 UserDialogs.Instance.ShowLoading("Iniciando sesion...", MaskType.Black);
 
                 _facebookManager.Login(OnLoginComplete);
+
+#if __IOS__
+                UserDialogs.Instance.HideLoading();
+#endif
 
                 _facebookManager.Logout();
 			}
@@ -521,6 +529,7 @@ namespace City_Center.ViewModels
 			{
 				if (facebookUser != null)
                 {
+                    UserDialogs.Instance.ShowLoading("Iniciando sesion...", MaskType.Black);
 
                     ValidaUsuarioReturn ValUsu = await ValidaUsuario(facebookUser.Email);
 
@@ -688,16 +697,16 @@ namespace City_Center.ViewModels
 
         }
 
-        #endregion
+#endregion
 
-        #region Contructors
+#region Contructors
         public RegistroViewModel()
         {
             this.apiService = new ApiService();
             this.isEnabled = true;
 			this.Fecha = "00/00/0000";
         }
-        #endregion
+#endregion
 
     }
 }

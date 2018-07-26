@@ -435,11 +435,11 @@ namespace City_Center.ViewModels
             //Piu
             if (this.rd.reb_nombre=="LE GULÁ")
             {
-                TamanoListview = (TamanoFinal * 15);
+                TamanoListview = (TamanoFinal * 16);
             }
             else
             {
-                TamanoListview = (TamanoFinal * 15)+30;   
+                TamanoListview = (TamanoFinal * 17)+30;   
             }
            
 
@@ -500,18 +500,29 @@ namespace City_Center.ViewModels
                 this.HoraInicio = "12:30";
                 VariablesGlobales.HorarioPIU = true;
                 VariablesGlobales.HorarioLEGULA = false;
+                VariablesGlobales.HorarioCityCenter = false;
             }
             else if (rd.reb_nombre.Contains("LE GULÁ"))
             {
                 this.HoraInicio = "21:00";
                 VariablesGlobales.HorarioPIU = false;
                 VariablesGlobales.HorarioLEGULA = true;
+                VariablesGlobales.HorarioCityCenter = false;
+            }
+            else if (rd.reb_nombre.Contains("CITY ROCK"))
+            {
+                this.HoraInicio = "20:30";
+                VariablesGlobales.HorarioPIU = false;
+                VariablesGlobales.HorarioLEGULA = false;
+                VariablesGlobales.HorarioCityCenter = true;
+               
             }
             else
             {
                 this.HoraInicio = "00:00";
                 VariablesGlobales.HorarioPIU = false;
                 VariablesGlobales.HorarioLEGULA = false;
+                VariablesGlobales.HorarioCityCenter = false;
             }
 
 

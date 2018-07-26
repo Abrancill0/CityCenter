@@ -697,7 +697,7 @@ namespace City_Center.ViewModels
 
             UserDialogs.Instance.HideLoading();
 
-            Mensajes.Alerta("configuración guardada correctamente");
+            Mensajes.Alerta("Configuración guardada correctamente");
             return;
         }
 
