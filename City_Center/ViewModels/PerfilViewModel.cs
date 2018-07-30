@@ -275,7 +275,26 @@ namespace City_Center.ViewModels
                 return;
             }
 
-           
+                int Dia1 = Convert.ToInt32(this.Fecha.Substring(0, 2));
+                int Mes1 = Convert.ToInt32(this.Fecha.Substring(3, 2));
+                int Año1 = Convert.ToInt32(this.Fecha.Substring(6, 4));
+
+               // DateTime FN = Convert.ToDateTime(this.Fecha);
+
+                DateTime nacimiento = new DateTime(Año1, Mes1, Dia1); //Fecha de nacimiento
+                int edad = DateTime.Today.AddTicks(-nacimiento.Ticks).Year - 1;
+
+                if (edad < 18)
+                {
+                    await Mensajes.Alerta("Debes ser mayor de edad para poder utilizar la app");
+
+                    UserDialogs.Instance.HideLoading();
+
+                    return;
+                }
+
+
+
             if (string.IsNullOrEmpty(NumeroSocio))
             {
               //  await Mensajes.Alerta("Usuario actual no cuenta con tarjeta Win");

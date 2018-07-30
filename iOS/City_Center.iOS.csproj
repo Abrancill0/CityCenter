@@ -11,6 +11,7 @@
     <AssemblyName>City_Center.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,7 +32,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
-    <CodesignProvision>VS: com.GuorkingMobile.CityCenter Development</CodesignProvision>
+    <CodesignProvision>CityCenterRosarioPruebas</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -40,13 +41,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Distribution: Casino de Rosario S.A (7V679D7LGG)</CodesignKey>
-    <CodesignKey>iPhone Developer: Luis  Albor (G62L84WN3M)</CodesignKey>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>CCR_AppStore</CodesignProvision>
+     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -59,8 +60,7 @@
      <MtouchLink>None</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    
-    <CodesignProvision>VS: com.GuorkingMobile.CityCenter Development</CodesignProvision>
+    <CodesignProvision>CCR_AppStore</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
   </PropertyGroup>

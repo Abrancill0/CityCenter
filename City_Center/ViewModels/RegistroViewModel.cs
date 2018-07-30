@@ -226,6 +226,28 @@ namespace City_Center.ViewModels
                 return;
             }
 
+
+            //DateTime FN = Convert.ToDateTime(this.Fecha);
+
+            int Dia1 = Convert.ToInt32(this.Fecha.Substring(0, 2));
+            int Mes1 = Convert.ToInt32(this.Fecha.Substring(3, 2));
+            int Año1 = Convert.ToInt32(this.Fecha.Substring(6, 4));
+
+            // DateTime FN = Convert.ToDateTime(this.Fecha);
+                                         
+            DateTime nacimiento = new DateTime(Año1,Mes1,Dia1); //Fecha de nacimiento
+            int edad = DateTime.Today.AddTicks(-nacimiento.Ticks).Year - 1;
+
+            if (edad < 18)
+            {
+                await Mensajes.Alerta("Debes ser mayor de edad para poder registrarte");
+
+                UserDialogs.Instance.HideLoading();
+
+                return; 
+            }
+
+
             if (this.Password != this.Password2)
             {
                 await Mensajes.Alerta("Las contraseñas no coiciden, verificar de nuevo");
