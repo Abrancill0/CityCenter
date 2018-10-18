@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using Xamarin.Forms.Platform;
 using Xamarin.Forms;
 using City_Center.PopUp;
-using Rg.Plugins.Popup.Extensions;
 using City_Center.Clases;
 using Acr.UserDialogs;
 using City_Center.Helper;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using City_Center.ViewModels;
-using CarouselView.FormsPlugin.Abstractions;
-using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace City_Center.Page
 {
@@ -35,8 +28,6 @@ namespace City_Center.Page
 
             FechaInicio.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Today);
             FechaFinal.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(1));
-
-
 
         }
 
@@ -301,9 +292,9 @@ namespace City_Center.Page
 
         async void FechaRango2_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-#if __IOS__
-            DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
-#endif
+            #if __IOS__
+                        DependencyService.Get<IForceKeyboardDismissalService>().DismissKeyboard();
+            #endif
 
             var result = await UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
             {
@@ -656,7 +647,7 @@ namespace City_Center.Page
             }
             else if (Restaurante.Text.Contains("CITY ROCK"))
             {
-                var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "20:30","21:00","22:00", "23:00");
+                var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "20:30");
 
                 if (result != "CANCELAR")
                 {
@@ -677,7 +668,9 @@ namespace City_Center.Page
             {
                 var result = await UserDialogs.Instance.TimePromptAsync(new TimePromptConfig
                 {
-                    IsCancellable = true
+                    IsCancellable = true,
+                    CancelText="CANCELAR"
+                        
                 });
 
 
@@ -848,5 +841,34 @@ namespace City_Center.Page
             }
 
         }
+
+        //void Promociones_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        //{
+        //    int Position = Convert.ToInt32(e.SelectedPosition);
+
+        //    if (Position == VariablesGlobales.RegistrosPromociones)
+        //    {
+        //        CarruselPromociones.Position = 1;
+        //    }
+        //    else if (Position == 0)
+        //    {
+        //        CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones-1;
+        //    }   
+
+        //}
+
+        //void Torneo_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        //{
+        //    int Position = Convert.ToInt32(e.SelectedPosition);
+
+        //    if (Position == VariablesGlobales.RegistrosTorneo)
+        //    {
+        //        CarruselTorneos.Position = 1;
+        //    }
+        //    else if (Position == 0)
+        //    {
+        //        CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo - 1;
+        //    }   
+        //}
     }
 }

@@ -181,7 +181,7 @@ namespace City_Center.Page
             }
             else if (VariablesGlobales.HorarioCityCenter == true)
             {
-                var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "20:30", "21:00", "22:00", "23:00");
+                var result = await UserDialogs.Instance.ActionSheetAsync("Horario", "CANCELAR", null, null, "20:30");
 
                 if (result != "CANCELAR")
                 {

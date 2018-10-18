@@ -14,8 +14,8 @@
              <StackLayout Spacing="0" BackgroundColor="White">
               <StackLayout Spacing="0">
                 <ffimageloading:CachedImage
-                                            LoadingPlaceholder="image_loading.png"
-                                            ErrorPlaceholder="image_error.png"
+                                            LoadingPlaceholder="image_loading_Detalle.png"
+                                            ErrorPlaceholder="image_loading_Detalle.png"
                                             Source="{Binding ds.eve_imagen,StringFormat='https://citycenter-rosario.com.ar/{0}'}" />
             </StackLayout>
 

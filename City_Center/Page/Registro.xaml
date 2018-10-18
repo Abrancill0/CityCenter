@@ -4,7 +4,8 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-             x:Class="City_Center.Page.Registro">
+             x:Class="City_Center.Page.Registro"
+             >
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Name="StyleButton" TargetType="Button">

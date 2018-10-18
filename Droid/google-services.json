@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "966740090585-p6e1uuu1qq8u8qtsf2issj29vsh8lrhr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.CityCenter.Danthop",
+            "certificate_hash": "4911a725d5f158a4da962dc42689488a1b302b43"
+          }
+        },
+        {
           "client_id": "966740090585-03m3r4mdt2r9ststftogabar73oii85f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -23,11 +31,11 @@
           }
         },
         {
-          "client_id": "966740090585-e0uts2cvl343hm5o7k33ntq1dvsuv2sa.apps.googleusercontent.com",
+          "client_id": "966740090585-fn9fe6snqqhjlc5n38shv2qrtrssmf6e.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.CityCenter.Danthop",
-            "certificate_hash": "4911a725d5f158a4da962dc42689488a1b302b43"
+            "certificate_hash": "23d13369cba77ceb97885c82eb611d37836016ec"
           }
         },
         {
@@ -52,10 +60,11 @@
               "client_type": 3
             },
             {
-              "client_id": "966740090585-pu2uas49d1d6rh7dd0e8a6eiru8kpksu.apps.googleusercontent.com",
+              "client_id": "966740090585-efk8p85m2rja5bi9ps395ppfi5cegqic.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.Danthop.CityCenter"
+                "bundle_id": "com.GuorkingMobile.CityCenter",
+                "app_store_id": "1418243610"
               }
             }
           ]

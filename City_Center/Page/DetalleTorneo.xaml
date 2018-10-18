@@ -21,10 +21,10 @@
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding TorneoDetalle}">
             <StackLayout>
-                <StackLayout Margin="20" x:Name="SLT">
+                <StackLayout x:Name="SLT">
                      <StackLayout Spacing="0">
-                    <ffimageloading:CachedImage LoadingPlaceholder="image_loading.png"
-                                                ErrorPlaceholder="image_error.png"
+                    <ffimageloading:CachedImage LoadingPlaceholder="image_loading_Detalle.png"
+                                                ErrorPlaceholder="image_loading_Detalle.png"
                                                 Source="{Binding td.tor_imagen,StringFormat='https://citycenter-rosario.com.ar/{0}'}" />
                                                 </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="End" Margin="15">
@@ -61,26 +61,28 @@
                             </Image.GestureRecognizers>
                         </Image>
                     </StackLayout>
-                    <Label HorizontalOptions="Start"
-                           HorizontalTextAlignment="Start"
-                           Text="{Binding td.tor_nombre}" FontSize="Large" TextColor="#250C4B">
-                                <Label.FontFamily>
-                                      <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Roboto-Regular" />
-                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                    </OnPlatform>
-                                </Label.FontFamily>
-                    </Label>
-                    <Label HorizontalOptions="Start"
-                           HorizontalTextAlignment="Start"
-                           Text="{Binding td.tor_descripcion}" FontSize="Micro">
-                                <Label.FontFamily>
-                                     <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Roboto-Regular" />
-                                        <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
-                                    </OnPlatform>
-                                </Label.FontFamily>
-                    </Label>
+                    <StackLayout Margin="15">
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="{Binding td.tor_nombre}" FontSize="Large" TextColor="#250C4B">
+                                        <Label.FontFamily>
+                                              <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="Roboto-Regular" />
+                                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                            </Label>
+                            <Label HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Start"
+                                   Text="{Binding td.tor_descripcion}" FontSize="Micro">
+                                        <Label.FontFamily>
+                                             <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="Roboto-Regular" />
+                                                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                            </Label>
+                    </StackLayout>
                 </StackLayout>
                 
                 <Button Margin="30" Text="INSCRIBITE" TextColor="White" BackgroundColor="#E91E63" Clicked="Handle_Clicked">

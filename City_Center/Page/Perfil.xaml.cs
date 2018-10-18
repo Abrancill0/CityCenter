@@ -10,7 +10,7 @@ using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Xamarin.Forms;
 using City_Center.ViewModels;
-
+using System.Net.Http;
 
 namespace City_Center.Page
 {
@@ -179,13 +179,25 @@ namespace City_Center.Page
                     SaveToAlbum = true,
 
                     Directory = "CityCenter",
-                    PhotoSize = PhotoSize.Custom,
-                    CustomPhotoSize = 18,
-                    CompressionQuality = 15,
+                    PhotoSize = PhotoSize.Full,
+          
                     Name = Convert.ToString(n)
                 });
 
                 VariablesGlobales.RutaImagene = file.Path;
+
+
+               // var content = new MultipartFormDataContent();
+               //// https://www.citycenter-rosario.com.ar/images/usuarios/usuario_20180505195025.jpg
+                //content.Add(new StreamContent(file.GetStream()), "\"usuarios\"", $"\"{file.Path}\"");
+
+                //var httpClient = new System.Net.Http.HttpClient();
+                //var url = "https://www.citycenter-rosario.com.ar/images";
+                //var responseMsg = await httpClient.PostAsync(url, content);
+
+                //var remotePath = await responseMsg.Content.ReadAsStringAsync();
+
+
 
                 imagen1.Source = ImageSource.FromStream(() =>
                 {

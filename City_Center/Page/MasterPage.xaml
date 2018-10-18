@@ -4,6 +4,8 @@
                   xmlns:local1="clr-namespace:City_Center.Clases"
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   x:Class="City_Center.Page.MasterPage"
+                  xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                  xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
                   xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
                   BindingContext="{Binding Main, Source={StaticResource Locator}}"
                   MasterBehavior="SplitOnPortrait" Icon="logo">
@@ -172,7 +174,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <AbsoluteLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center">
+                        <!--<AbsoluteLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center">
                             <Image x:Name="ImageCircle" Source="circulo_blanco.png" HeightRequest="70" WidthRequest="70" VerticalOptions="Center" />
                             <controls:CircleImage x:Name="Image1" Source="{Binding Imagen, Mode=TwoWay}" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
                                 <controls:CircleImage.WidthRequest>
@@ -189,10 +191,25 @@
                                     <TapGestureRecognizer Command="{Binding PerfilCommand}" />
                                 </controls:CircleImage.GestureRecognizers>
                             </controls:CircleImage>
-                            <!--  <Image x:Name="Image1" Source="{Binding Imagen, Mode=TwoWay}" HeightRequest="40" WidthRequest="40" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
-                        </Image>-->
-                            <!--"user.png"-->
-                        </AbsoluteLayout>
+                              <Image x:Name="Image1" Source="{Binding Imagen, Mode=TwoWay}" HeightRequest="40" WidthRequest="40" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                        </Image>
+                        </AbsoluteLayout>-->
+
+                          <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0"  Margin="5"
+                                    x:Name="Image1" Source="{Binding Imagen, Mode=TwoWay}"
+                                          Aspect="AspectFill"
+                                               HeightRequest="45" WidthRequest="45">
+                               <ffimageloading:CachedImage.Transformations>
+                                      <fftransformations:CircleTransformation BorderSize="20" BorderHexColor="#ffffff"  />
+                               </ffimageloading:CachedImage.Transformations>
+                      <ffimageloading:CachedImage.GestureRecognizers>
+                                <TapGestureRecognizer
+                                Command="{Binding PerfilCommand}"
+                                NumberOfTapsRequired="1" />
+                            </ffimageloading:CachedImage.GestureRecognizers>
+                  </ffimageloading:CachedImage>
+
+                        
                         <Label Text="{Binding NombreUsuario}" TextColor="White" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" LineBreakMode="WordWrap" WidthRequest="60" FontSize="Small">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding PerfilCommand}" />

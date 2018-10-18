@@ -137,9 +137,59 @@ namespace City_Center.ViewModels
                 return;
             }
 
+            try
+            {
+
             this.listHabitaciones = (HabitacionesReturn)response.Result;
 
-            HabitacionesDetalle = new ObservableCollection<HabitacionesDetalle>(this.ToHabitacionesItemViewModel());
+                HabitacionesDetalle = new ObservableCollection<HabitacionesDetalle>();
+
+                foreach (var l in listHabitaciones.resultado)
+                {
+
+                    int PosicionEspacio1 = l.hab_nombre.IndexOf(" ");
+                    string Arreglo1 = l.hab_nombre.Substring(0, PosicionEspacio1);
+                    string Arreglo2 = l.hab_nombre.Substring(PosicionEspacio1 + 1);
+
+
+                    HabitacionesDetalle.Add(new HotelItemViewModel()
+                    {
+                        hab_id = l.hab_id,
+                        hab_nombre = Arreglo1,
+                        hab_nombre2 = Arreglo2,
+                        hab_descripcion = l.hab_descripcion,
+                        hab_imagen = VariablesGlobales.RutaServidor + l.hab_imagen,
+                        hab_titulo_1 = l.hab_titulo_1,
+                        hab_descripcion_1 = l.hab_descripcion_1,
+                        hab_imagen_1 = l.hab_imagen_1,
+                        hab_titulo_2 = l.hab_titulo_2,
+                        hab_descripcion_2 = l.hab_descripcion_2,
+                        hab_imagen_2 = l.hab_imagen_2,
+                        hab_titulo_3 = l.hab_titulo_3,
+                        hab_id_usuario_creo = l.hab_id_usuario_creo,
+                        hab_fecha_hora_creo = l.hab_fecha_hora_creo,
+                        hab_id_usuario_modifico = l.hab_id_usuario_modifico,
+                        hab_fecha_hora_modifico = l.hab_fecha_hora_modifico,
+                        hab_estatus = l.hab_estatus,
+                        hab_descripcion_3 = l.hab_descripcion_3,
+                        hab_imagen_3 = l.hab_imagen_3,
+                        hab_imagen_4 = l.hab_imagen_4,
+                        hab_imagen_5 = l.hab_imagen_5,
+                        hab_imagen_6 = l.hab_imagen_6
+                    });
+
+
+
+                    //            HabitacionesDetalle = new ObservableCollection<HotelItemViewModel>(this.ToHabitacionesItemViewModel());
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
 
         }
 

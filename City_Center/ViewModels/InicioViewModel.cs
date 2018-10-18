@@ -56,6 +56,8 @@ namespace City_Center.ViewModels
         bool muestraFlechas;
         bool muestraFlechasPromo;
 
+        bool deshabilitaBoton;
+
         private string fechaShowInicio;
         private string fechaShowFin;
         #endregion
@@ -66,6 +68,12 @@ namespace City_Center.ViewModels
         {
             get { return this.restaurantDetalle; }
             set { SetValue(ref this.restaurantDetalle, value); }
+        }
+
+        public bool DeshabilitaBoton
+        {
+            get { return this.deshabilitaBoton; }
+            set { SetValue(ref this.deshabilitaBoton, value); }
         }
 
         public string FechaShowInicio
@@ -216,9 +224,13 @@ namespace City_Center.ViewModels
 
         private async void Reservar()
         {
+            this.DeshabilitaBoton = false;
+
             if (this.NombreRestaurante == "Seleccionar...")
             {
                 await Mensajes.Alerta("Campo restaurante es requerida");
+
+                this.DeshabilitaBoton = true;
 
                 return;
             }
@@ -226,7 +238,7 @@ namespace City_Center.ViewModels
             if (this.FechaInicio=="00/00/0000")
             {
                 await Mensajes.Alerta("Campo fecha es requerida");
-
+                this.DeshabilitaBoton = true;
                 return;
             }
 
@@ -234,7 +246,7 @@ namespace City_Center.ViewModels
             if (this.HoraInicio == "00:00")
             {
                 await Mensajes.Alerta("Campo hora es requerida");
-
+                this.DeshabilitaBoton = true;
                 return;
             }
 
@@ -242,14 +254,14 @@ namespace City_Center.ViewModels
             if (string.IsNullOrEmpty(this.Nombre))
             {
                 await Mensajes.Alerta("Nombre y Apellido requerido");
-
+                this.DeshabilitaBoton = true;
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Correo))
             {
                 await Mensajes.Alerta("correo electrónico requerido");
-
+                this.DeshabilitaBoton = true;
                 return;
             }
 
@@ -262,7 +274,7 @@ namespace City_Center.ViewModels
             if (string.IsNullOrEmpty(this.Telefono))
             {
                 await Mensajes.Alerta("Numero telefonico requerido");
-
+                this.DeshabilitaBoton = true;
                 return;
             }
 
@@ -296,12 +308,12 @@ namespace City_Center.ViewModels
             if (!response.IsSuccess)
             {
                 await Mensajes.Alerta("Ocurrio un error al enviar el correo");
-
+                this.DeshabilitaBoton = true;
                 return;
             }
 
             await Mensajes.Alerta("La información ha sido enviada correctamente");
-
+            this.DeshabilitaBoton = true;
 			this.FechaInicio = "00/00/0000";
 			this.HoraInicio = "00:00";
             this.NoPersonas = "2";
@@ -405,12 +417,20 @@ namespace City_Center.ViewModels
 
                 MainViewModel.GetInstance().listTorneo = (TorneoReturn)response.Result;
 
-                TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+#if __ANDROID__
+                TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel2());
+               #endif
+
+#if __IOS__
+                  TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+
+#endif
+
 
                 if (TorneoDetalle.Count>0)
                 {
                     MuestraFlechas = true;
-                    VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count;
+                    VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count-1;
                     //VariablesGlobales.RegistrosTorneo = TorneoDetalle.Count;
                    
                 }
@@ -429,7 +449,7 @@ namespace City_Center.ViewModels
 
         private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel()
         {
-            return MainViewModel.GetInstance().listTorneo.resultado.Where(l => l.tor_id > 0).Select(l => new TorneoItemViewModel
+            return MainViewModel.GetInstance().listTorneo.resultado.Select(l => new TorneoItemViewModel
             {
                 tor_id = l.tor_id,
                 tor_nombre = l.tor_nombre,
@@ -458,6 +478,7 @@ namespace City_Center.ViewModels
                 tor_nombre = l.tor_nombre,
                 tor_descripcion = l.tor_descripcion,
                 tor_imagen = l.tor_imagen,
+                tor_imagen_2 = l.tor_imagen_2,
                 tor_fecha_hora_inicio = l.tor_fecha_hora_inicio,
                 tor_fecha_hora_fin = l.tor_fecha_hora_fin,
                 tor_destacado = l.tor_destacado,
@@ -563,14 +584,21 @@ namespace City_Center.ViewModels
                     return;
                 }
 
-                this.listPromociones = (PromocionesReturn)response.Result;
+               // this.listPromociones = (PromocionesReturn)response.Result;
+                MainViewModel.GetInstance().listPromociones = (PromocionesReturn)response.Result;
 
+#if __ANDROID__
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel2());
+#endif
+
+#if __IOS__
                 PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+#endif
 
                 if (PromocionesDetalle.Count > 0)
                 {
                     MuestraFlechasPromo = true;
-                    VariablesGlobales.RegistrosPromociones = PromocionesDetalle.Count;
+                    VariablesGlobales.RegistrosPromociones = PromocionesDetalle.Count-1;
 
                 }
                 else
@@ -593,7 +621,7 @@ namespace City_Center.ViewModels
 
         private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()
         {
-            return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
+            return MainViewModel.GetInstance().listPromociones.resultado.Select(l => new PromocionesItemViewModel
             {
                 pro_id = l.pro_id,
                 pro_id_evento = l.pro_id_evento,
@@ -730,17 +758,17 @@ namespace City_Center.ViewModels
             });
         }
 
-
-
         #endregion
 
         #region Contructors
         public InicioViewModel()
         {
             this.apiService = new ApiService();
-            this.LoadTarjetaUsuario();
+
+           
             this.LoadPromociones();
             this.LoadTorneo();
+            this.LoadTarjetaUsuario();
 
             this.LoadRestaurantes();
 
@@ -751,7 +779,9 @@ namespace City_Center.ViewModels
             this.fechaShowFin = String.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(1));
 			this.NombreRestaurante = "Seleccionar";
 			this.SillaNiños = "No";
-            
+
+            DeshabilitaBoton = true;
+
         }
         #endregion
     }

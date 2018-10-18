@@ -182,12 +182,12 @@ namespace City_Center.ViewModels
                     MasterPage fpm = new MasterPage();
                     //fpm.Master = new DetailPage(); // You have to create a Master ContentPage()
 
-					//App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
+                    //App.NavPage = new NavigationPage(new CustomTabPage()) { BarBackgroundColor = Color.FromHex("#23144B") };
 
-					//fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
+                    //fpm.Detail = App.NavPage; // You have to create a Detail ContenPage()
                     Application.Current.MainPage = fpm;
                     App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
-                   // ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
+                    // ActualizaBarra.Cambio(VariablesGlobales.VentanaActual);
 
                     UserDialogs.Instance.HideLoading();
                 }
@@ -197,7 +197,7 @@ namespace City_Center.ViewModels
             {
                 UserDialogs.Instance.HideLoading();
 
-            //  await  Mensaje.Alerta("Ocurrio un error al cerrar sesion");
+                //  await  Mensaje.Alerta("Ocurrio un error al cerrar sesion");
 
                 //await Application.Current.MainPage.DisplayAlert(
                 //          "Error",
@@ -222,14 +222,14 @@ namespace City_Center.ViewModels
 
             ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
-			App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
 
             VariablesGlobales.Notificaciones = false;
 
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Perfil());
 
 
-           
+
         }
 
 
@@ -272,7 +272,7 @@ namespace City_Center.ViewModels
 
             ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
-			App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
 
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Login());
 
@@ -293,7 +293,7 @@ namespace City_Center.ViewModels
 
             ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
-            App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
+            App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
 
             await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new Registro());
 
@@ -330,6 +330,7 @@ namespace City_Center.ViewModels
                     {
                         Imagen = Application.Current.Properties["FotoPerfil"].ToString();
                         GlobalResources.Current.ImagenPerfil = Application.Current.Properties["FotoPerfil"].ToString();
+
                     }
 
                    // Imagen = Application.Current.Properties["FotoPerfil"].ToString();
@@ -401,16 +402,16 @@ namespace City_Center.ViewModels
         }
 
 
-        #endregion
+#endregion
 
-        #region Contructors
+#region Contructors
         public DetailViewModel()
         {
             this.apiService = new ApiService();
             LoadEventos();
             LoadTarjetaUsuario();
         }
-        #endregion
+#endregion
     }
 
 }

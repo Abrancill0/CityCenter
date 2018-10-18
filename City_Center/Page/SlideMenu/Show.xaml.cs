@@ -27,7 +27,6 @@ namespace City_Center.Page.SlideMenu
 
             if (showsito.EventosDetalle !=null)
             {
-                
                 ListaShow.ItemsSource = null;
                
                 ListaShow.ItemsSource = showsito.EventosDetalle;

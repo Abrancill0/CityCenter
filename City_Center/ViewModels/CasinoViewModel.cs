@@ -29,42 +29,42 @@ using Plugin.DeviceInfo;
 
 namespace City_Center.ViewModels
 {
-	public class CasinoViewModel : BaseViewModel
-	{
-		#region Services
-		private ApiService apiService;
-		#endregion
+    public class CasinoViewModel : BaseViewModel
+    {
+        #region Services
+        private ApiService apiService;
+        #endregion
 
-		#region Attributes
+        #region Attributes
 
-		private PozosReturn listPozos;
-		private SalaPokerReturn listSalasPoker;
-		private GanadoresReturn listGanadores;
-		private ObservableCollection<DestacadosItemViewModel> destacadosDetalle;
-		private ObservableCollection<pozosDetalle> pozosDetalle;
-		private ObservableCollection<SalaPokerDetalle> salaPokerDetalle;
-		private ObservableCollection<GanadoresDetalle> ganadoresDetalle;
-		private ObservableCollection<PromocionesWinDetalle> promocionesWinDetalle;
+        private PozosReturn listPozos;
+        private SalaPokerReturn listSalasPoker;
+        private GanadoresReturn listGanadores;
+        private ObservableCollection<DestacadosItemViewModel> destacadosDetalle;
+        private ObservableCollection<pozosDetalle> pozosDetalle;
+        private ObservableCollection<SalaPokerDetalle> salaPokerDetalle;
+        private ObservableCollection<GanadoresDetalle> ganadoresDetalle;
+        private ObservableCollection<PromocionesWinDetalle> promocionesWinDetalle;
 
         private PromocionesReturn listPromociones;
-		private ObservableCollection<TorneoItemViewModel> torneoDetalle;
+        private ObservableCollection<TorneoItemViewModel> torneoDetalle;
 
-		//private EventosReturn list;
-		private ObservableCollection<EventosItemViewModel> eventosDetalle;
+        //private EventosReturn list;
+        private ObservableCollection<EventosItemViewModel> eventosDetalle;
 
-		private TarjetasReturn listTarjetas;
-		private ObservableCollection<TarjetasDetalle> tarjetasDetalle;
+        private TarjetasReturn listTarjetas;
+        private ObservableCollection<TarjetasDetalle> tarjetasDetalle;
 
-		
-		private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
-        
-		private string imagen_Selected;
 
-		private int tamanoGanadores;
+        private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
 
-		private int tamanoPozos;
+        private string imagen_Selected;
 
-		private int tamanoTarjeta;
+        private int tamanoGanadores;
+
+        private int tamanoPozos;
+
+        private int tamanoTarjeta;
 
         bool muestraFlechasPromo = false;
 
@@ -75,9 +75,9 @@ namespace City_Center.ViewModels
         bool muestraTarjetasIOS;
         bool muestraTarjetasAndroid;
 
-		#endregion
+        #endregion
 
-		#region Properties
+        #region Properties
 
         public bool MuestraTarjetasIOS
         {
@@ -92,82 +92,82 @@ namespace City_Center.ViewModels
 
 
 
-		public ObservableCollection<DestacadosItemViewModel> DestacadosDetalle
-		{
-			get { return this.destacadosDetalle; }
-			set { SetValue(ref this.destacadosDetalle, value); }
-		}
-
-		public ObservableCollection<pozosDetalle> PozosDetalle
-		{
-			get { return this.pozosDetalle; }
-			set { SetValue(ref this.pozosDetalle, value); }
-		}
-
-		public ObservableCollection<SalaPokerDetalle> SalaPokerDetalle
-		{
-			get { return this.salaPokerDetalle; }
-			set { SetValue(ref this.salaPokerDetalle, value); }
-		}
-
-		public ObservableCollection<GanadoresDetalle> GanadoresDetalle
-		{
-			get { return this.ganadoresDetalle; }
-			set { SetValue(ref this.ganadoresDetalle, value); }
-		}
-
-		public ObservableCollection<PromocionesWinDetalle> PromocionesWinDetalle
-		{
-			get { return this.promocionesWinDetalle; }
-			set { SetValue(ref this.promocionesWinDetalle, value); }
-		}
-
-		public string Imagen_Selected
-		{
-			get { return this.imagen_Selected; }
-			set { SetValue(ref this.imagen_Selected, value); }
-		}
-
-		public int TamanoGanadores
+        public ObservableCollection<DestacadosItemViewModel> DestacadosDetalle
         {
-			get { return this.tamanoGanadores; }
-			set { SetValue(ref this.tamanoGanadores, value); }
-        }
-        
-		public ObservableCollection<EventosItemViewModel> EventosDetalle
-		{
-			get { return this.eventosDetalle; }
-			set { SetValue(ref this.eventosDetalle, value); }
-		}
-
-		public ObservableCollection<TarjetasDetalle> TarjetasDetalle
-		{
-			get { return this.tarjetasDetalle; }
-			set { SetValue(ref this.tarjetasDetalle, value); }
-		}
-
-		public ObservableCollection<PromocionesItemViewModel> PromocionesDetalle
-		{
-			get { return this.promocionesDetalle; }
-			set { SetValue(ref this.promocionesDetalle, value); }
-		}
-
-		public ObservableCollection<TorneoItemViewModel> TorneoDetalle
-		{
-			get { return this.torneoDetalle; }
-			set { SetValue(ref this.torneoDetalle, value); }
-		}
-        
-		public int TamanoPozos
-        {
-			get { return this.tamanoPozos; }
-			set { SetValue(ref this.tamanoPozos, value); }
+            get { return this.destacadosDetalle; }
+            set { SetValue(ref this.destacadosDetalle, value); }
         }
 
-		public int TamanoTarjeta
+        public ObservableCollection<pozosDetalle> PozosDetalle
         {
-			get { return this.tamanoTarjeta; }
-			set { SetValue(ref this.tamanoTarjeta, value); }
+            get { return this.pozosDetalle; }
+            set { SetValue(ref this.pozosDetalle, value); }
+        }
+
+        public ObservableCollection<SalaPokerDetalle> SalaPokerDetalle
+        {
+            get { return this.salaPokerDetalle; }
+            set { SetValue(ref this.salaPokerDetalle, value); }
+        }
+
+        public ObservableCollection<GanadoresDetalle> GanadoresDetalle
+        {
+            get { return this.ganadoresDetalle; }
+            set { SetValue(ref this.ganadoresDetalle, value); }
+        }
+
+        public ObservableCollection<PromocionesWinDetalle> PromocionesWinDetalle
+        {
+            get { return this.promocionesWinDetalle; }
+            set { SetValue(ref this.promocionesWinDetalle, value); }
+        }
+
+        public string Imagen_Selected
+        {
+            get { return this.imagen_Selected; }
+            set { SetValue(ref this.imagen_Selected, value); }
+        }
+
+        public int TamanoGanadores
+        {
+            get { return this.tamanoGanadores; }
+            set { SetValue(ref this.tamanoGanadores, value); }
+        }
+
+        public ObservableCollection<EventosItemViewModel> EventosDetalle
+        {
+            get { return this.eventosDetalle; }
+            set { SetValue(ref this.eventosDetalle, value); }
+        }
+
+        public ObservableCollection<TarjetasDetalle> TarjetasDetalle
+        {
+            get { return this.tarjetasDetalle; }
+            set { SetValue(ref this.tarjetasDetalle, value); }
+        }
+
+        public ObservableCollection<PromocionesItemViewModel> PromocionesDetalle
+        {
+            get { return this.promocionesDetalle; }
+            set { SetValue(ref this.promocionesDetalle, value); }
+        }
+
+        public ObservableCollection<TorneoItemViewModel> TorneoDetalle
+        {
+            get { return this.torneoDetalle; }
+            set { SetValue(ref this.torneoDetalle, value); }
+        }
+
+        public int TamanoPozos
+        {
+            get { return this.tamanoPozos; }
+            set { SetValue(ref this.tamanoPozos, value); }
+        }
+
+        public int TamanoTarjeta
+        {
+            get { return this.tamanoTarjeta; }
+            set { SetValue(ref this.tamanoTarjeta, value); }
         }
 
         public bool MuestraFlechasPromo
@@ -189,23 +189,23 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.muestraFlechaDestacado, value); }
         }
 
-		#endregion
+        #endregion
 
-		#region Commands
-  
-		public ICommand UbicacionCasinoCommand
-		{
-			get
-			{
-				return new RelayCommand(UbicacionCasino);
-			}
-		}
+        #region Commands
 
-		private async void UbicacionCasino()
-		{
-			try
-			{
-				Plugin.Share.Abstractions.ShareMessage Compartir = new Plugin.Share.Abstractions.ShareMessage();
+        public ICommand UbicacionCasinoCommand
+        {
+            get
+            {
+                return new RelayCommand(UbicacionCasino);
+            }
+        }
+
+        private async void UbicacionCasino()
+        {
+            try
+            {
+                Plugin.Share.Abstractions.ShareMessage Compartir = new Plugin.Share.Abstractions.ShareMessage();
 
 
                 var permissionStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
@@ -226,106 +226,106 @@ namespace City_Center.ViewModels
                 }
 
 
-				//var hasPermission = await Utils.CheckPermissions(Permission.Location);
+                //var hasPermission = await Utils.CheckPermissions(Permission.Location);
                 //if (!hasPermission)
-                    //return;
+                //return;
 
 
-				var Posicion = await Ubicacion.GetCurrentPosition();
+                var Posicion = await Ubicacion.GetCurrentPosition();
 
-				Compartir.Text = "Ubicacion Actual";
-				Compartir.Title = "Tu ubicacion";
-				Compartir.Url = "https://www.google.com/maps/@" + Posicion.Latitude +"," + Posicion.Longitude + "," + "16z";
+                Compartir.Text = "Ubicacion Actual";
+                Compartir.Title = "Tu ubicacion";
+                Compartir.Url = "https://www.google.com/maps/@" + Posicion.Latitude + "," + Posicion.Longitude + "," + "16z";
 
-				await CrossShare.Current.Share(Compartir);
-			}
-			catch (Exception)
-			{
-				await Mensajes.Alerta("Ubicación denegeada, por favor activa el GPS de tu dispositivo");
-			}
+                await CrossShare.Current.Share(Compartir);
+            }
+            catch (Exception)
+            {
+                await Mensajes.Alerta("Ubicación denegeada, por favor activa el GPS de tu dispositivo");
+            }
 
-		}
+        }
 
-		public ICommand VerRecompensasCommand
-		{
-			get
-			{
-				return new RelayCommand(VerRecompensas);
-			}
-		}
+        public ICommand VerRecompensasCommand
+        {
+            get
+            {
+                return new RelayCommand(VerRecompensas);
+            }
+        }
 
-		private async void VerRecompensas()
-		{
-			MainViewModel.GetInstance().RecompesasWin = new RecompesasWinViewModel();
+        private async void VerRecompensas()
+        {
+            MainViewModel.GetInstance().RecompesasWin = new RecompesasWinViewModel();
 
-			((MasterPage)Application.Current.MainPage).IsPresented = false;
+            ((MasterPage)Application.Current.MainPage).IsPresented = false;
 
-			await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new RecompensasWin());
+            await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new RecompensasWin());
 
-		}
+        }
 
-		public ICommand PokerCommand
-		{
-			get
-			{
-				return new RelayCommand(Poker);
-			}
-		}
+        public ICommand PokerCommand
+        {
+            get
+            {
+                return new RelayCommand(Poker);
+            }
+        }
 
-		private void Poker()
-		{
-			if (this.listGanadores == null)
-			{
-				this.LoadGanadores();
-			}
+        private void Poker()
+        {
+            if (this.listGanadores == null)
+            {
+                this.LoadGanadores();
+            }
 
-			if (this.listSalasPoker == null)
-			{
-				this.LoadSalaPoker();
-			}
+            if (this.listSalasPoker == null)
+            {
+                this.LoadSalaPoker();
+            }
 
-			if (this.TorneoDetalle == null)
+            if (this.TorneoDetalle == null)
             {
                 this.LoadTorneo();
             }
-            
-		}
 
-		public ICommand WinCommand
-		{
-			get
-			{
-				return new RelayCommand(Win);
-			}
-		}
+        }
 
-		private void Win()
-		{
-			if (this.listTarjetas == null)
-			{
-				this.LoadTarjetas();
-			}
+        public ICommand WinCommand
+        {
+            get
+            {
+                return new RelayCommand(Win);
+            }
+        }
 
-		}
+        private void Win()
+        {
+            if (this.listTarjetas == null)
+            {
+                this.LoadTarjetas();
+            }
+
+        }
 
 
-		public ICommand ConsultaPuntosCommand
-		{
-			get
-			{
-				return new RelayCommand(ConsultaPuntos);
-			}
-		}
+        public ICommand ConsultaPuntosCommand
+        {
+            get
+            {
+                return new RelayCommand(ConsultaPuntos);
+            }
+        }
 
-		public async void ConsultaPuntos()
-		{
-			bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
+        public async void ConsultaPuntos()
+        {
+            bool isLoggedIn = Application.Current.Properties.ContainsKey("IsLoggedIn") ?
                                     (bool)Application.Current.Properties["IsLoggedIn"] : false;
 
-			if (isLoggedIn)
-			{
+            if (isLoggedIn)
+            {
 
-				string Nosocio = Application.Current.Properties["NumeroSocio"].ToString();
+                string Nosocio = Application.Current.Properties["NumeroSocio"].ToString();
 
 
                 if (Nosocio == "" || Nosocio == "0")
@@ -334,8 +334,8 @@ namespace City_Center.ViewModels
                     return;
                 }
 
-               // var content = new FormUrlEncodedContent(new[]
-               //{
+                // var content = new FormUrlEncodedContent(new[]
+                //{
                 //    new KeyValuePair<string, string>("usu",Application.Current.Properties["IdUsuario"].ToString()),
                 //   new KeyValuePair<string, string>("tarjeta",Nosocio )
                 //});
@@ -349,138 +349,164 @@ namespace City_Center.ViewModels
                 //}
 
 
-				App.NavPage.BarBackgroundColor=Color.FromHex("#23144B"); 
-                
-				MainViewModel.GetInstance().ConsultaTarjetaWin = new ConsultaTarjetaWinViewModel();
+                App.NavPage.BarBackgroundColor = Color.FromHex("#23144B");
+
+                MainViewModel.GetInstance().ConsultaTarjetaWin = new ConsultaTarjetaWinViewModel();
 
                 await ((MasterPage)Application.Current.MainPage).Detail.Navigation.PushAsync(new ConsultaTarjetaWin());
-			}
-			else
-			{
-                await Mensajes.Alerta("Iniciá sesión para poder consultar tus puntos y recompensas");  	
-			}
-            
-		}
+            }
+            else
+            {
+                await Mensajes.Alerta("Iniciá sesión para poder consultar tus puntos y recompensas");
+            }
+
+        }
 
 
-		#endregion
+        #endregion
 
-		#region Methods
-		private async void LoadDestacados()
-		{
-			try
-			{
-				var connection = await this.apiService.CheckConnection();
+        #region Methods
+        private async void LoadDestacados()
+        {
+            try
+            {
+                var connection = await this.apiService.CheckConnection();
 
-				if (!connection.IsSuccess)
-				{
-					await Mensajes.Alerta("Verificá tu conexión a Internet");
-				}
-
-
-				string IDUsuario;
-
-				try
-				{
-					IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
-				}
-				catch (Exception)
-				{
-					IDUsuario = "";
-				}
+                if (!connection.IsSuccess)
+                {
+                    await Mensajes.Alerta("Verificá tu conexión a Internet");
+                }
 
 
-				var content = new FormUrlEncodedContent(new[]
-				{
-				new KeyValuePair<string, string>("usu_id", IDUsuario),
-				});
+                string IDUsuario;
+
+                try
+                {
+                    IDUsuario = Application.Current.Properties["IdUsuario"].ToString();
+                }
+                catch (Exception)
+                {
+                    IDUsuario = "";
+                }
 
 
-				var response = await this.apiService.Get<DestacadosReturn>("/casino/destacados", "/indexApp", content);
+                var content = new FormUrlEncodedContent(new[]
+                {
+                new KeyValuePair<string, string>("usu_id", IDUsuario),
+                });
 
-				if (!response.IsSuccess)
-				{
-					//await Mensajes.Error("Error al cargar Destacados");
 
-					return;
-				}
+                var response = await this.apiService.Get<DestacadosReturn>("/casino/destacados", "/indexApp", content);
 
-				MainViewModel.GetInstance().listDestacados = (DestacadosReturn)response.Result;
+                if (!response.IsSuccess)
+                {
+                    //await Mensajes.Error("Error al cargar Destacados");
 
-				DestacadosDetalle = new ObservableCollection<DestacadosItemViewModel>(this.ToDestacadosItemViewModel());
+                    return;
+                }
+
+                MainViewModel.GetInstance().listDestacados = (DestacadosReturn)response.Result;
+
+#if __ANDROID__
+                DestacadosDetalle = new ObservableCollection<DestacadosItemViewModel>(this.ToDestacadosItemViewModel2());
+#endif
+
+#if __IOS__
+                 DestacadosDetalle = new ObservableCollection<DestacadosItemViewModel>(this.ToDestacadosItemViewModel());
+#endif
 
                 if (DestacadosDetalle.Count > 0)
                 {
                     MuestraFlechaDestacado = true;
-                    VariablesGlobales.RegistrosCasinoDestacados = DestacadosDetalle.Count;
+                    VariablesGlobales.RegistrosCasinoDestacados = DestacadosDetalle.Count - 1;
                 }
                 else
                 {
                     MuestraFlechaDestacado = false;
                 }
 
-			}
-			catch (Exception)
-			{
+            }
+            catch (Exception)
+            {
                 MuestraFlechaDestacado = false;
-				//await Mensajes.Error("Casino - Destacados" + ex.ToString());
-			}
+                //await Mensajes.Error("Casino - Destacados" + ex.ToString());
+            }
 
 
-		}
+        }
 
-		private IEnumerable<DestacadosItemViewModel> ToDestacadosItemViewModel()
-		{
-            return MainViewModel.GetInstance().listDestacados.resultado.Where(l => l.des_id > 0).Select(l => new DestacadosItemViewModel
-			{
-				des_imagen = VariablesGlobales.RutaServidor + l.des_imagen,
+        private IEnumerable<DestacadosItemViewModel> ToDestacadosItemViewModel()
+        {
+            return MainViewModel.GetInstance().listDestacados.resultado.Select(l => new DestacadosItemViewModel
+            {
+                des_imagen = VariablesGlobales.RutaServidor + l.des_imagen,
                 des_imagen_2 = VariablesGlobales.RutaServidor + l.des_imagen_2,
-				des_descripcion = l.des_descripcion,
-				des_fecha_hora_inicio = l.des_fecha_hora_inicio,
-				des_nombre = l.des_nombre,
-				des_id = l.des_id,
-				des_guardado = l.des_guardado,
-				des_id_guardado = l.des_id_guardado,
-                des_link=l.des_link,
-                des_telefono=l.des_telefono,
-				oculta = !(bool)l.des_guardado,
+                des_descripcion = l.des_descripcion,
+                des_fecha_hora_inicio = l.des_fecha_hora_inicio,
+                des_nombre = l.des_nombre,
+                des_id = l.des_id,
+                des_guardado = l.des_guardado,
+                des_id_guardado = l.des_id_guardado,
+                des_link = l.des_link,
+                des_telefono = l.des_telefono,
+                oculta = !(bool)l.des_guardado,
                 ocultallamada = (string.IsNullOrEmpty(l.des_telefono) ? false : true),
                 ocultaonline = (string.IsNullOrEmpty(l.des_link) ? false : true),
-			});
-		}
+            });
+        }
 
-		private async void LoadPozos()
-		{
-			try
-			{
-				var connection = await this.apiService.CheckConnection();
+        private IEnumerable<DestacadosItemViewModel> ToDestacadosItemViewModel2()
+        {
+            return MainViewModel.GetInstance().listDestacados.resultado.Where(l => l.des_id > 0).Select(l => new DestacadosItemViewModel
+            {
+                des_imagen = VariablesGlobales.RutaServidor + l.des_imagen,
+                des_imagen_2 = VariablesGlobales.RutaServidor + l.des_imagen_2,
+                des_descripcion = l.des_descripcion,
+                des_fecha_hora_inicio = l.des_fecha_hora_inicio,
+                des_nombre = l.des_nombre,
+                des_id = l.des_id,
+                des_guardado = l.des_guardado,
+                des_id_guardado = l.des_id_guardado,
+                des_link = l.des_link,
+                des_telefono = l.des_telefono,
+                oculta = !(bool)l.des_guardado,
+                ocultallamada = (string.IsNullOrEmpty(l.des_telefono) ? false : true),
+                ocultaonline = (string.IsNullOrEmpty(l.des_link) ? false : true),
+            });
+        }
 
-				if (!connection.IsSuccess)
-				{
+        private async void LoadPozos()
+        {
+            try
+            {
+                var connection = await this.apiService.CheckConnection();
+
+                if (!connection.IsSuccess)
+                {
                     await Mensajes.Alerta("Verificá tu conexión a Internet");
 
-					return;
-				}
+                    return;
+                }
 
 
-				var content = new FormUrlEncodedContent(new[]
-				{
-				new KeyValuePair<string, string>("", ""),
-			    });
+                var content = new FormUrlEncodedContent(new[]
+                {
+                new KeyValuePair<string, string>("", ""),
+                });
 
 
-				var response = await this.apiService.Get<PozosReturn>("/casino/pozos", "/indexApp", content);
+                var response = await this.apiService.Get<PozosReturn>("/casino/pozos", "/indexApp", content);
 
-				if (!response.IsSuccess)
-				{
-					//await Mensajes.Error("Error al cargar Pozos");
+                if (!response.IsSuccess)
+                {
+                    //await Mensajes.Error("Error al cargar Pozos");
 
-					return;
-				}
+                    return;
+                }
 
-				this.listPozos = (PozosReturn)response.Result;
+                this.listPozos = (PozosReturn)response.Result;
 
-				PozosDetalle = new ObservableCollection<pozosDetalle>(this.ToPozosItemViewModel());
+                PozosDetalle = new ObservableCollection<pozosDetalle>(this.ToPozosItemViewModel());
 
                 int contador = PozosDetalle.Count;
 
@@ -532,204 +558,204 @@ namespace City_Center.ViewModels
                         TamanoPozos = 500;
                         break;
                 }
-            
+
                 TamanoPozos = TamanoPozos + 20;
 
-			}
-			catch (Exception)
-			{
-				//await Mensajes.Error("Casino - Pozos" + ex.ToString());
-			}
+            }
+            catch (Exception)
+            {
+                //await Mensajes.Error("Casino - Pozos" + ex.ToString());
+            }
 
-		}
+        }
 
-		private IEnumerable<pozosDetalle> ToPozosItemViewModel()
-		{
-			return this.listPozos.resultado.Select(l => new pozosDetalle
-			{
-				poz_imagen = VariablesGlobales.RutaServidor + l.poz_imagen,
+        private IEnumerable<pozosDetalle> ToPozosItemViewModel()
+        {
+            return this.listPozos.resultado.Select(l => new pozosDetalle
+            {
+                poz_imagen = VariablesGlobales.RutaServidor + l.poz_imagen,
                 poz_monto = l.poz_monto,
-				poz_descripcion = l.poz_descripcion,
-				poz_fecha_entrega = l.poz_fecha_entrega
+                poz_descripcion = l.poz_descripcion,
+                poz_fecha_entrega = l.poz_fecha_entrega
 
-			});
-		}
+            });
+        }
 
-		private async void LoadSalaPoker()
-		{
-			try
-			{
-				var connection = await this.apiService.CheckConnection();
+        private async void LoadSalaPoker()
+        {
+            try
+            {
+                var connection = await this.apiService.CheckConnection();
 
-				if (!connection.IsSuccess)
-				{
+                if (!connection.IsSuccess)
+                {
 
                     await Mensajes.Alerta("Verificá tu conexión a Internet");
 
-					return;
-				}
+                    return;
+                }
 
 
-				var content = new FormUrlEncodedContent(new[]
-				{
-				new KeyValuePair<string, string>("", ""),
-			});
+                var content = new FormUrlEncodedContent(new[]
+                {
+                new KeyValuePair<string, string>("", ""),
+            });
 
 
-				var response = await this.apiService.Get<SalaPokerReturn>("/casino/sala_poker", "/indexApp", content);
+                var response = await this.apiService.Get<SalaPokerReturn>("/casino/sala_poker", "/indexApp", content);
 
-				if (!response.IsSuccess)
-				{
+                if (!response.IsSuccess)
+                {
 
-					//await Mensajes.Error("Error al cargar Sala de Poker");
-					return;
-				}
+                    //await Mensajes.Error("Error al cargar Sala de Poker");
+                    return;
+                }
 
-				this.listSalasPoker = (SalaPokerReturn)response.Result;
-
-
-				Imagen_Selected = VariablesGlobales.RutaServidor + this.listSalasPoker.resultado[0].spo_imagen;
+                this.listSalasPoker = (SalaPokerReturn)response.Result;
 
 
-				SalaPokerDetalle = new ObservableCollection<SalaPokerDetalle>(this.ToSalaPokerItemViewModel());
+                Imagen_Selected = VariablesGlobales.RutaServidor + this.listSalasPoker.resultado[0].spo_imagen;
 
-			}
-			catch (Exception ex)
-			{
-				//await Mensajes.Error("Casino - Sala Poker" + ex.ToString());
-			}
 
-		}
+                SalaPokerDetalle = new ObservableCollection<SalaPokerDetalle>(this.ToSalaPokerItemViewModel());
 
-		private IEnumerable<SalaPokerDetalle> ToSalaPokerItemViewModel()
-		{
-			return this.listSalasPoker.resultado.Select(l => new SalaPokerDetalle
-			{
-				spo_id = l.spo_id,
-				spo_descripcion = l.spo_descripcion,
-				spo_imagen = VariablesGlobales.RutaServidor + l.spo_imagen,
-				spo_id_usuario_creo = l.spo_id_usuario_creo,
-				spo_fecha_hora_creo = l.spo_fecha_hora_creo,
-				spo_id_usuario_modifico = l.spo_id_usuario_modifico,
-				spo_fecha_hora_modifico = l.spo_fecha_hora_modifico,
-				spo_estatus = l.spo_estatus,
-				spo_eliminado = l.spo_eliminado
-			});
-		}
+            }
+            catch (Exception ex)
+            {
+                //await Mensajes.Error("Casino - Sala Poker" + ex.ToString());
+            }
 
-		private async void LoadGanadores()
-		{
+        }
 
-			try
-			{
-				var connection = await this.apiService.CheckConnection();
+        private IEnumerable<SalaPokerDetalle> ToSalaPokerItemViewModel()
+        {
+            return this.listSalasPoker.resultado.Select(l => new SalaPokerDetalle
+            {
+                spo_id = l.spo_id,
+                spo_descripcion = l.spo_descripcion,
+                spo_imagen = VariablesGlobales.RutaServidor + l.spo_imagen,
+                spo_id_usuario_creo = l.spo_id_usuario_creo,
+                spo_fecha_hora_creo = l.spo_fecha_hora_creo,
+                spo_id_usuario_modifico = l.spo_id_usuario_modifico,
+                spo_fecha_hora_modifico = l.spo_fecha_hora_modifico,
+                spo_estatus = l.spo_estatus,
+                spo_eliminado = l.spo_eliminado
+            });
+        }
 
-				if (!connection.IsSuccess)
-				{
+        private async void LoadGanadores()
+        {
+
+            try
+            {
+                var connection = await this.apiService.CheckConnection();
+
+                if (!connection.IsSuccess)
+                {
                     await Mensajes.Alerta("Verificá tu conexión a Internet");
 
-					return;
-				}
+                    return;
+                }
 
-				var content = new FormUrlEncodedContent(new[]
-				{
-				new KeyValuePair<string, string>("", ""),
-			    });
+                var content = new FormUrlEncodedContent(new[]
+                {
+                new KeyValuePair<string, string>("", ""),
+                });
 
 
-				var response = await this.apiService.Get<GanadoresReturn>("/casino/ganadores", "/indexApp", content);
+                var response = await this.apiService.Get<GanadoresReturn>("/casino/ganadores", "/indexApp", content);
 
-				if (!response.IsSuccess)
-				{
-					//await Mensajes.Error("Error al cargar Ganadores");
+                if (!response.IsSuccess)
+                {
+                    //await Mensajes.Error("Error al cargar Ganadores");
 
-					return;
-				}
+                    return;
+                }
 
-				this.listGanadores = (GanadoresReturn)response.Result;
+                this.listGanadores = (GanadoresReturn)response.Result;
 
-				GanadoresDetalle = new ObservableCollection<GanadoresDetalle>(this.ToGanadoresViewModel());
+                GanadoresDetalle = new ObservableCollection<GanadoresDetalle>(this.ToGanadoresViewModel());
 
-				int contador = GanadoresDetalle.Count;
-                
-				switch (contador)
+                int contador = GanadoresDetalle.Count;
+
+                switch (contador)
                 {
                     case 1:
-						TamanoGanadores = 125;
+                        TamanoGanadores = 125;
                         break;
                     case 2:
-						TamanoGanadores = 125;
+                        TamanoGanadores = 125;
                         break;
 
-					case 3:
-						TamanoGanadores = 125;
+                    case 3:
+                        TamanoGanadores = 125;
                         break;
 
-					case 4:
-						TamanoGanadores = 250;
+                    case 4:
+                        TamanoGanadores = 250;
                         break;
 
-					case 5:
-						TamanoGanadores = 250;
+                    case 5:
+                        TamanoGanadores = 250;
                         break;
 
-					case 6:
-						TamanoGanadores = 250;
+                    case 6:
+                        TamanoGanadores = 250;
                         break;
 
-					case 7:
-						TamanoGanadores = 375;
+                    case 7:
+                        TamanoGanadores = 375;
                         break;
 
-					case 8:
-						TamanoGanadores = 375;
+                    case 8:
+                        TamanoGanadores = 375;
                         break;
 
-					case 9:
-						TamanoGanadores = 375;
+                    case 9:
+                        TamanoGanadores = 375;
                         break;
 
-					case 10:
-						TamanoGanadores = 500;
-                        break;
-
-					case 11:
+                    case 10:
                         TamanoGanadores = 500;
                         break;
-					case 12:
+
+                    case 11:
+                        TamanoGanadores = 500;
+                        break;
+                    case 12:
                         TamanoGanadores = 500;
                         break;
                 }
-            
-			}
-			catch (Exception ex)
-			{
-				//await Mensajes.Error("Casino - Ganadores" + ex.ToString());
-			}
+
+            }
+            catch (Exception ex)
+            {
+                //await Mensajes.Error("Casino - Ganadores" + ex.ToString());
+            }
 
 
-		}
+        }
 
-		private IEnumerable<GanadoresDetalle> ToGanadoresViewModel()
-		{
-			return this.listGanadores.resultado.Select(l => new GanadoresDetalle
-			{
-				gan_id = l.gan_id,
-				gan_nombre = l.gan_nombre,
-				gan_premio = l.gan_premio,
-				gan_imagen = VariablesGlobales.RutaServidor + l.gan_imagen,
-				gan_id_usuario_creo = l.gan_id_usuario_creo,
-				gan_fecha_hora_creo = l.gan_fecha_hora_creo,
-				gan_id_usuario_modifico = l.gan_id_usuario_modifico,
-				gan_fecha_hora_modifico = l.gan_fecha_hora_modifico,
-				gan_estatus = l.gan_estatus,
-				gan_eliminado = l.gan_eliminado
+        private IEnumerable<GanadoresDetalle> ToGanadoresViewModel()
+        {
+            return this.listGanadores.resultado.Select(l => new GanadoresDetalle
+            {
+                gan_id = l.gan_id,
+                gan_nombre = l.gan_nombre,
+                gan_premio = l.gan_premio,
+                gan_imagen = VariablesGlobales.RutaServidor + l.gan_imagen,
+                gan_id_usuario_creo = l.gan_id_usuario_creo,
+                gan_fecha_hora_creo = l.gan_fecha_hora_creo,
+                gan_id_usuario_modifico = l.gan_id_usuario_modifico,
+                gan_fecha_hora_modifico = l.gan_fecha_hora_modifico,
+                gan_estatus = l.gan_estatus,
+                gan_eliminado = l.gan_eliminado
 
-			});
-		}
+            });
+        }
 
-		private async void LoadTarjetas()
-		{
+        private async void LoadTarjetas()
+        {
 
             try
             {
@@ -765,61 +791,67 @@ namespace City_Center.ViewModels
 
                 int contador = TarjetasDetalle.Count;
 
-                #if __IOS__
+#if __IOS__
                 TamanoTarjeta = contador * 120;
-                #endif
+#endif
 
 
-                #if __ANDROID__
+#if __ANDROID__
                 TamanoTarjeta = contador * 140;
-                #endif
+#endif
 
 
                 this.MuestraTarjetasAndroid = false;
                 this.MuestraTarjetasIOS = false;
 
-                #if __IOS__
+#if __IOS__
                 this.MuestraTarjetasIOS = true;
-                #endif
+#endif
 
-                #if __ANDROID__
+#if __ANDROID__
                 this.MuestraTarjetasAndroid = true;
-                #endif
+#endif
 
             }
-			catch (Exception ex)
-			{
-				//await Mensajes.Error("Casino - Tarjetas" + ex.ToString());
-			}
+            catch (Exception ex)
+            {
+                //await Mensajes.Error("Casino - Tarjetas" + ex.ToString());
+            }
 
-		}
+        }
 
-		private IEnumerable<TarjetasDetalle> ToTarjetasViewModel()
-		{
-			return this.listTarjetas.resultado.Select(l => new TarjetasDetalle
-			{
-				tar_id = l.tar_id,
-				tar_nombre = l.tar_nombre,
-				tar_descripcion = l.tar_descripcion,
-				tar_imagen = VariablesGlobales.RutaServidor + l.tar_imagen,
-				tar_id_usuario_creo = l.tar_id_usuario_creo,
-				tar_fecha_hora_creo = l.tar_fecha_hora_creo,
-				tar_id_usuario_modifico = l.tar_id_usuario_modifico,
-				tar_fecha_hora_modifico = l.tar_fecha_hora_modifico,
-				tar_estatus = l.tar_estatus,
-			});
-		}
+        private IEnumerable<TarjetasDetalle> ToTarjetasViewModel()
+        {
+            return this.listTarjetas.resultado.Select(l => new TarjetasDetalle
+            {
+                tar_id = l.tar_id,
+                tar_nombre = l.tar_nombre,
+                tar_descripcion = l.tar_descripcion,
+                tar_imagen = VariablesGlobales.RutaServidor + l.tar_imagen,
+                tar_id_usuario_creo = l.tar_id_usuario_creo,
+                tar_fecha_hora_creo = l.tar_fecha_hora_creo,
+                tar_id_usuario_modifico = l.tar_id_usuario_modifico,
+                tar_fecha_hora_modifico = l.tar_fecha_hora_modifico,
+                tar_estatus = l.tar_estatus,
+            });
+        }
 
-		private  void LoadTorneo()
-		{         
-			try
-			{
-				TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+        private void LoadTorneo()
+        {
+            try
+            {
 
+#if __ANDROID__
+                TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel2());
+#endif
+
+#if __IOS__
+                TorneoDetalle = new ObservableCollection<TorneoItemViewModel>(this.ToTorneosItemViewModel());
+#endif
 
                 if (TorneoDetalle.Count > 0)
                 {
-                    VariablesGlobales.RegistrosCasinoTorneo = TorneoDetalle.Count;
+                    VariablesGlobales.RegistrosCasinoTorneo = TorneoDetalle.Count - 1;
                     MuestraFlechas = true;
                 }
                 else
@@ -827,43 +859,66 @@ namespace City_Center.ViewModels
                     MuestraFlechas = false;
                 }
 
-			}
-			catch (Exception)
-			{
+            }
+            catch (Exception)
+            {
                 MuestraFlechas = false;
 
-				//await Mensajes.Error("Casino - Torneos" + ex.ToString());
-			}
+                //await Mensajes.Error("Casino - Torneos" + ex.ToString());
+            }
 
-		}
+        }
 
-		private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel()
-		{
-            return MainViewModel.GetInstance().listTorneo.resultado.Where(l => l.tor_id > 0).Select(l => new TorneoItemViewModel
-			{
-				tor_id = l.tor_id,
-				tor_nombre = l.tor_nombre,
-				tor_descripcion = l.tor_descripcion,
-				tor_imagen = l.tor_imagen,
+        private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel()
+        {
+            return MainViewModel.GetInstance().listTorneo.resultado.Select(l => new TorneoItemViewModel
+            {
+                tor_id = l.tor_id,
+                tor_nombre = l.tor_nombre,
+                tor_descripcion = l.tor_descripcion,
+                tor_imagen = l.tor_imagen,
                 tor_imagen_2 = l.tor_imagen_2,
-				tor_fecha_hora_inicio = l.tor_fecha_hora_inicio,
-				tor_fecha_hora_fin = l.tor_fecha_hora_fin,
-				tor_destacado = l.tor_destacado,
-				tor_id_usuario_creo = l.tor_id_usuario_creo,
-				tor_fecha_hora_creo = l.tor_fecha_hora_creo,
-				tor_id_usuario_modifico = l.tor_id_usuario_modifico,
-				tor_fecha_hora_modifico = l.tor_fecha_hora_modifico,
-				tor_estatus = l.tor_estatus,
-				tor_guardado = l.tor_guardado,
-				tor_id_guardado = l.tor_id_guardado,
-				oculta = !(bool)l.tor_guardado
-			});
-		}
+                tor_fecha_hora_inicio = l.tor_fecha_hora_inicio,
+                tor_fecha_hora_fin = l.tor_fecha_hora_fin,
+                tor_destacado = l.tor_destacado,
+                tor_id_usuario_creo = l.tor_id_usuario_creo,
+                tor_fecha_hora_creo = l.tor_fecha_hora_creo,
+                tor_id_usuario_modifico = l.tor_id_usuario_modifico,
+                tor_fecha_hora_modifico = l.tor_fecha_hora_modifico,
+                tor_estatus = l.tor_estatus,
+                tor_guardado = l.tor_guardado,
+                tor_id_guardado = l.tor_id_guardado,
+                oculta = !(bool)l.tor_guardado
+            });
+        }
 
-		private async void LoadPromociones()
-		{
-			try
-			{
+        private IEnumerable<TorneoItemViewModel> ToTorneosItemViewModel2()
+        {
+            return MainViewModel.GetInstance().listTorneo.resultado.Where(l => l.tor_id > 0).Select(l => new TorneoItemViewModel
+            {
+                tor_id = l.tor_id,
+                tor_nombre = l.tor_nombre,
+                tor_descripcion = l.tor_descripcion,
+                tor_imagen = l.tor_imagen,
+                tor_imagen_2 = l.tor_imagen_2,
+                tor_fecha_hora_inicio = l.tor_fecha_hora_inicio,
+                tor_fecha_hora_fin = l.tor_fecha_hora_fin,
+                tor_destacado = l.tor_destacado,
+                tor_id_usuario_creo = l.tor_id_usuario_creo,
+                tor_fecha_hora_creo = l.tor_fecha_hora_creo,
+                tor_id_usuario_modifico = l.tor_id_usuario_modifico,
+                tor_fecha_hora_modifico = l.tor_fecha_hora_modifico,
+                tor_estatus = l.tor_estatus,
+                tor_guardado = l.tor_guardado,
+                tor_id_guardado = l.tor_id_guardado,
+                oculta = !(bool)l.tor_guardado
+            });
+        }
+
+        private async void LoadPromociones()
+        {
+            try
+            {
                 var connection = await this.apiService.CheckConnection();
 
                 if (!connection.IsSuccess)
@@ -890,15 +945,19 @@ namespace City_Center.ViewModels
 
                 this.listPromociones = (PromocionesReturn)response.Result;
 
+                //var test = MainViewModel.GetInstance().listPromociones;
+#if __ANDROID__
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel2());
+#endif
 
-				PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
-			
-            
+#if __IOS__
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+#endif
                 if (PromocionesDetalle.Count > 0)
                 {
                     MuestraFlechasPromo = true;
 
-                    VariablesGlobales.RegistrosCasinoPromociones = PromocionesDetalle.Count;
+                    VariablesGlobales.RegistrosCasinoPromociones = PromocionesDetalle.Count-1;
                 }
                 else
                 {
@@ -915,7 +974,7 @@ namespace City_Center.ViewModels
 
 		private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()
 		{
-            return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
+            return this.listPromociones.resultado.Select(l => new PromocionesItemViewModel
 			{
                 pro_id = l.pro_id,
                 pro_id_evento = l.pro_id_evento,
@@ -947,10 +1006,47 @@ namespace City_Center.ViewModels
 			});
 		}
 
-		#endregion
+        private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel2()
+        {
+            return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
+            {
+                pro_id = l.pro_id,
+                pro_id_evento = l.pro_id_evento,
+                pro_id_locacion = l.pro_id_locacion,
+                pro_nombre = l.pro_nombre,
+                pro_descripcion = l.pro_descripcion,
+                pro_imagen = l.pro_imagen,
+                pro_imagen_2 = l.pro_imagen_2,
+                pro_tipo_promocion = l.pro_tipo_promocion,
+                pro_codigo = l.pro_codigo,
+                pro_compartidos_codigo = l.pro_compartidos_codigo,
+                pro_destacado = l.pro_destacado,
+                pro_fecha_duracion_ini = l.pro_fecha_duracion_ini,
+                pro_fecha_duracion_fin = l.pro_fecha_duracion_fin,
+                pro_importe_decuento = l.pro_importe_decuento,
+                pro_porcentaje_decuento = l.pro_porcentaje_decuento,
+                pro_id_usuario_creo = l.pro_id_usuario_creo,
+                pro_fecha_hora_creo = l.pro_fecha_hora_creo,
+                pro_id_usuario_modifico = l.pro_id_usuario_modifico,
+                pro_fecha_hora_modifico = l.pro_fecha_hora_modifico,
+                pro_tipo = l.pro_tipo,
+                pro_estatus = l.pro_estatus,
+                loc_nombre = l.loc_nombre,
+                pro_vinculo = l.pro_vinculo,
+                pro_telefono = l.pro_telefono,
+                pro_url = l.pro_url,
+                pro_nombre_btn = l.pro_nombre_btn,
+                pro_ejecutar_url = l.pro_ejecutar_url
+            });
+        }
 
-		#region Contructors
-		public CasinoViewModel()
+        //return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
+
+
+#endregion
+
+#region Contructors
+        public CasinoViewModel()
 		{
 			this.apiService = new ApiService();
 
@@ -965,7 +1061,7 @@ namespace City_Center.ViewModels
 		}
 
 
-		#endregion
+#endregion
 	}
 }
 

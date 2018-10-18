@@ -103,12 +103,12 @@ namespace City_Center.iOS
 
             LoadApplication(new App());
                      
-            var statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
-            if (statusBar.RespondsToSelector(new ObjCRuntime.Selector("setBackgroundColor:")))
-            {
-                statusBar.BackgroundColor = UIColor.White;
-                statusBar.TintColor = UIColor.White;
-            }
+            //var statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
+            //if (statusBar.RespondsToSelector(new ObjCRuntime.Selector("setBackgroundColor:")))
+            //{
+            //    statusBar.BackgroundColor = UIColor.White;
+            //    statusBar.TintColor = UIColor.White;
+            //}
 
 			ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
 

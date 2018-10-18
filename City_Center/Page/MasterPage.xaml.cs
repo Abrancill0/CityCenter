@@ -15,6 +15,8 @@ namespace City_Center.Page
         private Gastronomia page4 = new Gastronomia();
         private MasInfo page5 = new MasInfo();
 
+
+
         private WebViewTienda pageweb = new WebViewTienda();
 
         public MasterPage()
@@ -38,6 +40,7 @@ namespace City_Center.Page
             MainView3.Content = page3.Content;
             MainView4.Content = page4.Content;
             MainView5.Content = page5.Content;
+        
 
             Barra.BackgroundColor = Color.FromHex("#877BA1");
 
@@ -51,11 +54,16 @@ namespace City_Center.Page
 
             try
             {
+               // Image1.Source = Application.Current.Properties["FotoPerfil"].ToString();
+
                 Image1.Source = Application.Current.Properties["FotoPerfil"].ToString();
+                        GlobalResources.Current.ImagenPerfil = Application.Current.Properties["FotoPerfil"].ToString();
+
+
             }
             catch (Exception ex)
             {
-
+                //Mensajes.Alerta("Error al cargar imagen");
             }
            
         }

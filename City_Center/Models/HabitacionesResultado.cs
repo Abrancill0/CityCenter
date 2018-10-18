@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace City_Center.Models
 {
@@ -9,6 +10,7 @@ namespace City_Center.Models
         {
             public int hab_id { get; set; }
             public string hab_nombre { get; set; }
+            public string hab_nombre2 { get; set; }
             public string hab_descripcion { get; set; }
             public string hab_imagen { get; set; }
             public string hab_titulo_1 { get; set; }
@@ -28,7 +30,7 @@ namespace City_Center.Models
             public int hab_id_usuario_modifico { get; set; }
             public string hab_fecha_hora_modifico { get; set; }
             public string hab_estatus { get; set; }
-
+     
         }
 
         public class HabitacionesReturn

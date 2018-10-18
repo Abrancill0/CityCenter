@@ -11,11 +11,57 @@ namespace City_Center.Page.SlideMenu
     {
        // FavoritosViewModel FD = new FavoritosViewModel();
 
+        FavoritosViewModel Fav = new FavoritosViewModel();
+
         public Favoritos()
         {
             InitializeComponent();
 
             NavigationPage.SetTitleIcon(this, "logo@2x.png");
+
+        }
+
+
+
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+
+            //if (Fav.FavoritoDetalle != null)
+            //{
+            //    if (Fav.FavoritoDetalle.Count > 1)
+            //    {
+            //        Indicador.IsVisible = true;
+            //    }
+            //    else
+            //    {
+            //        Indicador.IsVisible = false;
+            //    }
+            //}
+            try
+            {
+                if (CarruselFavoritos.ItemsCount > 1)
+                {
+                    Indicador.IsVisible = true;
+                }
+                else
+                {
+                    Indicador.IsVisible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+        }
+
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
         }
 
         protected override void OnDisappearing()
@@ -39,11 +85,12 @@ namespace City_Center.Page.SlideMenu
 
                     image.Source = "Favorito";
 
+                    //CarruselFavoritos.Items(CarruselFavoritos.CurrentIndex);
+
                     CarruselFavoritos.Items.RemoveAt(CarruselFavoritos.CurrentIndex);
 
-                   // CarruselFavoritos.ItemsSource = ListaOpciones;
+                   // CarruselFavoritos.Items.RemoveAt(CarruselFavoritos.CurrentIndex);
 
-                    //CarruselFavoritos.Items = FD.FavoritoDetalle.Where(l=> l.gua_id>0);
 
                 }
 
@@ -55,7 +102,23 @@ namespace City_Center.Page.SlideMenu
             }
         }
 
-      
 
+        void Handle_PropertyChanging(object sender, Xamarin.Forms.PropertyChangingEventArgs e)
+        {
+            try
+            {
+                if (CarruselFavoritos.ItemsCount > 1)
+                {
+                    Indicador.IsVisible = true;
+                }
+                else
+                {
+                    Indicador.IsVisible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }        }
     }
 }

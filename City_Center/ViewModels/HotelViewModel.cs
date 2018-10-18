@@ -39,7 +39,7 @@ namespace City_Center.ViewModels
         private PromocionesReturn listPromociones;
 
         private string imagen_Selected;
-		private int tamanoHabitacion; 
+        private int tamanoHabitacion;
 
         bool muestraFlechasPromo = false;
 
@@ -77,10 +77,10 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.imagen_Selected, value); }
         }
 
-		public int TamanoHabitacion
+        public int TamanoHabitacion
         {
-			get { return this.tamanoHabitacion; }
-			set { SetValue(ref this.tamanoHabitacion, value); }
+            get { return this.tamanoHabitacion; }
+            set { SetValue(ref this.tamanoHabitacion, value); }
         }
 
         public bool MuestraFlechasPromo
@@ -88,7 +88,7 @@ namespace City_Center.ViewModels
             get { return this.muestraFlechasPromo; }
             set { SetValue(ref this.muestraFlechasPromo, value); }
         }
-        
+
         #endregion
 
         #region Commands
@@ -113,17 +113,17 @@ namespace City_Center.ViewModels
         }
 
 
-		public ICommand UbicacionHotelCommand
+        public ICommand UbicacionHotelCommand
         {
             get
             {
-				return new RelayCommand(UbicacionHotel);
+                return new RelayCommand(UbicacionHotel);
             }
         }
 
-		private async void UbicacionHotel()
+        private async void UbicacionHotel()
         {
-			try
+            try
             {
                 Plugin.Share.Abstractions.ShareMessage Compartir = new Plugin.Share.Abstractions.ShareMessage();
 
@@ -131,18 +131,18 @@ namespace City_Center.ViewModels
                 var hasPermission = await Utils.CheckPermissions(Permission.Location);
                 if (!hasPermission)
                     return;
-                
+
                 var Posicion = await Ubicacion.GetCurrentPosition();
 
-				Compartir.Text = "Ubicacion Actual";
+                Compartir.Text = "Ubicacion Actual";
                 Compartir.Title = "Tu ubicacion";
-				Compartir.Url = "https://www.google.com/maps/@" + Posicion.Latitude + "," + Posicion.Longitude + "," + "16z";
+                Compartir.Url = "https://www.google.com/maps/@" + Posicion.Latitude + "," + Posicion.Longitude + "," + "16z";
 
                 await CrossShare.Current.Share(Compartir);
             }
             catch (Exception)
             {
-             await Mensajes.Alerta("Ubicación denegada, activa el GPS de tu dispositivo");
+                await Mensajes.Alerta("Ubicación denegada, activa el GPS de tu dispositivo");
             }
         }
 
@@ -182,67 +182,105 @@ namespace City_Center.ViewModels
 
                 this.listHabitaciones = (HabitacionesReturn)response.Result;
 
-                HabitacionesDetalle = new ObservableCollection<HotelItemViewModel>(this.ToHabitacionesItemViewModel());
-                
-				int contador = HabitacionesDetalle.Count;
+                HabitacionesDetalle = new ObservableCollection<HotelItemViewModel>();
 
-                switch (contador)
+                foreach (var l in listHabitaciones.resultado)
                 {
-                    case 1:
-                        TamanoHabitacion = 125;
-                        break;
-                    case 2:
-						TamanoHabitacion = 125;
-                        break;
 
-                    case 3:
-						TamanoHabitacion = 125;
-                        break;
+                    int PosicionEspacio1 = l.hab_nombre.IndexOf(" ");
+                    string Arreglo1 = l.hab_nombre.Substring(0, PosicionEspacio1);
+                    string Arreglo2 = l.hab_nombre.Substring(PosicionEspacio1 + 1);
 
-                    case 4:
-						TamanoHabitacion = 250;
-                        break;
 
-                    case 5:
-						TamanoHabitacion = 250;
-                        break;
+                    HabitacionesDetalle.Add(new HotelItemViewModel()
+                    {
+                        hab_id = l.hab_id,
+                        hab_nombre = Arreglo1,
+                        hab_nombre2 = Arreglo2,
+                        hab_descripcion = l.hab_descripcion,
+                        hab_imagen = VariablesGlobales.RutaServidor + l.hab_imagen,
+                        hab_titulo_1 = l.hab_titulo_1,
+                        hab_descripcion_1 = l.hab_descripcion_1,
+                        hab_imagen_1 = l.hab_imagen_1,
+                        hab_titulo_2 = l.hab_titulo_2,
+                        hab_descripcion_2 = l.hab_descripcion_2,
+                        hab_imagen_2 = l.hab_imagen_2,
+                        hab_titulo_3 = l.hab_titulo_3,
+                        hab_id_usuario_creo = l.hab_id_usuario_creo,
+                        hab_fecha_hora_creo = l.hab_fecha_hora_creo,
+                        hab_id_usuario_modifico = l.hab_id_usuario_modifico,
+                        hab_fecha_hora_modifico = l.hab_fecha_hora_modifico,
+                        hab_estatus = l.hab_estatus,
+                        hab_descripcion_3 = l.hab_descripcion_3,
+                        hab_imagen_3 = l.hab_imagen_3,
+                        hab_imagen_4 = l.hab_imagen_4,
+                        hab_imagen_5 = l.hab_imagen_5,
+                        hab_imagen_6 = l.hab_imagen_6
+                    });
 
-                    case 6:
-						TamanoHabitacion = 250;
-                        break;
 
-                    case 7:
-						TamanoHabitacion = 375;
-                        break;
 
-                    case 8:
-						TamanoHabitacion = 375;
-                        break;
+                    //            HabitacionesDetalle = new ObservableCollection<HotelItemViewModel>(this.ToHabitacionesItemViewModel());
 
-                    case 9:
-						TamanoHabitacion = 375;
-                        break;
+                    int contador = HabitacionesDetalle.Count;
 
-                    case 10:
-						TamanoHabitacion = 500;
-                        break;
+                    switch (contador)
+                    {
+                        case 1:
+                            TamanoHabitacion = 125;
+                            break;
+                        case 2:
+                            TamanoHabitacion = 125;
+                            break;
 
-                    case 11:
-						TamanoHabitacion = 500;
-                        break;
-                    case 12:
-						TamanoHabitacion = 500;
-                        break;
+                        case 3:
+                            TamanoHabitacion = 125;
+                            break;
+
+                        case 4:
+                            TamanoHabitacion = 250;
+                            break;
+
+                        case 5:
+                            TamanoHabitacion = 250;
+                            break;
+
+                        case 6:
+                            TamanoHabitacion = 250;
+                            break;
+
+                        case 7:
+                            TamanoHabitacion = 375;
+                            break;
+
+                        case 8:
+                            TamanoHabitacion = 375;
+                            break;
+
+                        case 9:
+                            TamanoHabitacion = 375;
+                            break;
+
+                        case 10:
+                            TamanoHabitacion = 500;
+                            break;
+
+                        case 11:
+                            TamanoHabitacion = 500;
+                            break;
+                        case 12:
+                            TamanoHabitacion = 500;
+                            break;
+                    }
+
                 }
-
-
 
             }
             catch (Exception ex)
             {
                 //await Mensajes.Error("Hotel - Habitaciones" + ex.ToString());
             }
-            
+
         }
 
         private IEnumerable<HotelItemViewModel> ToHabitacionesItemViewModel()
@@ -270,7 +308,7 @@ namespace City_Center.ViewModels
                 hab_imagen_4 = l.hab_imagen_4,
                 hab_imagen_5 = l.hab_imagen_5,
                 hab_imagen_6 = l.hab_imagen_6,
-              
+
             });
         }
 
@@ -297,7 +335,7 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                   // await Mensajes.Alerta("Error al cargar Moi Spa");
+                    // await Mensajes.Alerta("Error al cargar Moi Spa");
                     return;
                 }
 
@@ -312,7 +350,7 @@ namespace City_Center.ViewModels
             }
             catch (Exception ex)
             {
-            //    await Mensajes.Alerta("Hotel - SpoMoa" + ex.ToString());
+                //    await Mensajes.Alerta("Hotel - SpoMoa" + ex.ToString());
             }
 
         }
@@ -357,23 +395,30 @@ namespace City_Center.ViewModels
 
                 if (!response.IsSuccess)
                 {
-                   // await Mensajes.Alerta("Error al cargar Promociones");
+                    // await Mensajes.Alerta("Error al cargar Promociones");
 
                     return;
                 }
 
                 this.listPromociones = (PromocionesReturn)response.Result;
-
+#if __IOS__
                 PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
 
                 PromocionesDetalle2 = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+#endif
+
+#if __ANDROID__
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel2());
+
+                PromocionesDetalle2 = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel2());
+#endif
 
                 if (PromocionesDetalle.Count > 0)
                 {
                     MuestraFlechasPromo = true;
 
-                    VariablesGlobales.RegistrosHotelPromociones = promocionesDetalle.Count - 2;
-                    VariablesGlobales.RegistrosHotelPromociones2 = promocionesDetalle.Count - 2;
+                    VariablesGlobales.RegistrosHotelPromociones = promocionesDetalle.Count - 1;
+                    VariablesGlobales.RegistrosHotelPromociones2 = promocionesDetalle.Count - 1;
                 }
                 else
                 {
@@ -384,13 +429,13 @@ namespace City_Center.ViewModels
             catch (Exception)
             {
                 MuestraFlechasPromo = false;
-               // await Mensajes.Al("Hotel - Promociones" + ex.ToString());
+                // await Mensajes.Al("Hotel - Promociones" + ex.ToString());
             }
         }
 
         private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()
         {
-            return this.listPromociones.resultado.Where(l => l.pro_id>0).Select(l => new PromocionesItemViewModel
+            return this.listPromociones.resultado.Select(l => new PromocionesItemViewModel
             {
                 pro_id = l.pro_id,
                 pro_id_evento = l.pro_id_evento,
@@ -422,16 +467,54 @@ namespace City_Center.ViewModels
             });
         }
 
-        #endregion
+        private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel2()
+        {
+            return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
+            {
+                pro_id = l.pro_id,
+                pro_id_evento = l.pro_id_evento,
+                pro_id_locacion = l.pro_id_locacion,
+                pro_nombre = l.pro_nombre,
+                pro_descripcion = l.pro_descripcion,
+                pro_imagen = l.pro_imagen,
+                pro_imagen_2 = l.pro_imagen_2,
+                pro_tipo_promocion = l.pro_tipo_promocion,
+                pro_codigo = l.pro_codigo,
+                pro_compartidos_codigo = l.pro_compartidos_codigo,
+                pro_destacado = l.pro_destacado,
+                pro_fecha_duracion_ini = l.pro_fecha_duracion_ini,
+                pro_fecha_duracion_fin = l.pro_fecha_duracion_fin,
+                pro_importe_decuento = l.pro_importe_decuento,
+                pro_porcentaje_decuento = l.pro_porcentaje_decuento,
+                pro_id_usuario_creo = l.pro_id_usuario_creo,
+                pro_fecha_hora_creo = l.pro_fecha_hora_creo,
+                pro_id_usuario_modifico = l.pro_id_usuario_modifico,
+                pro_fecha_hora_modifico = l.pro_fecha_hora_modifico,
+                pro_tipo = l.pro_tipo,
+                pro_estatus = l.pro_estatus,
+                loc_nombre = l.loc_nombre,
+                pro_vinculo = l.pro_vinculo,
+                pro_telefono = l.pro_telefono,
+                pro_url = l.pro_url,
+                pro_nombre_btn = l.pro_nombre_btn,
+                pro_ejecutar_url = l.pro_ejecutar_url
+            });
+        }
 
-        #region Contructors
+
+        //return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
+
+
+#endregion
+
+#region Contructors
         public HotelViewModel()
         {
             this.apiService = new ApiService();
             this.LoadHabitaciones();
             this.LoadPromociones();
-           
+
         }
-        #endregion
+#endregion
     }
 }

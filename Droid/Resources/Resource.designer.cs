@@ -63,2153 +63,6 @@ namespace City_Center.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::City_Center.Droid.Resource.Styleable.ProgressWheel_ahText;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::City_Center.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::City_Center.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.abc_fade_in = global::City_Center.Droid.Resource.Animation.abc_fade_in;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.abc_fade_out = global::City_Center.Droid.Resource.Animation.abc_fade_out;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::City_Center.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.abc_popup_enter = global::City_Center.Droid.Resource.Animation.abc_popup_enter;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.abc_popup_exit = global::City_Center.Droid.Resource.Animation.abc_popup_exit;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.abc_shrink_fade_out_from_bottom = global::City_Center.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.abc_slide_in_bottom = global::City_Center.Droid.Resource.Animation.abc_slide_in_bottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.abc_slide_in_top = global::City_Center.Droid.Resource.Animation.abc_slide_in_top;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.abc_slide_out_bottom = global::City_Center.Droid.Resource.Animation.abc_slide_out_bottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.abc_slide_out_top = global::City_Center.Droid.Resource.Animation.abc_slide_out_top;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.design_bottom_sheet_slide_in = global::City_Center.Droid.Resource.Animation.design_bottom_sheet_slide_in;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.design_bottom_sheet_slide_out = global::City_Center.Droid.Resource.Animation.design_bottom_sheet_slide_out;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.design_snackbar_in = global::City_Center.Droid.Resource.Animation.design_snackbar_in;
-			global::CarouselView.FormsPlugin.Android.Resource.Animation.design_snackbar_out = global::City_Center.Droid.Resource.Animation.design_snackbar_out;
-			global::CarouselView.FormsPlugin.Android.Resource.Animator.design_appbar_state_list_animator = global::City_Center.Droid.Resource.Animator.design_appbar_state_list_animator;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionBarDivider = global::City_Center.Droid.Resource.Attribute.actionBarDivider;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionBarItemBackground = global::City_Center.Droid.Resource.Attribute.actionBarItemBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionBarPopupTheme = global::City_Center.Droid.Resource.Attribute.actionBarPopupTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionBarSize = global::City_Center.Droid.Resource.Attribute.actionBarSize;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionBarSplitStyle = global::City_Center.Droid.Resource.Attribute.actionBarSplitStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionBarStyle = global::City_Center.Droid.Resource.Attribute.actionBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionBarTabBarStyle = global::City_Center.Droid.Resource.Attribute.actionBarTabBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionBarTabStyle = global::City_Center.Droid.Resource.Attribute.actionBarTabStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionBarTabTextStyle = global::City_Center.Droid.Resource.Attribute.actionBarTabTextStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionBarTheme = global::City_Center.Droid.Resource.Attribute.actionBarTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionBarWidgetTheme = global::City_Center.Droid.Resource.Attribute.actionBarWidgetTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionButtonStyle = global::City_Center.Droid.Resource.Attribute.actionButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionDropDownStyle = global::City_Center.Droid.Resource.Attribute.actionDropDownStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionLayout = global::City_Center.Droid.Resource.Attribute.actionLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionMenuTextAppearance = global::City_Center.Droid.Resource.Attribute.actionMenuTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionMenuTextColor = global::City_Center.Droid.Resource.Attribute.actionMenuTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModeBackground = global::City_Center.Droid.Resource.Attribute.actionModeBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModeCloseButtonStyle = global::City_Center.Droid.Resource.Attribute.actionModeCloseButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModeCloseDrawable = global::City_Center.Droid.Resource.Attribute.actionModeCloseDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModeCopyDrawable = global::City_Center.Droid.Resource.Attribute.actionModeCopyDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModeCutDrawable = global::City_Center.Droid.Resource.Attribute.actionModeCutDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModeFindDrawable = global::City_Center.Droid.Resource.Attribute.actionModeFindDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModePasteDrawable = global::City_Center.Droid.Resource.Attribute.actionModePasteDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModePopupWindowStyle = global::City_Center.Droid.Resource.Attribute.actionModePopupWindowStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModeSelectAllDrawable = global::City_Center.Droid.Resource.Attribute.actionModeSelectAllDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModeShareDrawable = global::City_Center.Droid.Resource.Attribute.actionModeShareDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModeSplitBackground = global::City_Center.Droid.Resource.Attribute.actionModeSplitBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModeStyle = global::City_Center.Droid.Resource.Attribute.actionModeStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionModeWebSearchDrawable = global::City_Center.Droid.Resource.Attribute.actionModeWebSearchDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionOverflowButtonStyle = global::City_Center.Droid.Resource.Attribute.actionOverflowButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionOverflowMenuStyle = global::City_Center.Droid.Resource.Attribute.actionOverflowMenuStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionProviderClass = global::City_Center.Droid.Resource.Attribute.actionProviderClass;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.actionViewClass = global::City_Center.Droid.Resource.Attribute.actionViewClass;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.activityChooserViewStyle = global::City_Center.Droid.Resource.Attribute.activityChooserViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.alertDialogButtonGroupStyle = global::City_Center.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.alertDialogCenterButtons = global::City_Center.Droid.Resource.Attribute.alertDialogCenterButtons;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.alertDialogStyle = global::City_Center.Droid.Resource.Attribute.alertDialogStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.alertDialogTheme = global::City_Center.Droid.Resource.Attribute.alertDialogTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.allowStacking = global::City_Center.Droid.Resource.Attribute.allowStacking;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.alpha = global::City_Center.Droid.Resource.Attribute.alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.arrowHeadLength = global::City_Center.Droid.Resource.Attribute.arrowHeadLength;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.arrowShaftLength = global::City_Center.Droid.Resource.Attribute.arrowShaftLength;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.autoCompleteTextViewStyle = global::City_Center.Droid.Resource.Attribute.autoCompleteTextViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.background = global::City_Center.Droid.Resource.Attribute.background;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.backgroundSplit = global::City_Center.Droid.Resource.Attribute.backgroundSplit;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.backgroundStacked = global::City_Center.Droid.Resource.Attribute.backgroundStacked;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.backgroundTint = global::City_Center.Droid.Resource.Attribute.backgroundTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.backgroundTintMode = global::City_Center.Droid.Resource.Attribute.backgroundTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.barLength = global::City_Center.Droid.Resource.Attribute.barLength;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.behavior_autoHide = global::City_Center.Droid.Resource.Attribute.behavior_autoHide;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.behavior_hideable = global::City_Center.Droid.Resource.Attribute.behavior_hideable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.behavior_overlapTop = global::City_Center.Droid.Resource.Attribute.behavior_overlapTop;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.behavior_peekHeight = global::City_Center.Droid.Resource.Attribute.behavior_peekHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.behavior_skipCollapsed = global::City_Center.Droid.Resource.Attribute.behavior_skipCollapsed;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.borderWidth = global::City_Center.Droid.Resource.Attribute.borderWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.borderlessButtonStyle = global::City_Center.Droid.Resource.Attribute.borderlessButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.bottomSheetDialogTheme = global::City_Center.Droid.Resource.Attribute.bottomSheetDialogTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.bottomSheetStyle = global::City_Center.Droid.Resource.Attribute.bottomSheetStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.buttonBarButtonStyle = global::City_Center.Droid.Resource.Attribute.buttonBarButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.buttonBarNegativeButtonStyle = global::City_Center.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.buttonBarNeutralButtonStyle = global::City_Center.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.buttonBarPositiveButtonStyle = global::City_Center.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.buttonBarStyle = global::City_Center.Droid.Resource.Attribute.buttonBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.buttonGravity = global::City_Center.Droid.Resource.Attribute.buttonGravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.buttonPanelSideLayout = global::City_Center.Droid.Resource.Attribute.buttonPanelSideLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.buttonStyle = global::City_Center.Droid.Resource.Attribute.buttonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.buttonStyleSmall = global::City_Center.Droid.Resource.Attribute.buttonStyleSmall;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.buttonTint = global::City_Center.Droid.Resource.Attribute.buttonTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.buttonTintMode = global::City_Center.Droid.Resource.Attribute.buttonTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.cardBackgroundColor = global::City_Center.Droid.Resource.Attribute.cardBackgroundColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.cardCornerRadius = global::City_Center.Droid.Resource.Attribute.cardCornerRadius;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.cardElevation = global::City_Center.Droid.Resource.Attribute.cardElevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.cardMaxElevation = global::City_Center.Droid.Resource.Attribute.cardMaxElevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.cardPreventCornerOverlap = global::City_Center.Droid.Resource.Attribute.cardPreventCornerOverlap;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.cardUseCompatPadding = global::City_Center.Droid.Resource.Attribute.cardUseCompatPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.checkboxStyle = global::City_Center.Droid.Resource.Attribute.checkboxStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.checkedTextViewStyle = global::City_Center.Droid.Resource.Attribute.checkedTextViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.closeIcon = global::City_Center.Droid.Resource.Attribute.closeIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.closeItemLayout = global::City_Center.Droid.Resource.Attribute.closeItemLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.collapseContentDescription = global::City_Center.Droid.Resource.Attribute.collapseContentDescription;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.collapseIcon = global::City_Center.Droid.Resource.Attribute.collapseIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.collapsedTitleGravity = global::City_Center.Droid.Resource.Attribute.collapsedTitleGravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.collapsedTitleTextAppearance = global::City_Center.Droid.Resource.Attribute.collapsedTitleTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.color = global::City_Center.Droid.Resource.Attribute.color;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.colorAccent = global::City_Center.Droid.Resource.Attribute.colorAccent;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.colorBackgroundFloating = global::City_Center.Droid.Resource.Attribute.colorBackgroundFloating;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.colorButtonNormal = global::City_Center.Droid.Resource.Attribute.colorButtonNormal;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.colorControlActivated = global::City_Center.Droid.Resource.Attribute.colorControlActivated;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.colorControlHighlight = global::City_Center.Droid.Resource.Attribute.colorControlHighlight;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.colorControlNormal = global::City_Center.Droid.Resource.Attribute.colorControlNormal;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.colorPrimary = global::City_Center.Droid.Resource.Attribute.colorPrimary;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.colorPrimaryDark = global::City_Center.Droid.Resource.Attribute.colorPrimaryDark;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.colorSwitchThumbNormal = global::City_Center.Droid.Resource.Attribute.colorSwitchThumbNormal;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.commitIcon = global::City_Center.Droid.Resource.Attribute.commitIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentInsetEnd = global::City_Center.Droid.Resource.Attribute.contentInsetEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentInsetEndWithActions = global::City_Center.Droid.Resource.Attribute.contentInsetEndWithActions;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentInsetLeft = global::City_Center.Droid.Resource.Attribute.contentInsetLeft;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentInsetRight = global::City_Center.Droid.Resource.Attribute.contentInsetRight;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentInsetStart = global::City_Center.Droid.Resource.Attribute.contentInsetStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentInsetStartWithNavigation = global::City_Center.Droid.Resource.Attribute.contentInsetStartWithNavigation;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentPadding = global::City_Center.Droid.Resource.Attribute.contentPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentPaddingBottom = global::City_Center.Droid.Resource.Attribute.contentPaddingBottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentPaddingLeft = global::City_Center.Droid.Resource.Attribute.contentPaddingLeft;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentPaddingRight = global::City_Center.Droid.Resource.Attribute.contentPaddingRight;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentPaddingTop = global::City_Center.Droid.Resource.Attribute.contentPaddingTop;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.contentScrim = global::City_Center.Droid.Resource.Attribute.contentScrim;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.controlBackground = global::City_Center.Droid.Resource.Attribute.controlBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.counterEnabled = global::City_Center.Droid.Resource.Attribute.counterEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.counterMaxLength = global::City_Center.Droid.Resource.Attribute.counterMaxLength;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.counterOverflowTextAppearance = global::City_Center.Droid.Resource.Attribute.counterOverflowTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.counterTextAppearance = global::City_Center.Droid.Resource.Attribute.counterTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.customNavigationLayout = global::City_Center.Droid.Resource.Attribute.customNavigationLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.defaultQueryHint = global::City_Center.Droid.Resource.Attribute.defaultQueryHint;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.dialogPreferredPadding = global::City_Center.Droid.Resource.Attribute.dialogPreferredPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.dialogTheme = global::City_Center.Droid.Resource.Attribute.dialogTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.displayOptions = global::City_Center.Droid.Resource.Attribute.displayOptions;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.divider = global::City_Center.Droid.Resource.Attribute.divider;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.dividerHorizontal = global::City_Center.Droid.Resource.Attribute.dividerHorizontal;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.dividerPadding = global::City_Center.Droid.Resource.Attribute.dividerPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.dividerVertical = global::City_Center.Droid.Resource.Attribute.dividerVertical;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.drawableSize = global::City_Center.Droid.Resource.Attribute.drawableSize;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.drawerArrowStyle = global::City_Center.Droid.Resource.Attribute.drawerArrowStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.dropDownListViewStyle = global::City_Center.Droid.Resource.Attribute.dropDownListViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.dropdownListPreferredItemHeight = global::City_Center.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.editTextBackground = global::City_Center.Droid.Resource.Attribute.editTextBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.editTextColor = global::City_Center.Droid.Resource.Attribute.editTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.editTextStyle = global::City_Center.Droid.Resource.Attribute.editTextStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.elevation = global::City_Center.Droid.Resource.Attribute.elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.errorEnabled = global::City_Center.Droid.Resource.Attribute.errorEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.errorTextAppearance = global::City_Center.Droid.Resource.Attribute.errorTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.expandActivityOverflowButtonDrawable = global::City_Center.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.expanded = global::City_Center.Droid.Resource.Attribute.expanded;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.expandedTitleGravity = global::City_Center.Droid.Resource.Attribute.expandedTitleGravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.expandedTitleMargin = global::City_Center.Droid.Resource.Attribute.expandedTitleMargin;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.expandedTitleMarginBottom = global::City_Center.Droid.Resource.Attribute.expandedTitleMarginBottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.expandedTitleMarginEnd = global::City_Center.Droid.Resource.Attribute.expandedTitleMarginEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.expandedTitleMarginStart = global::City_Center.Droid.Resource.Attribute.expandedTitleMarginStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.expandedTitleMarginTop = global::City_Center.Droid.Resource.Attribute.expandedTitleMarginTop;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.expandedTitleTextAppearance = global::City_Center.Droid.Resource.Attribute.expandedTitleTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.externalRouteEnabledDrawable = global::City_Center.Droid.Resource.Attribute.externalRouteEnabledDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.fabSize = global::City_Center.Droid.Resource.Attribute.fabSize;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.foregroundInsidePadding = global::City_Center.Droid.Resource.Attribute.foregroundInsidePadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.gapBetweenBars = global::City_Center.Droid.Resource.Attribute.gapBetweenBars;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.goIcon = global::City_Center.Droid.Resource.Attribute.goIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.headerLayout = global::City_Center.Droid.Resource.Attribute.headerLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.height = global::City_Center.Droid.Resource.Attribute.height;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.hideOnContentScroll = global::City_Center.Droid.Resource.Attribute.hideOnContentScroll;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.hintAnimationEnabled = global::City_Center.Droid.Resource.Attribute.hintAnimationEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.hintEnabled = global::City_Center.Droid.Resource.Attribute.hintEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.hintTextAppearance = global::City_Center.Droid.Resource.Attribute.hintTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.homeAsUpIndicator = global::City_Center.Droid.Resource.Attribute.homeAsUpIndicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.homeLayout = global::City_Center.Droid.Resource.Attribute.homeLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.icon = global::City_Center.Droid.Resource.Attribute.icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.iconifiedByDefault = global::City_Center.Droid.Resource.Attribute.iconifiedByDefault;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.imageButtonStyle = global::City_Center.Droid.Resource.Attribute.imageButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.indeterminateProgressStyle = global::City_Center.Droid.Resource.Attribute.indeterminateProgressStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.initialActivityCount = global::City_Center.Droid.Resource.Attribute.initialActivityCount;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.insetForeground = global::City_Center.Droid.Resource.Attribute.insetForeground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.isLightTheme = global::City_Center.Droid.Resource.Attribute.isLightTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.itemBackground = global::City_Center.Droid.Resource.Attribute.itemBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.itemIconTint = global::City_Center.Droid.Resource.Attribute.itemIconTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.itemPadding = global::City_Center.Droid.Resource.Attribute.itemPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.itemTextAppearance = global::City_Center.Droid.Resource.Attribute.itemTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.itemTextColor = global::City_Center.Droid.Resource.Attribute.itemTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.keylines = global::City_Center.Droid.Resource.Attribute.keylines;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layout = global::City_Center.Droid.Resource.Attribute.layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layoutManager = global::City_Center.Droid.Resource.Attribute.layoutManager;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layout_anchor = global::City_Center.Droid.Resource.Attribute.layout_anchor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layout_anchorGravity = global::City_Center.Droid.Resource.Attribute.layout_anchorGravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layout_behavior = global::City_Center.Droid.Resource.Attribute.layout_behavior;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layout_collapseMode = global::City_Center.Droid.Resource.Attribute.layout_collapseMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layout_collapseParallaxMultiplier = global::City_Center.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layout_dodgeInsetEdges = global::City_Center.Droid.Resource.Attribute.layout_dodgeInsetEdges;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layout_insetEdge = global::City_Center.Droid.Resource.Attribute.layout_insetEdge;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layout_keyline = global::City_Center.Droid.Resource.Attribute.layout_keyline;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layout_scrollFlags = global::City_Center.Droid.Resource.Attribute.layout_scrollFlags;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.layout_scrollInterpolator = global::City_Center.Droid.Resource.Attribute.layout_scrollInterpolator;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.listChoiceBackgroundIndicator = global::City_Center.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.listDividerAlertDialog = global::City_Center.Droid.Resource.Attribute.listDividerAlertDialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.listItemLayout = global::City_Center.Droid.Resource.Attribute.listItemLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.listLayout = global::City_Center.Droid.Resource.Attribute.listLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.listMenuViewStyle = global::City_Center.Droid.Resource.Attribute.listMenuViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.listPopupWindowStyle = global::City_Center.Droid.Resource.Attribute.listPopupWindowStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.listPreferredItemHeight = global::City_Center.Droid.Resource.Attribute.listPreferredItemHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.listPreferredItemHeightLarge = global::City_Center.Droid.Resource.Attribute.listPreferredItemHeightLarge;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.listPreferredItemHeightSmall = global::City_Center.Droid.Resource.Attribute.listPreferredItemHeightSmall;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.listPreferredItemPaddingLeft = global::City_Center.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.listPreferredItemPaddingRight = global::City_Center.Droid.Resource.Attribute.listPreferredItemPaddingRight;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.logo = global::City_Center.Droid.Resource.Attribute.logo;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.logoDescription = global::City_Center.Droid.Resource.Attribute.logoDescription;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.maxActionInlineWidth = global::City_Center.Droid.Resource.Attribute.maxActionInlineWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.maxButtonHeight = global::City_Center.Droid.Resource.Attribute.maxButtonHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.measureWithLargestChild = global::City_Center.Droid.Resource.Attribute.measureWithLargestChild;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRouteAudioTrackDrawable = global::City_Center.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRouteButtonStyle = global::City_Center.Droid.Resource.Attribute.mediaRouteButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRouteCloseDrawable = global::City_Center.Droid.Resource.Attribute.mediaRouteCloseDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRouteControlPanelThemeOverlay = global::City_Center.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRouteDefaultIconDrawable = global::City_Center.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRoutePauseDrawable = global::City_Center.Droid.Resource.Attribute.mediaRoutePauseDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRoutePlayDrawable = global::City_Center.Droid.Resource.Attribute.mediaRoutePlayDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable = global::City_Center.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRouteSpeakerIconDrawable = global::City_Center.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRouteStopDrawable = global::City_Center.Droid.Resource.Attribute.mediaRouteStopDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRouteTheme = global::City_Center.Droid.Resource.Attribute.mediaRouteTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.mediaRouteTvIconDrawable = global::City_Center.Droid.Resource.Attribute.mediaRouteTvIconDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.menu = global::City_Center.Droid.Resource.Attribute.menu;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.multiChoiceItemLayout = global::City_Center.Droid.Resource.Attribute.multiChoiceItemLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.navigationContentDescription = global::City_Center.Droid.Resource.Attribute.navigationContentDescription;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.navigationIcon = global::City_Center.Droid.Resource.Attribute.navigationIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.navigationMode = global::City_Center.Droid.Resource.Attribute.navigationMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.overlapAnchor = global::City_Center.Droid.Resource.Attribute.overlapAnchor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.paddingBottomNoButtons = global::City_Center.Droid.Resource.Attribute.paddingBottomNoButtons;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.paddingEnd = global::City_Center.Droid.Resource.Attribute.paddingEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.paddingStart = global::City_Center.Droid.Resource.Attribute.paddingStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.paddingTopNoTitle = global::City_Center.Droid.Resource.Attribute.paddingTopNoTitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.panelBackground = global::City_Center.Droid.Resource.Attribute.panelBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.panelMenuListTheme = global::City_Center.Droid.Resource.Attribute.panelMenuListTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.panelMenuListWidth = global::City_Center.Droid.Resource.Attribute.panelMenuListWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.passwordToggleContentDescription = global::City_Center.Droid.Resource.Attribute.passwordToggleContentDescription;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.passwordToggleDrawable = global::City_Center.Droid.Resource.Attribute.passwordToggleDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.passwordToggleEnabled = global::City_Center.Droid.Resource.Attribute.passwordToggleEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.passwordToggleTint = global::City_Center.Droid.Resource.Attribute.passwordToggleTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.passwordToggleTintMode = global::City_Center.Droid.Resource.Attribute.passwordToggleTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.popupMenuStyle = global::City_Center.Droid.Resource.Attribute.popupMenuStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.popupTheme = global::City_Center.Droid.Resource.Attribute.popupTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.popupWindowStyle = global::City_Center.Droid.Resource.Attribute.popupWindowStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.preserveIconSpacing = global::City_Center.Droid.Resource.Attribute.preserveIconSpacing;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.pressedTranslationZ = global::City_Center.Droid.Resource.Attribute.pressedTranslationZ;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.progressBarPadding = global::City_Center.Droid.Resource.Attribute.progressBarPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.progressBarStyle = global::City_Center.Droid.Resource.Attribute.progressBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.queryBackground = global::City_Center.Droid.Resource.Attribute.queryBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.queryHint = global::City_Center.Droid.Resource.Attribute.queryHint;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.radioButtonStyle = global::City_Center.Droid.Resource.Attribute.radioButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.ratingBarStyle = global::City_Center.Droid.Resource.Attribute.ratingBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.ratingBarStyleIndicator = global::City_Center.Droid.Resource.Attribute.ratingBarStyleIndicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.ratingBarStyleSmall = global::City_Center.Droid.Resource.Attribute.ratingBarStyleSmall;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.reverseLayout = global::City_Center.Droid.Resource.Attribute.reverseLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.rippleColor = global::City_Center.Droid.Resource.Attribute.rippleColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.scrimAnimationDuration = global::City_Center.Droid.Resource.Attribute.scrimAnimationDuration;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.scrimVisibleHeightTrigger = global::City_Center.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.searchHintIcon = global::City_Center.Droid.Resource.Attribute.searchHintIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.searchIcon = global::City_Center.Droid.Resource.Attribute.searchIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.searchViewStyle = global::City_Center.Droid.Resource.Attribute.searchViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.seekBarStyle = global::City_Center.Droid.Resource.Attribute.seekBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.selectableItemBackground = global::City_Center.Droid.Resource.Attribute.selectableItemBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.selectableItemBackgroundBorderless = global::City_Center.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.showAsAction = global::City_Center.Droid.Resource.Attribute.showAsAction;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.showDividers = global::City_Center.Droid.Resource.Attribute.showDividers;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.showText = global::City_Center.Droid.Resource.Attribute.showText;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.showTitle = global::City_Center.Droid.Resource.Attribute.showTitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.singleChoiceItemLayout = global::City_Center.Droid.Resource.Attribute.singleChoiceItemLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.spanCount = global::City_Center.Droid.Resource.Attribute.spanCount;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.spinBars = global::City_Center.Droid.Resource.Attribute.spinBars;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.spinnerDropDownItemStyle = global::City_Center.Droid.Resource.Attribute.spinnerDropDownItemStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.spinnerStyle = global::City_Center.Droid.Resource.Attribute.spinnerStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.splitTrack = global::City_Center.Droid.Resource.Attribute.splitTrack;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.srcCompat = global::City_Center.Droid.Resource.Attribute.srcCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.stackFromEnd = global::City_Center.Droid.Resource.Attribute.stackFromEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.state_above_anchor = global::City_Center.Droid.Resource.Attribute.state_above_anchor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.state_collapsed = global::City_Center.Droid.Resource.Attribute.state_collapsed;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.state_collapsible = global::City_Center.Droid.Resource.Attribute.state_collapsible;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.statusBarBackground = global::City_Center.Droid.Resource.Attribute.statusBarBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.statusBarScrim = global::City_Center.Droid.Resource.Attribute.statusBarScrim;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.subMenuArrow = global::City_Center.Droid.Resource.Attribute.subMenuArrow;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.submitBackground = global::City_Center.Droid.Resource.Attribute.submitBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.subtitle = global::City_Center.Droid.Resource.Attribute.subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.subtitleTextAppearance = global::City_Center.Droid.Resource.Attribute.subtitleTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.subtitleTextColor = global::City_Center.Droid.Resource.Attribute.subtitleTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.subtitleTextStyle = global::City_Center.Droid.Resource.Attribute.subtitleTextStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.suggestionRowLayout = global::City_Center.Droid.Resource.Attribute.suggestionRowLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.switchMinWidth = global::City_Center.Droid.Resource.Attribute.switchMinWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.switchPadding = global::City_Center.Droid.Resource.Attribute.switchPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.switchStyle = global::City_Center.Droid.Resource.Attribute.switchStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.switchTextAppearance = global::City_Center.Droid.Resource.Attribute.switchTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabBackground = global::City_Center.Droid.Resource.Attribute.tabBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabContentStart = global::City_Center.Droid.Resource.Attribute.tabContentStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabGravity = global::City_Center.Droid.Resource.Attribute.tabGravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabIndicatorColor = global::City_Center.Droid.Resource.Attribute.tabIndicatorColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabIndicatorHeight = global::City_Center.Droid.Resource.Attribute.tabIndicatorHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabMaxWidth = global::City_Center.Droid.Resource.Attribute.tabMaxWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabMinWidth = global::City_Center.Droid.Resource.Attribute.tabMinWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabMode = global::City_Center.Droid.Resource.Attribute.tabMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabPadding = global::City_Center.Droid.Resource.Attribute.tabPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabPaddingBottom = global::City_Center.Droid.Resource.Attribute.tabPaddingBottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabPaddingEnd = global::City_Center.Droid.Resource.Attribute.tabPaddingEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabPaddingStart = global::City_Center.Droid.Resource.Attribute.tabPaddingStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabPaddingTop = global::City_Center.Droid.Resource.Attribute.tabPaddingTop;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabSelectedTextColor = global::City_Center.Droid.Resource.Attribute.tabSelectedTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabTextAppearance = global::City_Center.Droid.Resource.Attribute.tabTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tabTextColor = global::City_Center.Droid.Resource.Attribute.tabTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textAllCaps = global::City_Center.Droid.Resource.Attribute.textAllCaps;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textAppearanceLargePopupMenu = global::City_Center.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textAppearanceListItem = global::City_Center.Droid.Resource.Attribute.textAppearanceListItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textAppearanceListItemSecondary = global::City_Center.Droid.Resource.Attribute.textAppearanceListItemSecondary;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textAppearanceListItemSmall = global::City_Center.Droid.Resource.Attribute.textAppearanceListItemSmall;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textAppearancePopupMenuHeader = global::City_Center.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textAppearanceSearchResultSubtitle = global::City_Center.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textAppearanceSearchResultTitle = global::City_Center.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textAppearanceSmallPopupMenu = global::City_Center.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textColorAlertDialogListItem = global::City_Center.Droid.Resource.Attribute.textColorAlertDialogListItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textColorError = global::City_Center.Droid.Resource.Attribute.textColorError;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.textColorSearchUrl = global::City_Center.Droid.Resource.Attribute.textColorSearchUrl;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.theme = global::City_Center.Droid.Resource.Attribute.theme;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.thickness = global::City_Center.Droid.Resource.Attribute.thickness;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.thumbTextPadding = global::City_Center.Droid.Resource.Attribute.thumbTextPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.thumbTint = global::City_Center.Droid.Resource.Attribute.thumbTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.thumbTintMode = global::City_Center.Droid.Resource.Attribute.thumbTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tickMark = global::City_Center.Droid.Resource.Attribute.tickMark;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tickMarkTint = global::City_Center.Droid.Resource.Attribute.tickMarkTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tickMarkTintMode = global::City_Center.Droid.Resource.Attribute.tickMarkTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tint = global::City_Center.Droid.Resource.Attribute.tint;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.tintMode = global::City_Center.Droid.Resource.Attribute.tintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.title = global::City_Center.Droid.Resource.Attribute.title;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.titleEnabled = global::City_Center.Droid.Resource.Attribute.titleEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.titleMargin = global::City_Center.Droid.Resource.Attribute.titleMargin;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.titleMarginBottom = global::City_Center.Droid.Resource.Attribute.titleMarginBottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.titleMarginEnd = global::City_Center.Droid.Resource.Attribute.titleMarginEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.titleMarginStart = global::City_Center.Droid.Resource.Attribute.titleMarginStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.titleMarginTop = global::City_Center.Droid.Resource.Attribute.titleMarginTop;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.titleMargins = global::City_Center.Droid.Resource.Attribute.titleMargins;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.titleTextAppearance = global::City_Center.Droid.Resource.Attribute.titleTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.titleTextColor = global::City_Center.Droid.Resource.Attribute.titleTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.titleTextStyle = global::City_Center.Droid.Resource.Attribute.titleTextStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.toolbarId = global::City_Center.Droid.Resource.Attribute.toolbarId;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.toolbarNavigationButtonStyle = global::City_Center.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.toolbarStyle = global::City_Center.Droid.Resource.Attribute.toolbarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.track = global::City_Center.Droid.Resource.Attribute.track;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.trackTint = global::City_Center.Droid.Resource.Attribute.trackTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.trackTintMode = global::City_Center.Droid.Resource.Attribute.trackTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.useCompatPadding = global::City_Center.Droid.Resource.Attribute.useCompatPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.voiceIcon = global::City_Center.Droid.Resource.Attribute.voiceIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.vpiCentered = global::City_Center.Droid.Resource.Attribute.vpiCentered;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.vpiCirclePageIndicatorStyle = global::City_Center.Droid.Resource.Attribute.vpiCirclePageIndicatorStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.vpiFillColor = global::City_Center.Droid.Resource.Attribute.vpiFillColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.vpiOrientation = global::City_Center.Droid.Resource.Attribute.vpiOrientation;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.vpiPageColor = global::City_Center.Droid.Resource.Attribute.vpiPageColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.vpiRadius = global::City_Center.Droid.Resource.Attribute.vpiRadius;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.vpiSnap = global::City_Center.Droid.Resource.Attribute.vpiSnap;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.vpiStrokeColor = global::City_Center.Droid.Resource.Attribute.vpiStrokeColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.vpiStrokeWidth = global::City_Center.Droid.Resource.Attribute.vpiStrokeWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.windowActionBar = global::City_Center.Droid.Resource.Attribute.windowActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.windowActionBarOverlay = global::City_Center.Droid.Resource.Attribute.windowActionBarOverlay;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.windowActionModeOverlay = global::City_Center.Droid.Resource.Attribute.windowActionModeOverlay;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.windowFixedHeightMajor = global::City_Center.Droid.Resource.Attribute.windowFixedHeightMajor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.windowFixedHeightMinor = global::City_Center.Droid.Resource.Attribute.windowFixedHeightMinor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.windowFixedWidthMajor = global::City_Center.Droid.Resource.Attribute.windowFixedWidthMajor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.windowFixedWidthMinor = global::City_Center.Droid.Resource.Attribute.windowFixedWidthMinor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.windowMinWidthMajor = global::City_Center.Droid.Resource.Attribute.windowMinWidthMajor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.windowMinWidthMinor = global::City_Center.Droid.Resource.Attribute.windowMinWidthMinor;
-			global::CarouselView.FormsPlugin.Android.Resource.Attribute.windowNoTitle = global::City_Center.Droid.Resource.Attribute.windowNoTitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Boolean.abc_action_bar_embed_tabs = global::City_Center.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
-			global::CarouselView.FormsPlugin.Android.Resource.Boolean.abc_allow_stacked_button_bar = global::City_Center.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
-			global::CarouselView.FormsPlugin.Android.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::City_Center.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
-			global::CarouselView.FormsPlugin.Android.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::City_Center.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
-			global::CarouselView.FormsPlugin.Android.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::City_Center.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
-			global::CarouselView.FormsPlugin.Android.Resource.Boolean.default_circle_indicator_centered = global::City_Center.Droid.Resource.Boolean.default_circle_indicator_centered;
-			global::CarouselView.FormsPlugin.Android.Resource.Boolean.default_circle_indicator_snap = global::City_Center.Droid.Resource.Boolean.default_circle_indicator_snap;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_background_cache_hint_selector_material_dark = global::City_Center.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_background_cache_hint_selector_material_light = global::City_Center.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_btn_colored_borderless_text_material = global::City_Center.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_btn_colored_text_material = global::City_Center.Droid.Resource.Color.abc_btn_colored_text_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_color_highlight_material = global::City_Center.Droid.Resource.Color.abc_color_highlight_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_hint_foreground_material_dark = global::City_Center.Droid.Resource.Color.abc_hint_foreground_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_hint_foreground_material_light = global::City_Center.Droid.Resource.Color.abc_hint_foreground_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_input_method_navigation_guard = global::City_Center.Droid.Resource.Color.abc_input_method_navigation_guard;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_primary_text_disable_only_material_dark = global::City_Center.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_primary_text_disable_only_material_light = global::City_Center.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_primary_text_material_dark = global::City_Center.Droid.Resource.Color.abc_primary_text_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_primary_text_material_light = global::City_Center.Droid.Resource.Color.abc_primary_text_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_search_url_text = global::City_Center.Droid.Resource.Color.abc_search_url_text;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_search_url_text_normal = global::City_Center.Droid.Resource.Color.abc_search_url_text_normal;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_search_url_text_pressed = global::City_Center.Droid.Resource.Color.abc_search_url_text_pressed;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_search_url_text_selected = global::City_Center.Droid.Resource.Color.abc_search_url_text_selected;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_secondary_text_material_dark = global::City_Center.Droid.Resource.Color.abc_secondary_text_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_secondary_text_material_light = global::City_Center.Droid.Resource.Color.abc_secondary_text_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_tint_btn_checkable = global::City_Center.Droid.Resource.Color.abc_tint_btn_checkable;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_tint_default = global::City_Center.Droid.Resource.Color.abc_tint_default;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_tint_edittext = global::City_Center.Droid.Resource.Color.abc_tint_edittext;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_tint_seek_thumb = global::City_Center.Droid.Resource.Color.abc_tint_seek_thumb;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_tint_spinner = global::City_Center.Droid.Resource.Color.abc_tint_spinner;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_tint_switch_track = global::City_Center.Droid.Resource.Color.abc_tint_switch_track;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.accent_material_dark = global::City_Center.Droid.Resource.Color.accent_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.accent_material_light = global::City_Center.Droid.Resource.Color.accent_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.background_floating_material_dark = global::City_Center.Droid.Resource.Color.background_floating_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.background_floating_material_light = global::City_Center.Droid.Resource.Color.background_floating_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.background_material_dark = global::City_Center.Droid.Resource.Color.background_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.background_material_light = global::City_Center.Droid.Resource.Color.background_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.bright_foreground_disabled_material_dark = global::City_Center.Droid.Resource.Color.bright_foreground_disabled_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.bright_foreground_disabled_material_light = global::City_Center.Droid.Resource.Color.bright_foreground_disabled_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.bright_foreground_inverse_material_dark = global::City_Center.Droid.Resource.Color.bright_foreground_inverse_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.bright_foreground_inverse_material_light = global::City_Center.Droid.Resource.Color.bright_foreground_inverse_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.bright_foreground_material_dark = global::City_Center.Droid.Resource.Color.bright_foreground_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.bright_foreground_material_light = global::City_Center.Droid.Resource.Color.bright_foreground_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.button_material_dark = global::City_Center.Droid.Resource.Color.button_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.button_material_light = global::City_Center.Droid.Resource.Color.button_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.cardview_dark_background = global::City_Center.Droid.Resource.Color.cardview_dark_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.cardview_light_background = global::City_Center.Droid.Resource.Color.cardview_light_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.cardview_shadow_end_color = global::City_Center.Droid.Resource.Color.cardview_shadow_end_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.cardview_shadow_start_color = global::City_Center.Droid.Resource.Color.cardview_shadow_start_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.default_circle_indicator_fill_color = global::City_Center.Droid.Resource.Color.default_circle_indicator_fill_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.default_circle_indicator_page_color = global::City_Center.Droid.Resource.Color.default_circle_indicator_page_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.default_circle_indicator_stroke_color = global::City_Center.Droid.Resource.Color.default_circle_indicator_stroke_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.design_bottom_navigation_shadow_color = global::City_Center.Droid.Resource.Color.design_bottom_navigation_shadow_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.design_error = global::City_Center.Droid.Resource.Color.design_error;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.design_fab_shadow_end_color = global::City_Center.Droid.Resource.Color.design_fab_shadow_end_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.design_fab_shadow_mid_color = global::City_Center.Droid.Resource.Color.design_fab_shadow_mid_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.design_fab_shadow_start_color = global::City_Center.Droid.Resource.Color.design_fab_shadow_start_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.design_fab_stroke_end_inner_color = global::City_Center.Droid.Resource.Color.design_fab_stroke_end_inner_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.design_fab_stroke_end_outer_color = global::City_Center.Droid.Resource.Color.design_fab_stroke_end_outer_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.design_fab_stroke_top_inner_color = global::City_Center.Droid.Resource.Color.design_fab_stroke_top_inner_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.design_fab_stroke_top_outer_color = global::City_Center.Droid.Resource.Color.design_fab_stroke_top_outer_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.design_snackbar_background_color = global::City_Center.Droid.Resource.Color.design_snackbar_background_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.design_tint_password_toggle = global::City_Center.Droid.Resource.Color.design_tint_password_toggle;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.dim_foreground_disabled_material_dark = global::City_Center.Droid.Resource.Color.dim_foreground_disabled_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.dim_foreground_disabled_material_light = global::City_Center.Droid.Resource.Color.dim_foreground_disabled_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.dim_foreground_material_dark = global::City_Center.Droid.Resource.Color.dim_foreground_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.dim_foreground_material_light = global::City_Center.Droid.Resource.Color.dim_foreground_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.foreground_material_dark = global::City_Center.Droid.Resource.Color.foreground_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.foreground_material_light = global::City_Center.Droid.Resource.Color.foreground_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.highlighted_text_material_dark = global::City_Center.Droid.Resource.Color.highlighted_text_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.highlighted_text_material_light = global::City_Center.Droid.Resource.Color.highlighted_text_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_blue_grey_800 = global::City_Center.Droid.Resource.Color.material_blue_grey_800;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_blue_grey_900 = global::City_Center.Droid.Resource.Color.material_blue_grey_900;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_blue_grey_950 = global::City_Center.Droid.Resource.Color.material_blue_grey_950;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_deep_teal_200 = global::City_Center.Droid.Resource.Color.material_deep_teal_200;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_deep_teal_500 = global::City_Center.Droid.Resource.Color.material_deep_teal_500;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_grey_100 = global::City_Center.Droid.Resource.Color.material_grey_100;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_grey_300 = global::City_Center.Droid.Resource.Color.material_grey_300;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_grey_50 = global::City_Center.Droid.Resource.Color.material_grey_50;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_grey_600 = global::City_Center.Droid.Resource.Color.material_grey_600;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_grey_800 = global::City_Center.Droid.Resource.Color.material_grey_800;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_grey_850 = global::City_Center.Droid.Resource.Color.material_grey_850;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.material_grey_900 = global::City_Center.Droid.Resource.Color.material_grey_900;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.notification_action_color_filter = global::City_Center.Droid.Resource.Color.notification_action_color_filter;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.notification_icon_bg_color = global::City_Center.Droid.Resource.Color.notification_icon_bg_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.notification_material_background_media_default_color = global::City_Center.Droid.Resource.Color.notification_material_background_media_default_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.primary_dark_material_dark = global::City_Center.Droid.Resource.Color.primary_dark_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.primary_dark_material_light = global::City_Center.Droid.Resource.Color.primary_dark_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.primary_material_dark = global::City_Center.Droid.Resource.Color.primary_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.primary_material_light = global::City_Center.Droid.Resource.Color.primary_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.primary_text_default_material_dark = global::City_Center.Droid.Resource.Color.primary_text_default_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.primary_text_default_material_light = global::City_Center.Droid.Resource.Color.primary_text_default_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.primary_text_disabled_material_dark = global::City_Center.Droid.Resource.Color.primary_text_disabled_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.primary_text_disabled_material_light = global::City_Center.Droid.Resource.Color.primary_text_disabled_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.ripple_material_dark = global::City_Center.Droid.Resource.Color.ripple_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.ripple_material_light = global::City_Center.Droid.Resource.Color.ripple_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.secondary_text_default_material_dark = global::City_Center.Droid.Resource.Color.secondary_text_default_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.secondary_text_default_material_light = global::City_Center.Droid.Resource.Color.secondary_text_default_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.secondary_text_disabled_material_dark = global::City_Center.Droid.Resource.Color.secondary_text_disabled_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.secondary_text_disabled_material_light = global::City_Center.Droid.Resource.Color.secondary_text_disabled_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.switch_thumb_disabled_material_dark = global::City_Center.Droid.Resource.Color.switch_thumb_disabled_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.switch_thumb_disabled_material_light = global::City_Center.Droid.Resource.Color.switch_thumb_disabled_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.switch_thumb_material_dark = global::City_Center.Droid.Resource.Color.switch_thumb_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.switch_thumb_material_light = global::City_Center.Droid.Resource.Color.switch_thumb_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.switch_thumb_normal_material_dark = global::City_Center.Droid.Resource.Color.switch_thumb_normal_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.switch_thumb_normal_material_light = global::City_Center.Droid.Resource.Color.switch_thumb_normal_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.vpi__background_holo_dark = global::City_Center.Droid.Resource.Color.vpi__background_holo_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.vpi__background_holo_light = global::City_Center.Droid.Resource.Color.vpi__background_holo_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.vpi__bright_foreground_disabled_holo_dark = global::City_Center.Droid.Resource.Color.vpi__bright_foreground_disabled_holo_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.vpi__bright_foreground_disabled_holo_light = global::City_Center.Droid.Resource.Color.vpi__bright_foreground_disabled_holo_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.vpi__bright_foreground_holo_dark = global::City_Center.Droid.Resource.Color.vpi__bright_foreground_holo_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.vpi__bright_foreground_holo_light = global::City_Center.Droid.Resource.Color.vpi__bright_foreground_holo_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.vpi__bright_foreground_inverse_holo_dark = global::City_Center.Droid.Resource.Color.vpi__bright_foreground_inverse_holo_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Color.vpi__bright_foreground_inverse_holo_light = global::City_Center.Droid.Resource.Color.vpi__bright_foreground_inverse_holo_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_content_inset_material = global::City_Center.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::City_Center.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_default_height_material = global::City_Center.Droid.Resource.Dimension.abc_action_bar_default_height_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_default_padding_end_material = global::City_Center.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_default_padding_start_material = global::City_Center.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_elevation_material = global::City_Center.Droid.Resource.Dimension.abc_action_bar_elevation_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::City_Center.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::City_Center.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::City_Center.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_progress_bar_size = global::City_Center.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_stacked_max_height = global::City_Center.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::City_Center.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::City_Center.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::City_Center.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_button_min_height_material = global::City_Center.Droid.Resource.Dimension.abc_action_button_min_height_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_button_min_width_material = global::City_Center.Droid.Resource.Dimension.abc_action_button_min_width_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_action_button_min_width_overflow_material = global::City_Center.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_alert_dialog_button_bar_height = global::City_Center.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_button_inset_horizontal_material = global::City_Center.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_button_inset_vertical_material = global::City_Center.Droid.Resource.Dimension.abc_button_inset_vertical_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_button_padding_horizontal_material = global::City_Center.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_button_padding_vertical_material = global::City_Center.Droid.Resource.Dimension.abc_button_padding_vertical_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::City_Center.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_config_prefDialogWidth = global::City_Center.Droid.Resource.Dimension.abc_config_prefDialogWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_control_corner_material = global::City_Center.Droid.Resource.Dimension.abc_control_corner_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_control_inset_material = global::City_Center.Droid.Resource.Dimension.abc_control_inset_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_control_padding_material = global::City_Center.Droid.Resource.Dimension.abc_control_padding_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dialog_fixed_height_major = global::City_Center.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dialog_fixed_height_minor = global::City_Center.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dialog_fixed_width_major = global::City_Center.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dialog_fixed_width_minor = global::City_Center.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::City_Center.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::City_Center.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dialog_min_width_major = global::City_Center.Droid.Resource.Dimension.abc_dialog_min_width_major;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dialog_min_width_minor = global::City_Center.Droid.Resource.Dimension.abc_dialog_min_width_minor;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dialog_padding_material = global::City_Center.Droid.Resource.Dimension.abc_dialog_padding_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dialog_padding_top_material = global::City_Center.Droid.Resource.Dimension.abc_dialog_padding_top_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dialog_title_divider_material = global::City_Center.Droid.Resource.Dimension.abc_dialog_title_divider_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_disabled_alpha_material_dark = global::City_Center.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_disabled_alpha_material_light = global::City_Center.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dropdownitem_icon_width = global::City_Center.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dropdownitem_text_padding_left = global::City_Center.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_dropdownitem_text_padding_right = global::City_Center.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_edit_text_inset_bottom_material = global::City_Center.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::City_Center.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_edit_text_inset_top_material = global::City_Center.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_floating_window_z = global::City_Center.Droid.Resource.Dimension.abc_floating_window_z;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_list_item_padding_horizontal_material = global::City_Center.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_panel_menu_list_width = global::City_Center.Droid.Resource.Dimension.abc_panel_menu_list_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_progress_bar_height_material = global::City_Center.Droid.Resource.Dimension.abc_progress_bar_height_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_search_view_preferred_height = global::City_Center.Droid.Resource.Dimension.abc_search_view_preferred_height;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_search_view_preferred_width = global::City_Center.Droid.Resource.Dimension.abc_search_view_preferred_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_seekbar_track_background_height_material = global::City_Center.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_seekbar_track_progress_height_material = global::City_Center.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_select_dialog_padding_start_material = global::City_Center.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_switch_padding = global::City_Center.Droid.Resource.Dimension.abc_switch_padding;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_body_1_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_body_1_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_body_2_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_body_2_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_button_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_button_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_caption_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_caption_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_display_1_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_display_1_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_display_2_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_display_2_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_display_3_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_display_3_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_display_4_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_display_4_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_headline_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_headline_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_large_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_large_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_medium_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_medium_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_menu_header_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_menu_header_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_menu_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_menu_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_small_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_small_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_subhead_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_subhead_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::City_Center.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_title_material = global::City_Center.Droid.Resource.Dimension.abc_text_size_title_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.abc_text_size_title_material_toolbar = global::City_Center.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.cardview_compat_inset_shadow = global::City_Center.Droid.Resource.Dimension.cardview_compat_inset_shadow;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.cardview_default_elevation = global::City_Center.Droid.Resource.Dimension.cardview_default_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.cardview_default_radius = global::City_Center.Droid.Resource.Dimension.cardview_default_radius;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.default_circle_indicator_radius = global::City_Center.Droid.Resource.Dimension.default_circle_indicator_radius;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.default_circle_indicator_stroke_width = global::City_Center.Droid.Resource.Dimension.default_circle_indicator_stroke_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_appbar_elevation = global::City_Center.Droid.Resource.Dimension.design_appbar_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::City_Center.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_bottom_navigation_active_text_size = global::City_Center.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_bottom_navigation_elevation = global::City_Center.Droid.Resource.Dimension.design_bottom_navigation_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_bottom_navigation_height = global::City_Center.Droid.Resource.Dimension.design_bottom_navigation_height;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_bottom_navigation_item_max_width = global::City_Center.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_bottom_navigation_item_min_width = global::City_Center.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_bottom_navigation_margin = global::City_Center.Droid.Resource.Dimension.design_bottom_navigation_margin;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_bottom_navigation_shadow_height = global::City_Center.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_bottom_navigation_text_size = global::City_Center.Droid.Resource.Dimension.design_bottom_navigation_text_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_bottom_sheet_modal_elevation = global::City_Center.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_bottom_sheet_peek_height_min = global::City_Center.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_fab_border_width = global::City_Center.Droid.Resource.Dimension.design_fab_border_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_fab_elevation = global::City_Center.Droid.Resource.Dimension.design_fab_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_fab_image_size = global::City_Center.Droid.Resource.Dimension.design_fab_image_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_fab_size_mini = global::City_Center.Droid.Resource.Dimension.design_fab_size_mini;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_fab_size_normal = global::City_Center.Droid.Resource.Dimension.design_fab_size_normal;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_fab_translation_z_pressed = global::City_Center.Droid.Resource.Dimension.design_fab_translation_z_pressed;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_navigation_elevation = global::City_Center.Droid.Resource.Dimension.design_navigation_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_navigation_icon_padding = global::City_Center.Droid.Resource.Dimension.design_navigation_icon_padding;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_navigation_icon_size = global::City_Center.Droid.Resource.Dimension.design_navigation_icon_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_navigation_max_width = global::City_Center.Droid.Resource.Dimension.design_navigation_max_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_navigation_padding_bottom = global::City_Center.Droid.Resource.Dimension.design_navigation_padding_bottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_navigation_separator_vertical_padding = global::City_Center.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_snackbar_action_inline_max_width = global::City_Center.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_snackbar_background_corner_radius = global::City_Center.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_snackbar_elevation = global::City_Center.Droid.Resource.Dimension.design_snackbar_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::City_Center.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_snackbar_max_width = global::City_Center.Droid.Resource.Dimension.design_snackbar_max_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_snackbar_min_width = global::City_Center.Droid.Resource.Dimension.design_snackbar_min_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_snackbar_padding_horizontal = global::City_Center.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_snackbar_padding_vertical = global::City_Center.Droid.Resource.Dimension.design_snackbar_padding_vertical;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::City_Center.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_snackbar_text_size = global::City_Center.Droid.Resource.Dimension.design_snackbar_text_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_tab_max_width = global::City_Center.Droid.Resource.Dimension.design_tab_max_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_tab_scrollable_min_width = global::City_Center.Droid.Resource.Dimension.design_tab_scrollable_min_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_tab_text_size = global::City_Center.Droid.Resource.Dimension.design_tab_text_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.design_tab_text_size_2line = global::City_Center.Droid.Resource.Dimension.design_tab_text_size_2line;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.disabled_alpha_material_dark = global::City_Center.Droid.Resource.Dimension.disabled_alpha_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.disabled_alpha_material_light = global::City_Center.Droid.Resource.Dimension.disabled_alpha_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.highlight_alpha_material_colored = global::City_Center.Droid.Resource.Dimension.highlight_alpha_material_colored;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.highlight_alpha_material_dark = global::City_Center.Droid.Resource.Dimension.highlight_alpha_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.highlight_alpha_material_light = global::City_Center.Droid.Resource.Dimension.highlight_alpha_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.hint_alpha_material_dark = global::City_Center.Droid.Resource.Dimension.hint_alpha_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.hint_alpha_material_light = global::City_Center.Droid.Resource.Dimension.hint_alpha_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.hint_pressed_alpha_material_dark = global::City_Center.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.hint_pressed_alpha_material_light = global::City_Center.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::City_Center.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::City_Center.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::City_Center.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.mr_controller_volume_group_list_item_height = global::City_Center.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.mr_controller_volume_group_list_item_icon_size = global::City_Center.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.mr_controller_volume_group_list_max_height = global::City_Center.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.mr_controller_volume_group_list_padding_top = global::City_Center.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.mr_dialog_fixed_width_major = global::City_Center.Droid.Resource.Dimension.mr_dialog_fixed_width_major;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.mr_dialog_fixed_width_minor = global::City_Center.Droid.Resource.Dimension.mr_dialog_fixed_width_minor;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_action_icon_size = global::City_Center.Droid.Resource.Dimension.notification_action_icon_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_action_text_size = global::City_Center.Droid.Resource.Dimension.notification_action_text_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_big_circle_margin = global::City_Center.Droid.Resource.Dimension.notification_big_circle_margin;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_content_margin_start = global::City_Center.Droid.Resource.Dimension.notification_content_margin_start;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_large_icon_height = global::City_Center.Droid.Resource.Dimension.notification_large_icon_height;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_large_icon_width = global::City_Center.Droid.Resource.Dimension.notification_large_icon_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_main_column_padding_top = global::City_Center.Droid.Resource.Dimension.notification_main_column_padding_top;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_media_narrow_margin = global::City_Center.Droid.Resource.Dimension.notification_media_narrow_margin;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_right_icon_size = global::City_Center.Droid.Resource.Dimension.notification_right_icon_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_right_side_padding_top = global::City_Center.Droid.Resource.Dimension.notification_right_side_padding_top;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_small_icon_background_padding = global::City_Center.Droid.Resource.Dimension.notification_small_icon_background_padding;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_small_icon_size_as_large = global::City_Center.Droid.Resource.Dimension.notification_small_icon_size_as_large;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_subtext_size = global::City_Center.Droid.Resource.Dimension.notification_subtext_size;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_top_pad = global::City_Center.Droid.Resource.Dimension.notification_top_pad;
-			global::CarouselView.FormsPlugin.Android.Resource.Dimension.notification_top_pad_large_text = global::City_Center.Droid.Resource.Dimension.notification_top_pad_large_text;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_action_bar_item_background_material = global::City_Center.Droid.Resource.Drawable.abc_action_bar_item_background_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_btn_borderless_material = global::City_Center.Droid.Resource.Drawable.abc_btn_borderless_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_btn_check_material = global::City_Center.Droid.Resource.Drawable.abc_btn_check_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::City_Center.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::City_Center.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_btn_colored_material = global::City_Center.Droid.Resource.Drawable.abc_btn_colored_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_btn_default_mtrl_shape = global::City_Center.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_btn_radio_material = global::City_Center.Droid.Resource.Drawable.abc_btn_radio_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::City_Center.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::City_Center.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::City_Center.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::City_Center.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_cab_background_internal_bg = global::City_Center.Droid.Resource.Drawable.abc_cab_background_internal_bg;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_cab_background_top_material = global::City_Center.Droid.Resource.Drawable.abc_cab_background_top_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_control_background_material = global::City_Center.Droid.Resource.Drawable.abc_control_background_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_dialog_material_background = global::City_Center.Droid.Resource.Drawable.abc_dialog_material_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_edit_text_material = global::City_Center.Droid.Resource.Drawable.abc_edit_text_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_ab_back_material = global::City_Center.Droid.Resource.Drawable.abc_ic_ab_back_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::City_Center.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_clear_material = global::City_Center.Droid.Resource.Drawable.abc_ic_clear_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_go_search_api_material = global::City_Center.Droid.Resource.Drawable.abc_ic_go_search_api_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::City_Center.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_menu_overflow_material = global::City_Center.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::City_Center.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_search_api_material = global::City_Center.Droid.Resource.Drawable.abc_ic_search_api_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_star_black_16dp = global::City_Center.Droid.Resource.Drawable.abc_ic_star_black_16dp;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_star_black_36dp = global::City_Center.Droid.Resource.Drawable.abc_ic_star_black_36dp;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_star_black_48dp = global::City_Center.Droid.Resource.Drawable.abc_ic_star_black_48dp;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_star_half_black_16dp = global::City_Center.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_star_half_black_36dp = global::City_Center.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_star_half_black_48dp = global::City_Center.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ic_voice_search_api_material = global::City_Center.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_item_background_holo_dark = global::City_Center.Droid.Resource.Drawable.abc_item_background_holo_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_item_background_holo_light = global::City_Center.Droid.Resource.Drawable.abc_item_background_holo_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_list_divider_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_list_focused_holo = global::City_Center.Droid.Resource.Drawable.abc_list_focused_holo;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_list_longpressed_holo = global::City_Center.Droid.Resource.Drawable.abc_list_longpressed_holo;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_list_pressed_holo_dark = global::City_Center.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_list_pressed_holo_light = global::City_Center.Droid.Resource.Drawable.abc_list_pressed_holo_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::City_Center.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::City_Center.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::City_Center.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_list_selector_disabled_holo_light = global::City_Center.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_list_selector_holo_dark = global::City_Center.Droid.Resource.Drawable.abc_list_selector_holo_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_list_selector_holo_light = global::City_Center.Droid.Resource.Drawable.abc_list_selector_holo_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::City_Center.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_popup_background_mtrl_mult = global::City_Center.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ratingbar_indicator_material = global::City_Center.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ratingbar_material = global::City_Center.Droid.Resource.Drawable.abc_ratingbar_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_ratingbar_small_material = global::City_Center.Droid.Resource.Drawable.abc_ratingbar_small_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::City_Center.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::City_Center.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_seekbar_thumb_material = global::City_Center.Droid.Resource.Drawable.abc_seekbar_thumb_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_seekbar_tick_mark_material = global::City_Center.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_seekbar_track_material = global::City_Center.Droid.Resource.Drawable.abc_seekbar_track_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::City_Center.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_spinner_textfield_background_material = global::City_Center.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_switch_thumb_material = global::City_Center.Droid.Resource.Drawable.abc_switch_thumb_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_switch_track_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_tab_indicator_material = global::City_Center.Droid.Resource.Drawable.abc_tab_indicator_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_text_cursor_material = global::City_Center.Droid.Resource.Drawable.abc_text_cursor_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::City_Center.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::City_Center.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::City_Center.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::City_Center.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::City_Center.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::City_Center.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::City_Center.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_textfield_search_material = global::City_Center.Droid.Resource.Drawable.abc_textfield_search_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_vector_test = global::City_Center.Droid.Resource.Drawable.abc_vector_test;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password = global::City_Center.Droid.Resource.Drawable.avd_hide_password;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_1 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_1;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_2 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_2;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_3 = global::City_Center.Droid.Resource.Drawable.avd_hide_password_3;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password = global::City_Center.Droid.Resource.Drawable.avd_show_password;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_1 = global::City_Center.Droid.Resource.Drawable.avd_show_password_1;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_2 = global::City_Center.Droid.Resource.Drawable.avd_show_password_2;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_3 = global::City_Center.Droid.Resource.Drawable.avd_show_password_3;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_bottom_navigation_item_background = global::City_Center.Droid.Resource.Drawable.design_bottom_navigation_item_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_fab_background = global::City_Center.Droid.Resource.Drawable.design_fab_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_ic_visibility = global::City_Center.Droid.Resource.Drawable.design_ic_visibility;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_ic_visibility_off = global::City_Center.Droid.Resource.Drawable.design_ic_visibility_off;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_password_eye = global::City_Center.Droid.Resource.Drawable.design_password_eye;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_snackbar_background = global::City_Center.Droid.Resource.Drawable.design_snackbar_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.Down = global::City_Center.Droid.Resource.Drawable.Down;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_audiotrack_dark = global::City_Center.Droid.Resource.Drawable.ic_audiotrack_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_audiotrack_light = global::City_Center.Droid.Resource.Drawable.ic_audiotrack_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_dialog_close_dark = global::City_Center.Droid.Resource.Drawable.ic_dialog_close_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_dialog_close_light = global::City_Center.Droid.Resource.Drawable.ic_dialog_close_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_00 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_00;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_01 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_01;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_02 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_02;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_03 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_03;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_04 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_04;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_05 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_05;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_06 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_06;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_07 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_07;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_08 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_08;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_09 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_09;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_10 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_10;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_11 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_11;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_12 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_12;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_13 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_13;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_14 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_14;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_collapse_15 = global::City_Center.Droid.Resource.Drawable.ic_group_collapse_15;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_00 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_00;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_01 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_01;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_02 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_02;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_03 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_03;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_04 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_04;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_05 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_05;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_06 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_06;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_07 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_07;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_08 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_08;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_09 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_09;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_10 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_10;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_11 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_11;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_12 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_12;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_13 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_13;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_14 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_14;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_group_expand_15 = global::City_Center.Droid.Resource.Drawable.ic_group_expand_15;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_media_pause_dark = global::City_Center.Droid.Resource.Drawable.ic_media_pause_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_media_pause_light = global::City_Center.Droid.Resource.Drawable.ic_media_pause_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_media_play_dark = global::City_Center.Droid.Resource.Drawable.ic_media_play_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_media_play_light = global::City_Center.Droid.Resource.Drawable.ic_media_play_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_media_stop_dark = global::City_Center.Droid.Resource.Drawable.ic_media_stop_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_media_stop_light = global::City_Center.Droid.Resource.Drawable.ic_media_stop_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_00_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_00_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_00_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_00_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_01_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_01_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_01_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_01_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_02_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_02_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_02_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_02_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_03_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_03_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_03_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_03_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_04_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_04_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_04_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_04_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_05_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_05_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_05_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_05_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_06_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_06_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_06_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_06_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_07_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_07_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_07_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_07_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_08_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_08_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_08_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_08_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_09_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_09_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_09_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_09_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_10_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_10_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_10_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_10_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_11_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_11_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_11_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_11_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_12_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_12_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_12_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_12_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_13_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_13_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_13_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_13_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_14_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_14_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_14_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_14_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_15_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_15_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_15_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_15_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_16_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_16_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_16_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_16_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_17_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_17_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_17_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_17_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_18_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_18_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_18_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_18_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_19_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_19_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_19_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_19_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_20_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_20_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_20_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_20_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_21_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_21_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_21_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_21_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_22_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_22_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connected_22_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connected_22_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_00_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_00_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_00_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_01_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_01_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_01_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_02_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_02_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_02_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_03_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_03_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_03_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_04_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_04_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_04_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_05_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_05_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_05_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_06_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_06_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_06_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_07_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_07_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_07_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_08_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_08_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_08_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_09_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_09_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_09_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_10_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_10_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_10_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_11_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_11_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_11_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_12_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_12_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_12_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_13_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_13_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_13_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_14_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_14_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_14_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_15_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_15_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_15_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_16_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_16_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_16_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_17_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_17_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_17_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_18_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_18_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_18_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_19_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_19_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_19_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_20_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_20_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_20_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_21_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_21_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_21_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_22_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_connecting_22_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_connecting_22_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_disabled_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_disabled_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_disabled_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_disabled_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_disconnected_dark = global::City_Center.Droid.Resource.Drawable.ic_mr_button_disconnected_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_disconnected_light = global::City_Center.Droid.Resource.Drawable.ic_mr_button_disconnected_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_mr_button_grey = global::City_Center.Droid.Resource.Drawable.ic_mr_button_grey;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_vol_type_speaker_dark = global::City_Center.Droid.Resource.Drawable.ic_vol_type_speaker_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_vol_type_speaker_group_dark = global::City_Center.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_vol_type_speaker_group_light = global::City_Center.Droid.Resource.Drawable.ic_vol_type_speaker_group_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_vol_type_speaker_light = global::City_Center.Droid.Resource.Drawable.ic_vol_type_speaker_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_vol_type_tv_dark = global::City_Center.Droid.Resource.Drawable.ic_vol_type_tv_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.ic_vol_type_tv_light = global::City_Center.Droid.Resource.Drawable.ic_vol_type_tv_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_button_connected_dark = global::City_Center.Droid.Resource.Drawable.mr_button_connected_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_button_connected_light = global::City_Center.Droid.Resource.Drawable.mr_button_connected_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_button_connecting_dark = global::City_Center.Droid.Resource.Drawable.mr_button_connecting_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_button_connecting_light = global::City_Center.Droid.Resource.Drawable.mr_button_connecting_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_button_dark = global::City_Center.Droid.Resource.Drawable.mr_button_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_button_light = global::City_Center.Droid.Resource.Drawable.mr_button_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_dialog_close_dark = global::City_Center.Droid.Resource.Drawable.mr_dialog_close_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_dialog_close_light = global::City_Center.Droid.Resource.Drawable.mr_dialog_close_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_dialog_material_background_dark = global::City_Center.Droid.Resource.Drawable.mr_dialog_material_background_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_dialog_material_background_light = global::City_Center.Droid.Resource.Drawable.mr_dialog_material_background_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_group_collapse = global::City_Center.Droid.Resource.Drawable.mr_group_collapse;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_group_expand = global::City_Center.Droid.Resource.Drawable.mr_group_expand;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_media_pause_dark = global::City_Center.Droid.Resource.Drawable.mr_media_pause_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_media_pause_light = global::City_Center.Droid.Resource.Drawable.mr_media_pause_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_media_play_dark = global::City_Center.Droid.Resource.Drawable.mr_media_play_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_media_play_light = global::City_Center.Droid.Resource.Drawable.mr_media_play_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_media_stop_dark = global::City_Center.Droid.Resource.Drawable.mr_media_stop_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_media_stop_light = global::City_Center.Droid.Resource.Drawable.mr_media_stop_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_vol_type_audiotrack_dark = global::City_Center.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.mr_vol_type_audiotrack_light = global::City_Center.Droid.Resource.Drawable.mr_vol_type_audiotrack_light;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.navigation_empty_icon = global::City_Center.Droid.Resource.Drawable.navigation_empty_icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.Next = global::City_Center.Droid.Resource.Drawable.Next;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notification_action_background = global::City_Center.Droid.Resource.Drawable.notification_action_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notification_bg = global::City_Center.Droid.Resource.Drawable.notification_bg;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notification_bg_low = global::City_Center.Droid.Resource.Drawable.notification_bg_low;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notification_bg_low_normal = global::City_Center.Droid.Resource.Drawable.notification_bg_low_normal;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notification_bg_low_pressed = global::City_Center.Droid.Resource.Drawable.notification_bg_low_pressed;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notification_bg_normal = global::City_Center.Droid.Resource.Drawable.notification_bg_normal;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notification_bg_normal_pressed = global::City_Center.Droid.Resource.Drawable.notification_bg_normal_pressed;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notification_icon_background = global::City_Center.Droid.Resource.Drawable.notification_icon_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notification_template_icon_bg = global::City_Center.Droid.Resource.Drawable.notification_template_icon_bg;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notification_template_icon_low_bg = global::City_Center.Droid.Resource.Drawable.notification_template_icon_low_bg;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notification_tile_bg = global::City_Center.Droid.Resource.Drawable.notification_tile_bg;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.notify_panel_notification_icon_bg = global::City_Center.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.Prev = global::City_Center.Droid.Resource.Drawable.Prev;
-			global::CarouselView.FormsPlugin.Android.Resource.Drawable.Up = global::City_Center.Droid.Resource.Drawable.Up;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action0 = global::City_Center.Droid.Resource.Id.action0;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_bar = global::City_Center.Droid.Resource.Id.action_bar;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_bar_activity_content = global::City_Center.Droid.Resource.Id.action_bar_activity_content;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_bar_container = global::City_Center.Droid.Resource.Id.action_bar_container;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_bar_root = global::City_Center.Droid.Resource.Id.action_bar_root;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_bar_spinner = global::City_Center.Droid.Resource.Id.action_bar_spinner;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_bar_subtitle = global::City_Center.Droid.Resource.Id.action_bar_subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_bar_title = global::City_Center.Droid.Resource.Id.action_bar_title;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_container = global::City_Center.Droid.Resource.Id.action_container;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_context_bar = global::City_Center.Droid.Resource.Id.action_context_bar;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_divider = global::City_Center.Droid.Resource.Id.action_divider;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_image = global::City_Center.Droid.Resource.Id.action_image;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_menu_divider = global::City_Center.Droid.Resource.Id.action_menu_divider;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_menu_presenter = global::City_Center.Droid.Resource.Id.action_menu_presenter;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_mode_bar = global::City_Center.Droid.Resource.Id.action_mode_bar;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_mode_bar_stub = global::City_Center.Droid.Resource.Id.action_mode_bar_stub;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_mode_close_button = global::City_Center.Droid.Resource.Id.action_mode_close_button;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.action_text = global::City_Center.Droid.Resource.Id.action_text;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.actions = global::City_Center.Droid.Resource.Id.actions;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.activity_chooser_view_content = global::City_Center.Droid.Resource.Id.activity_chooser_view_content;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.add = global::City_Center.Droid.Resource.Id.add;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.alertTitle = global::City_Center.Droid.Resource.Id.alertTitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.all = global::City_Center.Droid.Resource.Id.all;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.always = global::City_Center.Droid.Resource.Id.always;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.auto = global::City_Center.Droid.Resource.Id.auto;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.beginning = global::City_Center.Droid.Resource.Id.beginning;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.bottom = global::City_Center.Droid.Resource.Id.bottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.buttonPanel = global::City_Center.Droid.Resource.Id.buttonPanel;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.cancel_action = global::City_Center.Droid.Resource.Id.cancel_action;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.center = global::City_Center.Droid.Resource.Id.center;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.center_horizontal = global::City_Center.Droid.Resource.Id.center_horizontal;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.center_vertical = global::City_Center.Droid.Resource.Id.center_vertical;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.checkbox = global::City_Center.Droid.Resource.Id.checkbox;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.chronometer = global::City_Center.Droid.Resource.Id.chronometer;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.clip_horizontal = global::City_Center.Droid.Resource.Id.clip_horizontal;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.clip_vertical = global::City_Center.Droid.Resource.Id.clip_vertical;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.collapseActionView = global::City_Center.Droid.Resource.Id.collapseActionView;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.container = global::City_Center.Droid.Resource.Id.container;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.contentPanel = global::City_Center.Droid.Resource.Id.contentPanel;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.coordinator = global::City_Center.Droid.Resource.Id.coordinator;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.custom = global::City_Center.Droid.Resource.Id.custom;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.customPanel = global::City_Center.Droid.Resource.Id.customPanel;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.decor_content_parent = global::City_Center.Droid.Resource.Id.decor_content_parent;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.default_activity_button = global::City_Center.Droid.Resource.Id.default_activity_button;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.design_bottom_sheet = global::City_Center.Droid.Resource.Id.design_bottom_sheet;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.design_menu_item_action_area = global::City_Center.Droid.Resource.Id.design_menu_item_action_area;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.design_menu_item_action_area_stub = global::City_Center.Droid.Resource.Id.design_menu_item_action_area_stub;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.design_menu_item_text = global::City_Center.Droid.Resource.Id.design_menu_item_text;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.design_navigation_view = global::City_Center.Droid.Resource.Id.design_navigation_view;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.disableHome = global::City_Center.Droid.Resource.Id.disableHome;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.edit_query = global::City_Center.Droid.Resource.Id.edit_query;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.end = global::City_Center.Droid.Resource.Id.end;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.end_padder = global::City_Center.Droid.Resource.Id.end_padder;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.enterAlways = global::City_Center.Droid.Resource.Id.enterAlways;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.enterAlwaysCollapsed = global::City_Center.Droid.Resource.Id.enterAlwaysCollapsed;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.exitUntilCollapsed = global::City_Center.Droid.Resource.Id.exitUntilCollapsed;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.expand_activities_button = global::City_Center.Droid.Resource.Id.expand_activities_button;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.expanded_menu = global::City_Center.Droid.Resource.Id.expanded_menu;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.fill = global::City_Center.Droid.Resource.Id.fill;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.fill_horizontal = global::City_Center.Droid.Resource.Id.fill_horizontal;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.fill_vertical = global::City_Center.Droid.Resource.Id.fill_vertical;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.@fixed = global::City_Center.Droid.Resource.Id.@fixed;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.home = global::City_Center.Droid.Resource.Id.home;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.homeAsUp = global::City_Center.Droid.Resource.Id.homeAsUp;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.horizontal = global::City_Center.Droid.Resource.Id.horizontal;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.icon = global::City_Center.Droid.Resource.Id.icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.icon_group = global::City_Center.Droid.Resource.Id.icon_group;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.ifRoom = global::City_Center.Droid.Resource.Id.ifRoom;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.image = global::City_Center.Droid.Resource.Id.image;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.indicator = global::City_Center.Droid.Resource.Id.indicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.info = global::City_Center.Droid.Resource.Id.info;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.item_touch_helper_previous_elevation = global::City_Center.Droid.Resource.Id.item_touch_helper_previous_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.largeLabel = global::City_Center.Droid.Resource.Id.largeLabel;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.left = global::City_Center.Droid.Resource.Id.left;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.line1 = global::City_Center.Droid.Resource.Id.line1;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.line3 = global::City_Center.Droid.Resource.Id.line3;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.listMode = global::City_Center.Droid.Resource.Id.listMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.list_item = global::City_Center.Droid.Resource.Id.list_item;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.masked = global::City_Center.Droid.Resource.Id.masked;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.media_actions = global::City_Center.Droid.Resource.Id.media_actions;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.middle = global::City_Center.Droid.Resource.Id.middle;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mini = global::City_Center.Droid.Resource.Id.mini;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_art = global::City_Center.Droid.Resource.Id.mr_art;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_chooser_list = global::City_Center.Droid.Resource.Id.mr_chooser_list;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_chooser_route_desc = global::City_Center.Droid.Resource.Id.mr_chooser_route_desc;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_chooser_route_icon = global::City_Center.Droid.Resource.Id.mr_chooser_route_icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_chooser_route_name = global::City_Center.Droid.Resource.Id.mr_chooser_route_name;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_chooser_title = global::City_Center.Droid.Resource.Id.mr_chooser_title;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_close = global::City_Center.Droid.Resource.Id.mr_close;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_control_divider = global::City_Center.Droid.Resource.Id.mr_control_divider;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_control_playback_ctrl = global::City_Center.Droid.Resource.Id.mr_control_playback_ctrl;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_control_subtitle = global::City_Center.Droid.Resource.Id.mr_control_subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_control_title = global::City_Center.Droid.Resource.Id.mr_control_title;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_control_title_container = global::City_Center.Droid.Resource.Id.mr_control_title_container;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_custom_control = global::City_Center.Droid.Resource.Id.mr_custom_control;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_default_control = global::City_Center.Droid.Resource.Id.mr_default_control;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_dialog_area = global::City_Center.Droid.Resource.Id.mr_dialog_area;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_expandable_area = global::City_Center.Droid.Resource.Id.mr_expandable_area;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_group_expand_collapse = global::City_Center.Droid.Resource.Id.mr_group_expand_collapse;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_media_main_control = global::City_Center.Droid.Resource.Id.mr_media_main_control;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_name = global::City_Center.Droid.Resource.Id.mr_name;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_playback_control = global::City_Center.Droid.Resource.Id.mr_playback_control;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_title_bar = global::City_Center.Droid.Resource.Id.mr_title_bar;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_volume_control = global::City_Center.Droid.Resource.Id.mr_volume_control;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_volume_group_list = global::City_Center.Droid.Resource.Id.mr_volume_group_list;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_volume_item_icon = global::City_Center.Droid.Resource.Id.mr_volume_item_icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.mr_volume_slider = global::City_Center.Droid.Resource.Id.mr_volume_slider;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.multiply = global::City_Center.Droid.Resource.Id.multiply;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.navigation_header_container = global::City_Center.Droid.Resource.Id.navigation_header_container;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.never = global::City_Center.Droid.Resource.Id.never;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.next = global::City_Center.Droid.Resource.Id.next;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.nextArrow = global::City_Center.Droid.Resource.Id.nextArrow;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.none = global::City_Center.Droid.Resource.Id.none;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.normal = global::City_Center.Droid.Resource.Id.normal;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.notification_background = global::City_Center.Droid.Resource.Id.notification_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.notification_main_column = global::City_Center.Droid.Resource.Id.notification_main_column;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.notification_main_column_container = global::City_Center.Droid.Resource.Id.notification_main_column_container;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.pager = global::City_Center.Droid.Resource.Id.pager;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.parallax = global::City_Center.Droid.Resource.Id.parallax;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.parentPanel = global::City_Center.Droid.Resource.Id.parentPanel;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.pin = global::City_Center.Droid.Resource.Id.pin;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.prev = global::City_Center.Droid.Resource.Id.prev;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.prevArrow = global::City_Center.Droid.Resource.Id.prevArrow;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.progress_circular = global::City_Center.Droid.Resource.Id.progress_circular;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.progress_horizontal = global::City_Center.Droid.Resource.Id.progress_horizontal;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.radio = global::City_Center.Droid.Resource.Id.radio;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.right = global::City_Center.Droid.Resource.Id.right;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.right_icon = global::City_Center.Droid.Resource.Id.right_icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.right_side = global::City_Center.Droid.Resource.Id.right_side;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.screen = global::City_Center.Droid.Resource.Id.screen;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.scroll = global::City_Center.Droid.Resource.Id.scroll;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.scrollIndicatorDown = global::City_Center.Droid.Resource.Id.scrollIndicatorDown;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.scrollIndicatorUp = global::City_Center.Droid.Resource.Id.scrollIndicatorUp;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.scrollView = global::City_Center.Droid.Resource.Id.scrollView;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.scrollable = global::City_Center.Droid.Resource.Id.scrollable;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.search_badge = global::City_Center.Droid.Resource.Id.search_badge;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.search_bar = global::City_Center.Droid.Resource.Id.search_bar;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.search_button = global::City_Center.Droid.Resource.Id.search_button;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.search_close_btn = global::City_Center.Droid.Resource.Id.search_close_btn;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.search_edit_frame = global::City_Center.Droid.Resource.Id.search_edit_frame;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.search_go_btn = global::City_Center.Droid.Resource.Id.search_go_btn;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.search_mag_icon = global::City_Center.Droid.Resource.Id.search_mag_icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.search_plate = global::City_Center.Droid.Resource.Id.search_plate;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.search_src_text = global::City_Center.Droid.Resource.Id.search_src_text;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.search_voice_btn = global::City_Center.Droid.Resource.Id.search_voice_btn;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.select_dialog_listview = global::City_Center.Droid.Resource.Id.select_dialog_listview;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.shortcut = global::City_Center.Droid.Resource.Id.shortcut;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.showCustom = global::City_Center.Droid.Resource.Id.showCustom;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.showHome = global::City_Center.Droid.Resource.Id.showHome;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.showTitle = global::City_Center.Droid.Resource.Id.showTitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.smallLabel = global::City_Center.Droid.Resource.Id.smallLabel;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.snackbar_action = global::City_Center.Droid.Resource.Id.snackbar_action;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.snackbar_text = global::City_Center.Droid.Resource.Id.snackbar_text;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.snap = global::City_Center.Droid.Resource.Id.snap;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.spacer = global::City_Center.Droid.Resource.Id.spacer;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.split_action_bar = global::City_Center.Droid.Resource.Id.split_action_bar;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.src_atop = global::City_Center.Droid.Resource.Id.src_atop;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.src_in = global::City_Center.Droid.Resource.Id.src_in;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.src_over = global::City_Center.Droid.Resource.Id.src_over;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.start = global::City_Center.Droid.Resource.Id.start;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.status_bar_latest_event_content = global::City_Center.Droid.Resource.Id.status_bar_latest_event_content;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.submenuarrow = global::City_Center.Droid.Resource.Id.submenuarrow;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.submit_area = global::City_Center.Droid.Resource.Id.submit_area;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.tabMode = global::City_Center.Droid.Resource.Id.tabMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.text = global::City_Center.Droid.Resource.Id.text;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.text2 = global::City_Center.Droid.Resource.Id.text2;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.textSpacerNoButtons = global::City_Center.Droid.Resource.Id.textSpacerNoButtons;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.textSpacerNoTitle = global::City_Center.Droid.Resource.Id.textSpacerNoTitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.text_input_password_toggle = global::City_Center.Droid.Resource.Id.text_input_password_toggle;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.textinput_counter = global::City_Center.Droid.Resource.Id.textinput_counter;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.textinput_error = global::City_Center.Droid.Resource.Id.textinput_error;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.time = global::City_Center.Droid.Resource.Id.time;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.title = global::City_Center.Droid.Resource.Id.title;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.titleDividerNoCustom = global::City_Center.Droid.Resource.Id.titleDividerNoCustom;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.title_template = global::City_Center.Droid.Resource.Id.title_template;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.top = global::City_Center.Droid.Resource.Id.top;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.topPanel = global::City_Center.Droid.Resource.Id.topPanel;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.touch_outside = global::City_Center.Droid.Resource.Id.touch_outside;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.transition_current_scene = global::City_Center.Droid.Resource.Id.transition_current_scene;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.transition_scene_layoutid_cache = global::City_Center.Droid.Resource.Id.transition_scene_layoutid_cache;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.up = global::City_Center.Droid.Resource.Id.up;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.useLogo = global::City_Center.Droid.Resource.Id.useLogo;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.vertical = global::City_Center.Droid.Resource.Id.vertical;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.view_offset_helper = global::City_Center.Droid.Resource.Id.view_offset_helper;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.visible = global::City_Center.Droid.Resource.Id.visible;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.volume_item_container = global::City_Center.Droid.Resource.Id.volume_item_container;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.withText = global::City_Center.Droid.Resource.Id.withText;
-			global::CarouselView.FormsPlugin.Android.Resource.Id.wrap_content = global::City_Center.Droid.Resource.Id.wrap_content;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.abc_config_activityDefaultDur = global::City_Center.Droid.Resource.Integer.abc_config_activityDefaultDur;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.abc_config_activityShortDur = global::City_Center.Droid.Resource.Integer.abc_config_activityShortDur;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.app_bar_elevation_anim_duration = global::City_Center.Droid.Resource.Integer.app_bar_elevation_anim_duration;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.bottom_sheet_slide_duration = global::City_Center.Droid.Resource.Integer.bottom_sheet_slide_duration;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.cancel_button_image_alpha = global::City_Center.Droid.Resource.Integer.cancel_button_image_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.default_circle_indicator_orientation = global::City_Center.Droid.Resource.Integer.default_circle_indicator_orientation;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.design_snackbar_text_max_lines = global::City_Center.Droid.Resource.Integer.design_snackbar_text_max_lines;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.hide_password_duration = global::City_Center.Droid.Resource.Integer.hide_password_duration;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms = global::City_Center.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms = global::City_Center.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms = global::City_Center.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.show_password_duration = global::City_Center.Droid.Resource.Integer.show_password_duration;
-			global::CarouselView.FormsPlugin.Android.Resource.Integer.status_bar_notification_info_maxnum = global::City_Center.Droid.Resource.Integer.status_bar_notification_info_maxnum;
-			global::CarouselView.FormsPlugin.Android.Resource.Interpolator.mr_fast_out_slow_in = global::City_Center.Droid.Resource.Interpolator.mr_fast_out_slow_in;
-			global::CarouselView.FormsPlugin.Android.Resource.Interpolator.mr_linear_out_slow_in = global::City_Center.Droid.Resource.Interpolator.mr_linear_out_slow_in;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_action_bar_title_item = global::City_Center.Droid.Resource.Layout.abc_action_bar_title_item;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_action_bar_up_container = global::City_Center.Droid.Resource.Layout.abc_action_bar_up_container;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_action_menu_item_layout = global::City_Center.Droid.Resource.Layout.abc_action_menu_item_layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_action_menu_layout = global::City_Center.Droid.Resource.Layout.abc_action_menu_layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_action_mode_bar = global::City_Center.Droid.Resource.Layout.abc_action_mode_bar;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_action_mode_close_item_material = global::City_Center.Droid.Resource.Layout.abc_action_mode_close_item_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_activity_chooser_view = global::City_Center.Droid.Resource.Layout.abc_activity_chooser_view;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_activity_chooser_view_list_item = global::City_Center.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_alert_dialog_button_bar_material = global::City_Center.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_alert_dialog_material = global::City_Center.Droid.Resource.Layout.abc_alert_dialog_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_alert_dialog_title_material = global::City_Center.Droid.Resource.Layout.abc_alert_dialog_title_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_dialog_title_material = global::City_Center.Droid.Resource.Layout.abc_dialog_title_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_expanded_menu_layout = global::City_Center.Droid.Resource.Layout.abc_expanded_menu_layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_list_menu_item_checkbox = global::City_Center.Droid.Resource.Layout.abc_list_menu_item_checkbox;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_list_menu_item_icon = global::City_Center.Droid.Resource.Layout.abc_list_menu_item_icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_list_menu_item_layout = global::City_Center.Droid.Resource.Layout.abc_list_menu_item_layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_list_menu_item_radio = global::City_Center.Droid.Resource.Layout.abc_list_menu_item_radio;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_popup_menu_header_item_layout = global::City_Center.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_popup_menu_item_layout = global::City_Center.Droid.Resource.Layout.abc_popup_menu_item_layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_screen_content_include = global::City_Center.Droid.Resource.Layout.abc_screen_content_include;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_screen_simple = global::City_Center.Droid.Resource.Layout.abc_screen_simple;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_screen_simple_overlay_action_mode = global::City_Center.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_screen_toolbar = global::City_Center.Droid.Resource.Layout.abc_screen_toolbar;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_search_dropdown_item_icons_2line = global::City_Center.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_search_view = global::City_Center.Droid.Resource.Layout.abc_search_view;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.abc_select_dialog_material = global::City_Center.Droid.Resource.Layout.abc_select_dialog_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_bottom_navigation_item = global::City_Center.Droid.Resource.Layout.design_bottom_navigation_item;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_bottom_sheet_dialog = global::City_Center.Droid.Resource.Layout.design_bottom_sheet_dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_layout_snackbar = global::City_Center.Droid.Resource.Layout.design_layout_snackbar;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_layout_snackbar_include = global::City_Center.Droid.Resource.Layout.design_layout_snackbar_include;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_layout_tab_icon = global::City_Center.Droid.Resource.Layout.design_layout_tab_icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_layout_tab_text = global::City_Center.Droid.Resource.Layout.design_layout_tab_text;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_menu_item_action_area = global::City_Center.Droid.Resource.Layout.design_menu_item_action_area;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_navigation_item = global::City_Center.Droid.Resource.Layout.design_navigation_item;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_navigation_item_header = global::City_Center.Droid.Resource.Layout.design_navigation_item_header;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_navigation_item_separator = global::City_Center.Droid.Resource.Layout.design_navigation_item_separator;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_navigation_item_subheader = global::City_Center.Droid.Resource.Layout.design_navigation_item_subheader;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_navigation_menu = global::City_Center.Droid.Resource.Layout.design_navigation_menu;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_navigation_menu_item = global::City_Center.Droid.Resource.Layout.design_navigation_menu_item;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.design_text_input_password_icon = global::City_Center.Droid.Resource.Layout.design_text_input_password_icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.horizontal_viewpager = global::City_Center.Droid.Resource.Layout.horizontal_viewpager;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.mr_chooser_dialog = global::City_Center.Droid.Resource.Layout.mr_chooser_dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.mr_chooser_list_item = global::City_Center.Droid.Resource.Layout.mr_chooser_list_item;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.mr_controller_material_dialog_b = global::City_Center.Droid.Resource.Layout.mr_controller_material_dialog_b;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.mr_controller_volume_item = global::City_Center.Droid.Resource.Layout.mr_controller_volume_item;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.mr_playback_control = global::City_Center.Droid.Resource.Layout.mr_playback_control;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.mr_volume_control = global::City_Center.Droid.Resource.Layout.mr_volume_control;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_action = global::City_Center.Droid.Resource.Layout.notification_action;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_action_tombstone = global::City_Center.Droid.Resource.Layout.notification_action_tombstone;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_media_action = global::City_Center.Droid.Resource.Layout.notification_media_action;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_media_cancel_action = global::City_Center.Droid.Resource.Layout.notification_media_cancel_action;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_template_big_media = global::City_Center.Droid.Resource.Layout.notification_template_big_media;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_template_big_media_custom = global::City_Center.Droid.Resource.Layout.notification_template_big_media_custom;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_template_big_media_narrow = global::City_Center.Droid.Resource.Layout.notification_template_big_media_narrow;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_template_big_media_narrow_custom = global::City_Center.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_template_custom_big = global::City_Center.Droid.Resource.Layout.notification_template_custom_big;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_template_icon_group = global::City_Center.Droid.Resource.Layout.notification_template_icon_group;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_template_lines_media = global::City_Center.Droid.Resource.Layout.notification_template_lines_media;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_template_media = global::City_Center.Droid.Resource.Layout.notification_template_media;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_template_media_custom = global::City_Center.Droid.Resource.Layout.notification_template_media_custom;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_template_part_chronometer = global::City_Center.Droid.Resource.Layout.notification_template_part_chronometer;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.notification_template_part_time = global::City_Center.Droid.Resource.Layout.notification_template_part_time;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.select_dialog_item_material = global::City_Center.Droid.Resource.Layout.select_dialog_item_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.select_dialog_multichoice_material = global::City_Center.Droid.Resource.Layout.select_dialog_multichoice_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.select_dialog_singlechoice_material = global::City_Center.Droid.Resource.Layout.select_dialog_singlechoice_material;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.support_simple_spinner_dropdown_item = global::City_Center.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
-			global::CarouselView.FormsPlugin.Android.Resource.Layout.vertical_viewpager = global::City_Center.Droid.Resource.Layout.vertical_viewpager;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_action_bar_home_description = global::City_Center.Droid.Resource.String.abc_action_bar_home_description;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_action_bar_up_description = global::City_Center.Droid.Resource.String.abc_action_bar_up_description;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_action_menu_overflow_description = global::City_Center.Droid.Resource.String.abc_action_menu_overflow_description;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_action_mode_done = global::City_Center.Droid.Resource.String.abc_action_mode_done;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_activity_chooser_view_see_all = global::City_Center.Droid.Resource.String.abc_activity_chooser_view_see_all;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_activitychooserview_choose_application = global::City_Center.Droid.Resource.String.abc_activitychooserview_choose_application;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_capital_off = global::City_Center.Droid.Resource.String.abc_capital_off;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_capital_on = global::City_Center.Droid.Resource.String.abc_capital_on;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_body_1_material = global::City_Center.Droid.Resource.String.abc_font_family_body_1_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_body_2_material = global::City_Center.Droid.Resource.String.abc_font_family_body_2_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_button_material = global::City_Center.Droid.Resource.String.abc_font_family_button_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_caption_material = global::City_Center.Droid.Resource.String.abc_font_family_caption_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_display_1_material = global::City_Center.Droid.Resource.String.abc_font_family_display_1_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_display_2_material = global::City_Center.Droid.Resource.String.abc_font_family_display_2_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_display_3_material = global::City_Center.Droid.Resource.String.abc_font_family_display_3_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_display_4_material = global::City_Center.Droid.Resource.String.abc_font_family_display_4_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_headline_material = global::City_Center.Droid.Resource.String.abc_font_family_headline_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_menu_material = global::City_Center.Droid.Resource.String.abc_font_family_menu_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_subhead_material = global::City_Center.Droid.Resource.String.abc_font_family_subhead_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_font_family_title_material = global::City_Center.Droid.Resource.String.abc_font_family_title_material;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_search_hint = global::City_Center.Droid.Resource.String.abc_search_hint;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_searchview_description_clear = global::City_Center.Droid.Resource.String.abc_searchview_description_clear;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_searchview_description_query = global::City_Center.Droid.Resource.String.abc_searchview_description_query;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_searchview_description_search = global::City_Center.Droid.Resource.String.abc_searchview_description_search;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_searchview_description_submit = global::City_Center.Droid.Resource.String.abc_searchview_description_submit;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_searchview_description_voice = global::City_Center.Droid.Resource.String.abc_searchview_description_voice;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_shareactionprovider_share_with = global::City_Center.Droid.Resource.String.abc_shareactionprovider_share_with;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_shareactionprovider_share_with_application = global::City_Center.Droid.Resource.String.abc_shareactionprovider_share_with_application;
-			global::CarouselView.FormsPlugin.Android.Resource.String.abc_toolbar_collapse_description = global::City_Center.Droid.Resource.String.abc_toolbar_collapse_description;
-			global::CarouselView.FormsPlugin.Android.Resource.String.appbar_scrolling_view_behavior = global::City_Center.Droid.Resource.String.appbar_scrolling_view_behavior;
-			global::CarouselView.FormsPlugin.Android.Resource.String.bottom_sheet_behavior = global::City_Center.Droid.Resource.String.bottom_sheet_behavior;
-			global::CarouselView.FormsPlugin.Android.Resource.String.character_counter_pattern = global::City_Center.Droid.Resource.String.character_counter_pattern;
-			global::CarouselView.FormsPlugin.Android.Resource.String.library_name = global::City_Center.Droid.Resource.String.library_name;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_button_content_description = global::City_Center.Droid.Resource.String.mr_button_content_description;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_cast_button_connected = global::City_Center.Droid.Resource.String.mr_cast_button_connected;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_cast_button_connecting = global::City_Center.Droid.Resource.String.mr_cast_button_connecting;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_cast_button_disconnected = global::City_Center.Droid.Resource.String.mr_cast_button_disconnected;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_chooser_searching = global::City_Center.Droid.Resource.String.mr_chooser_searching;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_chooser_title = global::City_Center.Droid.Resource.String.mr_chooser_title;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_album_art = global::City_Center.Droid.Resource.String.mr_controller_album_art;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_casting_screen = global::City_Center.Droid.Resource.String.mr_controller_casting_screen;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_close_description = global::City_Center.Droid.Resource.String.mr_controller_close_description;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_collapse_group = global::City_Center.Droid.Resource.String.mr_controller_collapse_group;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_disconnect = global::City_Center.Droid.Resource.String.mr_controller_disconnect;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_expand_group = global::City_Center.Droid.Resource.String.mr_controller_expand_group;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_no_info_available = global::City_Center.Droid.Resource.String.mr_controller_no_info_available;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_no_media_selected = global::City_Center.Droid.Resource.String.mr_controller_no_media_selected;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_pause = global::City_Center.Droid.Resource.String.mr_controller_pause;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_play = global::City_Center.Droid.Resource.String.mr_controller_play;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_stop = global::City_Center.Droid.Resource.String.mr_controller_stop;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_stop_casting = global::City_Center.Droid.Resource.String.mr_controller_stop_casting;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_controller_volume_slider = global::City_Center.Droid.Resource.String.mr_controller_volume_slider;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_system_route_name = global::City_Center.Droid.Resource.String.mr_system_route_name;
-			global::CarouselView.FormsPlugin.Android.Resource.String.mr_user_route_category_name = global::City_Center.Droid.Resource.String.mr_user_route_category_name;
-			global::CarouselView.FormsPlugin.Android.Resource.String.password_toggle_content_description = global::City_Center.Droid.Resource.String.password_toggle_content_description;
-			global::CarouselView.FormsPlugin.Android.Resource.String.path_password_eye = global::City_Center.Droid.Resource.String.path_password_eye;
-			global::CarouselView.FormsPlugin.Android.Resource.String.path_password_eye_mask_strike_through = global::City_Center.Droid.Resource.String.path_password_eye_mask_strike_through;
-			global::CarouselView.FormsPlugin.Android.Resource.String.path_password_eye_mask_visible = global::City_Center.Droid.Resource.String.path_password_eye_mask_visible;
-			global::CarouselView.FormsPlugin.Android.Resource.String.path_password_strike_through = global::City_Center.Droid.Resource.String.path_password_strike_through;
-			global::CarouselView.FormsPlugin.Android.Resource.String.search_menu_title = global::City_Center.Droid.Resource.String.search_menu_title;
-			global::CarouselView.FormsPlugin.Android.Resource.String.status_bar_notification_info_overflow = global::City_Center.Droid.Resource.String.status_bar_notification_info_overflow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.AlertDialog_AppCompat = global::City_Center.Droid.Resource.Style.AlertDialog_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.AlertDialog_AppCompat_Light = global::City_Center.Droid.Resource.Style.AlertDialog_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Animation_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.Animation_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Animation_AppCompat_DropDownUp = global::City_Center.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Animation_Design_BottomSheetDialog = global::City_Center.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_AlertDialog_AppCompat = global::City_Center.Droid.Resource.Style.Base_AlertDialog_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_AlertDialog_AppCompat_Light = global::City_Center.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Animation_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::City_Center.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_CardView = global::City_Center.Droid.Resource.Style.Base_CardView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_DialogWindowTitle_AppCompat = global::City_Center.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::City_Center.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Button = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Large = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Small = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Title = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::City_Center.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::City_Center.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::City_Center.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::City_Center.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_Light = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::City_Center.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_ThemeOverlay_AppCompat = global::City_Center.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::City_Center.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::City_Center.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::City_Center.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::City_Center.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::City_Center.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::City_Center.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::City_Center.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::City_Center.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V21_Theme_AppCompat = global::City_Center.Droid.Resource.Style.Base_V21_Theme_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V21_Theme_AppCompat_Light = global::City_Center.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::City_Center.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V22_Theme_AppCompat = global::City_Center.Droid.Resource.Style.Base_V22_Theme_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V22_Theme_AppCompat_Light = global::City_Center.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V23_Theme_AppCompat = global::City_Center.Droid.Resource.Style.Base_V23_Theme_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V23_Theme_AppCompat_Light = global::City_Center.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V7_Theme_AppCompat = global::City_Center.Droid.Resource.Style.Base_V7_Theme_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V7_Theme_AppCompat_Light = global::City_Center.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::City_Center.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::City_Center.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::City_Center.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ActionBar = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ActionButton = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ActionMode = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Button = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Button;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Button_Small = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_EditText = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ImageButton = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ListView = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_RatingBar = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_SearchView = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_SeekBar = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Spinner = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Toolbar = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::City_Center.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_Design_AppBarLayout = global::City_Center.Droid.Resource.Style.Base_Widget_Design_AppBarLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Base_Widget_Design_TabLayout = global::City_Center.Droid.Resource.Style.Base_Widget_Design_TabLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.CardView = global::City_Center.Droid.Resource.Style.CardView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.CardView_Dark = global::City_Center.Droid.Resource.Style.CardView_Dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.CardView_Light = global::City_Center.Droid.Resource.Style.CardView_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_AppCompat = global::City_Center.Droid.Resource.Style.Platform_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_AppCompat_Light = global::City_Center.Droid.Resource.Style.Platform_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_ThemeOverlay_AppCompat = global::City_Center.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::City_Center.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::City_Center.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_V11_AppCompat = global::City_Center.Droid.Resource.Style.Platform_V11_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_V11_AppCompat_Light = global::City_Center.Droid.Resource.Style.Platform_V11_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_V14_AppCompat = global::City_Center.Droid.Resource.Style.Platform_V14_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_V14_AppCompat_Light = global::City_Center.Droid.Resource.Style.Platform_V14_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_V21_AppCompat = global::City_Center.Droid.Resource.Style.Platform_V21_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_V21_AppCompat_Light = global::City_Center.Droid.Resource.Style.Platform_V21_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_V25_AppCompat = global::City_Center.Droid.Resource.Style.Platform_V25_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_V25_AppCompat_Light = global::City_Center.Droid.Resource.Style.Platform_V25_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Platform_Widget_AppCompat_Spinner = global::City_Center.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::City_Center.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::City_Center.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::City_Center.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::City_Center.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::City_Center.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::City_Center.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::City_Center.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::City_Center.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::City_Center.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::City_Center.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::City_Center.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::City_Center.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::City_Center.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::City_Center.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Body1 = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Body2 = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Button = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Button;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Caption = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Display1 = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Display2 = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Display3 = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Display4 = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Headline = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Inverse = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Large = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Large;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Medium = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Menu = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Small = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Small;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Subhead = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Title = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::City_Center.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::City_Center.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Design_Counter = global::City_Center.Droid.Resource.Style.TextAppearance_Design_Counter;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Design_Counter_Overflow = global::City_Center.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Design_Error = global::City_Center.Droid.Resource.Style.TextAppearance_Design_Error;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Design_Hint = global::City_Center.Droid.Resource.Style.TextAppearance_Design_Hint;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Design_Snackbar_Message = global::City_Center.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Design_Tab = global::City_Center.Droid.Resource.Style.TextAppearance_Design_Tab;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_MediaRouter_PrimaryText = global::City_Center.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_MediaRouter_SecondaryText = global::City_Center.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_MediaRouter_Title = global::City_Center.Droid.Resource.Style.TextAppearance_MediaRouter_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::City_Center.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::City_Center.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::City_Center.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat = global::City_Center.Droid.Resource.Style.Theme_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_CompactMenu = global::City_Center.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_DayNight = global::City_Center.Droid.Resource.Style.Theme_AppCompat_DayNight;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::City_Center.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::City_Center.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::City_Center.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::City_Center.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::City_Center.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::City_Center.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.Theme_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_Dialog_Alert = global::City_Center.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::City_Center.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::City_Center.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_Light = global::City_Center.Droid.Resource.Style.Theme_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::City_Center.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_Light_Dialog = global::City_Center.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::City_Center.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::City_Center.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::City_Center.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::City_Center.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_AppCompat_NoActionBar = global::City_Center.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_Design = global::City_Center.Droid.Resource.Style.Theme_Design;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_Design_BottomSheetDialog = global::City_Center.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_Design_Light = global::City_Center.Droid.Resource.Style.Theme_Design_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::City_Center.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_Design_Light_NoActionBar = global::City_Center.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_Design_NoActionBar = global::City_Center.Droid.Resource.Style.Theme_Design_NoActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_MediaRouter = global::City_Center.Droid.Resource.Style.Theme_MediaRouter;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_MediaRouter_Light = global::City_Center.Droid.Resource.Style.Theme_MediaRouter_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel = global::City_Center.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_MediaRouter_LightControlPanel = global::City_Center.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Theme_PageIndicatorDefaults = global::City_Center.Droid.Resource.Style.Theme_PageIndicatorDefaults;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.ThemeOverlay_AppCompat = global::City_Center.Droid.Resource.Style.ThemeOverlay_AppCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::City_Center.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.ThemeOverlay_AppCompat_Dark = global::City_Center.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::City_Center.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::City_Center.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::City_Center.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.ThemeOverlay_AppCompat_Light = global::City_Center.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.ThemeOverlay_MediaRouter_Dark = global::City_Center.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.ThemeOverlay_MediaRouter_Light = global::City_Center.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget = global::City_Center.Droid.Resource.Style.Widget;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ActionBar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ActionButton = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ActionButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ActionMode = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ActionMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ActivityChooserView = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::City_Center.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Button = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Button;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Button_Borderless = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Button_Colored = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Button_Small = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Button_Small;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ButtonBar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::City_Center.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::City_Center.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::City_Center.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::City_Center.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::City_Center.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_EditText = global::City_Center.Droid.Resource.Style.Widget_AppCompat_EditText;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ImageButton = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ImageButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionBar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionButton = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_SearchView = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ListMenuView = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ListPopupWindow = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ListView = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ListView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ListView_DropDown = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ListView_Menu = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_PopupMenu = global::City_Center.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::City_Center.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_PopupWindow = global::City_Center.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ProgressBar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::City_Center.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_RatingBar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_RatingBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::City_Center.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_RatingBar_Small = global::City_Center.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_SearchView = global::City_Center.Droid.Resource.Style.Widget_AppCompat_SearchView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_SeekBar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_SeekBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::City_Center.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Spinner = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Spinner;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::City_Center.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Toolbar = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Toolbar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::City_Center.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_CirclePageIndicator = global::City_Center.Droid.Resource.Style.Widget_CirclePageIndicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_Design_AppBarLayout = global::City_Center.Droid.Resource.Style.Widget_Design_AppBarLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_Design_BottomNavigationView = global::City_Center.Droid.Resource.Style.Widget_Design_BottomNavigationView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_Design_BottomSheet_Modal = global::City_Center.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_Design_CollapsingToolbar = global::City_Center.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_Design_CoordinatorLayout = global::City_Center.Droid.Resource.Style.Widget_Design_CoordinatorLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_Design_FloatingActionButton = global::City_Center.Droid.Resource.Style.Widget_Design_FloatingActionButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_Design_NavigationView = global::City_Center.Droid.Resource.Style.Widget_Design_NavigationView;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::City_Center.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_Design_Snackbar = global::City_Center.Droid.Resource.Style.Widget_Design_Snackbar;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_Design_TabLayout = global::City_Center.Droid.Resource.Style.Widget_Design_TabLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_Design_TextInputLayout = global::City_Center.Droid.Resource.Style.Widget_Design_TextInputLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton = global::City_Center.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_MediaRouter_MediaRouteButton = global::City_Center.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar = global::City_Center.Droid.Resource.Styleable.ActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_background = global::City_Center.Droid.Resource.Styleable.ActionBar_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_backgroundSplit = global::City_Center.Droid.Resource.Styleable.ActionBar_backgroundSplit;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_backgroundStacked = global::City_Center.Droid.Resource.Styleable.ActionBar_backgroundStacked;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_contentInsetEnd = global::City_Center.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::City_Center.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_contentInsetLeft = global::City_Center.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_contentInsetRight = global::City_Center.Droid.Resource.Styleable.ActionBar_contentInsetRight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_contentInsetStart = global::City_Center.Droid.Resource.Styleable.ActionBar_contentInsetStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::City_Center.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_customNavigationLayout = global::City_Center.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_displayOptions = global::City_Center.Droid.Resource.Styleable.ActionBar_displayOptions;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_divider = global::City_Center.Droid.Resource.Styleable.ActionBar_divider;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_elevation = global::City_Center.Droid.Resource.Styleable.ActionBar_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_height = global::City_Center.Droid.Resource.Styleable.ActionBar_height;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_hideOnContentScroll = global::City_Center.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_homeAsUpIndicator = global::City_Center.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_homeLayout = global::City_Center.Droid.Resource.Styleable.ActionBar_homeLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_icon = global::City_Center.Droid.Resource.Styleable.ActionBar_icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::City_Center.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_itemPadding = global::City_Center.Droid.Resource.Styleable.ActionBar_itemPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_logo = global::City_Center.Droid.Resource.Styleable.ActionBar_logo;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_navigationMode = global::City_Center.Droid.Resource.Styleable.ActionBar_navigationMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_popupTheme = global::City_Center.Droid.Resource.Styleable.ActionBar_popupTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_progressBarPadding = global::City_Center.Droid.Resource.Styleable.ActionBar_progressBarPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_progressBarStyle = global::City_Center.Droid.Resource.Styleable.ActionBar_progressBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_subtitle = global::City_Center.Droid.Resource.Styleable.ActionBar_subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_subtitleTextStyle = global::City_Center.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_title = global::City_Center.Droid.Resource.Styleable.ActionBar_title;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBar_titleTextStyle = global::City_Center.Droid.Resource.Styleable.ActionBar_titleTextStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBarLayout = global::City_Center.Droid.Resource.Styleable.ActionBarLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::City_Center.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionMenuItemView = global::City_Center.Droid.Resource.Styleable.ActionMenuItemView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionMenuItemView_android_minWidth = global::City_Center.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionMenuView = global::City_Center.Droid.Resource.Styleable.ActionMenuView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionMode = global::City_Center.Droid.Resource.Styleable.ActionMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionMode_background = global::City_Center.Droid.Resource.Styleable.ActionMode_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionMode_backgroundSplit = global::City_Center.Droid.Resource.Styleable.ActionMode_backgroundSplit;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionMode_closeItemLayout = global::City_Center.Droid.Resource.Styleable.ActionMode_closeItemLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionMode_height = global::City_Center.Droid.Resource.Styleable.ActionMode_height;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionMode_subtitleTextStyle = global::City_Center.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActionMode_titleTextStyle = global::City_Center.Droid.Resource.Styleable.ActionMode_titleTextStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActivityChooserView = global::City_Center.Droid.Resource.Styleable.ActivityChooserView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::City_Center.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ActivityChooserView_initialActivityCount = global::City_Center.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AlertDialog = global::City_Center.Droid.Resource.Styleable.AlertDialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AlertDialog_android_layout = global::City_Center.Droid.Resource.Styleable.AlertDialog_android_layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::City_Center.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AlertDialog_listItemLayout = global::City_Center.Droid.Resource.Styleable.AlertDialog_listItemLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AlertDialog_listLayout = global::City_Center.Droid.Resource.Styleable.AlertDialog_listLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::City_Center.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AlertDialog_showTitle = global::City_Center.Droid.Resource.Styleable.AlertDialog_showTitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::City_Center.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppBarLayout = global::City_Center.Droid.Resource.Styleable.AppBarLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppBarLayout_android_background = global::City_Center.Droid.Resource.Styleable.AppBarLayout_android_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppBarLayout_elevation = global::City_Center.Droid.Resource.Styleable.AppBarLayout_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppBarLayout_expanded = global::City_Center.Droid.Resource.Styleable.AppBarLayout_expanded;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppBarLayoutStates = global::City_Center.Droid.Resource.Styleable.AppBarLayoutStates;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::City_Center.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::City_Center.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppBarLayout_Layout = global::City_Center.Droid.Resource.Styleable.AppBarLayout_Layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::City_Center.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::City_Center.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatImageView = global::City_Center.Droid.Resource.Styleable.AppCompatImageView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatImageView_android_src = global::City_Center.Droid.Resource.Styleable.AppCompatImageView_android_src;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatImageView_srcCompat = global::City_Center.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatImageView_tint = global::City_Center.Droid.Resource.Styleable.AppCompatImageView_tint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatImageView_tintMode = global::City_Center.Droid.Resource.Styleable.AppCompatImageView_tintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatSeekBar = global::City_Center.Droid.Resource.Styleable.AppCompatSeekBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatSeekBar_android_thumb = global::City_Center.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatSeekBar_tickMark = global::City_Center.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::City_Center.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::City_Center.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTextHelper = global::City_Center.Droid.Resource.Styleable.AppCompatTextHelper;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::City_Center.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::City_Center.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::City_Center.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::City_Center.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::City_Center.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::City_Center.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::City_Center.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTextView = global::City_Center.Droid.Resource.Styleable.AppCompatTextView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTextView_android_textAppearance = global::City_Center.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTextView_textAllCaps = global::City_Center.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme = global::City_Center.Droid.Resource.Styleable.AppCompatTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionBarDivider = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionBarSize = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionBarStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionBarTheme = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModeBackground = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModeStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_buttonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_checkboxStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_colorAccent = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_colorControlActivated = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_colorControlNormal = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_colorPrimary = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_controlBackground = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_dialogTheme = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_dividerVertical = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_editTextBackground = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_editTextColor = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_editTextStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_panelBackground = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_searchViewStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_seekBarStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_spinnerStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_switchStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_toolbarStyle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_windowActionBar = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.AppCompatTheme_windowNoTitle = global::City_Center.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.BottomNavigationView = global::City_Center.Droid.Resource.Styleable.BottomNavigationView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.BottomNavigationView_elevation = global::City_Center.Droid.Resource.Styleable.BottomNavigationView_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.BottomNavigationView_itemBackground = global::City_Center.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.BottomNavigationView_itemIconTint = global::City_Center.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.BottomNavigationView_itemTextColor = global::City_Center.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.BottomNavigationView_menu = global::City_Center.Droid.Resource.Styleable.BottomNavigationView_menu;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.BottomSheetBehavior_Layout = global::City_Center.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::City_Center.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::City_Center.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::City_Center.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ButtonBarLayout = global::City_Center.Droid.Resource.Styleable.ButtonBarLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ButtonBarLayout_allowStacking = global::City_Center.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView = global::City_Center.Droid.Resource.Styleable.CardView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_android_minHeight = global::City_Center.Droid.Resource.Styleable.CardView_android_minHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_android_minWidth = global::City_Center.Droid.Resource.Styleable.CardView_android_minWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_cardBackgroundColor = global::City_Center.Droid.Resource.Styleable.CardView_cardBackgroundColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_cardCornerRadius = global::City_Center.Droid.Resource.Styleable.CardView_cardCornerRadius;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_cardElevation = global::City_Center.Droid.Resource.Styleable.CardView_cardElevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_cardMaxElevation = global::City_Center.Droid.Resource.Styleable.CardView_cardMaxElevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_cardPreventCornerOverlap = global::City_Center.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_cardUseCompatPadding = global::City_Center.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_contentPadding = global::City_Center.Droid.Resource.Styleable.CardView_contentPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_contentPaddingBottom = global::City_Center.Droid.Resource.Styleable.CardView_contentPaddingBottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_contentPaddingLeft = global::City_Center.Droid.Resource.Styleable.CardView_contentPaddingLeft;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_contentPaddingRight = global::City_Center.Droid.Resource.Styleable.CardView_contentPaddingRight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CardView_contentPaddingTop = global::City_Center.Droid.Resource.Styleable.CardView_contentPaddingTop;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CirclePageIndicator = global::City_Center.Droid.Resource.Styleable.CirclePageIndicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CirclePageIndicator_vpiCentered = global::City_Center.Droid.Resource.Styleable.CirclePageIndicator_vpiCentered;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CirclePageIndicator_vpiFillColor = global::City_Center.Droid.Resource.Styleable.CirclePageIndicator_vpiFillColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CirclePageIndicator_vpiOrientation = global::City_Center.Droid.Resource.Styleable.CirclePageIndicator_vpiOrientation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CirclePageIndicator_vpiPageColor = global::City_Center.Droid.Resource.Styleable.CirclePageIndicator_vpiPageColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CirclePageIndicator_vpiRadius = global::City_Center.Droid.Resource.Styleable.CirclePageIndicator_vpiRadius;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CirclePageIndicator_vpiSnap = global::City_Center.Droid.Resource.Styleable.CirclePageIndicator_vpiSnap;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CirclePageIndicator_vpiStrokeColor = global::City_Center.Droid.Resource.Styleable.CirclePageIndicator_vpiStrokeColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CirclePageIndicator_vpiStrokeWidth = global::City_Center.Droid.Resource.Styleable.CirclePageIndicator_vpiStrokeWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_title = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_Layout = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::City_Center.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ColorStateListItem = global::City_Center.Droid.Resource.Styleable.ColorStateListItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ColorStateListItem_alpha = global::City_Center.Droid.Resource.Styleable.ColorStateListItem_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ColorStateListItem_android_alpha = global::City_Center.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ColorStateListItem_android_color = global::City_Center.Droid.Resource.Styleable.ColorStateListItem_android_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CompoundButton = global::City_Center.Droid.Resource.Styleable.CompoundButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CompoundButton_android_button = global::City_Center.Droid.Resource.Styleable.CompoundButton_android_button;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CompoundButton_buttonTint = global::City_Center.Droid.Resource.Styleable.CompoundButton_buttonTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CompoundButton_buttonTintMode = global::City_Center.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CoordinatorLayout = global::City_Center.Droid.Resource.Styleable.CoordinatorLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CoordinatorLayout_keylines = global::City_Center.Droid.Resource.Styleable.CoordinatorLayout_keylines;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::City_Center.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CoordinatorLayout_Layout = global::City_Center.Droid.Resource.Styleable.CoordinatorLayout_Layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::City_Center.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::City_Center.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::City_Center.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::City_Center.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::City_Center.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::City_Center.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::City_Center.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DesignTheme = global::City_Center.Droid.Resource.Styleable.DesignTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::City_Center.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DesignTheme_bottomSheetStyle = global::City_Center.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DesignTheme_textColorError = global::City_Center.Droid.Resource.Styleable.DesignTheme_textColorError;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DrawerArrowToggle = global::City_Center.Droid.Resource.Styleable.DrawerArrowToggle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::City_Center.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::City_Center.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DrawerArrowToggle_barLength = global::City_Center.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DrawerArrowToggle_color = global::City_Center.Droid.Resource.Styleable.DrawerArrowToggle_color;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DrawerArrowToggle_drawableSize = global::City_Center.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::City_Center.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DrawerArrowToggle_spinBars = global::City_Center.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.DrawerArrowToggle_thickness = global::City_Center.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.FloatingActionButton = global::City_Center.Droid.Resource.Styleable.FloatingActionButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.FloatingActionButton_backgroundTint = global::City_Center.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::City_Center.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.FloatingActionButton_borderWidth = global::City_Center.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.FloatingActionButton_elevation = global::City_Center.Droid.Resource.Styleable.FloatingActionButton_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.FloatingActionButton_fabSize = global::City_Center.Droid.Resource.Styleable.FloatingActionButton_fabSize;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::City_Center.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.FloatingActionButton_rippleColor = global::City_Center.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.FloatingActionButton_useCompatPadding = global::City_Center.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::City_Center.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::City_Center.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ForegroundLinearLayout = global::City_Center.Droid.Resource.Styleable.ForegroundLinearLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::City_Center.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::City_Center.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::City_Center.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_android_gravity = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_android_orientation = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_divider = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_divider;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_showDividers = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_Layout = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::City_Center.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ListPopupWindow = global::City_Center.Droid.Resource.Styleable.ListPopupWindow;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::City_Center.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::City_Center.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MediaRouteButton = global::City_Center.Droid.Resource.Styleable.MediaRouteButton;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MediaRouteButton_android_minHeight = global::City_Center.Droid.Resource.Styleable.MediaRouteButton_android_minHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MediaRouteButton_android_minWidth = global::City_Center.Droid.Resource.Styleable.MediaRouteButton_android_minWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable = global::City_Center.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuGroup = global::City_Center.Droid.Resource.Styleable.MenuGroup;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuGroup_android_checkableBehavior = global::City_Center.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuGroup_android_enabled = global::City_Center.Droid.Resource.Styleable.MenuGroup_android_enabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuGroup_android_id = global::City_Center.Droid.Resource.Styleable.MenuGroup_android_id;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuGroup_android_menuCategory = global::City_Center.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuGroup_android_orderInCategory = global::City_Center.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuGroup_android_visible = global::City_Center.Droid.Resource.Styleable.MenuGroup_android_visible;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem = global::City_Center.Droid.Resource.Styleable.MenuItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_actionLayout = global::City_Center.Droid.Resource.Styleable.MenuItem_actionLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_actionProviderClass = global::City_Center.Droid.Resource.Styleable.MenuItem_actionProviderClass;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_actionViewClass = global::City_Center.Droid.Resource.Styleable.MenuItem_actionViewClass;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::City_Center.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_checkable = global::City_Center.Droid.Resource.Styleable.MenuItem_android_checkable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_checked = global::City_Center.Droid.Resource.Styleable.MenuItem_android_checked;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_enabled = global::City_Center.Droid.Resource.Styleable.MenuItem_android_enabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_icon = global::City_Center.Droid.Resource.Styleable.MenuItem_android_icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_id = global::City_Center.Droid.Resource.Styleable.MenuItem_android_id;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_menuCategory = global::City_Center.Droid.Resource.Styleable.MenuItem_android_menuCategory;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_numericShortcut = global::City_Center.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_onClick = global::City_Center.Droid.Resource.Styleable.MenuItem_android_onClick;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_orderInCategory = global::City_Center.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_title = global::City_Center.Droid.Resource.Styleable.MenuItem_android_title;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_titleCondensed = global::City_Center.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_android_visible = global::City_Center.Droid.Resource.Styleable.MenuItem_android_visible;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuItem_showAsAction = global::City_Center.Droid.Resource.Styleable.MenuItem_showAsAction;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuView = global::City_Center.Droid.Resource.Styleable.MenuView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuView_android_headerBackground = global::City_Center.Droid.Resource.Styleable.MenuView_android_headerBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuView_android_horizontalDivider = global::City_Center.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuView_android_itemBackground = global::City_Center.Droid.Resource.Styleable.MenuView_android_itemBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::City_Center.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuView_android_itemTextAppearance = global::City_Center.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuView_android_verticalDivider = global::City_Center.Droid.Resource.Styleable.MenuView_android_verticalDivider;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuView_android_windowAnimationStyle = global::City_Center.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuView_preserveIconSpacing = global::City_Center.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuView_subMenuArrow = global::City_Center.Droid.Resource.Styleable.MenuView_subMenuArrow;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.NavigationView = global::City_Center.Droid.Resource.Styleable.NavigationView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.NavigationView_android_background = global::City_Center.Droid.Resource.Styleable.NavigationView_android_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::City_Center.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.NavigationView_android_maxWidth = global::City_Center.Droid.Resource.Styleable.NavigationView_android_maxWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.NavigationView_elevation = global::City_Center.Droid.Resource.Styleable.NavigationView_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.NavigationView_headerLayout = global::City_Center.Droid.Resource.Styleable.NavigationView_headerLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.NavigationView_itemBackground = global::City_Center.Droid.Resource.Styleable.NavigationView_itemBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.NavigationView_itemIconTint = global::City_Center.Droid.Resource.Styleable.NavigationView_itemIconTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.NavigationView_itemTextAppearance = global::City_Center.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.NavigationView_itemTextColor = global::City_Center.Droid.Resource.Styleable.NavigationView_itemTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.NavigationView_menu = global::City_Center.Droid.Resource.Styleable.NavigationView_menu;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.PopupWindow = global::City_Center.Droid.Resource.Styleable.PopupWindow;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::City_Center.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.PopupWindow_android_popupBackground = global::City_Center.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.PopupWindow_overlapAnchor = global::City_Center.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.PopupWindowBackgroundState = global::City_Center.Droid.Resource.Styleable.PopupWindowBackgroundState;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::City_Center.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.RecycleListView = global::City_Center.Droid.Resource.Styleable.RecycleListView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::City_Center.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::City_Center.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.RecyclerView = global::City_Center.Droid.Resource.Styleable.RecyclerView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.RecyclerView_android_descendantFocusability = global::City_Center.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.RecyclerView_android_orientation = global::City_Center.Droid.Resource.Styleable.RecyclerView_android_orientation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.RecyclerView_layoutManager = global::City_Center.Droid.Resource.Styleable.RecyclerView_layoutManager;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.RecyclerView_reverseLayout = global::City_Center.Droid.Resource.Styleable.RecyclerView_reverseLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.RecyclerView_spanCount = global::City_Center.Droid.Resource.Styleable.RecyclerView_spanCount;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.RecyclerView_stackFromEnd = global::City_Center.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ScrimInsetsFrameLayout = global::City_Center.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::City_Center.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ScrollingViewBehavior_Layout = global::City_Center.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::City_Center.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView = global::City_Center.Droid.Resource.Styleable.SearchView;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_android_focusable = global::City_Center.Droid.Resource.Styleable.SearchView_android_focusable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_android_imeOptions = global::City_Center.Droid.Resource.Styleable.SearchView_android_imeOptions;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_android_inputType = global::City_Center.Droid.Resource.Styleable.SearchView_android_inputType;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_android_maxWidth = global::City_Center.Droid.Resource.Styleable.SearchView_android_maxWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_closeIcon = global::City_Center.Droid.Resource.Styleable.SearchView_closeIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_commitIcon = global::City_Center.Droid.Resource.Styleable.SearchView_commitIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_defaultQueryHint = global::City_Center.Droid.Resource.Styleable.SearchView_defaultQueryHint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_goIcon = global::City_Center.Droid.Resource.Styleable.SearchView_goIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_iconifiedByDefault = global::City_Center.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_layout = global::City_Center.Droid.Resource.Styleable.SearchView_layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_queryBackground = global::City_Center.Droid.Resource.Styleable.SearchView_queryBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_queryHint = global::City_Center.Droid.Resource.Styleable.SearchView_queryHint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_searchHintIcon = global::City_Center.Droid.Resource.Styleable.SearchView_searchHintIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_searchIcon = global::City_Center.Droid.Resource.Styleable.SearchView_searchIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_submitBackground = global::City_Center.Droid.Resource.Styleable.SearchView_submitBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_suggestionRowLayout = global::City_Center.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SearchView_voiceIcon = global::City_Center.Droid.Resource.Styleable.SearchView_voiceIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SnackbarLayout = global::City_Center.Droid.Resource.Styleable.SnackbarLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SnackbarLayout_android_maxWidth = global::City_Center.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SnackbarLayout_elevation = global::City_Center.Droid.Resource.Styleable.SnackbarLayout_elevation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::City_Center.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Spinner = global::City_Center.Droid.Resource.Styleable.Spinner;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Spinner_android_dropDownWidth = global::City_Center.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Spinner_android_entries = global::City_Center.Droid.Resource.Styleable.Spinner_android_entries;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Spinner_android_popupBackground = global::City_Center.Droid.Resource.Styleable.Spinner_android_popupBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Spinner_android_prompt = global::City_Center.Droid.Resource.Styleable.Spinner_android_prompt;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Spinner_popupTheme = global::City_Center.Droid.Resource.Styleable.Spinner_popupTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat = global::City_Center.Droid.Resource.Styleable.SwitchCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_android_textOff = global::City_Center.Droid.Resource.Styleable.SwitchCompat_android_textOff;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_android_textOn = global::City_Center.Droid.Resource.Styleable.SwitchCompat_android_textOn;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_android_thumb = global::City_Center.Droid.Resource.Styleable.SwitchCompat_android_thumb;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_showText = global::City_Center.Droid.Resource.Styleable.SwitchCompat_showText;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_splitTrack = global::City_Center.Droid.Resource.Styleable.SwitchCompat_splitTrack;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_switchMinWidth = global::City_Center.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_switchPadding = global::City_Center.Droid.Resource.Styleable.SwitchCompat_switchPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_switchTextAppearance = global::City_Center.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_thumbTextPadding = global::City_Center.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_thumbTint = global::City_Center.Droid.Resource.Styleable.SwitchCompat_thumbTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_thumbTintMode = global::City_Center.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_track = global::City_Center.Droid.Resource.Styleable.SwitchCompat_track;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_trackTint = global::City_Center.Droid.Resource.Styleable.SwitchCompat_trackTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.SwitchCompat_trackTintMode = global::City_Center.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabItem = global::City_Center.Droid.Resource.Styleable.TabItem;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabItem_android_icon = global::City_Center.Droid.Resource.Styleable.TabItem_android_icon;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabItem_android_layout = global::City_Center.Droid.Resource.Styleable.TabItem_android_layout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabItem_android_text = global::City_Center.Droid.Resource.Styleable.TabItem_android_text;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout = global::City_Center.Droid.Resource.Styleable.TabLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabBackground = global::City_Center.Droid.Resource.Styleable.TabLayout_tabBackground;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabContentStart = global::City_Center.Droid.Resource.Styleable.TabLayout_tabContentStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabGravity = global::City_Center.Droid.Resource.Styleable.TabLayout_tabGravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabIndicatorColor = global::City_Center.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabIndicatorHeight = global::City_Center.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabMaxWidth = global::City_Center.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabMinWidth = global::City_Center.Droid.Resource.Styleable.TabLayout_tabMinWidth;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabMode = global::City_Center.Droid.Resource.Styleable.TabLayout_tabMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabPadding = global::City_Center.Droid.Resource.Styleable.TabLayout_tabPadding;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabPaddingBottom = global::City_Center.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabPaddingEnd = global::City_Center.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabPaddingStart = global::City_Center.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabPaddingTop = global::City_Center.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabSelectedTextColor = global::City_Center.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabTextAppearance = global::City_Center.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TabLayout_tabTextColor = global::City_Center.Droid.Resource.Styleable.TabLayout_tabTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextAppearance = global::City_Center.Droid.Resource.Styleable.TextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextAppearance_android_shadowColor = global::City_Center.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextAppearance_android_shadowDx = global::City_Center.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextAppearance_android_shadowDy = global::City_Center.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextAppearance_android_shadowRadius = global::City_Center.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextAppearance_android_textColor = global::City_Center.Droid.Resource.Styleable.TextAppearance_android_textColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextAppearance_android_textColorHint = global::City_Center.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextAppearance_android_textSize = global::City_Center.Droid.Resource.Styleable.TextAppearance_android_textSize;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextAppearance_android_textStyle = global::City_Center.Droid.Resource.Styleable.TextAppearance_android_textStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextAppearance_android_typeface = global::City_Center.Droid.Resource.Styleable.TextAppearance_android_typeface;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextAppearance_textAllCaps = global::City_Center.Droid.Resource.Styleable.TextAppearance_textAllCaps;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout = global::City_Center.Droid.Resource.Styleable.TextInputLayout;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_android_hint = global::City_Center.Droid.Resource.Styleable.TextInputLayout_android_hint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_android_textColorHint = global::City_Center.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_counterEnabled = global::City_Center.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_counterMaxLength = global::City_Center.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::City_Center.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_counterTextAppearance = global::City_Center.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_errorEnabled = global::City_Center.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_errorTextAppearance = global::City_Center.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::City_Center.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_hintEnabled = global::City_Center.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_hintTextAppearance = global::City_Center.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::City_Center.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::City_Center.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::City_Center.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_passwordToggleTint = global::City_Center.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::City_Center.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar = global::City_Center.Droid.Resource.Styleable.Toolbar;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_android_gravity = global::City_Center.Droid.Resource.Styleable.Toolbar_android_gravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_android_minHeight = global::City_Center.Droid.Resource.Styleable.Toolbar_android_minHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_buttonGravity = global::City_Center.Droid.Resource.Styleable.Toolbar_buttonGravity;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_collapseContentDescription = global::City_Center.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_collapseIcon = global::City_Center.Droid.Resource.Styleable.Toolbar_collapseIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_contentInsetEnd = global::City_Center.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::City_Center.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_contentInsetLeft = global::City_Center.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_contentInsetRight = global::City_Center.Droid.Resource.Styleable.Toolbar_contentInsetRight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_contentInsetStart = global::City_Center.Droid.Resource.Styleable.Toolbar_contentInsetStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::City_Center.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_logo = global::City_Center.Droid.Resource.Styleable.Toolbar_logo;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_logoDescription = global::City_Center.Droid.Resource.Styleable.Toolbar_logoDescription;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_maxButtonHeight = global::City_Center.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_navigationContentDescription = global::City_Center.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_navigationIcon = global::City_Center.Droid.Resource.Styleable.Toolbar_navigationIcon;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_popupTheme = global::City_Center.Droid.Resource.Styleable.Toolbar_popupTheme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_subtitle = global::City_Center.Droid.Resource.Styleable.Toolbar_subtitle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_subtitleTextAppearance = global::City_Center.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_subtitleTextColor = global::City_Center.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_title = global::City_Center.Droid.Resource.Styleable.Toolbar_title;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_titleMargin = global::City_Center.Droid.Resource.Styleable.Toolbar_titleMargin;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_titleMarginBottom = global::City_Center.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_titleMarginEnd = global::City_Center.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_titleMarginStart = global::City_Center.Droid.Resource.Styleable.Toolbar_titleMarginStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_titleMarginTop = global::City_Center.Droid.Resource.Styleable.Toolbar_titleMarginTop;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_titleMargins = global::City_Center.Droid.Resource.Styleable.Toolbar_titleMargins;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_titleTextAppearance = global::City_Center.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.Toolbar_titleTextColor = global::City_Center.Droid.Resource.Styleable.Toolbar_titleTextColor;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.View = global::City_Center.Droid.Resource.Styleable.View;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.View_android_focusable = global::City_Center.Droid.Resource.Styleable.View_android_focusable;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.View_android_theme = global::City_Center.Droid.Resource.Styleable.View_android_theme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.View_paddingEnd = global::City_Center.Droid.Resource.Styleable.View_paddingEnd;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.View_paddingStart = global::City_Center.Droid.Resource.Styleable.View_paddingStart;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.View_theme = global::City_Center.Droid.Resource.Styleable.View_theme;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewBackgroundHelper = global::City_Center.Droid.Resource.Styleable.ViewBackgroundHelper;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewBackgroundHelper_android_background = global::City_Center.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::City_Center.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::City_Center.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewPagerIndicator = global::City_Center.Droid.Resource.Styleable.ViewPagerIndicator;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle = global::City_Center.Droid.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat = global::City_Center.Droid.Resource.Styleable.ViewStubCompat;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_id = global::City_Center.Droid.Resource.Styleable.ViewStubCompat_android_id;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_inflatedId = global::City_Center.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
-			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_layout = global::City_Center.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 			global::Com.Android.DeskClock.Resource.String.library_name = global::City_Center.Droid.Resource.String.library_name;
 			global::Com.ViewPagerIndicator.Resource.Attribute.vpiCentered = global::City_Center.Droid.Resource.Attribute.vpiCentered;
 			global::Com.ViewPagerIndicator.Resource.Attribute.vpiCirclePageIndicatorStyle = global::City_Center.Droid.Resource.Attribute.vpiCirclePageIndicatorStyle;
@@ -8876,26 +6729,26 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f02005b
 			public const int avd_hide_password = 2130837595;
 			
-			// aapt resource value: 0x7f0201f1
-			public const int avd_hide_password_1 = 2130838001;
+			// aapt resource value: 0x7f0201ee
+			public const int avd_hide_password_1 = 2130837998;
 			
-			// aapt resource value: 0x7f0201f2
-			public const int avd_hide_password_2 = 2130838002;
+			// aapt resource value: 0x7f0201ef
+			public const int avd_hide_password_2 = 2130837999;
 			
-			// aapt resource value: 0x7f0201f3
-			public const int avd_hide_password_3 = 2130838003;
+			// aapt resource value: 0x7f0201f0
+			public const int avd_hide_password_3 = 2130838000;
 			
 			// aapt resource value: 0x7f02005c
 			public const int avd_show_password = 2130837596;
 			
-			// aapt resource value: 0x7f0201f4
-			public const int avd_show_password_1 = 2130838004;
+			// aapt resource value: 0x7f0201f1
+			public const int avd_show_password_1 = 2130838001;
 			
-			// aapt resource value: 0x7f0201f5
-			public const int avd_show_password_2 = 2130838005;
+			// aapt resource value: 0x7f0201f2
+			public const int avd_show_password_2 = 2130838002;
 			
-			// aapt resource value: 0x7f0201f6
-			public const int avd_show_password_3 = 2130838006;
+			// aapt resource value: 0x7f0201f3
+			public const int avd_show_password_3 = 2130838003;
 			
 			// aapt resource value: 0x7f02005d
 			public const int B = 2130837597;
@@ -8928,226 +6781,226 @@ namespace City_Center.Droid
 			public const int btn_registrarme = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int Business = 2130837607;
+			public const int Btn_Regresar = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int Bussines = 2130837608;
+			public const int Business = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int CabinaTraduccion = 2130837609;
+			public const int Bussines = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int campana = 2130837610;
+			public const int CabinaTraduccion = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int casino = 2130837611;
+			public const int campana = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int CasinoChat = 2130837612;
+			public const int casino = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int Casinogray = 2130837613;
+			public const int CasinoChat = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int CASINOmin = 2130837614;
+			public const int Casinogray = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int chat = 2130837615;
+			public const int CASINOmin = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int ChatNotificacion = 2130837616;
+			public const int chat = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int checkin_rosa = 2130837617;
+			public const int ChatNotificacion = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int checkin_verde = 2130837618;
+			public const int checkin_rosa = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int ChekIn = 2130837619;
+			public const int checkin_verde = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int circle = 2130837620;
+			public const int ChekIn = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int circulo_blanco = 2130837621;
+			public const int circle = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int close_circle_button = 2130837622;
+			public const int circulo_blanco = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int CloseG = 2130837623;
+			public const int close_circle_button = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int com_facebook_auth_dialog_background = 2130837624;
+			public const int CloseG = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int com_facebook_auth_dialog_cancel_background = 2130837625;
+			public const int com_facebook_auth_dialog_background = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int com_facebook_auth_dialog_header_background = 2130837626;
+			public const int com_facebook_auth_dialog_cancel_background = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int com_facebook_button_background = 2130837627;
+			public const int com_facebook_auth_dialog_header_background = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int com_facebook_button_icon = 2130837628;
+			public const int com_facebook_button_background = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int com_facebook_button_icon_blue = 2130837629;
+			public const int com_facebook_button_icon = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int com_facebook_button_icon_white = 2130837630;
+			public const int com_facebook_button_icon_blue = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int com_facebook_button_like_background = 2130837631;
+			public const int com_facebook_button_icon_white = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int com_facebook_button_like_icon_selected = 2130837632;
+			public const int com_facebook_button_like_background = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int com_facebook_button_login_background = 2130837633;
+			public const int com_facebook_button_like_icon_selected = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int com_facebook_button_login_logo = 2130837634;
+			public const int com_facebook_button_login_background = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int com_facebook_button_login_silver_background = 2130837635;
+			public const int com_facebook_button_login_logo = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int com_facebook_button_send_background = 2130837636;
+			public const int com_facebook_button_login_silver_background = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int com_facebook_button_send_icon_blue = 2130837637;
+			public const int com_facebook_button_send_background = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int com_facebook_button_send_icon_white = 2130837638;
+			public const int com_facebook_button_send_icon_blue = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int com_facebook_close = 2130837639;
+			public const int com_facebook_button_send_icon_white = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int com_facebook_favicon_blue = 2130837640;
+			public const int com_facebook_close = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int com_facebook_profile_picture_blank_portrait = 2130837641;
+			public const int com_facebook_favicon_blue = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int com_facebook_profile_picture_blank_square = 2130837642;
+			public const int com_facebook_profile_picture_blank_portrait = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int com_facebook_send_button_icon = 2130837643;
+			public const int com_facebook_profile_picture_blank_square = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int com_facebook_tooltip_black_background = 2130837644;
+			public const int com_facebook_send_button_icon = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int com_facebook_tooltip_black_bottomnub = 2130837645;
+			public const int com_facebook_tooltip_black_background = 2130837645;
 			
 			// aapt resource value: 0x7f02008e
-			public const int com_facebook_tooltip_black_topnub = 2130837646;
+			public const int com_facebook_tooltip_black_bottomnub = 2130837646;
 			
 			// aapt resource value: 0x7f02008f
-			public const int com_facebook_tooltip_black_xout = 2130837647;
+			public const int com_facebook_tooltip_black_topnub = 2130837647;
 			
 			// aapt resource value: 0x7f020090
-			public const int com_facebook_tooltip_blue_background = 2130837648;
+			public const int com_facebook_tooltip_black_xout = 2130837648;
 			
 			// aapt resource value: 0x7f020091
-			public const int com_facebook_tooltip_blue_bottomnub = 2130837649;
+			public const int com_facebook_tooltip_blue_background = 2130837649;
 			
 			// aapt resource value: 0x7f020092
-			public const int com_facebook_tooltip_blue_topnub = 2130837650;
+			public const int com_facebook_tooltip_blue_bottomnub = 2130837650;
 			
 			// aapt resource value: 0x7f020093
-			public const int com_facebook_tooltip_blue_xout = 2130837651;
+			public const int com_facebook_tooltip_blue_topnub = 2130837651;
 			
 			// aapt resource value: 0x7f020094
-			public const int common_full_open_on_phone = 2130837652;
+			public const int com_facebook_tooltip_blue_xout = 2130837652;
 			
 			// aapt resource value: 0x7f020095
-			public const int common_google_signin_btn_icon_dark = 2130837653;
+			public const int common_full_open_on_phone = 2130837653;
 			
 			// aapt resource value: 0x7f020096
-			public const int common_google_signin_btn_icon_dark_focused = 2130837654;
+			public const int common_google_signin_btn_icon_dark = 2130837654;
 			
 			// aapt resource value: 0x7f020097
-			public const int common_google_signin_btn_icon_dark_normal = 2130837655;
+			public const int common_google_signin_btn_icon_dark_focused = 2130837655;
 			
 			// aapt resource value: 0x7f020098
-			public const int common_google_signin_btn_icon_dark_normal_background = 2130837656;
+			public const int common_google_signin_btn_icon_dark_normal = 2130837656;
 			
 			// aapt resource value: 0x7f020099
-			public const int common_google_signin_btn_icon_disabled = 2130837657;
+			public const int common_google_signin_btn_icon_dark_normal_background = 2130837657;
 			
 			// aapt resource value: 0x7f02009a
-			public const int common_google_signin_btn_icon_light = 2130837658;
+			public const int common_google_signin_btn_icon_disabled = 2130837658;
 			
 			// aapt resource value: 0x7f02009b
-			public const int common_google_signin_btn_icon_light_focused = 2130837659;
+			public const int common_google_signin_btn_icon_light = 2130837659;
 			
 			// aapt resource value: 0x7f02009c
-			public const int common_google_signin_btn_icon_light_normal = 2130837660;
+			public const int common_google_signin_btn_icon_light_focused = 2130837660;
 			
 			// aapt resource value: 0x7f02009d
-			public const int common_google_signin_btn_icon_light_normal_background = 2130837661;
+			public const int common_google_signin_btn_icon_light_normal = 2130837661;
 			
 			// aapt resource value: 0x7f02009e
-			public const int common_google_signin_btn_text_dark = 2130837662;
+			public const int common_google_signin_btn_icon_light_normal_background = 2130837662;
 			
 			// aapt resource value: 0x7f02009f
-			public const int common_google_signin_btn_text_dark_focused = 2130837663;
+			public const int common_google_signin_btn_text_dark = 2130837663;
 			
 			// aapt resource value: 0x7f0200a0
-			public const int common_google_signin_btn_text_dark_normal = 2130837664;
+			public const int common_google_signin_btn_text_dark_focused = 2130837664;
 			
 			// aapt resource value: 0x7f0200a1
-			public const int common_google_signin_btn_text_dark_normal_background = 2130837665;
+			public const int common_google_signin_btn_text_dark_normal = 2130837665;
 			
 			// aapt resource value: 0x7f0200a2
-			public const int common_google_signin_btn_text_disabled = 2130837666;
+			public const int common_google_signin_btn_text_dark_normal_background = 2130837666;
 			
 			// aapt resource value: 0x7f0200a3
-			public const int common_google_signin_btn_text_light = 2130837667;
+			public const int common_google_signin_btn_text_disabled = 2130837667;
 			
 			// aapt resource value: 0x7f0200a4
-			public const int common_google_signin_btn_text_light_focused = 2130837668;
+			public const int common_google_signin_btn_text_light = 2130837668;
 			
 			// aapt resource value: 0x7f0200a5
-			public const int common_google_signin_btn_text_light_normal = 2130837669;
+			public const int common_google_signin_btn_text_light_focused = 2130837669;
 			
 			// aapt resource value: 0x7f0200a6
-			public const int common_google_signin_btn_text_light_normal_background = 2130837670;
+			public const int common_google_signin_btn_text_light_normal = 2130837670;
 			
 			// aapt resource value: 0x7f0200a7
-			public const int Compartir = 2130837671;
+			public const int common_google_signin_btn_text_light_normal_background = 2130837671;
 			
 			// aapt resource value: 0x7f0200a8
-			public const int ContactoUp = 2130837672;
+			public const int Compartir = 2130837672;
 			
 			// aapt resource value: 0x7f0200a9
-			public const int CONVENCIONESmin = 2130837673;
+			public const int ContactoUp = 2130837673;
 			
 			// aapt resource value: 0x7f0200aa
-			public const int design_bottom_navigation_item_background = 2130837674;
+			public const int CONVENCIONESmin = 2130837674;
 			
 			// aapt resource value: 0x7f0200ab
-			public const int design_fab_background = 2130837675;
+			public const int design_bottom_navigation_item_background = 2130837675;
 			
 			// aapt resource value: 0x7f0200ac
-			public const int design_ic_visibility = 2130837676;
+			public const int design_fab_background = 2130837676;
 			
 			// aapt resource value: 0x7f0200ad
-			public const int design_ic_visibility_off = 2130837677;
+			public const int design_ic_visibility = 2130837677;
 			
 			// aapt resource value: 0x7f0200ae
-			public const int design_password_eye = 2130837678;
+			public const int design_ic_visibility_off = 2130837678;
 			
 			// aapt resource value: 0x7f0200af
-			public const int design_snackbar_background = 2130837679;
+			public const int design_password_eye = 2130837679;
 			
 			// aapt resource value: 0x7f0200b0
-			public const int Down = 2130837680;
+			public const int design_snackbar_background = 2130837680;
 			
 			// aapt resource value: 0x7f0200b1
 			public const int DummyCard = 2130837681;
@@ -9927,187 +7780,178 @@ namespace City_Center.Droid
 			public const int navigation_empty_icon = 2130837939;
 			
 			// aapt resource value: 0x7f0201b4
-			public const int Next = 2130837940;
+			public const int notification_action_background = 2130837940;
 			
 			// aapt resource value: 0x7f0201b5
-			public const int notification_action_background = 2130837941;
+			public const int notification_bg = 2130837941;
 			
 			// aapt resource value: 0x7f0201b6
-			public const int notification_bg = 2130837942;
+			public const int notification_bg_low = 2130837942;
 			
 			// aapt resource value: 0x7f0201b7
-			public const int notification_bg_low = 2130837943;
+			public const int notification_bg_low_normal = 2130837943;
 			
 			// aapt resource value: 0x7f0201b8
-			public const int notification_bg_low_normal = 2130837944;
+			public const int notification_bg_low_pressed = 2130837944;
 			
 			// aapt resource value: 0x7f0201b9
-			public const int notification_bg_low_pressed = 2130837945;
+			public const int notification_bg_normal = 2130837945;
 			
 			// aapt resource value: 0x7f0201ba
-			public const int notification_bg_normal = 2130837946;
+			public const int notification_bg_normal_pressed = 2130837946;
 			
 			// aapt resource value: 0x7f0201bb
-			public const int notification_bg_normal_pressed = 2130837947;
-			
-			// aapt resource value: 0x7f0201bc
-			public const int notification_icon_background = 2130837948;
-			
-			// aapt resource value: 0x7f0201ef
-			public const int notification_template_icon_bg = 2130837999;
-			
-			// aapt resource value: 0x7f0201f0
-			public const int notification_template_icon_low_bg = 2130838000;
-			
-			// aapt resource value: 0x7f0201bd
-			public const int notification_tile_bg = 2130837949;
-			
-			// aapt resource value: 0x7f0201be
-			public const int notify_panel_notification_icon_bg = 2130837950;
-			
-			// aapt resource value: 0x7f0201bf
-			public const int ojo = 2130837951;
-			
-			// aapt resource value: 0x7f0201c0
-			public const int Parking = 2130837952;
-			
-			// aapt resource value: 0x7f0201c1
-			public const int Prev = 2130837953;
-			
-			// aapt resource value: 0x7f0201c2
-			public const int promodown = 2130837954;
-			
-			// aapt resource value: 0x7f0201c3
-			public const int promoup = 2130837955;
-			
-			// aapt resource value: 0x7f0201c4
-			public const int R = 2130837956;
-			
-			// aapt resource value: 0x7f0201c5
-			public const int Reserva = 2130837957;
-			
-			// aapt resource value: 0x7f0201c6
-			public const int ReservacionHotel = 2130837958;
-			
-			// aapt resource value: 0x7f0201c7
-			public const int RESERVAHOTEL = 2130837959;
-			
-			// aapt resource value: 0x7f0201c8
-			public const int RESERVAHOTEL_S = 2130837960;
-			
-			// aapt resource value: 0x7f0201c9
-			public const int ReservaPromoDown = 2130837961;
-			
-			// aapt resource value: 0x7f0201ca
-			public const int ReservaPromoDown2 = 2130837962;
-			
-			// aapt resource value: 0x7f0201cb
-			public const int ReservarResaurant = 2130837963;
-			
-			// aapt resource value: 0x7f0201cc
-			public const int RESERVATUMESA = 2130837964;
-			
-			// aapt resource value: 0x7f0201cd
-			public const int RESERVATUMESA_S = 2130837965;
-			
-			// aapt resource value: 0x7f0201ce
-			public const int RoomServices = 2130837966;
-			
-			// aapt resource value: 0x7f0201cf
-			public const int roundedbg = 2130837967;
-			
-			// aapt resource value: 0x7f0201d0
-			public const int roundedbgdark = 2130837968;
-			
-			// aapt resource value: 0x7f0201d1
-			public const int rowdown = 2130837969;
-			
-			// aapt resource value: 0x7f0201d2
-			public const int showPass = 2130837970;
-			
-			// aapt resource value: 0x7f0201d3
-			public const int SistemaCerrado = 2130837971;
-			
-			// aapt resource value: 0x7f0201d4
-			public const int SPAmin = 2130837972;
-			
-			// aapt resource value: 0x7f0201d5
-			public const int splash = 2130837973;
-			
-			// aapt resource value: 0x7f0201d6
-			public const int splashfinal = 2130837974;
-			
-			// aapt resource value: 0x7f0201d7
-			public const int splashscreen1 = 2130837975;
-			
-			// aapt resource value: 0x7f0201d8
-			public const int success = 2130837976;
-			
-			// aapt resource value: 0x7f0201d9
-			public const int svip1 = 2130837977;
-			
-			// aapt resource value: 0x7f0201da
-			public const int svip2 = 2130837978;
-			
-			// aapt resource value: 0x7f0201db
-			public const int tarjeta = 2130837979;
-			
-			// aapt resource value: 0x7f0201dc
-			public const int TICKETSHOWS = 2130837980;
-			
-			// aapt resource value: 0x7f0201dd
-			public const int TICKETSHOWS_S = 2130837981;
-			
-			// aapt resource value: 0x7f0201de
-			public const int TicketsShows = 2130837982;
-			
-			// aapt resource value: 0x7f0201df
-			public const int Tienda = 2130837983;
-			
-			// aapt resource value: 0x7f0201e0
-			public const int tiendamobile = 2130837984;
-			
-			// aapt resource value: 0x7f0201e1
-			public const int TIENDAONLINE = 2130837985;
-			
-			// aapt resource value: 0x7f0201e2
-			public const int TIENDAONLINE_S = 2130837986;
-			
-			// aapt resource value: 0x7f0201e3
-			public const int tooltip_frame_dark = 2130837987;
-			
-			// aapt resource value: 0x7f0201e4
-			public const int tooltip_frame_light = 2130837988;
-			
-			// aapt resource value: 0x7f0201e5
-			public const int Up = 2130837989;
-			
-			// aapt resource value: 0x7f0201e6
-			public const int user = 2130837990;
-			
-			// aapt resource value: 0x7f0201e7
-			public const int ValetParking = 2130837991;
-			
-			// aapt resource value: 0x7f0201e8
-			public const int VariedadGastronomica = 2130837992;
-			
-			// aapt resource value: 0x7f0201e9
-			public const int VideoConferencia = 2130837993;
-			
-			// aapt resource value: 0x7f0201ea
-			public const int vip1 = 2130837994;
-			
-			// aapt resource value: 0x7f0201eb
-			public const int vip2 = 2130837995;
+			public const int notification_icon_background = 2130837947;
 			
 			// aapt resource value: 0x7f0201ec
-			public const int warning = 2130837996;
+			public const int notification_template_icon_bg = 2130837996;
 			
 			// aapt resource value: 0x7f0201ed
-			public const int Wifi = 2130837997;
+			public const int notification_template_icon_low_bg = 2130837997;
 			
-			// aapt resource value: 0x7f0201ee
-			public const int WifiLibre = 2130837998;
+			// aapt resource value: 0x7f0201bc
+			public const int notification_tile_bg = 2130837948;
+			
+			// aapt resource value: 0x7f0201bd
+			public const int notify_panel_notification_icon_bg = 2130837949;
+			
+			// aapt resource value: 0x7f0201be
+			public const int ojo = 2130837950;
+			
+			// aapt resource value: 0x7f0201bf
+			public const int Parking = 2130837951;
+			
+			// aapt resource value: 0x7f0201c0
+			public const int promodown = 2130837952;
+			
+			// aapt resource value: 0x7f0201c1
+			public const int promoup = 2130837953;
+			
+			// aapt resource value: 0x7f0201c2
+			public const int R = 2130837954;
+			
+			// aapt resource value: 0x7f0201c3
+			public const int Reserva = 2130837955;
+			
+			// aapt resource value: 0x7f0201c4
+			public const int ReservacionHotel = 2130837956;
+			
+			// aapt resource value: 0x7f0201c5
+			public const int RESERVAHOTEL = 2130837957;
+			
+			// aapt resource value: 0x7f0201c6
+			public const int RESERVAHOTEL_S = 2130837958;
+			
+			// aapt resource value: 0x7f0201c7
+			public const int ReservaPromoDown = 2130837959;
+			
+			// aapt resource value: 0x7f0201c8
+			public const int ReservaPromoDown2 = 2130837960;
+			
+			// aapt resource value: 0x7f0201c9
+			public const int ReservarResaurant = 2130837961;
+			
+			// aapt resource value: 0x7f0201ca
+			public const int RESERVATUMESA = 2130837962;
+			
+			// aapt resource value: 0x7f0201cb
+			public const int RESERVATUMESA_S = 2130837963;
+			
+			// aapt resource value: 0x7f0201cc
+			public const int RoomServices = 2130837964;
+			
+			// aapt resource value: 0x7f0201cd
+			public const int roundedbg = 2130837965;
+			
+			// aapt resource value: 0x7f0201ce
+			public const int roundedbgdark = 2130837966;
+			
+			// aapt resource value: 0x7f0201cf
+			public const int rowdown = 2130837967;
+			
+			// aapt resource value: 0x7f0201d0
+			public const int showPass = 2130837968;
+			
+			// aapt resource value: 0x7f0201d1
+			public const int SistemaCerrado = 2130837969;
+			
+			// aapt resource value: 0x7f0201d2
+			public const int SPAmin = 2130837970;
+			
+			// aapt resource value: 0x7f0201d3
+			public const int splash = 2130837971;
+			
+			// aapt resource value: 0x7f0201d4
+			public const int splashfinal = 2130837972;
+			
+			// aapt resource value: 0x7f0201d5
+			public const int splashscreen1 = 2130837973;
+			
+			// aapt resource value: 0x7f0201d6
+			public const int success = 2130837974;
+			
+			// aapt resource value: 0x7f0201d7
+			public const int svip1 = 2130837975;
+			
+			// aapt resource value: 0x7f0201d8
+			public const int svip2 = 2130837976;
+			
+			// aapt resource value: 0x7f0201d9
+			public const int tarjeta = 2130837977;
+			
+			// aapt resource value: 0x7f0201da
+			public const int TICKETSHOWS = 2130837978;
+			
+			// aapt resource value: 0x7f0201db
+			public const int TICKETSHOWS_S = 2130837979;
+			
+			// aapt resource value: 0x7f0201dc
+			public const int TicketsShows = 2130837980;
+			
+			// aapt resource value: 0x7f0201dd
+			public const int Tienda = 2130837981;
+			
+			// aapt resource value: 0x7f0201de
+			public const int tiendamobile = 2130837982;
+			
+			// aapt resource value: 0x7f0201df
+			public const int TIENDAONLINE = 2130837983;
+			
+			// aapt resource value: 0x7f0201e0
+			public const int TIENDAONLINE_S = 2130837984;
+			
+			// aapt resource value: 0x7f0201e1
+			public const int tooltip_frame_dark = 2130837985;
+			
+			// aapt resource value: 0x7f0201e2
+			public const int tooltip_frame_light = 2130837986;
+			
+			// aapt resource value: 0x7f0201e3
+			public const int user = 2130837987;
+			
+			// aapt resource value: 0x7f0201e4
+			public const int ValetParking = 2130837988;
+			
+			// aapt resource value: 0x7f0201e5
+			public const int VariedadGastronomica = 2130837989;
+			
+			// aapt resource value: 0x7f0201e6
+			public const int VideoConferencia = 2130837990;
+			
+			// aapt resource value: 0x7f0201e7
+			public const int vip1 = 2130837991;
+			
+			// aapt resource value: 0x7f0201e8
+			public const int vip2 = 2130837992;
+			
+			// aapt resource value: 0x7f0201e9
+			public const int warning = 2130837993;
+			
+			// aapt resource value: 0x7f0201ea
+			public const int Wifi = 2130837994;
+			
+			// aapt resource value: 0x7f0201eb
+			public const int WifiLibre = 2130837995;
 			
 			static Drawable()
 			{
@@ -10140,8 +7984,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0052
 			public const int SYM = 2131558482;
 			
-			// aapt resource value: 0x7f0d00e6
-			public const int action0 = 2131558630;
+			// aapt resource value: 0x7f0d00e0
+			public const int action0 = 2131558624;
 			
 			// aapt resource value: 0x7f0d0093
 			public const int action_bar = 2131558547;
@@ -10164,17 +8008,17 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0071
 			public const int action_bar_title = 2131558513;
 			
-			// aapt resource value: 0x7f0d00e3
-			public const int action_container = 2131558627;
+			// aapt resource value: 0x7f0d00dd
+			public const int action_container = 2131558621;
 			
 			// aapt resource value: 0x7f0d0094
 			public const int action_context_bar = 2131558548;
 			
-			// aapt resource value: 0x7f0d00ea
-			public const int action_divider = 2131558634;
-			
 			// aapt resource value: 0x7f0d00e4
-			public const int action_image = 2131558628;
+			public const int action_divider = 2131558628;
+			
+			// aapt resource value: 0x7f0d00de
+			public const int action_image = 2131558622;
 			
 			// aapt resource value: 0x7f0d0003
 			public const int action_menu_divider = 2131558403;
@@ -10191,11 +8035,11 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0073
 			public const int action_mode_close_button = 2131558515;
 			
-			// aapt resource value: 0x7f0d00e5
-			public const int action_text = 2131558629;
+			// aapt resource value: 0x7f0d00df
+			public const int action_text = 2131558623;
 			
-			// aapt resource value: 0x7f0d00f3
-			public const int actions = 2131558643;
+			// aapt resource value: 0x7f0d00ed
+			public const int actions = 2131558637;
 			
 			// aapt resource value: 0x7f0d0074
 			public const int activity_chooser_view_content = 2131558516;
@@ -10245,8 +8089,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d007a
 			public const int buttonPanel = 2131558522;
 			
-			// aapt resource value: 0x7f0d00e7
-			public const int cancel_action = 2131558631;
+			// aapt resource value: 0x7f0d00e1
+			public const int cancel_action = 2131558625;
 			
 			// aapt resource value: 0x7f0d00a7
 			public const int cancel_button = 2131558567;
@@ -10263,8 +8107,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d008a
 			public const int checkbox = 2131558538;
 			
-			// aapt resource value: 0x7f0d00ef
-			public const int chronometer = 2131558639;
+			// aapt resource value: 0x7f0d00e9
+			public const int chronometer = 2131558633;
 			
 			// aapt resource value: 0x7f0d0063
 			public const int clip_horizontal = 2131558499;
@@ -10359,8 +8203,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d004b
 			public const int end = 2131558475;
 			
-			// aapt resource value: 0x7f0d00f5
-			public const int end_padder = 2131558645;
+			// aapt resource value: 0x7f0d00ef
+			public const int end_padder = 2131558639;
 			
 			// aapt resource value: 0x7f0d0058
 			public const int enterAlways = 2131558488;
@@ -10410,8 +8254,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0079
 			public const int icon = 2131558521;
 			
-			// aapt resource value: 0x7f0d00f4
-			public const int icon_group = 2131558644;
+			// aapt resource value: 0x7f0d00ee
+			public const int icon_group = 2131558638;
 			
 			// aapt resource value: 0x7f0d0024
 			public const int icon_only = 2131558436;
@@ -10422,11 +8266,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0076
 			public const int image = 2131558518;
 			
-			// aapt resource value: 0x7f0d00c3
-			public const int indicator = 2131558595;
-			
-			// aapt resource value: 0x7f0d00f0
-			public const int info = 2131558640;
+			// aapt resource value: 0x7f0d00ea
+			public const int info = 2131558634;
 			
 			// aapt resource value: 0x7f0d0035
 			public const int inline = 2131558453;
@@ -10461,26 +8302,26 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0078
 			public const int list_item = 2131558520;
 			
-			// aapt resource value: 0x7f0d00c6
-			public const int loadingImage = 2131558598;
+			// aapt resource value: 0x7f0d00c0
+			public const int loadingImage = 2131558592;
 			
-			// aapt resource value: 0x7f0d00c4
-			public const int loadingProgressBar = 2131558596;
+			// aapt resource value: 0x7f0d00be
+			public const int loadingProgressBar = 2131558590;
 			
-			// aapt resource value: 0x7f0d00c7
-			public const int loadingProgressWheel = 2131558599;
+			// aapt resource value: 0x7f0d00c1
+			public const int loadingProgressWheel = 2131558593;
 			
-			// aapt resource value: 0x7f0d00fa
-			public const int masked = 2131558650;
+			// aapt resource value: 0x7f0d00f4
+			public const int masked = 2131558644;
 			
-			// aapt resource value: 0x7f0d00e9
-			public const int media_actions = 2131558633;
+			// aapt resource value: 0x7f0d00e3
+			public const int media_actions = 2131558627;
 			
-			// aapt resource value: 0x7f0d00f8
-			public const int message = 2131558648;
+			// aapt resource value: 0x7f0d00f2
+			public const int message = 2131558642;
 			
-			// aapt resource value: 0x7f0d00c8
-			public const int messenger_send_button = 2131558600;
+			// aapt resource value: 0x7f0d00c2
+			public const int messenger_send_button = 2131558594;
 			
 			// aapt resource value: 0x7f0d004c
 			public const int middle = 2131558476;
@@ -10488,80 +8329,80 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0068
 			public const int mini = 2131558504;
 			
-			// aapt resource value: 0x7f0d00d5
-			public const int mr_art = 2131558613;
+			// aapt resource value: 0x7f0d00cf
+			public const int mr_art = 2131558607;
 			
-			// aapt resource value: 0x7f0d00ca
-			public const int mr_chooser_list = 2131558602;
+			// aapt resource value: 0x7f0d00c4
+			public const int mr_chooser_list = 2131558596;
 			
-			// aapt resource value: 0x7f0d00cd
-			public const int mr_chooser_route_desc = 2131558605;
+			// aapt resource value: 0x7f0d00c7
+			public const int mr_chooser_route_desc = 2131558599;
 			
-			// aapt resource value: 0x7f0d00cb
-			public const int mr_chooser_route_icon = 2131558603;
+			// aapt resource value: 0x7f0d00c5
+			public const int mr_chooser_route_icon = 2131558597;
+			
+			// aapt resource value: 0x7f0d00c6
+			public const int mr_chooser_route_name = 2131558598;
+			
+			// aapt resource value: 0x7f0d00c3
+			public const int mr_chooser_title = 2131558595;
 			
 			// aapt resource value: 0x7f0d00cc
-			public const int mr_chooser_route_name = 2131558604;
-			
-			// aapt resource value: 0x7f0d00c9
-			public const int mr_chooser_title = 2131558601;
+			public const int mr_close = 2131558604;
 			
 			// aapt resource value: 0x7f0d00d2
-			public const int mr_close = 2131558610;
+			public const int mr_control_divider = 2131558610;
 			
 			// aapt resource value: 0x7f0d00d8
-			public const int mr_control_divider = 2131558616;
+			public const int mr_control_playback_ctrl = 2131558616;
 			
-			// aapt resource value: 0x7f0d00de
-			public const int mr_control_playback_ctrl = 2131558622;
-			
-			// aapt resource value: 0x7f0d00e1
-			public const int mr_control_subtitle = 2131558625;
-			
-			// aapt resource value: 0x7f0d00e0
-			public const int mr_control_title = 2131558624;
-			
-			// aapt resource value: 0x7f0d00df
-			public const int mr_control_title_container = 2131558623;
-			
-			// aapt resource value: 0x7f0d00d3
-			public const int mr_custom_control = 2131558611;
-			
-			// aapt resource value: 0x7f0d00d4
-			public const int mr_default_control = 2131558612;
-			
-			// aapt resource value: 0x7f0d00cf
-			public const int mr_dialog_area = 2131558607;
-			
-			// aapt resource value: 0x7f0d00ce
-			public const int mr_expandable_area = 2131558606;
-			
-			// aapt resource value: 0x7f0d00e2
-			public const int mr_group_expand_collapse = 2131558626;
-			
-			// aapt resource value: 0x7f0d00d6
-			public const int mr_media_main_control = 2131558614;
-			
-			// aapt resource value: 0x7f0d00d1
-			public const int mr_name = 2131558609;
-			
-			// aapt resource value: 0x7f0d00d7
-			public const int mr_playback_control = 2131558615;
-			
-			// aapt resource value: 0x7f0d00d0
-			public const int mr_title_bar = 2131558608;
-			
-			// aapt resource value: 0x7f0d00d9
-			public const int mr_volume_control = 2131558617;
+			// aapt resource value: 0x7f0d00db
+			public const int mr_control_subtitle = 2131558619;
 			
 			// aapt resource value: 0x7f0d00da
-			public const int mr_volume_group_list = 2131558618;
+			public const int mr_control_title = 2131558618;
+			
+			// aapt resource value: 0x7f0d00d9
+			public const int mr_control_title_container = 2131558617;
+			
+			// aapt resource value: 0x7f0d00cd
+			public const int mr_custom_control = 2131558605;
+			
+			// aapt resource value: 0x7f0d00ce
+			public const int mr_default_control = 2131558606;
+			
+			// aapt resource value: 0x7f0d00c9
+			public const int mr_dialog_area = 2131558601;
+			
+			// aapt resource value: 0x7f0d00c8
+			public const int mr_expandable_area = 2131558600;
 			
 			// aapt resource value: 0x7f0d00dc
-			public const int mr_volume_item_icon = 2131558620;
+			public const int mr_group_expand_collapse = 2131558620;
 			
-			// aapt resource value: 0x7f0d00dd
-			public const int mr_volume_slider = 2131558621;
+			// aapt resource value: 0x7f0d00d0
+			public const int mr_media_main_control = 2131558608;
+			
+			// aapt resource value: 0x7f0d00cb
+			public const int mr_name = 2131558603;
+			
+			// aapt resource value: 0x7f0d00d1
+			public const int mr_playback_control = 2131558609;
+			
+			// aapt resource value: 0x7f0d00ca
+			public const int mr_title_bar = 2131558602;
+			
+			// aapt resource value: 0x7f0d00d3
+			public const int mr_volume_control = 2131558611;
+			
+			// aapt resource value: 0x7f0d00d4
+			public const int mr_volume_group_list = 2131558612;
+			
+			// aapt resource value: 0x7f0d00d6
+			public const int mr_volume_item_icon = 2131558614;
+			
+			// aapt resource value: 0x7f0d00d7
+			public const int mr_volume_slider = 2131558615;
 			
 			// aapt resource value: 0x7f0d0043
 			public const int multiply = 2131558467;
@@ -10575,35 +8416,26 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d002c
 			public const int never_display = 2131558444;
 			
-			// aapt resource value: 0x7f0d00c1
-			public const int next = 2131558593;
-			
-			// aapt resource value: 0x7f0d00c2
-			public const int nextArrow = 2131558594;
-			
 			// aapt resource value: 0x7f0d001e
 			public const int none = 2131558430;
 			
 			// aapt resource value: 0x7f0d001f
 			public const int normal = 2131558431;
 			
-			// aapt resource value: 0x7f0d00f2
-			public const int notification_background = 2131558642;
-			
 			// aapt resource value: 0x7f0d00ec
-			public const int notification_main_column = 2131558636;
+			public const int notification_background = 2131558636;
 			
-			// aapt resource value: 0x7f0d00eb
-			public const int notification_main_column_container = 2131558635;
+			// aapt resource value: 0x7f0d00e6
+			public const int notification_main_column = 2131558630;
+			
+			// aapt resource value: 0x7f0d00e5
+			public const int notification_main_column_container = 2131558629;
 			
 			// aapt resource value: 0x7f0d002f
 			public const int open_graph = 2131558447;
 			
 			// aapt resource value: 0x7f0d0030
 			public const int page = 2131558448;
-			
-			// aapt resource value: 0x7f0d00be
-			public const int pager = 2131558590;
 			
 			// aapt resource value: 0x7f0d0061
 			public const int parallax = 2131558497;
@@ -10616,12 +8448,6 @@ namespace City_Center.Droid
 			
 			// aapt resource value: 0x7f0d0062
 			public const int pin = 2131558498;
-			
-			// aapt resource value: 0x7f0d00bf
-			public const int prev = 2131558591;
-			
-			// aapt resource value: 0x7f0d00c0
-			public const int prevArrow = 2131558592;
 			
 			// aapt resource value: 0x7f0d00a5
 			public const int progress_bar = 2131558565;
@@ -10638,11 +8464,11 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0039
 			public const int right = 2131558457;
 			
-			// aapt resource value: 0x7f0d00f1
-			public const int right_icon = 2131558641;
+			// aapt resource value: 0x7f0d00eb
+			public const int right_icon = 2131558635;
 			
-			// aapt resource value: 0x7f0d00ed
-			public const int right_side = 2131558637;
+			// aapt resource value: 0x7f0d00e7
+			public const int right_side = 2131558631;
 			
 			// aapt resource value: 0x7f0d0020
 			public const int satellite = 2131558432;
@@ -10719,8 +8545,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0040
 			public const int showTitle = 2131558464;
 			
-			// aapt resource value: 0x7f0d00f6
-			public const int sliding_tabs = 2131558646;
+			// aapt resource value: 0x7f0d00f0
+			public const int sliding_tabs = 2131558640;
 			
 			// aapt resource value: 0x7f0d002e
 			public const int small = 2131558446;
@@ -10758,8 +8584,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0060
 			public const int start = 2131558496;
 			
-			// aapt resource value: 0x7f0d00e8
-			public const int status_bar_latest_event_content = 2131558632;
+			// aapt resource value: 0x7f0d00e2
+			public const int status_bar_latest_event_content = 2131558626;
 			
 			// aapt resource value: 0x7f0d008d
 			public const int submenuarrow = 2131558541;
@@ -10788,8 +8614,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0080
 			public const int textSpacerNoTitle = 2131558528;
 			
-			// aapt resource value: 0x7f0d00c5
-			public const int textViewStatus = 2131558597;
+			// aapt resource value: 0x7f0d00bf
+			public const int textViewStatus = 2131558591;
 			
 			// aapt resource value: 0x7f0d00bd
 			public const int text_input_password_toggle = 2131558589;
@@ -10800,8 +8626,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0015
 			public const int textinput_error = 2131558421;
 			
-			// aapt resource value: 0x7f0d00ee
-			public const int time = 2131558638;
+			// aapt resource value: 0x7f0d00e8
+			public const int time = 2131558632;
 			
 			// aapt resource value: 0x7f0d001c
 			public const int title = 2131558428;
@@ -10812,8 +8638,8 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0086
 			public const int title_template = 2131558534;
 			
-			// aapt resource value: 0x7f0d00f7
-			public const int toolbar = 2131558647;
+			// aapt resource value: 0x7f0d00f1
+			public const int toolbar = 2131558641;
 			
 			// aapt resource value: 0x7f0d0036
 			public const int top = 2131558454;
@@ -10857,11 +8683,11 @@ namespace City_Center.Droid
 			// aapt resource value: 0x7f0d0016
 			public const int view_offset_helper = 2131558422;
 			
-			// aapt resource value: 0x7f0d00f9
-			public const int visible = 2131558649;
+			// aapt resource value: 0x7f0d00f3
+			public const int visible = 2131558643;
 			
-			// aapt resource value: 0x7f0d00db
-			public const int volume_item_container = 2131558619;
+			// aapt resource value: 0x7f0d00d5
+			public const int volume_item_container = 2131558613;
 			
 			// aapt resource value: 0x7f0d00a2
 			public const int webview = 2131558562;
@@ -11104,121 +8930,115 @@ namespace City_Center.Droid
 			public const int design_text_input_password_icon = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int horizontal_viewpager = 2130903086;
+			public const int loading = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int loading = 2130903087;
+			public const int loadingimage = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int loadingimage = 2130903088;
+			public const int loadingprogress = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int loadingprogress = 2130903089;
+			public const int messenger_button_send_blue_large = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int messenger_button_send_blue_large = 2130903090;
+			public const int messenger_button_send_blue_round = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int messenger_button_send_blue_round = 2130903091;
+			public const int messenger_button_send_blue_small = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int messenger_button_send_blue_small = 2130903092;
+			public const int messenger_button_send_white_large = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int messenger_button_send_white_large = 2130903093;
+			public const int messenger_button_send_white_round = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int messenger_button_send_white_round = 2130903094;
+			public const int messenger_button_send_white_small = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int messenger_button_send_white_small = 2130903095;
+			public const int mr_chooser_dialog = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int mr_chooser_dialog = 2130903096;
+			public const int mr_chooser_list_item = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int mr_chooser_list_item = 2130903097;
+			public const int mr_controller_material_dialog_b = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int mr_controller_material_dialog_b = 2130903098;
+			public const int mr_controller_volume_item = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int mr_controller_volume_item = 2130903099;
+			public const int mr_playback_control = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int mr_playback_control = 2130903100;
+			public const int mr_volume_control = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int mr_volume_control = 2130903101;
+			public const int notification_action = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int notification_action = 2130903102;
+			public const int notification_action_tombstone = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int notification_action_tombstone = 2130903103;
+			public const int notification_media_action = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int notification_media_action = 2130903104;
+			public const int notification_media_cancel_action = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int notification_media_cancel_action = 2130903105;
+			public const int notification_template_big_media = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int notification_template_big_media = 2130903106;
+			public const int notification_template_big_media_custom = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int notification_template_big_media_custom = 2130903107;
+			public const int notification_template_big_media_narrow = 2130903107;
 			
 			// aapt resource value: 0x7f030044
-			public const int notification_template_big_media_narrow = 2130903108;
+			public const int notification_template_big_media_narrow_custom = 2130903108;
 			
 			// aapt resource value: 0x7f030045
-			public const int notification_template_big_media_narrow_custom = 2130903109;
+			public const int notification_template_custom_big = 2130903109;
 			
 			// aapt resource value: 0x7f030046
-			public const int notification_template_custom_big = 2130903110;
+			public const int notification_template_icon_group = 2130903110;
 			
 			// aapt resource value: 0x7f030047
-			public const int notification_template_icon_group = 2130903111;
+			public const int notification_template_lines_media = 2130903111;
 			
 			// aapt resource value: 0x7f030048
-			public const int notification_template_lines_media = 2130903112;
+			public const int notification_template_media = 2130903112;
 			
 			// aapt resource value: 0x7f030049
-			public const int notification_template_media = 2130903113;
+			public const int notification_template_media_custom = 2130903113;
 			
 			// aapt resource value: 0x7f03004a
-			public const int notification_template_media_custom = 2130903114;
+			public const int notification_template_part_chronometer = 2130903114;
 			
 			// aapt resource value: 0x7f03004b
-			public const int notification_template_part_chronometer = 2130903115;
+			public const int notification_template_part_time = 2130903115;
 			
 			// aapt resource value: 0x7f03004c
-			public const int notification_template_part_time = 2130903116;
+			public const int select_dialog_item_material = 2130903116;
 			
 			// aapt resource value: 0x7f03004d
-			public const int select_dialog_item_material = 2130903117;
+			public const int select_dialog_multichoice_material = 2130903117;
 			
 			// aapt resource value: 0x7f03004e
-			public const int select_dialog_multichoice_material = 2130903118;
+			public const int select_dialog_singlechoice_material = 2130903118;
 			
 			// aapt resource value: 0x7f03004f
-			public const int select_dialog_singlechoice_material = 2130903119;
+			public const int support_simple_spinner_dropdown_item = 2130903119;
 			
 			// aapt resource value: 0x7f030050
-			public const int support_simple_spinner_dropdown_item = 2130903120;
+			public const int Tabbar = 2130903120;
 			
 			// aapt resource value: 0x7f030051
-			public const int Tabbar = 2130903121;
+			public const int Toolbar = 2130903121;
 			
 			// aapt resource value: 0x7f030052
-			public const int Toolbar = 2130903122;
-			
-			// aapt resource value: 0x7f030053
-			public const int tooltip = 2130903123;
-			
-			// aapt resource value: 0x7f030054
-			public const int vertical_viewpager = 2130903124;
+			public const int tooltip = 2130903122;
 			
 			static Layout()
 			{

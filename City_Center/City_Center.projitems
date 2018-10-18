@@ -460,6 +460,8 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Clases\ActualizaBarra.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helper\ISettingsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\IOrdinateHandlerParentView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ParentScrollView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />

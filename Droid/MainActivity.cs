@@ -8,7 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Facebook;
 using Android.Content;
 using Plugin.FirebasePushNotification;
-using CarouselView.FormsPlugin.Android;
+//using CarouselView.FormsPlugin.Android;
 using FFImageLoading.Forms.Droid;
 using Xamarin;
 using Acr.UserDialogs;
@@ -20,6 +20,7 @@ using Android.Widget;
 using Android.Gms.Common;
 using Firebase.Xamarin.Auth;
 using Plugin.Toasts;
+using Firebase;
 
 namespace City_Center.Droid
 {
@@ -54,12 +55,12 @@ namespace City_Center.Droid
 
             CachedImageRenderer.Init(enableFastRenderer:true);
 
-			CarouselView.FormsPlugin.Android.CarouselViewRenderer.Init();
+			//CarouselView.FormsPlugin.Android.CarouselViewRenderer.Init();
             
             DependencyService.Register<IGoogleManager, GoogleManager>();
             DependencyService.Register<IFacebookManager, FacebookManager>();
 
-           // FirebaseApp.InitializeApp(this);
+            FirebaseApp.InitializeApp(this);
             FormsMaps.Init(this, bundle);
             LoadApplication(new App());
 

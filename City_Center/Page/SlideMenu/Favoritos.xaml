@@ -16,7 +16,9 @@
                                     BackgroundColor = "#250C4B"
                                     Items="{Binding FavoritoDetalle}"
                                     HeightRequest="440"
-                                    HorizontalOptions="FillAndExpand">
+                                    HorizontalOptions="FillAndExpand"
+                                 PropertyChanging="Handle_PropertyChanging"
+                                     >
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
                             <Grid RowSpacing="0"
@@ -139,7 +141,9 @@
                             </Grid>
                         </DataTemplate>
                                 </cards:CarouselView.ItemTemplate>
-                     <controls:IndicatorsControl Margin="0,-15,0,0" />
+                     <controls:IndicatorsControl x:Name="Indicador" 
+                                Margin="0,-15,0,0"
+                                />
                     
                             </cards:CarouselView>
 

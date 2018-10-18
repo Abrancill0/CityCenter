@@ -83,7 +83,14 @@
                    <ScrollView>
            <StackLayout HorizontalOptions="Center" Margin="15">
                  <Label FontSize="Small" Text="TÉRMINOS Y CONDICIONES DE USO" TextColor="Black"
-                        HorizontalOptions="Center" HorizontalTextAlignment="Center" FontFamily="Roboto-Regular"></Label>
+                        HorizontalOptions="Center" HorizontalTextAlignment="Center" FontFamily="Roboto-Regular">
+                                   <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Roboto-Regular"/>
+                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                        </Label>
             <Label  HorizontalOptions="Start" HorizontalTextAlignment="Start" FontSize="Small"
                     TextColor="Black"
                     Text="A continuación se detallan los Términos y Condiciones que regulan el uso que realicen las
@@ -178,7 +185,12 @@ originadas en sus actividades en el sitio.-
 sin previo aviso los presentes Términos y Condiciones, así como el diseño presentación ó
 configuración del sitio o de la APP sin que ello genera derecho a reclamo alguno por parte de
 los Usuarios.-">
-                
+                             <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Roboto-Regular"/>
+                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
             </Label>
         </StackLayout> 
                     </ScrollView>
@@ -190,7 +202,14 @@ los Usuarios.-">
                                        Text="POLITICA DE PRIVACIDAD"
                                        TextColor="Black"
                                        HorizontalOptions="Center"
-                                       HorizontalTextAlignment="Center"/>
+                                       HorizontalTextAlignment="Center">
+                                   <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Roboto-Regular"/>
+                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                        </Label>
                       
                     
                         <Label  HorizontalOptions="Start"
@@ -223,7 +242,14 @@ lo dispuesto por los artículos 9 y 10 de la Ley 25.326.-
 Se comunica a los usuarios que la Dirección Nacional de Protección de Datos Personales es el
 Órgano de Control de la Ley 25.326 y tiene la atribución de atender las denuncias y reclamos
 que se interpongan con relación al incumplimiento de las normas sobre protección de datos
-personales.-" />
+personales.-">
+                                   <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Roboto-Regular"/>
+                            <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular"/>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                            </Label>
                         </StackLayout>
                     </ScrollView>
                    

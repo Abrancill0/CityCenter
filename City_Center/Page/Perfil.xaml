@@ -4,6 +4,7 @@
              xmlns:view="clr-namespace:City_Center.Vista"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
               xmlns:local1="clr-namespace:City_Center.Clases"
@@ -33,7 +34,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60">
                     </ColumnDefinition>
-                    <ColumnDefinition Width="Auto">
+                    <ColumnDefinition Width="120">
                     </ColumnDefinition>
                     <ColumnDefinition Width="Auto">
                     </ColumnDefinition>
@@ -42,7 +43,7 @@
                     <RowDefinition Height="100" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
-                <AbsoluteLayout HorizontalOptions="Center" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+              <!--  <AbsoluteLayout HorizontalOptions="Center" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
                     <Image x:Name="ImageCircle" Source="circulo_blanco.png" VerticalOptions="Center" Aspect="Fill" HeightRequest="120" WidthRequest="120" />
                   
                     <controls:CircleImage x:Name="imagen1" Source="{Binding Imagen, Mode=TwoWay}"
@@ -70,10 +71,25 @@
                                 NumberOfTapsRequired="1" />
                             </controls:CircleImage.GestureRecognizers>
                     </controls:CircleImage>
-                </AbsoluteLayout>
+                </AbsoluteLayout>-->
+
+                  <ffimageloading:CachedImage  Grid.Column="1"  Grid.Row="0" HorizontalOptions="End" Margin="0,15,0,0"
+                    x:Name="imagen1" Source="{Binding Imagen, Mode=TwoWay}"
+                                          Aspect="AspectFit"
+                                               HeightRequest="95" WidthRequest="95">
+                               <ffimageloading:CachedImage.Transformations>
+                                      <fftransformations:CircleTransformation BorderSize="20" BorderHexColor="#ffffff"  />
+                               </ffimageloading:CachedImage.Transformations>
+                      <ffimageloading:CachedImage.GestureRecognizers>
+                                <TapGestureRecognizer
+                                Tapped="Handle_Tapped"
+                                NumberOfTapsRequired="1" />
+                            </ffimageloading:CachedImage.GestureRecognizers>
+                  </ffimageloading:CachedImage>
+
                 <Label TextColor="White"
                        Grid.Column="2"
-                       Grid.Row="0" Margin="-15,-15,0,0"
+                       Grid.Row="0" Margin="0,-15,0,0"
                        FontSize="Small"
                        HorizontalOptions="Start"
                        HorizontalTextAlignment="Start" 
@@ -90,7 +106,7 @@
                        Grid.Row="1" HorizontalOptions="Start"
                        HorizontalTextAlignment="Start"
                        VerticalOptions="Start"
-                       VerticalTextAlignment="Start" Margin="-15,-50,0,0"
+                       VerticalTextAlignment="Start" Margin="0,-50,0,0"
                        Text="{Binding Nombre, Mode=TwoWay}"
 
                        LineBreakMode="WordWrap">
@@ -168,7 +184,8 @@
                 <StackLayout x:Name="SL1" IsVisible="true">
                     <ScrollView BackgroundColor="White">
                         <StackLayout Spacing="0" Margin="10,10,0,10" BackgroundColor="White">
-                           
+                          
+                       
                            <xfx:XfxEntry x:Name="TextCorreo"
                                       ActivePlaceholderColor="#7A5BA5"
                                       Style="{DynamicResource EntryStyle}"

@@ -17,7 +17,7 @@ namespace City_Center.ViewModels
         #endregion
 
         #region Attributes
-       
+        private string muestraPaginador = "false";
         private ObservableCollection<FavoritoItemViewModel> favoritoDetalle;
         #endregion
 
@@ -28,6 +28,11 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.favoritoDetalle, value); }
         }
 
+        public string MuestraPaginador
+        {
+            get { return this.muestraPaginador; }
+            set { SetValue(ref this.muestraPaginador, value); }
+        }
 
         #endregion
 
@@ -67,7 +72,6 @@ namespace City_Center.ViewModels
 
            FavoritoDetalle = new ObservableCollection<FavoritoItemViewModel>(this.ToEventosItemViewModel());
 
-
             if (MainViewModel.GetInstance().listFavoritos.resultado.Count == 0)
             {
                 await Mensajes.Alerta("Parece que no tenés Guardados");
@@ -92,7 +96,7 @@ namespace City_Center.ViewModels
                   nombre = l.nombre,
                   descripcion = l.descripcion,
                   imagen = VariablesGlobales.RutaServidor + l.imagen,
-                imagen_2 = VariablesGlobales.RutaServidor + l.imagen_2,
+                  imagen_2 = VariablesGlobales.RutaServidor + l.imagen_2,
                   link = l.link,
                   fecha = l.fecha,
 				  ocultallamada = (string.IsNullOrEmpty(l.telefono) ? false : true),

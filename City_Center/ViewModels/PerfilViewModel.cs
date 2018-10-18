@@ -421,8 +421,9 @@ namespace City_Center.ViewModels
 
         private async Task<string> GuardaImagen(int IDusuario)
         {
-
-            var dirotro = "";
+            try
+            {
+                var dirotro = "";
 
             if (string.IsNullOrEmpty(VariablesGlobales.RutaImagene))
             {
@@ -433,6 +434,8 @@ namespace City_Center.ViewModels
             else
             {
                 byte[] ImagenSubir = File.ReadAllBytes(VariablesGlobales.RutaImagene);
+
+                    int tamano = ImagenSubir.Length;
 
                 dirotro = Convert.ToBase64String(ImagenSubir);
             }
@@ -466,6 +469,12 @@ namespace City_Center.ViewModels
            //  await Application.Current.SavePropertiesAsync();
 
             return VariablesGlobales.RutaServidor + ListImagen.resultado;
+           
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
            
         }
 
@@ -742,7 +751,13 @@ namespace City_Center.ViewModels
                 }
                 else
                 {
-                    Imagen = Application.Current.Properties["FotoPerfil"].ToString();   
+                    // Imagen = Application.Current.Properties["FotoPerfil"].ToString();   
+
+                   // ImageSource RutaFoto = UriImageSource.FromUri(new Uri(Application.Current.Properties["FotoPerfil"].ToString())); //Application.Current.Properties["FotoPerfil"].ToString();
+
+                    Imagen = Application.Current.Properties["FotoPerfil"].ToString();
+                    GlobalResources.Current.ImagenPerfil = Application.Current.Properties["FotoPerfil"].ToString();
+
                 }
 
                
@@ -895,7 +910,7 @@ namespace City_Center.ViewModels
 
                             PromocionesID = item.nus_id_notificacion;
                             break;
-                        case "Rservaciones":
+                        case "Reservaciones":
                             this.Reservaciones = Convert.ToBoolean(item.nus_activa);
 
                             ReservacionesID = item.nus_id_notificacion;

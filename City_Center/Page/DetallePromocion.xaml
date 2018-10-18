@@ -15,22 +15,11 @@
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding Detallepromociones}">
             <StackLayout Spacing="0">
-                <Frame IsClippedToBounds="True"
-                       HasShadow="True"
-                       BackgroundColor="White"
-                       HorizontalOptions="FillAndExpand"
-                       Margin="20,0,20,0"
-                       IsVisible="{Binding Landing,Mode=TwoWay}">
-                    <Frame.Margin>
-                        <OnPlatform x:TypeArguments="Thickness" Android="20" iOS="20" />
-                    </Frame.Margin>
-                    <Frame.Padding>
-                        <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
-                    </Frame.Padding>
+             
                     <StackLayout Orientation="Vertical">
                         <StackLayout>
-                            <ffimageloading:CachedImage LoadingPlaceholder="image_loading.png"
-                                                        ErrorPlaceholder="image_error.png"
+                            <ffimageloading:CachedImage LoadingPlaceholder="image_loading_Detalle.png"
+                                                        ErrorPlaceholder="image_loading_Detalle.png"
                                                         Source="{Binding pd.pro_imagen,StringFormat='https://citycenter-rosario.com.ar/{0}'}" />
                         </StackLayout>
                         <Grid HorizontalOptions="FillAndExpand">
@@ -63,7 +52,7 @@
                                 </ffimageloading:CachedImage.GestureRecognizers>
                             </ffimageloading:CachedImage>
                         </Grid>
-                        <Label Margin="5" HorizontalOptions="Start" HorizontalTextAlignment="Start" TextColor="Black" Text="{Binding pd.pro_descripcion}">
+                        <Label Margin="10" HorizontalOptions="Start" HorizontalTextAlignment="Start" TextColor="Black" Text="{Binding pd.pro_descripcion}">
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
                                     <On Platform="iOS" Value="Oswald-Regular" />
@@ -72,7 +61,7 @@
                             </Label.FontFamily>
                         </Label>
                     </StackLayout>
-                </Frame>
+                
                 <StackLayout Margin="0,-18,0,0" Spacing="5">
                     <!--<ffimageloading:CachedImage x:Name="FlechaArriba" IsVisible="false" Aspect="AspectFit" LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png" Source="promoup" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="50" Margin="20,12,20,0">
                         <ffimageloading:CachedImage.GestureRecognizers>

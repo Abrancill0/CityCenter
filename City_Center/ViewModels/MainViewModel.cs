@@ -19,6 +19,7 @@ namespace City_Center.ViewModels
         #region Poperties
 		public EventosReturn listEventos { get; set; }
 		public TorneoReturn listTorneo { get; set; }
+        public PromocionesReturn listPromociones { get; set; }
         public FavoritoReturn listFavoritos { get; set; }
         public DestacadosReturn listDestacados { get; set; }
         #endregion
@@ -64,15 +65,15 @@ namespace City_Center.ViewModels
         #region Contructors
         public MainViewModel()
         {
-            
                 instance = this;
 
              //   this.Master = new MasterViewModel();
                 this.Inicio = new InicioViewModel();
-                this.Casino = new CasinoViewModel();
+               
                
                 this.Hotel = new HotelViewModel();
                 this.Detail = new DetailViewModel();
+                this.Casino = new CasinoViewModel();
                 this.Gastronomia = new GastronomiaViewModel();
                 this.SalasEventos = new SalasEventosViewModel();
           

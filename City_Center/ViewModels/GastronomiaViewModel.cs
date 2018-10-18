@@ -26,7 +26,7 @@ namespace City_Center.ViewModels
         private ObservableCollection<PromocionesItemViewModel> promocionesDetalle;
         private PromocionesReturn listPromociones;
 
-		private int tamanoRestaurant;
+        private int tamanoRestaurant;
 
         bool muestraFlechasPromo = false;
 
@@ -47,10 +47,10 @@ namespace City_Center.ViewModels
             set { SetValue(ref this.promocionesDetalle, value); }
         }
 
-		public int TamanoRestaurant
+        public int TamanoRestaurant
         {
-			get { return this.tamanoRestaurant; }
-			set { SetValue(ref this.tamanoRestaurant, value); }
+            get { return this.tamanoRestaurant; }
+            set { SetValue(ref this.tamanoRestaurant, value); }
         }
 
         public bool MuestraFlechasPromo
@@ -58,7 +58,7 @@ namespace City_Center.ViewModels
             get { return this.muestraFlechasPromo; }
             set { SetValue(ref this.muestraFlechasPromo, value); }
         }
-        
+
         #endregion
 
         #region Commands
@@ -76,18 +76,18 @@ namespace City_Center.ViewModels
             try
             {
                 RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel());
-            
-				int Contador = RestaurantDetalle.Count;
 
-                #if __IOS__
+                int Contador = RestaurantDetalle.Count;
+
+#if __IOS__
                     TamanoRestaurant = (Contador * 230);
-                #endif
+#endif
 
-                #if __ANDROID__
-                    TamanoRestaurant = (Contador * 235);
-                #endif
-			
-			}
+#if __ANDROID__
+                TamanoRestaurant = (Contador * 235);
+#endif
+
+            }
             catch (Exception)
             {
 
@@ -108,18 +108,18 @@ namespace City_Center.ViewModels
             try
             {
                 RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel().Where(l => l.reb_tipo == "R"));
-            
-				int Contador = RestaurantDetalle.Count;
 
-                #if __IOS__
+                int Contador = RestaurantDetalle.Count;
+
+#if __IOS__
                     TamanoRestaurant = (Contador * 230);
-                #endif
+#endif
 
-                #if __ANDROID__
-                    TamanoRestaurant = (Contador * 235);
-                #endif
-					
-			}
+#if __ANDROID__
+                TamanoRestaurant = (Contador * 235);
+#endif
+
+            }
             catch (Exception)
             {
 
@@ -141,19 +141,19 @@ namespace City_Center.ViewModels
             try
             {
                 RestaurantDetalle = new ObservableCollection<GastronomiaItemViewModel>(this.ToRestaurantItemViewModel().Where(l => l.reb_tipo == "B"));
-            
-				int Contador = restaurantDetalle.Count;
 
-                #if __IOS__
+                int Contador = restaurantDetalle.Count;
+
+#if __IOS__
                     TamanoRestaurant = (Contador * 230);
-                #endif
+#endif
 
-                #if __ANDROID__
-                    TamanoRestaurant = (Contador * 235);
-                #endif
-			
-			
-			}
+#if __ANDROID__
+                TamanoRestaurant = (Contador * 235);
+#endif
+
+
+            }
             catch (Exception)
             {
 
@@ -199,13 +199,13 @@ namespace City_Center.ViewModels
 
                 int Contador = RestaurantDetalle.Count;
 
-                #if __IOS__
+#if __IOS__
                     TamanoRestaurant = (Contador * 230);
-                #endif
+#endif
 
-                #if __ANDROID__
-                    TamanoRestaurant = (Contador * 235);
-                #endif
+#if __ANDROID__
+                TamanoRestaurant = (Contador * 235);
+#endif
 
 
             }
@@ -270,13 +270,18 @@ namespace City_Center.ViewModels
 
                 this.listPromociones = (PromocionesReturn)response.Result;
 
-                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+#if __ANDROID__
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel2());
+#endif
 
+#if __IOS__
+                PromocionesDetalle = new ObservableCollection<PromocionesItemViewModel>(this.ToPromocionesItemViewModel());
+#endif
                 if (PromocionesDetalle.Count > 0)
                 {
                     MuestraFlechasPromo = true;
 
-                    VariablesGlobales.RegistrosGastronomiaPromociones = PromocionesDetalle.Count;
+                    VariablesGlobales.RegistrosGastronomiaPromociones = PromocionesDetalle.Count-1;
                 }
                 else
                 {
@@ -295,7 +300,7 @@ namespace City_Center.ViewModels
 
         private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel()
         {
-            return this.listPromociones.resultado.Where(l => l.pro_id>0).Select(l => new PromocionesItemViewModel
+            return this.listPromociones.resultado.Select(l => new PromocionesItemViewModel
             {
                 pro_id = l.pro_id,
                 pro_id_evento = l.pro_id_evento,
@@ -327,15 +332,51 @@ namespace City_Center.ViewModels
             });
         }
 
-        #endregion
+        private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel2()
+        {
+            return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
+            {
+                pro_id = l.pro_id,
+                pro_id_evento = l.pro_id_evento,
+                pro_id_locacion = l.pro_id_locacion,
+                pro_nombre = l.pro_nombre,
+                pro_descripcion = l.pro_descripcion,
+                pro_imagen = l.pro_imagen,
+                pro_imagen_2 = l.pro_imagen_2,
+                pro_tipo_promocion = l.pro_tipo_promocion,
+                pro_codigo = l.pro_codigo,
+                pro_compartidos_codigo = l.pro_compartidos_codigo,
+                pro_destacado = l.pro_destacado,
+                pro_fecha_duracion_ini = l.pro_fecha_duracion_ini,
+                pro_fecha_duracion_fin = l.pro_fecha_duracion_fin,
+                pro_importe_decuento = l.pro_importe_decuento,
+                pro_porcentaje_decuento = l.pro_porcentaje_decuento,
+                pro_id_usuario_creo = l.pro_id_usuario_creo,
+                pro_fecha_hora_creo = l.pro_fecha_hora_creo,
+                pro_id_usuario_modifico = l.pro_id_usuario_modifico,
+                pro_fecha_hora_modifico = l.pro_fecha_hora_modifico,
+                pro_tipo = l.pro_tipo,
+                pro_estatus = l.pro_estatus,
+                loc_nombre = l.loc_nombre,
+                pro_vinculo = l.pro_vinculo,
+                pro_telefono = l.pro_telefono,
+                pro_url = l.pro_url,
+                pro_nombre_btn = l.pro_nombre_btn,
+                pro_ejecutar_url = l.pro_ejecutar_url
+            });
+        }
 
-        #region Contructors
+        //return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
+
+#endregion
+
+#region Contructors
         public GastronomiaViewModel()
         {
             this.apiService = new ApiService();
             this.LoadRestaurantes();
             this.LoadPromociones();
         }
-        #endregion
+#endregion
     }
 }

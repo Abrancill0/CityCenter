@@ -19,6 +19,7 @@ using static City_Center.Models.ValidaUsuarioResultado;
 using City_Center.Database;
 using Org.BouncyCastle.Crypto.Tls;
 using Plugin.DeviceInfo;
+using static City_Center.Models.ActualizaUsuarioResultado;
 
 namespace City_Center.ViewModels
 {
@@ -311,12 +312,42 @@ namespace City_Center.ViewModels
 
                 if (!response2.IsSuccess)
                 {
+                    var content3 = new FormUrlEncodedContent(new[]
+                    {
+                        new KeyValuePair<string, string>("nus_id_usuario", Convert.ToString(listRegistro.resultado.usu_id)),
+                        new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(0)),
 
+                    });
+
+
+                var response3 = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/activar_notificacion", content3);
+
+                if (!response3.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }  
                 }
             }
             catch (Exception ex)
             {
+                var content3 = new FormUrlEncodedContent(new[]
+                        {
+                    new KeyValuePair<string, string>("nus_id_usuario",  Convert.ToString(listRegistro.resultado.usu_id)),
+                            new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(0)),
 
+                        });
+
+
+                var response3 = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/activar_notificacion", content3);
+
+                if (!response3.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                } 
             }
 
 
@@ -611,7 +642,22 @@ namespace City_Center.ViewModels
 
                     if (!response2.IsSuccess)
                     {
+                                var content3 = new FormUrlEncodedContent(new[]
+                        {
+                            new KeyValuePair<string, string>("nus_id_usuario", IDUsuario),
+                            new KeyValuePair<string, string>("nus_id_notificacion",Convert.ToString(0)),
 
+                        });
+
+
+                var response3 = await this.apiService.Get<ActualizaUsuarioReturn>("/notificaciones", "/activar_notificacion", content3);
+
+                if (!response3.IsSuccess)
+                {
+                    await Mensajes.Alerta("Ha habido un error en tu solicitud, por favor volvé a intentarlo");
+                    UserDialogs.Instance.HideLoading();
+                    return;
+                }  
                     }
 
                     //MainViewModel.GetInstance().Master = new MasterViewModel();
