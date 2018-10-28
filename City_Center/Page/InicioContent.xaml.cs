@@ -842,33 +842,33 @@ namespace City_Center.Page
 
         }
 
-        //void Promociones_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
-        //{
-        //    int Position = Convert.ToInt32(e.SelectedPosition);
+        void Promociones_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        {
+            int Position = Convert.ToInt32(e.SelectedPosition);
 
-        //    if (Position == VariablesGlobales.RegistrosPromociones)
-        //    {
-        //        CarruselPromociones.Position = 1;
-        //    }
-        //    else if (Position == 0)
-        //    {
-        //        CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones-1;
-        //    }   
+            if (Position == VariablesGlobales.RegistrosPromociones)
+            {
+                CarruselPromociones.Position = 1;
+            }
+            else if (Position == 0)
+            {
+                CarruselPromociones.Position = VariablesGlobales.RegistrosPromociones-1;
+            }   
 
-        //}
+        }
 
-        //void Torneo_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
-        //{
-        //    int Position = Convert.ToInt32(e.SelectedPosition);
+        void Torneo_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        {
+            int Position = Convert.ToInt32(e.SelectedPosition);
 
-        //    if (Position == VariablesGlobales.RegistrosTorneo)
-        //    {
-        //        CarruselTorneos.Position = 1;
-        //    }
-        //    else if (Position == 0)
-        //    {
-        //        CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo - 1;
-        //    }   
-        //}
+            if (Position == VariablesGlobales.RegistrosTorneo)
+            {
+                CarruselTorneos.Position = 1;
+            }
+            else if (Position == 0)
+            {
+                CarruselTorneos.Position = VariablesGlobales.RegistrosTorneo - 1;
+            }   
+        }
     }
 }

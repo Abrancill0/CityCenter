@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using CarouselView.FormsPlugin.iOS;
+//using CarouselView.FormsPlugin.iOS;
 using City_Center.Clases;
 using City_Center.Models;
 using City_Center.Services.Contracts;
@@ -89,7 +89,7 @@ namespace City_Center.iOS
 
 			var ignore = new CircleTransformation();
 
-            CarouselViewRenderer.Init();
+            //CarouselViewRenderer.Init();
 
             DependencyService.Register<IGoogleManager, GoogleManager>();
             DependencyService.Register<IFacebookManager, FacebookManager>();

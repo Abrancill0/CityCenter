@@ -140,131 +140,10 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                            <!--   <cv:CarouselViewControl 
-                                                        x:Name="CarruselDestacados"
-                                                        Scrolled="Scrolled_DT"
-                                                        PositionSelected="PositionSelected_DT"
-                                            ItemsSource="{Binding DestacadosDetalle}"
-                                            HorizontalOptions="FillAndExpand"
-                                            HeightRequest="300"
-                                            Position="1"
-                                            AnimateTransition="true"
-                                            ShowArrows="{Binding MuestraFlechaDestacado, Mode=TwoWay}"
-                                            ArrowsTintColor="White"
-                                            ArrowsBackgroundColor="Black">
-                                    
-                                    <cv:CarouselViewControl.ItemTemplate>
-                                        <DataTemplate>
-                                      
-                                           <Grid BackgroundColor="#White"> 
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="1*" />
-                                                    <ColumnDefinition Width="1*" />
-                                                    <ColumnDefinition Width="0.5*" />
-                                                    <ColumnDefinition Width="0.5*" />
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="3*" />
-                                                    <RowDefinition Height="Auto" />
-                                                    <RowDefinition Height="0.5*" />
-                                                </Grid.RowDefinitions>
-                                                <ffimageloading:CachedImage HeightRequest="150"
-                                                                            Aspect="Fill"
-                                                                            LoadingPlaceholder="image_loading.png"
-                                                                            ErrorPlaceholder="image_error.png"
-                                                                            Source="{Binding des_imagen}"
-                                                                            Grid.Row="0" Grid.ColumnSpan="4"
-                                                                            DownsampleToViewSize="true">
-                                                  <ffimageloading:CachedImage.GestureRecognizers>
-                                                        <TapGestureRecognizer  Command="{Binding VerDetalleCommand}"  />
-                                                    </ffimageloading:CachedImage.GestureRecognizers>
-                                                    </ffimageloading:CachedImage>
-                                                    <Label Margin="10,2,0,0"
-                                                           TextColor = "#5D5D5D"
-                                                           Grid.Row="1"
-                                                           Grid.Column="0"
-                                                           Grid.ColumnSpan="2"
-                                                           Text="{Binding des_nombre}"
-                                                           HorizontalTextAlignment="Start"
-                                                           HorizontalOptions="Start"
-                                                           FontSize="15"
-                                                           VerticalOptions = "Center" > 
-                                                        <Label.FontFamily>
-                                                            <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Oswald-Regular"/>
-                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                            </OnPlatform>
-                                                        </Label.FontFamily>
-                                                    </Label>
-                                                    <Label Margin="10,0,0,0"
-                                                           TextColor = "#5D5D5D"
-                                                           Grid.Row="2" Grid.Column="0" 
-                                                           Grid.ColumnSpan="2"
-                                                           HorizontalTextAlignment="Start"
-                                                           HorizontalOptions="Start"
-                                                           Text="{Binding des_fecha_hora_inicio, StringFormat='{0:dd MMMM yyyy h:mm tt}'}"
-                                                           VerticalOptions = "Start"
-                                                           FontSize="12" >
-                                                        <Label.FontFamily>
-                                                            <OnPlatform x:TypeArguments="x:String">
-                                                                <On Platform="iOS" Value="Oswald-Regular"/>
-                                                                <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular"/>
-                                                            </OnPlatform>
-                                                        </Label.FontFamily>
-                                                    </Label>
-                                                    <Image Margin="12"
-                                                           Grid.Row="1"
-                                                           Grid.Column="2"
-                                                           Grid.RowSpan="2"
-                                                           Aspect="AspectFit"
-                                                           Source="Favorito"
-                                                           IsVisible="{Binding oculta}"
-                                                           VerticalOptions = "Start"
-                                                           HorizontalOptions = "Center"
-                                                           HeightRequest="25"
-                                                           WidthRequest="25">
-                                                        <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding GuardaFavoritoCommand}" Tapped="CambiaIcono"  />
-                                                        </Image.GestureRecognizers>
-                                                    </Image>
-                                                    <Image Margin="12"
-                                                           Grid.Row="1"
-                                                           Grid.Column="2"
-                                                           Grid.RowSpan="2"
-                                                           Aspect="AspectFit"
-                                                           Source="Fav"
-                                                           IsVisible="{Binding des_guardado}"
-                                                           VerticalOptions = "Start"
-                                                           HorizontalOptions = "Center"
-                                                           HeightRequest="25"
-                                                           WidthRequest="25">
-                                                        <Image.GestureRecognizers>
-                                                                 <TapGestureRecognizer Command="{Binding EliminaFavoritosCommand}" Tapped="CambiaIcono2"  />
-                                                           </Image.GestureRecognizers>
-                                                   </Image>   
-                                                    <Image Margin="10"
-                                                           Grid.Row="1"
-                                                           Grid.Column="3"
-                                                           Grid.RowSpan="2"
-                                                           Aspect="AspectFit"
-                                                           Source="Compartir"
-                                                           VerticalOptions = "Start"
-                                                           HorizontalOptions = "Center"
-                                                           HeightRequest="25"
-                                                           WidthRequest="25">
-                                                        <Image.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding CompartirCommand}" />
-                                                        </Image.GestureRecognizers>
-                                                    </Image>
-                                            </Grid>
-                             
-                                        
-                                    </DataTemplate>
-                                    </cv:CarouselViewControl.ItemTemplate>
-                                </cv:CarouselViewControl>-->
+                          
                             <!--  Android 330
                             IOS 360-->
-                            <cards:CarouselView x:Name="CarruselDestacados" Items="{Binding DestacadosDetalle}" HeightRequest="360" HorizontalOptions="FillAndExpand">
+                           <!-- <cards:CarouselView x:Name="CarruselDestacados" Items="{Binding DestacadosDetalle}" HeightRequest="360" HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
                                         <ContentView>
@@ -324,9 +203,9 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cards:CarouselView.ItemTemplate>
-                            </cards:CarouselView>
+                            </cards:CarouselView>-->
 
-                            <!--<cv:CarouselView x:Name="CarruselDestacados"
+                            <cv:CarouselView x:Name="CarruselDestacados"
                                               ItemsSource="{Binding DestacadosDetalle}"
                                               HeightRequest="360"
                                               HorizontalOptions="FillAndExpand"
@@ -396,7 +275,7 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cv:CarouselView.ItemTemplate>
-                            </cv:CarouselView>-->
+                            </cv:CarouselView>
                         </Frame>
                         <StackLayout HorizontalOptions="FillAndExpand" Margin="0,25,0,-20">
                             <Label HorizontalOptions="Start" Margin="20,0,0, 0" HorizontalTextAlignment="Start" Text="POZOS" FontSize="14" TextColor="#250c4b">
@@ -463,58 +342,7 @@
                                 <Frame.Padding>
                                     <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                 </Frame.Padding>
-                                <!--       
-                          <cv:CarouselViewControl x:Name="CarruselPromociones"
-                                                    ItemsSource="{Binding PromocionesDetalle}"
-                                                    HeightRequest="300"
-                                                    HorizontalOptions="FillAndExpand"
-                                                    AnimateTransition="true"
-                                                    ShowArrows="{Binding MuestraFlechasPromo, Mode=TwoWay}"
-                                                    ArrowsTintColor="White"
-                                                    Position="1"
-                                                    Scrolled="Scrolled_CP"
-                                                  PositionSelected="PositionSelected_CP"
-                                                    ArrowsBackgroundColor="Black">
-                                <cv:CarouselViewControl.ItemTemplate>
-                                    <DataTemplate>
-                                          <Grid Padding="3" >
-                                                            <Grid.RowDefinitions>
-                                                                <RowDefinition Height="*" />
-                                                            </Grid.RowDefinitions>
-                                                            <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="*" />
-                                                            </Grid.ColumnDefinitions>
-                                               <ffimageloading:CachedImage
-                                                                       Aspect="Fill"
-                                                                        LoadingPlaceholder="image_loading.png"
-                                                                        ErrorPlaceholder="image_error.png"
-                                                                        Source="{Binding pro_imagen,StringFormat='https://citycenter-rosario.com.ar/{0}'}"
-                                                                       >
-                                                <ffimageloading:CachedImage.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding VerDetalleCommand}" />
-                                                </ffimageloading:CachedImage.GestureRecognizers>
-                                            </ffimageloading:CachedImage>
-                                            <Label Text="{Binding pro_nombre}"
-                                                   Margin="5"
-                                                   HorizontalOptions="Center"
-                                                   HorizontalTextAlignment="Center"
-                                                   VerticalOptions="End"
-                                                   TextColor="White"
-                                                   FontSize="Small">
-                                                <Label.FontFamily>
-                                                    <OnPlatform x:TypeArguments="x:String">
-                                                        <On Platform="iOS" Value="Oswald-Regular" />
-                                                        <On Platform="Android" Value="Oswald-Regular.ttf#Oswald-Regular" />
-                                                    </OnPlatform>
-                                                </Label.FontFamily>
-                                            </Label>  
-                                         </Grid>
-                                       
-                                        
-                                    </DataTemplate>
-                                </cv:CarouselViewControl.ItemTemplate>
-                            </cv:CarouselViewControl>-->
-                                <cards:CarouselView x:Name="CarruselPromociones"
+                             <!--   <cards:CarouselView x:Name="CarruselPromociones"
                                                     Items="{Binding PromocionesDetalle}"
                                                     HeightRequest="280"
                                                     HorizontalOptions="FillAndExpand">
@@ -547,8 +375,8 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cards:CarouselView.ItemTemplate>
-                                </cards:CarouselView>
-                              <!--  <cv:CarouselView
+                                </cards:CarouselView>-->
+                              <cv:CarouselView
                                     x:Name="CarruselPromociones"
                                     ItemsSource="{Binding PromocionesDetalle}"
                                     HeightRequest="280"
@@ -585,8 +413,7 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cv:CarouselView.ItemTemplate>
-                                </cv:CarouselView>-->
-
+                                </cv:CarouselView>
                             </Frame>
                         </StackLayout>
                     </StackLayout>
@@ -615,7 +442,7 @@
                             </Frame.Padding>
                             <!--  Android 330
                             IOS 360-->
-                             <cards:CarouselView x:Name="CarruselTorneos"
+                             <!--<cards:CarouselView x:Name="CarruselTorneos"
                                                 Items="{Binding TorneoDetalle}"
                                                 HeightRequest="360"
                                                  HorizontalOptions="FillAndExpand">
@@ -687,8 +514,8 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cards:CarouselView.ItemTemplate>
-                            </cards:CarouselView>
-                           <!-- <cv:CarouselView x:Name="CarruselTorneos"
+                            </cards:CarouselView>-->
+                            <cv:CarouselView x:Name="CarruselTorneos"
                                              ItemsSource="{Binding TorneoDetalle}"
                                              HeightRequest="360"
                                              HorizontalOptions="FillAndExpand"
@@ -757,7 +584,7 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cv:CarouselView.ItemTemplate>
-                            </cv:CarouselView>-->
+                            </cv:CarouselView>
                         </Frame>
                         <StackLayout Spacing="0" Margin="0,20,0,0">
                             <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Margin="20,0,0,7" Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular">

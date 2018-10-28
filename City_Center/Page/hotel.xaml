@@ -344,8 +344,7 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                      
-                                  <cards:CarouselView x:Name="CarruselPromociones"
+                                <!--  <cards:CarouselView x:Name="CarruselPromociones"
                                                     Items="{Binding PromocionesDetalle}"
                                                     HeightRequest="280"
                                                     HorizontalOptions="FillAndExpand"
@@ -387,11 +386,8 @@
                                         </DataTemplate>
                                     </cards:CarouselView.ItemTemplate>
                                 </cards:CarouselView>   
-                                    
-                                    
-                                    
-                                    
-                               <!--  <cv:CarouselView x:Name="CarruselPromociones"
+                                    -->
+                                     <cv:CarouselView x:Name="CarruselPromociones"
                                               ItemsSource="{Binding PromocionesDetalle}"
                                               HeightRequest="280"
                                               HorizontalOptions="FillAndExpand"
@@ -449,7 +445,7 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cv:CarouselView.ItemTemplate>
-                                </cv:CarouselView>-->
+                                </cv:CarouselView>
                                 </Frame>
                             </StackLayout>
 
@@ -629,8 +625,7 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
-                                
-                             <cards:CarouselView x:Name="CarruselPromociones2"
+                           <!--<cards:CarouselView x:Name="CarruselPromociones2"
                                                     Items="{Binding PromocionesDetalle2}"
                                                     HeightRequest="280"
                                                     HorizontalOptions="FillAndExpand"
@@ -671,9 +666,8 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cards:CarouselView.ItemTemplate>
-                                </cards:CarouselView>
-
-                                 <!--<cv:CarouselView x:Name="CarruselPromociones2"
+                                </cards:CarouselView>-->
+                                 <cv:CarouselView x:Name="CarruselPromociones2"
                                                   ItemsSource="{Binding PromocionesDetalle2}"
                                                   HeightRequest="280"
                                                   HorizontalOptions="FillAndExpand"
@@ -730,11 +724,8 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cv:CarouselView.ItemTemplate>
-                                </cv:CarouselView>-->
-                                
-                                
+                                </cv:CarouselView>
                             </Frame>
-                          
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
