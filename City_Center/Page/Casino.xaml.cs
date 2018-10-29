@@ -228,66 +228,66 @@ namespace City_Center.Page
             }
         }
 
-        void Torneo_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
-        {
-            int Position = Convert.ToInt32(e.SelectedPosition);
+        //void Torneo_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        //{
+        //    int Position = Convert.ToInt32(e.SelectedPosition);
 
-            if (Position == VariablesGlobales.RegistrosCasinoTorneo)
-            {
-                CarruselTorneos.Position = 1;
-            }
-            else if (Position == 0)
-            {
-                CarruselTorneos.Position = VariablesGlobales.RegistrosCasinoTorneo - 1;
-            }
-        }
+        //    if (Position == VariablesGlobales.RegistrosCasinoTorneo)
+        //    {
+        //        CarruselTorneos.Position = 1;
+        //    }
+        //    else if (Position == 0)
+        //    {
+        //        CarruselTorneos.Position = VariablesGlobales.RegistrosCasinoTorneo - 1;
+        //    }
+        //}
 
-        void Destacado_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
-        {
-            int Position = Convert.ToInt32(e.SelectedPosition);
+        //void Destacado_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        //{
+        //    int Position = Convert.ToInt32(e.SelectedPosition);
 
-            if (Position == VariablesGlobales.RegistrosCasinoDestacados)
-            {
-                CarruselDestacados.Position = 1;
-            }
-            else if (Position == 0)
-            {
-                CarruselDestacados.Position = VariablesGlobales.RegistrosCasinoDestacados - 1;
-            }
-        }
+        //    if (Position == VariablesGlobales.RegistrosCasinoDestacados)
+        //    {
+        //        CarruselDestacados.Position = 1;
+        //    }
+        //    else if (Position == 0)
+        //    {
+        //        CarruselDestacados.Position = VariablesGlobales.RegistrosCasinoDestacados - 1;
+        //    }
+        //}
 
-        void Promociones_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
-        {
-            int Position = Convert.ToInt32(e.SelectedPosition);
+        //void Promociones_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        //{
+        //    int Position = Convert.ToInt32(e.SelectedPosition);
 
-            if (Position == VariablesGlobales.RegistrosCasinoPromociones)
-            {
-                CarruselPromociones.Position = 1;
-            }
-            else if (Position == 0)
-            {
-                CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones - 1;
-            }
-        }
+        //    if (Position == VariablesGlobales.RegistrosCasinoPromociones)
+        //    {
+        //        CarruselPromociones.Position = 1;
+        //    }
+        //    else if (Position == 0)
+        //    {
+        //        CarruselPromociones.Position = VariablesGlobales.RegistrosCasinoPromociones - 1;
+        //    }
+        //}
 
-        void Destacado_BatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<Xamarin.Forms.VisualElement> e)
-        {
-            if (Casinito.DestacadosDetalle != null)
-            {
-                CarruselDestacados.ItemsSource = Casinito.DestacadosDetalle;
-                CarruselDestacados.Position = 1;
+        //void Destacado_BatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<Xamarin.Forms.VisualElement> e)
+        //{
+        //    if (Casinito.DestacadosDetalle != null)
+        //    {
+        //        CarruselDestacados.ItemsSource = Casinito.DestacadosDetalle;
+        //        CarruselDestacados.Position = 1;
                
-            }
-        }
+        //    }
+        //}
 
-        void Promociones_BatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<Xamarin.Forms.VisualElement> e)
-        {
-            if (Casinito.PromocionesDetalle != null)
-            {
-                CarruselPromociones.ItemsSource = Casinito.PromocionesDetalle;
-                CarruselPromociones.Position = 1;
+        //void Promociones_BatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<Xamarin.Forms.VisualElement> e)
+        //{
+        //    if (Casinito.PromocionesDetalle != null)
+        //    {
+        //        CarruselPromociones.ItemsSource = Casinito.PromocionesDetalle;
+        //        CarruselPromociones.Position = 1;
 
-            }
-        }
+        //    }
+        //}
     }
 }

@@ -229,56 +229,57 @@ namespace City_Center.Page
            
 
         }
-  
-        void Promociones1_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
-        {
-            int Position = Convert.ToInt32(e.SelectedPosition);
-
-            if (Position == VariablesGlobales.RegistrosHotelPromociones)
-            {
-                CarruselPromociones.Position = 1;
-            }
-            else if (Position == 0)
-            {
-                CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones-1;
-            }     
-        }
-
-        void Promociones2_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
-        {
-            int Position = Convert.ToInt32(e.SelectedPosition);
-
-            if (Position == VariablesGlobales.RegistrosHotelPromociones2)
-            {
-                CarruselPromociones2.Position = 1;
-            }
-            else if (Position == 0)
-            {
-                CarruselPromociones2.Position = VariablesGlobales.RegistrosHotelPromociones2-1;
-            }   
-        }
 
 
+        //void Promociones1_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        //{
+        //    int Position = Convert.ToInt32(e.SelectedPosition);
 
-        void Promociones1_BatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<Xamarin.Forms.VisualElement> e)
-        {
-            if (Hotelito.PromocionesDetalle != null)
-            {
-                CarruselPromociones.ItemsSource = Hotelito.PromocionesDetalle;
-                CarruselPromociones.Position = 1;
+        //    if (Position == VariablesGlobales.RegistrosHotelPromociones)
+        //    {
+        //        CarruselPromociones.Position = 1;
+        //    }
+        //    else if (Position == 0)
+        //    {
+        //        CarruselPromociones.Position = VariablesGlobales.RegistrosHotelPromociones-1;
+        //    }     
+        //}
 
-            }
-        }
+        //void Promociones2_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        //{
+        //    int Position = Convert.ToInt32(e.SelectedPosition);
 
-        void Promociones2_BatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<Xamarin.Forms.VisualElement> e)
-        {
-            if (Hotelito.PromocionesDetalle2 != null)
-            {
-                CarruselPromociones2.ItemsSource = Hotelito.PromocionesDetalle2;
-                CarruselPromociones2.Position = 1;
+        //    if (Position == VariablesGlobales.RegistrosHotelPromociones2)
+        //    {
+        //        CarruselPromociones2.Position = 1;
+        //    }
+        //    else if (Position == 0)
+        //    {
+        //        CarruselPromociones2.Position = VariablesGlobales.RegistrosHotelPromociones2-1;
+        //    }   
+        //}
 
-            }
-        }
+
+
+        //void Promociones1_BatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<Xamarin.Forms.VisualElement> e)
+        //{
+        //    if (Hotelito.PromocionesDetalle != null)
+        //    {
+        //        CarruselPromociones.ItemsSource = Hotelito.PromocionesDetalle;
+        //        CarruselPromociones.Position = 1;
+
+        //    }
+        //}
+
+        //void Promociones2_BatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<Xamarin.Forms.VisualElement> e)
+        //{
+        //    if (Hotelito.PromocionesDetalle2 != null)
+        //    {
+        //        CarruselPromociones2.ItemsSource = Hotelito.PromocionesDetalle2;
+        //        CarruselPromociones2.Position = 1;
+
+        //    }
+        //}
 
 	}
 

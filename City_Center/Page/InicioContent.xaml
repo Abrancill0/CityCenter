@@ -694,9 +694,10 @@
                             <Frame.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
+                           
                           <!--  Android 330
                             IOS 360-->
-                            <!--<cards:CarouselView x:Name="CarruselTorneos"
+                            <cards:CarouselView x:Name="CarruselTorneos"
                                                Items = "{Binding TorneoDetalle}"
                                                 HeightRequest="360" 
                                                 HorizontalOptions="FillAndExpand"
@@ -767,9 +768,9 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cards:CarouselView.ItemTemplate>
-                            </cards:CarouselView>-->
-                             <cv:CarouselView x:Name="CarruselTorneos"
-                                              ItemsSource="{Binding TorneoDetalle}"
+                            </cards:CarouselView>
+                             <!--<cv:CarouselView x:Name="CarruselTorneos"
+                                              ItemsSource = "{Binding TorneoDetalle}"
                                               HeightRequest="360"
                                               Position="1"
                                               PositionSelected="Torneo_PositionSelected"
@@ -840,7 +841,7 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cv:CarouselView.ItemTemplate>
-                            </cv:CarouselView>
+                            </cv:CarouselView>-->
 
                         </Frame>
                         <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,30,0,0" IsVisible="{Binding MuestraFlechasPromo}">
@@ -862,14 +863,12 @@
                                 <Frame.Padding>
                                     <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                 </Frame.Padding>
-                                     <!--   <cards:CarouselView x:Name="CarruselPromociones"
+                                
+                                        <cards:CarouselView x:Name="CarruselPromociones"
                                                     Items="{Binding PromocionesDetalle}"
                                                     HeightRequest="280"
                                                     HorizontalOptions="FillAndExpand"
-
-                                                    SwipeThresholdTime="100"
-
-                                                    >
+                                                    SwipeThresholdTime="100">
                                     <cards:CarouselView.ItemTemplate>
                                         <DataTemplate>
                                             <ContentView>
@@ -903,8 +902,9 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cards:CarouselView.ItemTemplate>
-                                </cards:CarouselView>-->
-                             <cv:CarouselView x:Name="CarruselPromociones"
+                                </cards:CarouselView>
+                            
+                               <!-- <cv:CarouselView x:Name="CarruselPromociones"
                                                     ItemsSource="{Binding PromocionesDetalle}"
                                                     HeightRequest="280"
                                                     HorizontalOptions="FillAndExpand"
@@ -943,7 +943,8 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cv:CarouselView.ItemTemplate>
-                                </cv:CarouselView>
+                                </cv:CarouselView>-->
+
                             </Frame>
                         </StackLayout>
                         <AbsoluteLayout Padding="5,20,5,0" Margin="0,0,0,-25" HeightRequest="200" WidthRequest="320" HorizontalOptions="Center" IsVisible="{Binding VerTarjeta}">

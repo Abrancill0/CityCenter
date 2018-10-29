@@ -611,7 +611,7 @@ namespace City_Center.ViewModels
 
                // MuestraFlechasPromo
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MuestraFlechasPromo = false;
                 //await Mensajes.Error("Home - Promociones" + ex.ToString());
@@ -655,7 +655,7 @@ namespace City_Center.ViewModels
 
         private IEnumerable<PromocionesItemViewModel> ToPromocionesItemViewModel2()
         {
-            return this.listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
+            return MainViewModel.GetInstance().listPromociones.resultado.Where(l => l.pro_id > 0).Select(l => new PromocionesItemViewModel
             {
                 pro_id = l.pro_id,
                 pro_id_evento = l.pro_id_evento,

@@ -68,31 +68,33 @@ namespace City_Center.Page
 
 
         }
-        
-        void Handle_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
-        {
-            int Position = Convert.ToInt32(e.SelectedPosition);
-
-            if (Position == VariablesGlobales.RegistrosGastronomiaPromociones)
-            {
-                CarruselPromociones.Position = 1;
-            }
-            else if (Position == 0)
-            {
-                CarruselPromociones.Position = VariablesGlobales.RegistrosGastronomiaPromociones-1;
-            }   
 
 
-        }
 
-        void Handle_BatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<Xamarin.Forms.VisualElement> e)
-        {
-            if (Restaurantito.PromocionesDetalle != null)
-            {
-                CarruselPromociones.ItemsSource = Restaurantito.PromocionesDetalle;
-                CarruselPromociones.Position = 1;
+        //void Handle_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        //{
+        //    int Position = Convert.ToInt32(e.SelectedPosition);
 
-            }
-        }
+        //    if (Position == VariablesGlobales.RegistrosGastronomiaPromociones)
+        //    {
+        //        CarruselPromociones.Position = 1;
+        //    }
+        //    else if (Position == 0)
+        //    {
+        //        CarruselPromociones.Position = VariablesGlobales.RegistrosGastronomiaPromociones-1;
+        //    }   
+
+
+        //}
+
+        //void Handle_BatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<Xamarin.Forms.VisualElement> e)
+        //{
+        //    if (Restaurantito.PromocionesDetalle != null)
+        //    {
+        //        CarruselPromociones.ItemsSource = Restaurantito.PromocionesDetalle;
+        //        CarruselPromociones.Position = 1;
+
+        //    }
+        //}
     }
 }
