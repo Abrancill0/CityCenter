@@ -6,7 +6,7 @@
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" x:Class="City_Center.Page.Casino">
+             x:Class="City_Center.Page.Casino">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="chat@2x" />
     </ContentPage.ToolbarItems>
@@ -143,7 +143,7 @@
                       
                             <!--  Android 330
                             IOS 360-->
-                            <cards:CarouselView x:Name="CarruselDestacados" Items="{Binding DestacadosDetalle}" HeightRequest="360" HorizontalOptions="FillAndExpand">
+                            <!--<cards:CarouselView x:Name="CarruselDestacados" Items="{Binding DestacadosDetalle}" HeightRequest="360" HorizontalOptions="FillAndExpand">
                                 <cards:CarouselView.ItemTemplate>
                                     <DataTemplate>
                                         <ContentView>
@@ -203,9 +203,9 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cards:CarouselView.ItemTemplate>
-                            </cards:CarouselView>
+                            </cards:CarouselView>-->
 
-                            <!--<cv:CarouselView x:Name="CarruselDestacados"
+                            <cv:CarouselView x:Name="CarruselDestacados"
                                               ItemsSource="{Binding DestacadosDetalle}"
                                               HeightRequest="360"
                                               HorizontalOptions="FillAndExpand"
@@ -275,7 +275,7 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cv:CarouselView.ItemTemplate>
-                            </cv:CarouselView>-->
+                            </cv:CarouselView>
                         </Frame>
                         <StackLayout HorizontalOptions="FillAndExpand" Margin="0,25,0,-20">
                             <Label HorizontalOptions="Start" Margin="20,0,0, 0" HorizontalTextAlignment="Start" Text="POZOS" FontSize="14" TextColor="#250c4b">
@@ -343,7 +343,7 @@
                                     <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                 </Frame.Padding>
                                 
-                                <cards:CarouselView x:Name="CarruselPromociones"
+                              <!--  <cards:CarouselView x:Name="CarruselPromociones"
                                                     Items="{Binding PromocionesDetalle}"
                                                     HeightRequest="280"
                                                     HorizontalOptions="FillAndExpand">
@@ -376,8 +376,8 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cards:CarouselView.ItemTemplate>
-                                </cards:CarouselView>
-                          <!--      <cv:CarouselView
+                                </cards:CarouselView>-->
+                                <cv:CarouselView
                                     x:Name="CarruselPromociones"
                                     ItemsSource="{Binding PromocionesDetalle}"
                                     HeightRequest="280"
@@ -414,7 +414,7 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cv:CarouselView.ItemTemplate>
-                                </cv:CarouselView>-->
+                                </cv:CarouselView>
 
                             </Frame>
                         </StackLayout>
@@ -444,7 +444,7 @@
                             </Frame.Padding>
                             <!--  Android 330
                             IOS 360-->
-                            <cards:CarouselView x:Name="CarruselTorneos"
+                           <!-- <cards:CarouselView x:Name="CarruselTorneos"
                                                 Items="{Binding TorneoDetalle}"
                                                 HeightRequest="360"
                                                  HorizontalOptions="FillAndExpand">
@@ -516,9 +516,9 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cards:CarouselView.ItemTemplate>
-                            </cards:CarouselView>
+                            </cards:CarouselView>-->
                             
-                  <!--          <cv:CarouselView x:Name="CarruselTorneos"
+                           <cv:CarouselView x:Name="CarruselTorneos"
                                              ItemsSource="{Binding TorneoDetalle}"
                                              HeightRequest="360"
                                              HorizontalOptions="FillAndExpand"
@@ -587,7 +587,7 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cv:CarouselView.ItemTemplate>
-                            </cv:CarouselView>-->
+                            </cv:CarouselView>
                         </Frame>
                         <StackLayout Spacing="0" Margin="0,20,0,0">
                             <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" Margin="20,0,0,7" Text="LA SALA" TextColor="#250c4b" FontFamily="Oswald-Regular">

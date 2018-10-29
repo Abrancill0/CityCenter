@@ -7,9 +7,9 @@
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:view="clr-namespace:City_Center.Vista"
              xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" 
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              x:Class="City_Center.Page.InicioContent">
+     <!-- xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" -->
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Name="StyleButton" TargetType="Button">
@@ -57,7 +57,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Image Aspect="AspectFit"
+                   <!-- <Image Aspect="AspectFit"
                            Source="TICKETSHOWS"
                            VerticalOptions="Start"
                            HorizontalOptions="End"
@@ -65,7 +65,7 @@
                            HeightRequest="80"
                            Grid.Column="0"
                            Grid.Row="0">
-                    </Image>
+                    </Image>-->
                     <Image x:Name="tickets" Aspect="AspectFit" Source="TICKETSHOWS" VerticalOptions="Start" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" Grid.Column="0" Grid.Row="0">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Btn2_Clicked" />
@@ -697,7 +697,7 @@
                            
                           <!--  Android 330
                             IOS 360-->
-                            <cards:CarouselView x:Name="CarruselTorneos"
+                            <!--<cards:CarouselView x:Name="CarruselTorneos"
                                                Items = "{Binding TorneoDetalle}"
                                                 HeightRequest="360" 
                                                 HorizontalOptions="FillAndExpand"
@@ -768,8 +768,8 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cards:CarouselView.ItemTemplate>
-                            </cards:CarouselView>
-                             <!--<cv:CarouselView x:Name="CarruselTorneos"
+                            </cards:CarouselView>-->
+                             <cv:CarouselView x:Name="CarruselTorneos"
                                               ItemsSource = "{Binding TorneoDetalle}"
                                               HeightRequest="360"
                                               Position="1"
@@ -841,7 +841,7 @@
                                         </ContentView>
                                     </DataTemplate>
                                 </cv:CarouselView.ItemTemplate>
-                            </cv:CarouselView>-->
+                            </cv:CarouselView>
 
                         </Frame>
                         <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,30,0,0" IsVisible="{Binding MuestraFlechasPromo}">
@@ -864,7 +864,7 @@
                                     <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                                 </Frame.Padding>
                                 
-                                        <cards:CarouselView x:Name="CarruselPromociones"
+                                        <!--<cards:CarouselView x:Name="CarruselPromociones"
                                                     Items="{Binding PromocionesDetalle}"
                                                     HeightRequest="280"
                                                     HorizontalOptions="FillAndExpand"
@@ -902,9 +902,9 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cards:CarouselView.ItemTemplate>
-                                </cards:CarouselView>
+                                </cards:CarouselView>-->
                             
-                               <!-- <cv:CarouselView x:Name="CarruselPromociones"
+                                <cv:CarouselView x:Name="CarruselPromociones"
                                                     ItemsSource="{Binding PromocionesDetalle}"
                                                     HeightRequest="280"
                                                     HorizontalOptions="FillAndExpand"
@@ -943,7 +943,7 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cv:CarouselView.ItemTemplate>
-                                </cv:CarouselView>-->
+                                </cv:CarouselView>
 
                             </Frame>
                         </StackLayout>

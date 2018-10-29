@@ -2,11 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-          
-             BindingContext="{Binding Main, Source={StaticResource Locator}}" 
+          BindingContext="{Binding Main, Source={StaticResource Locator}}" 
              xmlns:view="clr-namespace:City_Center.Vista"
               xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-              xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
              x:Class="City_Center.Page.Gastronomia">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="chat@2x" />
@@ -189,7 +187,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                             
-                            <cards:CarouselView x:Name="CarruselPromociones"
+                   <!--         <cards:CarouselView x:Name="CarruselPromociones"
                                     Items="{Binding PromocionesDetalle}"
                                                    HeightRequest="280"
                                                     HorizontalOptions="FillAndExpand">
@@ -244,9 +242,8 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cards:CarouselView.ItemTemplate>
-                                </cards:CarouselView>
-
-                             <!-- <cv:CarouselView x:Name="CarruselPromociones"
+                                </cards:CarouselView>-->
+                                <cv:CarouselView x:Name="CarruselPromociones"
                                                ItemsSource="{Binding PromocionesDetalle}"
                                                HeightRequest="280"
                                                HorizontalOptions="FillAndExpand"
@@ -304,7 +301,7 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cv:CarouselView.ItemTemplate>
-                                </cv:CarouselView>-->
+                                </cv:CarouselView>
                             
                         </Frame>
                             </StackLayout>

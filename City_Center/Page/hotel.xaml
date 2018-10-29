@@ -7,7 +7,6 @@
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls" x:Class="City_Center.Page.Hotel">
    
     <ContentPage.Resources>
@@ -345,7 +344,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                       
-                                  <cards:CarouselView x:Name="CarruselPromociones"
+                                <!--  <cards:CarouselView x:Name="CarruselPromociones"
                                                     Items="{Binding PromocionesDetalle}"
                                                     HeightRequest="280"
                                                     HorizontalOptions="FillAndExpand"
@@ -386,9 +385,9 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cards:CarouselView.ItemTemplate>
-                                </cards:CarouselView>   
+                                </cards:CarouselView>-->   
                                     
-                                     <!--<cv:CarouselView x:Name="CarruselPromociones"
+                                     <cv:CarouselView x:Name="CarruselPromociones"
                                               ItemsSource="{Binding PromocionesDetalle}"
                                               HeightRequest="280"
                                               HorizontalOptions="FillAndExpand"
@@ -446,7 +445,7 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cv:CarouselView.ItemTemplate>
-                                </cv:CarouselView>-->
+                                </cv:CarouselView>
                                 </Frame>
                             </StackLayout>
 
@@ -627,7 +626,7 @@
                                 <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0" />
                             </Frame.Padding>
                                 
-                             <cards:CarouselView x:Name="CarruselPromociones2"
+                           <!--  <cards:CarouselView x:Name="CarruselPromociones2"
                                                     Items="{Binding PromocionesDetalle2}"
                                                     HeightRequest="280"
                                                     HorizontalOptions="FillAndExpand"
@@ -668,9 +667,9 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cards:CarouselView.ItemTemplate>
-                                </cards:CarouselView>
+                                </cards:CarouselView>-->
 
-                               <!--  <cv:CarouselView x:Name="CarruselPromociones2"
+                                 <cv:CarouselView x:Name="CarruselPromociones2"
                                                   ItemsSource="{Binding PromocionesDetalle2}"
                                                   HeightRequest="280"
                                                   HorizontalOptions="FillAndExpand"
@@ -727,7 +726,7 @@
                                             </ContentView>
                                         </DataTemplate>
                                     </cv:CarouselView.ItemTemplate>
-                                </cv:CarouselView>-->
+                                </cv:CarouselView>
                                 
                                 
                             </Frame>
